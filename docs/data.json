@@ -26240,5 +26240,63 @@
       "description": "National-level rankings for the MATHCOUNTS competition series.",
       "website": "https://www.mathcounts.org/"
     }
+  },
+  "contest_year_files": {
+    "hmmt-feb": {
+      "2022": "results.csv",
+      "2023": "results.csv",
+      "2024": "results.csv",
+      "2025": "results.csv",
+      "2026": "results.csv"
+    },
+    "hmmt-feb-algebra-number-theory": {
+      "2023": "results.csv",
+      "2024": "results.csv",
+      "2025": "results.csv",
+      "2026": "results.csv"
+    },
+    "hmmt-feb-combo": {
+      "2023": "results.csv",
+      "2024": "results.csv",
+      "2025": "results.csv",
+      "2026": "results.csv"
+    },
+    "hmmt-feb-geometry": {
+      "2023": "results.csv",
+      "2024": "results.csv",
+      "2025": "results.csv",
+      "2026": "results.csv"
+    },
+    "mathcounts-national": {
+      "2021": "competitors.csv",
+      "2022": "competitors.csv"
+    },
+    "mathcounts-national-rank": {
+      "2021": "results.csv",
+      "2022": "results.csv",
+      "2023": "results.csv",
+      "2024": "results.csv",
+      "2025": "results.csv"
+    },
+    "pumac": {
+      "2024": "results_A.csv",
+      "2025": "results_A.csv"
+    },
+    "pumac-algebra": {
+      "2024": "results_A.csv",
+      "2025": "results_A.csv"
+    },
+    "pumac-combinator": {
+      "2024": "results_A.csv",
+      "2025": "results_A.csv"
+    },
+    "pumac-geometry": {
+      "2024": "results_A.csv",
+      "2025": "results_A.csv"
+    },
+    "pumac-number-theory": {
+      "2024": "results_A.csv",
+      "2025": "results_A.csv"
+    }
   }
 }

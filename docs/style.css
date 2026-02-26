@@ -173,6 +173,30 @@ body {
   color: var(--text);
 }
 
+.contest-list-block {
+  margin-bottom: 0.75rem;
+}
+
+.contest-list-block:last-child {
+  margin-bottom: 0;
+}
+
+.contest-list-years {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-left: 0.25rem;
+}
+
+.contest-list-year-link {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.contest-list-year-link:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
 /* Main */
 .main {
   max-width: 72rem;

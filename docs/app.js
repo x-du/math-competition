@@ -155,6 +155,7 @@
   function renderContestList() {
     if (!contestListEl) return;
     var contests = data.contests || {};
+    var contestYearFiles = data.contest_year_files || {};
     var yearsBySlug = {};
     var students = data.students || [];
     for (var s = 0; s < students.length; s++) {
@@ -170,6 +171,7 @@
     for (var k in contests) if (Object.prototype.hasOwnProperty.call(contests, k)) slugs.push(k);
     slugs.sort();
     var parts = [];
+    var githubBase = "https://github.com/x-du/math-competition/blob/main/database/contests/";
     for (var i = 0; i < slugs.length; i++) {
       var slug = slugs[i];
       var c = contests[slug];
@@ -179,14 +181,21 @@
         for (var y in yearsBySlug[slug]) if (Object.prototype.hasOwnProperty.call(yearsBySlug[slug], y)) years.push(y);
         years.sort(function (a, b) { return b.localeCompare(a, undefined, { numeric: true }); });
       }
-      var nameAndYears = name + (years.length ? " (" + years.join(", ") + ")" : "");
-      if (c && c.website) {
-        parts.push("<a href=\"" + escapeHtml(c.website) + "\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"contest-list-link\">" + escapeHtml(nameAndYears) + "</a>");
-      } else {
-        parts.push("<span class=\"contest-list-item\">" + escapeHtml(nameAndYears) + "</span>");
+      var nameHtml = (c && c.website)
+        ? "<a href=\"" + escapeHtml(c.website) + "\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"contest-list-link\">" + escapeHtml(name) + "</a>"
+        : "<span class=\"contest-list-item\">" + escapeHtml(name) + "</span>";
+      var yearLinks = [];
+      var filesByYear = contestYearFiles[slug] || {};
+      for (var j = 0; j < years.length; j++) {
+        var yr = years[j];
+        var filename = filesByYear[yr] || "results.csv";
+        var yearHref = githubBase + slug + "/year%3D" + yr + "/" + filename;
+        yearLinks.push("<a href=\"" + yearHref + "\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"contest-list-year-link\">" + escapeHtml(yr) + "</a>");
       }
+      var yearLine = yearLinks.length ? "<span class=\"contest-list-years\">" + yearLinks.join(", ") + "</span>" : "";
+      parts.push("<div class=\"contest-list-block\">" + nameHtml + (yearLine ? "<br>" + yearLine : "") + "</div>");
     }
-    contestListEl.innerHTML = parts.length ? parts.join("<span class=\"contest-list-sep\"> · </span>") : "";
+    contestListEl.innerHTML = parts.length ? parts.join("") : "";
   }
 
   function bindContestListPopover() {

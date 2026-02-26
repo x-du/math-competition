@@ -90,10 +90,14 @@ def main() -> None:
     students = load_students()
     contests = load_contests()
     records_by_id = {}
+    contest_year_files = {}  # slug -> { year -> filename }
 
     for slug, year, csv_path in collect_result_files():
         contest_info = contests.get(slug, {})
         contest_title = (contest_info.get("contest_name") or "").strip() or humanize_contest(slug)
+        if slug not in contest_year_files:
+            contest_year_files[slug] = {}
+        contest_year_files[slug][year] = csv_path.name
         with open(csv_path, newline="", encoding="utf-8") as f:
             reader = csv.DictReader(f)
             rows = list(reader)
@@ -140,7 +144,11 @@ def main() -> None:
 
     OUTPUT_JSON.parent.mkdir(parents=True, exist_ok=True)
     with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
-        json.dump({"students": result_students, "contests": contests}, f, indent=2, ensure_ascii=False)
+        json.dump({
+            "students": result_students,
+            "contests": contests,
+            "contest_year_files": contest_year_files,
+        }, f, indent=2, ensure_ascii=False)
 
     print(f"Wrote {len(result_students)} students with records to {OUTPUT_JSON}")
 
