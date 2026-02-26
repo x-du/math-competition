@@ -206,11 +206,12 @@ body {
 
 .search-wrap {
   margin-bottom: 1.5rem;
+  position: relative;
 }
 
 .search-input {
   width: 100%;
-  padding: 0.75rem 1rem;
+  padding: 0.75rem 2.5rem 0.75rem 1rem;
   font-family: var(--font-sans);
   font-size: 1rem;
   color: var(--text);
@@ -228,6 +229,40 @@ body {
 .search-input:focus {
   border-color: var(--accent);
   box-shadow: 0 0 0 3px rgba(124, 156, 224, 0.2);
+}
+
+.search-input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.search-clear {
+  position: absolute;
+  top: 50%;
+  right: 0.75rem;
+  transform: translateY(-50%);
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--accent);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.search-clear:hover {
+  color: var(--accent-hover);
+  background: rgba(124, 156, 224, 0.08);
+}
+
+.search-clear[hidden] {
+  display: none;
 }
 
 .search-hint {

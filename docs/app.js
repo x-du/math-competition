@@ -10,6 +10,7 @@
   var contestListEl = document.getElementById("contest-list");
   var awardsRankingListEl = document.getElementById("awards-ranking-list");
   var topStudentsSectionEl = document.getElementById("top-students-section");
+  var searchClearEl = document.getElementById("search-clear");
 
   function setLoading(busy) {
     loadingEl.setAttribute("aria-busy", busy ? "true" : "false");
@@ -273,6 +274,10 @@
     emptyEl.hidden = true;
     resultsEl.innerHTML = "";
 
+    if (searchClearEl) {
+      searchClearEl.hidden = !query;
+    }
+
     if (!query) {
       hintEl.textContent = "Enter at least one character to search.";
       if (topStudentsSectionEl) topStudentsSectionEl.hidden = false;
@@ -322,6 +327,15 @@
   if (searchEl) {
     searchEl.addEventListener("input", runSearch);
     searchEl.addEventListener("search", runSearch);
+  }
+
+  if (searchClearEl) {
+    searchClearEl.addEventListener("click", function () {
+      if (!searchEl) return;
+      searchEl.value = "";
+      runSearch();
+      searchEl.focus();
+    });
   }
 
   if (resultsEl) {
