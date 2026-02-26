@@ -16973,6 +16973,22 @@
           "score": "25.17"
         },
         {
+          "contest": "USAJMO",
+          "year": "2025",
+          "contest_slug": "jmo",
+          "student_name": "Alex Liu",
+          "state": "Virginia",
+          "award": "Top Honors"
+        },
+        {
+          "contest": "USAJMO",
+          "year": "2024",
+          "contest_slug": "jmo",
+          "student_name": "Alex Liu",
+          "state": "Virginia",
+          "award": "Honors"
+        },
+        {
           "contest": "PUMaC — Combinatorics",
           "year": "2024",
           "contest_slug": "pumac-combinator",
@@ -31855,29 +31871,6 @@
           "student_name": "Kyle Lin",
           "state": "Texas",
           "award": "Top Honors"
-        }
-      ]
-    },
-    {
-      "id": 987,
-      "name": "Alex Liu",
-      "aliases": [],
-      "records": [
-        {
-          "contest": "USAJMO",
-          "year": "2025",
-          "contest_slug": "jmo",
-          "student_name": "Alex Liu",
-          "state": "Virginia",
-          "award": "Top Honors"
-        },
-        {
-          "contest": "USAJMO",
-          "year": "2024",
-          "contest_slug": "jmo",
-          "student_name": "Alex Liu",
-          "state": "Virginia",
-          "award": "Honors"
         }
       ]
     },
