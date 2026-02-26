@@ -15,4 +15,6 @@ cmimc-algebra,CMIMC - Algebra and Number Theory,Algebra and Number Theory subjec
 cmimc-comb,CMIMC - Combinatorics and Computer Science,Combinatorics and Computer Science subject test at CMIMC.,https://cmimc.math.cmu.edu/math
 cmimc-geometry,CMIMC - Geometry,Geometry subject test at CMIMC.,https://cmimc.math.cmu.edu/math
 imo,IMO,International Mathematical Olympiad. Official results by country and year.,https://www.imo-official.org/
+amo,USAMO,USA Mathematical Olympiad. Top-tier national math olympiad for high school students.,https://www.maa.org/math-competitions/usamo
+jmo,USAJMO,USA Junior Mathematical Olympiad. National math olympiad for younger high school students.,https://www.maa.org/math-competitions/usajmo
 

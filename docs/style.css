@@ -389,6 +389,16 @@ body {
   color: var(--text-muted);
 }
 
+.footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
 .footer code {
   font-family: var(--font-mono);
   font-size: 0.85em;

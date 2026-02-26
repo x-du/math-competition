@@ -119,6 +119,8 @@ def main() -> None:
                 "contest_slug": slug,
             }
             for k, v in row.items():
+                if k is None:
+                    continue
                 k = k.strip()
                 if k and k not in ("student_id", "student_id "):
                     if v is not None and str(v).strip() != "":
