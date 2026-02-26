@@ -8,6 +8,8 @@
   var loadingEl = document.getElementById("loading");
   var hintEl = document.getElementById("search-hint");
   var contestListEl = document.getElementById("contest-list");
+  var awardsRankingListEl = document.getElementById("awards-ranking-list");
+  var topStudentsSectionEl = document.getElementById("top-students-section");
 
   function setLoading(busy) {
     loadingEl.setAttribute("aria-busy", busy ? "true" : "false");
@@ -198,6 +200,51 @@
     contestListEl.innerHTML = parts.length ? parts.join("") : "";
   }
 
+  function renderTopStudentsByRecords() {
+    if (!awardsRankingListEl) return;
+    var students = data.students || [];
+    var counts = [];
+    if (students && students.length) {
+      for (var i = 0; i < students.length; i++) {
+        var student = students[i];
+        var records = student.records || [];
+        var count = records.length;
+        if (count > 0) {
+          counts.push({ student: student, recordsCount: count });
+        }
+      }
+    }
+
+    if (!counts.length) {
+      awardsRankingListEl.innerHTML = "<li class=\"awards-ranking-empty\">No record data available yet.</li>";
+      return;
+    }
+
+    counts.sort(function (a, b) {
+      if (b.recordsCount !== a.recordsCount) return b.recordsCount - a.recordsCount;
+      var nameA = (a.student && a.student.name) || "";
+      var nameB = (b.student && b.student.name) || "";
+      return nameA.localeCompare(nameB);
+    });
+
+    var top = counts.slice(0, 20);
+    var items = [];
+    for (var i = 0; i < top.length; i++) {
+      var entry = top[i];
+      var s = entry.student || {};
+      var label = entry.recordsCount === 1 ? "record" : "records";
+      items.push(
+        "<li class=\"awards-ranking-item\">" +
+          "<span class=\"awards-ranking-position\">#" + (i + 1) + "</span>" +
+          "<span class=\"awards-ranking-name\" data-student-name=\"" + escapeHtml(String(s.name || "")) + "\">" + escapeHtml(String(s.name || "")) + "</span>" +
+          "<span class=\"awards-ranking-count\" data-student-name=\"" + escapeHtml(String(s.name || "")) + "\">" + escapeHtml(String(entry.recordsCount)) + " " + label + "</span>" +
+        "</li>"
+      );
+    }
+
+    awardsRankingListEl.innerHTML = items.join("");
+  }
+
   function bindContestListPopover() {
     var trigger = document.getElementById("contest-list-trigger");
     var popover = document.getElementById("contest-list-popover");
@@ -228,6 +275,7 @@
 
     if (!query) {
       hintEl.textContent = "Enter at least one character to search.";
+      if (topStudentsSectionEl) topStudentsSectionEl.hidden = false;
       return;
     }
 
@@ -240,8 +288,11 @@
 
     if (matched.length === 0) {
       emptyEl.hidden = false;
+      if (topStudentsSectionEl) topStudentsSectionEl.hidden = false;
       return;
     }
+
+    if (topStudentsSectionEl) topStudentsSectionEl.hidden = true;
 
     resultsEl.innerHTML = matched.map(function (s) { return renderStudent(s, data.contests || {}); }).join("");
   }
@@ -258,6 +309,7 @@
         data = json;
         setLoading(false);
         renderContestList();
+        renderTopStudentsByRecords();
         bindContestListPopover();
         runSearch();
       })
@@ -270,6 +322,41 @@
   if (searchEl) {
     searchEl.addEventListener("input", runSearch);
     searchEl.addEventListener("search", runSearch);
+  }
+
+  if (resultsEl) {
+    resultsEl.addEventListener("click", function (event) {
+      var target = event.target;
+      if (!target || !target.classList || !target.classList.contains("student-name")) return;
+      var name = (target.textContent || "").trim();
+      if (!name || !searchEl) return;
+      searchEl.value = name;
+      runSearch();
+      searchEl.focus();
+      if (typeof searchEl.setSelectionRange === "function") {
+        var len = name.length;
+        searchEl.setSelectionRange(len, len);
+      }
+    });
+  }
+
+  if (awardsRankingListEl) {
+    awardsRankingListEl.addEventListener("click", function (event) {
+      var target = event.target;
+      while (target && target !== awardsRankingListEl && !target.getAttribute("data-student-name")) {
+        target = target.parentNode;
+      }
+      if (!target || target === awardsRankingListEl) return;
+      var name = (target.getAttribute("data-student-name") || target.textContent || "").trim();
+      if (!name || !searchEl) return;
+      searchEl.value = name;
+      runSearch();
+      searchEl.focus();
+      if (typeof searchEl.setSelectionRange === "function") {
+        var len = name.length;
+        searchEl.setSelectionRange(len, len);
+      }
+    });
   }
 
   if (document.readyState === "loading") {

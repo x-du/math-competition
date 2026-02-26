@@ -244,6 +244,67 @@ body {
   gap: 1.5rem;
 }
 
+/* Awards ranking */
+.awards-ranking {
+  margin-bottom: 2rem;
+  padding: 1rem 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.awards-ranking-title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.awards-ranking-subtitle {
+  margin: 0.35rem 0 0.75rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.awards-ranking-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.awards-ranking-item {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.awards-ranking-position {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  color: var(--text-muted);
+  min-width: 2.5rem;
+}
+
+.awards-ranking-name {
+  flex: 1;
+}
+
+.awards-ranking-count {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  color: var(--accent);
+}
+
+.awards-ranking-empty {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
 .student-card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -265,6 +326,11 @@ body {
   margin: 0;
   font-size: 1.125rem;
   font-weight: 600;
+  cursor: pointer;
+}
+
+.awards-ranking-name {
+  cursor: pointer;
 }
 
 .student-aliases {
