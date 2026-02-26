@@ -85,6 +85,16 @@
           "finals_score": "21"
         },
         {
+          "contest": "IMO",
+          "year": "2025",
+          "contest_slug": "imo",
+          "student_name": "Alexander Wang",
+          "us_rank": "2",
+          "international_rank": "9",
+          "total_score": "37",
+          "award": "Gold"
+        },
+        {
           "contest": "HMMT February — Geometry",
           "year": "2025",
           "contest_slug": "hmmt-feb-geometry",
@@ -164,6 +174,16 @@
           "finals_score": "18"
         },
         {
+          "contest": "IMO",
+          "year": "2024",
+          "contest_slug": "imo",
+          "student_name": "Alexander Wang",
+          "us_rank": "1",
+          "international_rank": "3",
+          "total_score": "38",
+          "award": "Gold"
+        },
+        {
           "contest": "HMMT February — Combinatorics",
           "year": "2024",
           "contest_slug": "hmmt-feb-combo",
@@ -189,6 +209,16 @@
           "algebra_score": "25.17",
           "geometry_score": "11.32",
           "combinatorics_score": "25.17"
+        },
+        {
+          "contest": "IMO",
+          "year": "2023",
+          "contest_slug": "imo",
+          "student_name": "Alexander Wang",
+          "us_rank": "2",
+          "international_rank": "6",
+          "total_score": "41",
+          "award": "Gold"
         },
         {
           "contest": "HMMT February — Geometry",
@@ -1310,6 +1340,16 @@
           "rank": "5",
           "total_score": "3.451",
           "finals_score": "21"
+        },
+        {
+          "contest": "IMO",
+          "year": "2025",
+          "contest_slug": "imo",
+          "student_name": "Ruilin Wang",
+          "us_rank": "4",
+          "international_rank": "12",
+          "total_score": "36",
+          "award": "Gold"
         },
         {
           "contest": "HMMT February — Geometry",
@@ -5270,6 +5310,16 @@
       "aliases": [],
       "records": [
         {
+          "contest": "IMO",
+          "year": "2025",
+          "contest_slug": "imo",
+          "student_name": "Hannah Fox",
+          "us_rank": "6",
+          "international_rank": "81",
+          "total_score": "33",
+          "award": "Silver"
+        },
+        {
           "contest": "HMMT February — Algebra & Number Theory",
           "year": "2025",
           "contest_slug": "hmmt-feb-algebra-number-theory",
@@ -7223,6 +7273,16 @@
       "aliases": [],
       "records": [
         {
+          "contest": "IMO",
+          "year": "2024",
+          "contest_slug": "imo",
+          "student_name": "Jordan Lefkowitz",
+          "us_rank": "6",
+          "international_rank": "76",
+          "total_score": "27",
+          "award": "Silver"
+        },
+        {
           "contest": "HMMT February — Geometry",
           "year": "2024",
           "contest_slug": "hmmt-feb-geometry",
@@ -7354,6 +7414,16 @@
       "name": "Andrew Lin",
       "aliases": [],
       "records": [
+        {
+          "contest": "IMO",
+          "year": "2025",
+          "contest_slug": "imo",
+          "student_name": "Andrew Lin",
+          "us_rank": "3",
+          "international_rank": "12",
+          "total_score": "36",
+          "award": "Gold"
+        },
         {
           "contest": "PUMaC — Combinatorics",
           "year": "2024",
@@ -7583,6 +7653,16 @@
       "aliases": [],
       "records": [
         {
+          "contest": "IMO",
+          "year": "2024",
+          "contest_slug": "imo",
+          "student_name": "Jessica Wan",
+          "us_rank": "2",
+          "international_rank": "5",
+          "total_score": "35",
+          "award": "Gold"
+        },
+        {
           "contest": "HMMT February — Geometry",
           "year": "2024",
           "contest_slug": "hmmt-feb-geometry",
@@ -7699,6 +7779,26 @@
       "name": "Qiao Zhang",
       "aliases": [],
       "records": [
+        {
+          "contest": "IMO",
+          "year": "2025",
+          "contest_slug": "imo",
+          "student_name": "Qiao Zhang",
+          "us_rank": "1",
+          "international_rank": "7",
+          "total_score": "39",
+          "award": "Gold"
+        },
+        {
+          "contest": "IMO",
+          "year": "2024",
+          "contest_slug": "imo",
+          "student_name": "Qiao Zhang",
+          "us_rank": "5",
+          "international_rank": "47",
+          "total_score": "29",
+          "award": "Gold"
+        },
         {
           "contest": "HMMT February — Geometry",
           "year": "2024",
@@ -8709,6 +8809,16 @@
       "aliases": [],
       "records": [
         {
+          "contest": "IMO",
+          "year": "2024",
+          "contest_slug": "imo",
+          "student_name": "Linus Tang",
+          "us_rank": "3",
+          "international_rank": "14",
+          "total_score": "32",
+          "award": "Gold"
+        },
+        {
           "contest": "HMMT February — Combinatorics",
           "year": "2024",
           "contest_slug": "hmmt-feb-combo",
@@ -9361,6 +9471,16 @@
       "aliases": [],
       "records": [
         {
+          "contest": "IMO",
+          "year": "2023",
+          "contest_slug": "imo",
+          "student_name": "Maximus Lu",
+          "us_rank": "6",
+          "international_rank": "71",
+          "total_score": "30",
+          "award": "Silver"
+        },
+        {
           "contest": "HMMT February — Combinatorics",
           "year": "2023",
           "contest_slug": "hmmt-feb-combo",
@@ -9395,6 +9515,16 @@
       "aliases": [],
       "records": [
         {
+          "contest": "IMO",
+          "year": "2023",
+          "contest_slug": "imo",
+          "student_name": "Eric Shen",
+          "us_rank": "4",
+          "international_rank": "12",
+          "total_score": "37",
+          "award": "Gold"
+        },
+        {
           "contest": "HMMT February — Geometry",
           "year": "2023",
           "contest_slug": "hmmt-feb-geometry",
@@ -9428,6 +9558,16 @@
           "algebra_score": "28.31",
           "geometry_score": "36.59",
           "combinatorics_score": "27.17"
+        },
+        {
+          "contest": "IMO",
+          "year": "2022",
+          "contest_slug": "imo",
+          "student_name": "Eric Shen",
+          "us_rank": "4",
+          "international_rank": "23",
+          "total_score": "36",
+          "award": "Gold"
         },
         {
           "contest": "HMMT February",
@@ -9520,6 +9660,16 @@
           "student_name": "Alex Zhao",
           "rank": "21",
           "score": "26.24"
+        },
+        {
+          "contest": "IMO",
+          "year": "2023",
+          "contest_slug": "imo",
+          "student_name": "Alex Zhao",
+          "us_rank": "5",
+          "international_rank": "28",
+          "total_score": "35",
+          "award": "Gold"
         },
         {
           "contest": "HMMT February — Geometry",
@@ -9817,6 +9967,16 @@
       "name": "Huaye Lin",
       "aliases": [],
       "records": [
+        {
+          "contest": "IMO",
+          "year": "2023",
+          "contest_slug": "imo",
+          "student_name": "Huaye Lin",
+          "us_rank": "3",
+          "international_rank": "12",
+          "total_score": "37",
+          "award": "Gold"
+        },
         {
           "contest": "HMMT February — Combinatorics",
           "year": "2023",
@@ -10243,6 +10403,16 @@
       "aliases": [],
       "records": [
         {
+          "contest": "IMO",
+          "year": "2023",
+          "contest_slug": "imo",
+          "student_name": "Derek Liu",
+          "us_rank": "1",
+          "international_rank": "1",
+          "total_score": "42",
+          "award": "Gold"
+        },
+        {
           "contest": "HMMT February — Geometry",
           "year": "2023",
           "contest_slug": "hmmt-feb-geometry",
@@ -10268,6 +10438,16 @@
           "algebra_score": "27.17",
           "geometry_score": "29.17",
           "combinatorics_score": "19.93"
+        },
+        {
+          "contest": "IMO",
+          "year": "2022",
+          "contest_slug": "imo",
+          "student_name": "Derek Liu",
+          "us_rank": "1",
+          "international_rank": "12",
+          "total_score": "40",
+          "award": "Gold"
         },
         {
           "contest": "HMMT February",
@@ -10742,6 +10922,16 @@
       "aliases": [],
       "records": [
         {
+          "contest": "IMO",
+          "year": "2024",
+          "contest_slug": "imo",
+          "student_name": "Krishna Pothapragada",
+          "us_rank": "4",
+          "international_rank": "19",
+          "total_score": "31",
+          "award": "Gold"
+        },
+        {
           "contest": "HMMT February — Algebra & Number Theory",
           "year": "2024",
           "contest_slug": "hmmt-feb-algebra-number-theory",
@@ -10843,6 +11033,16 @@
       "name": "Luke Robitaille",
       "aliases": [],
       "records": [
+        {
+          "contest": "IMO",
+          "year": "2022",
+          "contest_slug": "imo",
+          "student_name": "Luke Robitaille",
+          "us_rank": "2",
+          "international_rank": "19",
+          "total_score": "37",
+          "award": "Gold"
+        },
         {
           "contest": "HMMT February",
           "year": "2022",
@@ -10959,6 +11159,16 @@
       "name": "Andrew Gu",
       "aliases": [],
       "records": [
+        {
+          "contest": "IMO",
+          "year": "2022",
+          "contest_slug": "imo",
+          "student_name": "Andrew Gu",
+          "us_rank": "5",
+          "international_rank": "45",
+          "total_score": "33",
+          "award": "Silver"
+        },
         {
           "contest": "HMMT February",
           "year": "2022",
@@ -14421,6 +14631,16 @@
       "name": "Karn Chutinan",
       "aliases": [],
       "records": [
+        {
+          "contest": "IMO",
+          "year": "2025",
+          "contest_slug": "imo",
+          "student_name": "Karn Chutinan",
+          "us_rank": "5",
+          "international_rank": "27",
+          "total_score": "35",
+          "award": "Gold"
+        },
         {
           "contest": "HMMT February — Geometry",
           "year": "2025",
@@ -27225,6 +27445,40 @@
           "score": "32.59"
         }
       ]
+    },
+    {
+      "id": 884,
+      "name": "Kevin Cong",
+      "aliases": [],
+      "records": [
+        {
+          "contest": "IMO",
+          "year": "2022",
+          "contest_slug": "imo",
+          "student_name": "Kevin Cong",
+          "us_rank": "3",
+          "international_rank": "23",
+          "total_score": "36",
+          "award": "Gold"
+        }
+      ]
+    },
+    {
+      "id": 885,
+      "name": "Ram Goel",
+      "aliases": [],
+      "records": [
+        {
+          "contest": "IMO",
+          "year": "2022",
+          "contest_slug": "imo",
+          "student_name": "Ram Goel",
+          "us_rank": "6",
+          "international_rank": "230",
+          "total_score": "25",
+          "award": "Bronze"
+        }
+      ]
     }
   ],
   "contests": {
@@ -27302,6 +27556,11 @@
       "contest_name": "CMIMC - Geometry",
       "description": "Geometry subject test at CMIMC.",
       "website": "https://cmimc.math.cmu.edu/math"
+    },
+    "imo": {
+      "contest_name": "IMO",
+      "description": "International Mathematical Olympiad. Official results by country and year.",
+      "website": "https://www.imo-official.org/"
     }
   },
   "contest_year_files": {
@@ -27349,6 +27608,12 @@
       "2024": "results.csv",
       "2025": "results.csv",
       "2026": "results.csv"
+    },
+    "imo": {
+      "2022": "results.csv",
+      "2023": "results.csv",
+      "2024": "results.csv",
+      "2025": "results.csv"
     },
     "mathcounts-national": {
       "2021": "competitors.csv",
