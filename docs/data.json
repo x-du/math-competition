@@ -12694,7 +12694,9 @@
     {
       "id": 229,
       "name": "Alexander Sun",
-      "aliases": [],
+      "aliases": [
+        "Alex Sun"
+      ],
       "records": [
         {
           "contest": "HMMT February — Geometry",
@@ -12716,6 +12718,31 @@
           "p2": "1",
           "p3": "1",
           "p4": "1",
+          "p5": "0",
+          "p6": "0",
+          "p7": "0",
+          "p8": "0"
+        },
+        {
+          "contest": "CMIMC - Algebra and Number Theory",
+          "year": "2025",
+          "contest_slug": "cmimc-algebra",
+          "student_name": "Alex Sun",
+          "rank": "9",
+          "score": "25.38"
+        },
+        {
+          "contest": "PUMaC — Number Theory",
+          "year": "2024",
+          "contest_slug": "pumac-number-theory",
+          "student_name": "Alex Sun",
+          "division": "A",
+          "rank": "28",
+          "score": "5.812",
+          "p1": "1",
+          "p2": "1",
+          "p3": "1",
+          "p4": "0",
           "p5": "0",
           "p6": "0",
           "p7": "0",
@@ -12744,6 +12771,15 @@
           "student_name": "Alexander Sun",
           "rank": "10",
           "total_score": "77.31"
+        },
+        {
+          "contest": "MATHCOUNTS National — Rankings",
+          "year": "2023",
+          "contest_slug": "mathcounts-national-rank",
+          "student_name": "Alex Sun",
+          "state": "Texas",
+          "rank": "C",
+          "grade": "8"
         }
       ]
     },
@@ -16100,47 +16136,6 @@
       ]
     },
     {
-      "id": 316,
-      "name": "Alex Sun",
-      "aliases": [],
-      "records": [
-        {
-          "contest": "CMIMC - Algebra and Number Theory",
-          "year": "2025",
-          "contest_slug": "cmimc-algebra",
-          "student_name": "Alex Sun",
-          "rank": "9",
-          "score": "25.38"
-        },
-        {
-          "contest": "PUMaC — Number Theory",
-          "year": "2024",
-          "contest_slug": "pumac-number-theory",
-          "student_name": "Alex Sun",
-          "division": "A",
-          "rank": "28",
-          "score": "5.812",
-          "p1": "1",
-          "p2": "1",
-          "p3": "1",
-          "p4": "0",
-          "p5": "0",
-          "p6": "0",
-          "p7": "0",
-          "p8": "0"
-        },
-        {
-          "contest": "MATHCOUNTS National — Rankings",
-          "year": "2023",
-          "contest_slug": "mathcounts-national-rank",
-          "student_name": "Alex Sun",
-          "state": "Texas",
-          "rank": "C",
-          "grade": "8"
-        }
-      ]
-    },
-    {
       "id": 317,
       "name": "Michael Aram",
       "aliases": [],
@@ -19453,6 +19448,16 @@
           "grade": "8",
           "city": "San Ramon",
           "school": "Windemere Ranch Middle School"
+        },
+        {
+          "contest": "MATHCOUNTS National",
+          "year": "2021",
+          "contest_slug": "mathcounts-national",
+          "state": "Utah",
+          "student_name": "David Zhang",
+          "grade": "8",
+          "city": "Salt Lake City",
+          "school": "West High School"
         }
       ]
     },
@@ -20363,6 +20368,16 @@
           "state": "Indiana",
           "rank": "38",
           "grade": "6"
+        },
+        {
+          "contest": "MATHCOUNTS National",
+          "year": "2021",
+          "contest_slug": "mathcounts-national",
+          "state": "Indiana",
+          "student_name": "Om Patel",
+          "grade": "8",
+          "city": "West Lafayette",
+          "school": "Battle Ground Middle School"
         }
       ]
     },
@@ -21983,6 +21998,16 @@
           "grade": "8",
           "city": "State College",
           "school": "Mount Nittany Middle School"
+        },
+        {
+          "contest": "MATHCOUNTS National",
+          "year": "2021",
+          "contest_slug": "mathcounts-national",
+          "state": "Pennsylvania",
+          "student_name": "Aidan Le",
+          "grade": "7",
+          "city": "State College Park",
+          "school": "Forest Middle School"
         }
       ]
     },
