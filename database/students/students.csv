@@ -4,7 +4,7 @@ student_id,student_name,team_ids,alias
 3,Oron Wang,3|48|83|113,
 4,Liam Reddy,4|58,
 5,Tianyi Li,5,
-6,Jefferson Tiger Zhou,6,
+6,Jefferson Tiger Zhou,6|191,Jefferson Zhou
 7,Benjamin Fu,7|89,
 8,Vincent Wang,8|86,
 9,Jonathan Du,9,
@@ -766,7 +766,6 @@ student_id,student_name,team_ids,alias
 793,Christopher Cheng,189,
 794,Zizhan Wang,177,
 795,Eric Gao,176,
-796,Jefferson Zhou,191,
 797,Bowen Shan,168,
 798,Samuel Ding,204,
 799,Kesav Kalanidhi,200,

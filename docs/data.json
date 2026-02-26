@@ -834,7 +834,9 @@
     {
       "id": 6,
       "name": "Jefferson Tiger Zhou",
-      "aliases": [],
+      "aliases": [
+        "Jefferson Zhou"
+      ],
       "records": [
         {
           "contest": "HMMT February — Geometry",
@@ -870,6 +872,24 @@
           "algebra_score": "32.67",
           "geometry_score": "30.59",
           "combinatorics_score": "25.17"
+        },
+        {
+          "contest": "MATHCOUNTS National — Rankings",
+          "year": "2024",
+          "contest_slug": "mathcounts-national-rank",
+          "student_name": "Jefferson Zhou",
+          "state": "Minnesota",
+          "rank": "21",
+          "grade": "8"
+        },
+        {
+          "contest": "MATHCOUNTS National — Rankings",
+          "year": "2023",
+          "contest_slug": "mathcounts-national-rank",
+          "student_name": "Jefferson Zhou",
+          "state": "Minnesota",
+          "rank": "31",
+          "grade": "7"
         }
       ]
     },
@@ -25912,31 +25932,6 @@
           "state": "Florida",
           "rank": "30",
           "grade": "8"
-        }
-      ]
-    },
-    {
-      "id": 796,
-      "name": "Jefferson Zhou",
-      "aliases": [],
-      "records": [
-        {
-          "contest": "MATHCOUNTS National — Rankings",
-          "year": "2024",
-          "contest_slug": "mathcounts-national-rank",
-          "student_name": "Jefferson Zhou",
-          "state": "Minnesota",
-          "rank": "21",
-          "grade": "8"
-        },
-        {
-          "contest": "MATHCOUNTS National — Rankings",
-          "year": "2023",
-          "contest_slug": "mathcounts-national-rank",
-          "student_name": "Jefferson Zhou",
-          "state": "Minnesota",
-          "rank": "31",
-          "grade": "7"
         }
       ]
     },
