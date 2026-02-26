@@ -20,7 +20,7 @@ OUTPUT_JSON = REPO_ROOT / "docs" / "data.json"
 def humanize_contest(slug: str) -> str:
     """Turn contest slug into title, e.g. hmmt-feb-geometry -> HMMT Feb Geometry."""
     parts = slug.split("-")
-    known_acronyms = {"hmmt", "pumac", "arml", "amc", "aime", "usamo"}
+    known_acronyms = {"hmmt", "pumac", "arml", "amc", "aime", "usamo", "mathcounts"}
     out = []
     for p in parts:
         if p.lower() in known_acronyms:
@@ -70,7 +70,8 @@ def load_students() -> dict:
 
 
 def collect_result_files() -> list:
-    """Return list of (contest_slug, year, path) for every result/competitors CSV."""
+    """Return list of (contest_slug, year, path) for every result/competitors CSV.
+    Includes all contest dirs (e.g. mathcounts-national-rank, hmmt-feb, pumac, etc.)."""
     out = []
     for contest_dir in sorted(CONTESTS_DIR.iterdir()):
         if not contest_dir.is_dir():
@@ -91,7 +92,8 @@ def main() -> None:
     records_by_id = {}
 
     for slug, year, csv_path in collect_result_files():
-        contest_title = humanize_contest(slug)
+        contest_info = contests.get(slug, {})
+        contest_title = (contest_info.get("contest_name") or "").strip() or humanize_contest(slug)
         with open(csv_path, newline="", encoding="utf-8") as f:
             reader = csv.DictReader(f)
             rows = list(reader)
