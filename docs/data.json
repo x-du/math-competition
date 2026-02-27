@@ -11741,14 +11741,6 @@
       "state": "Illinois",
       "records": [
         {
-          "contest": "USAJMO",
-          "year": "2024",
-          "contest_slug": "jmo",
-          "student_name": "Jeffrey Chen",
-          "state": "British Columbia, Canada",
-          "award": "Honorable Mention"
-        },
-        {
           "contest": "USAMO",
           "year": "2023",
           "contest_slug": "amo",
@@ -35158,6 +35150,22 @@
           "ind_score": "8",
           "tb_corr": "2",
           "tb_time": "189"
+        }
+      ]
+    },
+    {
+      "id": 1295,
+      "name": "Jeffrey Chen",
+      "aliases": [],
+      "state": "British Columbia",
+      "records": [
+        {
+          "contest": "USAJMO",
+          "year": "2024",
+          "contest_slug": "jmo",
+          "student_name": "Jeffrey Chen",
+          "state": "British Columbia, Canada",
+          "award": "Honorable Mention"
         }
       ]
     }
