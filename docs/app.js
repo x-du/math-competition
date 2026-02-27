@@ -246,7 +246,7 @@
       return nameA.localeCompare(nameB);
     });
 
-    var top = counts.slice(0, 50);
+    var top = counts.slice(0, 100);
     var items = [];
     for (var i = 0; i < top.length; i++) {
       var entry = top[i];
