@@ -27705,22 +27705,6 @@
       ]
     },
     {
-      "id": 880,
-      "name": "Aiden Feyerhern",
-      "aliases": [],
-      "state": "",
-      "records": [
-        {
-          "contest": "CMIMC - Geometry",
-          "year": "2023",
-          "contest_slug": "cmimc-geometry",
-          "student_name": "Aiden Feyerhern",
-          "rank": "6",
-          "score": "35.81"
-        }
-      ]
-    },
-    {
       "id": 881,
       "name": "Yichen Cedric Xiao",
       "aliases": [],
@@ -33955,6 +33939,14 @@
           "student_name": "Aiden Feyerherm",
           "state": "Virginia",
           "award": "Honorable Mention"
+        },
+        {
+          "contest": "CMIMC - Geometry",
+          "year": "2023",
+          "contest_slug": "cmimc-geometry",
+          "student_name": "Aiden Feyerherm",
+          "rank": "6",
+          "score": "35.81"
         },
         {
           "contest": "USAJMO",
