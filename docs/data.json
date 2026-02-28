@@ -2824,6 +2824,14 @@
           "combinatorics_score": "33.86"
         },
         {
+          "contest": "CMM",
+          "year": "2025",
+          "contest_slug": "cmm",
+          "student_name": "David Fox",
+          "state": "California",
+          "rank": "8"
+        },
+        {
           "contest": "USAJMO",
           "year": "2024",
           "contest_slug": "jmo",
@@ -3494,6 +3502,14 @@
           "student_name": "Rohan Nayak Mallick",
           "rank": "47",
           "score": "20.95"
+        },
+        {
+          "contest": "CMM",
+          "year": "2025",
+          "contest_slug": "cmm",
+          "student_name": "Rohan Nayak Mallick",
+          "state": "California",
+          "rank": "4"
         },
         {
           "contest": "MATHCOUNTS National — Rankings",
@@ -6109,6 +6125,14 @@
           "algebra_score": "34.8",
           "geometry_score": "29.59",
           "combinatorics_score": "22.19"
+        },
+        {
+          "contest": "CMM",
+          "year": "2025",
+          "contest_slug": "cmm",
+          "student_name": "Zongshu Wu",
+          "state": "California",
+          "rank": "5"
         },
         {
           "contest": "USAMO",
@@ -9490,7 +9514,9 @@
     {
       "id": 96,
       "name": "Qiao Zhang",
-      "aliases": [],
+      "aliases": [
+        "Tiger Zhang"
+      ],
       "state": "California",
       "records": [
         {
@@ -9510,6 +9536,14 @@
           "international_rank": "7",
           "total_score": "39",
           "award": "Gold"
+        },
+        {
+          "contest": "CMM",
+          "year": "2025",
+          "contest_slug": "cmm",
+          "student_name": "Tiger Zhang",
+          "state": "California",
+          "rank": "2"
         },
         {
           "contest": "USAMO",
@@ -9555,6 +9589,14 @@
           "algebra_score": "19.82",
           "geometry_score": "32.59",
           "combinatorics_score": "18.89"
+        },
+        {
+          "contest": "CMM",
+          "year": "2024",
+          "contest_slug": "cmm",
+          "student_name": "Qiao Zhang",
+          "state": "California",
+          "rank": "1"
         },
         {
           "contest": "USAMO",
@@ -9821,6 +9863,14 @@
           "award": "Gold"
         },
         {
+          "contest": "CMM",
+          "year": "2025",
+          "contest_slug": "cmm",
+          "student_name": "Rohan Bodke",
+          "state": "California",
+          "rank": "1"
+        },
+        {
           "contest": "CMIMC - Geometry",
           "year": "2025",
           "contest_slug": "cmimc-geometry",
@@ -9866,6 +9916,14 @@
           "algebra_score": "39.08",
           "geometry_score": "19.82",
           "combinatorics_score": "11.62"
+        },
+        {
+          "contest": "CMM",
+          "year": "2024",
+          "contest_slug": "cmm",
+          "student_name": "Rohan Bodke",
+          "state": "California",
+          "rank": "10"
         },
         {
           "contest": "USAMO",
@@ -10487,6 +10545,14 @@
           "award": "Gold"
         },
         {
+          "contest": "CMM",
+          "year": "2025",
+          "contest_slug": "cmm",
+          "student_name": "Feodor Yevtushenko",
+          "state": "California",
+          "rank": "6"
+        },
+        {
           "contest": "USAMO",
           "year": "2024",
           "contest_slug": "amo",
@@ -10787,6 +10853,14 @@
           "combinatorics_score": "18.89"
         },
         {
+          "contest": "CMM",
+          "year": "2024",
+          "contest_slug": "cmm",
+          "student_name": "Advaith Avadhanam",
+          "state": "California",
+          "rank": "2"
+        },
+        {
           "contest": "USAMO",
           "year": "2023",
           "contest_slug": "amo",
@@ -10873,6 +10947,14 @@
           "algebra_score": "10.38",
           "geometry_score": "19.82",
           "combinatorics_score": "28.54"
+        },
+        {
+          "contest": "CMM",
+          "year": "2024",
+          "contest_slug": "cmm",
+          "student_name": "Linus Tang",
+          "state": "Nevada",
+          "rank": "9"
         },
         {
           "contest": "USAMO",
@@ -20780,6 +20862,14 @@
           "score": "24.16"
         },
         {
+          "contest": "CMM",
+          "year": "2025",
+          "contest_slug": "cmm",
+          "student_name": "Ritwin Narra",
+          "state": "California",
+          "rank": "3"
+        },
+        {
           "contest": "USAMO",
           "year": "2024",
           "contest_slug": "amo",
@@ -21674,6 +21764,14 @@
           "award": "Honorable Mention"
         },
         {
+          "contest": "CMM",
+          "year": "2024",
+          "contest_slug": "cmm",
+          "student_name": "Harish Loghashankar",
+          "state": "California",
+          "rank": "8"
+        },
+        {
           "contest": "MATHCOUNTS National — Rankings",
           "year": "2023",
           "contest_slug": "mathcounts-national-rank",
@@ -22501,6 +22599,14 @@
           "score": "22.12"
         },
         {
+          "contest": "CMM",
+          "year": "2024",
+          "contest_slug": "cmm",
+          "student_name": "Neal Yan",
+          "state": "California",
+          "rank": "4"
+        },
+        {
           "contest": "CMIMC - Geometry",
           "year": "2024",
           "contest_slug": "cmimc-geometry",
@@ -22645,6 +22751,14 @@
           "student_name": "Christopher Bao",
           "state": "Nevada",
           "award": "Gold"
+        },
+        {
+          "contest": "CMM",
+          "year": "2025",
+          "contest_slug": "cmm",
+          "student_name": "Christopher Bao",
+          "state": "Nevada",
+          "rank": "9"
         },
         {
           "contest": "ARML",
@@ -24445,6 +24559,14 @@
           "student_name": "David Zhang",
           "state": "California",
           "award": "Bronze"
+        },
+        {
+          "contest": "CMM",
+          "year": "2025",
+          "contest_slug": "cmm",
+          "student_name": "David Zhang(CA)",
+          "state": "Washington",
+          "rank": "10"
         },
         {
           "contest": "CMIMC - Geometry",
@@ -28260,6 +28382,14 @@
           "award": "Gold"
         },
         {
+          "contest": "CMM",
+          "year": "2025",
+          "contest_slug": "cmm",
+          "student_name": "Shihan Kanungo",
+          "state": "California",
+          "rank": "7"
+        },
+        {
           "contest": "IMO",
           "year": "2022",
           "contest_slug": "imo",
@@ -30045,6 +30175,14 @@
           "student_name": "Eddy Li",
           "state": "California",
           "award": "Honorable Mention"
+        },
+        {
+          "contest": "CMM",
+          "year": "2024",
+          "contest_slug": "cmm",
+          "student_name": "Eddy Li",
+          "state": "California",
+          "rank": "5"
         },
         {
           "contest": "USAJMO",
@@ -34147,6 +34285,13 @@
       "state": "",
       "records": [
         {
+          "contest": "CMM",
+          "year": "2024",
+          "contest_slug": "cmm",
+          "student_name": "Brian Bi",
+          "rank": "6"
+        },
+        {
           "contest": "USAJMO",
           "year": "2022",
           "contest_slug": "jmo",
@@ -34888,6 +35033,14 @@
       "aliases": [],
       "state": "California",
       "records": [
+        {
+          "contest": "CMM",
+          "year": "2024",
+          "contest_slug": "cmm",
+          "student_name": "Jerry Guo",
+          "state": "California",
+          "rank": "3"
+        },
         {
           "contest": "USAJMO",
           "year": "2023",
@@ -36495,6 +36648,22 @@
           "q10": "0"
         }
       ]
+    },
+    {
+      "id": 1326,
+      "name": "Yufei Chen",
+      "aliases": [],
+      "state": "California",
+      "records": [
+        {
+          "contest": "CMM",
+          "year": "2024",
+          "contest_slug": "cmm",
+          "student_name": "Yufei Chen",
+          "state": "California",
+          "rank": "7"
+        }
+      ]
     }
   ],
   "contests": {
@@ -36592,6 +36761,11 @@
       "contest_name": "DMM",
       "description": "Duke Math Meet - Annual mathematics competition hosted by Duke University. Individual and team rounds.",
       "website": "https://dukemathmeet.org/"
+    },
+    "cmm": {
+      "contest_name": "CMM",
+      "description": "Caltech Math Meet - Annual mathematics competition hosted by Caltech. Individual rankings.",
+      "website": "https://www.caltechmathmeet.org/"
     }
   },
   "contest_year_files": {
@@ -36622,6 +36796,10 @@
     },
     "cmimc-geometry": {
       "2023": "results.csv",
+      "2024": "results.csv",
+      "2025": "results.csv"
+    },
+    "cmm": {
       "2024": "results.csv",
       "2025": "results.csv"
     },
@@ -36713,6 +36891,7 @@
     "cmimc-comb",
     "cmimc-geometry",
     "arml",
-    "dmm"
+    "dmm",
+    "cmm"
   ]
 }

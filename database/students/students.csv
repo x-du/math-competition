@@ -88,7 +88,7 @@ student_id,student_name,state,team_ids,alias
 92,Marvin Mao,New Jersey,45,
 93,Jessica Wan,Florida,19,
 95,Razzi H. Masroor,Michigan,46|75,Razzi Masroor
-96,Qiao Zhang,California,47,
+96,Qiao Zhang,California,47,Tiger Zhang
 97,Eric Wang,New Jersey,14|120,
 98,Elliott Liu,California,2,
 99,Rohan Bodke,California,9,
@@ -1276,3 +1276,4 @@ student_id,student_name,state,team_ids,alias
 1323,Ryan Chan,,,
 1324,Ishidevesh Behera,,,
 1325,Atharv Mittal,,,
+1326,Yufei Chen,California,,
