@@ -29085,18 +29085,6 @@
           "state": "Indiana",
           "rank": "52",
           "grade": "8"
-        },
-        {
-          "contest": "MPFG",
-          "year": "2022",
-          "contest_slug": "mpfg",
-          "student_name": "Sophia Chen",
-          "state": "California",
-          "grade": "11th",
-          "school": "Sage Hill School",
-          "place": "15",
-          "score": "9",
-          "prize": "$300"
         }
       ]
     },
@@ -40394,6 +40382,26 @@
           "place": "52",
           "score": "8",
           "prize": "one point shy of Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 1410,
+      "name": "Sophia Chen",
+      "aliases": [],
+      "state": "California",
+      "records": [
+        {
+          "contest": "MPFG",
+          "year": "2022",
+          "contest_slug": "mpfg",
+          "student_name": "Sophia Chen",
+          "state": "California",
+          "grade": "11th",
+          "school": "Sage Hill School",
+          "place": "15",
+          "score": "9",
+          "prize": "$300"
         }
       ]
     }
