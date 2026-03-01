@@ -512,10 +512,14 @@
       if (!name || !searchEl) return;
       searchEl.value = name;
       runSearch();
-      searchEl.focus();
+      searchEl.blur();
       if (typeof searchEl.setSelectionRange === "function") {
         var len = name.length;
         searchEl.setSelectionRange(len, len);
+      }
+      var firstCard = resultsEl.querySelector(".student-card");
+      if (firstCard && typeof firstCard.scrollIntoView === "function") {
+        firstCard.scrollIntoView({ behavior: "smooth", block: "start" });
       }
     });
   }
@@ -531,12 +535,28 @@
       if (!name || !searchEl) return;
       searchEl.value = name;
       runSearch();
-      searchEl.focus();
+      searchEl.blur();
       if (typeof searchEl.setSelectionRange === "function") {
         var len = name.length;
         searchEl.setSelectionRange(len, len);
       }
+      var firstCard = resultsEl && resultsEl.querySelector(".student-card");
+      if (firstCard && typeof firstCard.scrollIntoView === "function") {
+        firstCard.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
     });
+  }
+
+  // Dismiss keyboard on mobile when tapping outside the search box
+  if (searchEl) {
+    var searchWrap = document.querySelector(".search-wrap");
+    function dismissKeyboardIfOutside(ev) {
+      if (!searchEl) return;
+      if (searchWrap && searchWrap.contains(ev.target)) return;
+      searchEl.blur();
+    }
+    document.addEventListener("click", dismissKeyboardIfOutside, false);
+    document.addEventListener("touchend", dismissKeyboardIfOutside, false);
   }
 
   if (document.readyState === "loading") {
