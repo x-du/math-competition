@@ -5,9 +5,9 @@ student_id,student_name,state,year,rank,grade
 522,Edward Chen,Indiana,2023,S (Semi-finalist),8
 4,Liam Reddy,Nevada,2023,Q (Quarter-finalist),8
 319,Seabert Mao,California,2023,Q (Quarter-finalist),8
-48,Varun Gadi,Georgia,2023,Q (Quarter-finalist),7
+48,Varun Gadi,Georgia,2023,Q (Quarter-finalist),8
 65,Selena Ge,Massachusetts,2023,Q (Quarter-finalist),7
-33,Roger Zhen,Texas,2023,C (9-12),8
+33,Roger Zhen,Texas,2023,C (9-12),7
 242,Adam Ge,Massachusetts,2023,C (9-12),8
 229,Alex Sun,Texas,2023,C (9-12),8
 343,Jason Lee,North Carolina,2023,C (9-12),7
@@ -43,15 +43,15 @@ student_id,student_name,state,year,rank,grade
 284,Alex Liu,Virginia,2023,42,7
 804,Leon Xie,Iowa,2023,43,8
 389,Keshav Karumbunathan,Oregon,2023,44,7
-246,Vincent Pirozzo,Michigan,2023,45,8
-694,Christopher Sakaliyski,Illinois,2023,46,8
-805,Shining Sun,New Jersey,2023,47,7
+246,Vincent Pirozzo,Michigan,2023,45,7
+694,Christopher Sakaliyski,Illinois,2023,46,7
+805,Shining Sun,New Jersey,2023,47,8
 806,Simon Deng,Ohio,2023,48,8
 252,Arnav Iyengar,District of Columbia,2023,49,8
-485,Joshua Liu,Colorado,2023,50,8
+485,Joshua Liu,Colorado,2023,50,7
 807,Jonah Wang,Colorado,2023,51,8
 365,Harish Loghashankar,California,2023,52,8
-82,Edward Li,Washington,2023,53,8
+1446,Edward Li,Washington,2023,53,8
 30,Eric Dai,New Jersey,2023,54,8
-320,Jeremy Yang,Maryland,2023,55,7
+320,Jeremy Yang,Maryland,2023,55,8
 808,Miguel Shim,South Carolina,2023,56,8

@@ -17,6 +17,12 @@ python scripts/build_search_data.py
 
 This writes `docs/data.json` from the `database/` CSVs.
 
+To validate MATHCOUNTS National — Rankings (≤3 appearances, all grades distinct):
+
+```bash
+python scripts/check_mathcounts_national_students.py
+```
+
 ### Run locally
 
 Serve the `docs` folder (e.g. `python -m http.server 8000 --directory docs` or any static server). Open the site and use the search box.

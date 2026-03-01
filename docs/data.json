@@ -2245,7 +2245,7 @@
           "student_name": "Alan Cheng",
           "state": "North Carolina",
           "rank": "53",
-          "grade": "6"
+          "grade": "7"
         }
       ]
     },
@@ -2553,7 +2553,7 @@
           "student_name": "Nathan Liu",
           "state": "Texas",
           "rank": "24",
-          "grade": "8"
+          "grade": "7"
         },
         {
           "contest": "PUMaC — Combinatorics",
@@ -4355,7 +4355,7 @@
           "student_name": "Roger Zhen",
           "state": "Texas",
           "rank": "C (9-12)",
-          "grade": "8"
+          "grade": "7"
         },
         {
           "contest": "MATHCOUNTS National — Rankings",
@@ -6033,7 +6033,7 @@
           "student_name": "Ray Zhao",
           "state": "Texas",
           "rank": "48",
-          "grade": "8"
+          "grade": "7"
         }
       ]
     },
@@ -6201,7 +6201,7 @@
           "student_name": "Varun Gadi",
           "state": "Georgia",
           "rank": "Q (Quarter-finalist)",
-          "grade": "7"
+          "grade": "8"
         },
         {
           "contest": "MATHCOUNTS National — Rankings",
@@ -7309,7 +7309,7 @@
           "student_name": "Henry Jiang",
           "state": "Michigan",
           "rank": "13",
-          "grade": "7"
+          "grade": "8"
         }
       ]
     },
@@ -8020,7 +8020,7 @@
           "student_name": "Alexander Gu",
           "state": "Virginia",
           "rank": "42",
-          "grade": "7"
+          "grade": "8"
         }
       ]
     },
@@ -8825,7 +8825,7 @@
           "student_name": "Lerchen Zhong",
           "state": "Texas",
           "rank": "14",
-          "grade": "8"
+          "grade": "7"
         }
       ]
     },
@@ -9111,15 +9111,6 @@
           "student_name": "Edward Li",
           "state": "Iowa",
           "award": "Silver"
-        },
-        {
-          "contest": "MATHCOUNTS National — Rankings",
-          "year": "2023",
-          "contest_slug": "mathcounts-national-rank",
-          "student_name": "Edward Li",
-          "state": "Washington",
-          "rank": "53",
-          "grade": "8"
         },
         {
           "contest": "MATHCOUNTS National — Rankings",
@@ -10247,7 +10238,7 @@
           "student_name": "Andrew Lin",
           "state": "New Jersey",
           "rank": "21",
-          "grade": "7"
+          "grade": "8"
         }
       ]
     },
@@ -19744,7 +19735,7 @@
           "student_name": "Vincent Pirozzo",
           "state": "Michigan",
           "rank": "45",
-          "grade": "8"
+          "grade": "7"
         }
       ]
     },
@@ -21387,7 +21378,7 @@
           "student_name": "Catherine Xu",
           "state": "Iowa",
           "rank": "33",
-          "grade": "8"
+          "grade": "7"
         }
       ]
     },
@@ -21782,7 +21773,7 @@
           "student_name": "Aaron Le",
           "state": "Pennsylvania",
           "rank": "20",
-          "grade": "8"
+          "grade": "7"
         }
       ]
     },
@@ -23793,7 +23784,7 @@
           "student_name": "Jeremy Yang",
           "state": "Maryland",
           "rank": "55",
-          "grade": "7"
+          "grade": "8"
         },
         {
           "contest": "MATHCOUNTS National — Rankings",
@@ -24712,7 +24703,7 @@
           "student_name": "Jason Lee",
           "state": "North Carolina",
           "rank": "44",
-          "grade": "7"
+          "grade": "8"
         },
         {
           "contest": "USAJMO",
@@ -25450,7 +25441,7 @@
           "student_name": "Victor Chen",
           "state": "Illinois",
           "rank": "51",
-          "grade": "8"
+          "grade": "7"
         }
       ]
     },
@@ -26612,7 +26603,7 @@
           "student_name": "Guanjie Lu",
           "state": "Texas",
           "rank": "41",
-          "grade": "8"
+          "grade": "6"
         }
       ]
     },
@@ -27549,7 +27540,7 @@
           "student_name": "Aiden Wen",
           "state": "Texas",
           "rank": "40",
-          "grade": "8"
+          "grade": "7"
         }
       ]
     },
@@ -28861,7 +28852,7 @@
           "student_name": "Benjamin Jeter",
           "state": "Arizona",
           "rank": "19",
-          "grade": "7"
+          "grade": "8"
         }
       ]
     },
@@ -29048,7 +29039,7 @@
           "student_name": "Lawson Wang",
           "state": "California",
           "rank": "11",
-          "grade": "8"
+          "grade": "7"
         }
       ]
     },
@@ -29066,7 +29057,7 @@
           "student_name": "Abhinav Krishna",
           "state": "Colorado",
           "rank": "37",
-          "grade": "7"
+          "grade": "8"
         }
       ]
     },
@@ -29108,7 +29099,7 @@
           "student_name": "Joshua Liu",
           "state": "Colorado",
           "rank": "50",
-          "grade": "8"
+          "grade": "7"
         }
       ]
     },
@@ -29158,7 +29149,7 @@
           "student_name": "Kyle Zhang",
           "state": "Connecticut",
           "rank": "10",
-          "grade": "7"
+          "grade": "8"
         }
       ]
     },
@@ -29249,7 +29240,7 @@
           "student_name": "Samanyu Ganesh",
           "state": "Georgia",
           "rank": "43",
-          "grade": "8"
+          "grade": "7"
         }
       ]
     },
@@ -29492,7 +29483,7 @@
           "student_name": "Om Patel",
           "state": "Indiana",
           "rank": "38",
-          "grade": "6"
+          "grade": "8"
         }
       ]
     },
@@ -29664,7 +29655,7 @@
           "student_name": "Michael Lu",
           "state": "Michigan",
           "rank": "30",
-          "grade": "6"
+          "grade": "8"
         }
       ]
     },
@@ -30060,7 +30051,7 @@
           "student_name": "Anthony Zou",
           "state": "South Carolina",
           "rank": "49",
-          "grade": "7"
+          "grade": "6"
         }
       ]
     },
@@ -30103,7 +30094,7 @@
           "student_name": "Sebastian Chase",
           "state": "State Department",
           "rank": "24",
-          "grade": "8"
+          "grade": "7"
         }
       ]
     },
@@ -30416,7 +30407,7 @@
           "student_name": "Kartik Ramachandrula",
           "state": "Wisconsin",
           "rank": "50",
-          "grade": "6"
+          "grade": "8"
         }
       ]
     },
@@ -30667,7 +30658,7 @@
           "student_name": "William Wu",
           "state": "Illinois",
           "rank": "55",
-          "grade": "8"
+          "grade": "6"
         }
       ]
     },
@@ -30780,7 +30771,7 @@
           "student_name": "Christopher Sakaliyski",
           "state": "Illinois",
           "rank": "46",
-          "grade": "8"
+          "grade": "7"
         }
       ]
     },
@@ -30953,7 +30944,7 @@
           "student_name": "Julian Kuang",
           "state": "Nevada",
           "rank": "25",
-          "grade": "7"
+          "grade": "8"
         },
         {
           "contest": "MATHCOUNTS National — Rankings",
@@ -31399,7 +31390,7 @@
           "student_name": "Bowen Shan",
           "state": "Arizona",
           "rank": "46",
-          "grade": "8"
+          "grade": "7"
         },
         {
           "contest": "MATHCOUNTS National — Rankings",
@@ -31545,7 +31536,7 @@
           "student_name": "Arush Krisp",
           "state": "Ohio",
           "rank": "31",
-          "grade": "7"
+          "grade": "8"
         },
         {
           "contest": "MATHCOUNTS National — Rankings",
@@ -31598,7 +31589,7 @@
           "student_name": "Shining Sun",
           "state": "New Jersey",
           "rank": "47",
-          "grade": "7"
+          "grade": "8"
         }
       ]
     },
@@ -31802,7 +31793,7 @@
           "student_name": "Rayoon Kim",
           "state": "Pennsylvania",
           "rank": "22",
-          "grade": "7"
+          "grade": "8"
         }
       ]
     },
@@ -31820,7 +31811,7 @@
           "student_name": "Puranjay Madupu",
           "state": "Arizona",
           "rank": "26",
-          "grade": "8"
+          "grade": "7"
         }
       ]
     },
@@ -31838,7 +31829,7 @@
           "student_name": "Vivek Kalyankar",
           "state": "Arkansas",
           "rank": "38",
-          "grade": "8"
+          "grade": "7"
         },
         {
           "contest": "MATHCOUNTS National — Rankings",
@@ -31847,7 +31838,7 @@
           "student_name": "Vivek Kalyankar",
           "state": "Arkansas",
           "rank": "27",
-          "grade": "8"
+          "grade": "6"
         }
       ]
     },
@@ -31909,7 +31900,7 @@
           "student_name": "Jonathan Wu",
           "state": "Utah",
           "rank": "30",
-          "grade": "8"
+          "grade": "7"
         }
       ]
     },
@@ -31927,7 +31918,7 @@
           "student_name": "William Shan",
           "state": "Arizona",
           "rank": "32",
-          "grade": "7"
+          "grade": "8"
         }
       ]
     },
@@ -31945,7 +31936,7 @@
           "student_name": "Anirudh Pulugurtha",
           "state": "New Hampshire",
           "rank": "33",
-          "grade": "7"
+          "grade": "8"
         }
       ]
     },
@@ -32051,7 +32042,7 @@
           "student_name": "Alex Yang",
           "state": "Washington",
           "rank": "39",
-          "grade": "8"
+          "grade": "7"
         }
       ]
     },
@@ -32105,7 +32096,7 @@
           "student_name": "Easton Wei",
           "state": "New Jersey",
           "rank": "41",
-          "grade": "8"
+          "grade": "7"
         }
       ]
     },
@@ -32123,7 +32114,7 @@
           "student_name": "Henry Wang",
           "state": "North Carolina",
           "rank": "42",
-          "grade": "8"
+          "grade": "7"
         },
         {
           "contest": "USAMO",
@@ -32256,7 +32247,7 @@
           "student_name": "Henry Lu",
           "state": "Ohio",
           "rank": "52",
-          "grade": "8"
+          "grade": "7"
         }
       ]
     },
@@ -32741,7 +32732,7 @@
           "student_name": "Jiyan Singh",
           "state": "Wisconsin",
           "rank": "37",
-          "grade": "8"
+          "grade": "7"
         }
       ]
     },
@@ -32759,7 +32750,7 @@
           "student_name": "Ian Shan",
           "state": "Arizona",
           "rank": "41",
-          "grade": "8"
+          "grade": "6"
         }
       ]
     },
@@ -32777,7 +32768,7 @@
           "student_name": "Jay Wang",
           "state": "New Jersey",
           "rank": "42",
-          "grade": "8"
+          "grade": "7"
         }
       ]
     },
@@ -32821,7 +32812,7 @@
           "student_name": "Derrick Chen",
           "state": "New York",
           "rank": "44",
-          "grade": "8"
+          "grade": "7"
         }
       ]
     },
@@ -32949,7 +32940,7 @@
           "student_name": "Leo Shen",
           "state": "Utah",
           "rank": "50",
-          "grade": "8"
+          "grade": "6"
         }
       ]
     },
@@ -32997,7 +32988,7 @@
           "student_name": "Sophia Chen",
           "state": "Indiana",
           "rank": "52",
-          "grade": "8"
+          "grade": "7"
         }
       ]
     },
@@ -33072,7 +33063,7 @@
           "student_name": "Rananjay Parmar",
           "state": "Florida",
           "rank": "55",
-          "grade": "6"
+          "grade": "8"
         }
       ]
     },
@@ -46809,6 +46800,24 @@
           "p6": "0",
           "p7": "0",
           "p8": "0"
+        }
+      ]
+    },
+    {
+      "id": 1446,
+      "name": "Edward Li",
+      "aliases": [],
+      "state": "Washington",
+      "gender": "male",
+      "records": [
+        {
+          "contest": "MATHCOUNTS National — Rankings",
+          "year": "2023",
+          "contest_slug": "mathcounts-national-rank",
+          "student_name": "Edward Li",
+          "state": "Washington",
+          "rank": "53",
+          "grade": "8"
         }
       ]
     }
