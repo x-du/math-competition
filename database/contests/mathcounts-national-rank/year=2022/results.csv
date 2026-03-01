@@ -1,16 +1,16 @@
 student_id,student_name,state,year,rank,grade
 466,Allan Yuan,Alabama,2022,1,8
 10,Calvin Wang,Virginia,2022,2,8
-48,Varun Gadi,Georgia,2022,S,7
-62,Evan Fan,New Jersey,2022,S,8
-34,Jiahe Liu,Ohio,2022,Q,8
-25,Rohan Garg,California,2022,Q,8
-1,Alexander Wang,New Jersey,2022,Q,8
-4,Liam Reddy,Utah,2022,Q,7
-681,Michael Wei,Florida,2022,C,8
-666,Shruti Arun,Colorado,2022,C,8
-738,Liran Zhou,New York,2022,C,8
-728,Boya Zhang,Nevada,2022,C,8
+48,Varun Gadi,Georgia,2022,S (Semi-finalist),7
+62,Evan Fan,New Jersey,2022,S (Semi-finalist),8
+34,Jiahe Liu,Ohio,2022,Q (Quarter-finalist),8
+25,Rohan Garg,California,2022,Q (Quarter-finalist),8
+1,Alexander Wang,New Jersey,2022,Q (Quarter-finalist),8
+4,Liam Reddy,Utah,2022,Q (Quarter-finalist),7
+681,Michael Wei,Florida,2022,C (9-12),8
+666,Shruti Arun,Colorado,2022,C (9-12),8
+738,Liran Zhou,New York,2022,C (9-12),8
+728,Boya Zhang,Nevada,2022,C (9-12),8
 621,Sebastian Chase,State Department,2022,13*,8
 65,Selena Ge,Massachusetts,2022,14,6
 780,Susie Lu,Washington,2022,15,8

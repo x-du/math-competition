@@ -1,16 +1,16 @@
 student_id,student_name,state,year,rank,grade
 56,Channing Yang,Texas,2023,1,7
 3,Oron Wang,New Jersey,2023,2,8
-20,Ashvin Sinha,Florida,2023,S,8
-522,Edward Chen,Indiana,2023,S,8
-4,Liam Reddy,Nevada,2023,Q,8
-319,Seabert Mao,California,2023,Q,8
-48,Varun Gadi,Georgia,2023,Q,7
-65,Selena Ge,Massachusetts,2023,Q,7
-33,Roger Zhen,Texas,2023,C,8
-242,Adam Ge,Massachusetts,2023,C,8
-229,Alex Sun,Texas,2023,C,8
-343,Jason Lee,North Carolina,2023,C,7
+20,Ashvin Sinha,Florida,2023,S (Semi-finalist),8
+522,Edward Chen,Indiana,2023,S (Semi-finalist),8
+4,Liam Reddy,Nevada,2023,Q (Quarter-finalist),8
+319,Seabert Mao,California,2023,Q (Quarter-finalist),8
+48,Varun Gadi,Georgia,2023,Q (Quarter-finalist),7
+65,Selena Ge,Massachusetts,2023,Q (Quarter-finalist),7
+33,Roger Zhen,Texas,2023,C (9-12),8
+242,Adam Ge,Massachusetts,2023,C (9-12),8
+229,Alex Sun,Texas,2023,C (9-12),8
+343,Jason Lee,North Carolina,2023,C (9-12),7
 32,Ben Jiang,Florida,2023,13,7
 38,Andy Lu,California,2023,14,8
 77,Shunyao Yan,Virginia,2023,15,7

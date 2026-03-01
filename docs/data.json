@@ -317,7 +317,7 @@
           "contest_slug": "mathcounts-national-rank",
           "student_name": "Alexander Wang",
           "state": "New Jersey",
-          "rank": "Q",
+          "rank": "Q (Quarter-finalist)",
           "grade": "8"
         },
         {
@@ -902,7 +902,7 @@
           "contest_slug": "mathcounts-national-rank",
           "student_name": "Liam Reddy",
           "state": "Nevada",
-          "rank": "Q",
+          "rank": "Q (Quarter-finalist)",
           "grade": "8"
         },
         {
@@ -911,7 +911,7 @@
           "contest_slug": "mathcounts-national-rank",
           "student_name": "Liam Reddy",
           "state": "Utah",
-          "rank": "Q",
+          "rank": "Q (Quarter-finalist)",
           "grade": "7"
         },
         {
@@ -1385,7 +1385,7 @@
           "contest_slug": "mathcounts-national-rank",
           "student_name": "Vincent Wang",
           "state": "Texas",
-          "rank": "Q",
+          "rank": "Q (Quarter-finalist)",
           "grade": "8"
         },
         {
@@ -2755,7 +2755,7 @@
           "contest_slug": "mathcounts-national-rank",
           "student_name": "Ashvin Sinha",
           "state": "Florida",
-          "rank": "S",
+          "rank": "S (Semi-finalist)",
           "grade": "8"
         }
       ]
@@ -3301,7 +3301,7 @@
           "contest_slug": "mathcounts-national-rank",
           "student_name": "Rohan Garg",
           "state": "California",
-          "rank": "Q",
+          "rank": "Q (Quarter-finalist)",
           "grade": "8"
         }
       ]
@@ -3541,7 +3541,7 @@
           "contest_slug": "mathcounts-national-rank",
           "student_name": "Rohan Nayak Mallick",
           "state": "California",
-          "rank": "C",
+          "rank": "C (9-12)",
           "grade": "8"
         },
         {
@@ -4037,7 +4037,7 @@
           "contest_slug": "mathcounts-national-rank",
           "student_name": "Roger Zhen",
           "state": "Texas",
-          "rank": "C",
+          "rank": "C (9-12)",
           "grade": "8"
         },
         {
@@ -4281,7 +4281,7 @@
           "contest_slug": "mathcounts-national-rank",
           "student_name": "Jiahe Liu",
           "state": "Ohio",
-          "rank": "Q",
+          "rank": "Q (Quarter-finalist)",
           "grade": "8"
         },
         {
@@ -5118,7 +5118,7 @@
           "contest_slug": "mathcounts-national-rank",
           "student_name": "Benjamin Song",
           "state": "New York",
-          "rank": "S",
+          "rank": "S (Semi-finalist)",
           "grade": "8"
         }
       ]
@@ -5765,7 +5765,7 @@
           "contest_slug": "mathcounts-national-rank",
           "student_name": "Varun Gadi",
           "state": "Georgia",
-          "rank": "Q",
+          "rank": "Q (Quarter-finalist)",
           "grade": "7"
         },
         {
@@ -5774,7 +5774,7 @@
           "contest_slug": "mathcounts-national-rank",
           "student_name": "Varun Gadi",
           "state": "Georgia",
-          "rank": "S",
+          "rank": "S (Semi-finalist)",
           "grade": "7"
         },
         {
@@ -6306,7 +6306,7 @@
           "contest_slug": "mathcounts-national-rank",
           "student_name": "Channing Yang",
           "state": "Texas",
-          "rank": "Q",
+          "rank": "Q (Quarter-finalist)",
           "grade": "8"
         },
         {
@@ -6957,7 +6957,7 @@
           "contest_slug": "mathcounts-national-rank",
           "student_name": "Evan Fan",
           "state": "New Jersey",
-          "rank": "S",
+          "rank": "S (Semi-finalist)",
           "grade": "8"
         },
         {
@@ -7209,7 +7209,7 @@
           "contest_slug": "mathcounts-national-rank",
           "student_name": "Selena Ge",
           "state": "Massachusetts",
-          "rank": "Q",
+          "rank": "Q (Quarter-finalist)",
           "grade": "7"
         },
         {
@@ -8022,7 +8022,7 @@
           "contest_slug": "mathcounts-national-rank",
           "student_name": "Shunyao Yan",
           "state": "Virginia",
-          "rank": "Q",
+          "rank": "Q (Quarter-finalist)",
           "grade": "8"
         },
         {
@@ -14892,7 +14892,7 @@
           "contest_slug": "mathcounts-national-rank",
           "student_name": "Alexander Svoronos",
           "state": "Connecticut",
-          "rank": "S",
+          "rank": "S (Semi-finalist)",
           "grade": "7"
         },
         {
@@ -16695,7 +16695,7 @@
           "contest_slug": "mathcounts-national-rank",
           "student_name": "Alex Sun",
           "state": "Texas",
-          "rank": "C",
+          "rank": "C (9-12)",
           "grade": "8"
         }
       ]
@@ -17282,7 +17282,7 @@
           "contest_slug": "mathcounts-national-rank",
           "student_name": "Adam Ge",
           "state": "Massachusetts",
-          "rank": "C",
+          "rank": "C (9-12)",
           "grade": "8"
         }
       ]
@@ -19603,7 +19603,7 @@
           "contest_slug": "mathcounts-national-rank",
           "student_name": "Alex Liu",
           "state": "Virginia",
-          "rank": "C",
+          "rank": "C (9-12)",
           "grade": "8"
         },
         {
@@ -20994,7 +20994,7 @@
           "contest_slug": "mathcounts-national-rank",
           "student_name": "Seabert Mao",
           "state": "California",
-          "rank": "Q",
+          "rank": "Q (Quarter-finalist)",
           "grade": "8"
         }
       ]
@@ -21817,7 +21817,7 @@
           "contest_slug": "mathcounts-national-rank",
           "student_name": "Alex Zhan",
           "state": "California",
-          "rank": "Q",
+          "rank": "Q (Quarter-finalist)",
           "grade": "8"
         }
       ]
@@ -21907,7 +21907,7 @@
           "contest_slug": "mathcounts-national-rank",
           "student_name": "Jason Lee",
           "state": "North Carolina",
-          "rank": "C",
+          "rank": "C (9-12)",
           "grade": "7"
         },
         {
@@ -22124,7 +22124,7 @@
           "contest_slug": "mathcounts-national-rank",
           "student_name": "Eric Ding",
           "state": "Minnesota",
-          "rank": "C",
+          "rank": "C (9-12)",
           "grade": "8"
         },
         {
@@ -22977,7 +22977,7 @@
           "contest_slug": "mathcounts-national-rank",
           "student_name": "Laura Wang",
           "state": "Washington",
-          "rank": "S",
+          "rank": "S (Semi-finalist)",
           "grade": "8"
         }
       ]
@@ -23261,7 +23261,7 @@
           "contest_slug": "mathcounts-national-rank",
           "student_name": "Alexander Yang",
           "state": "Washington",
-          "rank": "C",
+          "rank": "C (9-12)",
           "grade": "8"
         }
       ]
@@ -25963,7 +25963,7 @@
           "contest_slug": "mathcounts-national-rank",
           "student_name": "Edward Chen",
           "state": "Indiana",
-          "rank": "S",
+          "rank": "S (Semi-finalist)",
           "grade": "8"
         },
         {
@@ -27043,7 +27043,7 @@
           "contest_slug": "mathcounts-national-rank",
           "student_name": "Shruti Arun",
           "state": "Colorado",
-          "rank": "C",
+          "rank": "C (9-12)",
           "grade": "8"
         }
       ]
@@ -27102,7 +27102,7 @@
           "contest_slug": "mathcounts-national-rank",
           "student_name": "Michael Wei",
           "state": "Florida",
-          "rank": "C",
+          "rank": "C (9-12)",
           "grade": "8"
         }
       ]
@@ -27343,7 +27343,7 @@
           "contest_slug": "mathcounts-national-rank",
           "student_name": "Boya Zhang",
           "state": "Nevada",
-          "rank": "C",
+          "rank": "C (9-12)",
           "grade": "8"
         }
       ]
@@ -27427,7 +27427,7 @@
           "contest_slug": "mathcounts-national-rank",
           "student_name": "Liran Zhou",
           "state": "New York",
-          "rank": "C",
+          "rank": "C (9-12)",
           "grade": "8"
         }
       ]
@@ -28057,7 +28057,7 @@
           "contest_slug": "mathcounts-national-rank",
           "student_name": "Advait Joshi",
           "state": "New Jersey",
-          "rank": "S",
+          "rank": "S (Semi-finalist)",
           "grade": "7"
         },
         {
@@ -28066,7 +28066,7 @@
           "contest_slug": "mathcounts-national-rank",
           "student_name": "Advait Joshi",
           "state": "New Jersey",
-          "rank": "C",
+          "rank": "C (9-12)",
           "grade": "6"
         }
       ]
@@ -28688,7 +28688,7 @@
           "contest_slug": "mathcounts-national-rank",
           "student_name": "Jason Bo",
           "state": "California",
-          "rank": "Q",
+          "rank": "Q (Quarter-finalist)",
           "grade": "7"
         }
       ]
@@ -28705,7 +28705,7 @@
           "contest_slug": "mathcounts-national-rank",
           "student_name": "Victor Yang",
           "state": "New York",
-          "rank": "Q",
+          "rank": "Q (Quarter-finalist)",
           "grade": "7"
         }
       ]
@@ -28722,7 +28722,7 @@
           "contest_slug": "mathcounts-national-rank",
           "student_name": "Andrew Du",
           "state": "Virginia",
-          "rank": "Q",
+          "rank": "Q (Quarter-finalist)",
           "grade": "8"
         }
       ]
@@ -28739,7 +28739,7 @@
           "contest_slug": "mathcounts-national-rank",
           "student_name": "Shlok Mukund",
           "state": "Massachusetts",
-          "rank": "Q",
+          "rank": "Q (Quarter-finalist)",
           "grade": "7"
         }
       ]
@@ -28756,7 +28756,7 @@
           "contest_slug": "mathcounts-national-rank",
           "student_name": "Justin Kim",
           "state": "California",
-          "rank": "C",
+          "rank": "C (9-12)",
           "grade": "7"
         }
       ]
@@ -28781,7 +28781,7 @@
           "contest_slug": "mathcounts-national-rank",
           "student_name": "Lucas Li",
           "state": "North Carolina",
-          "rank": "C",
+          "rank": "C (9-12)",
           "grade": "8"
         }
       ]
@@ -28806,7 +28806,7 @@
           "contest_slug": "mathcounts-national-rank",
           "student_name": "Ryan Zhang",
           "state": "New York",
-          "rank": "C",
+          "rank": "C (9-12)",
           "grade": "8"
         }
       ]

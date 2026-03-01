@@ -1,16 +1,16 @@
 student_id,student_name,state,year,rank,grade
 32,Ben Jiang,Florida,2024,1,8
 65,Selena Ge,Massachusetts,2024,2,8
-42,Benjamin Song,New York,2024,S,8
-383,Laura Wang,Washington,2024,S,8
-56,Channing Yang,Texas,2024,Q,8
-77,Shunyao Yan,Virginia,2024,Q,8
-8,Vincent Wang,Texas,2024,Q,8
-341,Alex Zhan,California,2024,Q,8
-352,Eric Ding,Minnesota,2024,C,8
-28,Rohan Nayak Mallick,California,2024,C,8
-284,Alex Liu,Virginia,2024,C,8
-809,Advait Joshi,New Jersey,2024,C,6
+42,Benjamin Song,New York,2024,S (Semi-finalist),8
+383,Laura Wang,Washington,2024,S (Semi-finalist),8
+56,Channing Yang,Texas,2024,Q (Quarter-finalist),8
+77,Shunyao Yan,Virginia,2024,Q (Quarter-finalist),8
+8,Vincent Wang,Texas,2024,Q (Quarter-finalist),8
+341,Alex Zhan,California,2024,Q (Quarter-finalist),8
+352,Eric Ding,Minnesota,2024,C (9-12),8
+28,Rohan Nayak Mallick,California,2024,C (9-12),8
+284,Alex Liu,Virginia,2024,C (9-12),8
+809,Advait Joshi,New Jersey,2024,C (9-12),6
 810,Danyang Xu,Massachusetts,2024,13,8
 232,Aashita Mandiwal,Utah,2024,14,7
 389,Keshav Karumbunathan,Oregon,2024,15,8

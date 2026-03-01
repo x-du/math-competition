@@ -1,16 +1,16 @@
 student_id,student_name,state,year,rank,grade
 14,Nathan Liu,Texas,2025,1,8
 811,Brandon Ni,Massachusetts,2025,2,7
-204,Alexander Svoronos,Connecticut,2025,S,7
-809,Advait Joshi,New Jersey,2025,S,7
-838,Jason Bo,California,2025,Q,7
-839,Victor Yang,New York,2025,Q,7
-840,Andrew Du,Virginia,2025,Q,8
-841,Shlok Mukund,Massachusetts,2025,Q,7
-842,Justin Kim,California,2025,C,7
-394,Alexander Yang,Washington,2025,C,8
-843,Lucas Li,North Carolina,2025,C,8
-844,Ryan Zhang,New York,2025,C,8
+204,Alexander Svoronos,Connecticut,2025,S (Semi-finalist),7
+809,Advait Joshi,New Jersey,2025,S (Semi-finalist),7
+838,Jason Bo,California,2025,Q (Quarter-finalist),7
+839,Victor Yang,New York,2025,Q (Quarter-finalist),7
+840,Andrew Du,Virginia,2025,Q (Quarter-finalist),8
+841,Shlok Mukund,Massachusetts,2025,Q (Quarter-finalist),7
+842,Justin Kim,California,2025,C (9-12),7
+394,Alexander Yang,Washington,2025,C (9-12),8
+843,Lucas Li,North Carolina,2025,C (9-12),8
+844,Ryan Zhang,New York,2025,C (9-12),8
 845,Edwin Gao,Florida,2025,13,8
 846,Roland Li,Indiana,2025,14,7
 266,Ethan Imanuel,New Jersey,2025,15,8
