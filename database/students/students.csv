@@ -364,7 +364,7 @@ student_id,student_name,state,team_ids,alias,gender
 391,Watson Houck,,130,,male
 392,Justin Guo,Tennessee,145,,male
 393,Adam Henry Smith,,73,,male
-394,Alexander Yang,Washington,134,,male
+394,Alexander Yang,Washington,134|216,Alex Yang,male
 395,Boyou Huang,,138,,male
 396,Elena Ahn Beckman,California,146,Elena Beckman,female
 397,Ayush Bansal,,147,,male
@@ -792,7 +792,6 @@ student_id,student_name,state,team_ids,alias,gender
 822,Charlie Wang,Alaska,167,,male
 823,Daniel Wei,Florida,176,,male
 824,Wesley Wu,Washington,216,,male
-825,Alex Yang,Washington,216,,male
 826,Max Tsai,Nevada,196,,male
 827,Easton Wei,New Jersey,221,,male
 828,Henry Wang,California,200,,male

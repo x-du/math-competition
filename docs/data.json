@@ -26108,7 +26108,9 @@
     {
       "id": 394,
       "name": "Alexander Yang",
-      "aliases": [],
+      "aliases": [
+        "Alex Yang"
+      ],
       "state": "Washington",
       "gender": "male",
       "records": [
@@ -26136,6 +26138,15 @@
           "state": "Washington",
           "rank": "C (9-12)",
           "grade": "8"
+        },
+        {
+          "contest": "MATHCOUNTS National — Rankings",
+          "year": "2024",
+          "contest_slug": "mathcounts-national-rank",
+          "student_name": "Alex Yang",
+          "state": "Washington",
+          "rank": "39",
+          "grade": "7"
         }
       ]
     },
@@ -32006,24 +32017,6 @@
           "state": "Washington",
           "rank": "38",
           "grade": "8"
-        }
-      ]
-    },
-    {
-      "id": 825,
-      "name": "Alex Yang",
-      "aliases": [],
-      "state": "Washington",
-      "gender": "male",
-      "records": [
-        {
-          "contest": "MATHCOUNTS National — Rankings",
-          "year": "2024",
-          "contest_slug": "mathcounts-national-rank",
-          "student_name": "Alex Yang",
-          "state": "Washington",
-          "rank": "39",
-          "grade": "7"
         }
       ]
     },
