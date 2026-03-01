@@ -3994,6 +3994,15 @@
           "finals_score": "12"
         },
         {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Patrick Du",
+          "rank": "13",
+          "score": "10",
+          "team": "petTheSkibidi"
+        },
+        {
           "contest": "PUMaC — Number Theory",
           "year": "2023",
           "contest_slug": "pumac-number-theory",
@@ -4717,6 +4726,15 @@
           "finals_score": "8"
         },
         {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "William Hua",
+          "rank": "61",
+          "score": "8",
+          "team": "Lexington Alpha"
+        },
+        {
           "contest": "HMMT February — Geometry",
           "year": "2025",
           "contest_slug": "hmmt-feb-geometry",
@@ -4794,6 +4812,15 @@
           "rank": "21",
           "total_score": "2.907",
           "finals_score": "14"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "William Hua",
+          "rank": "61",
+          "score": "8",
+          "team": "Lexington Muztaba's Opps"
         },
         {
           "contest": "HMMT February — Geometry",
@@ -5880,6 +5907,15 @@
           "finals_score": "14"
         },
         {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Aaryan Vaishya",
+          "rank": "3",
+          "score": "11",
+          "team": "skibidi six"
+        },
+        {
           "contest": "HMMT February — Algebra & Number Theory",
           "year": "2024",
           "contest_slug": "hmmt-feb-algebra-number-theory",
@@ -6072,6 +6108,15 @@
           "award": "Silver"
         },
         {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Shaohuan Zhang",
+          "rank": "63",
+          "score": "8",
+          "team": "Cranbrook Aardvarks"
+        },
+        {
           "contest": "HMMT February — Combinatorics",
           "year": "2025",
           "contest_slug": "hmmt-feb-combo",
@@ -6113,6 +6158,15 @@
           "student_name": "Shaohuan Zhang",
           "state": "Michigan",
           "award": "Top Honors"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Shaohuan Zhang",
+          "rank": "28",
+          "score": "9",
+          "team": "Motown All-Stars"
         },
         {
           "contest": "USAJMO",
@@ -7198,6 +7252,15 @@
           "award": "Silver"
         },
         {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Henry Jiang",
+          "rank": "1",
+          "score": "12",
+          "team": "Motown All-Stars"
+        },
+        {
           "contest": "HMMT February — Algebra & Number Theory",
           "year": "2024",
           "contest_slug": "hmmt-feb-algebra-number-theory",
@@ -7696,6 +7759,15 @@
           "prize": "$1000"
         },
         {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Selena Ge",
+          "rank": "15",
+          "score": "10",
+          "team": "Lexington Muztaba"
+        },
+        {
           "contest": "MATHCOUNTS National — Rankings",
           "year": "2024",
           "contest_slug": "mathcounts-national-rank",
@@ -8012,6 +8084,15 @@
           "p6": "0",
           "p7": "1",
           "p8": "0"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Alexander Gu",
+          "rank": "3",
+          "score": "11",
+          "team": "Karkaboingus"
         },
         {
           "contest": "MATHCOUNTS National — Rankings",
@@ -8541,6 +8622,15 @@
           "p8": "0"
         },
         {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Shunyao Yan",
+          "rank": "2",
+          "score": "11",
+          "team": "the snorlaxes"
+        },
+        {
           "contest": "HMMT February — Combinatorics",
           "year": "2025",
           "contest_slug": "hmmt-feb-combo",
@@ -8566,6 +8656,15 @@
           "student_name": "Shunyao Yan",
           "state": "Virginia",
           "award": "Honorable Mention"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Shunyao Yan",
+          "rank": "22",
+          "score": "10",
+          "team": "the snorlaxes"
         },
         {
           "contest": "MATHCOUNTS National — Rankings",
@@ -9429,6 +9528,15 @@
           "p8": "0"
         },
         {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Vikram Sarkar",
+          "rank": "2",
+          "score": "11",
+          "team": "Placeholder"
+        },
+        {
           "contest": "HMMT February — Combinatorics",
           "year": "2025",
           "contest_slug": "hmmt-feb-combo",
@@ -9463,6 +9571,15 @@
           "student_name": "Vikram Sarkar",
           "state": "Connecticut",
           "award": "Top Honors"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Vikram Sarkar",
+          "rank": "15",
+          "score": "10",
+          "team": "Mass ARML Suns"
         },
         {
           "contest": "HMMT February — Algebra & Number Theory",
@@ -11200,6 +11317,15 @@
       "gender": "male",
       "records": [
         {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Andrew Li",
+          "rank": "3",
+          "score": "11",
+          "team": "Dallas Math Circle"
+        },
+        {
           "contest": "HMMT February — Combinatorics",
           "year": "2024",
           "contest_slug": "hmmt-feb-combo",
@@ -11639,6 +11765,15 @@
       "state": "",
       "gender": "male",
       "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Ziyi Yang",
+          "rank": "72",
+          "score": "8",
+          "team": "PRISMS Falcons"
+        },
         {
           "contest": "HMMT February — Combinatorics",
           "year": "2024",
@@ -12555,6 +12690,15 @@
           "p8": "0"
         },
         {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Jacob Xu",
+          "rank": "72",
+          "score": "8",
+          "team": "Lexington Muztaba's Opps"
+        },
+        {
           "contest": "HMMT February — Combinatorics",
           "year": "2024",
           "contest_slug": "hmmt-feb-combo",
@@ -13395,6 +13539,15 @@
           "rank": "31",
           "total_score": "2.691",
           "finals_score": "14"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Jason Mao",
+          "rank": "2",
+          "score": "11",
+          "team": "MH Math Knights Bulbasaur"
         },
         {
           "contest": "HMMT February — Geometry",
@@ -16968,6 +17121,15 @@
           "finals_score": "15"
         },
         {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Alexander Svoronos",
+          "rank": "1",
+          "score": "11",
+          "team": "Westchester Area Math Circle A"
+        },
+        {
           "contest": "MATHCOUNTS National — Rankings",
           "year": "2025",
           "contest_slug": "mathcounts-national-rank",
@@ -17191,6 +17353,15 @@
           "rank": "12",
           "total_score": "2.986",
           "finals_score": "7"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Eric Xie",
+          "rank": "12",
+          "score": "10",
+          "team": "DMV Math Circle Sigma"
         },
         {
           "contest": "MATHCOUNTS National — Rankings",
@@ -17508,6 +17679,15 @@
           "finals_score": "2"
         },
         {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Nathan Lu",
+          "rank": "12",
+          "score": "10",
+          "team": "Maryland United"
+        },
+        {
           "contest": "PUMaC — Geometry",
           "year": "2024",
           "contest_slug": "pumac-geometry",
@@ -17732,6 +17912,15 @@
           "finals_score": "7"
         },
         {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Eric Guo",
+          "rank": "12",
+          "score": "10",
+          "team": "The Hexacontakaiheptagons"
+        },
+        {
           "contest": "PUMaC — Geometry",
           "year": "2024",
           "contest_slug": "pumac-geometry",
@@ -17810,6 +17999,15 @@
           "rank": "25",
           "total_score": "2.534",
           "finals_score": "3"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Michael Chen",
+          "rank": "12",
+          "score": "10",
+          "team": "PRISMS Falcons"
         },
         {
           "contest": "USAMO",
@@ -18135,6 +18333,24 @@
           "finals_score": "2"
         },
         {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "William Qian",
+          "rank": "38",
+          "score": "9",
+          "team": "Maryland United"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "William Qian",
+          "rank": "72",
+          "score": "8",
+          "team": "Maryland United A"
+        },
+        {
           "contest": "PUMaC — Algebra",
           "year": "2023",
           "contest_slug": "pumac-algebra",
@@ -18267,6 +18483,15 @@
           "student_name": "Luca Pieleanu",
           "state": "Massachusetts",
           "award": "Honorable Mention"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Luca Pieleanu",
+          "rank": "3",
+          "score": "11",
+          "team": "MathSchool 1"
         }
       ]
     },
@@ -18456,6 +18681,15 @@
           "p6": "0",
           "p7": "0",
           "p8": "0"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Edwin Zhao",
+          "rank": "14",
+          "score": "10",
+          "team": "Lexington Muztaba 3rd Parties"
         }
       ]
     },
@@ -18631,6 +18865,15 @@
           "place": "57",
           "site": "W",
           "team": "Frazer A2"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "George Paret",
+          "rank": "72",
+          "score": "8",
+          "team": "In Keith we Trust"
         }
       ]
     },
@@ -18923,6 +19166,15 @@
           "p8": "0"
         },
         {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Peter Bai",
+          "rank": "47",
+          "score": "9",
+          "team": "Lexington Alpha"
+        },
+        {
           "contest": "CMIMC - Algebra and Number Theory",
           "year": "2025",
           "contest_slug": "cmimc-algebra",
@@ -19144,6 +19396,15 @@
           "p6": "0",
           "p7": "0",
           "p8": "0"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Paul Yoo",
+          "rank": "72",
+          "score": "8",
+          "team": "the snorlaxes"
         }
       ]
     },
@@ -19463,6 +19724,15 @@
           "finals_score": "11"
         },
         {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Adam Ge",
+          "rank": "30",
+          "score": "9",
+          "team": "Lexington Muztaba"
+        },
+        {
           "contest": "USAJMO",
           "year": "2023",
           "contest_slug": "jmo",
@@ -19539,6 +19809,24 @@
           "p6": "0",
           "p7": "0",
           "p8": "0"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Aarush Prasad",
+          "rank": "47",
+          "score": "9",
+          "team": "WWP Charmander"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Aarush Prasad",
+          "rank": "72",
+          "score": "8",
+          "team": "Pirates A"
         },
         {
           "contest": "PUMaC — Number Theory",
@@ -19729,6 +20017,24 @@
           "p8": "1"
         },
         {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Vincent Pirozzo",
+          "rank": "2",
+          "score": "11",
+          "team": "Motown All-Stars"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Vincent Pirozzo",
+          "rank": "52",
+          "score": "8",
+          "team": "Motown All-Stars"
+        },
+        {
           "contest": "MATHCOUNTS National — Rankings",
           "year": "2023",
           "contest_slug": "mathcounts-national-rank",
@@ -19813,6 +20119,15 @@
           "p6": "0",
           "p7": "0",
           "p8": "0"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Shaheem Samsudeen",
+          "rank": "66",
+          "score": "8",
+          "team": "PESH Math Club"
         },
         {
           "contest": "MATHCOUNTS National — Rankings",
@@ -19982,6 +20297,15 @@
           "student_name": "Arnav Iyengar",
           "state": "District of Columbia",
           "award": "Honorable Mention"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Arnav Iyengar",
+          "rank": "66",
+          "score": "8",
+          "team": "DMV Math Circle Sigma"
         },
         {
           "contest": "HMMT February — Combinatorics",
@@ -20281,6 +20605,15 @@
           "p8": "0"
         },
         {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Daniel Ge",
+          "rank": "26",
+          "score": "9",
+          "team": "Mass ARML"
+        },
+        {
           "contest": "USAJMO",
           "year": "2024",
           "contest_slug": "jmo",
@@ -20391,6 +20724,15 @@
           "p8": "0"
         },
         {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Maitian Sha",
+          "rank": "12",
+          "score": "10",
+          "team": "WWP Charizard"
+        },
+        {
           "contest": "USAJMO",
           "year": "2024",
           "contest_slug": "jmo",
@@ -20414,6 +20756,15 @@
           "p6": "1",
           "p7": "0",
           "p8": "1"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Maitian Sha",
+          "rank": "32",
+          "score": "9",
+          "team": "Pirates B"
         },
         {
           "contest": "PUMaC — Combinatorics",
@@ -20518,6 +20869,15 @@
           "p8": "0"
         },
         {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Aryan Raj",
+          "rank": "2",
+          "score": "11",
+          "team": "DMV Math Circle Sigma"
+        },
+        {
           "contest": "HMMT February — Geometry",
           "year": "2025",
           "contest_slug": "hmmt-feb-geometry",
@@ -20541,6 +20901,15 @@
           "p6": "0",
           "p7": "1",
           "p8": "0"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Aryan Raj",
+          "rank": "3",
+          "score": "11",
+          "team": "DMV Math Circle Sigma"
         },
         {
           "contest": "USAJMO",
@@ -20628,6 +20997,15 @@
           "p8": "0"
         },
         {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Jonathan Liu",
+          "rank": "95",
+          "score": "8",
+          "team": "texington"
+        },
+        {
           "contest": "CMIMC - Geometry",
           "year": "2025",
           "contest_slug": "cmimc-geometry",
@@ -20661,6 +21039,15 @@
           "rank": "42",
           "total_score": "2.284",
           "finals_score": "7"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Jonathan Liu",
+          "rank": "70",
+          "score": "8",
+          "team": "Lexington Muztaba 3rd Parties"
         }
       ]
     },
@@ -20725,6 +21112,15 @@
           "p6": "0",
           "p7": "0",
           "p8": "0"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "James Wu",
+          "rank": "23",
+          "score": "10",
+          "team": "Lexington Zeta"
         }
       ]
     },
@@ -20759,6 +21155,15 @@
           "p6": "0",
           "p7": "0",
           "p8": "0"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Ethan Imanuel",
+          "rank": "12",
+          "score": "10",
+          "team": "The Hexacontakaiheptagons"
         },
         {
           "contest": "MATHCOUNTS National — Rankings",
@@ -21323,6 +21728,15 @@
           "prize": "Honorable Mention"
         },
         {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Catherine Xu",
+          "rank": "39",
+          "score": "9",
+          "team": "The Skibidiest Sigmas"
+        },
+        {
           "contest": "USAJMO",
           "year": "2023",
           "contest_slug": "jmo",
@@ -21469,6 +21883,15 @@
           "finals_score": "12"
         },
         {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Aprameya Tripathy",
+          "rank": "3",
+          "score": "11",
+          "team": "Knights A"
+        },
+        {
           "contest": "ARML",
           "year": "2024",
           "contest_slug": "arml",
@@ -21572,6 +21995,15 @@
           "rank": "28",
           "total_score": "2.734",
           "finals_score": "14"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Albert Cao",
+          "rank": "39",
+          "score": "9",
+          "team": "We Math Goodly"
         },
         {
           "contest": "PUMaC — Geometry",
@@ -22004,6 +22436,15 @@
           "award": "Top Honors"
         },
         {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Alexander Liu",
+          "rank": "67",
+          "score": "8",
+          "team": "Mass ARML"
+        },
+        {
           "contest": "USAJMO",
           "year": "2024",
           "contest_slug": "jmo",
@@ -22037,6 +22478,15 @@
           "rank": "45",
           "total_score": "2.047",
           "finals_score": "2"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Alexander Liu",
+          "rank": "3",
+          "score": "11",
+          "team": "the snorlaxes"
         },
         {
           "contest": "MATHCOUNTS National — Rankings",
@@ -22418,6 +22868,15 @@
           "p6": "0",
           "p7": "0",
           "p8": "0"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Daniel Lu",
+          "rank": "72",
+          "score": "8",
+          "team": "Pirates C"
         }
       ]
     },
@@ -22958,6 +23417,15 @@
           "p8": "0"
         },
         {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Harry Kim",
+          "rank": "44",
+          "score": "9",
+          "team": "Phillips Academy"
+        },
+        {
           "contest": "PUMaC — Combinatorics",
           "year": "2023",
           "contest_slug": "pumac-combinator",
@@ -23143,6 +23611,15 @@
           "p6": "0",
           "p7": "0",
           "p8": "0"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Jerry Xu",
+          "rank": "72",
+          "score": "8",
+          "team": "Lexington Muztaba"
         }
       ]
     },
@@ -23462,6 +23939,15 @@
           "p8": "0"
         },
         {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Tony Zhang",
+          "rank": "51",
+          "score": "8",
+          "team": "DMV Math Circle Sigma"
+        },
+        {
           "contest": "USAJMO",
           "year": "2023",
           "contest_slug": "jmo",
@@ -23656,6 +24142,15 @@
           "p6": "0",
           "p7": "1",
           "p8": "1"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Michael Aram",
+          "rank": "29",
+          "score": "9",
+          "team": "Westchester Area Math Circle B"
         }
       ]
     },
@@ -23706,6 +24201,15 @@
           "p6": "1",
           "p7": "1",
           "p8": "0"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "David Yu",
+          "rank": "53",
+          "score": "8",
+          "team": "Maryland United A"
         },
         {
           "contest": "MATHCOUNTS National — Rankings",
@@ -23769,6 +24273,15 @@
           "award": "Honorable Mention"
         },
         {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Jeremy Yang",
+          "rank": "8",
+          "score": "10",
+          "team": "Maryland United"
+        },
+        {
           "contest": "PUMaC — Combinatorics",
           "year": "2024",
           "contest_slug": "pumac-combinator",
@@ -23784,6 +24297,15 @@
           "p6": "0",
           "p7": "0",
           "p8": "1"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Jeremy Yang",
+          "rank": "34",
+          "score": "9",
+          "team": "Maryland United A"
         },
         {
           "contest": "MATHCOUNTS National — Rankings",
@@ -23939,6 +24461,15 @@
           "p8": "0"
         },
         {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Isaac Chan-Osborn",
+          "rank": "31",
+          "score": "9",
+          "team": "Ultraviolet Catastrophe"
+        },
+        {
           "contest": "MATHCOUNTS National — Rankings",
           "year": "2025",
           "contest_slug": "mathcounts-national-rank",
@@ -23965,6 +24496,15 @@
       "state": "",
       "gender": "male",
       "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Benjamin Yin",
+          "rank": "38",
+          "score": "9",
+          "team": "Lexington Alpha"
+        },
         {
           "contest": "HMMT February — Algebra & Number Theory",
           "year": "2025",
@@ -24221,6 +24761,15 @@
       "state": "",
       "gender": "male",
       "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Jiaxuan Gong",
+          "rank": "47",
+          "score": "9",
+          "team": "Motown All-Stars"
+        },
         {
           "contest": "HMMT February — Algebra & Number Theory",
           "year": "2025",
@@ -25001,6 +25550,15 @@
           "student_name": "Suhas Kondapalli",
           "rank": "18",
           "score": "25.31"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Suhas Kondapalli",
+          "rank": "72",
+          "score": "8",
+          "team": "Pirates C"
         }
       ]
     },
@@ -25178,6 +25736,15 @@
           "student_name": "Rithik Gumpu",
           "rank": "39",
           "score": "25.17"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Rithik Gumpu",
+          "rank": "72",
+          "score": "8",
+          "team": "Knights A"
         },
         {
           "contest": "HMMT February — Combinatorics",
@@ -26164,6 +26731,15 @@
           "student_name": "Boyou Huang",
           "rank": "34",
           "score": "25.17"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Boyou Huang",
+          "rank": "95",
+          "score": "8",
+          "team": "Ultraviolet Catastrophe"
         }
       ]
     },
@@ -26434,6 +27010,24 @@
       "gender": "female",
       "records": [
         {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Emma Li",
+          "rank": "80",
+          "score": "8",
+          "team": "PHS Apricot"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Emma Li",
+          "rank": "48",
+          "score": "8",
+          "team": "PHS Apricot"
+        },
+        {
           "contest": "HMMT February — Algebra & Number Theory",
           "year": "2024",
           "contest_slug": "hmmt-feb-algebra-number-theory",
@@ -26690,6 +27284,15 @@
           "student_name": "Elbert Ho",
           "state": "New Jersey",
           "award": "Bronze"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Elbert Ho",
+          "rank": "3",
+          "score": "11",
+          "team": "Pingry Blue Team"
         },
         {
           "contest": "HMMT February — Geometry",
@@ -29305,6 +29908,15 @@
           "award": "Honorable Mention"
         },
         {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Bryan Li",
+          "rank": "50",
+          "score": "8",
+          "team": "ABML"
+        },
+        {
           "contest": "USAJMO",
           "year": "2023",
           "contest_slug": "jmo",
@@ -30655,6 +31267,42 @@
       ]
     },
     {
+      "id": 670,
+      "name": "Sohan Javeri",
+      "aliases": [],
+      "state": "Connecticut",
+      "gender": "male",
+      "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Sohan Javeri",
+          "rank": "47",
+          "score": "9",
+          "team": "Placeholder"
+        }
+      ]
+    },
+    {
+      "id": 679,
+      "name": "William Wu",
+      "aliases": [],
+      "state": "District of Columbia",
+      "gender": "male",
+      "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "William Wu",
+          "rank": "79",
+          "score": "8",
+          "team": "Ultraviolet Catastrophe"
+        }
+      ]
+    },
+    {
       "id": 681,
       "name": "Michael Wei",
       "aliases": [],
@@ -30739,6 +31387,15 @@
       "state": "Illinois",
       "gender": "male",
       "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Christopher Sakaliyski",
+          "rank": "47",
+          "score": "9",
+          "team": "Ultraviolet Catastrophe"
+        },
         {
           "contest": "MATHCOUNTS National — Rankings",
           "year": "2024",
@@ -30867,6 +31524,15 @@
           "place": "24",
           "score": "12",
           "prize": "Honorable Mention"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Alyssa Yu",
+          "rank": "3",
+          "score": "11",
+          "team": "Poolesville C"
         }
       ]
     },
@@ -30884,6 +31550,15 @@
           "student_name": "Raymond Gao",
           "state": "Massachusetts",
           "award": "Honorable Mention"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Raymond Gao",
+          "rank": "25",
+          "score": "9",
+          "team": "ABML"
         },
         {
           "contest": "USAJMO",
@@ -31135,6 +31810,24 @@
       ]
     },
     {
+      "id": 768,
+      "name": "Eric Chen",
+      "aliases": [],
+      "state": "Tennessee",
+      "gender": "male",
+      "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Eric Chen",
+          "rank": "49",
+          "score": "8",
+          "team": "Pingry Blue Team"
+        }
+      ]
+    },
+    {
       "id": 770,
       "name": "Kevin Chen",
       "aliases": [],
@@ -31305,6 +31998,15 @@
       "gender": "male",
       "records": [
         {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Christopher Cheng",
+          "rank": "88",
+          "score": "8",
+          "team": "texington"
+        },
+        {
           "contest": "MATHCOUNTS National — Rankings",
           "year": "2023",
           "contest_slug": "mathcounts-national-rank",
@@ -31402,6 +32104,24 @@
       "state": "Oregon",
       "gender": "male",
       "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Samuel Ding",
+          "rank": "24",
+          "score": "9",
+          "team": "WWP Charizard"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Samuel Ding",
+          "rank": "44",
+          "score": "9",
+          "team": "PRISMS Falcons"
+        },
         {
           "contest": "MATHCOUNTS National — Rankings",
           "year": "2023",
@@ -31655,6 +32375,15 @@
           "award": "Bronze"
         },
         {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Advait Joshi",
+          "rank": "8",
+          "score": "10",
+          "team": "Big L Club"
+        },
+        {
           "contest": "MATHCOUNTS National — Rankings",
           "year": "2025",
           "contest_slug": "mathcounts-national-rank",
@@ -31662,6 +32391,15 @@
           "state": "New Jersey",
           "rank": "S (Semi-finalist)",
           "grade": "7"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Advait Joshi",
+          "rank": "39",
+          "score": "9",
+          "team": "Big L Club"
         },
         {
           "contest": "MATHCOUNTS National — Rankings",
@@ -31681,6 +32419,15 @@
       "state": "Massachusetts",
       "gender": "male",
       "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Danyang Xu",
+          "rank": "31",
+          "score": "9",
+          "team": "Lexington Zeta"
+        },
         {
           "contest": "MATHCOUNTS National — Rankings",
           "year": "2024",
@@ -31706,6 +32453,15 @@
           "student_name": "Brandon Ni",
           "state": "Massachusetts",
           "award": "Honorable Mention"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Brandon Ni",
+          "rank": "12",
+          "score": "10",
+          "team": "FrostMath"
         },
         {
           "contest": "MATHCOUNTS National — Rankings",
@@ -31842,6 +32598,24 @@
       "gender": "male",
       "records": [
         {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Girish Prasad",
+          "rank": "47",
+          "score": "9",
+          "team": "Westchester Area Math Circle A"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Girish Prasad",
+          "rank": "15",
+          "score": "10",
+          "team": "Westchester Area Math Circle A"
+        },
+        {
           "contest": "MATHCOUNTS National — Rankings",
           "year": "2024",
           "contest_slug": "mathcounts-national-rank",
@@ -31939,6 +32713,24 @@
       "state": "Michigan",
       "gender": "male",
       "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Taiwen Feng",
+          "rank": "88",
+          "score": "8",
+          "team": "Cranbrook Aardvarks"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Taiwen Feng",
+          "rank": "72",
+          "score": "8",
+          "team": "Motown All-Stars"
+        },
         {
           "contest": "MATHCOUNTS National — Rankings",
           "year": "2024",
@@ -32126,6 +32918,15 @@
       "gender": "male",
       "records": [
         {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Rajarshi Mandal",
+          "rank": "72",
+          "score": "8",
+          "team": "Lexington Muztaba's Opps"
+        },
+        {
           "contest": "MATHCOUNTS National — Rankings",
           "year": "2024",
           "contest_slug": "mathcounts-national-rank",
@@ -32259,6 +33060,15 @@
           "award": "Honorable Mention"
         },
         {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Ethan Wang",
+          "rank": "72",
+          "score": "8",
+          "team": "Knights A"
+        },
+        {
           "contest": "MATHCOUNTS National — Rankings",
           "year": "2024",
           "contest_slug": "mathcounts-national-rank",
@@ -32348,6 +33158,15 @@
       "state": "Massachusetts",
       "gender": "male",
       "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Shlok Mukund",
+          "rank": "12",
+          "score": "10",
+          "team": "FrostMath"
+        },
         {
           "contest": "MATHCOUNTS National — Rankings",
           "year": "2025",
@@ -32575,6 +33394,15 @@
       "gender": "male",
       "records": [
         {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Soham Samanta",
+          "rank": "30",
+          "score": "9",
+          "team": "The Hexacontakaiheptagons"
+        },
+        {
           "contest": "MATHCOUNTS National — Rankings",
           "year": "2025",
           "contest_slug": "mathcounts-national-rank",
@@ -32582,6 +33410,15 @@
           "state": "Massachusetts",
           "rank": "27",
           "grade": "8"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Soham Samanta",
+          "rank": "12",
+          "score": "10",
+          "team": "MathSchool 1"
         }
       ]
     },
@@ -33066,6 +33903,15 @@
       "state": "",
       "gender": "male",
       "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Sreehari Vijaybhaskar",
+          "rank": "38",
+          "score": "9",
+          "team": "Dallas Individuals 1"
+        },
         {
           "contest": "CMIMC - Geometry",
           "year": "2025",
@@ -33907,6 +34753,15 @@
           "award": "Bronze"
         },
         {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Eden He",
+          "rank": "7",
+          "score": "10",
+          "team": "Not Great Valley"
+        },
+        {
           "contest": "DMM",
           "year": "2025",
           "contest_slug": "dmm",
@@ -34085,6 +34940,15 @@
           "student_name": "Ryan Tang",
           "state": "Massachusetts",
           "award": "Bronze"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Ryan Tang",
+          "rank": "63",
+          "score": "8",
+          "team": "Lexington Muztaba"
         }
       ]
     },
@@ -34253,6 +35117,15 @@
           "student_name": "Samarth Das",
           "state": "Texas",
           "award": "Honorable Mention"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Samarth Das",
+          "rank": "67",
+          "score": "8",
+          "team": "Dallas Individuals 1"
         }
       ]
     },
@@ -34270,6 +35143,15 @@
           "student_name": "Bryan Fu",
           "state": "Texas",
           "award": "Honorable Mention"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Bryan Fu",
+          "rank": "72",
+          "score": "8",
+          "team": "Dallas Individuals 2"
         }
       ]
     },
@@ -34321,6 +35203,15 @@
           "student_name": "Bennett Huang",
           "state": "Virginia",
           "award": "Honorable Mention"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Bennett Huang",
+          "rank": "22",
+          "score": "10",
+          "team": "Saxons"
         }
       ]
     },
@@ -34506,6 +35397,15 @@
           "student_name": "Kalan Warusa",
           "state": "Virginia",
           "award": "Honorable Mention"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Kalan Warusa",
+          "rank": "72",
+          "score": "8",
+          "team": "McLean B"
         },
         {
           "contest": "PUMaC — Algebra",
@@ -36228,6 +37128,15 @@
           "award": "Honors"
         },
         {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "David Wang",
+          "rank": "31",
+          "score": "9",
+          "team": "Maryland United"
+        },
+        {
           "contest": "DMM",
           "year": "2025",
           "contest_slug": "dmm",
@@ -36256,6 +37165,15 @@
           "place": "43",
           "site": "P",
           "team": "Montgomery B1"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "David Wang",
+          "rank": "15",
+          "score": "10",
+          "team": "Maryland United A"
         },
         {
           "contest": "PUMaC — Number Theory",
@@ -36964,6 +37882,15 @@
           "award": "Honorable Mention"
         },
         {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Jason Lu",
+          "rank": "27",
+          "score": "9",
+          "team": "orzzzzzzzzzzzz"
+        },
+        {
           "contest": "USAJMO",
           "year": "2024",
           "contest_slug": "jmo",
@@ -37004,6 +37931,15 @@
           "student_name": "Nathan Mei",
           "state": "Michigan",
           "award": "Honorable Mention"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Nathan Mei",
+          "rank": "29",
+          "score": "9",
+          "team": "Motown All-Stars"
         }
       ]
     },
@@ -37134,6 +38070,15 @@
           "student_name": "Colin Wei",
           "state": "Texas",
           "award": "Honorable Mention"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Colin Wei",
+          "rank": "63",
+          "score": "8",
+          "team": "Dallas Math Circle"
         }
       ]
     },
@@ -37338,6 +38283,15 @@
           "place": "46",
           "score": "9",
           "prize": "one point shy of Honorable Mention"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Madeline Zhu",
+          "rank": "55",
+          "score": "8",
+          "team": "Pingry Blue Team"
         }
       ]
     },
@@ -37576,6 +38530,15 @@
       "state": "Michigan",
       "gender": "male",
       "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Daniel Zhou",
+          "rank": "46",
+          "score": "9",
+          "team": "Daisy - AAMOC 1"
+        },
         {
           "contest": "USAJMO",
           "year": "2024",
@@ -37904,6 +38867,15 @@
           "prize": "Honorable Mention"
         },
         {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Xinyi Li",
+          "rank": "67",
+          "score": "8",
+          "team": "Dallas Math Circle"
+        },
+        {
           "contest": "USAJMO",
           "year": "2024",
           "contest_slug": "jmo",
@@ -37922,6 +38894,15 @@
           "place": "24",
           "score": "12",
           "prize": "Honorable Mention"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Xinyi Li",
+          "rank": "15",
+          "score": "10",
+          "team": "Dallas Math Circle"
         }
       ]
     },
@@ -38063,6 +39044,15 @@
           "prize": "Honorable Mention"
         },
         {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Maiya Qiu",
+          "rank": "84",
+          "score": "8",
+          "team": "PHS Apricot"
+        },
+        {
           "contest": "USAJMO",
           "year": "2024",
           "contest_slug": "jmo",
@@ -38081,6 +39071,15 @@
           "place": "15",
           "score": "14",
           "prize": "Honorable Mention"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Maiya Qiu",
+          "rank": "72",
+          "score": "8",
+          "team": "PHS Apricot"
         },
         {
           "contest": "MPFG",
@@ -38169,6 +39168,15 @@
       "state": "Michigan",
       "gender": "male",
       "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Justin Seo",
+          "rank": "65",
+          "score": "8",
+          "team": "Cranbrook Aardvarks"
+        },
         {
           "contest": "USAJMO",
           "year": "2024",
@@ -38378,6 +39386,15 @@
       "state": "Illinois",
       "gender": "male",
       "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Max Zheng",
+          "rank": "8",
+          "score": "10",
+          "team": "koobee weadah"
+        },
         {
           "contest": "USAJMO",
           "year": "2024",
@@ -39915,6 +40932,15 @@
       "gender": "male",
       "records": [
         {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Justin Lee",
+          "rank": "72",
+          "score": "8",
+          "team": "MH Math Knights Treecko"
+        },
+        {
           "contest": "USAMO",
           "year": "2022",
           "contest_slug": "amo",
@@ -40692,6 +41718,15 @@
           "p8": "0"
         },
         {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Samuel Wang",
+          "rank": "72",
+          "score": "8",
+          "team": "Lexington Muztaba's Opps"
+        },
+        {
           "contest": "ARML",
           "year": "2024",
           "contest_slug": "arml",
@@ -41098,6 +42133,15 @@
       "state": "Virginia",
       "gender": "male",
       "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Aiden Feyerherm",
+          "rank": "15",
+          "score": "10",
+          "team": "McLean A"
+        },
         {
           "contest": "USAJMO",
           "year": "2023",
@@ -41644,6 +42688,15 @@
       "gender": "male",
       "records": [
         {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Brandon Chan",
+          "rank": "24",
+          "score": "9",
+          "team": "Motown All-Stars"
+        },
+        {
           "contest": "USAJMO",
           "year": "2023",
           "contest_slug": "jmo",
@@ -41886,6 +42939,15 @@
       "state": "Massachusetts",
       "gender": "male",
       "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Jefferson Ji",
+          "rank": "55",
+          "score": "8",
+          "team": "MathSchool 1"
+        },
         {
           "contest": "USAJMO",
           "year": "2023",
@@ -42399,6 +43461,15 @@
       "gender": "male",
       "records": [
         {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Jack Whitney-Epstein",
+          "rank": "2",
+          "score": "11",
+          "team": "Placeholder"
+        },
+        {
           "contest": "ARML",
           "year": "2025",
           "contest_slug": "arml",
@@ -42406,6 +43477,15 @@
           "place": "44",
           "site": "S",
           "team": "Connecticut A1"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Jack Whitney-Epstein",
+          "rank": "34",
+          "score": "9",
+          "team": "Mass ARML Suns"
         }
       ]
     },
@@ -42515,6 +43595,15 @@
       "state": "",
       "gender": "male",
       "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Jonathan Zhou",
+          "rank": "36",
+          "score": "9",
+          "team": "Westchester Area Math Circle B"
+        },
         {
           "contest": "ARML",
           "year": "2025",
@@ -43759,6 +44848,15 @@
           "place": "6",
           "score": "11",
           "prize": "$800"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Amy Zhang",
+          "rank": "90",
+          "score": "8",
+          "team": "Lexington Zeta"
         }
       ]
     },
@@ -43826,6 +44924,15 @@
           "place": "12",
           "score": "11",
           "prize": "$800"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Yunong Wu",
+          "rank": "47",
+          "score": "9",
+          "team": "Westchester Area Math Circle A"
         },
         {
           "contest": "MPFG",
@@ -44353,6 +45460,15 @@
           "place": "28",
           "score": "9",
           "prize": "Honorable Mention"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Chloe Ma",
+          "rank": "81",
+          "score": "8",
+          "team": "Hot Pot Lovers"
         }
       ]
     },
@@ -46780,11 +47896,29 @@
     },
     {
       "id": 1447,
-      "name": "William Wu",
+      "name": "Unknown",
       "aliases": [],
       "state": "Illinois",
       "gender": "male",
       "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Unknown",
+          "rank": "11",
+          "score": "10",
+          "team": "Unknown"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Unknown",
+          "rank": "25",
+          "score": "9",
+          "team": "Unknown"
+        },
         {
           "contest": "MATHCOUNTS National — Rankings",
           "year": "2025",
@@ -46802,6 +47936,1113 @@
           "state": "Illinois",
           "rank": "55",
           "grade": "6"
+        }
+      ]
+    },
+    {
+      "id": 1448,
+      "name": "Youran Charlie Gu",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Youran Charlie Gu",
+          "rank": "12",
+          "score": "10",
+          "team": "PRISMS Falcons"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Karn Chutnian",
+          "rank": "15",
+          "score": "10",
+          "team": "Mass ARML Stars"
+        }
+      ]
+    },
+    {
+      "id": 1449,
+      "name": "Max Salvestrini",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Max Salvestrini",
+          "rank": "12",
+          "score": "10",
+          "team": "Westchester Area Math Circle E"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Rishi Shah",
+          "rank": "26",
+          "score": "9",
+          "team": "Small L Club"
+        }
+      ]
+    },
+    {
+      "id": 1450,
+      "name": "Arnav Lyengar",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Arnav Lyengar",
+          "rank": "12",
+          "score": "10",
+          "team": "DMV Math Circle Sigma"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Dekan Chen",
+          "rank": "26",
+          "score": "9",
+          "team": "Plano West"
+        }
+      ]
+    },
+    {
+      "id": 1451,
+      "name": "Mihir Kumar",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Mihir Kumar",
+          "rank": "28",
+          "score": "9",
+          "team": "Math-M-Addicts 1"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Arnav Vunnam",
+          "rank": "30",
+          "score": "9",
+          "team": "ICAE2"
+        }
+      ]
+    },
+    {
+      "id": 1452,
+      "name": "Anand Swaroop",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Anand Swaroop",
+          "rank": "31",
+          "score": "9",
+          "team": "RSM - A"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Daniel Cai",
+          "rank": "33",
+          "score": "9",
+          "team": "ABML"
+        }
+      ]
+    },
+    {
+      "id": 1453,
+      "name": "Steve Cui",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Steve Cui",
+          "rank": "31",
+          "score": "9",
+          "team": "VAMC2025"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Mark Yutong Zhao",
+          "rank": "34",
+          "score": "9",
+          "team": "PRISMS Falcons"
+        }
+      ]
+    },
+    {
+      "id": 1454,
+      "name": "Arnav Vunnam",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Arnav Vunnam",
+          "rank": "36",
+          "score": "9",
+          "team": "Novi Unicorns"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Divit Mehra",
+          "rank": "34",
+          "score": "9",
+          "team": "Pirates A"
+        }
+      ]
+    },
+    {
+      "id": 1455,
+      "name": "Daniel David",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Daniel David",
+          "rank": "38",
+          "score": "9",
+          "team": "Benjamin's Mom's Team"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Brayden Choi",
+          "rank": "34",
+          "score": "9",
+          "team": "OSS ORCAS Team 1"
+        }
+      ]
+    },
+    {
+      "id": 1456,
+      "name": "Benjamin Sun",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Benjamin Sun",
+          "rank": "38",
+          "score": "9",
+          "team": "Big L Club"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Clark Hu",
+          "rank": "39",
+          "score": "9",
+          "team": "We Math Goodly"
+        }
+      ]
+    },
+    {
+      "id": 1457,
+      "name": "Ben Li",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Ben Li",
+          "rank": "38",
+          "score": "9",
+          "team": "FrostMath"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Daniel Zhao",
+          "rank": "39",
+          "score": "9",
+          "team": "Petunia"
+        }
+      ]
+    },
+    {
+      "id": 1458,
+      "name": "Abby Kesmodel",
+      "aliases": [],
+      "state": "",
+      "gender": "female",
+      "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Abby Kesmodel",
+          "rank": "38",
+          "score": "9",
+          "team": "Westchester Area Math Circle A"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Owen Tang",
+          "rank": "44",
+          "score": "9",
+          "team": "CO Mathletes"
+        }
+      ]
+    },
+    {
+      "id": 1459,
+      "name": "Brian Zhao",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Brian Zhao",
+          "rank": "45",
+          "score": "9",
+          "team": "Benjamin's Dad's Team"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Patrick Deng",
+          "rank": "47",
+          "score": "8",
+          "team": "Le club mathematique de River Hill"
+        }
+      ]
+    },
+    {
+      "id": 1460,
+      "name": "Woojin Seong",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Woojin Seong",
+          "rank": "47",
+          "score": "9",
+          "team": "Novi Unicorns"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Sai Chintagunta",
+          "rank": "54",
+          "score": "8",
+          "team": "Green Hamsters"
+        }
+      ]
+    },
+    {
+      "id": 1461,
+      "name": "Dawson Park",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Dawson Park",
+          "rank": "47",
+          "score": "9",
+          "team": "Hotchkiss Blue"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Michael Wu",
+          "rank": "55",
+          "score": "8",
+          "team": "D1 Moggers"
+        }
+      ]
+    },
+    {
+      "id": 1462,
+      "name": "Mia Gan",
+      "aliases": [],
+      "state": "",
+      "gender": "female",
+      "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Mia Gan",
+          "rank": "47",
+          "score": "9",
+          "team": "PRISMS Future Falcons"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Spencer Wang",
+          "rank": "58",
+          "score": "8",
+          "team": "Karkaboingus"
+        }
+      ]
+    },
+    {
+      "id": 1463,
+      "name": "Kaya Yang",
+      "aliases": [],
+      "state": "",
+      "gender": "female",
+      "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Kaya Yang",
+          "rank": "47",
+          "score": "9",
+          "team": "PRISMS Young Falcons"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Joshua Oliver",
+          "rank": "58",
+          "score": "8",
+          "team": "OSS ORCAS Team 1"
+        }
+      ]
+    },
+    {
+      "id": 1464,
+      "name": "Kevin Yu",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Kevin Yu",
+          "rank": "47",
+          "score": "9",
+          "team": "Theta Math Club"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Daniel Yu",
+          "rank": "60",
+          "score": "8",
+          "team": "Maryland United A"
+        }
+      ]
+    },
+    {
+      "id": 1465,
+      "name": "Henry Xue",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Henry Xue",
+          "rank": "47",
+          "score": "9",
+          "team": "Westchester Area Math Circle B"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Nikhil Reddy",
+          "rank": "61",
+          "score": "8",
+          "team": "Multivariants"
+        }
+      ]
+    },
+    {
+      "id": 1466,
+      "name": "Jack Li",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Jack Li",
+          "rank": "47",
+          "score": "9",
+          "team": "Ultraviolet Catastrophe"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Zhifei Liu",
+          "rank": "63",
+          "score": "8",
+          "team": "PRISMS Falcons"
+        }
+      ]
+    },
+    {
+      "id": 1467,
+      "name": "Lucas Wang",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Lucas Wang",
+          "rank": "62",
+          "score": "8",
+          "team": "orzzzzzzzzzzzz"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Eli Gold",
+          "rank": "66",
+          "score": "8",
+          "team": "NDHS"
+        }
+      ]
+    },
+    {
+      "id": 1468,
+      "name": "Zenghan Feng",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Zenghan Feng",
+          "rank": "63",
+          "score": "8",
+          "team": "Stearns Middle School"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Amy Ma",
+          "rank": "66",
+          "score": "8",
+          "team": "Green Hamsters"
+        }
+      ]
+    },
+    {
+      "id": 1469,
+      "name": "Michael Wu",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Michael Wu",
+          "rank": "67",
+          "score": "8",
+          "team": "D1 Moggers"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Adithya Prabha",
+          "rank": "66",
+          "score": "8",
+          "team": "DMV Math Circle Sigma"
+        }
+      ]
+    },
+    {
+      "id": 1470,
+      "name": "Tianze Qiu",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Tianze Qiu",
+          "rank": "71",
+          "score": "8",
+          "team": "Theta Math Club"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Andrew Kalashnikov",
+          "rank": "70",
+          "score": "8",
+          "team": "MathSchool 2"
+        }
+      ]
+    },
+    {
+      "id": 1471,
+      "name": "Jason Yang",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Jason Yang",
+          "rank": "72",
+          "score": "8",
+          "team": "Lexington Alpha"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Huanqi Zhang",
+          "rank": "72",
+          "score": "8",
+          "team": "Phillips Academy"
+        }
+      ]
+    },
+    {
+      "id": 1472,
+      "name": "Zekai Wang",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Zekai Wang",
+          "rank": "73",
+          "score": "8",
+          "team": "OveRZealous TEsserAct Manufacturers"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Alexander Amrhein",
+          "rank": "72",
+          "score": "8",
+          "team": "MathSchool 1"
+        }
+      ]
+    },
+    {
+      "id": 1473,
+      "name": "Pun Tresattayapan",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Pun Tresattayapan",
+          "rank": "74",
+          "score": "8",
+          "team": "Cranbrook Aardvarks"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Gary Shen",
+          "rank": "72",
+          "score": "8",
+          "team": "Lexington Muztaba 3rd Parties"
+        }
+      ]
+    },
+    {
+      "id": 1474,
+      "name": "Benjamin Tang",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Benjamin Tang",
+          "rank": "75",
+          "score": "8",
+          "team": "USC Individuals 1"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Jaeyun Park",
+          "rank": "72",
+          "score": "8",
+          "team": "Cheshire Cats"
+        }
+      ]
+    },
+    {
+      "id": 1475,
+      "name": "Hridaan Mehta",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Hridaan Mehta",
+          "rank": "76",
+          "score": "8",
+          "team": "CRH 1"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Chris Cheng",
+          "rank": "72",
+          "score": "8",
+          "team": "Lexington Muztaba"
+        }
+      ]
+    },
+    {
+      "id": 1476,
+      "name": "Ian Cheng",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Ian Cheng",
+          "rank": "76",
+          "score": "8",
+          "team": "VAMC2025"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Daniel David",
+          "rank": "72",
+          "score": "8",
+          "team": "BMT"
+        }
+      ]
+    },
+    {
+      "id": 1477,
+      "name": "Tiger Deng",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Tiger Deng",
+          "rank": "78",
+          "score": "8",
+          "team": "the snorlaxes"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Erica Xie",
+          "rank": "72",
+          "score": "8",
+          "team": "DMV Math Circle Alpha"
+        }
+      ]
+    },
+    {
+      "id": 1478,
+      "name": "Alexander Peev",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Alexander Peev",
+          "rank": "82",
+          "score": "8",
+          "team": "RSM - B"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "David He",
+          "rank": "72",
+          "score": "8",
+          "team": "Moco Rockets"
+        }
+      ]
+    },
+    {
+      "id": 1479,
+      "name": "Roy Brauwerman",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Roy Brauwerman",
+          "rank": "83",
+          "score": "8",
+          "team": "REST Assured"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Zifan Zhao",
+          "rank": "72",
+          "score": "8",
+          "team": "Saxons"
+        }
+      ]
+    },
+    {
+      "id": 1480,
+      "name": "Samhith Dewal",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Samhith Dewal",
+          "rank": "85",
+          "score": "8",
+          "team": "Mass ARML"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Ian Liao",
+          "rank": "72",
+          "score": "8",
+          "team": "Saxons"
+        }
+      ]
+    },
+    {
+      "id": 1481,
+      "name": "Bohan Wang",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Bohan Wang",
+          "rank": "85",
+          "score": "8",
+          "team": "PRISMS Falcons"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Abhishek Chand",
+          "rank": "72",
+          "score": "8",
+          "team": "Doral Academy Team 1: Koski's Congregation"
+        }
+      ]
+    },
+    {
+      "id": 1482,
+      "name": "Anuraag Pasula",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Anuraag Pasula",
+          "rank": "85",
+          "score": "8",
+          "team": "Academies Math Team"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Devin Li",
+          "rank": "72",
+          "score": "8",
+          "team": "Dallas Math Circle"
+        }
+      ]
+    },
+    {
+      "id": 1483,
+      "name": "Devin Li",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Devin Li",
+          "rank": "91",
+          "score": "8",
+          "team": "Dallas Math Circle"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Sanjana Ramesh",
+          "rank": "72",
+          "score": "8",
+          "team": "ICAE2"
+        }
+      ]
+    },
+    {
+      "id": 1484,
+      "name": "April Sun",
+      "aliases": [],
+      "state": "",
+      "gender": "female",
+      "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "April Sun",
+          "rank": "91",
+          "score": "8",
+          "team": "RSM - A"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Meghana Myneni",
+          "rank": "72",
+          "score": "8",
+          "team": "ICAE4"
+        }
+      ]
+    },
+    {
+      "id": 1485,
+      "name": "Anish Alapati",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Anish Alapati",
+          "rank": "91",
+          "score": "8",
+          "team": "WWP Charizard"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Siddharth Sangi",
+          "rank": "72",
+          "score": "8",
+          "team": "Team Tau"
+        }
+      ]
+    },
+    {
+      "id": 1486,
+      "name": "Abhinav Kandregula",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Abhinav Kandregula",
+          "rank": "91",
+          "score": "8",
+          "team": "Academies Math Team"
+        },
+        {
+          "contest": "MMATHS",
+          "year": "2024",
+          "contest_slug": "mmaths",
+          "student_name": "Matthew Zhang",
+          "rank": "72",
+          "score": "8",
+          "team": "Team Tau"
+        }
+      ]
+    },
+    {
+      "id": 1487,
+      "name": "William Prasetyo",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "William Prasetyo",
+          "rank": "95",
+          "score": "8",
+          "team": "PESH Math Club"
+        }
+      ]
+    },
+    {
+      "id": 1488,
+      "name": "Bella Li",
+      "aliases": [],
+      "state": "",
+      "gender": "female",
+      "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Bella Li",
+          "rank": "95",
+          "score": "8",
+          "team": "OveRZealous TEsserAct Manufacturers"
+        }
+      ]
+    },
+    {
+      "id": 1489,
+      "name": "Leon Du",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Leon Du",
+          "rank": "95",
+          "score": "8",
+          "team": "A Kettle of Hawks"
         }
       ]
     }
@@ -46911,6 +49152,11 @@
       "contest_name": "MPFG",
       "description": "Math Prize for Girls - Annual competition at MIT by Advantage Testing Foundation. Top female high school mathematicians.",
       "website": "https://mathprize.atfoundation.org/"
+    },
+    "mmaths": {
+      "contest_name": "MMATHS",
+      "description": "Math Majors of America Tournament for High Schools. Team-based competition hosted at multiple university campuses",
+      "website": "run by undergraduate math students."
     }
   },
   "contest_year_files": {
@@ -46997,6 +49243,10 @@
       "2024": "results.csv",
       "2025": "results.csv"
     },
+    "mmaths": {
+      "2024": "results.csv",
+      "2025": "results.csv"
+    },
     "mpfg": {
       "2022": "results.csv",
       "2023": "results.csv",
@@ -47055,6 +49305,7 @@
     "arml",
     "dmm",
     "cmm",
-    "mpfg"
+    "mpfg",
+    "mmaths"
   ]
 }
