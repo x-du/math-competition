@@ -20464,14 +20464,6 @@
           "score": "24.17"
         },
         {
-          "contest": "USAJMO",
-          "year": "2025",
-          "contest_slug": "jmo",
-          "student_name": "Neil Peter",
-          "state": "Pennsylvania",
-          "award": "Honors"
-        },
-        {
           "contest": "PUMaC — Number Theory",
           "year": "2024",
           "contest_slug": "pumac-number-theory",
@@ -27679,6 +27671,14 @@
       "state": "Washington",
       "records": [
         {
+          "contest": "USAJMO",
+          "year": "2025",
+          "contest_slug": "jmo",
+          "student_name": "Wesley Wu",
+          "state": "Washington",
+          "award": "Honorable Mention"
+        },
+        {
           "contest": "MATHCOUNTS National — Rankings",
           "year": "2024",
           "contest_slug": "mathcounts-national-rank",
@@ -27930,7 +27930,7 @@
           "year": "2025",
           "contest_slug": "jmo",
           "student_name": "Ethan Wang",
-          "state": "Utah",
+          "state": "Connecticut",
           "award": "Honorable Mention"
         },
         {
@@ -28413,6 +28413,14 @@
       "aliases": [],
       "state": "New York",
       "records": [
+        {
+          "contest": "USAJMO",
+          "year": "2025",
+          "contest_slug": "jmo",
+          "student_name": "Derrick Chen",
+          "state": "New York",
+          "award": "Honorable Mention"
+        },
         {
           "contest": "MATHCOUNTS National — Rankings",
           "year": "2025",
@@ -30893,22 +30901,6 @@
       ]
     },
     {
-      "id": 985,
-      "name": "Sophie Li",
-      "aliases": [],
-      "state": "Texas",
-      "records": [
-        {
-          "contest": "USAJMO",
-          "year": "2025",
-          "contest_slug": "jmo",
-          "student_name": "Sophie Li",
-          "state": "Texas",
-          "award": "Top Honors"
-        }
-      ]
-    },
-    {
       "id": 986,
       "name": "Kyle Lin",
       "aliases": [],
@@ -32531,9 +32523,19 @@
     {
       "id": 1077,
       "name": "Xinyi Li",
-      "aliases": [],
+      "aliases": [
+        "Sophie Li"
+      ],
       "state": "Texas",
       "records": [
+        {
+          "contest": "USAJMO",
+          "year": "2025",
+          "contest_slug": "jmo",
+          "student_name": "Xinyi Li",
+          "state": "Texas",
+          "award": "Top Honors"
+        },
         {
           "contest": "USAJMO",
           "year": "2024",
@@ -37572,6 +37574,22 @@
           "place": "16",
           "score": "9",
           "prize": "$300"
+        }
+      ]
+    },
+    {
+      "id": 1340,
+      "name": "Jai Mukherjee",
+      "aliases": [],
+      "state": "Washington",
+      "records": [
+        {
+          "contest": "USAJMO",
+          "year": "2025",
+          "contest_slug": "jmo",
+          "student_name": "Jai Mukherjee",
+          "state": "Washington",
+          "award": "Honorable Mention"
         }
       ]
     }
