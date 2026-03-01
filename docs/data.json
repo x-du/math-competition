@@ -874,7 +874,7 @@
       "id": 4,
       "name": "Liam Reddy",
       "aliases": [],
-      "state": "Nevada",
+      "state": "Utah",
       "gender": "male",
       "records": [
         {
@@ -30626,9 +30626,9 @@
     },
     {
       "id": 482,
-      "name": "David Zhang(CA)",
+      "name": "David Zhang",
       "aliases": [],
-      "state": "Washington",
+      "state": "California",
       "gender": "male",
       "records": [
         {
@@ -30643,8 +30643,8 @@
           "contest": "CMM",
           "year": "2025",
           "contest_slug": "cmm",
-          "student_name": "David Zhang(CA)",
-          "state": "Washington",
+          "student_name": "David Zhang",
+          "state": "California",
           "rank": "10"
         },
         {

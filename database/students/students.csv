@@ -2,7 +2,7 @@ student_id,student_name,state,team_ids,alias,gender
 1,Alexander Wang,New Jersey,1|32|73,,male
 2,Bryan Sicheng Guo,California,2,Bryan Guo,male
 3,Oron Wang,New Hampshire,3|48|83|113,,male
-4,Liam Reddy,Nevada,4|58,,male
+4,Liam Reddy,Utah,4|58,,male
 5,Tianyi Li,"Ontario, Canada",5,,male
 6,Jefferson Tiger Zhou,Minnesota,6|191,Jefferson Zhou,male
 7,Benjamin Fu,Washington,7|89,,male
@@ -452,7 +452,7 @@ student_id,student_name,state,team_ids,alias,gender
 479,Aakash Bhattacharyya,Arkansas,169,,male
 480,Chirag Samantaroy,Arkansas,169,,male
 481,Eric Tang,Arkansas,169,,male
-482,David Zhang(CA),Washington,170,,male
+482,David Zhang,California,170,,male
 483,Lawson Wang,California,170,,male
 484,Abhinav Krishna,Colorado,171,,male
 485,Joshua Liu,Colorado,171,,male
@@ -1540,4 +1540,4 @@ student_id,student_name,state,team_ids,alias,gender
 1594,Eric Shi Chen,,,,male
 1595,Yutong Wang,New York,,,male
 1596,Alvin Fang,Illinois,,,male
-1597,Unknown,Unknown,320,,Unknown 
+1597,Unknown,Unknown,320,,Unknown
