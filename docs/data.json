@@ -2371,6 +2371,18 @@
           "combinatorics_score": "27.49"
         },
         {
+          "contest": "MPFG",
+          "year": "2025",
+          "contest_slug": "mpfg",
+          "student_name": "Jiayu Ellie Su",
+          "state": "New Jersey",
+          "grade": "10th",
+          "school": "Phillips Academy Andover",
+          "place": "13",
+          "score": "11",
+          "prize": "$800"
+        },
+        {
           "contest": "USAMO",
           "year": "2024",
           "contest_slug": "amo",
@@ -6540,12 +6552,36 @@
           "award": "Gold"
         },
         {
+          "contest": "MPFG",
+          "year": "2024",
+          "contest_slug": "mpfg",
+          "student_name": "Hannah Fox",
+          "state": "California",
+          "grade": "12th",
+          "school": "Proof School",
+          "place": "8",
+          "score": "14",
+          "prize": "$1000"
+        },
+        {
           "contest": "USAJMO",
           "year": "2023",
           "contest_slug": "jmo",
           "student_name": "Hannah Fox",
           "state": "California",
           "award": "Top Honors"
+        },
+        {
+          "contest": "MPFG",
+          "year": "2023",
+          "contest_slug": "mpfg",
+          "student_name": "Hannah Fox",
+          "state": "California",
+          "grade": "11th",
+          "school": "Proof School",
+          "place": "3",
+          "score": "12",
+          "prize": "$10,000"
         }
       ]
     },
@@ -6989,6 +7025,18 @@
           "finals_score": "7"
         },
         {
+          "contest": "MPFG",
+          "year": "2025",
+          "contest_slug": "mpfg",
+          "student_name": "Selena Ge",
+          "state": "Massachusetts",
+          "grade": "10th",
+          "school": "Lexington HS",
+          "place": "1",
+          "score": "15",
+          "prize": "$50,000"
+        },
+        {
           "contest": "HMMT February — Combinatorics",
           "year": "2025",
           "contest_slug": "hmmt-feb-combo",
@@ -7068,6 +7116,18 @@
           "finals_score": "14"
         },
         {
+          "contest": "MPFG",
+          "year": "2024",
+          "contest_slug": "mpfg",
+          "student_name": "Selena Ge",
+          "state": "Massachusetts",
+          "grade": "9th",
+          "school": "Lexington HS",
+          "place": "9",
+          "score": "14",
+          "prize": "$1000"
+        },
+        {
           "contest": "MATHCOUNTS National — Rankings",
           "year": "2024",
           "contest_slug": "mathcounts-national-rank",
@@ -7107,6 +7167,18 @@
           "student_name": "Selena Ge",
           "state": "Massachusetts",
           "award": "Honorable Mention"
+        },
+        {
+          "contest": "MPFG",
+          "year": "2023",
+          "contest_slug": "mpfg",
+          "student_name": "Selena Ge",
+          "state": "Massachusetts",
+          "grade": "8th",
+          "school": "Jonas Clarke MS",
+          "place": "2",
+          "score": "14",
+          "prize": "$20,000"
         },
         {
           "contest": "MATHCOUNTS National — Rankings",
@@ -8212,6 +8284,18 @@
           "award": "Bronze"
         },
         {
+          "contest": "MPFG",
+          "year": "2024",
+          "contest_slug": "mpfg",
+          "student_name": "Angela Liu",
+          "state": "California",
+          "grade": "12th",
+          "school": "Homeschool",
+          "place": "2",
+          "score": "15",
+          "prize": "$15,000"
+        },
+        {
           "contest": "HMMT February — Geometry",
           "year": "2024",
           "contest_slug": "hmmt-feb-geometry",
@@ -8280,6 +8364,18 @@
           "algebra_score": "23.07",
           "geometry_score": "22.82",
           "combinatorics_score": "27.17"
+        },
+        {
+          "contest": "MPFG",
+          "year": "2022",
+          "contest_slug": "mpfg",
+          "student_name": "Angela Liu",
+          "state": "California",
+          "grade": "10th",
+          "school": "Homeschool",
+          "place": "4",
+          "score": "12",
+          "prize": "$7000"
         },
         {
           "contest": "HMMT February",
@@ -8598,6 +8694,18 @@
           "student_name": "Sophia Zhang",
           "state": "New Jersey",
           "award": "Honors"
+        },
+        {
+          "contest": "MPFG",
+          "year": "2023",
+          "contest_slug": "mpfg",
+          "student_name": "Sophia Zhang",
+          "state": "New Jersey",
+          "grade": "10th",
+          "school": "PRISMS",
+          "place": "10",
+          "score": "10",
+          "prize": "$1000"
         }
       ]
     },
@@ -9392,6 +9500,18 @@
           "award": "Gold"
         },
         {
+          "contest": "MPFG",
+          "year": "2023",
+          "contest_slug": "mpfg",
+          "student_name": "Jessica Wan",
+          "state": "Florida",
+          "grade": "12th",
+          "school": "Florida Virtual School",
+          "place": "1",
+          "score": "17",
+          "prize": "$18,000"
+        },
+        {
           "contest": "HMMT February — Combinatorics",
           "year": "2023",
           "contest_slug": "hmmt-feb-combo",
@@ -9425,6 +9545,18 @@
           "student_name": "Jessica Wan",
           "state": "Florida",
           "award": "Silver"
+        },
+        {
+          "contest": "MPFG",
+          "year": "2022",
+          "contest_slug": "mpfg",
+          "student_name": "Jessica Wan",
+          "state": "Florida",
+          "grade": "11th",
+          "school": "Florida Virtual School",
+          "place": "1",
+          "score": "17",
+          "prize": "$50,000"
         },
         {
           "contest": "HMMT February",
@@ -10264,6 +10396,18 @@
           "student_name": "Annabel Ge",
           "state": "Washington",
           "award": "Honors"
+        },
+        {
+          "contest": "MPFG",
+          "year": "2022",
+          "contest_slug": "mpfg",
+          "student_name": "Annabel Ge",
+          "state": "Washington",
+          "grade": "11th",
+          "school": "Lakeside School",
+          "place": "7",
+          "score": "10",
+          "prize": "$2000"
         }
       ]
     },
@@ -11333,6 +11477,18 @@
           "student_name": "Vivian Loh",
           "state": "Pennsylvania",
           "award": "Honors"
+        },
+        {
+          "contest": "MPFG",
+          "year": "2022",
+          "contest_slug": "mpfg",
+          "student_name": "Vivian Loh",
+          "state": "Pennsylvania",
+          "grade": "11th",
+          "school": "Winchester Thurston School",
+          "place": "10",
+          "score": "9",
+          "prize": "$300"
         }
       ]
     },
@@ -12248,6 +12404,18 @@
           "student_name": "Isabella Zhu",
           "rank": "2",
           "total_score": "126.56"
+        },
+        {
+          "contest": "MPFG",
+          "year": "2022",
+          "contest_slug": "mpfg",
+          "student_name": "Isabella Zhu",
+          "state": "Virginia",
+          "grade": "12th",
+          "school": "Thomas Jefferson HSST",
+          "place": "2",
+          "score": "15",
+          "prize": "$20,000"
         },
         {
           "contest": "HMMT February",
@@ -15445,6 +15613,18 @@
           "finals_score": "2"
         },
         {
+          "contest": "MPFG",
+          "year": "2025",
+          "contest_slug": "mpfg",
+          "student_name": "Sophia Jin",
+          "state": "New York",
+          "grade": "12th",
+          "school": "Stuyvesant HS",
+          "place": "11",
+          "score": "11",
+          "prize": "$800"
+        },
+        {
           "contest": "USAJMO",
           "year": "2024",
           "contest_slug": "jmo",
@@ -16055,6 +16235,18 @@
           "rank": "43",
           "total_score": "1.679",
           "finals_score": "0"
+        },
+        {
+          "contest": "MPFG",
+          "year": "2025",
+          "contest_slug": "mpfg",
+          "student_name": "Sylvia Lee",
+          "state": "Massachusetts",
+          "grade": "11th",
+          "school": "Lexington HS",
+          "place": "10",
+          "score": "11",
+          "prize": "$800"
         },
         {
           "contest": "USAJMO",
@@ -18414,6 +18606,18 @@
           "award": "Silver"
         },
         {
+          "contest": "MPFG",
+          "year": "2025",
+          "contest_slug": "mpfg",
+          "student_name": "Catherine Xu",
+          "state": "Iowa",
+          "grade": "12th",
+          "school": "Iowa City West SHS",
+          "place": "8",
+          "score": "11",
+          "prize": "$800"
+        },
+        {
           "contest": "CMIMC - Combinatorics and Computer Science",
           "year": "2025",
           "contest_slug": "cmimc-comb",
@@ -18482,12 +18686,36 @@
           "award": "Honorable Mention"
         },
         {
+          "contest": "MPFG",
+          "year": "2023",
+          "contest_slug": "mpfg",
+          "student_name": "Catherine Xu",
+          "state": "Iowa",
+          "grade": "10th",
+          "school": "Iowa City West SHS",
+          "place": "5",
+          "score": "11",
+          "prize": "$4000"
+        },
+        {
           "contest": "USAJMO",
           "year": "2022",
           "contest_slug": "jmo",
           "student_name": "Catherine Xu",
           "state": "Iowa",
           "award": "Honorable Mention"
+        },
+        {
+          "contest": "MPFG",
+          "year": "2022",
+          "contest_slug": "mpfg",
+          "student_name": "Catherine Xu",
+          "state": "Iowa",
+          "grade": "9th",
+          "school": "Iowa City West SHS",
+          "place": "6",
+          "score": "10",
+          "prize": "$2000"
         },
         {
           "contest": "MATHCOUNTS National — Rankings",
@@ -18664,6 +18892,18 @@
       "state": "Virginia",
       "records": [
         {
+          "contest": "MPFG",
+          "year": "2025",
+          "contest_slug": "mpfg",
+          "student_name": "Sophia Hou",
+          "state": "Virginia",
+          "grade": "12th",
+          "school": "Thomas Jefferson HSST",
+          "place": "3",
+          "score": "13",
+          "prize": "$11,400"
+        },
+        {
           "contest": "HMMT February — Geometry",
           "year": "2025",
           "contest_slug": "hmmt-feb-geometry",
@@ -18730,6 +18970,18 @@
           "rank": "34",
           "total_score": "2.608",
           "finals_score": "9"
+        },
+        {
+          "contest": "MPFG",
+          "year": "2024",
+          "contest_slug": "mpfg",
+          "student_name": "Sophia Hou",
+          "state": "Virginia",
+          "grade": "11th",
+          "school": "Thomas Jefferson HSST",
+          "place": "3",
+          "score": "15",
+          "prize": "$15,000"
         }
       ]
     },
@@ -19791,6 +20043,18 @@
           "p8": "0"
         },
         {
+          "contest": "MPFG",
+          "year": "2024",
+          "contest_slug": "mpfg",
+          "student_name": "Alansha Jiang",
+          "state": "Washington",
+          "grade": "12th",
+          "school": "Newport HS",
+          "place": "10",
+          "score": "14",
+          "prize": "$1000"
+        },
+        {
           "contest": "USAJMO",
           "year": "2023",
           "contest_slug": "jmo",
@@ -20641,6 +20905,18 @@
           "award": "Bronze"
         },
         {
+          "contest": "MPFG",
+          "year": "2025",
+          "contest_slug": "mpfg",
+          "student_name": "Amy Cui",
+          "state": "Washington",
+          "grade": "12th",
+          "school": "Lakeside School",
+          "place": "17",
+          "score": "11",
+          "prize": "$800"
+        },
+        {
           "contest": "HMMT February — Algebra & Number Theory",
           "year": "2025",
           "contest_slug": "hmmt-feb-algebra-number-theory",
@@ -21006,12 +21282,48 @@
           "award": "Bronze"
         },
         {
+          "contest": "MPFG",
+          "year": "2024",
+          "contest_slug": "mpfg",
+          "student_name": "Emily Yu",
+          "state": "New York",
+          "grade": "12th",
+          "school": "Mendon HS",
+          "place": "13",
+          "score": "14",
+          "prize": "$1000"
+        },
+        {
           "contest": "USAJMO",
           "year": "2023",
           "contest_slug": "jmo",
           "student_name": "Emily Yu",
           "state": "New York",
           "award": "Honors"
+        },
+        {
+          "contest": "MPFG",
+          "year": "2023",
+          "contest_slug": "mpfg",
+          "student_name": "Emily Yu",
+          "state": "New York",
+          "grade": "11th",
+          "school": "Mendon HS",
+          "place": "9",
+          "score": "10",
+          "prize": "$1000"
+        },
+        {
+          "contest": "MPFG",
+          "year": "2022",
+          "contest_slug": "mpfg",
+          "student_name": "Emily Yu",
+          "state": "New York",
+          "grade": "10th",
+          "school": "Mendon HS",
+          "place": "5",
+          "score": "11",
+          "prize": "$4000"
         }
       ]
     },
@@ -22222,6 +22534,18 @@
           "student_name": "Laura Wang",
           "state": "Washington",
           "award": "Honors"
+        },
+        {
+          "contest": "MPFG",
+          "year": "2024",
+          "contest_slug": "mpfg",
+          "student_name": "Laura Wang",
+          "state": "Washington",
+          "grade": "9th",
+          "school": "Lakeside School",
+          "place": "11",
+          "score": "14",
+          "prize": "$1000"
         },
         {
           "contest": "MATHCOUNTS National — Rankings",
@@ -23776,6 +24100,18 @@
           "award": "Honorable Mention"
         },
         {
+          "contest": "MPFG",
+          "year": "2023",
+          "contest_slug": "mpfg",
+          "student_name": "Victoria Hu",
+          "state": "California",
+          "grade": "12th",
+          "school": "Saratoga HS",
+          "place": "15",
+          "score": "10",
+          "prize": "$1000"
+        },
+        {
           "contest": "HMMT February — Algebra & Number Theory",
           "year": "2023",
           "contest_slug": "hmmt-feb-algebra-number-theory",
@@ -23790,6 +24126,18 @@
           "student_name": "Victoria Hu",
           "state": "California",
           "award": "Honors"
+        },
+        {
+          "contest": "MPFG",
+          "year": "2022",
+          "contest_slug": "mpfg",
+          "student_name": "Victoria Hu",
+          "state": "California",
+          "grade": "11th",
+          "school": "Saratoga HS",
+          "place": "17",
+          "score": "9",
+          "prize": "$300"
         }
       ]
     },
@@ -23888,12 +24236,36 @@
           "award": "Honorable Mention"
         },
         {
+          "contest": "MPFG",
+          "year": "2023",
+          "contest_slug": "mpfg",
+          "student_name": "Michelle Liang",
+          "state": "California",
+          "grade": "12th",
+          "school": "Canyon Crest Academy",
+          "place": "16",
+          "score": "10",
+          "prize": "$1000"
+        },
+        {
           "contest": "HMMT February — Geometry",
           "year": "2023",
           "contest_slug": "hmmt-feb-geometry",
           "student_name": "Michelle Liang",
           "rank": "40",
           "score": "22.82"
+        },
+        {
+          "contest": "MPFG",
+          "year": "2022",
+          "contest_slug": "mpfg",
+          "student_name": "Michelle Liang",
+          "state": "California",
+          "grade": "11th",
+          "school": "Canyon Crest Academy",
+          "place": "8",
+          "score": "10",
+          "prize": "$2000"
         }
       ]
     },
@@ -23990,8 +24362,20 @@
       "id": 448,
       "name": "Raina Wu",
       "aliases": [],
-      "state": "",
+      "state": "Washington",
       "records": [
+        {
+          "contest": "MPFG",
+          "year": "2023",
+          "contest_slug": "mpfg",
+          "student_name": "Raina Wu",
+          "state": "Washington",
+          "grade": "12th",
+          "school": "Lakeside School",
+          "place": "12",
+          "score": "10",
+          "prize": "$1000"
+        },
         {
           "contest": "HMMT February — Geometry",
           "year": "2023",
@@ -24906,6 +25290,26 @@
       ]
     },
     {
+      "id": 520,
+      "name": "Angela Ho",
+      "aliases": [],
+      "state": "Illinois",
+      "records": [
+        {
+          "contest": "MPFG",
+          "year": "2024",
+          "contest_slug": "mpfg",
+          "student_name": "Angela Ho",
+          "state": "Illinois",
+          "grade": "11th",
+          "school": "Stevenson HS",
+          "place": "7",
+          "score": "14",
+          "prize": "$1000"
+        }
+      ]
+    },
+    {
       "id": 521,
       "name": "Michael Qian",
       "aliases": [],
@@ -24978,6 +25382,18 @@
       "aliases": [],
       "state": "Indiana",
       "records": [
+        {
+          "contest": "MPFG",
+          "year": "2025",
+          "contest_slug": "mpfg",
+          "student_name": "Jennifer Hu",
+          "state": "Indiana",
+          "grade": "12th",
+          "school": "Carmel HS",
+          "place": "16",
+          "score": "11",
+          "prize": "$800"
+        },
         {
           "contest": "MATHCOUNTS National — Rankings",
           "year": "2022",
@@ -25071,12 +25487,36 @@
           "award": "Bronze"
         },
         {
+          "contest": "MPFG",
+          "year": "2024",
+          "contest_slug": "mpfg",
+          "student_name": "Ivy Guo",
+          "state": "Maryland",
+          "grade": "12th",
+          "school": "Blair HS",
+          "place": "14",
+          "score": "14",
+          "prize": "$1000"
+        },
+        {
           "contest": "USAJMO",
           "year": "2023",
           "contest_slug": "jmo",
           "student_name": "Ivy Guo",
           "state": "Maryland",
           "award": "Honorable Mention"
+        },
+        {
+          "contest": "MPFG",
+          "year": "2023",
+          "contest_slug": "mpfg",
+          "student_name": "Ivy Guo",
+          "state": "Maryland",
+          "grade": "11th",
+          "school": "Blair HS",
+          "place": "13",
+          "score": "10",
+          "prize": "$1000"
         },
         {
           "contest": "USAJMO",
@@ -25854,6 +26294,18 @@
           "award": "Bronze"
         },
         {
+          "contest": "MPFG",
+          "year": "2025",
+          "contest_slug": "mpfg",
+          "student_name": "Shruti Arun",
+          "state": "Colorado",
+          "grade": "12th",
+          "school": "Cherry Creek HS",
+          "place": "4",
+          "score": "13",
+          "prize": "$11,400"
+        },
+        {
           "contest": "ARML",
           "year": "2025",
           "contest_slug": "arml",
@@ -25873,12 +26325,36 @@
           "award": "Honors"
         },
         {
+          "contest": "MPFG",
+          "year": "2024",
+          "contest_slug": "mpfg",
+          "student_name": "Shruti Arun",
+          "state": "Colorado",
+          "grade": "11th",
+          "school": "Cherry Creek HS",
+          "place": "1",
+          "score": "15",
+          "prize": "$15,000"
+        },
+        {
           "contest": "USAJMO",
           "year": "2023",
           "contest_slug": "jmo",
           "student_name": "Shruti Arun",
           "state": "Colorado",
           "award": "Honorable Mention"
+        },
+        {
+          "contest": "MPFG",
+          "year": "2023",
+          "contest_slug": "mpfg",
+          "student_name": "Shruti Arun",
+          "state": "Colorado",
+          "grade": "10th",
+          "school": "Cherry Creek HS",
+          "place": "4",
+          "score": "11",
+          "prize": "$4000"
         },
         {
           "contest": "MATHCOUNTS National — Rankings",
@@ -26425,6 +26901,18 @@
           "student_name": "Susie Lu",
           "state": "Washington",
           "award": "Honorable Mention"
+        },
+        {
+          "contest": "MPFG",
+          "year": "2024",
+          "contest_slug": "mpfg",
+          "student_name": "Susie Lu",
+          "state": "Washington",
+          "grade": "11th",
+          "school": "Stanford Online HS",
+          "place": "4",
+          "score": "15",
+          "prize": "$15,000"
         },
         {
           "contest": "USAJMO",
@@ -28067,6 +28555,18 @@
           "state": "Indiana",
           "rank": "52",
           "grade": "8"
+        },
+        {
+          "contest": "MPFG",
+          "year": "2022",
+          "contest_slug": "mpfg",
+          "student_name": "Sophia Chen",
+          "state": "California",
+          "grade": "11th",
+          "school": "Sage Hill School",
+          "place": "15",
+          "score": "9",
+          "prize": "$300"
         }
       ]
     },
@@ -28642,6 +29142,18 @@
           "award": "Bronze"
         },
         {
+          "contest": "MPFG",
+          "year": "2025",
+          "contest_slug": "mpfg",
+          "student_name": "Kailua Cheng",
+          "state": "California",
+          "grade": "12th",
+          "school": "Amador Valley HS",
+          "place": "14",
+          "score": "11",
+          "prize": "$800"
+        },
+        {
           "contest": "USAJMO",
           "year": "2024",
           "contest_slug": "jmo",
@@ -28825,12 +29337,36 @@
           "award": "Bronze"
         },
         {
+          "contest": "MPFG",
+          "year": "2024",
+          "contest_slug": "mpfg",
+          "student_name": "Katie He",
+          "state": "Florida",
+          "grade": "12th",
+          "school": "The Frazer School",
+          "place": "5",
+          "score": "15",
+          "prize": "$15,000"
+        },
+        {
           "contest": "USAMO",
           "year": "2023",
           "contest_slug": "amo",
           "student_name": "Katie He",
           "state": "Florida",
           "award": "Honorable Mention"
+        },
+        {
+          "contest": "MPFG",
+          "year": "2023",
+          "contest_slug": "mpfg",
+          "student_name": "Katie He",
+          "state": "Florida",
+          "grade": "11th",
+          "school": "Buchholz HS",
+          "place": "18",
+          "score": "10",
+          "prize": "$1000"
         }
       ]
     },
@@ -30015,6 +30551,30 @@
           "student_name": "Alyssa Chu",
           "state": "New York",
           "award": "Honorable Mention"
+        },
+        {
+          "contest": "MPFG",
+          "year": "2024",
+          "contest_slug": "mpfg",
+          "student_name": "Alyssa Chu",
+          "state": "New York",
+          "grade": "12th",
+          "school": "Rye Country Day School",
+          "place": "12",
+          "score": "14",
+          "prize": "$1000"
+        },
+        {
+          "contest": "MPFG",
+          "year": "2023",
+          "contest_slug": "mpfg",
+          "student_name": "Alyssa Chu",
+          "state": "New York",
+          "grade": "11th",
+          "school": "Rye Country Day School",
+          "place": "11",
+          "score": "10",
+          "prize": "$1000"
         }
       ]
     },
@@ -31695,6 +32255,18 @@
           "student_name": "Julia Xiang",
           "state": "California",
           "award": "Honorable Mention"
+        },
+        {
+          "contest": "MPFG",
+          "year": "2023",
+          "contest_slug": "mpfg",
+          "student_name": "Julia Xiang",
+          "state": "California",
+          "grade": "10th",
+          "school": "Dougherty Valley HS",
+          "place": "14",
+          "score": "10",
+          "prize": "$1000"
         }
       ]
     },
@@ -33031,6 +33603,30 @@
           "student_name": "Heyang Ni",
           "state": "New Jersey",
           "award": "Honorable Mention"
+        },
+        {
+          "contest": "MPFG",
+          "year": "2023",
+          "contest_slug": "mpfg",
+          "student_name": "Heyang Ni",
+          "state": "New Jersey",
+          "grade": "12th",
+          "school": "PRISMS",
+          "place": "8",
+          "score": "10",
+          "prize": "$1000"
+        },
+        {
+          "contest": "MPFG",
+          "year": "2022",
+          "contest_slug": "mpfg",
+          "student_name": "Heyang Ni",
+          "state": "New Jersey",
+          "grade": "11th",
+          "school": "PRISMS",
+          "place": "13",
+          "score": "9",
+          "prize": "$300"
         }
       ]
     },
@@ -34672,7 +35268,7 @@
       "id": 1227,
       "name": "Tina Li",
       "aliases": [],
-      "state": "",
+      "state": "Texas",
       "records": [
         {
           "contest": "USAJMO",
@@ -34680,6 +35276,18 @@
           "contest_slug": "jmo",
           "student_name": "Tina Li",
           "award": "Honorable Mention"
+        },
+        {
+          "contest": "MPFG",
+          "year": "2022",
+          "contest_slug": "mpfg",
+          "student_name": "Tina Li",
+          "state": "Texas",
+          "grade": "11th",
+          "school": "Clements HS",
+          "place": "12",
+          "score": "9",
+          "prize": "$300"
         }
       ]
     },
@@ -34864,6 +35472,18 @@
           "student_name": "Ishani Agarwal",
           "state": "California",
           "award": "Honorable Mention"
+        },
+        {
+          "contest": "MPFG",
+          "year": "2022",
+          "contest_slug": "mpfg",
+          "student_name": "Ishani Agarwal",
+          "state": "California",
+          "grade": "10th",
+          "school": "Saratoga HS",
+          "place": "3",
+          "score": "12",
+          "prize": "$7000"
         }
       ]
     },
@@ -35759,7 +36379,7 @@
       "id": 1293,
       "name": "Olivia Xu",
       "aliases": [],
-      "state": "",
+      "state": "California",
       "records": [
         {
           "contest": "ARML",
@@ -35771,6 +36391,30 @@
           "ind_score": "8",
           "tb_corr": "2",
           "tb_time": "113"
+        },
+        {
+          "contest": "MPFG",
+          "year": "2023",
+          "contest_slug": "mpfg",
+          "student_name": "Olivia Xu",
+          "state": "California",
+          "grade": "12th",
+          "school": "Harker School",
+          "place": "7",
+          "score": "10",
+          "prize": "$1000"
+        },
+        {
+          "contest": "MPFG",
+          "year": "2022",
+          "contest_slug": "mpfg",
+          "student_name": "Olivia Xu",
+          "state": "California",
+          "grade": "11th",
+          "school": "Harker School",
+          "place": "11",
+          "score": "9",
+          "prize": "$300"
         }
       ]
     },
@@ -36664,6 +37308,278 @@
           "rank": "7"
         }
       ]
+    },
+    {
+      "id": 1327,
+      "name": "Jiaqi Wu",
+      "aliases": [],
+      "state": "California",
+      "records": [
+        {
+          "contest": "MPFG",
+          "year": "2025",
+          "contest_slug": "mpfg",
+          "student_name": "Jiaqi Wu",
+          "state": "California",
+          "grade": "12th",
+          "school": "Harvard-Westlake HS",
+          "place": "2",
+          "score": "13",
+          "prize": "$11,400"
+        }
+      ]
+    },
+    {
+      "id": 1328,
+      "name": "Lina Wang",
+      "aliases": [],
+      "state": "New York",
+      "records": [
+        {
+          "contest": "MPFG",
+          "year": "2025",
+          "contest_slug": "mpfg",
+          "student_name": "Lina Wang",
+          "state": "New York",
+          "grade": "11th",
+          "school": "Stony Brook School",
+          "place": "5",
+          "score": "12",
+          "prize": "$4000"
+        }
+      ]
+    },
+    {
+      "id": 1329,
+      "name": "Amy Zhang",
+      "aliases": [],
+      "state": "California",
+      "records": [
+        {
+          "contest": "MPFG",
+          "year": "2025",
+          "contest_slug": "mpfg",
+          "student_name": "Amy Zhang",
+          "state": "California",
+          "grade": "12th",
+          "school": "Cupertino HS",
+          "place": "6",
+          "score": "11",
+          "prize": "$800"
+        }
+      ]
+    },
+    {
+      "id": 1330,
+      "name": "Shibao Skylar Huang",
+      "aliases": [],
+      "state": "New York",
+      "records": [
+        {
+          "contest": "MPFG",
+          "year": "2025",
+          "contest_slug": "mpfg",
+          "student_name": "Shibao Skylar Huang",
+          "state": "New York",
+          "grade": "12th",
+          "school": "Stuyvesant HS",
+          "place": "7",
+          "score": "11",
+          "prize": "$800"
+        }
+      ]
+    },
+    {
+      "id": 1331,
+      "name": "Olivia Laido",
+      "aliases": [],
+      "state": "New Jersey",
+      "records": [
+        {
+          "contest": "MPFG",
+          "year": "2025",
+          "contest_slug": "mpfg",
+          "student_name": "Olivia Laido",
+          "state": "New Jersey",
+          "grade": "9th",
+          "school": "High Technology HS",
+          "place": "9",
+          "score": "11",
+          "prize": "$800"
+        }
+      ]
+    },
+    {
+      "id": 1332,
+      "name": "Yunong Melody Wu",
+      "aliases": [],
+      "state": "New York",
+      "records": [
+        {
+          "contest": "MPFG",
+          "year": "2025",
+          "contest_slug": "mpfg",
+          "student_name": "Yunong Melody Wu",
+          "state": "New York",
+          "grade": "10th",
+          "school": "Rye Country Day School",
+          "place": "12",
+          "score": "11",
+          "prize": "$800"
+        }
+      ]
+    },
+    {
+      "id": 1333,
+      "name": "Shuyin Liu",
+      "aliases": [],
+      "state": "Washington",
+      "records": [
+        {
+          "contest": "MPFG",
+          "year": "2025",
+          "contest_slug": "mpfg",
+          "student_name": "Shuyin Liu",
+          "state": "Washington",
+          "grade": "9th",
+          "school": "Newport HS",
+          "place": "15",
+          "score": "11",
+          "prize": "$800"
+        }
+      ]
+    },
+    {
+      "id": 1334,
+      "name": "Sophie Zhang",
+      "aliases": [],
+      "state": "Ontario, Canada",
+      "records": [
+        {
+          "contest": "MPFG",
+          "year": "2025",
+          "contest_slug": "mpfg",
+          "student_name": "Sophie Zhang",
+          "state": "Ontario, Canada",
+          "grade": "12th",
+          "school": "Havergal College",
+          "place": "18",
+          "score": "11",
+          "prize": "$800"
+        }
+      ]
+    },
+    {
+      "id": 1335,
+      "name": "Katherine Liu",
+      "aliases": [],
+      "state": "Texas",
+      "records": [
+        {
+          "contest": "MPFG",
+          "year": "2024",
+          "contest_slug": "mpfg",
+          "student_name": "Katherine Liu",
+          "state": "Texas",
+          "grade": "12th",
+          "school": "Clements HS",
+          "place": "6",
+          "score": "15",
+          "prize": "$15,000"
+        },
+        {
+          "contest": "MPFG",
+          "year": "2023",
+          "contest_slug": "mpfg",
+          "student_name": "Katherine Liu",
+          "state": "Texas",
+          "grade": "11th",
+          "school": "Clements HS",
+          "place": "17",
+          "score": "10",
+          "prize": "$1000"
+        }
+      ]
+    },
+    {
+      "id": 1336,
+      "name": "Miranda Wang",
+      "aliases": [],
+      "state": "New Jersey",
+      "records": [
+        {
+          "contest": "MPFG",
+          "year": "2023",
+          "contest_slug": "mpfg",
+          "student_name": "Miranda Wang",
+          "state": "New Jersey",
+          "grade": "12th",
+          "school": "Kent Place School",
+          "place": "6",
+          "score": "11",
+          "prize": "$4000"
+        }
+      ]
+    },
+    {
+      "id": 1337,
+      "name": "Yuhan Jennifer Xiao",
+      "aliases": [],
+      "state": "California",
+      "records": [
+        {
+          "contest": "MPFG",
+          "year": "2022",
+          "contest_slug": "mpfg",
+          "student_name": "Yuhan Jennifer Xiao",
+          "state": "California",
+          "grade": "12th",
+          "school": "Saratoga HS",
+          "place": "9",
+          "score": "10",
+          "prize": "$2000"
+        }
+      ]
+    },
+    {
+      "id": 1338,
+      "name": "Lisa Fung",
+      "aliases": [],
+      "state": "California",
+      "records": [
+        {
+          "contest": "MPFG",
+          "year": "2022",
+          "contest_slug": "mpfg",
+          "student_name": "Lisa Fung",
+          "state": "California",
+          "grade": "12th",
+          "school": "Saratoga HS",
+          "place": "14",
+          "score": "9",
+          "prize": "$300"
+        }
+      ]
+    },
+    {
+      "id": 1339,
+      "name": "Iris Xu",
+      "aliases": [],
+      "state": "Maryland",
+      "records": [
+        {
+          "contest": "MPFG",
+          "year": "2022",
+          "contest_slug": "mpfg",
+          "student_name": "Iris Xu",
+          "state": "Maryland",
+          "grade": "11th",
+          "school": "Glenelg HS",
+          "place": "16",
+          "score": "9",
+          "prize": "$300"
+        }
+      ]
     }
   ],
   "contests": {
@@ -36766,6 +37682,11 @@
       "contest_name": "CMM",
       "description": "Caltech Math Meet - Annual mathematics competition hosted by Caltech. Individual rankings.",
       "website": "https://www.caltechmathmeet.org/"
+    },
+    "mpfg": {
+      "contest_name": "MPFG",
+      "description": "Math Prize for Girls - Annual competition at MIT by Advantage Testing Foundation. Top female high school mathematicians.",
+      "website": "https://mathprize.atfoundation.org/"
     }
   },
   "contest_year_files": {
@@ -36851,6 +37772,12 @@
       "2024": "results.csv",
       "2025": "results.csv"
     },
+    "mpfg": {
+      "2022": "results.csv",
+      "2023": "results.csv",
+      "2024": "results.csv",
+      "2025": "results.csv"
+    },
     "pumac": {
       "2024": "results_A.csv",
       "2025": "results_A.csv"
@@ -36892,6 +37819,7 @@
     "cmimc-geometry",
     "arml",
     "dmm",
-    "cmm"
+    "cmm",
+    "mpfg"
   ]
 }
