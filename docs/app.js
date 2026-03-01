@@ -11,6 +11,7 @@
   var awardsRankingListEl = document.getElementById("awards-ranking-list");
   var topStudentsSectionEl = document.getElementById("top-students-section");
   var searchClearEl = document.getElementById("search-clear");
+  var girlsOnlyEl = document.getElementById("girls-only");
 
   function setLoading(busy) {
     loadingEl.setAttribute("aria-busy", busy ? "true" : "false");
@@ -222,6 +223,11 @@
   function renderTopStudentsByRecords() {
     if (!awardsRankingListEl) return;
     var students = data.students || [];
+    if (girlsOnlyEl && girlsOnlyEl.checked) {
+      students = students.filter(function (s) {
+        return (s.gender || "").toLowerCase() === "female";
+      });
+    }
     var totalCountEl = document.getElementById("total-student-count");
     if (totalCountEl) totalCountEl.textContent = String(students.length);
     var counts = [];
@@ -237,7 +243,10 @@
     }
 
     if (!counts.length) {
-      awardsRankingListEl.innerHTML = "<li class=\"awards-ranking-empty\">No record data available yet.</li>";
+      var emptyMsg = (girlsOnlyEl && girlsOnlyEl.checked)
+        ? "No female students with records in this view."
+        : "No record data available yet.";
+      awardsRankingListEl.innerHTML = "<li class=\"awards-ranking-empty\">" + escapeHtml(emptyMsg) + "</li>";
       return;
     }
 
@@ -371,6 +380,12 @@
       searchEl.value = "";
       runSearch();
       searchEl.focus();
+    });
+  }
+
+  if (girlsOnlyEl) {
+    girlsOnlyEl.addEventListener("change", function () {
+      renderTopStudentsByRecords();
     });
   }
 

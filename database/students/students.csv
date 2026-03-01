@@ -1,1395 +1,1395 @@
-student_id,student_name,state,team_ids,alias
-1,Alexander Wang,New Jersey,1|32|73,
-2,Bryan Sicheng Guo,California,2,Bryan Guo
-3,Oron Wang,New Hampshire,3|48|83|113,
-4,Liam Reddy,Nevada,4|58,
-5,Tianyi Li,"Ontario, Canada",5,
-6,Jefferson Tiger Zhou,Minnesota,6|191,Jefferson Zhou
-7,Benjamin Fu,Washington,7|89,
-8,Vincent Wang,Texas,8|86,
-9,Jonathan Du,California,9,
-10,Ruilin Wang,Virginia,10|72|85,Calvin Wang
-11,Dou Lai,Illinois,11,
-12,Alan Cheng,North Carolina,12|97,
-13,Michael Zhao,Texas,8|84,
-14,Nathan Liu,Texas,13|86|110,
-15,Jiayu Ellie Su,New Jersey,14,
-16,James Stewart,Texas,15,
-17,Dylan Wang,,16|94,
-18,bowendeng,,17,
-19,Vihaan Gupta,California,18,
-20,Ashvin Sinha,Florida,19,
-21,David Fox,California,9|94,
-22,Ian Rui,Washington,20,
-23,Jeffrey Yin,Virginia,21,
-24,Ruien Chen,,7,
-25,Rohan Garg,California,9|94|118,
-26,Ryan Li,Ohio,5,
-27,Bolei Wang,New Hampshire,3|71,
-28,Rohan Nayak Mallick,California,2|59,
-29,Patrick Du,Virginia,10|72|85|215,
-30,Eric Dai,New Jersey,22,
-31,Lewis Lau,Maryland,23,
-32,Benjamin Jiang,Florida,19,Ben Jiang
-33,Roger Zhen,Texas,24|106,
-34,Jiahe Liu,Ohio,25|37|87|116,
-35,William Hua,Massachusetts,26,
-36,Jialai She,,14|103,
-37,Grant Blitz,New Hampshire,3,
-38,Andy Lu,California,27|93,
-39,Maxwell Sun,Rhode Island,28,
-40,Darsh Patel,Florida,19,
-41,Eddy Zhang,Pennsylvania,1|32|73,
-42,Benjamin Song,New York,29,Ben Song
-43,Christopher Peng,Washington,7|89,
-44,Krithik Manoharan,Texas,24|86|110,
-45,Aaryan Vaishya,Florida,19,
-46,Ray Zhao,Texas,8,
-47,Shaohuan Zhang,Michigan,30|34,
-48,Varun Gadi,Georgia,31,
-49,Amogh Akella,Texas,24|110,
-50,Yunzhe Bai,Massachusetts,26,
-52,Aiden Yuchan Jung,,33|62,
-53,Xiaohan Zhang,,17|44,
-54,HyunWoo Choi,,33,
-55,Zongshu Wu,California,17|44|112,
-56,Channing Yang,Texas,24,
-57,Christopher Qiu,New Jersey,1|32|73,
-58,Hannah Fox,California,9,
-59,Henry Jiang,Michigan,34|75,
-60,Haotian Zhou,,35,
-61,Kailin Yang,,17,
-62,Evan Fan,New Hampshire,3|48,
-64,Michael Pok Hon Chen,,36,
-65,Selena Ge,Massachusetts,26,
-67,Andrew Shen,Texas,24|86,
-68,Xilong Lin,California,38,
-69,Connor Leong,California,16,
-70,Alexander Gu,Virginia,10|85,
-71,Samuel J. Kretzschmar,,6,
-72,Kevin Liu,Florida,19|107|124,
-73,Andrew Carratu,New Hampshire,3|48|114,
-74,Zeyi Zou,,39,
-76,Kiran Reddy,Nevada,4,
-77,Shunyao Yan,Virginia,10|72|85,
-78,William Zhao,California,40,
-79,Surya Dinesh,Texas,13,
-80,Lerchen Zhong,Texas,24,
-81,Angela Liu,California,9|16,
-82,Edward Li,Iowa,41|89|113,
-83,Skyler Mao,California,27,
-84,Owen J Zhang,Washington,7,
-85,Sophia Zhang,New Jersey,42,
-86,Vikram Sarkar,Connecticut,43|92,
-87,Max Zhao,Virginia,10|85,
-89,Jordan Lefkowitz,Connecticut,43,
-90,Rohan Das,California,9,
-91,Andrew Lin,New Jersey,1|32|73,
-92,Marvin Mao,New Jersey,45,
-93,Jessica Wan,Florida,19,
-95,Razzi H. Masroor,Michigan,46|75,Razzi Masroor
-96,Qiao Zhang,California,47,Tiger Zhang
-97,Eric Wang,New Jersey,14|120,
-98,Elliott Liu,California,2,
-99,Rohan Bodke,California,9,
-100,Langkun Yu,,44,
-102,Andrew Li,,49,
-103,Allen Wang,New Jersey,1|32|73,
-105,Myungbeen Choi,,50,
-106,Yunlang Zheng,,44,
-107,Annabel Ge,Washington,7,
-108,Yibo(Tom) Zhang,,51,
-109,Ziyi Yang,,44,
-110,Wilbert Chu,Illinois,11,
-111,ERIC MINGHAO LIU,,52,
-112,Jonathan He,Illinois,11,
-113,Feodor Yevtushenko,California,53,
-114,Vesselin Nikolaev Markovich,,54,
-115,Aaron Hu,Florida,19,
-116,Justin Zhang,California,2|59,
-117,Advaith Avadhanam,California,53|60,
-118,Linus Tang,Nevada,9,
-119,Jason Zhang,Michigan,34,
-120,Jacob Xu,,26,
-121,Srinivas Arun,Colorado,55,
-122,David Jiahui Zhang,,9|16,
-123,Vivian Loh,Pennsylvania,47,
-124,Zeyan Li,,52,
-125,Pavan Jayaraman,New Jersey,56|66,
-126,Weian Xie,Connecticut,57,
-127,David Ji,New Jersey,22,
-128,Brian Zhang,North Carolina,34,
-132,Jason Mao,New Jersey,1|32|73,
-134,Maximus Lu,New York,61,
-135,Eric Shen,California,9,
-136,Jeffrey Chen,Illinois,11,
-138,Alex Zhao,Washington,7,
-139,Skyler Le,,1|32|73,
-140,Isabella Zhu,Virginia,10|72,
-141,Amol Rama,California,60|74,
-142,Alan Bu,New Hampshire,63,
-143,Ethan Liu,California,24,
-144,Huaye Lin,Massachusetts,26,
-145,Alex Li,,19,
-147,Zachary Jacob Perry,,26,
-148,Alan Vladimiroff,Virginia,10,
-149,Suyash Pandit,Oregon,64,
-150,Kevin Joshua Wu,,65,
-151,Aaron Guo,,24,
-153,Ray Tang,,24,
-154,Boris Tsvetanov Gachevski,,67|81,
-155,Derek Liu,California,2,
-156,Edward Xiong,New Jersey,66,
-158,Vincent Trang,Virginia,10,
-159,Karthik Vedula,Florida,19,
-160,Vincent Zhang,Pennsylvania,1,
-161,Caleb Dastrup,Maryland,68,
-162,Alan Lee,California,69,
-163,David Dong,Washington,7,
-164,Steve Zhang,California,69,
-165,Max Xu,New Hampshire,63,
-166,Roger Fan,California,69,
-167,Sebastian Attlan,,70,
-169,Nilay Mishra,California,60|74,
-170,Krishna Pothapragada,Illinois,11,
-171,Evan Chang,New Jersey,1,
-172,Sumedh Vangara,,68,
-173,Luke Robitaille,Texas,24,
-174,Dylan Yu,Texas,24,
-175,Rishabh Das,New York,49,
-177,Reagan Choi,Michigan,75,
-178,Andrew Lee,,76,
-179,Adi Jasuja,New York,49,
-180,Andrew Gu,California,77,
-181,Raymond Feng,,9,
-183,Johan Ko,,9,
-184,Kevin Zhao,Massachusetts,26,
-187,Kenneth Ang Chen,,78,
-189,Yuuki Sawanoi,Washington,20,
-190,Edward Yu,Washington,7,
-191,Rowechen Zhong,Texas,24,
-192,Jack Albright,California,9,
-194,Linden Marcus Lee,,78,
-196,Won Jang,California,77,
-197,Karthik Seetharaman,,76,
-198,Eddie Wei,,79,
-199,Jerry Liu,California,80,
-200,Benjamin Andrew Fan,,77,
-201,Zani Xu,Virginia,10|72,
-202,Akash Madiraju,California,80,
-204,Alexander Svoronos,Connecticut,88,
-205,Mingyue Yang,Washington,89,
-206,Eric Xie,Maryland,83,
-207,Annie Huaiyu Wang,,90,
-208,Shaohuan (Nick) Zhang,,91,
-209,Hongming Allan Zhao,,42,
-210,Eric Zhu,North Carolina,92|109,
-211,Chenghao Hu,California,93|112,
-212,Nathan Lu,,95,
-213,Darren Han,Texas,86,
-214,Eric Guo,New Jersey,32|73,
-215,Michael Chen,New Jersey,42,
-216,Lingfei Tang,North Carolina,92|109,
-217,Sophia Jin,New York,49|96,
-218,William Qian,,95,
-219,Grisham Paimagam,North Carolina,97,
-220,Luca Pieleanu,Massachusetts,98,
-221,Anderson Hao,Virginia,85|122,
-222,Yunbo Li,,99,
-223,Edwin Zhao,,100,
-224,Zhemao Jiang,,101,
-225,Ari Wachtel,New Jersey,102,
-226,George Paret,,19,
-227,Sylvia Lee,Massachusetts,100,
-228,Hamza Khan,,101,
-229,Alexander Sun,Texas,86,Alex Sun
-230,Peter Bai,,26|100,
-231,Ryan Karim,West Virginia,83,
-232,Aashita Mandiwal,Utah,4,
-233,Adam Smith,,32,
-234,Nolan McDermott,,104,
-235,Paul Yoo,,85,
-236,Jennifer Zhou,,87,
-237,Steven Chan,,101,
-238,Shamik Khowala,,94,
-239,Satvik Sharma,Pennsylvania,73,
-240,Ryan Chen,Washington,89,
-241,Eliot Flowers,,105,
-242,Adam Ge,Massachusetts,26,
-243,Aarush Prasad,New Jersey,66,
-244,Jacob Ronan Khohayting,Florida,19|51,Jacob Khohayting
-245,Corwin Eisenbeiss,New Hampshire,96,
-246,Vincent Pirozzo,Michigan,91,
-247,Niranjan Rao,California,93,
-248,Shaheem Samsudeen,Texas,106,
-249,Sam Tsui,Massachusetts,100,Samuel Tsui
-250,Juntian Deng,Utah,4,
-251,Joshua Khohayting,,19,
-252,Arnav Iyengar,District of Columbia,83,
-253,Jaeho Lee,Texas,106,
-254,Tarun Rapaka,Texas,86,
-255,Todd Vijayakumar,,101,
-256,Kylan Huang,New York,96|123,
-257,Daniel Ge,Washington,89,
-258,Miles Petik,,107,
-259,Maitian Sha,New Jersey,66,
-260,Shaohuan (Nick) Zha,,108,
-261,Dalbert Wu,California,94,
-262,Aryan Raj,Virginia,109|116,
-263,Jonathan Liu,,26|100,
-264,Chloe Weng,,110,
-265,James Wu,,100,
-266,Ethan Imanuel,New Jersey,32,
-267,Anshul Mantri,Oregon,111,
-268,Kevin Yang,Washington,89,
-269,Calvin Garces,Michigan,100,
-270,Raymond Zhu,Washington,89,
-271,Ethan Gu,,84,
-272,Karn Chutinan,Massachusetts,115,
-273,Evin Liang,Massachusetts,26,
-274,Kai Lum,California,112,
-275,Catherine Xu,Iowa,117,
-276,Thomas Amdur,,73,
-277,Aprameya Tripathy,New Jersey,119,
-278,Albert Cao,Maryland,116,
-279,Sophia Hou,Virginia,85,
-280,Aaron Le,Pennsylvania,121,
-281,Andrew Xing,Florida,19,
-282,Arjun Pagidi,Virginia,85,
-283,Junjie Wen,,114,
-284,Alexander Liu,Virginia,122|215, Alex Liu
-285,Leo Yu,Texas,86,
-286,Yusuf Sheikh,Florida,19,
-287,Siravit Hengsuvanich,,120,
-288,David Lee,California,42,
-289,Kyle Wu,New York,49,
-290,Daniel Lu,State Department,66,
-291,Yuji Peter Wang,,42,
-292,Justin Mu,,118,
-293,Gabriel Levin,,49,
-294,Samuel Wang,Virginia,26,
-295,Raymond Zhao,,86,
-296,Hansen Shieh,Massachusetts,113,
-297,Christopher Lu,New York,123,
-298,Ian Buchanan,New York,49,
-299,Xuzhou Ren,Florida,19,
-300,Isaac Chen,New Jersey,32,
-301,Harry Kim,New York,120,
-302,Kenneth Ren,,88,
-303,Alansha Jiang,Washington,89,
-304,Jerry Xu,,26,
-306,Abhi Palikala,,85,
-307,Steven Lou,New York,49,
-308,Muztaba Syed,,26,
-309,Aaron Wang,North Carolina,97,
-310,David Kim,,100,
-311,Tony Zhang,Virginia,114,
-312,Rio Schillmoeller,Massachusetts,113,
-313,Andrew Feng,,124,
-314,Neil Peter,Pennsylvania,73,
-315,Jeremy Lee,,102,
-317,Michael Aram,,88,
-318,David Yu,Maryland,95,
-319,Seabert Mao,California,112,
-320,Jeremy Yang,Maryland,95,
-321,Alexander Duncan,,100,
-322,Andrew Shi,California,118,
-323,Isaac Chan-Osborn,Illinois,125,
-324,Benjamin Yin,,26,
-325,Amy Cui,Washington,7,
-326,Sicheng Zhou,New Jersey,42,
-327,Hengrui Liang,California,18,
-328,Aryan Agrawal,,117,
-329,Jiaxuan Gong,,34,
-330,Shangxian Chen,,38,
-331,Ritwin Narra,California,9,
-332,Huaiyu Chen,,126,
-333,Chuang Yuan,,127,
-334,HAOCHEN SUN,,22,
-335,Yuxin Fu,"Ontario, Canada",128,
-336,Lianshun Yang,,129,
-337,Emily Yu,New York,29,
-338,Katrina Liu,California,59,
-339,Ruoqing Yang,,35,
-340,Vincent Loh,,124,
-341,Alex Zhan,California,39,
-342,Christopher Kirilov Sakaliyski,,11,
-343,Jason Lee,North Carolina,130,
-344,Brandon Cai,Pennsylvania,32,
-345,Soham Dam,Pennsylvania,131,
-346,RUIQI SHI,,133,
-347,Shihan,,40,
-348,Kyle Liao,Washington,134,
-349,Tianxin Liu,,17,
-351,Tairan Ma,,135,
-352,Eric Ding,Minnesota,6,
-353,Shiqiao Zhang,,3,
-354,Suhas Kondapalli,,56,
-355,Xinrui Zhou,,36,
-356,LU CHANG,,36,
-357,Ryan Bansal,California,16,
-358,Franklin Zhou,,16,
-359,Kai Leon Yamashita,,136,
-360,Rui Ouyang,,128,
-361,Kai Yi,California,2,
-362,Rithik Gumpu,New Jersey,37,
-363,Michael Luo,Minnesota,6,
-364,Ekam Kaur,Texas,15,
-365,Harish Loghashankar,California,27,
-366,Ethan Kun Song,,2,
-367,Aryan Shome,,15,
-368,Sepehr Salehi Golsefidy,,59,
-369,Mark Tokarev,,137,
-370,Victor Chen,Illinois,11,
-371,Akshaj Arora,Georgia,31,
-372,Eric Shu,,139,
-373,Patrick Sun,,134,
-374,Rui Gu,,127,
-375,Kaden Chen,,140,
-376,LIU Andy Houjie,,17,
-377,Xiaoran Han,,2,Tiger Han
-378,Daniel Jin,New York,105,
-379,Zhenghua Xie,,59,
-380,Chang Lu,,127,
-381,Albert Lu,New Hampshire,3,
-382,Jack Wang,"British Columbia, Canada",20,
-383,Laura Wang,Washington,134,
-384,Perry Zhuo-Yan Dai,,5,
-385,Ali Zaman,California,9,
-386,Stephen Cui,,141,
-387,Royce Yao,Arizona,142,
-388,Aaron Smith,,73,
-389,Keshav Karumbunathan,Oregon,143,
-390,ZHANGJINKAI,,17,
-391,Watson Houck,,130,
-392,Justin Guo,Tennessee,145,
-393,Adam Henry Smith,,73,
-394,Alexander Yang,Washington,134,
-395,Boyou Huang,,138,
-396,Elena Ahn Beckman,California,146,Elena Beckman
-397,Ayush Bansal,,147,
-398,Neal Yan,California,47,
-399,Mingwen Duan,Connecticut,43,
-400,Kelin Zhu,Maryland,65,
-401,Emma Li,,149,
-402,Christopher Bao,Nevada,149, Chris Bao
-403,BRANDON JUNGWOO HAN,,151,
-404,Guanjie Lu,Texas,13,
-405,Rishi Rajesh,,50,
-406,Vasawat Rawangwong,Massachusetts,152,
-407,Elbert Ho,New Jersey,73,
-408,Zixuan Peng,,155,
-409,Hwisoo Kim,,14,
-410,Jaemin Kim,New York,49,
-411,Daniel Potievsky,,49,
-412,Aditya Pahuja,,49,
-413,Jacopo Rizzo,California,2,
-414,Changxiu Ji,,155,
-415,Christopher Li,"Ontario, Canada",128,
-416,Onkit Samanta,,20,
-417,Sarunyu Thongjarast,,156,
-418,Emily Liu,California,29,
-419,Worrawat Rungaramsin,,156,
-420,Simona Gagarova,,153,
-421,Yifan Kang,Massachusetts,14,
-422,Ryan Bai,California,2,
-423,Elena Baskakova,,158,
-424,Derek Zhao,Massachusetts,26,
-425,Andrew Tu,,43,
-426,Emily Ma,"Ontario, Canada",128,
-427,William Gvozdjak,,7,
-428,Evan Luo,,59,
-429,Evan Ashoori,Massachusetts,159,
-430,Henrick Rabinovitz,Massachusetts,98,
-431,Alyara Mahmudova,,81,
-432,Aiden Wen,Texas,24,
-433,Aarush Khare,California,157,
-434,Sargam Mondal,,160,
-435,Qirui Cai,,66,
-436,Anthony Wang,California,60,
-437,Marin Hristov Hristov,,67,
-438,Bryan Jiaju Chen,,63,
-439,Victoria Hu,California,157,
-440,Joseph Sukmin Chun,,163,
-441,David Wei,Virginia,10,
-442,Paul Gutkovich,New York,49,
-443,Aman Jain,,2,
-444,Michelle Liang,California,2,
-445,Jeffrey Xu,Massachusetts,73,
-446,Eddie Qiao,,59,
-447,Taiga Nishida,California,9,
-448,Raina Wu,,7,
-449,William Chenfeng Dai,,128,
-450,Minseok Eli Park,,12,
-451,Hankai Zhang,Michigan,34,
-452,Espen Slettnes,California,9,
-453,Shreyan Avi Paliwal,,64,
-454,Kavan Doctor,,60,
-455,Ryan Chin,Texas,24,
-456,Joseph Othman,New York,49,
-457,Ashley Zhu,New York,123,
-458,Aidan Duncan,,26,
-459,Zhara Elenska,,67,
-460,Peisong Li,,128,
-461,Anish Mudide,,63,
-462,Jackson Dryg,Colorado,55,
-463,Robin Said Sharif,,59,
-464,Hyunseok,,62,
-465,Chun Yeung Wong,,123,
-466,Allan Yuan,Alabama,166,
-467,Timothy Li,Alabama,166,
-468,Cuewon Kim,Alabama,166,
-469,Mina Hu,Alabama,166,
-470,Xiling E Tanner,Alaska,167,
-471,Xinlan A Tanner,Alaska,167,
-472,Ulysses Escobar,Alaska,167,
-473,Wyatt Beardsley,Alaska,167,
-474,Benjamin Jeter,Arizona,168,
-475,Owen Zhou,Arizona,168,
-476,Johnny Yu,Arizona,168,
-477,Victor Long,Arizona,168,
-478,Arya Waikar,Arkansas,169,
-479,Aakash Bhattacharyya,Arkansas,169,
-480,Chirag Samantaroy,Arkansas,169,
-481,Eric Tang,Arkansas,169,
-482,David Zhang(CA),Washington,170,
-483,Lawson Wang,California,170,
-484,Abhinav Krishna,Colorado,171,
-485,Joshua Liu,Colorado,171,
-486,Ethan Lou,Colorado,171,
-487,Kyle Zhang,Connecticut,172,
-488,Leon Jiang,Connecticut,172,
-489,Enya Yu,Connecticut,172,
-490,Yanming Huang,Delaware,173,
-491,Jai Thacker,Delaware,173,
-492,Grace Yang,Delaware,173,
-493,Bhavin Yarlagadda,Delaware,173,
-494,Nicolas Treland,Department of Defense,174,
-495,Frank Petty,Department of Defense,174,
-496,Kyle Koehler,Department of Defense,174,
-497,Catherine Perez,Department of Defense,174,
-498,Alex Acosta,District of Columbia,175,
-499,Lucas Qi,District of Columbia,175,
-500,Andrew Liu,District of Columbia,175,
-501,Philip Matchev,Florida,176,
-502,Jayden Lang,Florida,176,
-503,Stephen Yang,Georgia,177,
-504,Samanyu Ganesh,Georgia,177,
-505,Sai Palireddy,Georgia,177,
-506,Justin Park,Guam,178,
-507,Zunaid Jafar,Guam,178,
-508,Brian Hwang,Guam,178,
-509,Dylan Chong,Guam,178,
-510,Keisuke Kwong,Hawaii,179,
-511,Ashley Hong,Hawaii,179,
-512,Ryan Eto,Hawaii,179,
-513,Nicholas Biega,Hawaii,179,
-514,James Wei,Idaho,180,
-515,Vishal Suresh,Idaho,180,
-516,Bryan Li,Massachusetts,180,
-517,Jalen Lu,Idaho,180,
-518,Nate Maydanchik,Illinois,181,
-519,Andrew J Bukowski,Illinois,181,
-520,Angela Ho,Illinois,181,
-521,Michael Qian,Indiana,182,
-522,Edward Chen,Indiana,182,
-523,Jennifer Hu,Indiana,182,
-524,Om Patel,Indiana,182,
-525,Richard Yang,Iowa,183,
-526,Siray Zhu,Iowa,183,
-527,Arnesh Sharma,Kansas,184,
-528,Medha Goli,Kansas,184,
-529,John Schafer,Kansas,184,
-530,Sriram Srinivasa Kalki,Kansas,184,
-531,Nihal Jacob,Kentucky,185,
-532,Victoria Fu,Kentucky,185,
-533,Sri Vulava,Kentucky,185,
-534,Aryan Agahtehrani,Kentucky,185,
-535,Alex Pan,Louisiana,186,
-536,Varun Gala,Louisiana,186,
-537,Kevin Zheng,Louisiana,186,
-538,Ishan Kunada,Louisiana,186,
-539,Alex Ren,Maine,187,
-540,Asa Tussing,Maine,187,
-541,Samson Cournane,Maine,187,
-542,Yunyi Ling,Maryland,188,
-543,Jason Youm,Maryland,188,
-544,Ivy Guo,Maryland,188,
-545,Matthew Qian,Massachusetts,189,
-546,Rohith Raghavan,Massachusetts,189,
-547,Yuan Zhuang,Massachusetts,189,
-548,Michael Lu,New York,190,
-549,Elita You,Michigan,190,
-550,Austin Wang,Minnesota,191,
-551,Sneha Kundu,Minnesota,191,
-552,Kevin Qiu,Minnesota,191,
-553,Jinu Lee,Minnesota,191,
-554,Ryan Wu,Mississippi,192,
-555,Grant Zhang,Mississippi,192,
-556,Hadley Green,Mississippi,192,
-557,Brantley Denson,Mississippi,192,
-558,Aaron Lin,Missouri,193,
-559,Lucas Zhang,Missouri,193,
-560,Alex Wang (MO),Missouri,193,
-561,Anthony Zhao,Missouri,193,
-562,Brendan Cowie,Montana,194,
-563,Adam Bukowski,Montana,194,
-564,Eli LeBaron,Montana,194,
-565,Dylan Jolliffe,Montana,194,
-566,Viet Lai,Nebraska,195,
-567,Haamiz Humayun Kabir,Nebraska,195,
-568,Niloufar Kholmatov,Nebraska,195,
-569,Ha Quach,Nebraska,195,
-570,Evan Lim,Nevada,196,
-571,Alexander Weaver,Nevada,196,
-572,Shelly Yang,Nevada,196,
-573,Akshansh Chauhan,Nevada,196,
-574,Vaibhav Rastogi,New Hampshire,197,
-575,Pratham Mukewar,New Hampshire,197,
-576,David Cong,New Hampshire,197,
-577,Vedant Patil,New Hampshire,197,
-578,Akilan Sankaran,New Mexico,198,
-579,Hiro Jau,New Mexico,198,
-580,Kyuryeon Kim,New Mexico,198,
-581,Iorwen Ouyang,New Mexico,198,
-582,Shirley Xiong,New York,199,
-583,Rohan Sastry,New York,199,
-584,Raymond Ge,North Carolina,200,
-585,Anthony Yang,New York,200,
-586,Mu Jett,North Carolina,200,
-587,Cady Wang,North Dakota,201,
-588,Andrew Ternes,North Dakota,201,
-589,Malory Kemp,North Dakota,201,
-590,Dahlia Atanasova,North Dakota,201,
-591,Devin Lim,Ohio,202,
-592,Emir Naduvil,Ohio,202,
-593,Harshita Ganga,Ohio,202,
-594,Reese Zong,Ohio,202,
-595,Aiden Kim,Oklahoma,203,
-596,Ethan Li,Oklahoma,203,
-597,Nityant Chandupatla,Oklahoma,203,
-598,Justin Burns,Oklahoma,203,
-599,Kai Yamashita,Oregon,204,
-600,Justin Xia,Oregon,204,
-601,Shreyan Paliwal,Oregon,204,
-602,Yaseen Arifin,Oregon,204,
-603,Aidan Le,Pennsylvania,205,
-604,Joseph Widjaja,Pennsylvania,205,
-605,Nirvana Rosabella Marrero Tiodang,Puerto Rico,206,
-606,Jake Taubman,Puerto Rico,206,
-607,Rania Marrero Al-Attar,Puerto Rico,206,
-608,Sergey Sachko,Puerto Rico,206,
-609,Ruoyu Gao,Rhode Island,207,
-610,Siddharth Gupta,Rhode Island,207,
-611,Samuel Licht,Rhode Island,207,
-612,William Bruno,Rhode Island,207,
-613,Brandon Xu,New York,208,
-614,Anthony Zou,South Carolina,208,
-615,Ruideng Zhong,South Carolina,208,
-616,William Wang,South Carolina,208,
-617,Ernest Ting,South Dakota,209,
-618,Joseph Michna,South Dakota,209,
-619,Vedant Sharan,South Dakota,209,
-620,Caleb Mayrose,South Dakota,209,
-621,Sebastian Chase,State Department,210,
-622,Josh Shin,State Department,210,
-623,Lexing Huang,State Department,210,
-624,Amy Yu,Tennessee,211,
-625,Alan Z Cheng,Tennessee,211,
-626,William C Peng,Tennessee,211,
-627,Annie X Wu,Tennessee,211,
-628,Mingchuan Cheng,Utah,212,
-629,Yuyang Zhang,Vermont,213,
-630,Jacob Graham,Vermont,213,
-631,Emma Xia,Vermont,213,
-632,Cameron Stultz,Vermont,213,
-633,Tanmay Totwani,Virgin Islands,214,
-634,Eli Blondeau,Virgin Islands,214,
-635,Meher Makhijani,Virgin Islands,214,
-636,Marina Lin,Virginia,215,
-637,Angeline Zhao,New York,215,
-638,Owen Zhang,Washington,216,
-639,Alon Ragoler,Washington,216,
-640,Bohan Yao,Washington,216,
-641,Hongning Wang,Washington,216,
-642,Austin Luo,West Virginia,217,
-643,Joyce Hu,West Virginia,217,
-644,Sanketh Guppi,West Virginia,217,
-645,Caden Yao,West Virginia,217,
-646,Kartik Ramachandrula,Wisconsin,218,
-647,Joshua Wang,Wisconsin,218,
-648,Jeremy Li,Wisconsin,218,
-649,Harry Jin,Wisconsin,218,
-650,Jonathan Oler,Wyoming,219,
-651,Paul J Baxter,Wyoming,219,
-652,Dexter Opps,Wyoming,219,
-653,Michael Mahoney,Wyoming,219,
-654,Albert Chen,Alabama,166,
-655,Tina Gao,Alabama,166,
-656,Xiling Tanner,Alaska,167,
-657,Kevin Zhang,Alaska,167,
-658,Brooke Peng,Alaska,167,
-659,Alex Nemeth,Alaska,167,
-660,Quentin Hill,Arizona,168,
-661,Abigail Qiu,Arizona,168,
-662,Sumedh Kalyankar,Arkansas,169,
-663,Patrick Jiang,Arkansas,169,
-664,Justin Wang,Arkansas,169,
-665,Sohil Rathi,California,170,
-666,Shruti Arun,Colorado,171,
-667,Alex Zhang,"Ontario, Canada",171,
-668,Naomi Huang,Colorado,171,
-669,Shaurya Ranjan,Connecticut,172,
-670,Sohan Javeri,Connecticut,172,
-671,Kabir Goyal,Delaware,173,
-672,Miles Zhang,Delaware,173,
-673,Rajat Bhaskaran,Delaware,173,
-674,Aditya Rustagi,Delaware,173,
-675,Darren Zhuang,Department of Defense,174,
-676,Lucas Burbank,Department of Defense,174,
-677,Christopher Gammel,Department of Defense,174,
-678,Trent Wilkerson,Department of Defense,174,
-679,William Wu,District of Columbia,175,
-680,Adnan Gunja,District of Columbia,175,
-681,Michael Wei,Florida,176,
-682,Anish Patel,Florida,176,
-683,Siddarth Suresh,Georgia,177,
-684,Aiden Kang,Guam,178,
-685,Allan Zeng,Guam,178,
-686,Samuel Guo,Guam,178,
-687,Sola Murakami,Hawaii,179,
-688,Hong Kwak,Hawaii,179,
-689,Daniel York,Hawaii,179,
-690,Katsutoshi Yamamoto,Hawaii,179,
-691,Darren Su,Idaho,180,
-692,Jonathan Rands,Idaho,180,
-693,Isaac Kingma,Idaho,180,
-694,Christopher Sakaliyski,Illinois,181,
-695,Elaine Zeng,Indiana,182,
-696,Kaitlyn Park,Indiana,182,
-697,Prabhas Gupta,Iowa,183,
-698,Chetas Aduri,Iowa,183,
-699,Mahi Kohli,Kansas,184,
-700,Eddison Chen,Kansas,184,
-701,Solon Xia,Kansas,184,
-702,Matt Wu,Kansas,184,
-703,Samuel Henderson,Kentucky,185,
-704,Samuel Kingston,Kentucky,185,
-705,Ethan Tang,Kentucky,185,
-706,Anna Wang,Louisiana,186,
-707,Cecily Lu,Louisiana,186,
-708,Connor Lund,Maine,187,
-709,Ryan Schultz,Maine,187,
-710,Jacob Klein,Maine,187,
-711,Alyssa Yu,Maryland,188,
-712,Raymond Gao,Massachusetts,189,
-713,William Dong,Michigan,190,
-714,Rishabh Mahale,Michigan,190,
-715,Luke Furness,Michigan,190,
-716,Jingyi Ling,Minnesota,191,
-717,Levi Mei,Mississippi,192,
-718,John Rogers,Mississippi,192,
-719,Ian Jung,Mississippi,192,
-720,Kyler Wang,Missouri,193,
-721,Isaac Lukacs,Montana,194,
-722,Paul Harmon,Montana,194,
-723,Holden Hadidi,Montana,194,
-724,Matthew Watson,Montana,194,
-725,Evan Sun,Nebraska,195,
-726,Jay Peng,Nebraska,195,
-727,Jayanth Athipatla,Nebraska,195,
-728,Boya Zhang,Nevada,196,
-729,Julian Kuang,Nevada,196,
-730,Dev Saxena,Nevada,196,
-731,Alexander Davi,Nevada,196,
-732,Ryan Casey,New Hampshire,197,
-733,Tiffany Sun,New Hampshire,197,
-734,Sean Choi,New Mexico,198,
-735,Laszlo Zolyomi,New Mexico,198,
-736,Euiryeon Kim,New Mexico,198,
-737,Yunmo Chen,New York,199,
-738,Liran Zhou,New York,199,
-739,Michael Iofin,New York,199,
-740,Raghav Arun,North Carolina,200,
-741,Leo Yang,North Carolina,200,
-742,Helen Chen,North Carolina,200,
-743,Jason Ling,North Dakota,201,
-744,Blake Homiston,North Dakota,201,
-745,Braden Li,North Dakota,201,
-746,Sunisha Tangpong,North Dakota,201,
-747,Devin Zhao,Ohio,202,
-748,Suvam Konar,Ohio,202,
-749,Melody Chen,Oklahoma,203,
-750,Miranda Huang,Oklahoma,203,
-751,Ethan Cai,Oklahoma,203,
-752,Arjun Agarwal,Oregon,204,
-753,Kai Yamishita,Oregon,204,
-754,William Liu,Pennsylvania,205,
-755,Alvaro Villafuerte,Puerto Rico,206,
-756,Luis Carlos Collazo,Puerto Rico,206,
-757,Lucas Carlo,Puerto Rico,206,
-758,Jose Ramos,Puerto Rico,206,
-759,Iris Yang,Rhode Island,207,
-760,Philip Spradlin,Rhode Island,207,
-761,Shawn Badre,Rhode Island,207,
-762,Sadie Enright,Rhode Island,207,
-763,Liaoliao Shi,South Carolina,208,
-764,Seomgeun Shim,South Carolina,208,
-765,Shaurya Sehgal,South Dakota,209,
-766,William Jin,South Dakota,209,
-767,Justus Heibutzki,State Department,210,
-768,Eric Chen,Tennessee,211,
-769,Yejoon Ham,Tennessee,211,
-770,Kevin Chen,New Jersey,220,
-771,Wilson St. Martin,Utah,212,
-772,Tanish Shetty,Utah,212,
-773,Evan Xia,Vermont,213,
-774,Henry Rogers,Vermont,213,
-775,Richard Jiang,Vermont,213,
-776,Lucy Proulx,Vermont,213,
-777,Sanjiv Bachan,Virgin Islands,214,
-778,Naitik Jhanwar,Virgin Islands,214,
-779,Andrew Chen,Virginia,215,
-780,Susie Lu,Washington,216,
-781,Jeffrey Zhao,Washington,216,
-782,Vinu Chandrasekar,West Virginia,217,
-783,Sami El-Hajjar,Wisconsin,218,
-784,Siddharth Kosaraju,Wisconsin,218,
-785,Maya Jadhav,Wisconsin,218,
-786,Vaidehi Ramachandrula,Wisconsin,218,
-787,Ashley Olson,Wyoming,219,
-788,Henry McGuire,Wyoming,219,
-789,Sofia Furman,Wyoming,219,
-790,Bekalyn Swett,Wyoming,219,
-792,Roger He,Florida,176,
-793,Christopher Cheng,Massachusetts,189,
-794,Zizhan Wang,Georgia,177,
-795,Eric Gao,Florida,176,
-797,Bowen Shan,Arizona,168,
-798,Samuel Ding,Oregon,204,
-799,Kesav Kalanidhi,North Carolina,200,
-800,Nikhil Byrapuram,Massachusetts,189,
-801,Leo Hong,North Carolina,200,
-802,Arush Krisp,Ohio,202,
-804,Leon Xie,Iowa,183,
-805,Shining Sun,New Jersey,221,
-806,Simon Deng,Ohio,202,
-807,Jonah Wang,Colorado,171,
-808,Miguel Shim,South Carolina,208,
-809,Advait Joshi,New Jersey,221,
-810,Danyang Xu,Massachusetts,189,
-811,Brandon Ni,Massachusetts,189,
-812,Drake Tan,Texas,220,
-813,Joseph Liang,Oregon,204,
-814,Rayoon Kim,Pennsylvania,205,
-815,Puranjay Madupu,Arizona,168,
-816,Vivek Kalyankar,Arkansas,169,
-817,Girish Prasad,Connecticut,172,
-818,Jonathan Wu,Utah,212,
-819,William Shan,Arizona,168,
-820,Anirudh Pulugurtha,New Hampshire,197,
-821,Taiwen Feng,Michigan,190,
-822,Charlie Wang,Alaska,167,
-823,Daniel Wei,Florida,176,
-824,Wesley Wu,Washington,216,
-825,Alex Yang,Washington,216,
-826,Max Tsai,Nevada,196,
-827,Easton Wei,New Jersey,221,
-828,Henry Wang,California,200,
-829,Joseph Girotto,Connecticut,172,
-830,Rajarshi Mandal,Massachusetts,189,
-831,Alex Gao,Indiana,182,
-832,Bryant Yu,Wisconsin,218,
-833,Marty Ho,Georgia,177,
-834,Henry Lu,Ohio,202,
-835,Sean Lee,State Department,210,
-836,Ethan Wang,Utah,221,
-837,Evan Ho,Hawaii,179,
-838,Jason Bo,California,170,
-839,Victor Yang,New York,199,
-840,Andrew Du,Virginia,215,
-841,Shlok Mukund,Massachusetts,189,
-842,Justin Kim,California,170,
-843,Lucas Li,North Carolina,200,
-844,Ryan Zhang,New York,199,
-845,Edwin Gao,Florida,176,
-846,Roland Li,Indiana,182,
-847,Sophia Han,Oregon,204,
-848,Arjun Raman,Indiana,182,
-849,Aiden Wei,Georgia,177,
-850,Eric Huang,Massachusetts,189,
-851,Soham Samanta,Massachusetts,189,
-852,Vivaan Mukherjee,Washington,216,
-853,Andy Liu,California,170,
-854,Benjamin Lu,Pennsylvania,205,
-855,Arnav Bhatia,Florida,176,
-856,Roger Huang,Maryland,188,
-857,Jiyan Singh,Wisconsin,218,
-858,Ian Shan,Arizona,168,
-859,Jay Wang,New Jersey,221,
-860,Saamik Agrawal,Washington,216,
-861,Derrick Chen,New York,199,
-862,Ethan Shi,Connecticut,172,
-863,William Xin,Washington,216,
-864,Adam Deng,Utah,212,
-865,Jason Zhou,Louisiana,186,
-866,Hayden Hughes,Connecticut,172,
-867,Leo Shen,Utah,212,
-868,Kevin Cheng,Oregon,204,
-869,Sophia Chen,Indiana,182,
-870,Shawn Bi,Virginia,215,
-871,Eric Jin,Michigan,190,
-872,Rananjay Parmar,Florida,176,
-873,Hrishabh Bhowmik,Indiana,182,
-874,Sreehari Vijaybhaskar,,222,
-875,Rohan Pavuluri,,225,
-876,Aiden Dai,,11,
-877,Heyang Felicity Ni,,42,
-878,Andrew Wen,Massachusetts,14,
-879,Andy Xu,,14,
-881,Yichen Cedric Xiao,,42,
-882,Benjamin Chen,Illinois,241,
-883,Jeff Lin,,26,
-884,Shihan Kanungo,California,,
-885,Aarush Vailaya,California,,
-886,Warren Bei,"British Columbia, Canada",,
-887,Neil Krishnan,California,,
-888,Jian Kweon,California,,
-889,Tony Lu,Texas,,
-890,Hanson Bai,California,,
-891,Andrew Brahms,New Jersey,,
-892,Edward Cha,Massachusetts,,
-893,Hugh Cheng,California,,
-894,Kailua Cheng,California,,
-895,Perry Dai,"Ontario, Canada",,
-896,Aron Fekete,New Hampshire,,
-897,Dylan Frake,California,,
-898,Hao-Yu Gan,New York,,
-899,Eden He,Pennsylvania,,
-900,Katie He,Florida,,
-901,Hyun-Jin Kim,Texas,,
-902,Sam Kretzschmar,Minnesota,,
-903,Justin Ma,Virginia,,
-904,Jaewoo Park,Illinois,,
-905,Ryan Tang,Massachusetts,,
-906,Ryan Wang,California,,
-907,Brian Xue,California,,
-908,Vincent Yu,Indiana,,
-909,Joey Zheng,Arizona,,
-910,Ryan Zhu,"British Columbia, Canada",,
-911,Eric Zou,California,,
-912,Brett Chang,California,,
-913,Samarth Das,Texas,,
-914,Bryan Fu,Texas,,
-915,Michael Han,Massachusetts,,
-916,Lucas Hinds,Tennessee,,
-917,Bennett Huang,Virginia,,
-918,Jiawen Huang,California,,
-919,Seojoon Kang,New York,,
-920,Taehong Kim,Massachusetts,,
-921,Alicia Li,New Hampshire,,
-922,Rex Li,"Ontario, Canada",,
-923,James Qiu,"Ontario, Canada",,
-924,Victor Sarca,"Ontario, Canada",,
-925,Kalan Warusa,Virginia,,
-926,Asher Wu,Washington,,
-927,Arthur Xu,Illinois,,
-928,Kellen Xue,California,,
-929,Nathan Ye,California,,
-930,Bole Ying,Pennsylvania,,
-931,Matthew Yuan,California,,
-932,Leo Zeng,California,,
-933,Alexander Zhang,"Ontario, Canada",,
-934,Charles Zhang,California,,
-935,Eric Zhang,Illinois,,
-937,Charlie Qian,"Ontario, Canada",,
-938,Sam Shi,"Ontario, Canada",,
-939,Isaac Chen-Osborn,New Jersey,,
-940,Agastya Goel,California,,
-941,Sheldon Tan,California,,
-942,Mingze Wang,New Jersey,,
-943,Tangjian Wang,Connecticut,,
-944,Doris Wu,"Ontario, Canada",,
-945,Alex Chen,California,,
-946,Yixuan Chen,"Ontario, Canada",,
-947,Pahan Dewasurendra,California,,
-948,Hanqin Gu,Ohio,,
-949,Peyton Li,Connecticut,,
-950,Kristine Lu,California,,
-951,Elias Mrug,Alabama,,
-952,Peter Pan,New Jersey,,
-953,Tanishq Pauskar,Ohio,,
-954,Zachary Perry,Massachusetts,,
-955,Samuel Ren,California,,
-956,Kristie Sue,California,,
-957,Larry Xing,California,,
-958,Sounak Bagchi,New Jersey,,
-959,Bryan Chen,New Hampshire,,
-960,William Chen,California,,
-961,Alyssa Chu,New York,,
-962,Alan Duan,Washington,,
-963,Katelyn Gan,California,,
-965,Hongyi Huang,"Ontario, Canada",,
-967,Jiwu Jang,Massachusetts,,
-968,Aditya Joshi,New Jersey,,
-970,Juni Kim,New Jersey,,
-971,Brian Li,California,,
-972,Eddy Li,California,,
-974,Sitta Tantikul,New Hampshire,,
-975,Jonathan Wang,Texas,,
-977,Enmei Yang,New York,,
-978,Evan Yang,California,,
-979,Haocheng Zhang,New York,,
-981,Raymon Zhang,Washington,,
-982,Brian Zhou,California,,
-984,Yoll Feng,Massachusetts,,
-986,Kyle Lin,Texas,,
-988,Kevin Long,New Jersey,,
-989,Richard Wang,Texas,,
-990,Leo Wu,"Ontario, Canada",,
-991,Haofang Zhu,California,,
-992,Aidan Bai,California,,
-993,Andrew Chai,New Jersey,,
-994,Arthur Gong,Washington,,
-995,Preston Hu,California,,
-996,Andy Jo,Idaho,,
-997,Ben Jump,Ohio,,
-998,Bofan Liu,Texas,,
-999,Dale Liu,California,,
-1000,Arden Lu,Massachusetts,,
-1001,Tommy Moseley,Kentucky,,
-1002,Alexander Ruan,California,,
-1003,Ben Song,,,
-1004,Arjun Suresh,Wisconsin,,
-1005,Anji Wang,"Ontario, Canada",,
-1006,David Wang,Maryland,,
-1007,Oliver Zhang,Massachusetts,,
-1008,Vivian Zhong,California,,
-1009,Zachary Berchenko,Minnesota,,
-1010,Erin Bian,Washington,,
-1011,Krittika Chandra,California,,
-1012,Michael Chang,Texas,,
-1013,Shihan Cheng,Illinois,,
-1014,Lanie Deng,Missouri,,
-1015,Jincheng Feng,Maryland,,
-1016,Neel Jindal,California,,
-1017,Bach Kieu,Illinois,,
-1018,Nolan Lin,California,,
-1019,Ishaan Mittal,California,,
-1020,Yinuo Pan,Texas,,
-1021,Ryan Peng,New York,,
-1022,Eric Shao,Washington,,
-1023,Kris Sheng,New Jersey,,
-1024,Natalie Song,California,,
-1025,Melvin Xu,Georgia,,
-1026,Fiona Yan,"Ontario, Canada",,
-1027,Kevin Xiao,Delaware,,
-1028,Jane Xie,New York,,
-1029,Atticus Stewart,California,,
-1031,William Chen,Texas,,
-1032,Edward Guo,Virginia,,
-1034,Lei He,"Ontario, Canada",,
-1035,Daniel Ji,California,,
-1036,Timur Kilybayev,Massachusetts,,
-1037,Evan Li,California,,
-1038,Jason Lu,New Jersey,,
-1039,Wenhao Lu,New Jersey,,
-1040,Nathan Mei,Michigan,,
-1041,JonJon She,Massachusetts,,
-1042,Michael Sun,"Ontario, Canada",,
-1043,Heather Wang,California,,
-1044,Colin Wei,Texas,,
-1045,Michelle Wu,"Ontario, Canada",,
-1046,Terence Wu,Washington,,
-1048,Zelong Yang,New York,,
-1049,Ryan Yin,Virginia,,
-1050,Jonathan Yu,California,,
-1051,Benjamin Zhang,California,,
-1052,Edward Zhang,California,,
-1053,Eric Zhang,California,,
-1054,Jayden Zheng,Texas,,
-1055,Madeline Zhu,New Jersey,,
-1056,Alex Bae,California,,
-1058,Aiden Jeong,California,,
-1059,Gloria Ma,California,,
-1060,Michael Middlezong,New Jersey,,
-1061,Julia Xiang,California,,
-1062,Jerry Zhang,California,,
-1063,Daniel Zhou,Michigan,,
-1064,Garrett Cai,California,,
-1065,Amelia Chen,California,,
-1066,Hayden Chen,California,,
-1068,Rachel Chen,California,,
-1069,Sophie Chen,Connecticut,,
-1070,Jiya Dani,Texas,,
-1071,Aiden Gao,California,,
-1072,Marvin Gao,Florida,,
-1073,Angie Huang,Minnesota,,
-1074,Chaewoon Kyoung,Maryland,,
-1075,Eric Li,Massachusetts,,
-1076,Kevin Li,California,,
-1077,Xinyi Li,Texas,,Sophie Li
-1078,Jason Lian,New York,,
-1079,James Lin,California,,
-1080,Wesley Lin,New Jersey,,
-1081,Jason Liu,Pennsylvania,,
-1082,Hannah Ma,Washington,,
-1083,Vishnu Mangipudi,Washington,,
-1084,Maiya Qiu,New Jersey,,
-1085,Ethan Qu,California,,
-1086,Greta Qu,"Ontario, Canada",,
-1087,Justin Seo,Michigan,,
-1088,Kallie Wang,California,,
-1090,Immanuel Whang,Washington,,
-1091,Jack Whitney,Connecticut,,
-1092,Kyle Yang,Massachusetts,,
-1093,Michael Yang,Washington,,
-1094,Yuxi Yang,"Ontario, Canada",,
-1095,Mofan Yu,New York,,
-1096,Eddie Zhao,Massachusetts,,
-1097,Max Zheng,Illinois,,
-1098,Kayden Zhong,Texas,,
-1099,Bryan Zhu,Washington,,
-1100,Chenghao Zuo,"British Columbia, Canada",,
-1101,Aidan Woojin Choi,South Korea,,
-1102,Nithid Anchaleenukoon,New Hampshire,,
-1103,John Gupta-She,New York,,
-1104,Roy Kang,New York,,
-1105,Yichen Xiao,New Jersey,,
-1106,Ryan Yang,Connecticut,,
-1107,Ethan Zhou,Virginia,,
-1108,William Dai,"Ontario, Canada",,
-1109,Chris Ge,California,,
-1110,Austin Geng,Louisiana,,
-1111,Cordelia Hu,Tennessee,,
-1112,Ray Law,California,,
-1113,Ethan Lee,California,,
-1114,Nina Li,"British Columbia, Canada",,
-1115,Josiah Moltz,New York,,
-1116,Shreyas Singh,Illinois,,
-1117,Eric Wang,Massachusetts,,
-1118,Xiaoyang Wu,California,,
-1119,Haozhe Yang,"Saskatchewan, Canada",,
-1120,Eric Zhan,Washington,,
-1121,Sebastian Atlan,Illinois,,
-1122,Dhruv Basu,"Ontario, Canada",,
-1123,Aaron Chen,California,,
-1124,Matthew Chen,Minnesota,,
-1125,Omer Demir,Florida,,
-1126,Pico Gilman,California,,
-1127,Michelle Kang,Virginia,,
-1128,Alan Kappler,Nevada,,
-1129,Nikita Kiselov,Pennsylvania,,
-1130,Catherine Li,California,,
-1131,Daniel Mai,Massachusetts,,
-1132,Heyang Ni,New Jersey,,
-1133,Minseok Park,North Carolina,,
-1134,Sebastian Prasanna,Massachusetts,,
-1135,Pranav Shankar,New Jersey,,
-1136,Romir Sharma,New Jersey,,
-1137,Bryan Song,New Jersey,,
-1138,Lucas Tang,Washington,,
-1139,David Villani,New York,,
-1140,Kaile Wang,New Jersey,,
-1141,Yizhou Wang,"Quebec, Canada",,
-1142,Yuji Wang,New Jersey,,
-1143,Stephen Xia,California,,
-1144,Gene Yang,Washington,,
-1145,Ming Yang,Arizona,,
-1146,Matthew Zhao,New York,,
-1147,Jason Zhong,Connecticut,,
-1148,Aaron Zhou,Texas,,
-1149,Samuel Zhou,California,,
-1150,Adam Zweiger,California,,
-1151,Kevin Cong,New Hampshire,,
-1152,Ram Goel,California,,
-1153,Papon Lapate,New Hampshire,,
-1154,Kevin Min,California,,
-1155,Pitchayut Saengrungkongka,New Hampshire,,
-1156,Locke Cai,New Jersey,,
-1157,Jason Fang,"British Columbia, Canada",,
-1158,Ryan Jang,South Korea,,
-1159,Kaylee Ji,California,,
-1160,Aiden Jung,South Korea,,
-1161,Mutiraj Laksanawisit,New Hampshire,,
-1162,Justin Lee,California,,
-1163,Rishab Parthasarathy,California,,
-1164,Paramuth Samuthrsindh,New Hampshire,,
-1165,Adam Tang,California,,
-1166,Albert Wang,Florida,,
-1167,Zifan Wang,New Jersey,,
-1168,Kaixin Wang,China,,
-1169,Jaedon Whyte,Florida,,
-1170,Kevin Wu,Maryland,,
-1171,Daniel Xu,California,,
-1172,Eric Yang,New Hampshire,,
-1173,Daniel Yuan,Maryland,,
-1174,William Yue,Massachusetts,,
-1175,George Zhang,Texas,,
-1176,George Cao,New Jersey,,
-1177,Kenneth Chen,Minnesota,,
-1178,Jessica Dong,China,,
-1179,Mason Fang,California,,
-1180,Arnav Goel,Illinois,,
-1181,Paul Hamrick,California,,
-1182,Garrett Heller,Virginia,,
-1183,Qingcheng Hu,California,,
-1184,Jay Ji,United Kingdom,,
-1185,Tristan Kay,Washington,,
-1186,Sasidhar Kunapuli,California,,
-1187,Daeho Lee,California,,
-1188,Mugeng Lin,"British Columbia, Canada",,
-1189,Sophie Liu,Nevada,,
-1190,Evan Lu,"Ontario, Canada",,
-1191,Zehan Pan,New Jersey,,
-1192,James Rydell,California,,
-1193,Qingzhou Shen,Georgia,,
-1194,Easton Singer,Ohio,,
-1195,Christopher Wu,Texas,,
-1196,Daniel Xia,New Jersey,,
-1197,Ai Xiao,New Hampshire,,
-1198,Owen Yang,Arizona,,
-1199,Victor Yin,California,,
-1200,Alex Wang,Maryland,,
-1201,David Zhang,Utah,212,
-1202,Kevin Liu,Pennsylvania,205, 
-1203,Samuel Wang,Massachusetts,,Sam Wang 
-1204,Arnav Adhikari,,,
-1205,Brian Bi,,,
-1206,Aryan Bora,,,
-1207,Ryan Dong,,,
-1208,Nikash Gupta,,,
-1209,Luke Huang,,,
-1210,Brendon Jiang,,,
-1211,Minkyu Jo,,,
-1212,Weijie-Jay Li,,,
-1213,Alan Lu,California,,
-1214,Ruiyang Luo,,,
-1215,Rico Qi,,,
-1216,Kevin Wang,,,
-1217,Daniel Wang,,,
-1218,Yingshan Xiao,"Ontario, Canada",,
-1219,Laura Zhang,,,
-1220,Henry Zheng,,,
-1221,Yoobin Cha,Arizona,,
-1222,Patrick Chu,,,
-1223,Aiden Feyerherm,Virginia,132,
-1224,Ethan Han,,,
-1225,Alexander Jun,,,
-1226,Katherine Li,New York,,
-1227,Tina Li,,,
-1228,Bhaumik Mehta,,,
-1229,Vishal Nandakumar,,,
-1230,Zian Shi,,,
-1231,Joseph Vulakh,,,
-1232,Henry Yao,,,
-1233,Davido Zhang,,,
-1234,Andrew Zhao,,,
-1235,Alex Zheng,,,
-1236,Ricky Hu,California,,
-1237,Zander Li,"Ontario, Canada",,
-1238,Ethan Song,California,,
-1240,Ishani Agarwal,California,,
-1241,Anay Aggarwal,Oregon,,
-1242,Samarth Bhargav,Virginia,,
-1243,Brandon Chan,Michigan,,
-1244,Yao Chen,California,,
-1245,Vince Choi,California,,
-1246,Cyrus Chung,California,,
-1247,Qixuan Ding,"Alberta, Canada",,
-1248,Victoria Fang,California,,
-1249,Robert Feng,California,,
-1250,Peter Ferolito,California,,
-1251,Jerry Guo,California,,
-1252,Haoqing Hong,Massachusetts,,
-1253,Joyce Huang,Washington,,
-1254,Jefferson Ji,Massachusetts,,
-1255,Minyku Jo,Idaho,,
-1256,Seoyeon Kim,Kansas,,
-1257,Michael Li,Michigan,,
-1258,WeiWei Luo,Canada,,
-1259,Pavel MacKenzie,Canada,,
-1260,Tatiana Medved,North Carolina,,
-1261,Isaac Merlin,Florida,,
-1262,Advaith Mopuri,California,,
-1263,Akilan Paramasivam,California,,
-1264,Mir Park,Washington,,
-1265,Milind Sharma,Massachusetts,,
-1266,Kevin Wan,Wisconsin,,
-1267,Allen Wu,Washington,,
-1268,Larry Wu,California,,
-1269,Shenlone Wu,Nevada,,
-1270,Honjar Xing,"Ontario, Canada",,
-1271,Anna Zhou,Maryland,,
-1272,Angelica Feng,,,
-1273,Kevin Hu,,,
-1275,Rohith Thomas,,,
-1276,Tiger Li,,,
-1277,Jeff Zhou,,,
-1278,Kaylyn Zhang,,,
-1279,Jack Whitney-Epstein,,,
-1280,Benny Wang,,,
-1281,Rick Zhou,,,
-1282,Lewis Lou,,,
-1283,Zenghan (Yoll) Feng,,,
-1284,Jonathan Zhou,,,
-1285,Raine Ma,,,
-1286,Aarav Mann,,,
-1287,Prince Zhang,,,
-1288,Eric Jia,,,
-1289,Rui Jiang,,,
-1290,Madhav Krishnuswamy,,,
-1291,Alex Jun,,,
-1292,Tanishq Paushkar,,,
-1293,Olivia Xu,,,
-1294,Mikayla Lin,,,
-1295,Jeffrey Chen,British Columbia,,
-1296,Yucheng Zhang,,,
-1297,Qianmo Ni,,,
-1298,Thomas Yao,,,
-1299,Parsa Adhami,,,
-1300,Mingfei Zhou,,,
-1301,Gloria Lu,,,
-1302,Nelson Huang,,,
-1303,Sixun Zheng,,,
-1304,Ethan Shan,,,
-1305,Liang Christopher,,,
-1306,Brandon Jia,,,
-1307,Jason Sliwowski,,,
-1308,Roman  Mecholsky,,,
-1309,Jahl Miraji-Khot,,,
-1310,Dylan Zhang,,,
-1311,Sarah Li,,,
-1312,Aaron Zhu,,,
-1313,Srinivas Vijay Babu,,,
-1314,Thanh Can,,,
-1315,Ved Vainateya,,,
-1316,Avi Gupta,,,
-1317,Yuwei Li,,,
-1318,Angelo Chu,,,
-1319,Ryan Singh,,,
-1320,Jeffrey Du,,,
-1321,Yeeyung Li,,,
-1322,William Li,,,
-1323,Ryan Chan,,,
-1324,Ishidevesh Behera,,,
-1325,Atharv Mittal,,,
-1326,Yufei Chen,California,,
-1327,Jiaqi Wu,California,,
-1328,Lina Wang,New York,,
-1329,Amy Zhang,California,,
-1330,Shibao Huang,New York,,Skylar Huang
-1331,Olivia Laido,New Jersey,,
-1332,Yunong Wu,New York,,Melody Wu
-1333,Shuyin Liu,Washington,,
-1334,Sophie Zhang,"Ontario, Canada",,
-1335,Katherine Liu,Texas,,
-1336,Miranda Wang,New Jersey,,
-1337,Yuhan Jennifer Xiao,California,,
-1338,Lisa Fung,California,,
-1339,Iris Xu,Maryland,,
-1340,Jai Mukherjee,Washington,,
-1341,Hwiseo Irene Choi,Massachusetts,,Irene Choi
-1342,Tianlin Jessica Liu,California,,Jessica Liu
-1343,Elaine Wu,Texas,,
-1344,Jiayang Celina Chen,China,,Celina Chen
-1345,Anna Deng,California,,
-1346,Adya Garg,Virginia,,
-1347,Sophie Hong,Illinois,,
-1348,Haruka Kimura,Connecticut,,
-1349,Grace Lu,New York,,
-1350,Chloe Ma,Illinois,,
-1351,Annabel Rong,Georgia,,
-1352,Iris Shi,Massachusetts,,
-1353,Kristin Zhang,New Jersey,,
-1354,Paige Zhu,Massachusetts,,
-1355,Fiona Chen,New Jersey,,
-1356,Kira Lewis,New York,,
-1357,Emma Wu,Texas,,
-1358,Olivia Guo,Maryland,,
-1359,Alena Kutsuk,California,,
-1360,Yifan Emma Tang,"Ontario, Canada",,Emma Tang
-1361,Lorraine Wang,California,,
-1362,Michelle Gao,Maryland,,
-1363,Diana Lin,Washington,,
-1364,Grace Luo,North Carolina,,
-1365,Audrey Sun,Georgia,,
-1366,Jessie Wang,Texas,,
-1367,Anlan Xu,Florida,,
-1368,Sophia Henningsen,California,,
-1369,Reese Long,Washington,,
-1370,Kelsey Morey,Florida,,
-1371,Zaee Shah,California,,
-1372,Fenghuan Linda He,Massachusetts,,Linda He
-1373,Saanvi Thummalapally,California,,
-1374,Hailey Lin,Florida,,
-1375,Annabel Ma,Illinois,,
-1376,Keming Miao,New Jersey,,
-1377,Anne Mykland,Illinois,,
-1378,Himani Yarlagadda,Michigan,,
-1379,Angelina Berg,Pennsylvania,,
-1380,Riya Gupta,California,,
-1381,Lillian Wang,Texas,,
-1382,Michelle Wei,California,,
-1383,Alina Yang,North Carolina,,
-1384,Yaliang Janice Yuan,"Ontario, Canada",,Janice Yuan
-1385,Alice Zhong,Texas,,
-1386,Sophia Zhong,Texas,,
-1387,Sally Zhu,California,,
-1388,Elaine Cheng,Massachusetts,,
-1389,Anne Christiano,Texas,,
-1390,Carol Li,Alabama,,
-1391,Sophie Sun,China,,
-1392,Yutong Iris Wang,New York,,Iris Wang
-1393,Charlotte Younger,Massachusetts,,
-1394,Emily Zhang,Tennessee,,
-1395,Sophie Zheng,Utah,,
-1396,Camea Caprita,California,,
-1397,Sylvia Chen,California,,
-1398,Wensi Cui,Nebraska,,
-1399,Scarlet Gitelson,Illinois,,
-1400,Audrey Hou,Oregon,,
-1401,Caroline Huang,Georgia,,
-1402,Evelyn Kim,California,,
-1403,Kalina Liu,Massachusetts,,
-1404,Katherine Long,Washington,,
-1405,Patricia Mao,Michigan,,
-1406,Yunlu Rafi Shang,New Jersey,,Rafi Shang
-1407,Liran Jessica Song,"Ontario, Canada",,Jessica Song
-1408,Olivia Wu,Virginia,,
-1409,Ziqi Lisa Zheng,California,,Lisa Zheng
-1410,Sophia Chen,California,, 
-1411,Jake Frazer,Florida,,
-1412,Isaac Zhu,North Carolina,,
-1413,Samuel Goodman,Nevada,,
-1414,Kailin Kevin Yang,California,,
-1415,Yutong Mark Zhao,California,,
-1417,Daniel He,Maryland,,
-1418,Corey Zhao,Massachusetts,,
-1419,Zhan Jin,,,
-1420,Jason Hao,Virginia,,
-1421,Daniel Gilman,New Jersey,,
-1422,Michelle Wang,Virginia,,
-1423,Haokai Ma,California,,
-1424,Xuancheng Benjamin Li,California,,
-1425,David Ruan,Maryland,,
-1426,Aaron Xiong,Florida,,
-1427,Yeyin Eva Zhu,California,,
-1428,Jacob Paltrowitz,California,,
-1429,Zehan Peter Pan,California,,
-1430,Milo Stammers,Maryland,,
-1431,Neel Kolhe,,,
-1432,Nikhil Mathihalli,,,
-1433,Sicheng Kevin Zhou,California,,
-1434,Varun Gupta,Pennsylvania,,
-1435,Max Shepard,California,,
-1436,Steven Yu,Massachusetts,,
-1437,Nikhil Pesaladinne,Virginia,,
-1438,Nikhil Mudumbi,New Jersey,,
-1439,Jack Fang,California,,
-1440,Garv Khurana,Minnesota,,
-1441,Andrew Yuan,Maryland,,
-1442,Vincent Chen,Washington,,
-1443,Frank Wong,California,,
-1444,Solon Sun,,,
-1445,Derek Xu,New York,,
+student_id,student_name,state,team_ids,alias,gender
+1,Alexander Wang,New Jersey,1|32|73,,male
+2,Bryan Sicheng Guo,California,2,Bryan Guo,male
+3,Oron Wang,New Hampshire,3|48|83|113,,male
+4,Liam Reddy,Nevada,4|58,,male
+5,Tianyi Li,"Ontario, Canada",5,,male
+6,Jefferson Tiger Zhou,Minnesota,6|191,Jefferson Zhou,male
+7,Benjamin Fu,Washington,7|89,,male
+8,Vincent Wang,Texas,8|86,,male
+9,Jonathan Du,California,9,,male
+10,Ruilin Wang,Virginia,10|72|85,Calvin Wang,male
+11,Dou Lai,Illinois,11,,male
+12,Alan Cheng,North Carolina,12|97,,male
+13,Michael Zhao,Texas,8|84,,male
+14,Nathan Liu,Texas,13|86|110,,male
+15,Jiayu Ellie Su,New Jersey,14,,female
+16,James Stewart,Texas,15,,male
+17,Dylan Wang,,16|94,,male
+18,bowendeng,,17,,male
+19,Vihaan Gupta,California,18,,male
+20,Ashvin Sinha,Florida,19,,male
+21,David Fox,California,9|94,,male
+22,Ian Rui,Washington,20,,male
+23,Jeffrey Yin,Virginia,21,,male
+24,Ruien Chen,,7,,male
+25,Rohan Garg,California,9|94|118,,male
+26,Ryan Li,Ohio,5,,male
+27,Bolei Wang,New Hampshire,3|71,,male
+28,Rohan Nayak Mallick,California,2|59,,male
+29,Patrick Du,Virginia,10|72|85|215,,male
+30,Eric Dai,New Jersey,22,,male
+31,Lewis Lau,Maryland,23,,male
+32,Benjamin Jiang,Florida,19,Ben Jiang,male
+33,Roger Zhen,Texas,24|106,,male
+34,Jiahe Liu,Ohio,25|37|87|116,,male
+35,William Hua,Massachusetts,26,,male
+36,Jialai She,,14|103,,male
+37,Grant Blitz,New Hampshire,3,,male
+38,Andy Lu,California,27|93,,male
+39,Maxwell Sun,Rhode Island,28,,male
+40,Darsh Patel,Florida,19,,male
+41,Eddy Zhang,Pennsylvania,1|32|73,,male
+42,Benjamin Song,New York,29,Ben Song,male
+43,Christopher Peng,Washington,7|89,,male
+44,Krithik Manoharan,Texas,24|86|110,,male
+45,Aaryan Vaishya,Florida,19,,male
+46,Ray Zhao,Texas,8,,male
+47,Shaohuan Zhang,Michigan,30|34,,male
+48,Varun Gadi,Georgia,31,,male
+49,Amogh Akella,Texas,24|110,,male
+50,Yunzhe Bai,Massachusetts,26,,male
+52,Aiden Yuchan Jung,,33|62,,male
+53,Xiaohan Zhang,,17|44,,male
+54,HyunWoo Choi,,33,,male
+55,Zongshu Wu,California,17|44|112,,male
+56,Channing Yang,Texas,24,,male
+57,Christopher Qiu,New Jersey,1|32|73,,male
+58,Hannah Fox,California,9,,female
+59,Henry Jiang,Michigan,34|75,,male
+60,Haotian Zhou,,35,,male
+61,Kailin Yang,,17,,male
+62,Evan Fan,New Hampshire,3|48,,male
+64,Michael Pok Hon Chen,,36,,male
+65,Selena Ge,Massachusetts,26,,female
+67,Andrew Shen,Texas,24|86,,male
+68,Xilong Lin,California,38,,male
+69,Connor Leong,California,16,,male
+70,Alexander Gu,Virginia,10|85,,male
+71,Samuel J. Kretzschmar,,6,,male
+72,Kevin Liu,Florida,19|107|124,,male
+73,Andrew Carratu,New Hampshire,3|48|114,,male
+74,Zeyi Zou,,39,,male
+76,Kiran Reddy,Nevada,4,,male
+77,Shunyao Yan,Virginia,10|72|85,,male
+78,William Zhao,California,40,,male
+79,Surya Dinesh,Texas,13,,male
+80,Lerchen Zhong,Texas,24,,male
+81,Angela Liu,California,9|16,,female
+82,Edward Li,Iowa,41|89|113,,male
+83,Skyler Mao,California,27,,male
+84,Owen J Zhang,Washington,7,,male
+85,Sophia Zhang,New Jersey,42,,female
+86,Vikram Sarkar,Connecticut,43|92,,male
+87,Max Zhao,Virginia,10|85,,male
+89,Jordan Lefkowitz,Connecticut,43,,male
+90,Rohan Das,California,9,,male
+91,Andrew Lin,New Jersey,1|32|73,,male
+92,Marvin Mao,New Jersey,45,,male
+93,Jessica Wan,Florida,19,,female
+95,Razzi H. Masroor,Michigan,46|75,Razzi Masroor,male
+96,Qiao Zhang,California,47,Tiger Zhang,male
+97,Eric Wang,New Jersey,14|120,,male
+98,Elliott Liu,California,2,,male
+99,Rohan Bodke,California,9,,male
+100,Langkun Yu,,44,,male
+102,Andrew Li,,49,,male
+103,Allen Wang,New Jersey,1|32|73,,male
+105,Myungbeen Choi,,50,,male
+106,Yunlang Zheng,,44,,male
+107,Annabel Ge,Washington,7,,female
+108,Yibo(Tom) Zhang,,51,,male
+109,Ziyi Yang,,44,,male
+110,Wilbert Chu,Illinois,11,,male
+111,ERIC MINGHAO LIU,,52,,male
+112,Jonathan He,Illinois,11,,male
+113,Feodor Yevtushenko,California,53,,male
+114,Vesselin Nikolaev Markovich,,54,,male
+115,Aaron Hu,Florida,19,,male
+116,Justin Zhang,California,2|59,,male
+117,Advaith Avadhanam,California,53|60,,male
+118,Linus Tang,Nevada,9,,male
+119,Jason Zhang,Michigan,34,,male
+120,Jacob Xu,,26,,male
+121,Srinivas Arun,Colorado,55,,male
+122,David Jiahui Zhang,,9|16,,male
+123,Vivian Loh,Pennsylvania,47,,female
+124,Zeyan Li,,52,,male
+125,Pavan Jayaraman,New Jersey,56|66,,male
+126,Weian Xie,Connecticut,57,,male
+127,David Ji,New Jersey,22,,male
+128,Brian Zhang,North Carolina,34,,male
+132,Jason Mao,New Jersey,1|32|73,,male
+134,Maximus Lu,New York,61,,male
+135,Eric Shen,California,9,,male
+136,Jeffrey Chen,Illinois,11,,male
+138,Alex Zhao,Washington,7,,male
+139,Skyler Le,,1|32|73,,male
+140,Isabella Zhu,Virginia,10|72,,female
+141,Amol Rama,California,60|74,,male
+142,Alan Bu,New Hampshire,63,,male
+143,Ethan Liu,California,24,,male
+144,Huaye Lin,Massachusetts,26,,male
+145,Alex Li,,19,,male
+147,Zachary Jacob Perry,,26,,male
+148,Alan Vladimiroff,Virginia,10,,male
+149,Suyash Pandit,Oregon,64,,male
+150,Kevin Joshua Wu,,65,,male
+151,Aaron Guo,,24,,male
+153,Ray Tang,,24,,male
+154,Boris Tsvetanov Gachevski,,67|81,,male
+155,Derek Liu,California,2,,male
+156,Edward Xiong,New Jersey,66,,male
+158,Vincent Trang,Virginia,10,,male
+159,Karthik Vedula,Florida,19,,male
+160,Vincent Zhang,Pennsylvania,1,,male
+161,Caleb Dastrup,Maryland,68,,male
+162,Alan Lee,California,69,,male
+163,David Dong,Washington,7,,male
+164,Steve Zhang,California,69,,male
+165,Max Xu,New Hampshire,63,,male
+166,Roger Fan,California,69,,male
+167,Sebastian Attlan,,70,,male
+169,Nilay Mishra,California,60|74,,male
+170,Krishna Pothapragada,Illinois,11,,male
+171,Evan Chang,New Jersey,1,,male
+172,Sumedh Vangara,,68,,male
+173,Luke Robitaille,Texas,24,,male
+174,Dylan Yu,Texas,24,,male
+175,Rishabh Das,New York,49,,male
+177,Reagan Choi,Michigan,75,,male
+178,Andrew Lee,,76,,male
+179,Adi Jasuja,New York,49,,male
+180,Andrew Gu,California,77,,male
+181,Raymond Feng,,9,,male
+183,Johan Ko,,9,,male
+184,Kevin Zhao,Massachusetts,26,,male
+187,Kenneth Ang Chen,,78,,male
+189,Yuuki Sawanoi,Washington,20,,male
+190,Edward Yu,Washington,7,,male
+191,Rowechen Zhong,Texas,24,,male
+192,Jack Albright,California,9,,male
+194,Linden Marcus Lee,,78,,male
+196,Won Jang,California,77,,male
+197,Karthik Seetharaman,,76,,male
+198,Eddie Wei,,79,,male
+199,Jerry Liu,California,80,,male
+200,Benjamin Andrew Fan,,77,,male
+201,Zani Xu,Virginia,10|72,,male
+202,Akash Madiraju,California,80,,male
+204,Alexander Svoronos,Connecticut,88,,male
+205,Mingyue Yang,Washington,89,,male
+206,Eric Xie,Maryland,83,,male
+207,Annie Huaiyu Wang,,90,,female
+208,Shaohuan (Nick) Zhang,,91,,male
+209,Hongming Allan Zhao,,42,,male
+210,Eric Zhu,North Carolina,92|109,,male
+211,Chenghao Hu,California,93|112,,male
+212,Nathan Lu,,95,,male
+213,Darren Han,Texas,86,,male
+214,Eric Guo,New Jersey,32|73,,male
+215,Michael Chen,New Jersey,42,,male
+216,Lingfei Tang,North Carolina,92|109,,female
+217,Sophia Jin,New York,49|96,,female
+218,William Qian,,95,,male
+219,Grisham Paimagam,North Carolina,97,,male
+220,Luca Pieleanu,Massachusetts,98,,male
+221,Anderson Hao,Virginia,85|122,,male
+222,Yunbo Li,,99,,male
+223,Edwin Zhao,,100,,male
+224,Zhemao Jiang,,101,,male
+225,Ari Wachtel,New Jersey,102,,male
+226,George Paret,,19,,male
+227,Sylvia Lee,Massachusetts,100,,female
+228,Hamza Khan,,101,,male
+229,Alexander Sun,Texas,86,Alex Sun,male
+230,Peter Bai,,26|100,,male
+231,Ryan Karim,West Virginia,83,,male
+232,Aashita Mandiwal,Utah,4,,female
+233,Adam Smith,,32,,male
+234,Nolan McDermott,,104,,male
+235,Paul Yoo,,85,,male
+236,Jennifer Zhou,,87,,female
+237,Steven Chan,,101,,male
+238,Shamik Khowala,,94,,male
+239,Satvik Sharma,Pennsylvania,73,,male
+240,Ryan Chen,Washington,89,,male
+241,Eliot Flowers,,105,,male
+242,Adam Ge,Massachusetts,26,,male
+243,Aarush Prasad,New Jersey,66,,male
+244,Jacob Ronan Khohayting,Florida,19|51,Jacob Khohayting,male
+245,Corwin Eisenbeiss,New Hampshire,96,,male
+246,Vincent Pirozzo,Michigan,91,,male
+247,Niranjan Rao,California,93,,male
+248,Shaheem Samsudeen,Texas,106,,male
+249,Sam Tsui,Massachusetts,100,Samuel Tsui,male
+250,Juntian Deng,Utah,4,,male
+251,Joshua Khohayting,,19,,male
+252,Arnav Iyengar,District of Columbia,83,,male
+253,Jaeho Lee,Texas,106,,male
+254,Tarun Rapaka,Texas,86,,male
+255,Todd Vijayakumar,,101,,male
+256,Kylan Huang,New York,96|123,,male
+257,Daniel Ge,Washington,89,,male
+258,Miles Petik,,107,,male
+259,Maitian Sha,New Jersey,66,,male
+260,Shaohuan (Nick) Zha,,108,,male
+261,Dalbert Wu,California,94,,male
+262,Aryan Raj,Virginia,109|116,,male
+263,Jonathan Liu,,26|100,,male
+264,Chloe Weng,,110,,female
+265,James Wu,,100,,male
+266,Ethan Imanuel,New Jersey,32,,male
+267,Anshul Mantri,Oregon,111,,male
+268,Kevin Yang,Washington,89,,male
+269,Calvin Garces,Michigan,100,,male
+270,Raymond Zhu,Washington,89,,male
+271,Ethan Gu,,84,,male
+272,Karn Chutinan,Massachusetts,115,,male
+273,Evin Liang,Massachusetts,26,,male
+274,Kai Lum,California,112,,male
+275,Catherine Xu,Iowa,117,,female
+276,Thomas Amdur,,73,,male
+277,Aprameya Tripathy,New Jersey,119,,male
+278,Albert Cao,Maryland,116,,male
+279,Sophia Hou,Virginia,85,,female
+280,Aaron Le,Pennsylvania,121,,male
+281,Andrew Xing,Florida,19,,male
+282,Arjun Pagidi,Virginia,85,,male
+283,Junjie Wen,,114,,male
+284,Alexander Liu,Virginia,122|215, Alex Liu,male
+285,Leo Yu,Texas,86,,male
+286,Yusuf Sheikh,Florida,19,,male
+287,Siravit Hengsuvanich,,120,,male
+288,David Lee,California,42,,male
+289,Kyle Wu,New York,49,,male
+290,Daniel Lu,State Department,66,,male
+291,Yuji Peter Wang,,42,,male
+292,Justin Mu,,118,,male
+293,Gabriel Levin,,49,,male
+294,Samuel Wang,Virginia,26,,male
+295,Raymond Zhao,,86,,male
+296,Hansen Shieh,Massachusetts,113,,male
+297,Christopher Lu,New York,123,,male
+298,Ian Buchanan,New York,49,,male
+299,Xuzhou Ren,Florida,19,,male
+300,Isaac Chen,New Jersey,32,,male
+301,Harry Kim,New York,120,,male
+302,Kenneth Ren,,88,,male
+303,Alansha Jiang,Washington,89,,female
+304,Jerry Xu,,26,,male
+306,Abhi Palikala,,85,,male
+307,Steven Lou,New York,49,,male
+308,Muztaba Syed,,26,,male
+309,Aaron Wang,North Carolina,97,,male
+310,David Kim,,100,,male
+311,Tony Zhang,Virginia,114,,male
+312,Rio Schillmoeller,Massachusetts,113,,male
+313,Andrew Feng,,124,,male
+314,Neil Peter,Pennsylvania,73,,male
+315,Jeremy Lee,,102,,male
+317,Michael Aram,,88,,male
+318,David Yu,Maryland,95,,male
+319,Seabert Mao,California,112,,male
+320,Jeremy Yang,Maryland,95,,male
+321,Alexander Duncan,,100,,male
+322,Andrew Shi,California,118,,male
+323,Isaac Chan-Osborn,Illinois,125,,male
+324,Benjamin Yin,,26,,male
+325,Amy Cui,Washington,7,,female
+326,Sicheng Zhou,New Jersey,42,,male
+327,Hengrui Liang,California,18,,male
+328,Aryan Agrawal,,117,,male
+329,Jiaxuan Gong,,34,,male
+330,Shangxian Chen,,38,,male
+331,Ritwin Narra,California,9,,male
+332,Huaiyu Chen,,126,,male
+333,Chuang Yuan,,127,,male
+334,HAOCHEN SUN,,22,,male
+335,Yuxin Fu,"Ontario, Canada",128,,male
+336,Lianshun Yang,,129,,male
+337,Emily Yu,New York,29,,female
+338,Katrina Liu,California,59,,female
+339,Ruoqing Yang,,35,,male
+340,Vincent Loh,,124,,male
+341,Alex Zhan,California,39,,male
+342,Christopher Kirilov Sakaliyski,,11,,male
+343,Jason Lee,North Carolina,130,,male
+344,Brandon Cai,Pennsylvania,32,,male
+345,Soham Dam,Pennsylvania,131,,male
+346,RUIQI SHI,,133,,male
+347,Shihan,,40,,male
+348,Kyle Liao,Washington,134,,male
+349,Tianxin Liu,,17,,male
+351,Tairan Ma,,135,,male
+352,Eric Ding,Minnesota,6,,male
+353,Shiqiao Zhang,,3,,male
+354,Suhas Kondapalli,,56,,male
+355,Xinrui Zhou,,36,,male
+356,LU CHANG,,36,,male
+357,Ryan Bansal,California,16,,male
+358,Franklin Zhou,,16,,male
+359,Kai Leon Yamashita,,136,,male
+360,Rui Ouyang,,128,,male
+361,Kai Yi,California,2,,male
+362,Rithik Gumpu,New Jersey,37,,male
+363,Michael Luo,Minnesota,6,,male
+364,Ekam Kaur,Texas,15,,female
+365,Harish Loghashankar,California,27,,male
+366,Ethan Kun Song,,2,,male
+367,Aryan Shome,,15,,male
+368,Sepehr Salehi Golsefidy,,59,,male
+369,Mark Tokarev,,137,,male
+370,Victor Chen,Illinois,11,,male
+371,Akshaj Arora,Georgia,31,,male
+372,Eric Shu,,139,,male
+373,Patrick Sun,,134,,male
+374,Rui Gu,,127,,male
+375,Kaden Chen,,140,,male
+376,LIU Andy Houjie,,17,,male
+377,Xiaoran Han,,2,Tiger Han,male
+378,Daniel Jin,New York,105,,male
+379,Zhenghua Xie,,59,,male
+380,Chang Lu,,127,,male
+381,Albert Lu,New Hampshire,3,,male
+382,Jack Wang,"British Columbia, Canada",20,,male
+383,Laura Wang,Washington,134,,female
+384,Perry Zhuo-Yan Dai,,5,,male
+385,Ali Zaman,California,9,,male
+386,Stephen Cui,,141,,male
+387,Royce Yao,Arizona,142,,male
+388,Aaron Smith,,73,,male
+389,Keshav Karumbunathan,Oregon,143,,male
+390,ZHANGJINKAI,,17,,male
+391,Watson Houck,,130,,male
+392,Justin Guo,Tennessee,145,,male
+393,Adam Henry Smith,,73,,male
+394,Alexander Yang,Washington,134,,male
+395,Boyou Huang,,138,,male
+396,Elena Ahn Beckman,California,146,Elena Beckman,female
+397,Ayush Bansal,,147,,male
+398,Neal Yan,California,47,,male
+399,Mingwen Duan,Connecticut,43,,male
+400,Kelin Zhu,Maryland,65,,male
+401,Emma Li,,149,,female
+402,Christopher Bao,Nevada,149, Chris Bao,male
+403,BRANDON JUNGWOO HAN,,151,,male
+404,Guanjie Lu,Texas,13,,male
+405,Rishi Rajesh,,50,,male
+406,Vasawat Rawangwong,Massachusetts,152,,male
+407,Elbert Ho,New Jersey,73,,male
+408,Zixuan Peng,,155,,male
+409,Hwisoo Kim,,14,,male
+410,Jaemin Kim,New York,49,,male
+411,Daniel Potievsky,,49,,male
+412,Aditya Pahuja,,49,,male
+413,Jacopo Rizzo,California,2,,male
+414,Changxiu Ji,,155,,male
+415,Christopher Li,"Ontario, Canada",128,,male
+416,Onkit Samanta,,20,,male
+417,Sarunyu Thongjarast,,156,,male
+418,Emily Liu,California,29,,female
+419,Worrawat Rungaramsin,,156,,female
+420,Simona Gagarova,,153,,female
+421,Yifan Kang,Massachusetts,14,,male
+422,Ryan Bai,California,2,,male
+423,Elena Baskakova,,158,,female
+424,Derek Zhao,Massachusetts,26,,male
+425,Andrew Tu,,43,,male
+426,Emily Ma,"Ontario, Canada",128,,female
+427,William Gvozdjak,,7,,male
+428,Evan Luo,,59,,male
+429,Evan Ashoori,Massachusetts,159,,male
+430,Henrick Rabinovitz,Massachusetts,98,,male
+431,Alyara Mahmudova,,81,,female
+432,Aiden Wen,Texas,24,,male
+433,Aarush Khare,California,157,,male
+434,Sargam Mondal,,160,,male
+435,Qirui Cai,,66,,male
+436,Anthony Wang,California,60,,male
+437,Marin Hristov Hristov,,67,,male
+438,Bryan Jiaju Chen,,63,,male
+439,Victoria Hu,California,157,,female
+440,Joseph Sukmin Chun,,163,,male
+441,David Wei,Virginia,10,,male
+442,Paul Gutkovich,New York,49,,male
+443,Aman Jain,,2,,male
+444,Michelle Liang,California,2,,female
+445,Jeffrey Xu,Massachusetts,73,,male
+446,Eddie Qiao,,59,,male
+447,Taiga Nishida,California,9,,male
+448,Raina Wu,,7,,female
+449,William Chenfeng Dai,,128,,male
+450,Minseok Eli Park,,12,,male
+451,Hankai Zhang,Michigan,34,,male
+452,Espen Slettnes,California,9,,male
+453,Shreyan Avi Paliwal,,64,,female
+454,Kavan Doctor,,60,,male
+455,Ryan Chin,Texas,24,,male
+456,Joseph Othman,New York,49,,male
+457,Ashley Zhu,New York,123,,female
+458,Aidan Duncan,,26,,male
+459,Zhara Elenska,,67,,female
+460,Peisong Li,,128,,male
+461,Anish Mudide,,63,,male
+462,Jackson Dryg,Colorado,55,,male
+463,Robin Said Sharif,,59,,male
+464,Hyunseok,,62,,male
+465,Chun Yeung Wong,,123,,male
+466,Allan Yuan,Alabama,166,,male
+467,Timothy Li,Alabama,166,,male
+468,Cuewon Kim,Alabama,166,,male
+469,Mina Hu,Alabama,166,,female
+470,Xiling E Tanner,Alaska,167,,male
+471,Xinlan A Tanner,Alaska,167,,male
+472,Ulysses Escobar,Alaska,167,,male
+473,Wyatt Beardsley,Alaska,167,,male
+474,Benjamin Jeter,Arizona,168,,male
+475,Owen Zhou,Arizona,168,,male
+476,Johnny Yu,Arizona,168,,male
+477,Victor Long,Arizona,168,,male
+478,Arya Waikar,Arkansas,169,,male
+479,Aakash Bhattacharyya,Arkansas,169,,male
+480,Chirag Samantaroy,Arkansas,169,,male
+481,Eric Tang,Arkansas,169,,male
+482,David Zhang(CA),Washington,170,,male
+483,Lawson Wang,California,170,,male
+484,Abhinav Krishna,Colorado,171,,male
+485,Joshua Liu,Colorado,171,,male
+486,Ethan Lou,Colorado,171,,male
+487,Kyle Zhang,Connecticut,172,,male
+488,Leon Jiang,Connecticut,172,,male
+489,Enya Yu,Connecticut,172,,female
+490,Yanming Huang,Delaware,173,,male
+491,Jai Thacker,Delaware,173,,male
+492,Grace Yang,Delaware,173,,female
+493,Bhavin Yarlagadda,Delaware,173,,male
+494,Nicolas Treland,Department of Defense,174,,male
+495,Frank Petty,Department of Defense,174,,male
+496,Kyle Koehler,Department of Defense,174,,male
+497,Catherine Perez,Department of Defense,174,,female
+498,Alex Acosta,District of Columbia,175,,male
+499,Lucas Qi,District of Columbia,175,,male
+500,Andrew Liu,District of Columbia,175,,male
+501,Philip Matchev,Florida,176,,male
+502,Jayden Lang,Florida,176,,male
+503,Stephen Yang,Georgia,177,,male
+504,Samanyu Ganesh,Georgia,177,,male
+505,Sai Palireddy,Georgia,177,,male
+506,Justin Park,Guam,178,,male
+507,Zunaid Jafar,Guam,178,,male
+508,Brian Hwang,Guam,178,,male
+509,Dylan Chong,Guam,178,,male
+510,Keisuke Kwong,Hawaii,179,,male
+511,Ashley Hong,Hawaii,179,,female
+512,Ryan Eto,Hawaii,179,,male
+513,Nicholas Biega,Hawaii,179,,male
+514,James Wei,Idaho,180,,male
+515,Vishal Suresh,Idaho,180,,male
+516,Bryan Li,Massachusetts,180,,male
+517,Jalen Lu,Idaho,180,,male
+518,Nate Maydanchik,Illinois,181,,male
+519,Andrew J Bukowski,Illinois,181,,male
+520,Angela Ho,Illinois,181,,female
+521,Michael Qian,Indiana,182,,male
+522,Edward Chen,Indiana,182,,male
+523,Jennifer Hu,Indiana,182,,female
+524,Om Patel,Indiana,182,,male
+525,Richard Yang,Iowa,183,,male
+526,Siray Zhu,Iowa,183,,male
+527,Arnesh Sharma,Kansas,184,,male
+528,Medha Goli,Kansas,184,,female
+529,John Schafer,Kansas,184,,male
+530,Sriram Srinivasa Kalki,Kansas,184,,male
+531,Nihal Jacob,Kentucky,185,,male
+532,Victoria Fu,Kentucky,185,,female
+533,Sri Vulava,Kentucky,185,,male
+534,Aryan Agahtehrani,Kentucky,185,,male
+535,Alex Pan,Louisiana,186,,male
+536,Varun Gala,Louisiana,186,,male
+537,Kevin Zheng,Louisiana,186,,male
+538,Ishan Kunada,Louisiana,186,,male
+539,Alex Ren,Maine,187,,male
+540,Asa Tussing,Maine,187,,male
+541,Samson Cournane,Maine,187,,male
+542,Yunyi Ling,Maryland,188,,male
+543,Jason Youm,Maryland,188,,male
+544,Ivy Guo,Maryland,188,,female
+545,Matthew Qian,Massachusetts,189,,male
+546,Rohith Raghavan,Massachusetts,189,,male
+547,Yuan Zhuang,Massachusetts,189,,male
+548,Michael Lu,New York,190,,male
+549,Elita You,Michigan,190,,female
+550,Austin Wang,Minnesota,191,,male
+551,Sneha Kundu,Minnesota,191,,female
+552,Kevin Qiu,Minnesota,191,,male
+553,Jinu Lee,Minnesota,191,,male
+554,Ryan Wu,Mississippi,192,,male
+555,Grant Zhang,Mississippi,192,,male
+556,Hadley Green,Mississippi,192,,female
+557,Brantley Denson,Mississippi,192,,male
+558,Aaron Lin,Missouri,193,,male
+559,Lucas Zhang,Missouri,193,,male
+560,Alex Wang (MO),Missouri,193,,male
+561,Anthony Zhao,Missouri,193,,male
+562,Brendan Cowie,Montana,194,,male
+563,Adam Bukowski,Montana,194,,male
+564,Eli LeBaron,Montana,194,,male
+565,Dylan Jolliffe,Montana,194,,male
+566,Viet Lai,Nebraska,195,,male
+567,Haamiz Humayun Kabir,Nebraska,195,,male
+568,Niloufar Kholmatov,Nebraska,195,,male
+569,Ha Quach,Nebraska,195,,male
+570,Evan Lim,Nevada,196,,male
+571,Alexander Weaver,Nevada,196,,male
+572,Shelly Yang,Nevada,196,,male
+573,Akshansh Chauhan,Nevada,196,,male
+574,Vaibhav Rastogi,New Hampshire,197,,male
+575,Pratham Mukewar,New Hampshire,197,,male
+576,David Cong,New Hampshire,197,,male
+577,Vedant Patil,New Hampshire,197,,male
+578,Akilan Sankaran,New Mexico,198,,male
+579,Hiro Jau,New Mexico,198,,male
+580,Kyuryeon Kim,New Mexico,198,,male
+581,Iorwen Ouyang,New Mexico,198,,male
+582,Shirley Xiong,New York,199,,female
+583,Rohan Sastry,New York,199,,male
+584,Raymond Ge,North Carolina,200,,male
+585,Anthony Yang,New York,200,,male
+586,Mu Jett,North Carolina,200,,male
+587,Cady Wang,North Dakota,201,,female
+588,Andrew Ternes,North Dakota,201,,male
+589,Malory Kemp,North Dakota,201,,female
+590,Dahlia Atanasova,North Dakota,201,,female
+591,Devin Lim,Ohio,202,,male
+592,Emir Naduvil,Ohio,202,,male
+593,Harshita Ganga,Ohio,202,,male
+594,Reese Zong,Ohio,202,,female
+595,Aiden Kim,Oklahoma,203,,male
+596,Ethan Li,Oklahoma,203,,male
+597,Nityant Chandupatla,Oklahoma,203,,male
+598,Justin Burns,Oklahoma,203,,male
+599,Kai Yamashita,Oregon,204,,male
+600,Justin Xia,Oregon,204,,male
+601,Shreyan Paliwal,Oregon,204,,female
+602,Yaseen Arifin,Oregon,204,,male
+603,Aidan Le,Pennsylvania,205,,male
+604,Joseph Widjaja,Pennsylvania,205,,male
+605,Nirvana Rosabella Marrero Tiodang,Puerto Rico,206,,male
+606,Jake Taubman,Puerto Rico,206,,male
+607,Rania Marrero Al-Attar,Puerto Rico,206,,female
+608,Sergey Sachko,Puerto Rico,206,,male
+609,Ruoyu Gao,Rhode Island,207,,male
+610,Siddharth Gupta,Rhode Island,207,,male
+611,Samuel Licht,Rhode Island,207,,male
+612,William Bruno,Rhode Island,207,,male
+613,Brandon Xu,New York,208,,male
+614,Anthony Zou,South Carolina,208,,male
+615,Ruideng Zhong,South Carolina,208,,male
+616,William Wang,South Carolina,208,,male
+617,Ernest Ting,South Dakota,209,,male
+618,Joseph Michna,South Dakota,209,,male
+619,Vedant Sharan,South Dakota,209,,male
+620,Caleb Mayrose,South Dakota,209,,male
+621,Sebastian Chase,State Department,210,,male
+622,Josh Shin,State Department,210,,male
+623,Lexing Huang,State Department,210,,male
+624,Amy Yu,Tennessee,211,,female
+625,Alan Z Cheng,Tennessee,211,,male
+626,William C Peng,Tennessee,211,,male
+627,Annie X Wu,Tennessee,211,,female
+628,Mingchuan Cheng,Utah,212,,male
+629,Yuyang Zhang,Vermont,213,,male
+630,Jacob Graham,Vermont,213,,male
+631,Emma Xia,Vermont,213,,female
+632,Cameron Stultz,Vermont,213,,male
+633,Tanmay Totwani,Virgin Islands,214,,male
+634,Eli Blondeau,Virgin Islands,214,,male
+635,Meher Makhijani,Virgin Islands,214,,male
+636,Marina Lin,Virginia,215,,male
+637,Angeline Zhao,New York,215,,female
+638,Owen Zhang,Washington,216,,male
+639,Alon Ragoler,Washington,216,,male
+640,Bohan Yao,Washington,216,,male
+641,Hongning Wang,Washington,216,,male
+642,Austin Luo,West Virginia,217,,male
+643,Joyce Hu,West Virginia,217,,female
+644,Sanketh Guppi,West Virginia,217,,male
+645,Caden Yao,West Virginia,217,,male
+646,Kartik Ramachandrula,Wisconsin,218,,male
+647,Joshua Wang,Wisconsin,218,,male
+648,Jeremy Li,Wisconsin,218,,male
+649,Harry Jin,Wisconsin,218,,male
+650,Jonathan Oler,Wyoming,219,,male
+651,Paul J Baxter,Wyoming,219,,male
+652,Dexter Opps,Wyoming,219,,male
+653,Michael Mahoney,Wyoming,219,,male
+654,Albert Chen,Alabama,166,,male
+655,Tina Gao,Alabama,166,,female
+656,Xiling Tanner,Alaska,167,,male
+657,Kevin Zhang,Alaska,167,,male
+658,Brooke Peng,Alaska,167,,female
+659,Alex Nemeth,Alaska,167,,male
+660,Quentin Hill,Arizona,168,,male
+661,Abigail Qiu,Arizona,168,,female
+662,Sumedh Kalyankar,Arkansas,169,,male
+663,Patrick Jiang,Arkansas,169,,male
+664,Justin Wang,Arkansas,169,,male
+665,Sohil Rathi,California,170,,male
+666,Shruti Arun,Colorado,171,,female
+667,Alex Zhang,"Ontario, Canada",171,,male
+668,Naomi Huang,Colorado,171,,female
+669,Shaurya Ranjan,Connecticut,172,,male
+670,Sohan Javeri,Connecticut,172,,male
+671,Kabir Goyal,Delaware,173,,male
+672,Miles Zhang,Delaware,173,,male
+673,Rajat Bhaskaran,Delaware,173,,male
+674,Aditya Rustagi,Delaware,173,,male
+675,Darren Zhuang,Department of Defense,174,,male
+676,Lucas Burbank,Department of Defense,174,,male
+677,Christopher Gammel,Department of Defense,174,,male
+678,Trent Wilkerson,Department of Defense,174,,male
+679,William Wu,District of Columbia,175,,male
+680,Adnan Gunja,District of Columbia,175,,male
+681,Michael Wei,Florida,176,,male
+682,Anish Patel,Florida,176,,male
+683,Siddarth Suresh,Georgia,177,,male
+684,Aiden Kang,Guam,178,,male
+685,Allan Zeng,Guam,178,,male
+686,Samuel Guo,Guam,178,,male
+687,Sola Murakami,Hawaii,179,,female
+688,Hong Kwak,Hawaii,179,,male
+689,Daniel York,Hawaii,179,,male
+690,Katsutoshi Yamamoto,Hawaii,179,,male
+691,Darren Su,Idaho,180,,male
+692,Jonathan Rands,Idaho,180,,male
+693,Isaac Kingma,Idaho,180,,male
+694,Christopher Sakaliyski,Illinois,181,,male
+695,Elaine Zeng,Indiana,182,,female
+696,Kaitlyn Park,Indiana,182,,female
+697,Prabhas Gupta,Iowa,183,,male
+698,Chetas Aduri,Iowa,183,,male
+699,Mahi Kohli,Kansas,184,,male
+700,Eddison Chen,Kansas,184,,male
+701,Solon Xia,Kansas,184,,male
+702,Matt Wu,Kansas,184,,male
+703,Samuel Henderson,Kentucky,185,,male
+704,Samuel Kingston,Kentucky,185,,male
+705,Ethan Tang,Kentucky,185,,male
+706,Anna Wang,Louisiana,186,,female
+707,Cecily Lu,Louisiana,186,,female
+708,Connor Lund,Maine,187,,male
+709,Ryan Schultz,Maine,187,,male
+710,Jacob Klein,Maine,187,,male
+711,Alyssa Yu,Maryland,188,,female
+712,Raymond Gao,Massachusetts,189,,male
+713,William Dong,Michigan,190,,male
+714,Rishabh Mahale,Michigan,190,,male
+715,Luke Furness,Michigan,190,,male
+716,Jingyi Ling,Minnesota,191,,male
+717,Levi Mei,Mississippi,192,,male
+718,John Rogers,Mississippi,192,,male
+719,Ian Jung,Mississippi,192,,male
+720,Kyler Wang,Missouri,193,,male
+721,Isaac Lukacs,Montana,194,,male
+722,Paul Harmon,Montana,194,,male
+723,Holden Hadidi,Montana,194,,male
+724,Matthew Watson,Montana,194,,male
+725,Evan Sun,Nebraska,195,,male
+726,Jay Peng,Nebraska,195,,male
+727,Jayanth Athipatla,Nebraska,195,,male
+728,Boya Zhang,Nevada,196,,male
+729,Julian Kuang,Nevada,196,,male
+730,Dev Saxena,Nevada,196,,male
+731,Alexander Davi,Nevada,196,,male
+732,Ryan Casey,New Hampshire,197,,male
+733,Tiffany Sun,New Hampshire,197,,female
+734,Sean Choi,New Mexico,198,,male
+735,Laszlo Zolyomi,New Mexico,198,,male
+736,Euiryeon Kim,New Mexico,198,,male
+737,Yunmo Chen,New York,199,,male
+738,Liran Zhou,New York,199,,female
+739,Michael Iofin,New York,199,,male
+740,Raghav Arun,North Carolina,200,,male
+741,Leo Yang,North Carolina,200,,male
+742,Helen Chen,North Carolina,200,,female
+743,Jason Ling,North Dakota,201,,male
+744,Blake Homiston,North Dakota,201,,male
+745,Braden Li,North Dakota,201,,male
+746,Sunisha Tangpong,North Dakota,201,,male
+747,Devin Zhao,Ohio,202,,male
+748,Suvam Konar,Ohio,202,,male
+749,Melody Chen,Oklahoma,203,,female
+750,Miranda Huang,Oklahoma,203,,female
+751,Ethan Cai,Oklahoma,203,,male
+752,Arjun Agarwal,Oregon,204,,male
+753,Kai Yamishita,Oregon,204,,male
+754,William Liu,Pennsylvania,205,,male
+755,Alvaro Villafuerte,Puerto Rico,206,,male
+756,Luis Carlos Collazo,Puerto Rico,206,,male
+757,Lucas Carlo,Puerto Rico,206,,male
+758,Jose Ramos,Puerto Rico,206,,male
+759,Iris Yang,Rhode Island,207,,female
+760,Philip Spradlin,Rhode Island,207,,male
+761,Shawn Badre,Rhode Island,207,,male
+762,Sadie Enright,Rhode Island,207,,female
+763,Liaoliao Shi,South Carolina,208,,male
+764,Seomgeun Shim,South Carolina,208,,male
+765,Shaurya Sehgal,South Dakota,209,,male
+766,William Jin,South Dakota,209,,male
+767,Justus Heibutzki,State Department,210,,male
+768,Eric Chen,Tennessee,211,,male
+769,Yejoon Ham,Tennessee,211,,male
+770,Kevin Chen,New Jersey,220,,male
+771,Wilson St. Martin,Utah,212,,male
+772,Tanish Shetty,Utah,212,,male
+773,Evan Xia,Vermont,213,,male
+774,Henry Rogers,Vermont,213,,male
+775,Richard Jiang,Vermont,213,,male
+776,Lucy Proulx,Vermont,213,,female
+777,Sanjiv Bachan,Virgin Islands,214,,male
+778,Naitik Jhanwar,Virgin Islands,214,,male
+779,Andrew Chen,Virginia,215,,male
+780,Susie Lu,Washington,216,,female
+781,Jeffrey Zhao,Washington,216,,male
+782,Vinu Chandrasekar,West Virginia,217,,male
+783,Sami El-Hajjar,Wisconsin,218,,male
+784,Siddharth Kosaraju,Wisconsin,218,,male
+785,Maya Jadhav,Wisconsin,218,,female
+786,Vaidehi Ramachandrula,Wisconsin,218,,female
+787,Ashley Olson,Wyoming,219,,female
+788,Henry McGuire,Wyoming,219,,male
+789,Sofia Furman,Wyoming,219,,male
+790,Bekalyn Swett,Wyoming,219,,male
+792,Roger He,Florida,176,,male
+793,Christopher Cheng,Massachusetts,189,,male
+794,Zizhan Wang,Georgia,177,,male
+795,Eric Gao,Florida,176,,male
+797,Bowen Shan,Arizona,168,,male
+798,Samuel Ding,Oregon,204,,male
+799,Kesav Kalanidhi,North Carolina,200,,male
+800,Nikhil Byrapuram,Massachusetts,189,,male
+801,Leo Hong,North Carolina,200,,male
+802,Arush Krisp,Ohio,202,,male
+804,Leon Xie,Iowa,183,,male
+805,Shining Sun,New Jersey,221,,male
+806,Simon Deng,Ohio,202,,male
+807,Jonah Wang,Colorado,171,,male
+808,Miguel Shim,South Carolina,208,,male
+809,Advait Joshi,New Jersey,221,,male
+810,Danyang Xu,Massachusetts,189,,male
+811,Brandon Ni,Massachusetts,189,,male
+812,Drake Tan,Texas,220,,male
+813,Joseph Liang,Oregon,204,,male
+814,Rayoon Kim,Pennsylvania,205,,male
+815,Puranjay Madupu,Arizona,168,,male
+816,Vivek Kalyankar,Arkansas,169,,male
+817,Girish Prasad,Connecticut,172,,male
+818,Jonathan Wu,Utah,212,,male
+819,William Shan,Arizona,168,,male
+820,Anirudh Pulugurtha,New Hampshire,197,,male
+821,Taiwen Feng,Michigan,190,,male
+822,Charlie Wang,Alaska,167,,male
+823,Daniel Wei,Florida,176,,male
+824,Wesley Wu,Washington,216,,male
+825,Alex Yang,Washington,216,,male
+826,Max Tsai,Nevada,196,,male
+827,Easton Wei,New Jersey,221,,male
+828,Henry Wang,California,200,,male
+829,Joseph Girotto,Connecticut,172,,male
+830,Rajarshi Mandal,Massachusetts,189,,male
+831,Alex Gao,Indiana,182,,male
+832,Bryant Yu,Wisconsin,218,,male
+833,Marty Ho,Georgia,177,,male
+834,Henry Lu,Ohio,202,,male
+835,Sean Lee,State Department,210,,male
+836,Ethan Wang,Utah,221,,male
+837,Evan Ho,Hawaii,179,,male
+838,Jason Bo,California,170,,male
+839,Victor Yang,New York,199,,male
+840,Andrew Du,Virginia,215,,male
+841,Shlok Mukund,Massachusetts,189,,male
+842,Justin Kim,California,170,,male
+843,Lucas Li,North Carolina,200,,male
+844,Ryan Zhang,New York,199,,male
+845,Edwin Gao,Florida,176,,male
+846,Roland Li,Indiana,182,,male
+847,Sophia Han,Oregon,204,,female
+848,Arjun Raman,Indiana,182,,male
+849,Aiden Wei,Georgia,177,,male
+850,Eric Huang,Massachusetts,189,,male
+851,Soham Samanta,Massachusetts,189,,male
+852,Vivaan Mukherjee,Washington,216,,male
+853,Andy Liu,California,170,,male
+854,Benjamin Lu,Pennsylvania,205,,male
+855,Arnav Bhatia,Florida,176,,male
+856,Roger Huang,Maryland,188,,male
+857,Jiyan Singh,Wisconsin,218,,male
+858,Ian Shan,Arizona,168,,male
+859,Jay Wang,New Jersey,221,,male
+860,Saamik Agrawal,Washington,216,,male
+861,Derrick Chen,New York,199,,male
+862,Ethan Shi,Connecticut,172,,male
+863,William Xin,Washington,216,,male
+864,Adam Deng,Utah,212,,male
+865,Jason Zhou,Louisiana,186,,male
+866,Hayden Hughes,Connecticut,172,,female
+867,Leo Shen,Utah,212,,male
+868,Kevin Cheng,Oregon,204,,male
+869,Sophia Chen,Indiana,182,,female
+870,Shawn Bi,Virginia,215,,male
+871,Eric Jin,Michigan,190,,male
+872,Rananjay Parmar,Florida,176,,male
+873,Hrishabh Bhowmik,Indiana,182,,male
+874,Sreehari Vijaybhaskar,,222,,male
+875,Rohan Pavuluri,,225,,male
+876,Aiden Dai,,11,,male
+877,Heyang Felicity Ni,,42,,male
+878,Andrew Wen,Massachusetts,14,,male
+879,Andy Xu,,14,,male
+881,Yichen Cedric Xiao,,42,,male
+882,Benjamin Chen,Illinois,241,,male
+883,Jeff Lin,,26,,male
+884,Shihan Kanungo,California,,,male
+885,Aarush Vailaya,California,,,male
+886,Warren Bei,"British Columbia, Canada",,,male
+887,Neil Krishnan,California,,,male
+888,Jian Kweon,California,,,male
+889,Tony Lu,Texas,,,male
+890,Hanson Bai,California,,,male
+891,Andrew Brahms,New Jersey,,,male
+892,Edward Cha,Massachusetts,,,male
+893,Hugh Cheng,California,,,male
+894,Kailua Cheng,California,,,female
+895,Perry Dai,"Ontario, Canada",,,male
+896,Aron Fekete,New Hampshire,,,male
+897,Dylan Frake,California,,,male
+898,Hao-Yu Gan,New York,,,male
+899,Eden He,Pennsylvania,,,male
+900,Katie He,Florida,,,female
+901,Hyun-Jin Kim,Texas,,,male
+902,Sam Kretzschmar,Minnesota,,,male
+903,Justin Ma,Virginia,,,male
+904,Jaewoo Park,Illinois,,,male
+905,Ryan Tang,Massachusetts,,,male
+906,Ryan Wang,California,,,male
+907,Brian Xue,California,,,male
+908,Vincent Yu,Indiana,,,male
+909,Joey Zheng,Arizona,,,male
+910,Ryan Zhu,"British Columbia, Canada",,,male
+911,Eric Zou,California,,,male
+912,Brett Chang,California,,,male
+913,Samarth Das,Texas,,,male
+914,Bryan Fu,Texas,,,male
+915,Michael Han,Massachusetts,,,male
+916,Lucas Hinds,Tennessee,,,male
+917,Bennett Huang,Virginia,,,male
+918,Jiawen Huang,California,,,male
+919,Seojoon Kang,New York,,,male
+920,Taehong Kim,Massachusetts,,,male
+921,Alicia Li,New Hampshire,,,female
+922,Rex Li,"Ontario, Canada",,,male
+923,James Qiu,"Ontario, Canada",,,male
+924,Victor Sarca,"Ontario, Canada",,,male
+925,Kalan Warusa,Virginia,,,male
+926,Asher Wu,Washington,,,male
+927,Arthur Xu,Illinois,,,male
+928,Kellen Xue,California,,,male
+929,Nathan Ye,California,,,male
+930,Bole Ying,Pennsylvania,,,male
+931,Matthew Yuan,California,,,male
+932,Leo Zeng,California,,,male
+933,Alexander Zhang,"Ontario, Canada",,,male
+934,Charles Zhang,California,,,male
+935,Eric Zhang,Illinois,,,male
+937,Charlie Qian,"Ontario, Canada",,,male
+938,Sam Shi,"Ontario, Canada",,,male
+939,Isaac Chen-Osborn,New Jersey,,,male
+940,Agastya Goel,California,,,male
+941,Sheldon Tan,California,,,male
+942,Mingze Wang,New Jersey,,,male
+943,Tangjian Wang,Connecticut,,,male
+944,Doris Wu,"Ontario, Canada",,,female
+945,Alex Chen,California,,,male
+946,Yixuan Chen,"Ontario, Canada",,,male
+947,Pahan Dewasurendra,California,,,male
+948,Hanqin Gu,Ohio,,,male
+949,Peyton Li,Connecticut,,,male
+950,Kristine Lu,California,,,female
+951,Elias Mrug,Alabama,,,male
+952,Peter Pan,New Jersey,,,male
+953,Tanishq Pauskar,Ohio,,,male
+954,Zachary Perry,Massachusetts,,,male
+955,Samuel Ren,California,,,male
+956,Kristie Sue,California,,,female
+957,Larry Xing,California,,,male
+958,Sounak Bagchi,New Jersey,,,male
+959,Bryan Chen,New Hampshire,,,male
+960,William Chen,California,,,male
+961,Alyssa Chu,New York,,,female
+962,Alan Duan,Washington,,,male
+963,Katelyn Gan,California,,,male
+965,Hongyi Huang,"Ontario, Canada",,,male
+967,Jiwu Jang,Massachusetts,,,male
+968,Aditya Joshi,New Jersey,,,male
+970,Juni Kim,New Jersey,,,male
+971,Brian Li,California,,,male
+972,Eddy Li,California,,,male
+974,Sitta Tantikul,New Hampshire,,,male
+975,Jonathan Wang,Texas,,,male
+977,Enmei Yang,New York,,,male
+978,Evan Yang,California,,,male
+979,Haocheng Zhang,New York,,,male
+981,Raymon Zhang,Washington,,,male
+982,Brian Zhou,California,,,male
+984,Yoll Feng,Massachusetts,,,male
+986,Kyle Lin,Texas,,,male
+988,Kevin Long,New Jersey,,,male
+989,Richard Wang,Texas,,,male
+990,Leo Wu,"Ontario, Canada",,,male
+991,Haofang Zhu,California,,,male
+992,Aidan Bai,California,,,male
+993,Andrew Chai,New Jersey,,,male
+994,Arthur Gong,Washington,,,male
+995,Preston Hu,California,,,male
+996,Andy Jo,Idaho,,,male
+997,Ben Jump,Ohio,,,male
+998,Bofan Liu,Texas,,,male
+999,Dale Liu,California,,,male
+1000,Arden Lu,Massachusetts,,,male
+1001,Tommy Moseley,Kentucky,,,male
+1002,Alexander Ruan,California,,,male
+1003,Ben Song,,,,male
+1004,Arjun Suresh,Wisconsin,,,male
+1005,Anji Wang,"Ontario, Canada",,,male
+1006,David Wang,Maryland,,,male
+1007,Oliver Zhang,Massachusetts,,,male
+1008,Vivian Zhong,California,,,female
+1009,Zachary Berchenko,Minnesota,,,male
+1010,Erin Bian,Washington,,,female
+1011,Krittika Chandra,California,,,female
+1012,Michael Chang,Texas,,,male
+1013,Shihan Cheng,Illinois,,,male
+1014,Lanie Deng,Missouri,,,female
+1015,Jincheng Feng,Maryland,,,male
+1016,Neel Jindal,California,,,male
+1017,Bach Kieu,Illinois,,,male
+1018,Nolan Lin,California,,,male
+1019,Ishaan Mittal,California,,,male
+1020,Yinuo Pan,Texas,,,male
+1021,Ryan Peng,New York,,,male
+1022,Eric Shao,Washington,,,male
+1023,Kris Sheng,New Jersey,,,male
+1024,Natalie Song,California,,,female
+1025,Melvin Xu,Georgia,,,male
+1026,Fiona Yan,"Ontario, Canada",,,female
+1027,Kevin Xiao,Delaware,,,male
+1028,Jane Xie,New York,,,female
+1029,Atticus Stewart,California,,,male
+1031,William Chen,Texas,,,male
+1032,Edward Guo,Virginia,,,male
+1034,Lei He,"Ontario, Canada",,,male
+1035,Daniel Ji,California,,,male
+1036,Timur Kilybayev,Massachusetts,,,male
+1037,Evan Li,California,,,male
+1038,Jason Lu,New Jersey,,,male
+1039,Wenhao Lu,New Jersey,,,male
+1040,Nathan Mei,Michigan,,,male
+1041,JonJon She,Massachusetts,,,male
+1042,Michael Sun,"Ontario, Canada",,,male
+1043,Heather Wang,California,,,female
+1044,Colin Wei,Texas,,,male
+1045,Michelle Wu,"Ontario, Canada",,,female
+1046,Terence Wu,Washington,,,male
+1048,Zelong Yang,New York,,,male
+1049,Ryan Yin,Virginia,,,male
+1050,Jonathan Yu,California,,,male
+1051,Benjamin Zhang,California,,,male
+1052,Edward Zhang,California,,,male
+1053,Eric Zhang,California,,,male
+1054,Jayden Zheng,Texas,,,male
+1055,Madeline Zhu,New Jersey,,,female
+1056,Alex Bae,California,,,male
+1058,Aiden Jeong,California,,,male
+1059,Gloria Ma,California,,,female
+1060,Michael Middlezong,New Jersey,,,male
+1061,Julia Xiang,California,,,female
+1062,Jerry Zhang,California,,,male
+1063,Daniel Zhou,Michigan,,,male
+1064,Garrett Cai,California,,,male
+1065,Amelia Chen,California,,,female
+1066,Hayden Chen,California,,,male
+1068,Rachel Chen,California,,,female
+1069,Sophie Chen,Connecticut,,,female
+1070,Jiya Dani,Texas,,,male
+1071,Aiden Gao,California,,,male
+1072,Marvin Gao,Florida,,,male
+1073,Angie Huang,Minnesota,,,female
+1074,Chaewoon Kyoung,Maryland,,,male
+1075,Eric Li,Massachusetts,,,male
+1076,Kevin Li,California,,,male
+1077,Xinyi Li,Texas,,Sophie Li,female
+1078,Jason Lian,New York,,,male
+1079,James Lin,California,,,male
+1080,Wesley Lin,New Jersey,,,male
+1081,Jason Liu,Pennsylvania,,,male
+1082,Hannah Ma,Washington,,,female
+1083,Vishnu Mangipudi,Washington,,,male
+1084,Maiya Qiu,New Jersey,,,female
+1085,Ethan Qu,California,,,male
+1086,Greta Qu,"Ontario, Canada",,,female
+1087,Justin Seo,Michigan,,,male
+1088,Kallie Wang,California,,,female
+1090,Immanuel Whang,Washington,,,male
+1091,Jack Whitney,Connecticut,,,male
+1092,Kyle Yang,Massachusetts,,,male
+1093,Michael Yang,Washington,,,male
+1094,Yuxi Yang,"Ontario, Canada",,,male
+1095,Mofan Yu,New York,,,male
+1096,Eddie Zhao,Massachusetts,,,male
+1097,Max Zheng,Illinois,,,male
+1098,Kayden Zhong,Texas,,,male
+1099,Bryan Zhu,Washington,,,male
+1100,Chenghao Zuo,"British Columbia, Canada",,,male
+1101,Aidan Woojin Choi,South Korea,,,male
+1102,Nithid Anchaleenukoon,New Hampshire,,,male
+1103,John Gupta-She,New York,,,male
+1104,Roy Kang,New York,,,male
+1105,Yichen Xiao,New Jersey,,,male
+1106,Ryan Yang,Connecticut,,,male
+1107,Ethan Zhou,Virginia,,,male
+1108,William Dai,"Ontario, Canada",,,male
+1109,Chris Ge,California,,,male
+1110,Austin Geng,Louisiana,,,male
+1111,Cordelia Hu,Tennessee,,,female
+1112,Ray Law,California,,,male
+1113,Ethan Lee,California,,,male
+1114,Nina Li,"British Columbia, Canada",,,female
+1115,Josiah Moltz,New York,,,male
+1116,Shreyas Singh,Illinois,,,male
+1117,Eric Wang,Massachusetts,,,male
+1118,Xiaoyang Wu,California,,,male
+1119,Haozhe Yang,"Saskatchewan, Canada",,,male
+1120,Eric Zhan,Washington,,,male
+1121,Sebastian Atlan,Illinois,,,male
+1122,Dhruv Basu,"Ontario, Canada",,,male
+1123,Aaron Chen,California,,,male
+1124,Matthew Chen,Minnesota,,,male
+1125,Omer Demir,Florida,,,male
+1126,Pico Gilman,California,,,male
+1127,Michelle Kang,Virginia,,,female
+1128,Alan Kappler,Nevada,,,male
+1129,Nikita Kiselov,Pennsylvania,,,male
+1130,Catherine Li,California,,,female
+1131,Daniel Mai,Massachusetts,,,male
+1132,Heyang Ni,New Jersey,,,female
+1133,Minseok Park,North Carolina,,,male
+1134,Sebastian Prasanna,Massachusetts,,,male
+1135,Pranav Shankar,New Jersey,,,male
+1136,Romir Sharma,New Jersey,,,male
+1137,Bryan Song,New Jersey,,,male
+1138,Lucas Tang,Washington,,,male
+1139,David Villani,New York,,,male
+1140,Kaile Wang,New Jersey,,,male
+1141,Yizhou Wang,"Quebec, Canada",,,male
+1142,Yuji Wang,New Jersey,,,male
+1143,Stephen Xia,California,,,male
+1144,Gene Yang,Washington,,,male
+1145,Ming Yang,Arizona,,,male
+1146,Matthew Zhao,New York,,,male
+1147,Jason Zhong,Connecticut,,,male
+1148,Aaron Zhou,Texas,,,male
+1149,Samuel Zhou,California,,,male
+1150,Adam Zweiger,California,,,male
+1151,Kevin Cong,New Hampshire,,,male
+1152,Ram Goel,California,,,male
+1153,Papon Lapate,New Hampshire,,,male
+1154,Kevin Min,California,,,male
+1155,Pitchayut Saengrungkongka,New Hampshire,,,male
+1156,Locke Cai,New Jersey,,,male
+1157,Jason Fang,"British Columbia, Canada",,,male
+1158,Ryan Jang,South Korea,,,male
+1159,Kaylee Ji,California,,,female
+1160,Aiden Jung,South Korea,,,male
+1161,Mutiraj Laksanawisit,New Hampshire,,,male
+1162,Justin Lee,California,,,male
+1163,Rishab Parthasarathy,California,,,male
+1164,Paramuth Samuthrsindh,New Hampshire,,,male
+1165,Adam Tang,California,,,male
+1166,Albert Wang,Florida,,,male
+1167,Zifan Wang,New Jersey,,,male
+1168,Kaixin Wang,China,,,male
+1169,Jaedon Whyte,Florida,,,male
+1170,Kevin Wu,Maryland,,,male
+1171,Daniel Xu,California,,,male
+1172,Eric Yang,New Hampshire,,,male
+1173,Daniel Yuan,Maryland,,,male
+1174,William Yue,Massachusetts,,,male
+1175,George Zhang,Texas,,,male
+1176,George Cao,New Jersey,,,male
+1177,Kenneth Chen,Minnesota,,,male
+1178,Jessica Dong,China,,,female
+1179,Mason Fang,California,,,male
+1180,Arnav Goel,Illinois,,,male
+1181,Paul Hamrick,California,,,male
+1182,Garrett Heller,Virginia,,,male
+1183,Qingcheng Hu,California,,,male
+1184,Jay Ji,United Kingdom,,,male
+1185,Tristan Kay,Washington,,,male
+1186,Sasidhar Kunapuli,California,,,male
+1187,Daeho Lee,California,,,male
+1188,Mugeng Lin,"British Columbia, Canada",,,male
+1189,Sophie Liu,Nevada,,,female
+1190,Evan Lu,"Ontario, Canada",,,male
+1191,Zehan Pan,New Jersey,,,male
+1192,James Rydell,California,,,male
+1193,Qingzhou Shen,Georgia,,,male
+1194,Easton Singer,Ohio,,,male
+1195,Christopher Wu,Texas,,,male
+1196,Daniel Xia,New Jersey,,,male
+1197,Ai Xiao,New Hampshire,,,male
+1198,Owen Yang,Arizona,,,male
+1199,Victor Yin,California,,,male
+1200,Alex Wang,Maryland,,,male
+1201,David Zhang,Utah,212,,male
+1202,Kevin Liu,Pennsylvania,205, ,male
+1203,Samuel Wang,Massachusetts,,Sam Wang ,male
+1204,Arnav Adhikari,,,,male
+1205,Brian Bi,,,,male
+1206,Aryan Bora,,,,male
+1207,Ryan Dong,,,,male
+1208,Nikash Gupta,,,,male
+1209,Luke Huang,,,,male
+1210,Brendon Jiang,,,,male
+1211,Minkyu Jo,,,,male
+1212,Weijie-Jay Li,,,,male
+1213,Alan Lu,California,,,male
+1214,Ruiyang Luo,,,,male
+1215,Rico Qi,,,,male
+1216,Kevin Wang,,,,male
+1217,Daniel Wang,,,,male
+1218,Yingshan Xiao,"Ontario, Canada",,,female
+1219,Laura Zhang,,,,female
+1220,Henry Zheng,,,,male
+1221,Yoobin Cha,Arizona,,,male
+1222,Patrick Chu,,,,male
+1223,Aiden Feyerherm,Virginia,132,,male
+1224,Ethan Han,,,,male
+1225,Alexander Jun,,,,male
+1226,Katherine Li,New York,,,female
+1227,Tina Li,,,,female
+1228,Bhaumik Mehta,,,,male
+1229,Vishal Nandakumar,,,,male
+1230,Zian Shi,,,,male
+1231,Joseph Vulakh,,,,male
+1232,Henry Yao,,,,male
+1233,Davido Zhang,,,,male
+1234,Andrew Zhao,,,,male
+1235,Alex Zheng,,,,male
+1236,Ricky Hu,California,,,male
+1237,Zander Li,"Ontario, Canada",,,male
+1238,Ethan Song,California,,,male
+1240,Ishani Agarwal,California,,,female
+1241,Anay Aggarwal,Oregon,,,male
+1242,Samarth Bhargav,Virginia,,,male
+1243,Brandon Chan,Michigan,,,male
+1244,Yao Chen,California,,,male
+1245,Vince Choi,California,,,male
+1246,Cyrus Chung,California,,,male
+1247,Qixuan Ding,"Alberta, Canada",,,male
+1248,Victoria Fang,California,,,female
+1249,Robert Feng,California,,,male
+1250,Peter Ferolito,California,,,male
+1251,Jerry Guo,California,,,male
+1252,Haoqing Hong,Massachusetts,,,male
+1253,Joyce Huang,Washington,,,female
+1254,Jefferson Ji,Massachusetts,,,male
+1255,Minyku Jo,Idaho,,,male
+1256,Seoyeon Kim,Kansas,,,male
+1257,Michael Li,Michigan,,,male
+1258,WeiWei Luo,Canada,,,male
+1259,Pavel MacKenzie,Canada,,,male
+1260,Tatiana Medved,North Carolina,,,female
+1261,Isaac Merlin,Florida,,,male
+1262,Advaith Mopuri,California,,,male
+1263,Akilan Paramasivam,California,,,male
+1264,Mir Park,Washington,,,male
+1265,Milind Sharma,Massachusetts,,,male
+1266,Kevin Wan,Wisconsin,,,male
+1267,Allen Wu,Washington,,,male
+1268,Larry Wu,California,,,male
+1269,Shenlone Wu,Nevada,,,male
+1270,Honjar Xing,"Ontario, Canada",,,female
+1271,Anna Zhou,Maryland,,,female
+1272,Angelica Feng,,,,male
+1273,Kevin Hu,,,,male
+1275,Rohith Thomas,,,,male
+1276,Tiger Li,,,,male
+1277,Jeff Zhou,,,,male
+1278,Kaylyn Zhang,,,,female
+1279,Jack Whitney-Epstein,,,,male
+1280,Benny Wang,,,,male
+1281,Rick Zhou,,,,male
+1282,Lewis Lou,,,,male
+1283,Zenghan (Yoll) Feng,,,,male
+1284,Jonathan Zhou,,,,male
+1285,Raine Ma,,,,male
+1286,Aarav Mann,,,,male
+1287,Prince Zhang,,,,male
+1288,Eric Jia,,,,male
+1289,Rui Jiang,,,,male
+1290,Madhav Krishnuswamy,,,,male
+1291,Alex Jun,,,,male
+1292,Tanishq Paushkar,,,,male
+1293,Olivia Xu,,,,female
+1294,Mikayla Lin,,,,female
+1295,Jeffrey Chen,British Columbia,,,male
+1296,Yucheng Zhang,,,,male
+1297,Qianmo Ni,,,,male
+1298,Thomas Yao,,,,male
+1299,Parsa Adhami,,,,male
+1300,Mingfei Zhou,,,,male
+1301,Gloria Lu,,,,female
+1302,Nelson Huang,,,,male
+1303,Sixun Zheng,,,,male
+1304,Ethan Shan,,,,male
+1305,Liang Christopher,,,,male
+1306,Brandon Jia,,,,male
+1307,Jason Sliwowski,,,,male
+1308,Roman  Mecholsky,,,,male
+1309,Jahl Miraji-Khot,,,,male
+1310,Dylan Zhang,,,,male
+1311,Sarah Li,,,,female
+1312,Aaron Zhu,,,,male
+1313,Srinivas Vijay Babu,,,,male
+1314,Thanh Can,,,,male
+1315,Ved Vainateya,,,,male
+1316,Avi Gupta,,,,male
+1317,Yuwei Li,,,,male
+1318,Angelo Chu,,,,male
+1319,Ryan Singh,,,,male
+1320,Jeffrey Du,,,,male
+1321,Yeeyung Li,,,,male
+1322,William Li,,,,male
+1323,Ryan Chan,,,,male
+1324,Ishidevesh Behera,,,,male
+1325,Atharv Mittal,,,,male
+1326,Yufei Chen,California,,,male
+1327,Jiaqi Wu,California,,,female
+1328,Lina Wang,New York,,,female
+1329,Amy Zhang,California,,,female
+1330,Shibao Huang,New York,,Skylar Huang,female
+1331,Olivia Laido,New Jersey,,,female
+1332,Yunong Wu,New York,,Melody Wu,female
+1333,Shuyin Liu,Washington,,,female
+1334,Sophie Zhang,"Ontario, Canada",,,female
+1335,Katherine Liu,Texas,,,female
+1336,Miranda Wang,New Jersey,,,female
+1337,Yuhan Jennifer Xiao,California,,,female
+1338,Lisa Fung,California,,,female
+1339,Iris Xu,Maryland,,,female
+1340,Jai Mukherjee,Washington,,,male
+1341,Hwiseo Irene Choi,Massachusetts,,Irene Choi,female
+1342,Tianlin Jessica Liu,California,,Jessica Liu,female
+1343,Elaine Wu,Texas,,,female
+1344,Jiayang Celina Chen,China,,Celina Chen,female
+1345,Anna Deng,California,,,female
+1346,Adya Garg,Virginia,,,female
+1347,Sophie Hong,Illinois,,,female
+1348,Haruka Kimura,Connecticut,,,female
+1349,Grace Lu,New York,,,female
+1350,Chloe Ma,Illinois,,,female
+1351,Annabel Rong,Georgia,,,female
+1352,Iris Shi,Massachusetts,,,female
+1353,Kristin Zhang,New Jersey,,,female
+1354,Paige Zhu,Massachusetts,,,female
+1355,Fiona Chen,New Jersey,,,female
+1356,Kira Lewis,New York,,,female
+1357,Emma Wu,Texas,,,female
+1358,Olivia Guo,Maryland,,,female
+1359,Alena Kutsuk,California,,,female
+1360,Yifan Emma Tang,"Ontario, Canada",,Emma Tang,female
+1361,Lorraine Wang,California,,,female
+1362,Michelle Gao,Maryland,,,female
+1363,Diana Lin,Washington,,,female
+1364,Grace Luo,North Carolina,,,female
+1365,Audrey Sun,Georgia,,,female
+1366,Jessie Wang,Texas,,,female
+1367,Anlan Xu,Florida,,,female
+1368,Sophia Henningsen,California,,,female
+1369,Reese Long,Washington,,,female
+1370,Kelsey Morey,Florida,,,female
+1371,Zaee Shah,California,,,female
+1372,Fenghuan Linda He,Massachusetts,,Linda He,female
+1373,Saanvi Thummalapally,California,,,female
+1374,Hailey Lin,Florida,,,female
+1375,Annabel Ma,Illinois,,,female
+1376,Keming Miao,New Jersey,,,female
+1377,Anne Mykland,Illinois,,,female
+1378,Himani Yarlagadda,Michigan,,,female
+1379,Angelina Berg,Pennsylvania,,,female
+1380,Riya Gupta,California,,,female
+1381,Lillian Wang,Texas,,,female
+1382,Michelle Wei,California,,,female
+1383,Alina Yang,North Carolina,,,female
+1384,Yaliang Janice Yuan,"Ontario, Canada",,Janice Yuan,female
+1385,Alice Zhong,Texas,,,female
+1386,Sophia Zhong,Texas,,,female
+1387,Sally Zhu,California,,,female
+1388,Elaine Cheng,Massachusetts,,,female
+1389,Anne Christiano,Texas,,,female
+1390,Carol Li,Alabama,,,female
+1391,Sophie Sun,China,,,female
+1392,Yutong Iris Wang,New York,,Iris Wang,female
+1393,Charlotte Younger,Massachusetts,,,female
+1394,Emily Zhang,Tennessee,,,female
+1395,Sophie Zheng,Utah,,,female
+1396,Camea Caprita,California,,,female
+1397,Sylvia Chen,California,,,female
+1398,Wensi Cui,Nebraska,,,female
+1399,Scarlet Gitelson,Illinois,,,female
+1400,Audrey Hou,Oregon,,,female
+1401,Caroline Huang,Georgia,,,female
+1402,Evelyn Kim,California,,,female
+1403,Kalina Liu,Massachusetts,,,female
+1404,Katherine Long,Washington,,,female
+1405,Patricia Mao,Michigan,,,female
+1406,Yunlu Rafi Shang,New Jersey,,Rafi Shang,female
+1407,Liran Jessica Song,"Ontario, Canada",,Jessica Song,female
+1408,Olivia Wu,Virginia,,,female
+1409,Ziqi Lisa Zheng,California,,Lisa Zheng,female
+1410,Sophia Chen,California,, ,female
+1411,Jake Frazer,Florida,,,male
+1412,Isaac Zhu,North Carolina,,,male
+1413,Samuel Goodman,Nevada,,,male
+1414,Kailin Kevin Yang,California,,,male
+1415,Yutong Mark Zhao,California,,,male
+1417,Daniel He,Maryland,,,male
+1418,Corey Zhao,Massachusetts,,,male
+1419,Zhan Jin,,,,male
+1420,Jason Hao,Virginia,,,male
+1421,Daniel Gilman,New Jersey,,,male
+1422,Michelle Wang,Virginia,,,female
+1423,Haokai Ma,California,,,male
+1424,Xuancheng Benjamin Li,California,,,male
+1425,David Ruan,Maryland,,,male
+1426,Aaron Xiong,Florida,,,male
+1427,Yeyin Eva Zhu,California,,,male
+1428,Jacob Paltrowitz,California,,,male
+1429,Zehan Peter Pan,California,,,male
+1430,Milo Stammers,Maryland,,,male
+1431,Neel Kolhe,,,,male
+1432,Nikhil Mathihalli,,,,male
+1433,Sicheng Kevin Zhou,California,,,male
+1434,Varun Gupta,Pennsylvania,,,male
+1435,Max Shepard,California,,,male
+1436,Steven Yu,Massachusetts,,,male
+1437,Nikhil Pesaladinne,Virginia,,,male
+1438,Nikhil Mudumbi,New Jersey,,,male
+1439,Jack Fang,California,,,male
+1440,Garv Khurana,Minnesota,,,male
+1441,Andrew Yuan,Maryland,,,male
+1442,Vincent Chen,Washington,,,male
+1443,Frank Wong,California,,,male
+1444,Solon Sun,,,,male
+1445,Derek Xu,New York,,,male

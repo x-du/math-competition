@@ -56,7 +56,7 @@ def load_contests():
 
 
 def load_students() -> dict:
-    """Load students.csv -> { student_id: { name, aliases: [], state } }."""
+    """Load students.csv -> { student_id: { name, aliases: [], state, gender } }."""
     by_id = {}
     with open(STUDENTS_CSV, newline="", encoding="utf-8") as f:
         r = csv.DictReader(f)
@@ -72,7 +72,8 @@ def load_students() -> dict:
             state = (row.get("state") or "").strip()
             alias = (row.get("alias") or "").strip()
             aliases = [a.strip() for a in alias.split("|") if a.strip()] if alias else []
-            by_id[sid] = {"name": name, "aliases": aliases, "state": state}
+            gender = (row.get("gender") or "").strip().lower() or "male"
+            by_id[sid] = {"name": name, "aliases": aliases, "state": state, "gender": gender}
     return by_id
 
 
@@ -140,7 +141,7 @@ def main() -> None:
             if sid not in students:
                 name = (row.get("student_name") or "").strip()
                 state = (row.get("state") or "").strip()
-                students[sid] = {"name": name or f"Student {sid}", "aliases": [], "state": state}
+                students[sid] = {"name": name or f"Student {sid}", "aliases": [], "state": state, "gender": "male"}
 
     def infer_state_from_records(records: list[dict]) -> str:
         """Best-effort fallback: pick first non-empty state from contest records."""
@@ -154,13 +155,14 @@ def main() -> None:
     for sid in sorted(records_by_id.keys()):
         recs = records_by_id[sid]
         recs.sort(key=lambda r: (r.get("year", ""), r.get("contest", "")), reverse=True)
-        info = students.get(sid, {"name": f"Student {sid}", "aliases": [], "state": ""})
+        info = students.get(sid, {"name": f"Student {sid}", "aliases": [], "state": "", "gender": "male"})
         state = (info.get("state") or "").strip() or infer_state_from_records(recs)
         result_students.append({
             "id": sid,
             "name": info["name"],
             "aliases": info["aliases"],
             "state": state,
+            "gender": (info.get("gender") or "male").strip().lower() or "male",
             "records": recs,
         })
 

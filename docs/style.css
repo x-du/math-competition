@@ -308,6 +308,18 @@ body {
   color: var(--text-muted);
 }
 
+.awards-ranking-controls {
+  margin: 0 0 0.75rem;
+  font-size: 0.9rem;
+}
+
+.awards-ranking-controls .girls-only-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+}
+
 .awards-ranking-list {
   margin: 0;
   padding: 0;
