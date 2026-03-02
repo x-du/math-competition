@@ -27825,10 +27825,12 @@
     {
       "id": 359,
       "name": "Kai Leon Yamashita",
-      "aliases": [],
-      "state": "",
+      "aliases": [
+        "Kai Yamashita"
+      ],
+      "state": "Oregon",
       "gender": "male",
-      "grade_in_2026": null,
+      "grade_in_2026": "12",
       "records": [
         {
           "contest": "HMMT February — Combinatorics",
@@ -27845,6 +27847,23 @@
           "student_name": "Kai Leon Yamashita",
           "rank": "26",
           "score": "25.24"
+        },
+        {
+          "contest": "USAJMO",
+          "year": "2023",
+          "contest_slug": "jmo",
+          "student_name": "Kai Yamashita",
+          "state": "Oregon",
+          "award": "Honorable Mention"
+        },
+        {
+          "contest": "MATHCOUNTS National — Rankings",
+          "year": "2022",
+          "contest_slug": "mathcounts-national-rank",
+          "student_name": "Kai Yamashita",
+          "state": "Oregon",
+          "rank": "48",
+          "grade": "8"
         }
       ]
     },
@@ -33348,24 +33367,6 @@
       ]
     },
     {
-      "id": 599,
-      "name": "Kai Yamashita",
-      "aliases": [],
-      "state": "Oregon",
-      "gender": "male",
-      "grade_in_2026": "12",
-      "records": [
-        {
-          "contest": "USAJMO",
-          "year": "2023",
-          "contest_slug": "jmo",
-          "student_name": "Kai Yamashita",
-          "state": "Oregon",
-          "award": "Honorable Mention"
-        }
-      ]
-    },
-    {
       "id": 603,
       "name": "Aidan Le",
       "aliases": [],
@@ -34726,25 +34727,6 @@
           "student_name": "Arjun Agarwal",
           "state": "Oregon",
           "award": "Honorable Mention"
-        }
-      ]
-    },
-    {
-      "id": 753,
-      "name": "Kai Yamishita",
-      "aliases": [],
-      "state": "Oregon",
-      "gender": "male",
-      "grade_in_2026": "12",
-      "records": [
-        {
-          "contest": "MATHCOUNTS National — Rankings",
-          "year": "2022",
-          "contest_slug": "mathcounts-national-rank",
-          "student_name": "Kai Yamishita",
-          "state": "Oregon",
-          "rank": "48",
-          "grade": "8"
         }
       ]
     },

@@ -329,7 +329,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 356,LU CHANG,,36,,male,
 357,Ryan Bansal,California,16,,male,11
 358,Franklin Zhou,,16,,male,
-359,Kai Leon Yamashita,,136,,male,
+359,Kai Leon Yamashita,Oregon,136|204,Kai Yamashita,male,12
 360,Rui Ouyang,,128,,male,
 361,Kai Yi,California,2,,male,
 362,Rithik Gumpu,New Jersey,37|119,,male,12
@@ -569,7 +569,6 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 596,Ethan Li,Oklahoma,203,,male,13
 597,Nityant Chandupatla,Oklahoma,203,,male,13
 598,Justin Burns,Oklahoma,203,,male,13
-599,Kai Yamashita,Oregon,204,,male,12
 600,Justin Xia,Oregon,204,,male,13
 601,Shreyan Paliwal,Oregon,204,,female,13
 602,Yaseen Arifin,Oregon,204,,male,12
@@ -723,7 +722,6 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 750,Miranda Huang,Oklahoma,203,,female,12
 751,Ethan Cai,Oklahoma,203,,male,11
 752,Arjun Agarwal,Oregon,204,,male,12
-753,Kai Yamishita,Oregon,204,,male,12
 754,William Liu,Pennsylvania,205,,male,12
 755,Alvaro Villafuerte,Puerto Rico,206,,male,11
 756,Luis Carlos Collazo,Puerto Rico,206,,male,10
