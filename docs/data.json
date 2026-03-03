@@ -34911,25 +34911,6 @@
       ]
     },
     {
-      "id": 679,
-      "name": "William Wu",
-      "aliases": [],
-      "state": "District of Columbia",
-      "gender": "male",
-      "grade_in_2026": "11",
-      "records": [
-        {
-          "contest": "MMATHS",
-          "year": "2025",
-          "contest_slug": "mmaths",
-          "student_name": "William Wu",
-          "rank": "79",
-          "score": "8",
-          "team": "Ultraviolet Catastrophe"
-        }
-      ]
-    },
-    {
       "id": 681,
       "name": "Michael Wei",
       "aliases": [],
@@ -53760,8 +53741,17 @@
       "aliases": [],
       "state": "Illinois",
       "gender": "male",
-      "grade_in_2026": "11",
+      "grade_in_2026": "8",
       "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "William Wu",
+          "rank": "79",
+          "score": "8",
+          "team": "Ultraviolet Catastrophe"
+        },
         {
           "contest": "MATHCOUNTS National — Rankings",
           "year": "2025",
