@@ -1691,12 +1691,29 @@
           "score": "20.89"
         },
         {
+          "contest": "BAMO-12",
+          "year": "2024",
+          "contest_slug": "bamo-12",
+          "student_name": "Jonathan Du",
+          "school": "Los Altos High School",
+          "rank": "9",
+          "score": "29"
+        },
+        {
           "contest": "USAJMO",
           "year": "2023",
           "contest_slug": "jmo",
           "student_name": "Jonathan Du",
           "state": "California",
           "award": "Honorable Mention"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2023",
+          "contest_slug": "bamo-12",
+          "student_name": "Jonathan Du",
+          "school": "Los Altos High School",
+          "rank": "Honorable Mention"
         },
         {
           "contest": "MATHCOUNTS National — Rankings",
@@ -1706,6 +1723,15 @@
           "state": "California",
           "rank": "32",
           "grade": "8"
+        },
+        {
+          "contest": "BAMO-8",
+          "year": "2022",
+          "contest_slug": "bamo-8",
+          "student_name": "Jonathan Du",
+          "school": "Bullis Charter School",
+          "rank": "5",
+          "score": "33"
         }
       ]
     },
@@ -2246,6 +2272,15 @@
           "q8": "1",
           "q9": "1",
           "q10": "0"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2025",
+          "contest_slug": "bamo-12",
+          "student_name": "Alan Cheng",
+          "school": "North Carolina School of Science and Math",
+          "rank": "2",
+          "score": "28"
         },
         {
           "contest": "USAJMO",
@@ -3049,6 +3084,15 @@
           "score": "25.24"
         },
         {
+          "contest": "BAMO-12",
+          "year": "2025",
+          "contest_slug": "bamo-12",
+          "student_name": "Vihaan Gupta",
+          "school": "The Harker School",
+          "rank": "2",
+          "score": "28"
+        },
+        {
           "contest": "HMMT February — Combinatorics",
           "year": "2024",
           "contest_slug": "hmmt-feb-combo",
@@ -3265,6 +3309,14 @@
           "rank": "8"
         },
         {
+          "contest": "BAMO-12",
+          "year": "2025",
+          "contest_slug": "bamo-12",
+          "student_name": "David Fox",
+          "school": "Proof School",
+          "rank": "Honorable Mention"
+        },
+        {
           "contest": "USAJMO",
           "year": "2024",
           "contest_slug": "jmo",
@@ -3279,6 +3331,14 @@
           "student_name": "David Fox",
           "rank": "5",
           "score": "25.17"
+        },
+        {
+          "contest": "BAMO-8",
+          "year": "2024",
+          "contest_slug": "bamo-8",
+          "student_name": "David Fox",
+          "school": "Proof School",
+          "rank": "Honorable Mention"
         }
       ]
     },
@@ -3699,6 +3759,14 @@
           "total_score": "250.95"
         },
         {
+          "contest": "BAMO-12",
+          "year": "2025",
+          "contest_slug": "bamo-12",
+          "student_name": "Rohan Garg",
+          "school": "Amador Valley HS",
+          "rank": "Honorable Mention"
+        },
+        {
           "contest": "USAMO",
           "year": "2024",
           "contest_slug": "amo",
@@ -3767,6 +3835,15 @@
           "score": "31.38"
         },
         {
+          "contest": "BAMO-12",
+          "year": "2024",
+          "contest_slug": "bamo-12",
+          "student_name": "Rohan Garg",
+          "school": "Amador Valley HS",
+          "rank": "8",
+          "score": "30"
+        },
+        {
           "contest": "ARML",
           "year": "2024",
           "contest_slug": "arml",
@@ -3784,6 +3861,15 @@
           "award": "Honorable Mention"
         },
         {
+          "contest": "BAMO-12",
+          "year": "2023",
+          "contest_slug": "bamo-12",
+          "student_name": "Rohan Garg",
+          "school": "Amador Valley High School",
+          "rank": "11",
+          "score": "28"
+        },
+        {
           "contest": "MATHCOUNTS National — Rankings",
           "year": "2022",
           "contest_slug": "mathcounts-national-rank",
@@ -3791,6 +3877,14 @@
           "state": "California",
           "rank": "Q (Quarter-finalist)",
           "grade": "8"
+        },
+        {
+          "contest": "BAMO-8",
+          "year": "2022",
+          "contest_slug": "bamo-8",
+          "student_name": "Rohan Garg",
+          "school": "Harvest Park MS",
+          "rank": "Honorable Mention"
         }
       ]
     },
@@ -7492,6 +7586,15 @@
           "combinatorics_score": "19.96"
         },
         {
+          "contest": "BAMO-12",
+          "year": "2025",
+          "contest_slug": "bamo-12",
+          "student_name": "Hannah Fox",
+          "school": "Proof School",
+          "rank": "1",
+          "score": "35"
+        },
+        {
           "contest": "ARML",
           "year": "2025",
           "contest_slug": "arml",
@@ -7531,6 +7634,14 @@
           "prize": "$1000"
         },
         {
+          "contest": "BAMO-12",
+          "year": "2024",
+          "contest_slug": "bamo-12",
+          "student_name": "Hannah Fox",
+          "school": "Proof School",
+          "rank": "Honorable Mention"
+        },
+        {
           "contest": "USAJMO",
           "year": "2023",
           "contest_slug": "jmo",
@@ -7549,6 +7660,14 @@
           "place": "3",
           "score": "12",
           "prize": "$10,000"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2023",
+          "contest_slug": "bamo-12",
+          "student_name": "Hannah Fox",
+          "school": "Proof School",
+          "rank": "Honorable Mention"
         }
       ]
     },
@@ -8526,6 +8645,14 @@
           "student_name": "Connor Leong",
           "state": "California",
           "award": "Honors"
+        },
+        {
+          "contest": "BAMO-8",
+          "year": "2023",
+          "contest_slug": "bamo-8",
+          "student_name": "Connor Leong",
+          "school": "Crocker Middle School",
+          "rank": "Honorable Mention"
         }
       ]
     },
@@ -9267,6 +9394,15 @@
           "award": "Bronze"
         },
         {
+          "contest": "BAMO-12",
+          "year": "2024",
+          "contest_slug": "bamo-12",
+          "student_name": "William Zhao",
+          "school": "Dougherty Valley High School",
+          "rank": "7",
+          "score": "31"
+        },
+        {
           "contest": "USAJMO",
           "year": "2023",
           "contest_slug": "jmo",
@@ -9275,12 +9411,29 @@
           "award": "Honors"
         },
         {
+          "contest": "BAMO-12",
+          "year": "2023",
+          "contest_slug": "bamo-12",
+          "student_name": "William Zhao",
+          "school": "Dougherty Valley High School",
+          "rank": "11",
+          "score": "28"
+        },
+        {
           "contest": "USAJMO",
           "year": "2022",
           "contest_slug": "jmo",
           "student_name": "William Zhao",
           "state": "California",
           "award": "Honors"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2022",
+          "contest_slug": "bamo-12",
+          "student_name": "William Zhao",
+          "school": "Dougherty Valley High School",
+          "rank": "Honorable Mention"
         }
       ]
     },
@@ -9604,6 +9757,14 @@
           "algebra_score": "23.07",
           "geometry_score": "22.82",
           "combinatorics_score": "27.17"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2023",
+          "contest_slug": "bamo-12",
+          "student_name": "Angela Liu",
+          "school": "Homeschooled",
+          "rank": "Honorable Mention"
         },
         {
           "contest": "MPFG",
@@ -10692,6 +10853,15 @@
           "combinatorics_score": "25.17"
         },
         {
+          "contest": "BAMO-12",
+          "year": "2024",
+          "contest_slug": "bamo-12",
+          "student_name": "Rohan Das",
+          "school": "Basis Independent Silicon Valley",
+          "rank": "4",
+          "score": "33"
+        },
+        {
           "contest": "ARML",
           "year": "2024",
           "contest_slug": "arml",
@@ -10710,6 +10880,14 @@
           "award": "Bronze"
         },
         {
+          "contest": "BAMO-12",
+          "year": "2023",
+          "contest_slug": "bamo-12",
+          "student_name": "Rohan Das",
+          "school": "Basis Independent Silicon Valley",
+          "rank": "Honorable Mention"
+        },
+        {
           "contest": "USAJMO",
           "year": "2022",
           "contest_slug": "jmo",
@@ -10724,6 +10902,15 @@
           "student_name": "Rohan Das",
           "rank": "10",
           "score": "23.95"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2022",
+          "contest_slug": "bamo-12",
+          "student_name": "Rohan Das",
+          "school": "Basis Independent Silicon Valley",
+          "rank": "3",
+          "score": "34"
         },
         {
           "contest": "ARML",
@@ -11834,6 +12021,15 @@
           "combinatorics_score": "18.89"
         },
         {
+          "contest": "BAMO-12",
+          "year": "2024",
+          "contest_slug": "bamo-12",
+          "student_name": "Elliott Liu",
+          "school": "Torrey Pines High School",
+          "rank": "1",
+          "score": "35"
+        },
+        {
           "contest": "ARML",
           "year": "2024",
           "contest_slug": "arml",
@@ -11876,6 +12072,15 @@
           "algebra_score": "17.54",
           "geometry_score": "22.82",
           "combinatorics_score": "27.17"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2023",
+          "contest_slug": "bamo-12",
+          "student_name": "Elliott Liu",
+          "school": "Torrey Pines High School",
+          "rank": "3",
+          "score": "32"
         },
         {
           "contest": "USAJMO",
@@ -12390,6 +12595,14 @@
           "algebra_score": "25.17",
           "geometry_score": "15.54",
           "combinatorics_score": "25.17"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2024",
+          "contest_slug": "bamo-12",
+          "student_name": "Myungbeen Choi",
+          "school": "The Quarry Lane School",
+          "rank": "Honorable Mention"
         }
       ]
     },
@@ -13467,12 +13680,30 @@
           "combinatorics_score": "23.12"
         },
         {
+          "contest": "BAMO-12",
+          "year": "2023",
+          "contest_slug": "bamo-12",
+          "student_name": "Linus Tang",
+          "school": "Davidson Academy Online",
+          "rank": "1",
+          "score": "35"
+        },
+        {
           "contest": "USAMO",
           "year": "2022",
           "contest_slug": "amo",
           "student_name": "Linus Tang",
           "state": "Nevada",
           "award": "Bronze"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2022",
+          "contest_slug": "bamo-12",
+          "student_name": "Linus Tang",
+          "school": "Davidson Academy Online",
+          "rank": "1",
+          "score": "35"
         }
       ]
     },
@@ -15642,6 +15873,14 @@
           "algebra_score": "23.07",
           "geometry_score": "37.73",
           "combinatorics_score": "20.03"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2022",
+          "contest_slug": "bamo-12",
+          "student_name": "Ethan Liu",
+          "school": "The Harker School",
+          "rank": "Honorable Mention"
         }
       ]
     },
@@ -16836,6 +17075,23 @@
           "combinatorics_score": "28.24"
         },
         {
+          "contest": "BAMO-12",
+          "year": "2023",
+          "contest_slug": "bamo-12",
+          "student_name": "Alan Lee",
+          "school": "Gunn High School",
+          "rank": "Honorable Mention"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2022",
+          "contest_slug": "bamo-12",
+          "student_name": "Alan Lee",
+          "school": "Henry M. Gunn",
+          "rank": "8",
+          "score": "33"
+        },
+        {
           "contest": "ARML",
           "year": "2022",
           "contest_slug": "arml",
@@ -17188,6 +17444,14 @@
           "student_name": "Roger Fan",
           "state": "California",
           "award": "Honors"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2022",
+          "contest_slug": "bamo-12",
+          "student_name": "Roger Fan",
+          "school": "Henry M. Gunn",
+          "rank": "Honorable Mention"
         }
       ]
     },
@@ -27033,12 +27297,29 @@
           "score": "26.24"
         },
         {
+          "contest": "BAMO-12",
+          "year": "2025",
+          "contest_slug": "bamo-12",
+          "student_name": "Hengrui Liang",
+          "school": "The Harker School",
+          "rank": "9",
+          "score": "26"
+        },
+        {
           "contest": "USAMO",
           "year": "2024",
           "contest_slug": "amo",
           "student_name": "Hengrui Liang",
           "state": "California",
           "award": "Bronze"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2024",
+          "contest_slug": "bamo-12",
+          "student_name": "Hengrui Liang",
+          "school": "The Harker School",
+          "rank": "Honorable Mention"
         },
         {
           "contest": "USAJMO",
@@ -27065,6 +27346,15 @@
           "student_name": "Aryan Agrawal",
           "rank": "21",
           "score": "26.24"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2025",
+          "contest_slug": "bamo-12",
+          "student_name": "Aryan Agrawal",
+          "school": "Interlake HS",
+          "rank": "2",
+          "score": "28"
         },
         {
           "contest": "ARML",
@@ -27164,6 +27454,15 @@
           "rank": "3"
         },
         {
+          "contest": "BAMO-12",
+          "year": "2025",
+          "contest_slug": "bamo-12",
+          "student_name": "Ritwin Narra",
+          "school": "Silver Creek HS",
+          "rank": "2",
+          "score": "28"
+        },
+        {
           "contest": "USAMO",
           "year": "2024",
           "contest_slug": "amo",
@@ -27172,12 +27471,30 @@
           "award": "Silver"
         },
         {
+          "contest": "BAMO-12",
+          "year": "2024",
+          "contest_slug": "bamo-12",
+          "student_name": "Ritwin Narra",
+          "school": "Silver Creek High",
+          "rank": "1",
+          "score": "35"
+        },
+        {
           "contest": "USAJMO",
           "year": "2023",
           "contest_slug": "jmo",
           "student_name": "Ritwin Narra",
           "state": "California",
           "award": "Honors"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2023",
+          "contest_slug": "bamo-12",
+          "student_name": "Ritwin Narra",
+          "school": "Silver Creek High School",
+          "rank": "11",
+          "score": "28"
         },
         {
           "contest": "PUMaC — Number Theory",
@@ -27508,6 +27825,14 @@
           "score": "25.37"
         },
         {
+          "contest": "BAMO-12",
+          "year": "2025",
+          "contest_slug": "bamo-12",
+          "student_name": "Alex Zhan",
+          "school": "BASIS Independent Silicon Valley",
+          "rank": "Honorable Mention"
+        },
+        {
           "contest": "USAJMO",
           "year": "2024",
           "contest_slug": "jmo",
@@ -27523,6 +27848,23 @@
           "state": "California",
           "rank": "Q (Quarter-finalist)",
           "grade": "8"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2024",
+          "contest_slug": "bamo-12",
+          "student_name": "Alex Zhan",
+          "school": "Basis Independent Silicon Valley",
+          "rank": "Honorable Mention"
+        },
+        {
+          "contest": "BAMO-8",
+          "year": "2023",
+          "contest_slug": "bamo-8",
+          "student_name": "Alex Zhan",
+          "school": "Basis Independent Silicon Valley",
+          "rank": "1",
+          "score": "34"
         }
       ]
     },
@@ -27759,6 +28101,14 @@
           "student_name": "Kyle Liao",
           "rank": "24",
           "score": "23.17"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2025",
+          "contest_slug": "bamo-12",
+          "student_name": "Kyle Liao",
+          "school": "Islander MS",
+          "rank": "Honorable Mention"
         },
         {
           "contest": "USAJMO",
@@ -29269,6 +29619,15 @@
           "place": "24",
           "score": "12",
           "prize": "Honorable Mention"
+        },
+        {
+          "contest": "BAMO-8",
+          "year": "2024",
+          "contest_slug": "bamo-8",
+          "student_name": "Elena Ahn Beckman",
+          "school": "The Knox School of Santa Barbara",
+          "rank": "7",
+          "score": "27"
         }
       ]
     },
@@ -30086,12 +30445,29 @@
           "score": "24.09"
         },
         {
+          "contest": "BAMO-12",
+          "year": "2024",
+          "contest_slug": "bamo-12",
+          "student_name": "Jacopo Rizzo",
+          "school": "Torrey Pines High School",
+          "rank": "Honorable Mention"
+        },
+        {
           "contest": "USAMO",
           "year": "2023",
           "contest_slug": "amo",
           "student_name": "Jacopo Rizzo",
           "state": "California",
           "award": "Honorable Mention"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2023",
+          "contest_slug": "bamo-12",
+          "student_name": "Jacopo Rizzo",
+          "school": "Torrey Pines High School",
+          "rank": "8",
+          "score": "29"
         },
         {
           "contest": "USAJMO",
@@ -31266,6 +31642,15 @@
       "grade_in_2026": "14",
       "records": [
         {
+          "contest": "BAMO-12",
+          "year": "2024",
+          "contest_slug": "bamo-12",
+          "student_name": "Michelle Liang",
+          "school": "Canyon Crest Academy",
+          "rank": "4",
+          "score": "33"
+        },
+        {
           "contest": "USAMO",
           "year": "2023",
           "contest_slug": "amo",
@@ -31292,6 +31677,14 @@
           "student_name": "Michelle Liang",
           "rank": "40",
           "score": "22.82"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2023",
+          "contest_slug": "bamo-12",
+          "student_name": "Michelle Liang",
+          "school": "Canyon Crest Academy",
+          "rank": "Honorable Mention"
         },
         {
           "contest": "MPFG",
@@ -31419,6 +31812,14 @@
       "grade_in_2026": null,
       "records": [
         {
+          "contest": "BAMO-12",
+          "year": "2024",
+          "contest_slug": "bamo-12",
+          "student_name": "Taiga Nishida",
+          "school": "The Nueva School",
+          "rank": "Honorable Mention"
+        },
+        {
           "contest": "USAMO",
           "year": "2023",
           "contest_slug": "amo",
@@ -31433,6 +31834,15 @@
           "student_name": "Taiga Nishida",
           "rank": "40",
           "score": "22.82"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2023",
+          "contest_slug": "bamo-12",
+          "student_name": "Taiga Nishida",
+          "school": "The Nueva School",
+          "rank": "8",
+          "score": "29"
         }
       ]
     },
@@ -31663,6 +32073,15 @@
           "score": "20.99"
         },
         {
+          "contest": "BAMO-12",
+          "year": "2022",
+          "contest_slug": "bamo-12",
+          "student_name": "Espen Slettnes",
+          "school": "Stanford Online High School",
+          "rank": "11",
+          "score": "32"
+        },
+        {
           "contest": "ARML",
           "year": "2022",
           "contest_slug": "arml",
@@ -31714,6 +32133,15 @@
           "student_name": "Kavan Doctor",
           "rank": "14",
           "score": "20.82"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2022",
+          "contest_slug": "bamo-12",
+          "student_name": "Kavan Doctor",
+          "school": "Wilcox High School",
+          "rank": "3",
+          "score": "34"
         }
       ]
     },
@@ -32283,12 +32711,30 @@
           "total_score": "165.68"
         },
         {
+          "contest": "BAMO-12",
+          "year": "2025",
+          "contest_slug": "bamo-12",
+          "student_name": "David Zhang",
+          "school": "Dougherty Valley HS",
+          "rank": "2",
+          "score": "28"
+        },
+        {
           "contest": "USAMO",
           "year": "2024",
           "contest_slug": "amo",
           "student_name": "David Zhang",
           "state": "Washington",
           "award": "Honorable Mention"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2024",
+          "contest_slug": "bamo-12",
+          "student_name": "David Zhang",
+          "school": "Dougherty Valley High School",
+          "rank": "3",
+          "score": "34"
         },
         {
           "contest": "HMMT November — General",
@@ -32307,6 +32753,15 @@
           "total_score": "53.91",
           "general_score": "35.08",
           "theme_score": "18.82"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2023",
+          "contest_slug": "bamo-12",
+          "student_name": "David Zhang",
+          "school": "Dougherty Valley High School",
+          "rank": "5",
+          "score": "31"
         },
         {
           "contest": "ARML",
@@ -34217,6 +34672,14 @@
           "student_name": "Sohil Rathi",
           "state": "California",
           "award": "Bronze"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2025",
+          "contest_slug": "bamo-12",
+          "student_name": "Sohil Rathi",
+          "school": "Lynbrook HS",
+          "rank": "Honorable Mention"
         },
         {
           "contest": "USAJMO",
@@ -37918,6 +38381,14 @@
           "rank": "7"
         },
         {
+          "contest": "BAMO-12",
+          "year": "2025",
+          "contest_slug": "bamo-12",
+          "student_name": "Shihan Kanungo",
+          "school": "Homeschool",
+          "rank": "Honorable Mention"
+        },
+        {
           "contest": "IMO",
           "year": "2022",
           "contest_slug": "imo",
@@ -37954,6 +38425,15 @@
           "international_rank": "230",
           "total_score": "25",
           "award": "Bronze"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2022",
+          "contest_slug": "bamo-12",
+          "student_name": "Aarush Vailaya",
+          "school": "The Harker School",
+          "rank": "1",
+          "score": "35"
         }
       ]
     },
@@ -38164,12 +38644,44 @@
           "award": "Bronze"
         },
         {
+          "contest": "BAMO-12",
+          "year": "2025",
+          "contest_slug": "bamo-12",
+          "student_name": "Hugh Cheng",
+          "school": "Harvard-Westlake",
+          "rank": "Honorable Mention"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2024",
+          "contest_slug": "bamo-12",
+          "student_name": "Hugh Cheng",
+          "school": "Harvard-Westlake",
+          "rank": "Honorable Mention"
+        },
+        {
           "contest": "USAJMO",
           "year": "2023",
           "contest_slug": "jmo",
           "student_name": "Hugh Cheng",
           "state": "California",
           "award": "Honorable Mention"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2023",
+          "contest_slug": "bamo-12",
+          "student_name": "Hugh Cheng",
+          "school": "Harvard-Westlake School",
+          "rank": "Honorable Mention"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2022",
+          "contest_slug": "bamo-12",
+          "student_name": "Hugh Cheng",
+          "school": "Harvard-Westlake",
+          "rank": "Honorable Mention"
         }
       ]
     },
@@ -38202,6 +38714,14 @@
           "prize": "$800"
         },
         {
+          "contest": "BAMO-12",
+          "year": "2025",
+          "contest_slug": "bamo-12",
+          "student_name": "Kailua Cheng",
+          "school": "Amador Valley HS",
+          "rank": "Honorable Mention"
+        },
+        {
           "contest": "USAJMO",
           "year": "2024",
           "contest_slug": "jmo",
@@ -38222,12 +38742,38 @@
           "prize": "Honorable Mention"
         },
         {
+          "contest": "BAMO-12",
+          "year": "2024",
+          "contest_slug": "bamo-12",
+          "student_name": "Kailua Cheng",
+          "school": "Amador Valley HS",
+          "rank": "9",
+          "score": "29"
+        },
+        {
           "contest": "USAJMO",
           "year": "2023",
           "contest_slug": "jmo",
           "student_name": "Kailua Cheng",
           "state": "California",
           "award": "Honorable Mention"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2023",
+          "contest_slug": "bamo-12",
+          "student_name": "Kailua Cheng",
+          "school": "Amador Valley High School",
+          "rank": "Honorable Mention"
+        },
+        {
+          "contest": "BAMO-8",
+          "year": "2022",
+          "contest_slug": "bamo-8",
+          "student_name": "Kailua Cheng",
+          "school": "Pleasanton MS",
+          "rank": "2",
+          "score": "34"
         }
       ]
     },
@@ -38333,6 +38879,24 @@
           "student_name": "Dylan Frake",
           "state": "California",
           "award": "Bronze"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2025",
+          "contest_slug": "bamo-12",
+          "student_name": "Dylan Frake",
+          "school": "Cupertino HS",
+          "rank": "2",
+          "score": "28"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2024",
+          "contest_slug": "bamo-12",
+          "student_name": "Dylan Frake",
+          "school": "Cupertino High School",
+          "rank": "6",
+          "score": "32"
         },
         {
           "contest": "ARML",
@@ -38627,6 +39191,15 @@
           "student_name": "Ryan Wang",
           "state": "California",
           "award": "Bronze"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2025",
+          "contest_slug": "bamo-12",
+          "student_name": "Ryan Wang",
+          "school": "Granada HS",
+          "rank": "8",
+          "score": "27"
         },
         {
           "contest": "USAJMO",
@@ -39215,6 +39788,14 @@
           "student_name": "Nathan Ye",
           "rank": "44",
           "score": "24.24"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2023",
+          "contest_slug": "bamo-12",
+          "student_name": "Nathan Ye",
+          "school": "Gunn High School",
+          "rank": "Honorable Mention"
         }
       ]
     },
@@ -39464,6 +40045,15 @@
           "award": "Silver"
         },
         {
+          "contest": "BAMO-12",
+          "year": "2023",
+          "contest_slug": "bamo-12",
+          "student_name": "Sheldon Tan",
+          "school": "Monte Vista High School",
+          "rank": "5",
+          "score": "31"
+        },
+        {
           "contest": "PUMaC — Number Theory",
           "year": "2022",
           "contest_slug": "pumac-number-theory",
@@ -39479,6 +40069,15 @@
           "p6": "0",
           "p7": "1",
           "p8": "0"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2022",
+          "contest_slug": "bamo-12",
+          "student_name": "Sheldon Tan",
+          "school": "MVHS",
+          "rank": "3",
+          "score": "34"
         }
       ]
     },
@@ -40111,6 +40710,14 @@
           "student_name": "William Chen",
           "rank": "20",
           "score": "21.82"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2022",
+          "contest_slug": "bamo-12",
+          "student_name": "William Chen",
+          "school": "Mira Costa High",
+          "rank": "Honorable Mention"
         }
       ]
     },
@@ -40396,6 +41003,14 @@
           "student_name": "Eddy Li",
           "state": "California",
           "rank": "5"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2024",
+          "contest_slug": "bamo-12",
+          "student_name": "Eddy Li",
+          "school": "The Nueva School",
+          "rank": "Honorable Mention"
         },
         {
           "contest": "USAJMO",
@@ -41326,6 +41941,15 @@
           "place": "27",
           "score": "8",
           "prize": "Honorable Mention"
+        },
+        {
+          "contest": "BAMO-8",
+          "year": "2023",
+          "contest_slug": "bamo-8",
+          "student_name": "Krittika Chandra",
+          "school": "Jane Lathrop Stanford Middle School",
+          "rank": "3",
+          "score": "33"
         }
       ]
     },
@@ -41529,6 +42153,14 @@
           "student_name": "Ishaan Mittal",
           "state": "California",
           "award": "Honorable Mention"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2025",
+          "contest_slug": "bamo-12",
+          "student_name": "Ishaan Mittal",
+          "school": "Lynbrook HS",
+          "rank": "Honorable Mention"
         }
       ]
     },
@@ -41723,12 +42355,29 @@
           "award": "Honors"
         },
         {
+          "contest": "BAMO-12",
+          "year": "2025",
+          "contest_slug": "bamo-12",
+          "student_name": "Atticus Stewart",
+          "school": "Geffen Academy",
+          "rank": "Honorable Mention"
+        },
+        {
           "contest": "USAJMO",
           "year": "2024",
           "contest_slug": "jmo",
           "student_name": "Atticus Stewart",
           "state": "California",
           "award": "Honorable Mention"
+        },
+        {
+          "contest": "BAMO-8",
+          "year": "2023",
+          "contest_slug": "bamo-8",
+          "student_name": "Atticus Stewart",
+          "school": "Mirman School",
+          "rank": "1",
+          "score": "34"
         }
       ]
     },
@@ -42270,6 +42919,14 @@
           "student_name": "Eric Zhang",
           "state": "California",
           "award": "Honorable Mention"
+        },
+        {
+          "contest": "BAMO-8",
+          "year": "2024",
+          "contest_slug": "bamo-8",
+          "student_name": "Eric Zhang",
+          "school": "The Harker School",
+          "rank": "Honorable Mention"
         }
       ]
     },
@@ -42389,6 +43046,14 @@
           "student_name": "Aiden Jeong",
           "state": "California",
           "award": "Honors"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2024",
+          "contest_slug": "bamo-12",
+          "student_name": "Aiden Jeong",
+          "school": "Branham High",
+          "rank": "Honorable Mention"
         },
         {
           "contest": "USAJMO",
@@ -42526,6 +43191,14 @@
           "prize": "$1000"
         },
         {
+          "contest": "BAMO-12",
+          "year": "2023",
+          "contest_slug": "bamo-12",
+          "student_name": "Julia Xiang",
+          "school": "Dougherty Valley High School",
+          "rank": "Honorable Mention"
+        },
+        {
           "contest": "MPFG",
           "year": "2022",
           "contest_slug": "mpfg",
@@ -42536,6 +43209,15 @@
           "place": "37",
           "score": "6",
           "prize": "one point shy of Honorable Mention"
+        },
+        {
+          "contest": "BAMO-8",
+          "year": "2022",
+          "contest_slug": "bamo-8",
+          "student_name": "Julia Xiang",
+          "school": "Diablo Vista Middle School",
+          "rank": "1",
+          "score": "35"
         }
       ]
     },
@@ -42644,6 +43326,14 @@
       "grade_in_2026": "12",
       "records": [
         {
+          "contest": "BAMO-12",
+          "year": "2025",
+          "contest_slug": "bamo-12",
+          "student_name": "Amelia Chen",
+          "school": "Proof School",
+          "rank": "Honorable Mention"
+        },
+        {
           "contest": "USAJMO",
           "year": "2024",
           "contest_slug": "jmo",
@@ -42662,6 +43352,23 @@
           "place": "34",
           "score": "11",
           "prize": "Honorable Mention"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2024",
+          "contest_slug": "bamo-12",
+          "student_name": "Amelia Chen",
+          "school": "Proof School",
+          "rank": "Honorable Mention"
+        },
+        {
+          "contest": "BAMO-8",
+          "year": "2022",
+          "contest_slug": "bamo-8",
+          "student_name": "Amelia Chen",
+          "school": "Proof School",
+          "rank": "7",
+          "score": "30"
         }
       ]
     },
@@ -43369,6 +44076,14 @@
           "place": "46",
           "score": "9",
           "prize": "one point shy of Honorable Mention"
+        },
+        {
+          "contest": "BAMO-8",
+          "year": "2022",
+          "contest_slug": "bamo-8",
+          "student_name": "Kallie Wang",
+          "school": "The Harker School",
+          "rank": "Honorable Mention"
         }
       ]
     },
@@ -43947,6 +44662,14 @@
           "student_name": "Ray Law",
           "state": "California",
           "award": "Honorable Mention"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2022",
+          "contest_slug": "bamo-12",
+          "student_name": "Ray Law",
+          "school": "Palo Alto High School",
+          "rank": "Honorable Mention"
         }
       ]
     },
@@ -44352,12 +45075,29 @@
           "award": "Honorable Mention"
         },
         {
+          "contest": "BAMO-12",
+          "year": "2023",
+          "contest_slug": "bamo-12",
+          "student_name": "Pico Gilman",
+          "school": "Proof School",
+          "rank": "Honorable Mention"
+        },
+        {
           "contest": "USAMO",
           "year": "2022",
           "contest_slug": "amo",
           "student_name": "Pico Gilman",
           "state": "California",
           "award": "Bronze"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2022",
+          "contest_slug": "bamo-12",
+          "student_name": "Pico Gilman",
+          "school": "Proof School",
+          "rank": "3",
+          "score": "34"
         }
       ]
     },
@@ -44461,6 +45201,15 @@
           "award": "Honorable Mention"
         },
         {
+          "contest": "BAMO-12",
+          "year": "2023",
+          "contest_slug": "bamo-12",
+          "student_name": "Catherine Li",
+          "school": "The Harker School",
+          "rank": "8",
+          "score": "29"
+        },
+        {
           "contest": "MPFG",
           "year": "2022",
           "contest_slug": "mpfg",
@@ -44479,6 +45228,14 @@
           "student_name": "Catherine Li",
           "rank": "14",
           "score": "20.82"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2022",
+          "contest_slug": "bamo-12",
+          "student_name": "Catherine Li",
+          "school": "The Harker School",
+          "rank": "Honorable Mention"
         },
         {
           "contest": "ARML",
@@ -45224,6 +45981,15 @@
           "team": "MH Math Knights Treecko"
         },
         {
+          "contest": "BAMO-12",
+          "year": "2023",
+          "contest_slug": "bamo-12",
+          "student_name": "Justin Lee",
+          "school": "Peach Blossom",
+          "rank": "1",
+          "score": "35"
+        },
+        {
           "contest": "USAMO",
           "year": "2022",
           "contest_slug": "amo",
@@ -45300,6 +46066,14 @@
           "student_name": "Adam Tang",
           "rank": "46",
           "score": "17.79"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2022",
+          "contest_slug": "bamo-12",
+          "student_name": "Adam Tang",
+          "school": "Basis Independent Silicon Valley",
+          "rank": "Honorable Mention"
         },
         {
           "contest": "ARML",
@@ -47456,6 +48230,14 @@
           "student_name": "Jerry Guo",
           "state": "California",
           "award": "Honorable Mention"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2022",
+          "contest_slug": "bamo-12",
+          "student_name": "Jerry Guo",
+          "school": "Henry M. Gunn",
+          "rank": "Honorable Mention"
         }
       ]
     },
@@ -50550,6 +51332,14 @@
           "place": "34",
           "score": "11",
           "prize": "Honorable Mention"
+        },
+        {
+          "contest": "BAMO-8",
+          "year": "2022",
+          "contest_slug": "bamo-8",
+          "student_name": "Alena Kutsuk",
+          "school": "Graham Middle School",
+          "rank": "Honorable Mention"
         }
       ]
     },
@@ -50616,6 +51406,14 @@
           "place": "27",
           "score": "8",
           "prize": "Honorable Mention"
+        },
+        {
+          "contest": "BAMO-8",
+          "year": "2022",
+          "contest_slug": "bamo-8",
+          "student_name": "Lorraine Wang",
+          "school": "Basis Independent Silicon Valley",
+          "rank": "Honorable Mention"
         }
       ]
     },
@@ -51244,6 +52042,15 @@
           "place": "37",
           "score": "6",
           "prize": "one point shy of Honorable Mention"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2022",
+          "contest_slug": "bamo-12",
+          "student_name": "Sally Zhu",
+          "school": "The Harker School",
+          "rank": "11",
+          "score": "32"
         }
       ]
     },
@@ -52920,6 +53727,15 @@
       "grade_in_2026": "12",
       "records": [
         {
+          "contest": "BAMO-12",
+          "year": "2025",
+          "contest_slug": "bamo-12",
+          "student_name": "Edward Li",
+          "school": "Mercer Island HS",
+          "rank": "9",
+          "score": "26"
+        },
+        {
           "contest": "MATHCOUNTS National — Rankings",
           "year": "2023",
           "contest_slug": "mathcounts-national-rank",
@@ -53567,6 +54383,14 @@
           "rank": "66",
           "score": "8",
           "team": "NDHS"
+        },
+        {
+          "contest": "BAMO-8",
+          "year": "2022",
+          "contest_slug": "bamo-8",
+          "student_name": "Lucas Wang",
+          "school": "Ellen Fletcher Middle School",
+          "rank": "Honorable Mention"
         }
       ]
     },
@@ -55096,6 +55920,32 @@
           "total_score": "50.35",
           "general_score": "26.17",
           "theme_score": "24.17"
+        },
+        {
+          "contest": "BAMO-8",
+          "year": "2025",
+          "contest_slug": "bamo-8",
+          "student_name": "Patrick Liang",
+          "school": "Portola Highly Gifted Magnet",
+          "rank": "1",
+          "score": "34"
+        },
+        {
+          "contest": "BAMO-8",
+          "year": "2024",
+          "contest_slug": "bamo-8",
+          "student_name": "Patrick Liang",
+          "school": "Portola Highly Gifted Magnet",
+          "rank": "3",
+          "score": "28"
+        },
+        {
+          "contest": "BAMO-8",
+          "year": "2023",
+          "contest_slug": "bamo-8",
+          "student_name": "Patrick Liang",
+          "school": "Portola Highly Gifted Magnet School",
+          "rank": "Honorable Mention"
         }
       ]
     },
@@ -59818,6 +60668,2517 @@
           "score": "15.58"
         }
       ]
+    },
+    {
+      "id": 1722,
+      "name": "Temujin Battulga",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2025",
+          "contest_slug": "bamo-8",
+          "student_name": "Temujin Battulga",
+          "school": "Fletcher MS",
+          "rank": "4",
+          "score": "29"
+        },
+        {
+          "contest": "BAMO-8",
+          "year": "2024",
+          "contest_slug": "bamo-8",
+          "student_name": "Temujin Battulga",
+          "school": "Ellen Fletcher Middle School",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 1731,
+      "name": "Yanlin Huang",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2024",
+          "contest_slug": "bamo-8",
+          "student_name": "Yanlin Huang",
+          "school": "Basis Independent Silicon Valley",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 1761,
+      "name": "Thomas Della Vigna",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-12",
+          "year": "2025",
+          "contest_slug": "bamo-12",
+          "student_name": "Thomas Della Vigna",
+          "school": "Proof School",
+          "rank": "Honorable Mention"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2024",
+          "contest_slug": "bamo-12",
+          "student_name": "Thomas Della Vigna",
+          "school": "Proof School",
+          "rank": "9",
+          "score": "29"
+        },
+        {
+          "contest": "BAMO-8",
+          "year": "2022",
+          "contest_slug": "bamo-8",
+          "student_name": "Thomas Della Vigna",
+          "school": "Prospect Sierra",
+          "rank": "2",
+          "score": "34"
+        }
+      ]
+    },
+    {
+      "id": 1780,
+      "name": "Pablo Zhang",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2023",
+          "contest_slug": "bamo-8",
+          "student_name": "Pablo Zhang",
+          "school": "The Nueva School",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 1794,
+      "name": "Atticus Lin",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2024",
+          "contest_slug": "bamo-8",
+          "student_name": "Atticus Lin",
+          "school": "The Nueva School",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 1795,
+      "name": "Alex Tsagaan",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-12",
+          "year": "2025",
+          "contest_slug": "bamo-12",
+          "student_name": "Alex Tsagaan",
+          "school": "Gunn HS",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 1807,
+      "name": "Brandon Nam",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2025",
+          "contest_slug": "bamo-8",
+          "student_name": "Brandon Nam",
+          "school": "Proof School",
+          "rank": "3",
+          "score": "30"
+        }
+      ]
+    },
+    {
+      "id": 1825,
+      "name": "Jeffery Wang",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2024",
+          "contest_slug": "bamo-8",
+          "student_name": "Jeffery Wang",
+          "school": "The Harker School",
+          "rank": "3",
+          "score": "28"
+        }
+      ]
+    },
+    {
+      "id": 1841,
+      "name": "Asher Ding",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2022",
+          "contest_slug": "bamo-8",
+          "student_name": "Asher Ding",
+          "school": "Harvest Park MS",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 1862,
+      "name": "Caden Ruan",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2022",
+          "contest_slug": "bamo-8",
+          "student_name": "Caden Ruan",
+          "school": "The Harker School",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 1874,
+      "name": "Julian Stockton",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2022",
+          "contest_slug": "bamo-8",
+          "student_name": "Julian Stockton",
+          "school": "Proof School",
+          "rank": "7",
+          "score": "30"
+        }
+      ]
+    },
+    {
+      "id": 1913,
+      "name": "Ryan Fu",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-12",
+          "year": "2023",
+          "contest_slug": "bamo-12",
+          "student_name": "Ryan Fu",
+          "school": "Amador Valley High School",
+          "rank": "Honorable Mention"
+        },
+        {
+          "contest": "BAMO-8",
+          "year": "2022",
+          "contest_slug": "bamo-8",
+          "student_name": "Ryan Fu",
+          "school": "Harvest Park MS",
+          "rank": "7",
+          "score": "30"
+        }
+      ]
+    },
+    {
+      "id": 1914,
+      "name": "Daniel Nie",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2022",
+          "contest_slug": "bamo-8",
+          "student_name": "Daniel Nie",
+          "school": "Harvest Park MS",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 1916,
+      "name": "Nicholas Weng",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2022",
+          "contest_slug": "bamo-8",
+          "student_name": "Nicholas Weng",
+          "school": "Proof School",
+          "rank": "7",
+          "score": "30"
+        }
+      ]
+    },
+    {
+      "id": 1934,
+      "name": "Marius Rutkowski",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-12",
+          "year": "2024",
+          "contest_slug": "bamo-12",
+          "student_name": "Marius Rutkowski",
+          "school": "La Canada HS",
+          "rank": "Honorable Mention"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2023",
+          "contest_slug": "bamo-12",
+          "student_name": "Marius Rutkowski",
+          "school": "La Canada High School",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 1935,
+      "name": "Neil Kolekar",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-12",
+          "year": "2023",
+          "contest_slug": "bamo-12",
+          "student_name": "Neil Kolekar",
+          "school": "Los Altos High School",
+          "rank": "Honorable Mention"
+        },
+        {
+          "contest": "BAMO-8",
+          "year": "2022",
+          "contest_slug": "bamo-8",
+          "student_name": "Neil Kolekar",
+          "school": "Proof School",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 1947,
+      "name": "Tejo Madhavarapu",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2023",
+          "contest_slug": "bamo-8",
+          "student_name": "Tejo Madhavarapu",
+          "school": "Rivendell Academy of Fremont",
+          "rank": "9",
+          "score": "29"
+        }
+      ]
+    },
+    {
+      "id": 1952,
+      "name": "Yourui Shao",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-12",
+          "year": "2023",
+          "contest_slug": "bamo-12",
+          "student_name": "Yourui Shao",
+          "school": "Basis Independent Silicon Valley",
+          "rank": "11",
+          "score": "28"
+        }
+      ]
+    },
+    {
+      "id": 2141,
+      "name": "Donghyeon Kim",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2025",
+          "contest_slug": "bamo-8",
+          "student_name": "Donghyeon Kim",
+          "school": "Stanford Online HS",
+          "rank": "2",
+          "score": "31"
+        }
+      ]
+    },
+    {
+      "id": 2142,
+      "name": "Theo Wolens",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2025",
+          "contest_slug": "bamo-8",
+          "student_name": "Theo Wolens",
+          "school": "Proof School",
+          "rank": "4",
+          "score": "29"
+        }
+      ]
+    },
+    {
+      "id": 2143,
+      "name": "Jayden Gong",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2025",
+          "contest_slug": "bamo-8",
+          "student_name": "Jayden Gong",
+          "school": "Proof School",
+          "rank": "6",
+          "score": "28"
+        },
+        {
+          "contest": "BAMO-8",
+          "year": "2024",
+          "contest_slug": "bamo-8",
+          "student_name": "Jayden Gong",
+          "school": "Pinewood",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2144,
+      "name": "Time Sriburadej",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2025",
+          "contest_slug": "bamo-8",
+          "student_name": "Time Sriburadej",
+          "school": "Robert Eagle Staff MS",
+          "rank": "6",
+          "score": "28"
+        }
+      ]
+    },
+    {
+      "id": 2145,
+      "name": "Brenon Wang",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2025",
+          "contest_slug": "bamo-8",
+          "student_name": "Brenon Wang",
+          "school": "Odle MS",
+          "rank": "8",
+          "score": "27"
+        }
+      ]
+    },
+    {
+      "id": 2146,
+      "name": "Sunay Miduthuri",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2025",
+          "contest_slug": "bamo-8",
+          "student_name": "Sunay Miduthuri",
+          "school": "Helios School",
+          "rank": "9",
+          "score": "26"
+        }
+      ]
+    },
+    {
+      "id": 2147,
+      "name": "Guiqing Zhang",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2025",
+          "contest_slug": "bamo-8",
+          "student_name": "Guiqing Zhang",
+          "school": "The Harker School",
+          "rank": "9",
+          "score": "26"
+        }
+      ]
+    },
+    {
+      "id": 2148,
+      "name": "Alexander Braun",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2025",
+          "contest_slug": "bamo-8",
+          "student_name": "Alexander Braun",
+          "school": "Stanford Online HS",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2149,
+      "name": "Cris Chai",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2025",
+          "contest_slug": "bamo-8",
+          "student_name": "Cris Chai",
+          "school": "Proof School",
+          "rank": "Honorable Mention"
+        },
+        {
+          "contest": "BAMO-8",
+          "year": "2024",
+          "contest_slug": "bamo-8",
+          "student_name": "Cris Chai",
+          "school": "Proof School",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2150,
+      "name": "Vihaan Dev",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2025",
+          "contest_slug": "bamo-8",
+          "student_name": "Vihaan Dev",
+          "school": "Evergreen MS",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2151,
+      "name": "Joey Guo",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2025",
+          "contest_slug": "bamo-8",
+          "student_name": "Joey Guo",
+          "school": "Nueva",
+          "rank": "Honorable Mention"
+        },
+        {
+          "contest": "BAMO-8",
+          "year": "2024",
+          "contest_slug": "bamo-8",
+          "student_name": "Joey Guo",
+          "school": "The Nueva School",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2152,
+      "name": "Vincent Huang",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2025",
+          "contest_slug": "bamo-8",
+          "student_name": "Vincent Huang",
+          "school": "BASIS Independent Silicon Valley",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2153,
+      "name": "Lionel Ip",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2025",
+          "contest_slug": "bamo-8",
+          "student_name": "Lionel Ip",
+          "school": "Proof School",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2154,
+      "name": "Dash Keffer",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2025",
+          "contest_slug": "bamo-8",
+          "student_name": "Dash Keffer",
+          "school": "Proof School",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2155,
+      "name": "Maxim Kolosov",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2025",
+          "contest_slug": "bamo-8",
+          "student_name": "Maxim Kolosov",
+          "school": "Leota MS",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2156,
+      "name": "Matthew Kostikov",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2025",
+          "contest_slug": "bamo-8",
+          "student_name": "Matthew Kostikov",
+          "school": "Pine Lake MS",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2157,
+      "name": "Annabelle Lee",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2025",
+          "contest_slug": "bamo-8",
+          "student_name": "Annabelle Lee",
+          "school": "Nueva",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2158,
+      "name": "Liana Lee",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2025",
+          "contest_slug": "bamo-8",
+          "student_name": "Liana Lee",
+          "school": "Ocean Grove Charter School",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2159,
+      "name": "Max Li",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2025",
+          "contest_slug": "bamo-8",
+          "student_name": "Max Li",
+          "school": "Jane L. Stanford MS",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2160,
+      "name": "Ronchen Luo",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2025",
+          "contest_slug": "bamo-8",
+          "student_name": "Ronchen Luo",
+          "school": "Baymonte Christian",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2161,
+      "name": "Sidharth Midhun",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2025",
+          "contest_slug": "bamo-8",
+          "student_name": "Sidharth Midhun",
+          "school": "Challenger School Berryessa",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2162,
+      "name": "Junu Pae",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2025",
+          "contest_slug": "bamo-8",
+          "student_name": "Junu Pae",
+          "school": "Pacific Trails MS",
+          "rank": "Honorable Mention"
+        },
+        {
+          "contest": "BAMO-8",
+          "year": "2024",
+          "contest_slug": "bamo-8",
+          "student_name": "Junu Pae",
+          "school": "Pacific Trails Middle School",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2163,
+      "name": "Max Pham",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2025",
+          "contest_slug": "bamo-8",
+          "student_name": "Max Pham",
+          "school": "Harvest Park MS",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2164,
+      "name": "Rohan Rajaram",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2025",
+          "contest_slug": "bamo-8",
+          "student_name": "Rohan Rajaram",
+          "school": "Harker",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2165,
+      "name": "Ritisha Srivastava",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2025",
+          "contest_slug": "bamo-8",
+          "student_name": "Ritisha Srivastava",
+          "school": "Kamiakin MS",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2166,
+      "name": "Aiden Yan",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2025",
+          "contest_slug": "bamo-8",
+          "student_name": "Aiden Yan",
+          "school": "Sycamore Ridge",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2167,
+      "name": "Simon Yang",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2025",
+          "contest_slug": "bamo-8",
+          "student_name": "Simon Yang",
+          "school": "Dilworth Elementary",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2168,
+      "name": "Tiancheng Zheng",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2025",
+          "contest_slug": "bamo-8",
+          "student_name": "Tiancheng Zheng",
+          "school": "BASIS Independent Silicon Valley",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2169,
+      "name": "Madelyn Zhu",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2025",
+          "contest_slug": "bamo-8",
+          "student_name": "Madelyn Zhu",
+          "school": "Proof School",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2170,
+      "name": "Cooper Salts",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-12",
+          "year": "2025",
+          "contest_slug": "bamo-12",
+          "student_name": "Cooper Salts",
+          "school": "Davidson Academy Online",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2171,
+      "name": "Owen Xu",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-12",
+          "year": "2025",
+          "contest_slug": "bamo-12",
+          "student_name": "Owen Xu",
+          "school": "Berkeley Math Circle",
+          "rank": "Honorable Mention"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2023",
+          "contest_slug": "bamo-12",
+          "student_name": "Owen Xu",
+          "school": "Branson",
+          "rank": "11",
+          "score": "28"
+        }
+      ]
+    },
+    {
+      "id": 2172,
+      "name": "Oscar Varodayan",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2024",
+          "contest_slug": "bamo-8",
+          "student_name": "Oscar Varodayan",
+          "school": "Greene Middle School",
+          "rank": "1",
+          "score": "32"
+        }
+      ]
+    },
+    {
+      "id": 2173,
+      "name": "Ayan Sharma",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2024",
+          "contest_slug": "bamo-8",
+          "student_name": "Ayan Sharma",
+          "school": "Harvest Park MS",
+          "rank": "2",
+          "score": "29"
+        }
+      ]
+    },
+    {
+      "id": 2174,
+      "name": "Alan Verbitsky",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2024",
+          "contest_slug": "bamo-8",
+          "student_name": "Alan Verbitsky",
+          "school": "BASIS Independent Bellevue",
+          "rank": "3",
+          "score": "28"
+        },
+        {
+          "contest": "BAMO-8",
+          "year": "2023",
+          "contest_slug": "bamo-8",
+          "student_name": "Alan Verbitsky",
+          "school": "Willows Preparatory School",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2175,
+      "name": "Ethan Yin",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2024",
+          "contest_slug": "bamo-8",
+          "student_name": "Ethan Yin",
+          "school": "Miraleste",
+          "rank": "3",
+          "score": "28"
+        }
+      ]
+    },
+    {
+      "id": 2176,
+      "name": "Kieran Callahan",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2024",
+          "contest_slug": "bamo-8",
+          "student_name": "Kieran Callahan",
+          "school": "Synapse School",
+          "rank": "7",
+          "score": "27"
+        },
+        {
+          "contest": "BAMO-8",
+          "year": "2023",
+          "contest_slug": "bamo-8",
+          "student_name": "Kieran Callahan",
+          "school": "Synapse School",
+          "rank": "5",
+          "score": "31"
+        },
+        {
+          "contest": "BAMO-8",
+          "year": "2022",
+          "contest_slug": "bamo-8",
+          "student_name": "Kieran Callahan",
+          "school": "Synapse School",
+          "rank": "7",
+          "score": "30"
+        }
+      ]
+    },
+    {
+      "id": 2177,
+      "name": "Xei Sackett",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2024",
+          "contest_slug": "bamo-8",
+          "student_name": "Xei Sackett",
+          "school": "Hall Middle School",
+          "rank": "7",
+          "score": "27"
+        }
+      ]
+    },
+    {
+      "id": 2178,
+      "name": "Minghao Guo",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2024",
+          "contest_slug": "bamo-8",
+          "student_name": "Minghao Guo",
+          "school": "Portola Highly Gifted Magnet",
+          "rank": "7",
+          "score": "27"
+        },
+        {
+          "contest": "BAMO-8",
+          "year": "2023",
+          "contest_slug": "bamo-8",
+          "student_name": "Minghao Guo",
+          "school": "Portola Highly Gifted Magnet School",
+          "rank": "5",
+          "score": "31"
+        },
+        {
+          "contest": "BAMO-8",
+          "year": "2022",
+          "contest_slug": "bamo-8",
+          "student_name": "Minghao Guo",
+          "school": "Portola Highly Gifted Magnet",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2179,
+      "name": "Jayson Quah",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2024",
+          "contest_slug": "bamo-8",
+          "student_name": "Jayson Quah",
+          "school": "Harvest Park MS",
+          "rank": "7",
+          "score": "27"
+        },
+        {
+          "contest": "BAMO-8",
+          "year": "2023",
+          "contest_slug": "bamo-8",
+          "student_name": "Jayson Quah",
+          "school": "Harvest Park Middle School",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2180,
+      "name": "Nathan Song",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2024",
+          "contest_slug": "bamo-8",
+          "student_name": "Nathan Song",
+          "school": "Berkeley Math Circle",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2181,
+      "name": "Alice Wang",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2024",
+          "contest_slug": "bamo-8",
+          "student_name": "Alice Wang",
+          "school": "Bayside Academy",
+          "rank": "Honorable Mention"
+        },
+        {
+          "contest": "BAMO-8",
+          "year": "2023",
+          "contest_slug": "bamo-8",
+          "student_name": "Alice Wang",
+          "school": "Bayside Academy",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2182,
+      "name": "Sohum Tavisala",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2024",
+          "contest_slug": "bamo-8",
+          "student_name": "Sohum Tavisala",
+          "school": "Harvest Park MS",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2183,
+      "name": "Aiden Shan",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2024",
+          "contest_slug": "bamo-8",
+          "student_name": "Aiden Shan",
+          "school": "Bowditch Middle School",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2184,
+      "name": "Chris Xu",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2024",
+          "contest_slug": "bamo-8",
+          "student_name": "Chris Xu",
+          "school": "Bayside Academy",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2185,
+      "name": "Daniel Luo",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2024",
+          "contest_slug": "bamo-8",
+          "student_name": "Daniel Luo",
+          "school": "Ellen Fletcher Middle School",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2186,
+      "name": "Ava Berenji",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2024",
+          "contest_slug": "bamo-8",
+          "student_name": "Ava Berenji",
+          "school": "Davidson Academy Online",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2187,
+      "name": "Tiffany Meng",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2024",
+          "contest_slug": "bamo-8",
+          "student_name": "Tiffany Meng",
+          "school": "Bayside Academy",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2188,
+      "name": "Vedanth Chakravarthi",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2024",
+          "contest_slug": "bamo-8",
+          "student_name": "Vedanth Chakravarthi",
+          "school": "San Jose Math Circle",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2189,
+      "name": "Phuong Le",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2024",
+          "contest_slug": "bamo-8",
+          "student_name": "Phuong Le",
+          "school": "Egan Junior High School",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2190,
+      "name": "Spencer Hill",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-12",
+          "year": "2024",
+          "contest_slug": "bamo-12",
+          "student_name": "Spencer Hill",
+          "school": "Proof School",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2191,
+      "name": "Brandon Muliadi",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-12",
+          "year": "2024",
+          "contest_slug": "bamo-12",
+          "student_name": "Brandon Muliadi",
+          "school": "Cupertino High School",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2192,
+      "name": "Lily Shi",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-12",
+          "year": "2024",
+          "contest_slug": "bamo-12",
+          "student_name": "Lily Shi",
+          "school": "The Harker School",
+          "rank": "Honorable Mention"
+        },
+        {
+          "contest": "BAMO-8",
+          "year": "2022",
+          "contest_slug": "bamo-8",
+          "student_name": "Lily Shi",
+          "school": "The Harker School",
+          "rank": "7",
+          "score": "30"
+        }
+      ]
+    },
+    {
+      "id": 2193,
+      "name": "Prince Rohatgi",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2023",
+          "contest_slug": "bamo-8",
+          "student_name": "Prince Rohatgi",
+          "school": "Medea Creek Middle School",
+          "rank": "4",
+          "score": "32"
+        }
+      ]
+    },
+    {
+      "id": 2194,
+      "name": "Daphne Chen",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2023",
+          "contest_slug": "bamo-8",
+          "student_name": "Daphne Chen",
+          "school": "Basis Independent Silicon Valley",
+          "rank": "5",
+          "score": "31"
+        }
+      ]
+    },
+    {
+      "id": 2195,
+      "name": "Nupur Krishnan",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2023",
+          "contest_slug": "bamo-8",
+          "student_name": "Nupur Krishnan",
+          "school": "Gale Ranch Middle School",
+          "rank": "8",
+          "score": "30"
+        }
+      ]
+    },
+    {
+      "id": 2196,
+      "name": "Nathan Chen",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2023",
+          "contest_slug": "bamo-8",
+          "student_name": "Nathan Chen",
+          "school": "Basis Independent Silicon Valley",
+          "rank": "10",
+          "score": "28"
+        }
+      ]
+    },
+    {
+      "id": 2197,
+      "name": "Satyaki Sen",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2023",
+          "contest_slug": "bamo-8",
+          "student_name": "Satyaki Sen",
+          "school": "John F. Kennedy Middle School",
+          "rank": "10",
+          "score": "28"
+        }
+      ]
+    },
+    {
+      "id": 2198,
+      "name": "Anshuman Arun",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2023",
+          "contest_slug": "bamo-8",
+          "student_name": "Anshuman Arun",
+          "school": "Harvest Park Middle School",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2199,
+      "name": "Manalee Chowdhury",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2023",
+          "contest_slug": "bamo-8",
+          "student_name": "Manalee Chowdhury",
+          "school": "The Harker School",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2200,
+      "name": "Alexey Chub",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2023",
+          "contest_slug": "bamo-8",
+          "student_name": "Alexey Chub",
+          "school": "Odle Middle School",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2201,
+      "name": "Anshul Dandekar",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2023",
+          "contest_slug": "bamo-8",
+          "student_name": "Anshul Dandekar",
+          "school": "Bayside Academy",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2202,
+      "name": "Kaiyuan Ding",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2023",
+          "contest_slug": "bamo-8",
+          "student_name": "Kaiyuan Ding",
+          "school": "Ellen Fletcher Middle School",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2203,
+      "name": "Itai Firstenberg",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2023",
+          "contest_slug": "bamo-8",
+          "student_name": "Itai Firstenberg",
+          "school": "Helios School",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2204,
+      "name": "Aiden Fong",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2023",
+          "contest_slug": "bamo-8",
+          "student_name": "Aiden Fong",
+          "school": "Orinda Intermediate School",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2205,
+      "name": "Allison Guan",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2023",
+          "contest_slug": "bamo-8",
+          "student_name": "Allison Guan",
+          "school": "The Nueva School",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2206,
+      "name": "Seojin Kim",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2023",
+          "contest_slug": "bamo-8",
+          "student_name": "Seojin Kim",
+          "school": "Harvest Park Middle School",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2207,
+      "name": "Kevin Lu",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2023",
+          "contest_slug": "bamo-8",
+          "student_name": "Kevin Lu",
+          "school": "Bayside Academy",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2208,
+      "name": "Elliot Maa",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2023",
+          "contest_slug": "bamo-8",
+          "student_name": "Elliot Maa",
+          "school": "Frank S. Greene Jr. Middle School",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2209,
+      "name": "Henry Meier",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2023",
+          "contest_slug": "bamo-8",
+          "student_name": "Henry Meier",
+          "school": "Jane Addams Middle School",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2210,
+      "name": "Bridget Procter",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2023",
+          "contest_slug": "bamo-8",
+          "student_name": "Bridget Procter",
+          "school": "Proof School",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2211,
+      "name": "Vsevolod Titov",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2023",
+          "contest_slug": "bamo-8",
+          "student_name": "Vsevolod Titov",
+          "school": "Rose Hill Middle School",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2212,
+      "name": "Kyle Wan",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2023",
+          "contest_slug": "bamo-8",
+          "student_name": "Kyle Wan",
+          "school": "Proof School",
+          "rank": "Honorable Mention"
+        },
+        {
+          "contest": "BAMO-8",
+          "year": "2022",
+          "contest_slug": "bamo-8",
+          "student_name": "Kyle Wan",
+          "school": "Proof School",
+          "rank": "6",
+          "score": "31"
+        }
+      ]
+    },
+    {
+      "id": 2213,
+      "name": "Derek Wu",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2023",
+          "contest_slug": "bamo-8",
+          "student_name": "Derek Wu",
+          "school": "Dorris-Eaton School",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2214,
+      "name": "Graham Zhang",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2023",
+          "contest_slug": "bamo-8",
+          "student_name": "Graham Zhang",
+          "school": "Proof School",
+          "rank": "Honorable Mention"
+        },
+        {
+          "contest": "BAMO-8",
+          "year": "2022",
+          "contest_slug": "bamo-8",
+          "student_name": "Graham Zhang",
+          "school": "Proof School",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2215,
+      "name": "Randy Zhong",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2023",
+          "contest_slug": "bamo-8",
+          "student_name": "Randy Zhong",
+          "school": "Ellen Fletcher Middle School",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2216,
+      "name": "Robin Sharif",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-12",
+          "year": "2023",
+          "contest_slug": "bamo-12",
+          "student_name": "Robin Sharif",
+          "school": "Mission Vista High School",
+          "rank": "3",
+          "score": "32"
+        }
+      ]
+    },
+    {
+      "id": 2217,
+      "name": "Sebastian Weinberger",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-12",
+          "year": "2023",
+          "contest_slug": "bamo-12",
+          "student_name": "Sebastian Weinberger",
+          "school": "College Prep",
+          "rank": "5",
+          "score": "31"
+        }
+      ]
+    },
+    {
+      "id": 2218,
+      "name": "Fateh Aliyev",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-12",
+          "year": "2023",
+          "contest_slug": "bamo-12",
+          "student_name": "Fateh Aliyev",
+          "school": "Venice High School",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2219,
+      "name": "Anju Aoi",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-12",
+          "year": "2023",
+          "contest_slug": "bamo-12",
+          "student_name": "Anju Aoi",
+          "school": "Proof School",
+          "rank": "Honorable Mention"
+        },
+        {
+          "contest": "BAMO-8",
+          "year": "2022",
+          "contest_slug": "bamo-8",
+          "student_name": "Anju Aoi",
+          "school": "Proof School",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2220,
+      "name": "Jackson Gish",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-12",
+          "year": "2023",
+          "contest_slug": "bamo-12",
+          "student_name": "Jackson Gish",
+          "school": "Proof School",
+          "rank": "Honorable Mention"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2022",
+          "contest_slug": "bamo-12",
+          "student_name": "Jackson Gish",
+          "school": "Proof School",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2221,
+      "name": "Felix Liu",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-12",
+          "year": "2023",
+          "contest_slug": "bamo-12",
+          "student_name": "Felix Liu",
+          "school": "Basis Independent Silicon Valley",
+          "rank": "Honorable Mention"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2022",
+          "contest_slug": "bamo-12",
+          "student_name": "Felix Liu",
+          "school": "Basis Independent Silicon Valley",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2222,
+      "name": "Rohan Ramkumar",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-12",
+          "year": "2023",
+          "contest_slug": "bamo-12",
+          "student_name": "Rohan Ramkumar",
+          "school": "The Harker School",
+          "rank": "Honorable Mention"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2022",
+          "contest_slug": "bamo-12",
+          "student_name": "Rohan Ramkumar",
+          "school": "The Harker School",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2223,
+      "name": "Arnav Ratna",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-12",
+          "year": "2023",
+          "contest_slug": "bamo-12",
+          "student_name": "Arnav Ratna",
+          "school": "College Prep",
+          "rank": "Honorable Mention"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2022",
+          "contest_slug": "bamo-12",
+          "student_name": "Arnav Ratna",
+          "school": "The College Preparatory School",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2224,
+      "name": "Alex Zitzewitz",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-12",
+          "year": "2023",
+          "contest_slug": "bamo-12",
+          "student_name": "Alex Zitzewitz",
+          "school": "Proof School",
+          "rank": "Honorable Mention"
+        },
+        {
+          "contest": "BAMO-12",
+          "year": "2022",
+          "contest_slug": "bamo-12",
+          "student_name": "Alex Zitzewitz",
+          "school": "Proof School",
+          "rank": "8",
+          "score": "33"
+        }
+      ]
+    },
+    {
+      "id": 2225,
+      "name": "Taras Abakumov",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2022",
+          "contest_slug": "bamo-8",
+          "student_name": "Taras Abakumov",
+          "school": "Stella Schola Middle School",
+          "rank": "2",
+          "score": "34"
+        }
+      ]
+    },
+    {
+      "id": 2226,
+      "name": "Vinci Ho",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2022",
+          "contest_slug": "bamo-8",
+          "student_name": "Vinci Ho",
+          "school": "Edna Brewer Middle School",
+          "rank": "7",
+          "score": "30"
+        }
+      ]
+    },
+    {
+      "id": 2227,
+      "name": "Ryan Lee",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2022",
+          "contest_slug": "bamo-8",
+          "student_name": "Ryan Lee",
+          "school": "Fallon Middle School",
+          "rank": "7",
+          "score": "30"
+        }
+      ]
+    },
+    {
+      "id": 2228,
+      "name": "Kaison Fong",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2022",
+          "contest_slug": "bamo-8",
+          "student_name": "Kaison Fong",
+          "school": "Davidson Academy Online",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2229,
+      "name": "Justin Fu",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2022",
+          "contest_slug": "bamo-8",
+          "student_name": "Justin Fu",
+          "school": "Fallon Middle School",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2230,
+      "name": "Rithwik Gupta",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2022",
+          "contest_slug": "bamo-8",
+          "student_name": "Rithwik Gupta",
+          "school": "Horner Middle School",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2231,
+      "name": "Connor Huh",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2022",
+          "contest_slug": "bamo-8",
+          "student_name": "Connor Huh",
+          "school": "Proof School",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2232,
+      "name": "Helen Law",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2022",
+          "contest_slug": "bamo-8",
+          "student_name": "Helen Law",
+          "school": "Greene Middle School",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2233,
+      "name": "Alexander Maresov",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2022",
+          "contest_slug": "bamo-8",
+          "student_name": "Alexander Maresov",
+          "school": "Tyee Middle School",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2234,
+      "name": "Ibrahim Piri",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2022",
+          "contest_slug": "bamo-8",
+          "student_name": "Ibrahim Piri",
+          "school": "Los Angeles Center for Enriched Studies",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2235,
+      "name": "Axel Szolusha",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2022",
+          "contest_slug": "bamo-8",
+          "student_name": "Axel Szolusha",
+          "school": "The Harker School",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2236,
+      "name": "Bryant Wang",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-8",
+          "year": "2022",
+          "contest_slug": "bamo-8",
+          "student_name": "Bryant Wang",
+          "school": "Valley Christian Jr High School",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2237,
+      "name": "Alex Gu",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-12",
+          "year": "2022",
+          "contest_slug": "bamo-12",
+          "student_name": "Alex Gu",
+          "school": "Valley Christian High School",
+          "rank": "3",
+          "score": "34"
+        }
+      ]
+    },
+    {
+      "id": 2238,
+      "name": "Alex Tholen",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-12",
+          "year": "2022",
+          "contest_slug": "bamo-12",
+          "student_name": "Alex Tholen",
+          "school": "The Nueva School",
+          "rank": "8",
+          "score": "33"
+        }
+      ]
+    },
+    {
+      "id": 2239,
+      "name": "Julian Xiao",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-12",
+          "year": "2022",
+          "contest_slug": "bamo-12",
+          "student_name": "Julian Xiao",
+          "school": "Amador Valley High School",
+          "rank": "11",
+          "score": "32"
+        }
+      ]
+    },
+    {
+      "id": 2240,
+      "name": "August Deer",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-12",
+          "year": "2022",
+          "contest_slug": "bamo-12",
+          "student_name": "August Deer",
+          "school": "Geffen Academy",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2241,
+      "name": "Natalie Deering",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-12",
+          "year": "2022",
+          "contest_slug": "bamo-12",
+          "student_name": "Natalie Deering",
+          "school": "Homeschooled",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2242,
+      "name": "Ella Gal-on",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-12",
+          "year": "2022",
+          "contest_slug": "bamo-12",
+          "student_name": "Ella Gal-on",
+          "school": "Stanford OHS",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2243,
+      "name": "Anna Johnston",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-12",
+          "year": "2022",
+          "contest_slug": "bamo-12",
+          "student_name": "Anna Johnston",
+          "school": "Proof School",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2244,
+      "name": "Peter Matsakis",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-12",
+          "year": "2022",
+          "contest_slug": "bamo-12",
+          "student_name": "Peter Matsakis",
+          "school": "Proof School",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2245,
+      "name": "Emmett Mighdoll",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-12",
+          "year": "2022",
+          "contest_slug": "bamo-12",
+          "student_name": "Emmett Mighdoll",
+          "school": "Proof School",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2246,
+      "name": "Ganesh Sankar",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-12",
+          "year": "2022",
+          "contest_slug": "bamo-12",
+          "student_name": "Ganesh Sankar",
+          "school": "Lynbrook High School",
+          "rank": "Honorable Mention"
+        }
+      ]
+    },
+    {
+      "id": 2247,
+      "name": "Peter Vandervelde",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "BAMO-12",
+          "year": "2022",
+          "contest_slug": "bamo-12",
+          "student_name": "Peter Vandervelde",
+          "school": "Proof School",
+          "rank": "Honorable Mention"
+        }
+      ]
     }
   ],
   "contests": {
@@ -59975,6 +63336,16 @@
       "contest_name": "BMT — Geometry",
       "description": "Geometry subject test at the Berkeley Math Tournament.",
       "website": "https://bmt.berkeley.edu/"
+    },
+    "bamo-8": {
+      "contest_name": "BAMO-8",
+      "description": "Bay Area Mathematical Olympiad - Middle School Division. Annual proof contest for middle and high school students in the Bay Area.",
+      "website": "https://www.bamo.org/"
+    },
+    "bamo-12": {
+      "contest_name": "BAMO-12",
+      "description": "Bay Area Mathematical Olympiad - High School Division. Annual proof contest for middle and high school students in the Bay Area.",
+      "website": "https://www.bamo.org/"
     }
   },
   "contest_year_files": {
@@ -59986,6 +63357,18 @@
     },
     "arml": {
       "2022": "results.csv",
+      "2024": "results.csv",
+      "2025": "results.csv"
+    },
+    "bamo-12": {
+      "2022": "results.csv",
+      "2023": "results.csv",
+      "2024": "results.csv",
+      "2025": "results.csv"
+    },
+    "bamo-8": {
+      "2022": "results.csv",
+      "2023": "results.csv",
       "2024": "results.csv",
       "2025": "results.csv"
     },
@@ -60160,6 +63543,8 @@
     "bmt-algebra",
     "bmt-calculus",
     "bmt-discrete",
-    "bmt-geometry"
+    "bmt-geometry",
+    "bamo-8",
+    "bamo-12"
   ]
 }
