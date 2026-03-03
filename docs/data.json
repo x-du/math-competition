@@ -1249,7 +1249,7 @@
       "aliases": [],
       "state": "Washington",
       "gender": "male",
-      "grade_in_2026": null,
+      "grade_in_2026": "12",
       "records": [
         {
           "contest": "HMMT February — Geometry",
@@ -15850,7 +15850,7 @@
       "aliases": [],
       "state": "New Hampshire",
       "gender": "male",
-      "grade_in_2026": null,
+      "grade_in_2026": "14",
       "records": [
         {
           "contest": "USAMO",

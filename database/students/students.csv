@@ -5,7 +5,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 4,Liam Reddy,Utah,4|58,,male,11
 5,Tianyi Li,"Ontario, Canada",5,,male,
 6,Jefferson Tiger Zhou,Minnesota,6|191,Jefferson Zhou,male,10
-7,Benjamin Fu,Washington,7|89,,male,
+7,Benjamin Fu,Washington,7|89,,male,12
 8,Vincent Wang,Texas,8|86,,male,10
 9,Jonathan Du,California,9,,male,12
 10,Ruilin Wang,Virginia,10|72|85,Calvin Wang,male,12
@@ -127,7 +127,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 139,Skyler Le,Pennsylvania,1|32|73,,male,15
 140,Isabella Zhu,Virginia,10|72,,female,15
 141,Amol Rama,California,60|74,,male,
-142,Alan Bu,New Hampshire,63,,male,
+142,Alan Bu,New Hampshire,63,,male,14
 143,Ethan Liu,California,24,,male,15
 144,Huaye Lin,Massachusetts,26,,male,15
 145,Alex Li,,19,,male,
