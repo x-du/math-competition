@@ -43,6 +43,8 @@ USAMO gold and silver are among the hardest awards in U.S. pre-college math: onl
 
 From this database, we find **22 AMO gold/silver medalists in 12th grade or with no recorded grade who have no other high‑integrity contest records**—most of them silver medalists. It’s exactly the kind of outlier pattern that should prompt coaches and selectors to look more closely. 
 
+The following image only shows year in 2024 and 2025. 
+
 ![AMO gold/silver medalists with no other records](./img/AMO_gold_silver_no_record.png)
 
 
