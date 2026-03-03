@@ -45,7 +45,7 @@ When making decisions about admissions offers, team selection, or scholarship aw
 
 ## Contributing
 
-If you have results data from high-integrity competitions that should be included, contributions are welcome. See the [README](../README.md) for technical details on building and deploying the site.
+If you have results data from high-integrity competitions that should be included, contributions are welcome. See the [README](https://github.com/x-du/math-competition) for technical details on building and deploying the site.
 
 Please report issues, official contest results, and cheating to **mathcontestintegrity@gmail.com**.
 
