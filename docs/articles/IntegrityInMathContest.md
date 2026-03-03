@@ -23,3 +23,4 @@ Integrity ratings for major US math competitions, based on community discussions
 ---
 
 **Disclaimer**: This document is an LLM-generated answer using the Anthropic Claude Opus 4.6 model with the prompt: *"Please give a integrity rating between 1 and 10 for the following Math contests in US based on discussions on raddit, AoPS forum. AMC 10/12, AIME, USAMO/USJMO, HMMT, PUMAC, MathCounts State, MathCounts National, CMIMC, ARML."* The ratings and analysis should not be treated as authoritative and may not fully reflect the views of the math competition community.
+

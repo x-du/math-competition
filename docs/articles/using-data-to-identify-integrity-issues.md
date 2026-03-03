@@ -13,7 +13,7 @@ Cheating in U.S. math competitions is a real problem, but we should **not** igno
 - **Long testing windows** — When the same test is given over many weeks (e.g., some state rounds), earlier test-takers can leak to later ones.
 - **Inflated cutoffs** — Community reports and data suggest scores and cutoffs don’t always reflect fair play.
 
-Some contests are much more reliable than others. **[Integrity in US Math Competitions](../IntegrityInMathContest.md)** rates major contests on a 1–10 scale (1 = rampant cheating, 10 = very clean), using community discussions and documented incidents. For example: USAMO, MathCounts National, and HMMT score high; AMC 10/12 and AIME have had serious, repeated integrity issues.
+Some contests are much more reliable than others. **[Integrity in US Math Competitions](IntegrityInMathContest.md)** rates major contests on a 1–10 scale (1 = rampant cheating, 10 = very clean), using community discussions and documented incidents. For example: USAMO, MathCounts National, and HMMT score high; AMC 10/12 and AIME have had serious, repeated integrity issues.
 
 **Bottom line:** One amazing result from a contest with known problems doesn’t tell you much. **Consistency across multiple high-integrity, in-person competitions** is a much better sign of real ability. The database we describe below is built to help you see that consistency—or the lack of it.
 
@@ -24,7 +24,7 @@ Some contests are much more reliable than others. **[Integrity in US Math Compet
 The database pulls together **public results from high-integrity, in-person contests** (e.g., USAMO/USJMO, HMMT, PUMaC, CMIMC, ARML, MathCounts National). Here’s how to use it.
 
 **Look for a real track record.**  
-Strong signal: a student shows up **again and again** in **several** high-integrity contests **over multiple years** (e.g., JMO then AMO, or steady HMMT/PUMaC results). Weaker signal: only one or two results, or only in contests with known integrity issues (see the [integrity ratings](../IntegrityInMathContest.md)).
+Strong signal: a student shows up **again and again** in **several** high-integrity contests **over multiple years** (e.g., JMO then AMO, or steady HMMT/PUMaC results). Weaker signal: only one or two results, or only in contests with known integrity issues (see the [integrity ratings](IntegrityInMathContest.md)).
 
 **Cross-check claims.**  
 When someone claims a result in a contest that’s in the database, search the student’s name and confirm the result (contest, year, award/rank) appears. If they claim a strong result in a high-integrity contest but have **no record** in the database, it might be a data gap, a name spelling issue—or worth checking with official sources.
@@ -89,4 +89,4 @@ If you spot errors, have official result updates, or want to report suspected ch
 
 ---
 
-*For more on how to use the database, see [How to Use This Database](../HowToUse.md). For contest-by-contest integrity ratings, see [Integrity in US Math Competitions](../IntegrityInMathContest.md).*
+*For more on how to use the database, see [How to Use This Database](HowToUse.md). For contest-by-contest integrity ratings, see [Integrity in US Math Competitions](IntegrityInMathContest.md).*
