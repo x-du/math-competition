@@ -369,7 +369,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 397,Ayush Bansal,,147,,male,
 398,Neal Yan,California,47,,male,
 399,Mingwen Duan,Connecticut,43,,male,14
-400,Kelin Zhu,Maryland,65,,male,
+400,Kelin Zhu,Maryland,65,,male,13
 401,Emma Li,California,149|276,,female,14
 402,Christopher Bao,Nevada,149, Chris Bao,male,13
 403,BRANDON JUNGWOO HAN,,151,,male,
@@ -982,7 +982,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1028,Jane Xie,New York,,,female,11
 1029,Atticus Stewart,California,,,male,
 1031,William Chen,Texas,,,male,15
-1032,Edward Guo,Virginia,,,male,10
+1032,Edward Guo,Virginia,,,male,11
 1034,Lei He,"Ontario, Canada",,,male,
 1035,Daniel Ji,California,,,male,
 1036,Timur Kilybayev,Massachusetts,,,male,
@@ -1126,7 +1126,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1179,Mason Fang,California,,,male,
 1180,Arnav Goel,Illinois,,,male,
 1181,Paul Hamrick,California,,,male,
-1182,Garrett Heller,Virginia,,,male,
+1182,Garrett Heller,Virginia,,,male,15
 1183,Qingcheng Hu,California,,,male,
 1184,Jay Ji,United Kingdom,,,male,
 1185,Tristan Kay,Washington,,,male,
@@ -1260,9 +1260,9 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1316,Avi Gupta,Maryland,,,male,
 1317,Yuwei Li,China,,,male,
 1318,Angelo Chu,Virginia,,,male,11
-1319,Ryan Singh,Virginia,,,male,
+1319,Ryan Singh,Virginia,,,male,12
 1320,Jeffrey Du,Virginia,,,male,9
-1321,Yeeyung Li,Virginia,,,male,9
+1321,Yeeyung Li,Virginia,,,male,10
 1322,William Li,Virginia,,,male,9
 1323,Ryan Chan,Virginia,,,male,
 1324,Ishidevesh Behera,,,,male,
@@ -1360,7 +1360,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1417,Daniel He,Maryland,,,male,
 1418,Corey Zhao,Massachusetts,,,male,
 1419,Zhan Jin,,,,male,
-1420,Jason Hao,Virginia,,,male,
+1420,Jason Hao,Virginia,,,male,13
 1421,Daniel Gilman,New Jersey,,,male,
 1422,Michelle Wang,Virginia,,,female,
 1423,Haokai Ma,California,,,male,
@@ -1377,7 +1377,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1434,Varun Gupta,Pennsylvania,,,male,
 1435,Max Shepard,California,,,male,
 1436,Steven Yu,Massachusetts,,,male,
-1437,Nikhil Pesaladinne,Virginia,,,male,
+1437,Nikhil Pesaladinne,Virginia,,,male,15
 1438,Nikhil Mudumbi,New Jersey,,,male,
 1439,Jack Fang,California,,,male,
 1440,Garv Khurana,Minnesota,,,male,
@@ -1552,7 +1552,6 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1613,Kaylyn Jinglin Zhang,,,,female,
 1614,Sirawit Pipittanaban,California,,,male,
 1615,Gong Cheng,,,,male,
-1616,Christopher Lu,Virginia,,,male,
 1617,Michael Retakh,New York,,,male,
 1618,Brayden Choi,,,,male,
 1619,Lingfei Sophia Tang,,,,female,
@@ -1636,7 +1635,6 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1698,Xuancheng Li,California,,,male,
 1699,David Li,California,,,male,15
 1700,Om Mahesh,California,,,male,
-1701,Tony Zhang,Maryland,,,male,
 1702,Justin Mo,New York,,,male,
 1703,Benjamin Witzel,Illinois,,,male,
 1704,Michael Voigt,Massachusetts,,,male,

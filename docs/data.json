@@ -25618,6 +25618,14 @@
           "p8": "0"
         },
         {
+          "contest": "HMMT November — Theme",
+          "year": "2024",
+          "contest_slug": "hmmt-nov-theme",
+          "student_name": "Christopher Lu",
+          "rank": "44",
+          "score": "24.24"
+        },
+        {
           "contest": "USAJMO",
           "year": "2023",
           "contest_slug": "jmo",
@@ -26483,6 +26491,14 @@
           "p6": "0",
           "p7": "0",
           "p8": "0"
+        },
+        {
+          "contest": "HMMT November — General",
+          "year": "2022",
+          "contest_slug": "hmmt-nov-general",
+          "student_name": "Tony Zhang",
+          "rank": "44",
+          "score": "21.82"
         }
       ]
     },
@@ -29778,7 +29794,7 @@
       "aliases": [],
       "state": "Maryland",
       "gender": "male",
-      "grade_in_2026": null,
+      "grade_in_2026": "13",
       "records": [
         {
           "contest": "HMMT February — Algebra & Number Theory",
@@ -42481,7 +42497,7 @@
       "aliases": [],
       "state": "Virginia",
       "gender": "male",
-      "grade_in_2026": "10",
+      "grade_in_2026": "11",
       "records": [
         {
           "contest": "USAJMO",
@@ -46490,7 +46506,7 @@
       "aliases": [],
       "state": "Virginia",
       "gender": "male",
-      "grade_in_2026": null,
+      "grade_in_2026": "15",
       "records": [
         {
           "contest": "USAMO",
@@ -50093,7 +50109,7 @@
       "aliases": [],
       "state": "Virginia",
       "gender": "male",
-      "grade_in_2026": null,
+      "grade_in_2026": "12",
       "records": [
         {
           "contest": "DMM",
@@ -50155,7 +50171,7 @@
       "aliases": [],
       "state": "Virginia",
       "gender": "male",
-      "grade_in_2026": "9",
+      "grade_in_2026": "10",
       "records": [
         {
           "contest": "DMM",
@@ -52938,7 +52954,7 @@
       "aliases": [],
       "state": "Virginia",
       "gender": "male",
-      "grade_in_2026": null,
+      "grade_in_2026": "13",
       "records": [
         {
           "contest": "PUMaC — Algebra",
@@ -53466,7 +53482,7 @@
       "aliases": [],
       "state": "Virginia",
       "gender": "male",
-      "grade_in_2026": null,
+      "grade_in_2026": "15",
       "records": [
         {
           "contest": "PUMaC — Geometry",
@@ -58253,18 +58269,10 @@
       "id": 1616,
       "name": "Christopher Lu",
       "aliases": [],
-      "state": "Virginia",
+      "state": "",
       "gender": "male",
       "grade_in_2026": null,
       "records": [
-        {
-          "contest": "HMMT November — Theme",
-          "year": "2024",
-          "contest_slug": "hmmt-nov-theme",
-          "student_name": "Christopher Lu",
-          "rank": "44",
-          "score": "24.24"
-        },
         {
           "contest": "HMMT November",
           "year": "2024",
@@ -60386,24 +60394,6 @@
           "student_name": "Om Mahesh",
           "rank": "39",
           "score": "23.03"
-        }
-      ]
-    },
-    {
-      "id": 1701,
-      "name": "Tony Zhang",
-      "aliases": [],
-      "state": "Maryland",
-      "gender": "male",
-      "grade_in_2026": null,
-      "records": [
-        {
-          "contest": "HMMT November — General",
-          "year": "2022",
-          "contest_slug": "hmmt-nov-general",
-          "student_name": "Tony Zhang",
-          "rank": "44",
-          "score": "21.82"
         }
       ]
     },
