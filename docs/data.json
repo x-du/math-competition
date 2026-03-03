@@ -13687,7 +13687,7 @@
       "aliases": [],
       "state": "Nevada",
       "gender": "male",
-      "grade_in_2026": null,
+      "grade_in_2026": "14",
       "records": [
         {
           "contest": "USAMO",
@@ -23182,7 +23182,7 @@
       "aliases": [],
       "state": "Massachusetts",
       "gender": "male",
-      "grade_in_2026": null,
+      "grade_in_2026": "14",
       "records": [
         {
           "contest": "HMMT February — Geometry",

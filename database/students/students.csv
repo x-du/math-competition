@@ -108,7 +108,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 115,Aaron Hu,Florida,19,,male,14
 116,Justin Zhang,California,2|59,,male,
 117,Advaith Avadhanam,California,53|60,,male,
-118,Linus Tang,Nevada,9,,male,
+118,Linus Tang,Nevada,9,,male,14
 119,Jason Zhang,Michigan,34,,male,14
 120,Jacob Xu,,26|263,,male,
 121,Srinivas Arun,Colorado,55,,male,14
@@ -235,7 +235,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 260,Shaohuan (Nick) Zha,,108,,male,
 261,Dalbert Wu,California,94,,male,
 262,Aryan Raj,Virginia,109|116|251,,male,12
-263,Jonathan Liu,Massachusetts,26|100|262|327,,male,
+263,Jonathan Liu,Massachusetts,26|100|262|327,,male,14
 264,Chloe Weng,Texas,110,,female,12
 265,James Wu,,100|303,,male,
 266,Ethan Imanuel,New Jersey,32|317,,male,9
