@@ -140,7 +140,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 154,Boris Tsvetanov Gachevski,,67|81,,male,
 155,Derek Liu,California,2,,male,
 156,Edward Xiong,New Jersey,66,,male,
-158,Vincent Trang,Virginia,10,,male,
+158,Vincent Trang,Virginia,10,,male,15
 159,Karthik Vedula,Florida,19,,male,15
 160,Vincent Zhang,Pennsylvania,1,,male,
 161,Caleb Dastrup,Maryland,68,,male,
@@ -879,7 +879,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 914,Bryan Fu,Texas,252,,male,
 915,Michael Han,Massachusetts,,,male,
 916,Lucas Hinds,Tennessee,,,male,
-917,Bennett Huang,Virginia,283,,male,
+917,Bennett Huang,Virginia,283,,male,12
 918,Jiawen Huang,California,,,male,
 919,Seojoon Kang,New York,,,male,
 920,Taehong Kim,Massachusetts,,,male,
@@ -1185,7 +1185,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1238,Ethan Song,California,,,male,
 1240,Ishani Agarwal,California,,,female,13
 1241,Anay Aggarwal,Oregon,,,male,
-1242,Samarth Bhargav,Virginia,,,male,
+1242,Samarth Bhargav,Virginia,,,male,13
 1243,Brandon Chan,Michigan,34,,male,
 1244,Yao Chen,California,,,male,
 1245,Vince Choi,California,,,male,
@@ -1262,8 +1262,8 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1318,Angelo Chu,Virginia,,,male,11
 1319,Ryan Singh,Virginia,,,male,
 1320,Jeffrey Du,Virginia,,,male,9
-1321,Yeeyung Li,Virginia,,,male,
-1322,William Li,Virginia,,,male,
+1321,Yeeyung Li,Virginia,,,male,9
+1322,William Li,Virginia,,,male,9
 1323,Ryan Chan,Virginia,,,male,
 1324,Ishidevesh Behera,,,,male,
 1325,Atharv Mittal,,,,male,
