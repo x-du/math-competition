@@ -4693,6 +4693,14 @@
           "state": "New Jersey",
           "rank": "54",
           "grade": "8"
+        },
+        {
+          "contest": "HMMT November — General",
+          "year": "2023",
+          "contest_slug": "hmmt-nov-general",
+          "student_name": "Eric Dai",
+          "rank": "24",
+          "score": "30.98"
         }
       ]
     },
@@ -65570,24 +65578,6 @@
           "p6": "0",
           "p7": "0",
           "p8": "0"
-        }
-      ]
-    },
-    {
-      "id": 1667,
-      "name": "Eric Dai",
-      "aliases": [],
-      "state": "Florida",
-      "gender": "male",
-      "grade_in_2026": "11",
-      "records": [
-        {
-          "contest": "HMMT November — General",
-          "year": "2023",
-          "contest_slug": "hmmt-nov-general",
-          "student_name": "Eric Dai",
-          "rank": "24",
-          "score": "30.98"
         }
       ]
     },
