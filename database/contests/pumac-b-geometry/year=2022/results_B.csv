@@ -9,11 +9,11 @@ student_id,team_name,student_name,year,division,rank,score,p1,p2,p3,p4,p5,p6,p7,
 2300,PRISMS Young Falcons,Deven Butani,2022,B,8,7.895,1,0,0,0,1,1,0,0
 1419,Individuals Team 153,Zhan Jin,2022,B,9,7.31,1,0,1,0,0,0,1,0
 2337,Jericho High School A,Jay Li,2022,B,10,6.75,1,0,1,0,0,1,0,0
-1942,Ridge Mu Alpha Theta,Wesley Chen,2022,B,11,5.516,0,0,1,0,1,0,0,0
+2008,Ridge Mu Alpha Theta,Wesley Chen,2022,B,11,5.516,0,0,1,0,1,0,0,0
 2222,Jericho High School A,Franklin Lee,2022,B,12,5.329,1,1,1,0,0,0,0,0
 2320,Individuals Team 152,Cody Cheng,2022,B,12,5.329,1,1,1,0,0,0,0,0
 1355,Big L Club,Fiona Chen,2022,B,12,5.329,1,1,1,0,0,0,0,0
-119,Hotchkiss Blue,Weian Xie,2022,B,12,5.329,1,1,1,0,0,0,0,0
+126,Hotchkiss Blue,Weian Xie,2022,B,12,5.329,1,1,1,0,0,0,0,0
 2324,Pingry Team A,Sophia Guild,2022,B,12,5.329,1,1,1,0,0,0,0,0
 1707,Warriors,Anton Levonian,2022,B,12,5.329,1,1,1,0,0,0,0,0
 2313,Sierra Canyon School,Wendy Wang,2022,B,18,5.124,1,0,0,1,0,0,0,0
@@ -34,7 +34,7 @@ student_id,team_name,student_name,year,division,rank,score,p1,p2,p3,p4,p5,p6,p7,
 2329,Warriors,Austin Lin,2022,B,29,3.143,1,1,0,0,0,0,0,0
 2171,MHSProfessionalJobbers,Minhe Liu,2022,B,29,3.143,1,1,0,0,0,0,0,0
 1623,Pingry Team A,Albert Wu,2022,B,29,3.143,1,1,0,0,0,0,0,0
-1621,Pingry Team A,Leo Xu,2022,B,29,3.143,1,1,0,0,0,0,0,0
+1686,Pingry Team A,Leo Xu,2022,B,29,3.143,1,1,0,0,0,0,0,0
 2339,Ward Melville Math Team,Amy Chen,2022,B,29,3.143,1,1,0,0,0,0,0,0
 2330,Garnet Valley Math Team,Victoria Li,2022,B,29,3.143,1,1,0,0,0,0,0,0
 2191,Sierra Canyon School,Nikhil McGowan,2022,B,29,3.143,1,1,0,0,0,0,0,0
