@@ -87,39 +87,6 @@ def main() -> None:
     print("-" * 60)
     print(f"Unique students with ≥1 missing field: {unique_incomplete}")
     print(f"\nOutput written to: {OUTPUT_JSON}")
-    print()
-
-    # Details: missing state
-    print("=" * 60)
-    print("1. STUDENTS MISSING STATE")
-    print("=" * 60)
-    if missing_state:
-        for sid, name in sort_by_id(missing_state):
-            print(f"  {sid:>6}  {name}")
-    else:
-        print("  (none)")
-    print()
-
-    # Details: missing gender
-    print("=" * 60)
-    print("2. STUDENTS MISSING GENDER")
-    print("=" * 60)
-    if missing_gender:
-        for sid, name in sort_by_id(missing_gender):
-            print(f"  {sid:>6}  {name}")
-    else:
-        print("  (none)")
-    print()
-
-    # Details: missing grade
-    print("=" * 60)
-    print("3. STUDENTS MISSING GRADE (grade_in_2026)")
-    print("=" * 60)
-    if missing_grade:
-        for sid, name in sort_by_id(missing_grade):
-            print(f"  {sid:>6}  {name}")
-    else:
-        print("  (none)")
 
 
 if __name__ == "__main__":

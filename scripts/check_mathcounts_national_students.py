@@ -16,8 +16,7 @@ def main():
     with open(DATA_JSON) as f:
         data = json.load(f)
 
-    violations = []  # (student, issue)
-    valid = []
+    violations = []
 
     for student in data["students"]:
         mc_records = [
@@ -52,33 +51,14 @@ def main():
                 "grades": sorted(grades_with_missing),
                 "duplicates": dupes,
             })
-        else:
-            valid.append({
-                "id": student["id"],
-                "name": student["name"],
-                "count": count,
-                "grades": sorted(grades_with_missing),
-            })
+        # else: valid (count <= 3, all grades distinct) — not printed
 
-    print("=== MATHCOUNTS National — Rankings validation ===\n")
-    print(f"Students with at least one MATHCOUNTS National — Rankings record: "
-          f"{len(violations) + len(valid)}")
-    print(f"Valid (count <= 3 and all grades distinct): {len(valid)}")
-    print(f"Violations: {len(violations)}\n")
-
-    if violations:
-        print("--- Violations ---")
-        for v in sorted(violations, key=lambda x: (x["name"], x["id"])):
-            print(f"  id={v['id']}  {v['name']}")
-            print(f"    {v['issue']}  (appearances: {v['count']})  grades: {v['grades']}")
-            if "duplicates" in v:
-                print(f"    duplicate counts: {v['duplicates']}")
-            print()
-
-    if valid:
-        print("--- Valid students (first 20) ---")
-        for v in sorted(valid, key=lambda x: (-x["count"], x["name"]))[:20]:
-            print(f"  id={v['id']}  {v['name']}  appearances={v['count']}  grades={v['grades']}")
+    for v in sorted(violations, key=lambda x: (x["name"], x["id"])):
+        print(f"id={v['id']}  {v['name']}")
+        print(f"  {v['issue']}  (appearances: {v['count']})  grades: {v['grades']}")
+        if "duplicates" in v:
+            print(f"  duplicate counts: {v['duplicates']}")
+        print()
 
     return 0 if not violations else 1
 

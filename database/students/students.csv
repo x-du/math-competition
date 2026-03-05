@@ -92,6 +92,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 98,Elliott Liu,California,2,,male,
 99,Rohan Bodke,California,9,,male,13
 100,Langkun Yu,,44,,male,
+101,Andrew Li,New Jersey,,,male,
 102,Andrew Li,New York,49|253,,male,
 103,Allen Wang,New Jersey,1|32|73,,male,14
 105,Myungbeen Choi,,50,,male,
@@ -2408,3 +2409,4 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 2485,Sanjay Kaushik,,,,male,
 2486,Matthias Kim,Washington,,,male,
 2487,Daniel Ge,Massachusetts,,,male,11
+2488,Alex Zhao,Connecticut,,,male,

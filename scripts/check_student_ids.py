@@ -1,11 +1,16 @@
 #!/usr/bin/env python3
 """
-Find student IDs in database/students/students.csv that are not referenced
-by any CSV file under database/contests.
+Check student ID consistency between database/students/students.csv and
+database/contests:
+
+1. Student IDs in students.csv that are not referenced by any contest CSV
+   (unused in contests).
+2. Student IDs referenced in contest CSVs that are not in students.csv
+   (missing from registry / orphan references).
 
 Run from the repo root:
 
-    python scripts/find_unused_student_ids.py
+    python scripts/check_student_ids.py
 """
 
 import csv
@@ -81,24 +86,34 @@ def main() -> None:
         (sid for sid in all_student_ids if sid not in used_ids),
         key=lambda x: int(x) if x.isdigit() else x,
     )
+    # Student IDs that appear in contest CSVs but are not in students.csv
+    missing_from_registry = sorted(
+        (sid for sid in used_ids if sid not in all_student_ids),
+        key=lambda x: int(x) if x.isdigit() else x,
+    )
 
     print(f"Total students in students.csv: {len(all_student_ids)}")
     print(f"Distinct student_ids used in contests: {len(used_ids)}")
     print(f"Student_ids not used in any contest CSV: {len(unused_ids)}")
+    print(f"Student_ids in contests but NOT in students.csv: {len(missing_from_registry)}")
     print()
+
+    if missing_from_registry:
+        print("Student_ids referenced in contests but missing from registry:")
+        for sid in missing_from_registry:
+            print(f"  {sid}")
+        print()
 
     if not unused_ids:
         print("All students are referenced in at least one contest CSV.")
-        return
-
-    print("Unused students (student_id, student_name, state):")
-    for sid in unused_ids:
-        row = students_by_id.get(sid, {})
-        name = row.get("student_name", "")
-        state = row.get("state", "")
-        print(f"{sid},{name},{state}")
+    else:
+        print("Unused students (student_id, student_name, state):")
+        for sid in unused_ids:
+            row = students_by_id.get(sid, {})
+            name = row.get("student_name", "")
+            state = row.get("state", "")
+            print(f"{sid},{name},{state}")
 
 
 if __name__ == "__main__":
     main()
-
