@@ -29,7 +29,7 @@ Use the schema that best fits the competition and is consistent with similar con
 ## 2. Look up and assign `student_id`
 
 - **Student registry:** `database/students/students.csv`  
-Columns: `student_id`, `student_name`, `state`, `team_ids`, `alias`
+Columns: `student_id`, `student_name`, `state`, `team_ids`, `alias`, `gender`, `grade_in_2026`
 - **Lookup rule:** Identify a student by **both** `student_name` and `state`.  
   **Students with the same name but different states are different students** — do not treat them as the same person. If state is missing in the source data, use whatever state/region information is available (e.g. from team or site); if none, leave state blank but still treat (name, state) as the matching key.
 - Match **case-insensitively** for names if needed, but preserve the canonical `student_name` from `students.csv` in the results.
@@ -40,12 +40,14 @@ Columns: `student_id`, `student_name`, `state`, `team_ids`, `alias`
 
 - If no row in `students.csv` matches the (name, state) pair (or name when state is blank):
   - Assign the next available `student_id` (max existing `student_id` + 1).
-  - **Append** a new row to `database/students/students.csv` with:
+  - **Append** a new row to `database/students/students.csv` with all 7 columns:
     - `student_id` (new id)
     - `student_name` (as in the contest source)
     - `state` (from contest data if available, otherwise blank)
     - `team_ids` (blank unless known)
     - `alias` (blank unless known)
+    - `gender` (blank unless known)
+    - `grade_in_2026` (blank unless known)
 - Then use this new `student_id` and `student_name` in the contest `results.csv`.
 
 ## 4. Write the contest results

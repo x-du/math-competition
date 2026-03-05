@@ -452,6 +452,16 @@
           "combinatorics_score": "21.89"
         },
         {
+          "contest": "ARML Offsite",
+          "year": "2022",
+          "contest_slug": "arml-offsite",
+          "student_name": "Alexander Wang",
+          "team_name": "Lehigh Valley A1",
+          "rank": "4",
+          "score": "8",
+          "prize": "$750"
+        },
+        {
           "contest": "MATHCOUNTS National — Rankings",
           "year": "2021",
           "contest_slug": "mathcounts-national-rank",
@@ -4884,6 +4894,15 @@
           "state": "Florida",
           "rank": "13",
           "grade": "7"
+        },
+        {
+          "contest": "ARML Offsite",
+          "year": "2022",
+          "contest_slug": "arml-offsite",
+          "student_name": "Benjamin Jiang",
+          "team_name": "Pine Views B1",
+          "rank": "20",
+          "score": "8"
         }
       ]
     },
@@ -7845,6 +7864,16 @@
           "algebra_score": "16.54",
           "geometry_score": "15.54",
           "combinatorics_score": "27.17"
+        },
+        {
+          "contest": "ARML Offsite",
+          "year": "2022",
+          "contest_slug": "arml-offsite",
+          "student_name": "Christopher Qiu",
+          "team_name": "Lehigh Valley A1",
+          "rank": "1",
+          "score": "10",
+          "prize": "$1,500"
         }
       ]
     },
@@ -9281,6 +9310,16 @@
           "state": "Florida",
           "rank": "30",
           "grade": "8"
+        },
+        {
+          "contest": "ARML Offsite",
+          "year": "2022",
+          "contest_slug": "arml-offsite",
+          "student_name": "Kevin Liu",
+          "team_name": "Florida A1",
+          "rank": "3",
+          "score": "9",
+          "prize": "$1,000"
         },
         {
           "contest": "MATHCOUNTS National — Rankings",
@@ -11118,6 +11157,16 @@
           "rank": "10",
           "total_score": "3.191",
           "finals_score": "13"
+        },
+        {
+          "contest": "ARML Offsite",
+          "year": "2022",
+          "contest_slug": "arml-offsite",
+          "student_name": "Jordan Lefkowitz",
+          "team_name": "Connecticut B1",
+          "rank": "10",
+          "score": "8",
+          "prize": "$500"
         }
       ]
     },
@@ -11506,6 +11555,16 @@
           "algebra_score": "16.6",
           "geometry_score": "23.95",
           "combinatorics_score": "16.67"
+        },
+        {
+          "contest": "ARML Offsite",
+          "year": "2022",
+          "contest_slug": "arml-offsite",
+          "student_name": "Andrew Lin",
+          "team_name": "Lehigh Valley A1",
+          "rank": "5",
+          "score": "8",
+          "prize": "$500"
         },
         {
           "contest": "MATHCOUNTS National — Rankings",
@@ -12298,6 +12357,16 @@
           "total_score": "92.61",
           "general_score": "59.3",
           "theme_score": "33.31"
+        },
+        {
+          "contest": "ARML Offsite",
+          "year": "2022",
+          "contest_slug": "arml-offsite",
+          "student_name": "Qiao Zhang",
+          "team_name": "SoCal ARML A1",
+          "rank": "2",
+          "score": "9",
+          "prize": "$1,250"
         }
       ]
     },
@@ -14292,6 +14361,15 @@
           "student_name": "Jason Zhang",
           "rank": "14",
           "score": "20.82"
+        },
+        {
+          "contest": "ARML Offsite",
+          "year": "2022",
+          "contest_slug": "arml-offsite",
+          "student_name": "Jason Zhang",
+          "team_name": "Michigan All Stars A1",
+          "rank": "15",
+          "score": "8"
         }
       ]
     },
@@ -15569,6 +15647,15 @@
           "algebra_score": "12.43",
           "geometry_score": "21.82",
           "combinatorics_score": "21.95"
+        },
+        {
+          "contest": "ARML Offsite",
+          "year": "2022",
+          "contest_slug": "arml-offsite",
+          "student_name": "Jason Mao",
+          "team_name": "Lehigh Valley A1",
+          "rank": "12",
+          "score": "8"
         }
       ]
     },
@@ -18518,6 +18605,15 @@
           "student_name": "Evan Chang",
           "state": "New Jersey",
           "award": "Bronze"
+        },
+        {
+          "contest": "ARML Offsite",
+          "year": "2022",
+          "contest_slug": "arml-offsite",
+          "student_name": "Evan Chang",
+          "team_name": "Lehigh Valley A2",
+          "rank": "13",
+          "score": "8"
         }
       ]
     },
@@ -18751,6 +18847,16 @@
           "algebra_score": "25.21",
           "geometry_score": "29.31",
           "combinatorics_score": "13.58"
+        },
+        {
+          "contest": "ARML Offsite",
+          "year": "2022",
+          "contest_slug": "arml-offsite",
+          "student_name": "Rishabh Das",
+          "team_name": "NYC Math Team - Tin Man A1",
+          "rank": "7",
+          "score": "8",
+          "prize": "$500"
         }
       ]
     },
@@ -33567,6 +33673,15 @@
           "student_name": "Joseph Othman",
           "rank": "15",
           "score": "23.01"
+        },
+        {
+          "contest": "ARML Offsite",
+          "year": "2022",
+          "contest_slug": "arml-offsite",
+          "student_name": "Joseph Othman",
+          "team_name": "NYC Math Team - Tin Man A1",
+          "rank": "21",
+          "score": "8"
         }
       ]
     },
@@ -33785,6 +33900,16 @@
           "student_name": "Jackson Dryg",
           "state": "Colorado",
           "award": "Honors"
+        },
+        {
+          "contest": "ARML Offsite",
+          "year": "2022",
+          "contest_slug": "arml-offsite",
+          "student_name": "Jackson Dryg",
+          "team_name": "Colorado A1",
+          "rank": "9",
+          "score": "8",
+          "prize": "$500"
         }
       ]
     },
@@ -43583,6 +43708,15 @@
           "student_name": "Tanishq Pauskar",
           "state": "Ohio",
           "award": "Honors"
+        },
+        {
+          "contest": "ARML Offsite",
+          "year": "2022",
+          "contest_slug": "arml-offsite",
+          "student_name": "Tanishq Pauskar",
+          "team_name": "Ohio B1",
+          "rank": "19",
+          "score": "8"
         }
       ]
     },
@@ -50250,6 +50384,16 @@
           "student_name": "Albert Wang",
           "state": "Florida",
           "award": "Silver"
+        },
+        {
+          "contest": "ARML Offsite",
+          "year": "2022",
+          "contest_slug": "arml-offsite",
+          "student_name": "Albert Wang",
+          "team_name": "Florida A1",
+          "rank": "8",
+          "score": "8",
+          "prize": "$500"
         }
       ]
     },
@@ -50340,6 +50484,15 @@
           "student_name": "Kevin Wu",
           "state": "Maryland",
           "award": "Silver"
+        },
+        {
+          "contest": "ARML Offsite",
+          "year": "2022",
+          "contest_slug": "arml-offsite",
+          "student_name": "Kevin Wu",
+          "team_name": "Montgomery A1",
+          "rank": "16",
+          "score": "8"
         }
       ]
     },
@@ -50402,6 +50555,16 @@
           "student_name": "Daniel Yuan",
           "rank": "46",
           "score": "18.81"
+        },
+        {
+          "contest": "ARML Offsite",
+          "year": "2022",
+          "contest_slug": "arml-offsite",
+          "student_name": "Daniel Yuan",
+          "team_name": "Montgomery A1",
+          "rank": "6",
+          "score": "8",
+          "prize": "$500"
         }
       ]
     },
@@ -50698,6 +50861,15 @@
           "student_name": "Tristan Kay",
           "rank": "41",
           "score": "19.85"
+        },
+        {
+          "contest": "ARML Offsite",
+          "year": "2022",
+          "contest_slug": "arml-offsite",
+          "student_name": "Tristan Kay",
+          "team_name": "Washington A1",
+          "rank": "17",
+          "score": "8"
         }
       ]
     },
@@ -78785,6 +78957,63 @@
           "p8": "0"
         }
       ]
+    },
+    {
+      "id": 2489,
+      "name": "Darren Jia",
+      "aliases": [],
+      "state": "Pennsylvania",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "ARML Offsite",
+          "year": "2022",
+          "contest_slug": "arml-offsite",
+          "student_name": "Darren Jia",
+          "team_name": "Lehigh Valley A2",
+          "rank": "11",
+          "score": "8"
+        }
+      ]
+    },
+    {
+      "id": 2490,
+      "name": "Krish Mody",
+      "aliases": [],
+      "state": "Oklahoma",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "ARML Offsite",
+          "year": "2022",
+          "contest_slug": "arml-offsite",
+          "student_name": "Krish Mody",
+          "team_name": "Oklahoma All-Stars B1",
+          "rank": "14",
+          "score": "8"
+        }
+      ]
+    },
+    {
+      "id": 2491,
+      "name": "Jackson Gong",
+      "aliases": [],
+      "state": "Michigan",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "ARML Offsite",
+          "year": "2022",
+          "contest_slug": "arml-offsite",
+          "student_name": "Jackson Gong",
+          "team_name": "Michigan All Stars A1",
+          "rank": "18",
+          "score": "8"
+        }
+      ]
     }
   ],
   "contests": {
@@ -78923,6 +79152,11 @@
       "description": "American Regions Mathematics League. Regional team competition with power and individual rounds.",
       "website": "https://arml3.com/"
     },
+    "arml-offsite": {
+      "contest_name": "ARML Offsite",
+      "description": "ARML Offsite top individuals by score (remote competition).",
+      "website": "https://arml3.com/"
+    },
     "dmm": {
       "contest_name": "DMM",
       "description": "Duke Math Meet. Annual mathematics competition at Duke University with individual and team rounds.",
@@ -78995,6 +79229,9 @@
       "2022": "results.csv",
       "2024": "results.csv",
       "2025": "results.csv"
+    },
+    "arml-offsite": {
+      "2022": "results.csv"
     },
     "bamo-12": {
       "2022": "results.csv",
@@ -79216,6 +79453,7 @@
     "cmimc-comb",
     "cmimc-geometry",
     "arml",
+    "arml-offsite",
     "dmm",
     "cmm",
     "mpfg",
