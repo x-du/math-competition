@@ -17,11 +17,6 @@ python scripts/build_search_data.py
 
 This writes `docs/data.json` from the `database/` CSVs.
 
-To validate MATHCOUNTS National — Rankings (≤3 appearances, all grades distinct):
-
-```bash
-python scripts/check_mathcounts_national_students.py
-```
 
 ### Data quality
 
