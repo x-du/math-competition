@@ -3011,14 +3011,6 @@
           "score": "33.81"
         },
         {
-          "contest": "HMMT February — Algebra & Number Theory",
-          "year": "2026",
-          "contest_slug": "hmmt-feb-algebra-number-theory",
-          "student_name": "Bowen Deng",
-          "rank": "50",
-          "score": "20.95"
-        },
-        {
           "contest": "HMMT February",
           "year": "2026",
           "contest_slug": "hmmt-feb",
@@ -3174,7 +3166,7 @@
           "contest_slug": "hmmt-feb",
           "student_name": "Ashvin Sinha",
           "rank": "20",
-          "total_score": "73.7",
+          "total_score": "73.70",
           "algebra_score": "15.72",
           "geometry_score": "18.82",
           "combinatorics_score": "39.16"
@@ -3284,7 +3276,7 @@
           "rank": "21",
           "total_score": "71.55",
           "algebra_score": "25.17",
-          "geometry_score": "11.5",
+          "geometry_score": "11.50",
           "combinatorics_score": "34.88"
         },
         {
@@ -3469,14 +3461,6 @@
           "student_name": "Jeffrey Yin",
           "rank": "11",
           "score": "31.59"
-        },
-        {
-          "contest": "HMMT February — Algebra & Number Theory",
-          "year": "2026",
-          "contest_slug": "hmmt-feb-algebra-number-theory",
-          "student_name": "Jeffrey Yin",
-          "rank": "50",
-          "score": "20.95"
         },
         {
           "contest": "HMMT February",
@@ -3780,7 +3764,7 @@
           "rank": "23",
           "total_score": "71.37",
           "algebra_score": "25.17",
-          "geometry_score": "14.6",
+          "geometry_score": "14.60",
           "combinatorics_score": "31.59"
         },
         {
@@ -4028,7 +4012,7 @@
           "year": "2026",
           "contest_slug": "hmmt-feb-algebra-number-theory",
           "student_name": "Ryan Li",
-          "rank": "44",
+          "rank": "45",
           "score": "21.07"
         },
         {
@@ -4736,7 +4720,7 @@
           "rank": "31",
           "total_score": "67.08",
           "algebra_score": "25.17",
-          "geometry_score": "14.6",
+          "geometry_score": "14.60",
           "combinatorics_score": "27.31"
         },
         {
@@ -5505,7 +5489,7 @@
           "year": "2026",
           "contest_slug": "hmmt-feb-algebra-number-theory",
           "student_name": "Jialai She",
-          "rank": "44",
+          "rank": "45",
           "score": "21.07"
         },
         {
@@ -6660,14 +6644,6 @@
           "score": "26.43"
         },
         {
-          "contest": "HMMT February — Algebra & Number Theory",
-          "year": "2026",
-          "contest_slug": "hmmt-feb-algebra-number-theory",
-          "student_name": "Ray Zhao",
-          "rank": "50",
-          "score": "20.95"
-        },
-        {
           "contest": "HMMT February",
           "year": "2026",
           "contest_slug": "hmmt-feb",
@@ -6788,7 +6764,7 @@
           "year": "2026",
           "contest_slug": "hmmt-feb-algebra-number-theory",
           "student_name": "Shaohuan Zhang",
-          "rank": "44",
+          "rank": "45",
           "score": "21.07"
         },
         {
@@ -7125,7 +7101,7 @@
           "contest_slug": "hmmt-feb",
           "student_name": "Yunzhe Bai",
           "rank": "50",
-          "total_score": "61.8",
+          "total_score": "61.80",
           "algebra_score": "10.32",
           "geometry_score": "24.17",
           "combinatorics_score": "27.31"
@@ -8524,14 +8500,6 @@
       "gender": "female",
       "grade_in_2026": "10",
       "records": [
-        {
-          "contest": "HMMT February — Algebra & Number Theory",
-          "year": "2026",
-          "contest_slug": "hmmt-feb-algebra-number-theory",
-          "student_name": "Selena Ge",
-          "rank": "50",
-          "score": "20.95"
-        },
         {
           "contest": "USAJMO",
           "year": "2025",
@@ -22432,6 +22400,14 @@
       "grade_in_2026": null,
       "records": [
         {
+          "contest": "HMMT February — Algebra & Number Theory",
+          "year": "2026",
+          "contest_slug": "hmmt-feb-algebra-number-theory",
+          "student_name": "Jennifer Zhou",
+          "rank": "44",
+          "score": "21.14"
+        },
+        {
           "contest": "PUMaC — Division A Algebra",
           "year": "2025",
           "contest_slug": "pumac-algebra",
@@ -26319,7 +26295,7 @@
           "year": "2026",
           "contest_slug": "hmmt-feb-algebra-number-theory",
           "student_name": "Gabriel Levin",
-          "rank": "44",
+          "rank": "45",
           "score": "21.07"
         },
         {
@@ -29975,7 +29951,7 @@
           "year": "2026",
           "contest_slug": "hmmt-feb-algebra-number-theory",
           "student_name": "Akshaj Arora",
-          "rank": "44",
+          "rank": "45",
           "score": "21.07"
         },
         {
@@ -30019,7 +29995,7 @@
           "year": "2026",
           "contest_slug": "hmmt-feb-algebra-number-theory",
           "student_name": "Eric Shu",
-          "rank": "44",
+          "rank": "45",
           "score": "21.07"
         }
       ]
@@ -30039,14 +30015,6 @@
           "student_name": "Patrick Sun",
           "rank": "33",
           "score": "25.28"
-        },
-        {
-          "contest": "HMMT February — Algebra & Number Theory",
-          "year": "2026",
-          "contest_slug": "hmmt-feb-algebra-number-theory",
-          "student_name": "Patrick Sun",
-          "rank": "50",
-          "score": "20.95"
         }
       ]
     },
