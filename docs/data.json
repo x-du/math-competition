@@ -23638,15 +23638,6 @@
           "p8": "0"
         },
         {
-          "contest": "MMATHS",
-          "year": "2025",
-          "contest_slug": "mmaths",
-          "student_name": "Daniel Ge",
-          "rank": "26",
-          "score": "9",
-          "team": "Mass ARML"
-        },
-        {
           "contest": "USAJMO",
           "year": "2024",
           "contest_slug": "jmo",
@@ -78753,6 +78744,25 @@
           "student_name": "Matthias Kim",
           "state": "Washington",
           "award": "Bronze"
+        }
+      ]
+    },
+    {
+      "id": 2487,
+      "name": "Daniel Ge",
+      "aliases": [],
+      "state": "Massachusetts",
+      "gender": "male",
+      "grade_in_2026": "11",
+      "records": [
+        {
+          "contest": "MMATHS",
+          "year": "2025",
+          "contest_slug": "mmaths",
+          "student_name": "Daniel Ge",
+          "rank": "26",
+          "score": "9",
+          "team": "Mass ARML"
         }
       ]
     }
