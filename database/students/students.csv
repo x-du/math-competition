@@ -1239,7 +1239,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1298,Thomas Yao,Maryland,,,male,11
 1299,Parsa Adhami,South Carolina,,,male,
 1300,Mingfei Zhou,China,,,male,
-1301,Gloria Lu,Virginia,,,female,
+1301,Gloria Lu,Virginia,,,female,9
 1302,Nelson Huang,,,,male,
 1303,Sixun Zheng,China,,,male,
 1304,Ethan Shan,Virginia,,,male,10
@@ -1249,7 +1249,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1308,Roman  Mecholsky,Maryland,,,male,
 1309,Jahl Miraji-Khot,South Carolina,,,male,
 1310,Dylan Zhang,,,,male,
-1311,Sarah Li,Virginia,,,female,
+1311,Sarah Li,Virginia,,,female,11
 1312,Aaron Zhu,,,,male,
 1313,Srinivas Vijay Babu,,,,male,
 1314,Thanh Can,,,,male,
@@ -1261,7 +1261,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1320,Jeffrey Du,Virginia,,,male,9
 1321,Yeeyung Li,Virginia,,,male,10
 1322,William Li,Virginia,,,male,9
-1323,Ryan Chan,Virginia,,,male,
+1323,Ryan Chan,Virginia,,,male,11
 1324,Ishidevesh Behera,,,,male,
 1325,Atharv Mittal,,,,male,
 1326,Yufei Chen,California,,,male,
@@ -1442,7 +1442,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1502,Isabella Quan,Texas,24,,female,
 1503,Maxwell Zen,California,123,,male,
 1504,Jason Jiang,Nebraska,334,,male,14
-1505,Utkarsh Goyal,Virginia,122,,male,
+1505,Utkarsh Goyal,Virginia,122,,male,15
 1506,Nathan Cho,Maryland,65,,male,15
 1507,Jasen Plamenov Penchev,,338,,male,
 1508,Eric Yang,California,339,,male,
