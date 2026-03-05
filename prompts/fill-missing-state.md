@@ -4,6 +4,8 @@
 
 **Rule:** Always use **student_id** to find a student’s records. Do not match or infer state from name alone; same names in different states are different students.
 
+**Workflow:** Do **not** use a script to update state. Use an LLM (or manual search) to look up state by **school name** when contest records have school but no state (see 2.2). Update `students.csv` only after you have a clear, student_id-based source.
+
 ---
 
 ## 1. Identify students with missing state
@@ -17,7 +19,9 @@
 
 For each student with missing state, try sources in the following order. Use the **first** state you find for that **student_id**; stop once you have one.
 
-### 2.1 State from Mathcounts data
+### 2.1 State from Mathcounts, AMO, and JMO
+
+These sources always have state information. Check all available years for the student’s `student_id`.
 
 - **`database/contests/mathcounts-national/`**  
   - Per year: `year=<year>/competitors.csv` has columns `student_id`, `state`, `student_name`, `grade`, `city`, `school`.  
@@ -25,23 +29,28 @@ For each student with missing state, try sources in the following order. Use the
 - **`database/contests/mathcounts-national-rank/`**  
   - Per year: `year=<year>/results.csv` has columns `student_id`, `student_name`, `state`, `year`, `rank`, `grade`.  
   - If the student’s `student_id` appears here, use the `state` value from that row.
+- **`database/contests/amo/`**  
+  - Per year: `year=<year>/results.csv` has `student_id`, `student_name`, `state`, `award`. AMO always has state; use it when the student appears here.
+- **`database/contests/jmo/`**  
+  - Per year: `year=<year>/results.csv` has `student_id`, `student_name`, `state`, `award`. JMO always has state; use it when the student appears here.
 
-Check all available years in both contest folders. Use the first non-empty state you find for that `student_id`.
+Use the first non-empty state you find for that `student_id`.
 
-### 2.2 State from other contests with school or location information
+### 2.2 State from other contests: explicit state column or LLM lookup by school name
 
 - Search other contest result files under `database/contests/` that contain **state**, **school**, **team**, or **site** columns.
 - For each such file, look up rows where `student_id` matches the student.  
-  - If the row has a **state** column, use that state.  
-  - If the row has **school** (or similar) but no state, you may infer state from school name/location only when the source clearly indicates state (e.g. “California” in the name or a documented mapping). Prefer explicit state columns over inference.
-- Examples of contests that may have state or school: `amo`, `jmo`, `mpfg`, `mpfg-olympiad`, `bamo-8`, `bamo-12`, `arml` (site), `dmm` (team_name), etc. Inspect each file’s header and use only columns that exist.
+  - If the row has a **state** column with a non-empty value, use that state.  
+  - If the row has **school** (or similar) but no state: only when that row has a **non-empty school name**, use an **LLM to search for the state** by school name (e.g. “What US state is [school name] located in?” or a web/search lookup). Assign state only when the LLM (or search) returns a clear, confident answer for that school. **If there is no school name in the record, skip that source**; do not infer state from empty or missing school.
+  - For **team** or **site** without state: only if the value clearly indicates state (e.g. “California” in the name), you may use it; otherwise use LLM search by that name if it looks like a school or location.
+- Examples of contests that may have state or school: `mpfg`, `mpfg-olympiad`, `bamo-8`, `bamo-12`, `arml` (site), `dmm` (team_name), etc. Inspect each file’s header and use only columns that exist.
 
-Again: match only by **student_id**; do not use name alone to assign state.
+Match only by **student_id**; do not use name alone to assign state.
 
 ### 2.3 State from team name
 
-- If state is still missing, check whether the student has **team_ids** in `students.csv` or appears in contest-specific team files (e.g. `database/contests/<contest>-teams/year=<year>/teams.csv` with `team_id`, `team_name`, `student_ids`).
-- Look up the **team_name** for that student’s team(s). If the team name clearly indicates a state (e.g. “Texas A&M”, “California Math Club”), you may set state from that. Prefer unambiguous state references in the team name; if ambiguous, leave state blank.
+- **Only if** the student has **team_ids** in `students.csv` or appears in contest-specific team files (e.g. `database/contests/<contest>-teams/year=<year>/teams.csv` with `team_id`, `team_name`, `student_ids`), and **only when a non-empty team name exists** for that student: look up the **team_name** and, if it clearly indicates a state (e.g. “Texas A&M”, “California Math Club”), you may set state from that. Prefer unambiguous state references in the team name; if ambiguous, leave state blank.
+- **If there is no team name** (e.g. student has no team_ids, or team record has no team_name), **skip this step**; do not guess state from team.
 
 ---
 
@@ -55,6 +64,6 @@ Again: match only by **student_id**; do not use name alone to assign state.
 
 ## Summary
 
-1. List students in `students.csv` with empty `state`.
-2. For each, use **student_id** only to look up state in: (1) mathcounts-national and mathcounts-national-rank, (2) other contest CSVs with state/school, (3) team name when it clearly indicates state.
-3. Update `state` in `students.csv` only when you have a clear, student_id-based source. Never guess based on student name alone.
+1. List students in `students.csv` with empty `state`. Do **not** use a script to apply updates.
+2. For each, use **student_id** only to look up state in: (1) mathcounts-national, mathcounts-national-rank, AMO, and JMO (use state from those CSVs when present), (2) other contest CSVs—use explicit **state** column when present; when only **school name** is present and non-empty, use an **LLM to search** for the state by school name and assign only when the result is clear, (3) team name only when non-empty and it clearly indicates state.
+3. Update `state` in `students.csv` manually (or via LLM-assisted edits) only when you have a clear, student_id-based source. Never guess based on student name alone.

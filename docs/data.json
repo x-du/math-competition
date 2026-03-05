@@ -2197,14 +2197,6 @@
           "algebra_score": "32.67",
           "geometry_score": "18.82",
           "combinatorics_score": "31.59"
-        },
-        {
-          "contest": "USAMO",
-          "year": "2025",
-          "contest_slug": "amo",
-          "student_name": "Dou Lai",
-          "state": "Illinois",
-          "award": "Honorable Mention"
         }
       ]
     },
@@ -3425,6 +3417,14 @@
           "algebra_score": "15.72",
           "geometry_score": "24.17",
           "combinatorics_score": "31.59"
+        },
+        {
+          "contest": "USAMO",
+          "year": "2025",
+          "contest_slug": "amo",
+          "student_name": "Ian Rui",
+          "state": "Washington",
+          "award": "Bronze"
         },
         {
           "contest": "HMMT February — Geometry",
@@ -6801,14 +6801,6 @@
           "algebra_score": "21.07",
           "geometry_score": "20.01",
           "combinatorics_score": "21.01"
-        },
-        {
-          "contest": "USAMO",
-          "year": "2025",
-          "contest_slug": "amo",
-          "student_name": "Shaohuan Zhang",
-          "state": "Michigan",
-          "award": "Silver"
         },
         {
           "contest": "MMATHS",
@@ -10235,14 +10227,6 @@
       "gender": "male",
       "grade_in_2026": "12",
       "records": [
-        {
-          "contest": "USAMO",
-          "year": "2025",
-          "contest_slug": "amo",
-          "student_name": "Edward Li",
-          "state": "Iowa",
-          "award": "Silver"
-        },
         {
           "contest": "HMMT February — Geometry",
           "year": "2025",
@@ -22926,9 +22910,9 @@
       "id": 245,
       "name": "Corwin Eisenbeiss",
       "aliases": [],
-      "state": "New Hampshire",
+      "state": "New York",
       "gender": "male",
-      "grade_in_2026": null,
+      "grade_in_2026": "11",
       "records": [
         {
           "contest": "HMMT February — Geometry",
@@ -22937,14 +22921,6 @@
           "student_name": "Corwin Eisenbeiss",
           "rank": "6",
           "score": "30.59"
-        },
-        {
-          "contest": "USAMO",
-          "year": "2025",
-          "contest_slug": "amo",
-          "student_name": "Corwin Eisenbeiss",
-          "state": "New Hampshire",
-          "award": "Honorable Mention"
         },
         {
           "contest": "PUMaC — Division A Geometry",
@@ -24662,14 +24638,6 @@
       "gender": "male",
       "grade_in_2026": null,
       "records": [
-        {
-          "contest": "USAMO",
-          "year": "2025",
-          "contest_slug": "amo",
-          "student_name": "Evin Liang",
-          "state": "Massachusetts",
-          "award": "Silver"
-        },
         {
           "contest": "USAMO",
           "year": "2024",
@@ -28405,10 +28373,18 @@
       "id": 328,
       "name": "Aryan Agrawal",
       "aliases": [],
-      "state": "",
+      "state": "Washington",
       "gender": "male",
       "grade_in_2026": null,
       "records": [
+        {
+          "contest": "USAMO",
+          "year": "2025",
+          "contest_slug": "amo",
+          "student_name": "Aryan Agrawal",
+          "state": "Washington",
+          "award": "Bronze"
+        },
         {
           "contest": "HMMT February — Algebra & Number Theory",
           "year": "2025",
@@ -34974,14 +34950,6 @@
       "records": [
         {
           "contest": "USAMO",
-          "year": "2025",
-          "contest_slug": "amo",
-          "student_name": "Ivy Guo",
-          "state": "Maryland",
-          "award": "Bronze"
-        },
-        {
-          "contest": "USAMO",
           "year": "2024",
           "contest_slug": "amo",
           "student_name": "Ivy Guo",
@@ -38917,14 +38885,6 @@
       "grade_in_2026": "10",
       "records": [
         {
-          "contest": "USAMO",
-          "year": "2025",
-          "contest_slug": "amo",
-          "student_name": "Drake Tan",
-          "state": "Texas",
-          "award": "Silver"
-        },
-        {
           "contest": "MATHCOUNTS National — Rankings",
           "year": "2024",
           "contest_slug": "mathcounts-national-rank",
@@ -41816,7 +41776,7 @@
       "aliases": [],
       "state": "New Hampshire",
       "gender": "male",
-      "grade_in_2026": null,
+      "grade_in_2026": "13",
       "records": [
         {
           "contest": "USAMO",
@@ -41900,14 +41860,6 @@
       "gender": "male",
       "grade_in_2026": null,
       "records": [
-        {
-          "contest": "USAMO",
-          "year": "2025",
-          "contest_slug": "amo",
-          "student_name": "Eden He",
-          "state": "Pennsylvania",
-          "award": "Bronze"
-        },
         {
           "contest": "PUMaC — Division B Geometry",
           "year": "2025",
@@ -42683,7 +42635,7 @@
       "id": 921,
       "name": "Alicia Li",
       "aliases": [],
-      "state": "New Hampshire",
+      "state": "New York",
       "gender": "female",
       "grade_in_2026": "12",
       "records": [
@@ -42692,7 +42644,7 @@
           "year": "2025",
           "contest_slug": "amo",
           "student_name": "Alicia Li",
-          "state": "New Hampshire",
+          "state": "New York",
           "award": "Honorable Mention"
         },
         {
@@ -44068,7 +44020,7 @@
       "aliases": [],
       "state": "New Hampshire",
       "gender": "male",
-      "grade_in_2026": null,
+      "grade_in_2026": "13",
       "records": [
         {
           "contest": "USAMO",
@@ -44447,7 +44399,7 @@
       "aliases": [],
       "state": "New Hampshire",
       "gender": "male",
-      "grade_in_2026": null,
+      "grade_in_2026": "15",
       "records": [
         {
           "contest": "USAMO",
@@ -48571,7 +48523,7 @@
       "aliases": [],
       "state": "New Hampshire",
       "gender": "male",
-      "grade_in_2026": null,
+      "grade_in_2026": "15",
       "records": [
         {
           "contest": "USAMO",
@@ -50079,7 +50031,7 @@
       "aliases": [],
       "state": "New Hampshire",
       "gender": "male",
-      "grade_in_2026": null,
+      "grade_in_2026": "16",
       "records": [
         {
           "contest": "USAMO",
@@ -50115,7 +50067,7 @@
       "aliases": [],
       "state": "New Hampshire",
       "gender": "male",
-      "grade_in_2026": null,
+      "grade_in_2026": "16",
       "records": [
         {
           "contest": "USAMO",
@@ -50151,7 +50103,7 @@
       "aliases": [],
       "state": "New Hampshire",
       "gender": "male",
-      "grade_in_2026": null,
+      "grade_in_2026": "16",
       "records": [
         {
           "contest": "USAMO",
@@ -50276,7 +50228,7 @@
       "aliases": [],
       "state": "New Hampshire",
       "gender": "male",
-      "grade_in_2026": null,
+      "grade_in_2026": "16",
       "records": [
         {
           "contest": "USAMO",
@@ -50356,7 +50308,7 @@
       "aliases": [],
       "state": "New Hampshire",
       "gender": "male",
-      "grade_in_2026": null,
+      "grade_in_2026": "16",
       "records": [
         {
           "contest": "USAMO",
@@ -50544,7 +50496,7 @@
       "aliases": [],
       "state": "New Hampshire",
       "gender": "male",
-      "grade_in_2026": null,
+      "grade_in_2026": "16",
       "records": [
         {
           "contest": "USAMO",
@@ -78825,6 +78777,24 @@
           "p6": "0",
           "p7": "0",
           "p8": "0"
+        }
+      ]
+    },
+    {
+      "id": 2486,
+      "name": "Matthias Kim",
+      "aliases": [],
+      "state": "Washington",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "USAMO",
+          "year": "2025",
+          "contest_slug": "amo",
+          "student_name": "Matthias Kim",
+          "state": "Washington",
+          "award": "Bronze"
         }
       ]
     }
