@@ -4705,7 +4705,7 @@
       "aliases": [],
       "state": "Maryland",
       "gender": "male",
-      "grade_in_2026": "11",
+      "grade_in_2026": "12",
       "records": [
         {
           "contest": "HMMT February — Combinatorics",
@@ -30482,24 +30482,6 @@
           "p1": "1",
           "p2": "1",
           "p3": "1",
-          "p4": "0",
-          "p5": "0",
-          "p6": "0",
-          "p7": "0",
-          "p8": "0"
-        },
-        {
-          "contest": "PUMaC — Division B Number Theory",
-          "year": "2022",
-          "contest_slug": "pumac-b-number-theory",
-          "team_name": "Knights Beta",
-          "student_name": "Jack Wang",
-          "division": "B",
-          "rank": "25",
-          "score": "3.362",
-          "p1": "1",
-          "p2": "1",
-          "p3": "0",
           "p4": "0",
           "p5": "0",
           "p6": "0",
@@ -79289,6 +79271,34 @@
           "team": "Michigan All Stars A1",
           "rank": "18",
           "score": "8"
+        }
+      ]
+    },
+    {
+      "id": 2492,
+      "name": "Jack Wang",
+      "aliases": [],
+      "state": "",
+      "gender": "male",
+      "grade_in_2026": null,
+      "records": [
+        {
+          "contest": "PUMaC — Division B Number Theory",
+          "year": "2022",
+          "contest_slug": "pumac-b-number-theory",
+          "team_name": "Knights Beta",
+          "student_name": "Jack Wang",
+          "division": "B",
+          "rank": "25",
+          "score": "3.362",
+          "p1": "1",
+          "p2": "1",
+          "p3": "0",
+          "p4": "0",
+          "p5": "0",
+          "p6": "0",
+          "p7": "0",
+          "p8": "0"
         }
       ]
     }

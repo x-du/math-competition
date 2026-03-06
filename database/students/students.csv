@@ -29,7 +29,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 28,Rohan Nayak Mallick,California,2|59,,male,10
 29,Patrick Du,Virginia,10|72|85|215|290,,male,11
 30,Eric Dai,New Jersey,22|473|492,,male,11
-31,Lewis Lau,Maryland,23,,male,11
+31,Lewis Lau,Maryland,23,,male,12
 32,Benjamin Jiang,Florida,19,Ben Jiang,male,10
 33,Roger Zhen,Texas,24|106,,male,10
 34,Jiahe Liu,Ohio,25|37|87|116,,male,12
@@ -2413,3 +2413,4 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 2489,Darren Jia,Pennsylvania,,,male,
 2490,Krish Mody,Oklahoma,,,male,
 2491,Jackson Gong,Michigan,,,male,
+2492,Jack Wang,,,,male,
