@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Report Integrity Concern — Math Competition</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <h1>Report Integrity Concern</h1>
+    <p class="tagline">Submit a report about suspected cheating in a math competition. All reports are anonymous. Reports are not verified — mathintegrity.org does not take responsibility for the accuracy of any report. Limit 5 reports per reporter.</p>
+    <a href="index.html" class="back-link">&larr; Back to student records</a>
+  </header>
+
+  <main class="main">
+    <section class="report-form-section">
+      <h2 class="report-section-title">Submit a Report</h2>
+      <form id="report-form" class="report-form" autocomplete="off">
+        <div class="form-field">
+          <label for="reported-name" class="form-label">Name of person <span class="required">*</span></label>
+          <input type="text" id="reported-name" name="name" class="form-input" required placeholder="Full name as it appears in contest results">
+        </div>
+        <div class="form-field">
+          <label for="reported-state" class="form-label">State</label>
+          <select id="reported-state" name="state" class="form-select">
+            <option value="">Select state (optional)</option>
+            <option value="Alabama">Alabama</option>
+            <option value="Alaska">Alaska</option>
+            <option value="Arizona">Arizona</option>
+            <option value="Arkansas">Arkansas</option>
+            <option value="California">California</option>
+            <option value="Colorado">Colorado</option>
+            <option value="Connecticut">Connecticut</option>
+            <option value="Delaware">Delaware</option>
+            <option value="District of Columbia">District of Columbia</option>
+            <option value="Florida">Florida</option>
+            <option value="Georgia">Georgia</option>
+            <option value="Hawaii">Hawaii</option>
+            <option value="Idaho">Idaho</option>
+            <option value="Illinois">Illinois</option>
+            <option value="Indiana">Indiana</option>
+            <option value="Iowa">Iowa</option>
+            <option value="Kansas">Kansas</option>
+            <option value="Kentucky">Kentucky</option>
+            <option value="Louisiana">Louisiana</option>
+            <option value="Maine">Maine</option>
+            <option value="Maryland">Maryland</option>
+            <option value="Massachusetts">Massachusetts</option>
+            <option value="Michigan">Michigan</option>
+            <option value="Minnesota">Minnesota</option>
+            <option value="Mississippi">Mississippi</option>
+            <option value="Missouri">Missouri</option>
+            <option value="Montana">Montana</option>
+            <option value="Nebraska">Nebraska</option>
+            <option value="Nevada">Nevada</option>
+            <option value="New Hampshire">New Hampshire</option>
+            <option value="New Jersey">New Jersey</option>
+            <option value="New Mexico">New Mexico</option>
+            <option value="New York">New York</option>
+            <option value="North Carolina">North Carolina</option>
+            <option value="North Dakota">North Dakota</option>
+            <option value="Ohio">Ohio</option>
+            <option value="Oklahoma">Oklahoma</option>
+            <option value="Oregon">Oregon</option>
+            <option value="Pennsylvania">Pennsylvania</option>
+            <option value="Rhode Island">Rhode Island</option>
+            <option value="South Carolina">South Carolina</option>
+            <option value="South Dakota">South Dakota</option>
+            <option value="Tennessee">Tennessee</option>
+            <option value="Texas">Texas</option>
+            <option value="Utah">Utah</option>
+            <option value="Vermont">Vermont</option>
+            <option value="Virginia">Virginia</option>
+            <option value="Washington">Washington</option>
+            <option value="West Virginia">West Virginia</option>
+            <option value="Wisconsin">Wisconsin</option>
+            <option value="Wyoming">Wyoming</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="reported-contest" class="form-label">Contest <span class="required">*</span></label>
+          <input type="text" id="reported-contest" name="contest" class="form-input" required placeholder="e.g. AMC 10, MATHCOUNTS State, HMMT Feb 2025">
+        </div>
+        <div class="form-field">
+          <label for="reported-description" class="form-label">Description</label>
+          <textarea id="reported-description" name="description" class="form-textarea" rows="4" placeholder="Describe the concern and share a link to any evidence (e.g. screenshots, documents) uploaded to Google Drive, Dropbox, or other cloud storage."></textarea>
+        </div>
+        <!-- Honeypot for bots -->
+        <div class="form-field" style="position:absolute;left:-9999px" aria-hidden="true">
+          <label for="website">Website</label>
+          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+        </div>
+        <button type="submit" id="report-submit" class="report-submit-btn">Submit Report</button>
+        <p id="report-status" class="report-status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="report-stats-section">
+      <h2 class="report-section-title">Report Summary</h2>
+      <p class="report-stats-subtitle">Aggregated from all submitted reports. Sorted by number of reports.</p>
+      <div id="report-stats-loading" class="loading">Loading reports…</div>
+      <div id="report-stats-empty" class="empty-state" hidden>
+        <p>No reports have been submitted yet.</p>
+      </div>
+      <div id="report-stats-wrap" class="records-table-wrap" hidden>
+        <table class="records-table report-stats-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>State</th>
+              <th>Contest(s)</th>
+              <th class="num"># Reports</th>
+            </tr>
+          </thead>
+          <tbody id="report-stats-body"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>All reports are stored anonymously. This system is intended for community-driven integrity monitoring.</p>
+    <p><a href="index.html">Back to student records</a></p>
+  </footer>
+
+  <script src="report.js"></script>
+</body>
+</html>

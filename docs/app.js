@@ -876,6 +876,8 @@
         }
         var amoTrigger = document.getElementById("amo-alert-trigger");
         if (amoTrigger) amoTrigger.hidden = !(isAmoAlertFeatureEnabled() && amoAlertList.length > 0);
+        var reportBtn = document.getElementById("report-link-btn");
+        if (reportBtn) reportBtn.hidden = !isAmoAlertFeatureEnabled();
         requestAnimationFrame(function () {
           renderContestList();
           updateContestFilterSummary();
