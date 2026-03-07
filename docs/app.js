@@ -75,7 +75,8 @@
     mpfg: function (slug) { return slug === "mpfg"; },
     "mpfg-olympiad": function (slug) { return slug.indexOf("mpfg-olympiad") !== -1; },
     "bamo-8": function (slug) { return slug.indexOf("bamo-8") !== -1; },
-    "bamo-12": function (slug) { return slug.indexOf("bamo-12") !== -1; }
+    "bamo-12": function (slug) { return slug.indexOf("bamo-12") !== -1; },
+    bmt: function (slug) { return slug.indexOf("bmt") === 0; }
   };
 
   function getActiveContestFilterValues() {
@@ -385,9 +386,6 @@
     }
     var slugs = [];
     for (var k in contests) if (Object.prototype.hasOwnProperty.call(contests, k)) slugs.push(k);
-    slugs = slugs.filter(function (slug) {
-      return !slug.toLowerCase().startsWith("bmt");
-    });
     slugs.sort(compareContestSlugs);
     var parts = [];
     var githubBase = "https://github.com/x-du/math-competition/blob/main/database/contests/";
@@ -623,8 +621,8 @@
       var n = amoAlertList.length;
       if (summaryEl) {
         summaryEl.textContent = n === 1
-          ? "1 student with AMO 2025 Gold, Silver, Bronze, or Honorable Mention has no prior track in JMO, AMO (prior years), HMMT Feb, HMMT Nov, CMIMC, BAMO-12, PUMaC Div A, or ARML. Tap a name to search."
-          : n + " students with AMO 2025 Gold, Silver, Bronze, or Honorable Mention have no prior track in JMO, AMO (prior years), HMMT Feb, HMMT Nov, CMIMC, BAMO-12, PUMaC Div A, or ARML. Tap a name to search.";
+          ? "1 student with AMO 2025 Gold, Silver, Bronze, or Honorable Mention has no prior track in JMO, AMO (prior years), HMMT Feb, HMMT Nov, CMIMC, BAMO-12, PUMaC Div A, ARML, or BMT. Tap a name to search."
+          : n + " students with AMO 2025 Gold, Silver, Bronze, or Honorable Mention have no prior track in JMO, AMO (prior years), HMMT Feb, HMMT Nov, CMIMC, BAMO-12, PUMaC Div A, ARML, or BMT. Tap a name to search.";
       }
       var items = [];
       for (var i = 0; i < amoAlertList.length; i++) {

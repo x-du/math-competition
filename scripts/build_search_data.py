@@ -19,12 +19,9 @@ OUTPUT_JSON = REPO_ROOT / "docs" / "data.json"
 # Contest slugs to exclude from data.json (still kept in database).
 CONTESTS_SKIP_FOR_SEARCH = {
     "mathcounts-national",
-    "bmt",
-    "bmt-algebra",
-    "bmt-calculus",
-    "bmt-discrete",
-    "bmt-geometry",
 }
+
+BMT_CONTESTS = {"bmt", "bmt-algebra", "bmt-calculus", "bmt-discrete", "bmt-geometry"}
 
 
 def humanize_contest(slug: str) -> str:
@@ -124,6 +121,13 @@ def main() -> None:
         if not rows:
             continue
         for row in rows:
+            if slug in BMT_CONTESTS:
+                try:
+                    rank = int(row.get("rank", ""))
+                except (ValueError, TypeError):
+                    continue
+                if rank < 1 or rank > 10:
+                    continue
             sid = row.get("student_id") or row.get("student_id ")
             if sid is not None:
                 sid = str(sid).strip()

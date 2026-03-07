@@ -1,7 +1,7 @@
 /**
  * AMO 2025 Gold/Silver/Bronze/Honorable Mention alert check.
  * Finds students who have AMO 2025 Gold, Silver, Bronze, or Honorable Mention but no track records in:
- * JMO, previous years AMO, HMMT Feb, HMMT Nov, CMIMC, BAMO-12, PUMaC Div A, ARML.
+ * JMO, previous years AMO, HMMT Feb, HMMT Nov, CMIMC, BAMO-12, PUMaC Div A, ARML, BMT.
  * Exposed as window.AmoAlertCheck.getAmo2025GoldSilverNoTrack(students).
  */
 (function () {
@@ -64,6 +64,10 @@
     return slug.indexOf("arml") !== -1;
   }
 
+  function isBmt(slug) {
+    return slug.indexOf("bmt") === 0;
+  }
+
   function isTrackRecord(record) {
     if (!record) return false;
     var slug = (record.contest_slug || record.contest || "").toString().toLowerCase();
@@ -76,7 +80,8 @@
       isCmimc(slug) ||
       isBamo12(slug) ||
       isPumacA(slug) ||
-      isArml(slug);
+      isArml(slug) ||
+      isBmt(slug);
   }
 
   function hasAmo2025GoldOrSilver(records) {
@@ -103,7 +108,7 @@
   /**
    * @param {Array<{ id: number, name: string, records: Array }>} students
    * @returns {Array<{ id: number, name: string, state: string, award: string }>} students who are AMO 2025 Gold/Silver/Bronze/Honorable Mention
-   *   and have no track record in JMO, previous AMO, hmmt-feb, hmmt-nov, cmimc, bamo-12, pumac div A, arml.
+   *   and have no track record in JMO, previous AMO, hmmt-feb, hmmt-nov, cmimc, bamo-12, pumac div A, arml, bmt.
    */
   function getAmo2025GoldSilverNoTrack(students) {
     if (!students || !students.length) return [];
