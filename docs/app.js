@@ -21,6 +21,8 @@
   var contestFilterSummaryEl = document.getElementById("contest-filter-summary");
 
   var amoAlertList = [];
+  var stateDistPopoverOpen = false;
+  var latestStateDist = { students: {}, records: {} };
 
   function isAmoAlertFeatureEnabled() {
     try {
@@ -520,6 +522,13 @@
 
     var totalCountEl = document.getElementById("total-student-count");
     if (totalCountEl) totalCountEl.textContent = String(counts.length);
+    var totalRecords = 0;
+    for (var j = 0; j < counts.length; j++) totalRecords += counts[j].recordsCount;
+    var totalRecordEl = document.getElementById("total-record-count");
+    if (totalRecordEl) totalRecordEl.textContent = String(totalRecords);
+
+    computeStateDistributions(counts);
+    if (stateDistPopoverOpen) renderStateDistCharts();
 
     if (!counts.length) {
       var emptyMsg = (girlsOnlyEl && girlsOnlyEl.checked)
@@ -849,6 +858,142 @@
     if (btn) btn.disabled = false;
   }
 
+  var PIE_COLORS = [
+    "#60a5fa", "#f472b6", "#34d399", "#fbbf24", "#a78bfa",
+    "#fb923c", "#22d3ee", "#f87171", "#4ade80", "#e879f9",
+    "#38bdf8", "#facc15", "#2dd4bf", "#818cf8", "#fb7185",
+    "#a3e635", "#c084fc", "#fca5a1", "#67e8f9", "#94a3b8"
+  ];
+
+  function computeStateDistributions(counts) {
+    var studentsByState = {};
+    var recordsByState = {};
+    for (var i = 0; i < counts.length; i++) {
+      var state = (counts[i].student.state || "").trim() || "Unknown";
+      studentsByState[state] = (studentsByState[state] || 0) + 1;
+      recordsByState[state] = (recordsByState[state] || 0) + counts[i].recordsCount;
+    }
+    latestStateDist.students = studentsByState;
+    latestStateDist.records = recordsByState;
+  }
+
+  function drawPieChart(canvasId, legendId, distMap) {
+    var canvas = document.getElementById(canvasId);
+    var legendEl = document.getElementById(legendId);
+    if (!canvas || !legendEl) return;
+
+    var entries = [];
+    for (var k in distMap) {
+      if (Object.prototype.hasOwnProperty.call(distMap, k)) {
+        entries.push({ label: k, value: distMap[k] });
+      }
+    }
+    entries.sort(function (a, b) { return b.value - a.value; });
+
+    var total = 0;
+    for (var i = 0; i < entries.length; i++) total += entries[i].value;
+
+    if (total === 0) {
+      var ctx0 = canvas.getContext("2d");
+      ctx0.clearRect(0, 0, canvas.width, canvas.height);
+      legendEl.innerHTML = "<p class=\"state-dist-empty\">No data available.</p>";
+      return;
+    }
+
+    var MAX_SLICES = 15;
+    var main = entries.slice(0, MAX_SLICES);
+    var otherValue = 0;
+    for (var i = MAX_SLICES; i < entries.length; i++) otherValue += entries[i].value;
+    if (otherValue > 0) main.push({ label: "Other", value: otherValue });
+
+    var dpr = window.devicePixelRatio || 1;
+    var cssSize = 260;
+    canvas.width = cssSize * dpr;
+    canvas.height = cssSize * dpr;
+    canvas.style.width = cssSize + "px";
+    canvas.style.height = cssSize + "px";
+    var ctx = canvas.getContext("2d");
+    ctx.scale(dpr, dpr);
+    ctx.clearRect(0, 0, cssSize, cssSize);
+
+    var cx = cssSize / 2;
+    var cy = cssSize / 2;
+    var radius = cssSize / 2 - 8;
+    var startAngle = -Math.PI / 2;
+
+    for (var i = 0; i < main.length; i++) {
+      var slice = main[i];
+      var sliceAngle = (slice.value / total) * 2 * Math.PI;
+      ctx.beginPath();
+      ctx.moveTo(cx, cy);
+      ctx.arc(cx, cy, radius, startAngle, startAngle + sliceAngle);
+      ctx.closePath();
+      ctx.fillStyle = PIE_COLORS[i % PIE_COLORS.length];
+      ctx.fill();
+      ctx.strokeStyle = "#18181c";
+      ctx.lineWidth = 2;
+      ctx.stroke();
+
+      if (slice.value / total > 0.05) {
+        var midAngle = startAngle + sliceAngle / 2;
+        var labelR = radius * 0.65;
+        var lx = cx + Math.cos(midAngle) * labelR;
+        var ly = cy + Math.sin(midAngle) * labelR;
+        ctx.fillStyle = "#fff";
+        ctx.font = "bold 11px 'DM Sans', sans-serif";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillText(Math.round((slice.value / total) * 100) + "%", lx, ly);
+      }
+      startAngle += sliceAngle;
+    }
+
+    var legendHtml = [];
+    for (var i = 0; i < main.length; i++) {
+      var pct = ((main[i].value / total) * 100).toFixed(1);
+      legendHtml.push(
+        "<div class=\"state-dist-legend-item\">" +
+          "<span class=\"state-dist-legend-swatch\" style=\"background:" + PIE_COLORS[i % PIE_COLORS.length] + "\"></span>" +
+          "<span class=\"state-dist-legend-label\">" + escapeHtml(main[i].label) + "</span>" +
+          "<span class=\"state-dist-legend-value\">" + main[i].value + " (" + pct + "%)</span>" +
+        "</div>"
+      );
+    }
+    legendEl.innerHTML = legendHtml.join("");
+  }
+
+  function renderStateDistCharts() {
+    drawPieChart("state-dist-students-canvas", "state-dist-students-legend", latestStateDist.students);
+    drawPieChart("state-dist-records-canvas", "state-dist-records-legend", latestStateDist.records);
+  }
+
+  function bindStateDistPopover() {
+    var trigger = document.getElementById("state-dist-trigger");
+    var popover = document.getElementById("state-dist-popover");
+    var closeBtn = popover && popover.querySelector(".state-dist-popover-close");
+    var backdrop = popover && popover.querySelector(".state-dist-popover-backdrop");
+    if (!trigger || !popover) return;
+
+    function openPopover() {
+      popover.hidden = false;
+      trigger.setAttribute("aria-expanded", "true");
+      stateDistPopoverOpen = true;
+      renderStateDistCharts();
+    }
+
+    function closePopover() {
+      popover.hidden = true;
+      trigger.setAttribute("aria-expanded", "false");
+      stateDistPopoverOpen = false;
+    }
+
+    trigger.addEventListener("click", function () {
+      if (popover.hidden) openPopover(); else closePopover();
+    });
+    if (closeBtn) closeBtn.addEventListener("click", closePopover);
+    if (backdrop) backdrop.addEventListener("click", closePopover);
+  }
+
   function init() {
     setLoading(true);
     var base = document.querySelector("script[src$='app.js']").src.replace(/\/[^/]*$/, "");
@@ -884,6 +1029,7 @@
           renderTopStudentsByRecords();
           bindContestListPopover();
           bindAmoAlertPopover();
+          bindStateDistPopover();
           runSearch();
         });
       })
