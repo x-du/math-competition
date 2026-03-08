@@ -407,7 +407,7 @@
           "<button type=\"button\" class=\"mcp-breakdown-btn\" aria-label=\"MCP breakdown\">MCP</button>" +
           "<div class=\"mcp-breakdown-popover\" hidden>" +
             "<div class=\"mcp-breakdown-popover-inner\">" +
-              "<h3 class=\"mcp-breakdown-title\">MCP Breakdown — " + escapeHtml(String(mcpTotal)) + " pts</h3>" +
+              "<h3 class=\"mcp-breakdown-title\">" + escapeHtml(student.name || "Student") + " — MCP Breakdown — " + escapeHtml(String(mcpTotal)) + " pts</h3>" +
               "<canvas class=\"mcp-breakdown-canvas\" width=\"260\" height=\"260\"></canvas>" +
               "<div class=\"mcp-breakdown-legend\"></div>" +
               "<button type=\"button\" class=\"mcp-breakdown-close\" aria-label=\"Close\">×</button>" +

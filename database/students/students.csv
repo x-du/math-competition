@@ -45,7 +45,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 44,Krithik Manoharan,Texas,24|86|110,,male,9
 45,Aaryan Vaishya,Florida,19|291,,male,12
 46,Ray Zhao,Texas,8,,male,12
-47,Shaohuan Zhang,Michigan,30|34|298,,male,
+47,Shaohuan Zhang,Michigan,30|34|298,Nick Zhang,male,12
 48,Varun Gadi,Georgia,31,,male,11
 49,Amogh Akella,Texas,24|110,,male,12
 50,Yunzhe Bai,Massachusetts,26,,male,
@@ -181,7 +181,6 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 205,Mingyue Yang,Washington,89,,male,12
 206,Eric Xie,Maryland,83|251,,male,9
 207,Annie Huaiyu Wang,,90,,female,
-208,Shaohuan (Nick) Zhang,,91,,male,
 209,Hongming Allan Zhao,,42,,male,
 210,Eric Zhu,North Carolina,92|109,Eric P Zhu,male,11
 211,Chenghao Hu,California,93|112,,male,
@@ -248,7 +247,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 274,Kai Lum,California,112,,male,
 275,Catherine Xu,Iowa,117|286,,female,12
 276,Thomas Amdur,,73,,male,
-277,Aprameya Tripathy,New Jersey,119,,male,
+277,Aprameya Tripathy,New Jersey,119,,male,13
 278,Albert Cao,Maryland,116|287,,male,12
 279,Sophia Hou,Virginia,85,,female,12
 280,Aaron Le,Pennsylvania,121,,male,12
@@ -296,7 +295,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 324,Benjamin Yin,Massachusetts,26,,male,
 325,Amy Cui,Washington,7,,female,12
 326,Sicheng Zhou,New Jersey,42,,male,
-327,Hengrui Liang,California,18,,male,
+327,Hengrui Liang,California,18,,male,11
 328,Aryan Agrawal,Washington,117,,male,
 329,Jiaxuan Gong,,34,,male,
 330,Shangxian Chen,,38,,male,
@@ -316,7 +315,6 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 344,Brandon Cai,Pennsylvania,32,,male,13
 345,Soham Dam,Pennsylvania,131,,male,
 346,RUIQI SHI,,133,,male,
-347,Shihan,,40,,male,
 348,Kyle Liao,Washington,134,,male,9
 349,Tianxin Liu,New Jersey,17,,male,
 351,Tairan Ma,,135,,male,
@@ -844,7 +842,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 879,Andy Xu,New Jersey,14,,male,
 881,Yichen Cedric Xiao,New York,42,,male,
 882,Benjamin Chen,Illinois,241,,male,
-884,Shihan Kanungo,California,,,male,
+884,Shihan Kanungo,California,,,male,12
 885,Aarush Vailaya,California,,,male,
 886,Warren Bei,"British Columbia, Canada",,,male,13
 887,Neil Krishnan,California,,,male,
