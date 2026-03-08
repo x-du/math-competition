@@ -1,7 +1,7 @@
-student_id,student_name,year,us_rank,international_rank,total_score,award
-155,Derek Liu,2023,1,1,42,Gold
-1,Alexander Wang,2023,2,6,41,Gold
-144,Huaye Lin,2023,3,12,37,Gold
-135,Eric Shen,2023,4,12,37,Gold
-138,Alex Zhao,2023,5,28,35,Gold
-134,Maximus Lu,2023,6,71,30,Silver
+student_id,student_name,year,us_rank,international_rank,total_score,award,mcp_rank
+155,Derek Liu,2023,1,1,42,Gold,1
+1,Alexander Wang,2023,2,6,41,Gold,2
+144,Huaye Lin,2023,3,12,37,Gold,3
+135,Eric Shen,2023,4,12,37,Gold,4
+138,Alex Zhao,2023,5,28,35,Gold,5
+134,Maximus Lu,2023,6,71,30,Silver,6

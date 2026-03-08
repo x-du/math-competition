@@ -21,7 +21,7 @@ CONTESTS_SKIP_FOR_SEARCH = {
 }
 
 BMT_CONTESTS = {"bmt", "bmt-algebra", "bmt-calculus", "bmt-discrete", "bmt-geometry"}
-MPFG_SLUGS = {"mpfg", "mpfg-olympiad"}
+MPFG_SLUGS = {"mpfg", "mpfg-olympiad", "egmo"}  # Gender-restricted: count toward MCP-W only
 MATHCOUNTS_SLUG = "mathcounts-national-rank"
 
 
@@ -53,7 +53,7 @@ def get_time_weight(year: str, slug: str, current_year: int) -> float:
 def humanize_contest(slug: str) -> str:
     """Turn contest slug into title, e.g. hmmt-feb-geometry -> HMMT Feb Geometry."""
     parts = slug.split("-")
-    known_acronyms = {"hmmt", "pumac", "arml", "amc", "aime", "usamo", "mathcounts", "cmimc", "imo"}
+    known_acronyms = {"hmmt", "pumac", "arml", "amc", "aime", "usamo", "mathcounts", "cmimc", "imo", "egmo", "rmm"}
     out = []
     for p in parts:
         if p.lower() in known_acronyms:

@@ -23,7 +23,17 @@ Professional tennis solved an analogous problem decades ago. The ATP (men's) and
 
 ## 2. Competition Tiers
 
-Competitions are classified into three tiers — **1000**, **500**, and **250** — based on difficulty, prestige, selectivity, and the caliber of the contestant pool. The tier number represents the maximum points awardable for a first-place finish.
+Competitions are classified into four tiers — **2000**, **1000**, **500**, and **250** — based on difficulty, prestige, selectivity, and the caliber of the contestant pool. The tier number represents the maximum points awardable for a first-place finish.
+
+### Tier 2000 — Grand Slam
+
+| Competition | Ranked Students | Notes |
+|---|---|---|
+| **IMO** | 6 | International Mathematical Olympiad — US team only. |
+| **EGMO** | 4 | European Girls' Mathematical Olympiad — US team only. **Counted toward MCP-W only** (see Section 6). |
+| **RMM** | ~6 | Romanian Masters of Mathematics — US participants only. |
+
+**Why Grand Slam?** These are the pinnacle international olympiads. Participation is invitation-only and extremely selective — students earn their spot through national competitions (AMO, JMO). A first-place finish among US participants at IMO, EGMO, or RMM represents the highest achievement in competitive mathematics and warrants the maximum MCP value (2000 points).
 
 ### Tier 1000 — Premier Competitions
 
@@ -62,16 +72,6 @@ Competitions are classified into three tiers — **1000**, **500**, and **250** 
 | **BAMO-8** | ~30 | Bay Area Mathematical Olympiad, middle school division. |
 
 **Why these are Tier 250:** These are well-run competitions with good problems but draw smaller or more geographically concentrated fields. They provide valuable competitive experience and meaningful results, but a strong finish here carries less weight than the same finish at a national-level event.
-
-### Excluded Competitions
-
-| Competition | Reason for Exclusion |
-|---|---|
-| **IMO** | International Mathematical Olympiad — only 6 US participants per year. |
-| **EGMO** | European Girls' Mathematical Olympiad — only 4 US participants per year. |
-| **RMM** | Romanian Masters of Mathematics — only ~6 US participants per year. |
-
-**Why exclude these?** These are invitation-only international competitions with extremely limited US representation (4–6 students). Including them would amount to double-counting: the students who attend IMO, EGMO, or RMM have already earned significant MCP from the national competitions (AMO, JMO) that selected them. Adding 500 or 1000 more points for what is essentially a downstream honor would distort the rankings in favor of a handful of students who were already at the top. The selection for these teams is a recognition, not a separate open competition.
 
 ---
 
@@ -215,16 +215,16 @@ Additionally, strong MathCounts performers who transition into high school compe
 
 ### 6b. MPFG and MCP-W — Separate Women's Ranking
 
-The **Math Prize for Girls (MPFG)** and **MPFG-Olympiad** are Tier 500 competitions open only to girls. Points from these competitions are **not** included in the overall MCP ranking. Instead, they contribute to a separate **MCP-W (MCP for Women)** ranking.
+The **Math Prize for Girls (MPFG)**, **MPFG-Olympiad**, and **EGMO** are competitions open only to girls. Points from these competitions are **not** included in the overall MCP ranking. Instead, they contribute to a separate **MCP-W (MCP for Women)** ranking.
 
 **MCP-W is calculated as follows:**
 - Take the student's full MCP score (from all open competitions).
-- Add points earned from MPFG and MPFG-Olympiad (subject to the standard 4-year rolling window and decay).
+- Add points earned from MPFG, MPFG-Olympiad, and EGMO (subject to the standard 4-year rolling window and decay).
 - The sum is the student's MCP-W score.
 
 **Why a separate ranking?**
 
-- **Fairness.** MPFG and MPFG-Olympiad are restricted to female participants. Including these points in the overall MCP would create opportunities unavailable to male students, distorting the ranking. In tennis, the ATP and WTA maintain separate rankings for the same reason.
+- **Fairness.** MPFG, MPFG-Olympiad, and EGMO are restricted to female participants. Including these points in the overall MCP would create opportunities unavailable to male students, distorting the ranking. In tennis, the ATP and WTA maintain separate rankings for the same reason.
 - **Visibility.** A dedicated MCP-W ranking highlights the achievements of female math competitors. Women are significantly underrepresented in competitive mathematics, and a visible ranking system can help recognize and encourage participation.
 - **No penalty.** Female students are not penalized — they receive full MCP from all open competitions. MCP-W is purely additive: it can only increase (or equal) their overall MCP.
 - **Analogous to WTA.** Just as the WTA rankings exist alongside the ATP rankings, MCP-W exists alongside MCP, serving the same purpose of recognition and motivation.
@@ -248,11 +248,11 @@ Only `mcp_rank` is stored in the competition CSV files. `mcp_points` and `mcp_co
 - **Per-record `mcp_points`**: the raw points earned for that result (before time decay).
 - **Per-record `mcp_contrib`**: the time-weighted points this result contributes to the student's total MCP. Computed as `mcp_points × decay_weight`. Only present when positive.
 - **Per-student `mcp`**: the sum of all `mcp_contrib` values from open competitions.
-- **Per-student `mcp_w`** (all female students): `mcp` + decay-weighted MPFG/MPFG-Olympiad points. Present for every female student, even those without MPFG results (in which case `mcp_w` equals `mcp`).
+- **Per-student `mcp_w`** (all female students): `mcp` + decay-weighted MPFG/MPFG-Olympiad/EGMO points. Present for every female student, even those without MPFG or EGMO results (in which case `mcp_w` equals `mcp`).
 
 ### MCP-W (for female students)
 
-$$\text{MCP-W} = \text{MCP} + \sum_{c \in \lbrace\text{MPFG, MPFG-Olympiad}\rbrace} \sum_{y=0}^{3} \text{mcp}\_\text{points}(c, y) \times \left(\frac{1}{2}\right)^y$$
+$$\text{MCP-W} = \text{MCP} + \sum_{c \in \lbrace\text{MPFG, MPFG-Olympiad, EGMO}\rbrace} \sum_{y=0}^{3} \text{mcp}\_\text{points}(c, y) \times \left(\frac{1}{2}\right)^y$$
 
 ---
 
@@ -285,12 +285,15 @@ This student's MCP contribution from HMMT February alone is **3863.13**. Their f
 
 ## 9. Competition Configuration
 
-All MCP parameters are centralized in a single configuration file. Each competition defines its tier, weight, ranking mode (how raw data is converted to `mcp_rank`), and which CSV column holds the raw ranking data. Competitions without MCP fields (IMO, EGMO, RMM) are excluded from point calculations.
+All MCP parameters are centralized in a single configuration file. Each competition defines its tier, weight, ranking mode (how raw data is converted to `mcp_rank`), and which CSV column holds the raw ranking data.
 
 Result files are discovered dynamically — all result CSVs within each competition-year directory are processed.
 
 | Competition | Tier | Weight | Mode |
 |---|---|---|---|
+| IMO | 2000 | 100% | rank |
+| EGMO (→ MCP-W) | 2000 | 100% | rank |
+| RMM | 2000 | 100% | rank |
 | HMMT February (overall) | 1000 | 100% | rank |
 | HMMT Feb — Algebra & NT | 1000 | 50% | rank |
 | HMMT Feb — Combinatorics | 1000 | 50% | rank |
@@ -355,7 +358,7 @@ At build time, the system:
 3. Determines the current year **per contest** from the data (the most recent year with results for that contest). Time decay is applied relative to each contest's own current year, not a single global year. This ensures that a contest whose latest data is from 2025 treats 2025 as 100% weight, even if other contests have 2026 data.
 4. Aggregates per-student totals:
    - **`mcp`**: sum of decay-weighted points from all open competitions.
-   - **`mcp_w`**: `mcp` + decay-weighted MPFG/MPFG-Olympiad points. Present for all female students.
+   - **`mcp_w`**: `mcp` + decay-weighted MPFG/MPFG-Olympiad/EGMO points. Present for all female students.
 
 ### Adding a new competition
 
@@ -369,13 +372,13 @@ At build time, the system:
 
 | Design Decision | Choice | Rationale |
 |---|---|---|
-| Tier system | 1000 / 500 / 250 | Matches competition prestige and field strength |
+| Tier system | 2000 / 1000 / 500 / 250 | Grand Slam for international olympiads; matches competition prestige |
 | Point formula | min + (max − min) × ((N−r)/(N−1))^k | Power-law curve with k=3; Rank 1 = Tier, Rank N = Tier/2 |
 | Rolling window | 4 years | Captures a full high school career |
 | Time decay | Geometric (÷2 per year) | Smooth, recency-biased, no cliff effects |
-| IMO/EGMO/RMM | Excluded | Too few participants; double-counts national selections |
+| IMO/EGMO/RMM | Grand Slam (2000) | Pinnacle international olympiads; US team ranking |
 | MathCounts | No decay, no window | Middle school results are inherently time-limited |
-| MPFG | Separate MCP-W | Fairness (gender-restricted); visibility for women |
+| MPFG / EGMO | Separate MCP-W | Fairness (gender-restricted); visibility for women |
 | Subject tests | 50% of tier value | Rewards specialization without over-counting |
 
 MCP provides a transparent, principled, and computable ranking of competitive math students — inspired by a system that has worked for professional tennis for decades.
