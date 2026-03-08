@@ -1132,7 +1132,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1188,Mugeng Lin,"British Columbia, Canada",,,male,
 1189,Sophie Liu,Nevada,465,,female,
 1190,Evan Lu,"Ontario, Canada",,,male,
-1191,Zehan Pan,New Jersey,,Peter Pan,male,13
+1191,Zehan Pan,New Jersey,,Peter Pan|Zehan Peter Pan,male,13
 1192,James Rydell,California,,,male,
 1193,Qingzhou Shen,Georgia,,,male,
 1194,Easton Singer,Ohio,,,male,

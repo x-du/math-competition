@@ -363,7 +363,7 @@
     var aliasesHtml = "";
     if (student.aliases && student.aliases.length) {
       aliasesHtml = "<span class=\"student-aliases\">Also known as: " +
-        student.aliases.map(function (a) { return "<span>" + escapeHtml(a) + "</span>"; }).join("") +
+        student.aliases.map(function (a) { return escapeHtml(a); }).join(", ") +
         "</span>";
     }
 

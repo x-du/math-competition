@@ -921,10 +921,6 @@ body {
   color: var(--text-muted);
 }
 
-.student-aliases span:not(:last-child)::after {
-  content: " · ";
-}
-
 .student-contests {
   display: flex;
   flex-direction: column;
