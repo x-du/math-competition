@@ -22,6 +22,7 @@
   var sortToggleEl = document.getElementById("sort-toggle");
 
   var sortMode = "records"; // "records" or "mcp"
+  var gradeFilterInitialized = false;
 
   var amoAlertList = [];
   var stateDistPopoverOpen = false;
@@ -175,9 +176,11 @@
       var wantLabel = gradeFilterEl.value;
       out = out.filter(function (s) {
         var lab = getGradeLabel(s.grade_in_2026);
+        var key = gradeLabelSortKey(lab);
         if (wantLabel === "__none__") return lab === "";
-        if (wantLabel === "__hs__") return gradeLabelSortKey(lab) >= 9 && gradeLabelSortKey(lab) <= 12;
-        if (wantLabel === "__prehs__") return gradeLabelSortKey(lab) > 0 && gradeLabelSortKey(lab) < 9;
+        if (wantLabel === "__hs__") return (key >= 9 && key <= 12) || lab === "";
+        if (wantLabel === "__prehs__") return key > 0 && key < 9;
+        if (wantLabel === "__hof__") return key > 12;
         return lab === wantLabel;
       });
     }
@@ -496,7 +499,11 @@
       else gradeLabelSet[lab] = true;
     }
     var gradeLabels = [];
-    for (var k in gradeLabelSet) if (Object.prototype.hasOwnProperty.call(gradeLabelSet, k)) gradeLabels.push(k);
+    for (var k in gradeLabelSet) {
+      if (Object.prototype.hasOwnProperty.call(gradeLabelSet, k) && gradeLabelSortKey(k) <= 12) {
+        gradeLabels.push(k);
+      }
+    }
     gradeLabels.sort(function (a, b) {
       return gradeLabelSortKey(a) - gradeLabelSortKey(b);
     });
@@ -515,6 +522,11 @@
       preHsOpt.textContent = "Pre High School";
       gradeFilterEl.appendChild(preHsOpt);
 
+      var hofOpt = document.createElement("option");
+      hofOpt.value = "__hof__";
+      hofOpt.textContent = "Hall of Fame";
+      gradeFilterEl.appendChild(hofOpt);
+
       for (var j = 0; j < gradeLabels.length; j++) {
         var opt = document.createElement("option");
         opt.value = gradeLabels[j];
@@ -527,8 +539,15 @@
         noneOpt.textContent = "No grade";
         gradeFilterEl.appendChild(noneOpt);
       }
-      if (currentValue && gradeFilterEl.querySelector("option[value=\"" + currentValue + "\"]")) {
-        gradeFilterEl.value = currentValue;
+      var valToRestore = currentValue || "";
+      var optExists = gradeFilterEl.querySelector("option[value=\"" + valToRestore + "\"]");
+      if (!gradeFilterInitialized) {
+        gradeFilterEl.value = "__hs__";
+        gradeFilterInitialized = true;
+      } else if (optExists) {
+        gradeFilterEl.value = valToRestore;
+      } else {
+        gradeFilterEl.value = "__hs__";
       }
     }
 
@@ -541,17 +560,11 @@
       var wantLabel = gradeFilterEl.value;
       students = students.filter(function (s) {
         var lab = getGradeLabel(s.grade_in_2026);
-        if (wantLabel === "__none__") {
-          return lab === "";
-        }
-        if (wantLabel === "__hs__") {
-          var keyHs = gradeLabelSortKey(lab);
-          return keyHs >= 9 && keyHs <= 12;
-        }
-        if (wantLabel === "__prehs__") {
-          var keyPre = gradeLabelSortKey(lab);
-          return keyPre > 0 && keyPre < 9;
-        }
+        var key = gradeLabelSortKey(lab);
+        if (wantLabel === "__none__") return lab === "";
+        if (wantLabel === "__hs__") return (key >= 9 && key <= 12) || lab === "";
+        if (wantLabel === "__prehs__") return key > 0 && key < 9;
+        if (wantLabel === "__hof__") return key > 12;
         return lab === wantLabel;
       });
     }
@@ -697,7 +710,7 @@
 
   function clearAllFilters() {
     if (girlsOnlyEl) girlsOnlyEl.checked = false;
-    if (gradeFilterEl) gradeFilterEl.value = "";
+    if (gradeFilterEl) gradeFilterEl.value = "__hs__";
     if (stateFilterEl) stateFilterEl.value = "";
     sortMode = "records";
     if (sortToggleEl) {
@@ -799,7 +812,7 @@
     }
 
     var matched = data.students.filter(function (s) { return matchStudent(s, query); });
-    matched = applyDemographicFilters(matched);
+    // Search results are not filtered by grade, state, or girls - show all matches
 
     var filteredByContest = matched.map(function (s) {
       var copy = {};
