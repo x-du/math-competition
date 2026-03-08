@@ -29,9 +29,9 @@ Competitions are classified into three tiers — **1000**, **500**, and **250** 
 
 | Competition | Ranked Students | Notes |
 |---|---|---|
-| **HMMT February** | ~50 | Overall individual ranking. The most competitive invitational in the US. |
-| **PUMaC Division A** | 30~45 | Overall individual ranking. Elite division of Princeton's competition. |
-| **BMT Individual** | ~10 | Top overall individual at Berkeley Math Tournament. Only considers top scores. |
+| **HMMT February** | ~50 | Overall individual and subject (Algebra & NT, Combinatorics, Geometry) rankings. The most competitive invitational in the US. |
+| **PUMaC Division A** | 30~45 | Overall individual and subject (Algebra, Combinatorics, Geometry, Number Theory) rankings. Elite division of Princeton's competition. |
+| **BMT Individual** | ~10 | Overall individual and subject (Algebra, Calculus, Discrete, Geometry) rankings at Berkeley Math Tournament. Only considers top scores. |
 | **ARML Individual** | ~64 | Individual round ranking at the American Regions Math League. |
 | **USAMO** | ~150 | USA Mathematical Olympiad. The pinnacle national olympiad. Awards only (no individual ranks). |
 
@@ -41,10 +41,10 @@ Competitions are classified into three tiers — **1000**, **500**, and **250** 
 
 | Competition | Ranked Students | Notes |
 |---|---|---|
-| **HMMT November** | ~50 | Overall individual ranking. |
-| **PUMaC Division B** | ~36 | Overall individual ranking. |
+| **HMMT November** | ~50 | Overall individual and subject (General, Theme) rankings. |
+| **PUMaC Division B** | ~36 | Overall individual and subject (Algebra, Combinatorics, Geometry, Number Theory) rankings. |
 | **USAJMO** | ~150 | USA Junior Mathematical Olympiad. Awards only (no individual ranks). |
-| **CMIMC** | ~10 | Carnegie Mellon competition — overall individual. |
+| **CMIMC** | ~10 | Carnegie Mellon competition — overall individual and subject (Algebra & NT, Combinatorics & CS, Geometry) rankings. |
 | **BAMO-12** | ~25 | Bay Area Mathematical Olympiad, high school division. |
 | **MathCounts National** | ~56 | National ranking. **Special rules apply** (see Section 5). |
 | **MPFG** | ~75 | Math Prize for Girls. **Counted toward MCP-W only** (see Section 6). |
@@ -97,45 +97,37 @@ Before computing points, all results are normalized to a single numeric `mcp_ran
 
 ### Step 2: Compute `mcp_points`
 
-Every `mcp_rank` is converted to points via **geometric interpolation** between a maximum and a floor:
+Every `mcp_rank` is converted to points via a **power-law curve** between a maximum and a floor:
 
-$$\text{mcp}\_\text{points}(r) = \text{round}\left(\text{max}\_\text{pts} \times \left(\frac{\text{min}\_\text{pts}}{\text{max}\_\text{pts}}\right)^{\frac{r-1}{N-1}}\right)$$
+$$\text{mcp\_points}(r) = \text{round}\left(\text{min\_pts} + (\text{max\_pts} - \text{min\_pts}) \times \left(\frac{N - r}{N - 1}\right)^k\right)$$
 
-where:
-- `r` = the student's `mcp_rank` (can be fractional for ties)
-- `N` = total number of ranked students in that competition-year
+| Variable | Description | Example Value |
+|---|---|---|
+| $r$ | The current rank being calculated | $1 \dots 100$ |
+| $\text{max\_pts}$ | The maximum points awarded (at Rank 1) | $1000$ |
+| $\text{min\_pts}$ | The floor/minimum points awarded (at Rank N) | $500$ |
+| $N$ | The total number of ranked students | $100$ |
+| $k$ | The steepness coefficient | $3$ |
+
+The derived values are:
 - `max_pts` = `Tier × weight` (1000 for Tier 1000 overall, 500 for Tier 1000 subject tests at 50%)
-- `min_pts` = `10 × weight` (10 for overall, 5 for subject tests at 50%)
+- `min_pts` = `Tier × 0.5 × weight` (500 for Tier 1000 overall, 250 for Tier 1000 subject tests at 50%)
 
 This guarantees two anchor points:
 - **Rank 1 always earns exactly `max_pts`.**
 - **Rank N (last ranked) always earns exactly `min_pts`.**
 
-Between these anchors, points decay by a **constant percentage per rank**, producing a smooth curve:
+Between these anchors, the steepness coefficient $k$ controls how quickly points drop off. With $k = 3$, the curve is convex — top ranks are separated by large point gaps while lower ranks are compressed together near the floor:
 
-![Geometric interpolation from max_pts to min_pts](img/mcp_plot.png)
+![Power-law interpolation from max_pts to min_pts](img/power_law_curve.png)
 
-The decay rate adapts automatically to the field size:
+**Why this formula?**
 
-$$\text{Decay ratio} = \left(\frac{\text{min}\_\text{pts}}{\text{max}\_\text{pts}}\right)^{\frac{1}{N-1}}$$
-
-| Competition | Tier | N | Decay per rank |
-|---|---|---|---|
-| HMMT February | 1000 | 50 | −9.0% per rank |
-| PUMaC Div A | 1000 | 44 | −10.2% per rank |
-| ARML Individual | 1000 | 64 | −7.0% per rank |
-| BMT Individual | 1000 | 10 | −40.1% per rank |
-| HMMT November | 500 | 50 | −7.7% per rank |
-| MathCounts National | 500 | 56 | −6.8% per rank |
-| MMATHS | 250 | 99 | −3.2% per rank |
-
-**Why geometric interpolation?**
-
-- **Fixed endpoints.** Rank 1 = max_pts, Rank N = min_pts. No arbitrary tuning — the two anchor points fully determine the curve.
-- **Self-adapting steepness.** Competitions with fewer ranked students (e.g. BMT with N=10) produce a steep curve — rank 2 already drops to 599. Competitions with many ranked students (e.g. MMATHS with N=99) produce a gentler curve. This is natural: in a small elite field, each rank gap is more meaningful.
-- **Handles ties naturally.** Fractional `mcp_rank` values (from averaged ties) plug directly into the formula. Tied students earn identical points, and the points fall exactly where they should on the curve.
+- **Fixed endpoints.** Rank 1 = max_pts, Rank N = min_pts. The two anchor points are always respected regardless of field size.
+- **Tunable steepness.** The exponent $k$ controls how much the curve rewards top finishers. Higher $k$ concentrates more points at the top. With $k = 3$, the top ~20% of finishers earn the majority of the point spread while lower ranks converge toward the floor.
+- **Self-adapting to field size.** The same formula and $k$ value work across competitions with 10 or 100 ranked students. The fraction $(N - r)/(N - 1)$ normalizes rank position to a 0–1 scale.
+- **Handles ties naturally.** Fractional `mcp_rank` values (from averaged ties) plug directly into the formula. Tied students earn identical points.
 - **Unified formula.** The same formula handles rank-based, award-based, and mixed-format competitions. No separate award-to-points tables are needed.
-- **Intuitive.** Each rank earns a fixed percentage less than the rank above it.
 
 *Students not in the ranked list receive 0 points. A comprehensive worked example covering all rules is given in Section 8.*
 
@@ -152,7 +144,7 @@ Many competitions include both an overall individual ranking and separate subjec
 
 Subject tests use the same unified formula from Section 3 with `weight = 0.5`:
 - `max_pts = Tier × 0.5` (e.g. 500 for a Tier 1000 subject test)
-- `min_pts = 10 × 0.5 = 5`
+- `min_pts = Tier × 0.5 × 0.5` (e.g. 250 for a Tier 1000 subject test)
 
 The `mcp_rank` column is pre-computed and stored in each subject test CSV, just like overall results. `mcp_points` is computed dynamically at build time.
 
@@ -248,11 +240,12 @@ $$\text{MCP}\_{\text{MathCounts}} = \sum_{y \in \text{all years}} \text{mcp}\_\t
 
 There is **no cap** on the number of competitions counted. A student who competes broadly and performs well everywhere will be rewarded, just as in tennis.
 
-Only `mcp_rank` is stored in the competition CSV files. `mcp_points` is computed dynamically at build time using each competition's tier, weight, and the geometric interpolation formula. The final output includes:
+Only `mcp_rank` is stored in the competition CSV files. `mcp_points` and `mcp_contrib` are computed dynamically at build time using each competition's tier, weight, and the geometric interpolation formula. The final output includes:
 
-- **Per-record `mcp_points`**: each competition result carries its computed points.
-- **Per-student `mcp`**: the sum of all decay-weighted points from open competitions.
-- **Per-student `mcp_w`** (female students only): `mcp` + decay-weighted MPFG/MPFG-Olympiad points.
+- **Per-record `mcp_points`**: the raw points earned for that result (before time decay).
+- **Per-record `mcp_contrib`**: the time-weighted points this result contributes to the student's total MCP. Computed as `mcp_points × decay_weight`. Only present when positive.
+- **Per-student `mcp`**: the sum of all `mcp_contrib` values from open competitions.
+- **Per-student `mcp_w`** (all female students): `mcp` + decay-weighted MPFG/MPFG-Olympiad points. Present for every female student, even those without MPFG results (in which case `mcp_w` equals `mcp`).
 
 ### MCP-W (for female students)
 
@@ -262,28 +255,28 @@ $$\text{MCP-W} = \text{MCP} + \sum_{c \in \lbrace\text{MPFG, MPFG-Olympiad}\rbra
 
 ## 8. Worked Example: HMMT February over 4 Years
 
-Consider a student who competed at HMMT February (Tier 1000) from 2023 to 2026, steadily improving. The overall individual ranking has ~50 students (N=50), and each of the three subject tests (Algebra & NT, Combinatorics, Geometry) counts at 50% weight (max 500, min 5).
+Consider a student who competed at HMMT February (Tier 1000) from 2023 to 2026, steadily improving. The overall individual ranking has ~50 students (N=50), and each of the three subject tests (Algebra & NT, Combinatorics, Geometry) counts at 50% weight (max 500, min 250).
 
 **Points per event in the current year (2026):**
 
 | Event | Weight | Rank | mcp_points |
 |---|---|---|---|
-| Overall | 100% | 3 | 829 |
-| Algebra & NT | 50% | 5 | 343 |
-| Combinatorics | 50% | 10 | 215 |
-| Geometry | 50% | 2 | 455 |
+| Overall | 100% | 3 | 941 |
+| Algebra & NT | 50% | 5 | 444 |
+| Combinatorics | 50% | 10 | 386 |
+| Geometry | 50% | 2 | 485 |
 
 **All 4 years with time decay:**
 
 | Year | Overall | Alg & NT | Combo | Geometry | Raw Total | Decay | Effective |
 |---|---|---|---|---|---|---|---|
-| 2026 | 829 (rank 3) | 343 (rank 5) | 215 (rank 10) | 455 (rank 2) | 1842 | 100% | 1842.00 |
-| 2025 | 518 (rank 8) | 215 (rank 10) | 134 (rank 15) | 343 (rank 5) | 1210 | 50% | 605.00 |
-| 2024 | 268 (rank 15) | 134 (rank 15) | 84 (rank 20) | 215 (rank 10) | 701 | 25% | 175.25 |
-| 2023 | 105 (rank 25) | 84 (rank 20) | 33 (rank 30) | 134 (rank 15) | 356 | 12.5% | 44.50 |
-| **Total** | | | | | | | **2666.75** |
+| 2026 | 941 (rank 3) | 444 (rank 5) | 386 (rank 10) | 485 (rank 2) | 2256 | 100% | 2256.00 |
+| 2025 | 815 (rank 8) | 386 (rank 10) | 341 (rank 15) | 444 (rank 5) | 1986 | 50% | 993.00 |
+| 2024 | 682 (rank 15) | 341 (rank 15) | 307 (rank 20) | 386 (rank 10) | 1716 | 25% | 429.00 |
+| 2023 | 566 (rank 25) | 307 (rank 20) | 267 (rank 30) | 341 (rank 15) | 1481 | 12.5% | 185.13 |
+| **Total** | | | | | | | **3863.13** |
 
-This student's MCP contribution from HMMT February alone is **2666.75**. Their full MCP score would also include decay-weighted points from any other competitions they entered (ARML, PUMaC, AMO, etc.) within the 4-year window.
+This student's MCP contribution from HMMT February alone is **3863.13**. Their full MCP score would also include decay-weighted points from any other competitions they entered (ARML, PUMaC, AMO, etc.) within the 4-year window.
 
 ---
 
@@ -356,10 +349,10 @@ At build time, the system:
 
 1. Loads each competition's tier and weight from the configuration.
 2. For each result file, counts N (students with `mcp_rank`) and computes `mcp_points` per record using geometric interpolation.
-3. Aggregates per-student totals:
+3. Determines the current year **per contest** from the data (the most recent year with results for that contest). Time decay is applied relative to each contest's own current year, not a single global year. This ensures that a contest whose latest data is from 2025 treats 2025 as 100% weight, even if other contests have 2026 data.
+4. Aggregates per-student totals:
    - **`mcp`**: sum of decay-weighted points from all open competitions.
-   - **`mcp_w`**: `mcp` + decay-weighted MPFG/MPFG-Olympiad points (only present for students with MPFG results).
-4. The current year is determined automatically from the data (max year found).
+   - **`mcp_w`**: `mcp` + decay-weighted MPFG/MPFG-Olympiad points. Present for all female students.
 
 ### Adding a new competition
 
@@ -374,7 +367,7 @@ At build time, the system:
 | Design Decision | Choice | Rationale |
 |---|---|---|
 | Tier system | 1000 / 500 / 250 | Matches competition prestige and field strength |
-| Point formula | Tier × (10/Tier)^((r−1)/(N−1)) | Rank 1 = Tier, Rank N = 10; geometric decay adapts to field size |
+| Point formula | min + (max − min) × ((N−r)/(N−1))^k | Power-law curve with k=3; Rank 1 = Tier, Rank N = Tier/2 |
 | Rolling window | 4 years | Captures a full high school career |
 | Time decay | Geometric (÷2 per year) | Smooth, recency-biased, no cliff effects |
 | IMO/EGMO/RMM | Excluded | Too few participants; double-counts national selections |
