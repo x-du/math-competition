@@ -101,13 +101,14 @@ Every `mcp_rank` is converted to points via a **power-law curve** between a maxi
 
 $$\text{mcp}\_\text{points}(r) = \text{round}\left(\text{min}\_\text{pts} + (\text{max}\_\text{pts} - \text{min}\_\text{pts}) \times \left(\frac{N - r}{N - 1}\right)^k\right)$$
 
+
 | Variable | Description | Example Value |
 |---|---|---|
-| $r$ | The current rank being calculated | $1 \dots 100$ |
-| $\text{max}\_\text{pts}$ | The maximum points awarded (at Rank 1) | $1000$ |
-| $\text{min}\_\text{pts}$ | The floor/minimum points awarded (at Rank N) | $500$ |
-| $N$ | The total number of ranked students | $100$ |
-| $k$ | The steepness coefficient | $3$ |
+| `r` | The current rank being calculated | 1 … 100 |
+| `max_pts` | The maximum points awarded (at Rank 1) | 1000 |
+| `min_pts` | The floor/minimum points awarded (at Rank N) | 500 |
+| `N` | The total number of ranked students | 100 |
+| `k` | The steepness coefficient | 3 |
 
 The derived values are:
 - `max_pts` = `Tier × weight` (1000 for Tier 1000 overall, 500 for Tier 1000 subject tests at 50%)
