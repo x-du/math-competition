@@ -35,6 +35,13 @@ Competitions are classified into four tiers — **2000**, **1000**, **500**, and
 
 **Why Grand Slam?** These are the pinnacle international olympiads. Participation is invitation-only and extremely selective — students earn their spot through national competitions (AMO, JMO). A first-place finish among US participants at IMO, EGMO, or RMM represents the highest achievement in competitive mathematics and warrants the maximum MCP value (2000 points).
 
+**Grand Slam point calculation:** Because these competitions are so selective, points are awarded by **medal** rather than by rank interpolation:
+- **Gold:** full tier value (2000)
+- **Silver:** tier value × 75% (1500)
+- **Bronze:** tier value × 50% (1000)
+
+The standard time-decay rule (Section 5) still applies.
+
 ### Tier 1000 — Premier Competitions
 
 | Competition | Ranked Students | Notes |
@@ -97,7 +104,9 @@ Before computing points, all results are normalized to a single numeric `mcp_ran
 
 ### Step 2: Compute `mcp_points`
 
-Every `mcp_rank` is converted to points via a **power-law curve** between a maximum and a floor:
+**Grand Slam competitions (IMO, EGMO, RMM):** Points are awarded directly by medal: Gold = tier value, Silver = tier × 75%, Bronze = tier × 50%. No power-law interpolation is used. Time decay still applies.
+
+**All other competitions:** Every `mcp_rank` is converted to points via a **power-law curve** between a maximum and a floor:
 
 $$\text{mcp}\_\text{points}(r) = \text{round}\left(\text{min}\_\text{pts} + (\text{max}\_\text{pts} - \text{min}\_\text{pts}) \times \left(\frac{N - r}{N - 1}\right)^k\right)$$
 
@@ -354,7 +363,7 @@ The computed `mcp_rank` column is written back into the CSV.
 At build time, the system:
 
 1. Loads each competition's tier and weight from the configuration.
-2. For each result file, counts N (students with `mcp_rank`) and computes `mcp_points` per record using geometric interpolation.
+2. For each result file, counts N (students with `mcp_rank`) and computes `mcp_points` per record. Grand Slam competitions (IMO, EGMO, RMM) use award-based points (Gold/Silver/Bronze); all others use geometric interpolation.
 3. Determines the current year **per contest** from the data (the most recent year with results for that contest). Time decay is applied relative to each contest's own current year, not a single global year. This ensures that a contest whose latest data is from 2025 treats 2025 as 100% weight, even if other contests have 2026 data.
 4. Aggregates per-student totals:
    - **`mcp`**: sum of decay-weighted points from all open competitions.
@@ -376,7 +385,7 @@ At build time, the system:
 | Point formula | min + (max − min) × ((N−r)/(N−1))^k | Power-law curve with k=3; Rank 1 = Tier, Rank N = Tier/2 |
 | Rolling window | 4 years | Captures a full high school career |
 | Time decay | Geometric (÷2 per year) | Smooth, recency-biased, no cliff effects |
-| IMO/EGMO/RMM | Grand Slam (2000) | Pinnacle international olympiads; US team ranking |
+| IMO/EGMO/RMM | Grand Slam (2000) | Award-based: Gold=2000, Silver=1500, Bronze=1000; time decay applies |
 | MathCounts | No decay, no window | Middle school results are inherently time-limited |
 | MPFG / EGMO | Separate MCP-W | Fairness (gender-restricted); visibility for women |
 | Subject tests | 50% of tier value | Rewards specialization without over-counting |

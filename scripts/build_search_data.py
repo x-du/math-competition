@@ -23,9 +23,29 @@ CONTESTS_SKIP_FOR_SEARCH = {
 BMT_CONTESTS = {"bmt", "bmt-algebra", "bmt-calculus", "bmt-discrete", "bmt-geometry"}
 MPFG_SLUGS = {"mpfg", "mpfg-olympiad", "egmo"}  # Gender-restricted: count toward MCP-W only
 MATHCOUNTS_SLUG = "mathcounts-national-rank"
+GRAND_SLAM_SLUGS = {"imo", "egmo", "rmm"}  # Award-based points: Gold=100%, Silver=75%, Bronze=50%
 
 
 K_STEEPNESS = 3
+
+GRAND_SLAM_AWARD_MULTIPLIERS = {
+    "gold": 1.0,
+    "silver": 0.75,
+    "bronze": 0.50,
+}
+
+
+def compute_grand_slam_mcp_points(award: str, tier: int, weight: float = 1.0) -> int | None:
+    """Grand Slam: points by medal. Gold=100%, Silver=75%, Bronze=50%. Returns None if no recognized award.
+    Looks for 'gold', 'silver', or 'bronze' in the award text (case-insensitive). Handles variants like 'Gold Medal'."""
+    if not award:
+        return None
+    a = award.strip().lower()
+    for key, mult in GRAND_SLAM_AWARD_MULTIPLIERS.items():
+        if key in a:
+            return round(tier * weight * mult)
+    return None
+
 
 def compute_mcp_points(mcp_rank: float, N: int, tier: int, weight: float = 1.0) -> int:
     """Power-law interpolation: rank 1 -> max_pts, rank N -> min_pts (50% of max)."""
@@ -201,14 +221,20 @@ def main() -> None:
 
             # Compute mcp_points from mcp_rank if MCP-eligible
             mcp_rank_str = (row.get("mcp_rank") or "").strip()
-            if mcp_rank_str and mcp_tier and mcp_weight and N > 0:
-                mcp_rank = float(mcp_rank_str)
-                pts = compute_mcp_points(mcp_rank, N, mcp_tier, mcp_weight)
-                record["mcp_points"] = pts
-                tw = get_time_weight(year, slug, max_year_by_slug.get(slug, 2026))
-                contrib = round(pts * tw, 2)
-                if contrib > 0:
-                    record["mcp_contrib"] = int(contrib) if contrib == int(contrib) else contrib
+            if mcp_tier and mcp_weight:
+                pts = None
+                if slug in GRAND_SLAM_SLUGS:
+                    award = (row.get("award") or "").strip()
+                    pts = compute_grand_slam_mcp_points(award, mcp_tier, mcp_weight)
+                if pts is None and mcp_rank_str and N > 0:
+                    mcp_rank = float(mcp_rank_str)
+                    pts = compute_mcp_points(mcp_rank, N, mcp_tier, mcp_weight)
+                if pts is not None:
+                    record["mcp_points"] = pts
+                    tw = get_time_weight(year, slug, max_year_by_slug.get(slug, 2026))
+                    contrib = round(pts * tw, 2)
+                    if contrib > 0:
+                        record["mcp_contrib"] = int(contrib) if contrib == int(contrib) else contrib
 
             if sid not in records_by_id:
                 records_by_id[sid] = []
