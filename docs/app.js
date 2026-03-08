@@ -21,7 +21,7 @@
   var contestFilterSummaryEl = document.getElementById("contest-filter-summary");
   var sortToggleEl = document.getElementById("sort-toggle");
 
-  var sortMode = "records"; // "records" or "mcp"
+  var sortMode = "mcp"; // "records" or "mcp"
   var gradeFilterInitialized = false;
 
   var amoAlertList = [];
@@ -617,7 +617,7 @@
       if (sortMode === "mcp") {
         subtitleEl.innerHTML = "Sorted by total " + mcpLabel + " (Math Competition Points" + (isGirlsOnly ? " — Women" : "") + "). Points are awarded by competition tier and placement, with recent results weighted more. " +
           "<a href=\"articles/mcp.html\" target=\"_blank\" rel=\"noopener\">Learn more</a>. " +
-          "In beta. Under community review. Feedback on the MCP algorithm: <a href=\"mailto:mathcontestintegrity@gmail.com\">mathcontestintegrity@gmail.com</a>.";
+          "Under community review. Send feedback to: <a href=\"mailto:mathcontestintegrity@gmail.com\">mathcontestintegrity@gmail.com</a>.";
       } else {
         subtitleEl.textContent = "Sorted by number of competition records in this database. Not a ranking of ability or talent.";
       }
@@ -712,11 +712,11 @@
     if (girlsOnlyEl) girlsOnlyEl.checked = false;
     if (gradeFilterEl) gradeFilterEl.value = "__hs__";
     if (stateFilterEl) stateFilterEl.value = "";
-    sortMode = "records";
+    sortMode = "mcp";
     if (sortToggleEl) {
       var opts = sortToggleEl.querySelectorAll(".sort-toggle-option");
       for (var i = 0; i < opts.length; i++) {
-        if (opts[i].getAttribute("data-mode") === "records") {
+        if (opts[i].getAttribute("data-mode") === "mcp") {
           opts[i].classList.add("sort-toggle-option--active");
         } else {
           opts[i].classList.remove("sort-toggle-option--active");
