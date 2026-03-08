@@ -35,7 +35,7 @@ Competitions are classified into three tiers — **1000**, **500**, and **250** 
 | **ARML Individual** | ~64 | Individual round ranking at the American Regions Math League. |
 | **USAMO** | ~150 | USA Mathematical Olympiad. The pinnacle national olympiad. Awards only (no individual ranks). |
 
-**Why these are Tier 1000:** These represent the most difficult and prestigious open competitions available to US high school students. HMMT February and PUMaC Division A draw the strongest fields in the country. USAMO is the national olympiad. ARML's individual round, while part of a team-oriented event, ranks students individually against the entire national field. BMT's top individual award recognizes the strongest performer at a major West Coast tournament with a strong field.
+**Why these are Tier 1000:** These represent the most difficult and prestigious open competitions available to US high school students. HMMT February and PUMaC Division A draw the strongest fields in the country. USAMO is the national olympiad. ARML's individual round, while part of a team-oriented event, ranks students individually against the entire national field. BMT's top individual award recognizes the strongest performer at a major West Coast tournament with a strong field. We would like to include SMT (Stanford Math Tournament) in this tier, but SMT does not publish results. (SMT, talk to us 🙂)
 
 ### Tier 500 — Major Competitions
 
@@ -121,6 +121,8 @@ This guarantees two anchor points:
 Between these anchors, the steepness coefficient $k$ controls how quickly points drop off. With $k = 3$, the curve is convex — top ranks are separated by large point gaps while lower ranks are compressed together near the floor:
 
 ![Power-law interpolation from max_pts to min_pts](img/power_law_curve.png)
+
+Try the formula interactively: [Desmos calculator](https://www.desmos.com/calculator/amsujwhxit).
 
 **Why this formula?**
 
@@ -377,3 +379,11 @@ At build time, the system:
 | Subject tests | 50% of tier value | Rewards specialization without over-counting |
 
 MCP provides a transparent, principled, and computable ranking of competitive math students — inspired by a system that has worked for professional tennis for decades.
+
+---
+
+## Disclaimer
+
+**MCP is in beta and under community review.** The tier assignments, point formulas, and competition inclusions are subject to change as we gather feedback. If you have suggestions for improving the MCP algorithm — including tier placements, new competitions, or formula adjustments — please reach out: [mathcontestintegrity@gmail.com](mailto:mathcontestintegrity@gmail.com).
+
+

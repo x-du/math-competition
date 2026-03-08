@@ -553,20 +553,21 @@ body {
 /* Export PDF (per-student button in card header) */
 .export-pdf-student-btn {
   display: inline-block;
-  padding: 0.5rem 1rem;
+  padding: 0.4rem 0.75rem;
   font-family: var(--font-sans);
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--bg);
-  background: var(--accent);
-  border: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: transparent;
+  border: 1.5px solid var(--accent);
   border-radius: var(--radius);
   cursor: pointer;
-  transition: background 0.2s, opacity 0.2s;
+  transition: background 0.15s, color 0.15s;
 }
 
 .export-pdf-student-btn:hover:not(:disabled) {
-  background: var(--accent-hover);
+  background: var(--accent);
+  color: var(--bg);
 }
 
 .export-pdf-student-btn:disabled {
@@ -574,10 +575,92 @@ body {
   cursor: not-allowed;
 }
 
-.student-header .export-pdf-student-btn {
+.mcp-breakdown-wrap {
+  position: relative;
   margin-left: auto;
-  font-size: 0.85rem;
+}
+
+.mcp-breakdown-btn {
+  display: inline-block;
   padding: 0.4rem 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: transparent;
+  border: 1.5px solid var(--accent);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.mcp-breakdown-btn:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.mcp-breakdown-popover {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+}
+
+.mcp-breakdown-popover:not([hidden]) {
+  display: flex;
+}
+
+.mcp-breakdown-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.mcp-breakdown-popover-inner {
+  position: relative;
+  z-index: 1;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  max-width: 560px;
+  width: 92vw;
+  max-height: 85vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mcp-breakdown-title {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.mcp-breakdown-canvas {
+  display: block;
+  margin: 0 auto;
+}
+
+.mcp-breakdown-legend {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.mcp-breakdown-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  line-height: 1;
 }
 
 /* Results */
@@ -609,6 +692,16 @@ body {
   color: var(--text-muted);
 }
 
+.awards-ranking-subtitle a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.awards-ranking-subtitle a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
 .awards-ranking-controls {
   margin: 0 0 0.75rem;
   font-size: 0.9rem;
@@ -616,6 +709,38 @@ body {
   flex-wrap: wrap;
   align-items: center;
   gap: 0.4rem 1rem;
+}
+
+/* Sort toggle (# Records / MCP) */
+.sort-toggle-wrap {
+  display: inline-flex;
+  align-items: center;
+}
+
+.sort-toggle {
+  display: inline-flex;
+  padding: 2px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--bg);
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  gap: 0;
+}
+
+.sort-toggle-option {
+  padding: 0.25rem 0.65rem;
+  border-radius: calc(var(--radius) - 2px);
+  color: var(--text-muted);
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+
+.sort-toggle-option--active {
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 600;
 }
 
 .awards-ranking-controls .girls-only-label {
@@ -777,6 +902,20 @@ body {
   cursor: pointer;
 }
 
+.student-stats {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.student-stat {
+  background: var(--border);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
 .student-aliases {
   font-size: 0.875rem;
   color: var(--text-muted);
@@ -858,6 +997,34 @@ body {
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
+}
+
+.records-table th.has-tooltip {
+  cursor: help;
+  text-decoration: underline dotted;
+  text-underline-offset: 3px;
+}
+
+.col-tooltip {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 100;
+  margin-top: 4px;
+  padding: 0.5rem 0.75rem;
+  min-width: 200px;
+  max-width: 300px;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  font-size: 0.8rem;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: normal;
+  line-height: 1.45;
+  white-space: normal;
 }
 
 .records-table tr:last-child td {

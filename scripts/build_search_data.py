@@ -16,12 +16,38 @@ CONTESTS_DIR = DATABASE / "contests"
 CONTESTS_CSV = CONTESTS_DIR / "contests.csv"
 OUTPUT_JSON = REPO_ROOT / "docs" / "data.json"
 
-# Contest slugs to exclude from data.json (still kept in database).
 CONTESTS_SKIP_FOR_SEARCH = {
     "mathcounts-national",
 }
 
 BMT_CONTESTS = {"bmt", "bmt-algebra", "bmt-calculus", "bmt-discrete", "bmt-geometry"}
+MPFG_SLUGS = {"mpfg", "mpfg-olympiad"}
+MATHCOUNTS_SLUG = "mathcounts-national-rank"
+
+
+K_STEEPNESS = 3
+
+def compute_mcp_points(mcp_rank: float, N: int, tier: int, weight: float = 1.0) -> int:
+    """Power-law interpolation: rank 1 -> max_pts, rank N -> min_pts (50% of max)."""
+    max_pts = tier * weight
+    min_pts = tier * 0.5 * weight
+    if N <= 1:
+        return round(max_pts)
+    return round(min_pts + (max_pts - min_pts) * ((N - mcp_rank) / (N - 1)) ** K_STEEPNESS)
+
+
+def get_time_weight(year: str, slug: str, current_year: int) -> float:
+    """Time decay: 100% current year, 50% per year older. No decay for MathCounts."""
+    if slug == MATHCOUNTS_SLUG:
+        return 1.0
+    try:
+        y = int(year)
+    except (ValueError, TypeError):
+        return 0.0
+    years_ago = current_year - y
+    if years_ago < 0 or years_ago > 3:
+        return 0.0
+    return 0.5 ** years_ago
 
 
 def humanize_contest(slug: str) -> str:
@@ -51,10 +77,14 @@ def load_contests():
                 continue
             if folder not in by_slug:
                 order.append(folder)
+            tier_str = (row.get("mcp_tier") or "").strip()
+            weight_str = (row.get("mcp_weight") or "").strip()
             by_slug[folder] = {
                 "contest_name": (row.get("contest_name") or "").strip(),
                 "description": (row.get("description") or "").strip(),
                 "website": (row.get("website") or "").strip(),
+                "mcp_tier": int(tier_str) if tier_str else None,
+                "mcp_weight": float(weight_str) if weight_str else None,
             }
     return by_slug, order
 
@@ -105,11 +135,26 @@ def main() -> None:
     records_by_id = {}
     contest_year_files = {}  # slug -> { year -> filename or [filenames] }
 
-    for slug, year, csv_path in collect_result_files():
+    result_files = collect_result_files()
+
+    # Determine the most recent year per contest (for time-decay)
+    max_year_by_slug = {}
+    for slug, year, _ in result_files:
+        try:
+            y = int(year)
+        except ValueError:
+            continue
+        if slug not in max_year_by_slug or y > max_year_by_slug[slug]:
+            max_year_by_slug[slug] = y
+
+    for slug, year, csv_path in result_files:
         if slug in CONTESTS_SKIP_FOR_SEARCH:
             continue
         contest_info = contests.get(slug, {})
         contest_title = (contest_info.get("contest_name") or "").strip() or humanize_contest(slug)
+        mcp_tier = contest_info.get("mcp_tier")
+        mcp_weight = contest_info.get("mcp_weight")
+
         if slug not in contest_year_files:
             contest_year_files[slug] = {}
         if year not in contest_year_files[slug]:
@@ -120,6 +165,10 @@ def main() -> None:
             rows = list(reader)
         if not rows:
             continue
+
+        # Count N for mcp_points calculation
+        N = sum(1 for r in rows if (r.get("mcp_rank") or "").strip())
+
         for row in rows:
             if slug in BMT_CONTESTS:
                 try:
@@ -138,21 +187,32 @@ def main() -> None:
             except ValueError:
                 continue
             record = {
-                "contest": contest_title,
                 "year": year,
                 "contest_slug": slug,
             }
+            skip_keys = {"student_id", "student_id ", "student_name", "state"}
             for k, v in row.items():
                 if k is None:
                     continue
                 k = k.strip()
-                if k and k not in ("student_id", "student_id "):
+                if k and k not in skip_keys:
                     if v is not None and str(v).strip() != "":
                         record[k] = v.strip() if isinstance(v, str) else v
+
+            # Compute mcp_points from mcp_rank if MCP-eligible
+            mcp_rank_str = (row.get("mcp_rank") or "").strip()
+            if mcp_rank_str and mcp_tier and mcp_weight and N > 0:
+                mcp_rank = float(mcp_rank_str)
+                pts = compute_mcp_points(mcp_rank, N, mcp_tier, mcp_weight)
+                record["mcp_points"] = pts
+                tw = get_time_weight(year, slug, max_year_by_slug.get(slug, 2026))
+                contrib = round(pts * tw, 2)
+                if contrib > 0:
+                    record["mcp_contrib"] = int(contrib) if contrib == int(contrib) else contrib
+
             if sid not in records_by_id:
                 records_by_id[sid] = []
             recs = records_by_id[sid]
-            # Deduplicate: same contest_slug+year for this student (from multiple CSVs)
             key = (record["contest_slug"], record["year"])
             if any((r.get("contest_slug"), r.get("year")) == key for r in recs):
                 continue
@@ -176,15 +236,39 @@ def main() -> None:
         recs.sort(key=lambda r: (r.get("year", ""), r.get("contest", "")), reverse=True)
         info = students.get(sid, {"name": f"Student {sid}", "aliases": [], "state": "", "gender": "male", "grade_in_2026": None})
         state = (info.get("state") or "").strip() or infer_state_from_records(recs)
-        result_students.append({
+
+        # Compute MCP and MCP-W totals with time decay
+        mcp_total = 0.0
+        mcp_w_extra = 0.0
+        for r in recs:
+            pts = r.get("mcp_points")
+            if not pts:
+                continue
+            slug = r.get("contest_slug", "")
+            tw = get_time_weight(r.get("year", ""), slug, max_year_by_slug.get(slug, 2026))
+            if tw <= 0:
+                continue
+            weighted = pts * tw
+            if slug in MPFG_SLUGS:
+                mcp_w_extra += weighted
+            else:
+                mcp_total += weighted
+
+        gender = (info.get("gender") or "male").strip().lower() or "male"
+        student_entry = {
             "id": sid,
             "name": info["name"],
             "aliases": info["aliases"],
             "state": state,
-            "gender": (info.get("gender") or "male").strip().lower() or "male",
+            "gender": gender,
             "grade_in_2026": info.get("grade_in_2026"),
+            "mcp": round(mcp_total, 2),
             "records": recs,
-        })
+        }
+        if gender == "female" or mcp_w_extra > 0:
+            student_entry["mcp_w"] = round(mcp_total + mcp_w_extra, 2)
+
+        result_students.append(student_entry)
 
     # Normalize contest_year_files: single file -> string, multiple -> array
     for slug in contest_year_files:
@@ -194,10 +278,43 @@ def main() -> None:
                 contest_year_files[slug][year] = files[0]
             # else keep as list for multiple files
 
+    # Build slug_index and replace contest_slug strings with compact numeric indices
+    slug_set = set()
+    for s in result_students:
+        for r in s["records"]:
+            slug_set.add(r["contest_slug"])
+    slug_index = sorted(slug_set)
+    slug_to_idx = {s: i for i, s in enumerate(slug_index)}
+    for s in result_students:
+        for r in s["records"]:
+            r["c"] = slug_to_idx[r.pop("contest_slug")]
+
+    # Shorten record keys; key_map maps short -> long for frontend hydration
+    KEY_MAP = {
+        "y": "year", "rk": "rank", "sc": "score", "aw": "award",
+        "dv": "division", "ts": "total_score", "tn": "team_name",
+        "sh": "school", "gr": "grade", "tm": "team", "pz": "prize",
+        "pl": "place", "su": "subject", "si": "site",
+        "mr": "mcp_rank", "mp": "mcp_points", "mc": "mcp_contrib",
+        "fs": "finals_score", "as": "algebra_score", "gs": "geometry_score",
+        "cs": "combinatorics_score", "ge": "general_score", "th": "theme_score",
+        "ir": "international_rank", "ur": "us_rank", "bi": "bmt_student_id",
+        "cn": "club_name", "t1": "test1", "t2": "test2", "tt": "total",
+        "qa": "q10",
+    }
+    long_to_short = {v: k for k, v in KEY_MAP.items()}
+    for s in result_students:
+        for r in s["records"]:
+            for long_key in list(r.keys()):
+                if long_key in long_to_short:
+                    r[long_to_short[long_key]] = r.pop(long_key)
+
     OUTPUT_JSON.parent.mkdir(parents=True, exist_ok=True)
     with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
         json.dump(
             {
+                "slug_index": slug_index,
+                "key_map": KEY_MAP,
                 "students": result_students,
                 "contests": contests,
                 "contest_year_files": contest_year_files,

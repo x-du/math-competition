@@ -19,6 +19,9 @@
   var contestFilterEl = document.getElementById("contest-filter");
   var contestFilterTriggerEl = document.getElementById("contest-filter-trigger");
   var contestFilterSummaryEl = document.getElementById("contest-filter-summary");
+  var sortToggleEl = document.getElementById("sort-toggle");
+
+  var sortMode = "records"; // "records" or "mcp"
 
   var amoAlertList = [];
   var stateDistPopoverOpen = false;
@@ -239,6 +242,11 @@
     return keys.sort();
   }
 
+  var MCP_COLUMNS = { mcp_points: true, mcp_rank: true, mcp_contrib: true };
+  var COLUMN_TOOLTIPS = {
+    mcp_contrib: "Time-weighted MCP points this result contributes to the student\u2019s total MCP score. Recent results count more; older results decay by 50% per year."
+  };
+
   function allRecordHeaders(records) {
     var set = {};
     for (var r = 0; r < records.length; r++) {
@@ -247,7 +255,13 @@
     }
     var arr = [];
     for (var k in set) if (Object.prototype.hasOwnProperty.call(set, k)) arr.push(k);
-    return arr.sort();
+    arr.sort(function (a, b) {
+      var aMcp = MCP_COLUMNS[a] ? 1 : 0;
+      var bMcp = MCP_COLUMNS[b] ? 1 : 0;
+      if (aMcp !== bMcp) return aMcp - bMcp;
+      return a.localeCompare(b);
+    });
+    return arr;
   }
 
   function compareContestSlugs(a, b) {
@@ -324,7 +338,9 @@
       var allKeys = allRecordHeaders(contestRecords);
       var headerCells = "<th data-col=\"year\">" + escapeHtml("Year") + "</th>" + allKeys.map(function (k) {
         var label = k.replace(/_/g, " ");
-        return "<th data-col=\"" + escapeHtml(k) + "\">" + escapeHtml(label) + "</th>";
+        var tip = COLUMN_TOOLTIPS[k];
+        var tipAttr = tip ? " data-tooltip=\"" + escapeHtml(tip) + "\" class=\"has-tooltip\" tabindex=\"0\" role=\"button\"" : "";
+        return "<th data-col=\"" + escapeHtml(k) + "\"" + tipAttr + ">" + escapeHtml(label) + "</th>";
       }).join("");
       var rows = contestRecords.map(function (r) { return renderRecordRow(r, allKeys); }).join("");
 
@@ -359,11 +375,53 @@
       gradeHtml = " <span class=\"awards-ranking-grade\" title=\"Current grade (school year starts Sept 1)\">" + escapeHtml(gradeLabel) + "</span>";
     }
 
+    var totalRecords = records.length;
+    var mcpTotal = student.mcp != null ? Number(student.mcp) : 0;
+    var statsHtml = "<span class=\"student-stats\">" +
+      "<span class=\"student-stat\">" + totalRecords + (totalRecords === 1 ? " record" : " records") + "</span>" +
+      (mcpTotal > 0 ? "<span class=\"student-stat\">" + mcpTotal + " MCP</span>" : "") +
+      "</span>";
+
+    var mcpBtnHtml = "";
+    if (mcpTotal > 0) {
+      var contribByContest = {};
+      for (var ci = 0; ci < records.length; ci++) {
+        var rec = records[ci];
+        var contrib = rec.mcp_contrib;
+        if (!contrib || contrib <= 0) continue;
+        var cSlug = rec.contest_slug || rec.contest || "other";
+        var cInfo = (contestsMap || {})[cSlug];
+        var cName = (cInfo && cInfo.contest_name) ? cInfo.contest_name : cSlug;
+        contribByContest[cName] = (contribByContest[cName] || 0) + contrib;
+      }
+      for (var ck in contribByContest) {
+        if (Object.prototype.hasOwnProperty.call(contribByContest, ck)) {
+          contribByContest[ck] = Math.round(contribByContest[ck] * 100) / 100;
+        }
+      }
+      mcpBtnHtml =
+        "<span class=\"mcp-breakdown-wrap\">" +
+          "<button type=\"button\" class=\"mcp-breakdown-btn\" aria-label=\"MCP breakdown\">MCP</button>" +
+          "<div class=\"mcp-breakdown-popover\" hidden>" +
+            "<div class=\"mcp-breakdown-popover-inner\">" +
+              "<h3 class=\"mcp-breakdown-title\">MCP Breakdown — " + escapeHtml(String(mcpTotal)) + " pts</h3>" +
+              "<canvas class=\"mcp-breakdown-canvas\" width=\"260\" height=\"260\"></canvas>" +
+              "<div class=\"mcp-breakdown-legend\"></div>" +
+              "<button type=\"button\" class=\"mcp-breakdown-close\" aria-label=\"Close\">×</button>" +
+            "</div>" +
+            "<div class=\"mcp-breakdown-backdrop\" aria-hidden=\"true\"></div>" +
+          "</div>" +
+          "<script type=\"application/json\" class=\"mcp-breakdown-data\">" + JSON.stringify(contribByContest) + "</script>" +
+        "</span>";
+    }
+
     return (
       "<article class=\"student-card\" data-student-id=\"" + escapeHtml(String(student.id)) + "\">" +
         "<div class=\"student-header\">" +
           "<h2 class=\"student-name\" data-student-name=\"" + escapeHtml(String(student.name || "")) + "\">" + escapeHtml(student.name) + (stateHtml ? " " + stateHtml : "") + gradeHtml + "</h2>" +
+          statsHtml +
           aliasesHtml +
+          mcpBtnHtml +
           "<button type=\"button\" class=\"export-pdf-student-btn\" aria-label=\"Export this student to PDF\">Export to PDF</button>" +
         "</div>" +
         "<div class=\"student-contests\">" + sections.join("") + "</div>" +
@@ -508,6 +566,7 @@
       });
     }
 
+    var isGirlsOnly = girlsOnlyEl && girlsOnlyEl.checked;
     var counts = [];
     if (students && students.length) {
       for (var i = 0; i < students.length; i++) {
@@ -515,7 +574,13 @@
         var records = (student.records || []).filter(recordMatchesContestFilter);
         var count = records.length;
         if (count > 0) {
-          counts.push({ student: student, recordsCount: count });
+          var mcpTotal;
+          if (isGirlsOnly && student.mcp_w != null) {
+            mcpTotal = Number(student.mcp_w);
+          } else {
+            mcpTotal = student.mcp != null ? Number(student.mcp) : 0;
+          }
+          counts.push({ student: student, recordsCount: count, mcpTotal: mcpTotal });
         }
       }
     }
@@ -526,6 +591,24 @@
     for (var j = 0; j < counts.length; j++) totalRecords += counts[j].recordsCount;
     var totalRecordEl = document.getElementById("total-record-count");
     if (totalRecordEl) totalRecordEl.textContent = String(totalRecords);
+
+    var rankingTitleTextEl = document.getElementById("ranking-title-text");
+    var subtitleEl = topStudentsSectionEl && topStudentsSectionEl.querySelector(".awards-ranking-subtitle");
+    var mcpLabel = (isGirlsOnly && sortMode === "mcp") ? "MCP-W" : "MCP";
+    if (rankingTitleTextEl) {
+      rankingTitleTextEl.textContent = sortMode === "mcp"
+        ? "Top students by " + mcpLabel + " points"
+        : "Top students by # of records";
+    }
+    if (subtitleEl) {
+      if (sortMode === "mcp") {
+        subtitleEl.innerHTML = "Sorted by total " + mcpLabel + " (Math Competition Points" + (isGirlsOnly ? " — Women" : "") + "). Points are awarded by competition tier and placement, with recent results weighted more. " +
+          "<a href=\"articles/mcp.html\" target=\"_blank\" rel=\"noopener\">Learn more</a>. " +
+          "In beta. Under community review. Feedback on the MCP algorithm: <a href=\"mailto:mathcontestintegrity@gmail.com\">mathcontestintegrity@gmail.com</a>.";
+      } else {
+        subtitleEl.textContent = "Sorted by number of competition records in this database. Not a ranking of ability or talent.";
+      }
+    }
 
     computeStateDistributions(counts);
     if (stateDistPopoverOpen) renderStateDistCharts();
@@ -538,12 +621,22 @@
       return;
     }
 
-    counts.sort(function (a, b) {
-      if (b.recordsCount !== a.recordsCount) return b.recordsCount - a.recordsCount;
-      var nameA = (a.student && a.student.name) || "";
-      var nameB = (b.student && b.student.name) || "";
-      return nameA.localeCompare(nameB);
-    });
+    var isMcp = sortMode === "mcp";
+    if (isMcp) {
+      counts.sort(function (a, b) {
+        if (b.mcpTotal !== a.mcpTotal) return b.mcpTotal - a.mcpTotal;
+        var nameA = (a.student && a.student.name) || "";
+        var nameB = (b.student && b.student.name) || "";
+        return nameA.localeCompare(nameB);
+      });
+    } else {
+      counts.sort(function (a, b) {
+        if (b.recordsCount !== a.recordsCount) return b.recordsCount - a.recordsCount;
+        var nameA = (a.student && a.student.name) || "";
+        var nameB = (b.student && b.student.name) || "";
+        return nameA.localeCompare(nameB);
+      });
+    }
 
     var top = counts.slice(0, 100);
     var items = [];
@@ -560,12 +653,18 @@
       if (gradeLabel) {
         gradeHtml = " <span class=\"awards-ranking-grade\" title=\"Current grade (school year starts Sept 1)\">" + gradeLabel + "</span>";
       }
-      var label = entry.recordsCount === 1 ? "record" : "records";
+      var valueText;
+      if (isMcp) {
+        valueText = String(entry.mcpTotal) + " " + mcpLabel;
+      } else {
+        var label = entry.recordsCount === 1 ? "record" : "records";
+        valueText = String(entry.recordsCount) + " " + label;
+      }
       items.push(
         "<li class=\"awards-ranking-item\">" +
           "<span class=\"awards-ranking-position\">#" + (i + 1) + "</span>" +
           "<span class=\"awards-ranking-name\" data-student-name=\"" + escapeHtml(String(s.name || "")) + "\">" + escapeHtml(displayName) + gradeHtml + "</span>" +
-          "<span class=\"awards-ranking-count\" data-student-name=\"" + escapeHtml(String(s.name || "")) + "\">" + escapeHtml(String(entry.recordsCount)) + " " + label + "</span>" +
+          "<span class=\"awards-ranking-count\" data-student-name=\"" + escapeHtml(String(s.name || "")) + "\">" + escapeHtml(valueText) + "</span>" +
         "</li>"
       );
     }
@@ -600,6 +699,17 @@
     if (girlsOnlyEl) girlsOnlyEl.checked = false;
     if (gradeFilterEl) gradeFilterEl.value = "";
     if (stateFilterEl) stateFilterEl.value = "";
+    sortMode = "records";
+    if (sortToggleEl) {
+      var opts = sortToggleEl.querySelectorAll(".sort-toggle-option");
+      for (var i = 0; i < opts.length; i++) {
+        if (opts[i].getAttribute("data-mode") === "records") {
+          opts[i].classList.add("sort-toggle-option--active");
+        } else {
+          opts[i].classList.remove("sort-toggle-option--active");
+        }
+      }
+    }
     if (contestFilterEl) {
       var allBox = contestFilterEl.querySelector("input[type='checkbox'][value='all']");
       var boxes = contestFilterEl.querySelectorAll("input[type='checkbox']");
@@ -877,9 +987,7 @@
     latestStateDist.records = recordsByState;
   }
 
-  function drawPieChart(canvasId, legendId, distMap) {
-    var canvas = document.getElementById(canvasId);
-    var legendEl = document.getElementById(legendId);
+  function drawPieChartOnElements(canvas, legendEl, distMap) {
     if (!canvas || !legendEl) return;
 
     var entries = [];
@@ -963,8 +1071,16 @@
   }
 
   function renderStateDistCharts() {
-    drawPieChart("state-dist-students-canvas", "state-dist-students-legend", latestStateDist.students);
-    drawPieChart("state-dist-records-canvas", "state-dist-records-legend", latestStateDist.records);
+    drawPieChartOnElements(
+      document.getElementById("state-dist-students-canvas"),
+      document.getElementById("state-dist-students-legend"),
+      latestStateDist.students
+    );
+    drawPieChartOnElements(
+      document.getElementById("state-dist-records-canvas"),
+      document.getElementById("state-dist-records-legend"),
+      latestStateDist.records
+    );
   }
 
   function bindStateDistPopover() {
@@ -1003,6 +1119,21 @@
         return res.json();
       })
       .then(function (json) {
+        var si = json.slug_index || [];
+        var km = json.key_map || {};
+        var students = json.students || [];
+        for (var s = 0; s < students.length; s++) {
+          var recs = students[s].records || [];
+          for (var r = 0; r < recs.length; r++) {
+            var rec = recs[r];
+            if (si.length && rec.c != null) { rec.contest_slug = si[rec.c]; delete rec.c; }
+            for (var sk in km) {
+              if (Object.prototype.hasOwnProperty.call(rec, sk)) {
+                rec[km[sk]] = rec[sk]; delete rec[sk];
+              }
+            }
+          }
+        }
         data = json;
         var order = json.contest_order || [];
         var orderMap = {};
@@ -1072,6 +1203,21 @@
     stateFilterEl.addEventListener("change", function () {
       renderTopStudentsByRecords();
       runSearch();
+    });
+  }
+
+  if (sortToggleEl) {
+    sortToggleEl.addEventListener("click", function () {
+      sortMode = sortMode === "records" ? "mcp" : "records";
+      var opts = sortToggleEl.querySelectorAll(".sort-toggle-option");
+      for (var i = 0; i < opts.length; i++) {
+        if (opts[i].getAttribute("data-mode") === sortMode) {
+          opts[i].classList.add("sort-toggle-option--active");
+        } else {
+          opts[i].classList.remove("sort-toggle-option--active");
+        }
+      }
+      renderTopStudentsByRecords();
     });
   }
 
@@ -1149,6 +1295,26 @@
         if (card) exportStudentToPdf(card);
         return;
       }
+      if (target && target.classList && target.classList.contains("mcp-breakdown-btn")) {
+        var wrap = target.closest(".mcp-breakdown-wrap");
+        if (!wrap) return;
+        var popover = wrap.querySelector(".mcp-breakdown-popover");
+        var dataEl = wrap.querySelector(".mcp-breakdown-data");
+        if (!popover || !dataEl) return;
+        popover.hidden = false;
+        var canvas = popover.querySelector(".mcp-breakdown-canvas");
+        var legend = popover.querySelector(".mcp-breakdown-legend");
+        try {
+          var contribData = JSON.parse(dataEl.textContent);
+          drawPieChartOnElements(canvas, legend, contribData);
+        } catch (e) { /* ignore */ }
+        return;
+      }
+      if (target && target.classList && (target.classList.contains("mcp-breakdown-close") || target.classList.contains("mcp-breakdown-backdrop"))) {
+        var pop = target.closest(".mcp-breakdown-popover");
+        if (pop) pop.hidden = true;
+        return;
+      }
       if (!target || !target.classList || !target.classList.contains("student-name")) return;
       var nameAttr = target.getAttribute("data-student-name");
       var name = (nameAttr || target.textContent || "").trim();
@@ -1189,6 +1355,31 @@
       }
     });
   }
+
+  // Tap-friendly tooltip for column headers
+  (function () {
+    var activeTooltip = null;
+    function dismissTooltip() {
+      if (activeTooltip && activeTooltip.parentNode) {
+        activeTooltip.parentNode.removeChild(activeTooltip);
+      }
+      activeTooltip = null;
+    }
+    document.addEventListener("click", function (ev) {
+      var th = ev.target && ev.target.closest ? ev.target.closest(".has-tooltip") : null;
+      if (!th) { dismissTooltip(); return; }
+      var text = th.getAttribute("data-tooltip");
+      if (!text) return;
+      ev.stopPropagation();
+      dismissTooltip();
+      var tip = document.createElement("div");
+      tip.className = "col-tooltip";
+      tip.textContent = text;
+      th.style.position = "relative";
+      th.appendChild(tip);
+      activeTooltip = tip;
+    }, true);
+  })();
 
   // Dismiss keyboard on mobile when tapping outside the search box
   if (searchEl) {
