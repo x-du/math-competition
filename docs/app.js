@@ -219,19 +219,46 @@
     return g + bumps;
   }
 
-  /** Returns grade label string (e.g. "G10", "U1") or "" if no grade. */
+  /**
+   * Returns grade label string.
+   * - current grade <= 8: M + year, e.g. M2026 (M(2026 + 8 - grade_in_2026))
+   * - current grade <= 12: H + year, e.g. H2027 (H(2026 + 12 - grade_in_2026))
+   * - current grade > 12: U + year, e.g. U2029 (U(2026 + 16 - grade_in_2026))
+   */
   function getGradeLabel(gradeIn2026) {
     var currentGrade = getCurrentGrade(gradeIn2026);
     if (currentGrade == null) return "";
-    return currentGrade <= 12 ? "G" + currentGrade : "U" + (currentGrade - 12);
+    var g = parseInt(String(gradeIn2026).trim(), 10);
+    if (isNaN(g)) return "";
+    if (currentGrade <= 8) return "M" + (2026 + 8 - g);
+    if (currentGrade <= 12) return "H" + (2026 + 12 - g);
+    return "U" + (2026 + 16 - g);
   }
 
-  /** Sort key for grade labels: G6..G12 then U1, U2, ... */
+  /** Sort key for grade labels: M2026..M2033 (1-8), H2026..H2029 (9-12), U2026.. (13+). */
   function gradeLabelSortKey(label) {
     if (!label || label === "") return -1;
-    if (label.charAt(0) === "G") return parseInt(label.slice(1), 10);
-    if (label.charAt(0) === "U") return 12 + parseInt(label.slice(1), 10);
+    var prefix = label.charAt(0);
+    var rest = label.slice(1);
+    var year = parseInt(rest, 10);
+    if (isNaN(year)) return -1;
+    if (prefix === "M") return 2034 - year;  // M2026 -> 8, M2033 -> 1
+    if (prefix === "H") return 2038 - year;  // H2026 -> 12, H2029 -> 9
+    if (prefix === "U") return 2042 - year;  // U2029 -> 13, U2028 -> 14
     return -1;
+  }
+
+  /** Display order for grade selector: H2026..H2029 first, then M2026.., then U.. */
+  function gradeLabelDisplayOrder(a, b) {
+    var prefixOrder = { H: 0, M: 1, U: 2 };
+    var pa = a.charAt(0);
+    var pb = b.charAt(0);
+    var ya = parseInt(a.slice(1), 10) || 0;
+    var yb = parseInt(b.slice(1), 10) || 0;
+    var oa = prefixOrder[pa];
+    var ob = prefixOrder[pb];
+    if (oa != null && ob != null && oa !== ob) return oa - ob;
+    return ya - yb;
   }
 
   function recordToDisplayKeys(record) {
@@ -504,9 +531,7 @@
         gradeLabels.push(k);
       }
     }
-    gradeLabels.sort(function (a, b) {
-      return gradeLabelSortKey(a) - gradeLabelSortKey(b);
-    });
+    gradeLabels.sort(gradeLabelDisplayOrder);
 
     if (gradeFilterEl) {
       var currentValue = gradeFilterEl.value;
