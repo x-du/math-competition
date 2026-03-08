@@ -1133,7 +1133,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1188,Mugeng Lin,"British Columbia, Canada",,,male,
 1189,Sophie Liu,Nevada,465,,female,
 1190,Evan Lu,"Ontario, Canada",,,male,
-1191,Zehan Pan,New Jersey,,,male,
+1191,Zehan Pan,New Jersey,,,male,13
 1192,James Rydell,California,,,male,
 1193,Qingzhou Shen,Georgia,,,male,
 1194,Easton Singer,Ohio,,,male,
@@ -1609,7 +1609,6 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1678,Heyang Ni,California,,,male,14
 1679,Huiran Zheng,,,,female,
 1681,Tanishq Pauskar,Ohio,,,male,14
-1682,Zehan Pan,California,,,male,
 1683,Alexander Yunjae Jun,Texas,,,male,
 1684,Boyan,Massachusetts,,,male,
 1685,James Lian,New York,,,male,
