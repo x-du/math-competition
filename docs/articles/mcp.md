@@ -324,7 +324,7 @@ Result files are discovered dynamically — all result CSVs within each competit
 | CMIMC — Combinatorics & CS | 500 | 50% | rank |
 | CMIMC — Geometry | 500 | 50% | rank |
 | BAMO-12 | 500 | 100% | rank_mixed |
-| MathCounts National | 500 | 100% | mathcounts |
+| MathCounts National | 500 | 100% | rank |
 | MPFG (→ MCP-W) | 500 | 100% | rank |
 | MPFG-Olympiad (→ MCP-W) | 500 | 100% | award |
 | MMATHS | 250 | 100% | rank |
