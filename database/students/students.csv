@@ -841,7 +841,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 878,Andrew Wen,Massachusetts,14,,male,15
 879,Andy Xu,New Jersey,14,,male,
 881,Yichen Cedric Xiao,New York,42,,male,
-882,Benjamin Chen,Illinois,241,,male,
+882,Benjamin Chen,Illinois,241,,male,11
 884,Shihan Kanungo,California,,,male,12
 885,Aarush Vailaya,California,,,male,
 886,Warren Bei,"British Columbia, Canada",,,male,13
@@ -885,7 +885,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 924,Victor Sarca,"Ontario, Canada",,,male,
 925,Kalan Warusa,Virginia,271,,male,12
 926,Asher Wu,Washington,,,male,
-927,Arthur Xu,Illinois,,,male,
+927,Arthur Xu,Illinois,,,male,9
 928,Kellen Xue,California,489,,male,
 929,Nathan Ye,California,,,male,
 930,Bole Ying,Pennsylvania,,,male,
@@ -893,7 +893,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 932,Leo Zeng,California,,,male,
 933,Alexander Zhang,"Ontario, Canada",,,male,
 934,Charles Zhang,California,,,male,
-935,Eric Zhang,Illinois,,,male,
+935,Eric Zhang,Illinois,,,male,9
 937,Charlie Qian,"Ontario, Canada",,,male,
 938,Sam Shi,"Ontario, Canada",,,male,
 940,Agastya Goel,California,,,male,
@@ -1055,7 +1055,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1113,Ethan Lee,California,,,male,
 1114,Nina Li,"British Columbia, Canada",,,female,
 1115,Josiah Moltz,New York,,,male,
-1116,Shreyas Singh,Illinois,,,male,
+1116,Shreyas Singh,Illinois,,,male,10
 1117,Eric Wang,Massachusetts,,,male,12
 1118,Xiaoyang Wu,California,,,male,
 1119,Haozhe Yang,"Saskatchewan, Canada",,,male,
@@ -1119,7 +1119,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1177,Kenneth Chen,Minnesota,,,male,
 1178,Jessica Dong,China,,,female,
 1179,Mason Fang,California,,,male,
-1180,Arnav Goel,Illinois,,,male,
+1180,Arnav Goel,Illinois,,,male,11
 1181,Paul Hamrick,California,,,male,
 1182,Garrett Heller,Virginia,,,male,15
 1183,Qingcheng Hu,California,,,male,
@@ -2428,7 +2428,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 2510,Rutvik Arora,California,,,male,
 2511,Rohan Mallick,California,,,male,
 2512,Gary Hu,,,,male,
-2513,Howard Dai,Illinois,,,male,
+2513,Howard Dai,Illinois,,,male,10
 2514,Jasen Penchev,,,,male,
 2515,Linden Lee,Minnesota,,,male,
 2516,Shreyas Shrivastava,Michigan,,,male,
