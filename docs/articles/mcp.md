@@ -99,13 +99,13 @@ Before computing points, all results are normalized to a single numeric `mcp_ran
 
 Every `mcp_rank` is converted to points via a **power-law curve** between a maximum and a floor:
 
-$$\text{mcp\_points}(r) = \text{round}\left(\text{min\_pts} + (\text{max\_pts} - \text{min\_pts}) \times \left(\frac{N - r}{N - 1}\right)^k\right)$$
+$$\text{mcp}\_\text{points}(r) = \text{round}\left(\text{min}\_\text{pts} + (\text{max}\_\text{pts} - \text{min}\_\text{pts}) \times \left(\frac{N - r}{N - 1}\right)^k\right)$$
 
 | Variable | Description | Example Value |
 |---|---|---|
 | $r$ | The current rank being calculated | $1 \dots 100$ |
-| $\text{max\_pts}$ | The maximum points awarded (at Rank 1) | $1000$ |
-| $\text{min\_pts}$ | The floor/minimum points awarded (at Rank N) | $500$ |
+| $\text{max}\_\text{pts}$ | The maximum points awarded (at Rank 1) | $1000$ |
+| $\text{min}\_\text{pts}$ | The floor/minimum points awarded (at Rank N) | $500$ |
 | $N$ | The total number of ranked students | $100$ |
 | $k$ | The steepness coefficient | $3$ |
 
