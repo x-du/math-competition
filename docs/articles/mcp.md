@@ -35,13 +35,6 @@ Competitions are classified into four tiers — **2000**, **1000**, **500**, and
 
 **Why Grand Slam?** These are the pinnacle international olympiads. Participation is invitation-only and extremely selective — students earn their spot through national competitions (AMO, JMO). A first-place finish among US participants at IMO, EGMO, or RMM represents the highest achievement in competitive mathematics and warrants the maximum MCP value (2000 points).
 
-**Grand Slam point calculation:** Because these competitions are so selective, points are awarded by **medal** rather than by rank interpolation:
-- **Gold:** full tier value (2000)
-- **Silver:** tier value × 75% (1500)
-- **Bronze:** tier value × 50% (1000)
-
-The standard time-decay rule (Section 5) still applies.
-
 ### Tier 1000 — Premier Competitions
 
 | Competition | Ranked Students | Notes |
@@ -104,7 +97,12 @@ Before computing points, all results are normalized to a single numeric `mcp_ran
 
 ### Step 2: Compute `mcp_points`
 
-**Grand Slam competitions (IMO, EGMO, RMM):** Points are awarded directly by medal: Gold = tier value, Silver = tier × 75%, Bronze = tier × 50%. No power-law interpolation is used. Time decay still applies.
+**Grand Slam competitions (IMO, EGMO, RMM):** Because these competitions are so selective, points are awarded by **medal** rather than by rank interpolation. No power-law curve is used.
+- **Gold:** full tier value (2000)
+- **Silver:** tier value × 75% (1500)
+- **Bronze:** tier value × 50% (1000)
+
+The standard time-decay rule (Section 5) still applies.
 
 **All other competitions:** Every `mcp_rank` is converted to points via a **power-law curve** between a maximum and a floor:
 
