@@ -4,9 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Math Competition — Student Records</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="preload" href="data.json" as="fetch" crossorigin>
 </head>
@@ -271,7 +268,18 @@
           </label>
         </span>
       </p>
-      <ol id="awards-ranking-list" class="awards-ranking-list"></ol>
+      <ol id="awards-ranking-list" class="awards-ranking-list" aria-busy="true">
+        <script>
+        (function(){
+          var list = document.getElementById('awards-ranking-list');
+          var items = [];
+          for (var i = 1; i <= 100; i++) {
+            items.push('<li class="awards-ranking-item awards-ranking-item--skeleton"><span class="awards-ranking-position">#' + i + '</span><span class="awards-ranking-name">Loading…</span><span class="awards-ranking-count">—</span></li>');
+          }
+          list.innerHTML = items.join('');
+        })();
+        </script>
+      </ol>
     </section>
 
     <div id="results" class="results"></div>

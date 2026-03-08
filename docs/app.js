@@ -656,6 +656,7 @@
         ? "No female students with records in this view."
         : "No record data available yet.";
       awardsRankingListEl.innerHTML = "<li class=\"awards-ranking-empty\">" + escapeHtml(emptyMsg) + "</li>";
+      awardsRankingListEl.setAttribute("aria-busy", "false");
       return;
     }
 
@@ -706,8 +707,19 @@
         "</li>"
       );
     }
+    /* Pad with invisible items when fewer than 100 to prevent layout shift */
+    for (var p = top.length; p < 100; p++) {
+      items.push(
+        "<li class=\"awards-ranking-item awards-ranking-item--pad\" aria-hidden=\"true\">" +
+          "<span class=\"awards-ranking-position\">#" + (p + 1) + "</span>" +
+          "<span class=\"awards-ranking-name\">—</span>" +
+          "<span class=\"awards-ranking-count\">—</span>" +
+        "</li>"
+      );
+    }
 
     awardsRankingListEl.innerHTML = items.join("");
+    awardsRankingListEl.setAttribute("aria-busy", "false");
   }
 
   function bindContestListPopover() {
@@ -1086,7 +1098,7 @@
         var lx = cx + Math.cos(midAngle) * labelR;
         var ly = cy + Math.sin(midAngle) * labelR;
         ctx.fillStyle = "#fff";
-        ctx.font = "bold 11px 'DM Sans', sans-serif";
+        ctx.font = "bold 11px system-ui, sans-serif";
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
         ctx.fillText(Math.round((slice.value / total) * 100) + "%", lx, ly);
