@@ -130,6 +130,34 @@
     contestFilterSummaryEl.textContent = text;
   }
 
+  function isContestFilterActive() {
+    if (!contestFilterEl || !contestFilterWrapEl || contestFilterWrapEl.hidden) return false;
+    var selected = getActiveContestFilterValues();
+    return selected.length > 0 && selected.indexOf("all") === -1;
+  }
+
+  function isMcpWOnlySlug(slug) {
+    if (!slug) return false;
+    var s = String(slug).toLowerCase();
+    return s === "mpfg" || s.indexOf("mpfg-olympiad") !== -1 || s === "egmo";
+  }
+
+  function computeMcpFromRecords(records, isGirlsOnly) {
+    var total = 0;
+    for (var i = 0; i < records.length; i++) {
+      var contrib = records[i].mcp_contrib;
+      if (contrib != null && contrib > 0) {
+        if (isGirlsOnly) {
+          total += Number(contrib);
+        } else {
+          var slug = records[i].contest_slug || records[i].contest || "";
+          if (!isMcpWOnlySlug(slug)) total += Number(contrib);
+        }
+      }
+    }
+    return total;
+  }
+
   function recordMatchesContestFilter(record) {
     if (!record) return false;
     if (!contestFilterEl || !contestFilterWrapEl || contestFilterWrapEl.hidden) return true;
@@ -407,7 +435,12 @@
     }
 
     var totalRecords = records.length;
-    var mcpTotal = student.mcp != null ? Number(student.mcp) : 0;
+    var mcpTotal;
+    if (isContestFilterActive()) {
+      mcpTotal = computeMcpFromRecords(records, (document.getElementById("girls-only") || {}).checked);
+    } else {
+      mcpTotal = student.mcp != null ? Number(student.mcp) : 0;
+    }
     var statsHtml = "<span class=\"student-stats\">" +
       "<span class=\"student-stat\">" + totalRecords + (totalRecords === 1 ? " record" : " records") + "</span>" +
       (mcpTotal > 0 ? "<span class=\"student-stat\">" + mcpTotal + " MCP</span>" : "") +
@@ -605,6 +638,7 @@
     }
 
     var isGirlsOnly = girlsOnlyEl && girlsOnlyEl.checked;
+    var contestFilterActive = isContestFilterActive();
     var counts = [];
     if (students && students.length) {
       for (var i = 0; i < students.length; i++) {
@@ -613,7 +647,9 @@
         var count = records.length;
         if (count > 0) {
           var mcpTotal;
-          if (isGirlsOnly && student.mcp_w != null) {
+          if (contestFilterActive && sortMode === "mcp") {
+            mcpTotal = computeMcpFromRecords(records, isGirlsOnly);
+          } else if (isGirlsOnly && student.mcp_w != null) {
             mcpTotal = Number(student.mcp_w);
           } else {
             mcpTotal = student.mcp != null ? Number(student.mcp) : 0;
