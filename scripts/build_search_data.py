@@ -23,6 +23,9 @@ CONTESTS_SKIP_FOR_SEARCH = {
 BMT_CONTESTS = {"bmt", "bmt-algebra", "bmt-calculus", "bmt-discrete", "bmt-geometry"}
 MPFG_SLUGS = {"mpfg", "mpfg-olympiad", "egmo"}  # Gender-restricted: count toward MCP-W only
 MATHCOUNTS_SLUG = "mathcounts-national-rank"
+# Contests where state comes from results.csv (not students.csv): the state the student
+# represented at that competition, which may differ from their current state.
+CONTESTS_WITH_CSV_STATE = {MATHCOUNTS_SLUG, "amo", "jmo"}
 GRAND_SLAM_SLUGS = {"imo", "egmo", "rmm"}  # Award-based points: Gold=100%, Silver=75%, Bronze=50%
 
 
@@ -219,6 +222,14 @@ def main() -> None:
                     if v is not None and str(v).strip() != "":
                         record[k] = v.strip() if isinstance(v, str) else v
 
+            # For MATHCOUNTS, USAMO, USJMO: store state from the CSV (not students.csv) so we show
+            # the state the student represented at that competition, which may differ from their
+            # current state in students.csv.
+            if slug in CONTESTS_WITH_CSV_STATE:
+                state_val = (row.get("state") or "").strip()
+                if state_val:
+                    record["state"] = state_val
+
             # Compute mcp_points from mcp_rank if MCP-eligible
             mcp_rank_str = (row.get("mcp_rank") or "").strip()
             if mcp_tier and mcp_weight:
@@ -326,7 +337,7 @@ def main() -> None:
         "cs": "combinatorics_score", "ge": "general_score", "th": "theme_score",
         "ir": "international_rank", "ur": "us_rank", "bi": "bmt_student_id",
         "cn": "club_name", "t1": "test1", "t2": "test2", "tt": "total",
-        "qa": "q10",
+        "qa": "q10", "st": "state",
     }
     long_to_short = {v: k for k, v in KEY_MAP.items()}
     for s in result_students:
