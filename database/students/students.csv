@@ -512,7 +512,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 545,Matthew Qian,Massachusetts,189,,male,13
 546,Rohith Raghavan,Massachusetts,189,,male,13
 547,Yuan Zhuang,Massachusetts,189,,male,13
-548,Michael Lu,New York,190,,male,13
+548,Michael Lu,New York,190,,male,14
 549,Elita You,Michigan,190,,female,13
 550,Austin Wang,Minnesota,191,,male,11
 551,Sneha Kundu,Minnesota,191,,female,12
@@ -2430,3 +2430,4 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 2516,Shreyas Shrivastava,Michigan,,,male,15
 2517,Qian Xu,New Jersey,,,male,
 2518,Alex Wa,Georgia,,,male,14
+2519,Michael Lu,Michigan,,,male,13
