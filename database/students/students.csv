@@ -44,7 +44,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 43,Christopher Peng,Washington,7|89,,male,11
 44,Krithik Manoharan,Texas,24|86|110,,male,9
 45,Aaryan Vaishya,Florida,19|291,,male,12
-46,Ray Zhao,Texas,8,,male,12
+46,Ray Zhao,Texas,8,Raymond Zhao,male,12
 47,Shaohuan Zhang,Michigan,30|34|298,Nick Zhang,male,12
 48,Varun Gadi,Georgia,31,,male,11
 49,Amogh Akella,Texas,24|110,,male,12
@@ -205,7 +205,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 230,Peter Bai,Massachusetts,26|100,,male,
 231,Ryan Karim,West Virginia,83,,male,11
 232,Aashita Mandiwal,Utah,4,,female,9
-233,Adam Smith,,32,,male,
+233,Adam Smith,New Jersey,32,,male,
 234,Nolan McDermott,,104,,male,
 235,Paul Yoo,Virginia,85|292,,male,11
 236,Jennifer Zhou,Ohio,87,,female,
@@ -246,7 +246,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 273,Evin Liang,Massachusetts,26,,male,
 274,Kai Lum,California,112,,male,
 275,Catherine Xu,Iowa,117|286,,female,12
-276,Thomas Amdur,,73,,male,
+276,Thomas Amdur,New Jersey,73,,male,
 277,Aprameya Tripathy,New Jersey,119,,male,13
 278,Albert Cao,Maryland,116|287,,male,12
 279,Sophia Hou,Virginia,85,,female,12
@@ -261,21 +261,20 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 288,David Lee,California,42,,male,
 289,Kyle Wu,New York,49,,male,12
 290,Daniel Lu,State Department,66|231,,male,13
-291,Yuji Peter Wang,,42,,male,
-292,Justin Mu,,118,,male,
+291,Yuji Peter Wang,New Jersey,42,,male,
+292,Justin Mu,California,118,,male,
 293,Gabriel Levin,,49,,male,
 294,Samuel Wang,Virginia,26,,male,16
-295,Raymond Zhao,,86,,male,
 296,Hansen Shieh,Massachusetts,113,,male,
 297,Christopher Lu,New York,123,,male,
 298,Ian Buchanan,New York,49,,male,
 299,Xuzhou Ren,Florida,19,,male,
 300,Isaac Chen,New Jersey,32,,male,
 301,Harry Kim,New York,120|278,,male,
-302,Kenneth Ren,,88,,male,
+302,Kenneth Ren,New York,88,,male,
 303,Alansha Jiang,Washington,89,,female,13
 304,Jerry Xu,Massachusetts,26|261,,male,
-306,Abhi Palikala,,85,,male,
+306,Abhi Palikala,Virginia,85,,male,13
 307,Steven Lou,New York,49,,male,13
 308,Muztaba Syed,Massachusetts,26,,male,
 309,Aaron Wang,North Carolina,97,,male,
@@ -284,7 +283,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 312,Rio Schillmoeller,Massachusetts,113,,male,
 313,Andrew Feng,,124,,male,
 314,Neil Peter,Pennsylvania,73,,male,
-315,Jeremy Lee,,102,,male,
+315,Jeremy Lee,New Jersey,102,,male,
 317,Michael Aram,New York,88|289,,male,
 318,David Yu,Maryland,95|266,,male,10
 319,Seabert Mao,California,112,,male,11
@@ -836,7 +835,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 874,Sreehari Vijaybhaskar,Texas,222|300,,male,
 875,Rohan Pavuluri,,225,,male,
 876,Aiden Dai,New York,11,,male,
-877,Heyang Felicity Ni,,42,,male,
+877,Heyang Felicity Ni,New Jersey,42,,male,
 878,Andrew Wen,Massachusetts,14,,male,15
 879,Andy Xu,New Jersey,14,,male,
 881,Yichen Cedric Xiao,New York,42,,male,
@@ -1162,16 +1161,16 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1222,Patrick Chu,,,,male,
 1223,Aiden Feyerherm,Virginia,132|270,,male,13
 1224,Ethan Han,,,,male,
-1225,Alexander Jun,,,,male,
+1225,Alexander Jun,Texas,,,male,
 1226,Katherine Li,New York,318,,female,13
 1227,Tina Li,Texas,,,female,14
 1228,Bhaumik Mehta,,,,male,
-1229,Vishal Nandakumar,,,,male,
+1229,Vishal Nandakumar,Virginia,,,male,14
 1230,Zian Shi,,,,male,
 1231,Joseph Vulakh,Kentucky,,,male,14
 1232,Henry Yao,,,,male,
 1233,Davido Zhang,,,,male,
-1234,Andrew Zhao,,,,male,
+1234,Andrew Zhao,Massachusetts,,,male,14
 1235,Alex Zheng,,,,male,
 1236,Ricky Hu,California,,,male,
 1237,Zander Li,"Ontario, Canada",,,male,
