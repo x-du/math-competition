@@ -1001,7 +1001,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1058,Aiden Jeong,California,,,male,
 1059,Gloria Ma,California,,,female,12
 1060,Michael Middlezong,New Jersey,,,male,
-1061,Julia Xiang,California,,,female,12
+1061,Julia Xiang,California,,,female,13
 1062,Jerry Zhang,California,,,male,
 1063,Daniel Zhou,Michigan,299,,male,12
 1064,Garrett Cai,California,,,male,
@@ -1452,7 +1452,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1518,Matthew Ji Chen,Minnesota,78,,male,
 1519,Leo Wu,California,,,male,
 1520,Xuanyi Zhang,California,,,male,
-1521,Harry Haiwen Gao,New York,,,male,
+1521,Harry Haiwen Gao,New York,,Harry Gao,male,
 1523,JUNNING SHAO,,,,male,
 1524,David Zhang,New Jersey,,,male,13
 1525,Aaron Xie,Florida,,,male,
@@ -2060,7 +2060,6 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 2139,Cooper Kaligis,Wyoming,,,male,15
 2140,Jack Weiss,Wyoming,,,male,14
 2141,Grace Yang,Indiana,,,female,15
-2142,Harry Gao,New York,480,,male,
 2143,Max Li,California,468,,male,
 2144,Alexander Sheng,New Jersey,476|499,,male,
 2145,Yeojun Jung,,470,,male,

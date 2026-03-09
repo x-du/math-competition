@@ -1,7 +1,7 @@
 student_id,team_name,student_name,year,division,rank,total_score,finals_score,test1,test2,mcp_rank
 96,Sierra Canyon School,Qiao Zhang,2024,B,1,3.889,21,20.112 (ALG),17.527 (CMB),1
 407,Pingry Blue,Elbert Ho,2024,B,2,3.699,21,12.043 (ALG),15.581 (CMB),2
-2142,Ward Melville Math Team,Harry Gao,2024,B,3,3.476,19,16.297 (NTY),7.450 (GEO),3
+1521,Ward Melville Math Team,Harry Gao,2024,B,3,3.476,19,16.297 (NTY),7.450 (GEO),3
 1226,Theta Math Club,Katherine Li,2024,B,4,3.444,21,8.837 (GEO),10.761 (NTY),4
 738,Jericho A,Liran Zhou,2024,B,5,3.435,17,8.816 (GEO),15.450 (NTY),5
 918,Arcadia High School,Jiawen Huang,2024,B,6,3.241,17,4.921 (NTY),14.554 (GEO),6
