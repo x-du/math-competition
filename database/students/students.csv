@@ -415,7 +415,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 448,Raina Wu,Washington,7,,female,14
 449,William Chenfeng Dai,Canada,128,,male,
 450,Minseok Eli Park,North Carolina,12,,male,
-451,Hankai Zhang,Michigan,34|332,,male,
+451,Hankai Zhang,Michigan,34|332,,male,15
 452,Espen Slettnes,California,9,,male,15
 453,Shreyan Avi Paliwal,,64,,female,
 454,Kavan Doctor,California,60,,male,
@@ -982,7 +982,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1037,Evan Li,California,,,male,
 1038,Jason Lu,New Jersey,326|483,,male,
 1039,Wenhao Lu,New Jersey,,,male,
-1040,Nathan Mei,Michigan,34,,male,
+1040,Nathan Mei,Michigan,34,,male,9
 1041,JonJon She,Massachusetts,,,male,
 1042,Michael Sun,"Ontario, Canada",,,male,
 1043,Heather Wang,California,,,female,11
@@ -1003,7 +1003,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1060,Michael Middlezong,New Jersey,,,male,
 1061,Julia Xiang,California,,,female,12
 1062,Jerry Zhang,California,,,male,
-1063,Daniel Zhou,Michigan,299,,male,
+1063,Daniel Zhou,Michigan,299,,male,12
 1064,Garrett Cai,California,,,male,
 1065,Amelia Chen,California,,,female,12
 1066,Hayden Chen,California,,,male,
@@ -1026,7 +1026,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1084,Maiya Qiu,New Jersey,276|476,,female,11
 1085,Ethan Qu,California,,,male,
 1086,Greta Qu,"Ontario, Canada",,,female,11
-1087,Justin Seo,Michigan,298,,male,
+1087,Justin Seo,Michigan,298,,male,12
 1088,Kallie Wang,California,,,female,12
 1090,Immanuel Whang,Washington,,,male,12
 1092,Kyle Yang,Massachusetts,,,male,
@@ -1178,7 +1178,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1240,Ishani Agarwal,California,,,female,13
 1241,Anay Aggarwal,Oregon,,,male,
 1242,Samarth Bhargav,Virginia,,,male,13
-1243,Brandon Chan,Michigan,34,,male,
+1243,Brandon Chan,Michigan,34,,male,12
 1244,Yao Chen,California,,,male,
 1245,Vince Choi,California,,,male,
 1246,Cyrus Chung,California,,,male,
@@ -1192,7 +1192,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1254,Jefferson Ji,Massachusetts,268,,male,
 1255,Minyku Jo,Idaho,,,male,
 1256,Seoyeon Kim,Kansas,,,male,
-1257,Michael Li,Michigan,,,male,
+1257,Michael Li,Michigan,,,male,14
 1258,WeiWei Luo,Canada,,,male,
 1259,Pavel MacKenzie,Canada,,,male,
 1260,Tatiana Medved,North Carolina,,,female,13
@@ -1385,13 +1385,13 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1451,Mihir Kumar,,305,,male,
 1452,Anand Swaroop,,314,,male,
 1453,Steve Cui,,321,,male,
-1454,Arnav Vunnam,Michigan,307,,male,
+1454,Arnav Vunnam,Michigan,307,,male,7
 1455,Daniel David,,296,,male,
 1456,Benjamin Sun,,246|490,,male,
 1457,Ben Li,North Carolina,301,,male,
 1458,Abby Kesmodel,New York,288,,female,
 1459,Brian Zhao,,295,,male,
-1460,Woojin Seong,Michigan,307,,male,
+1460,Woojin Seong,Michigan,307,,male,10
 1461,Dawson Park,Connecticut,161|485,,male,
 1462,Mia Gan,New Jersey,310,,female,
 1463,Kaya Yang,New Jersey,311,,female,
@@ -1404,7 +1404,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1470,Tianze Qiu,New York,318,,male,10
 1471,Jason Yang,Massachusetts,26,,male,
 1472,Zekai Wang,,308,,male,
-1473,Pun Tresattayapan,Michigan,298,,male,
+1473,Pun Tresattayapan,Michigan,298,,male,12
 1474,Benjamin Tang,California,319,,male,
 1475,Hridaan Mehta,New Jersey,297|465|491,,male,
 1476,Ian Cheng,,321,,male,
@@ -2404,7 +2404,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 2488,Alex Zhao,Connecticut,,,male,
 2489,Darren Jia,Pennsylvania,,,male,
 2490,Krish Mody,Oklahoma,,,male,
-2491,Jackson Gong,Michigan,,,male,
+2491,Jackson Gong,Michigan,,,male,12
 2492,Jack Wang,New York,,,male,
 2493,William Li,Florida,,,male,14
 2494,Sophia Fan,California,,,female,
@@ -2428,6 +2428,6 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 2513,Howard Dai,Illinois,,,male,16
 2514,Jasen Penchev,,,,male,
 2515,Linden Lee,Minnesota,,,male,
-2516,Shreyas Shrivastava,Michigan,,,male,
+2516,Shreyas Shrivastava,Michigan,,,male,15
 2517,Qian Xu,New Jersey,,,male,
 2518,Alex Wa,Georgia,,,male,14
