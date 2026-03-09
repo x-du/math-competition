@@ -881,12 +881,6 @@ body {
   opacity: 0.6;
 }
 
-/* Invisible pad items when fewer than 100 results to prevent layout shift */
-.awards-ranking-item--pad {
-  visibility: hidden;
-  pointer-events: none;
-}
-
 .student-card {
   background: var(--surface);
   border: 1px solid var(--border);

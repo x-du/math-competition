@@ -707,16 +707,6 @@
         "</li>"
       );
     }
-    /* Pad with invisible items when fewer than 100 to prevent layout shift */
-    for (var p = top.length; p < 100; p++) {
-      items.push(
-        "<li class=\"awards-ranking-item awards-ranking-item--pad\" aria-hidden=\"true\">" +
-          "<span class=\"awards-ranking-position\">#" + (p + 1) + "</span>" +
-          "<span class=\"awards-ranking-name\">—</span>" +
-          "<span class=\"awards-ranking-count\">—</span>" +
-        "</li>"
-      );
-    }
 
     awardsRankingListEl.innerHTML = items.join("");
     awardsRankingListEl.setAttribute("aria-busy", "false");
