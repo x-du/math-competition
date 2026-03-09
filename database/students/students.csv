@@ -57,10 +57,10 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 57,Christopher Qiu,New Jersey,1|32|73,,male,13
 58,Hannah Fox,California,9,,female,13
 59,Henry Jiang,Michigan,34|75,,male,13
-60,Haotian Zhou,,35,,male,
+60,Haotian Zhou,China,35,,male,
 61,Kailin Yang,New Jersey,17,,male,
 62,Evan Fan,New Hampshire,3|48,,male,12
-64,Michael Pok Hon Chen,,36,,male,
+64,Michael Pok Hon Chen,New Jersey,36,,male,
 65,Selena Ge,Massachusetts,26|261,,female,10
 67,Andrew Shen,Texas,24|86,,male,11
 68,Xilong Lin,California,38,,male,
@@ -181,7 +181,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 205,Mingyue Yang,Washington,89,,male,12
 206,Eric Xie,Maryland,83|251,,male,9
 207,Annie Huaiyu Wang,,90,,female,
-209,Hongming Allan Zhao,,42,,male,
+209,Hongming Allan Zhao,New Jersey,42,,male,
 210,Eric Zhu,North Carolina,92|109,Eric P Zhu,male,11
 211,Chenghao Hu,California,93|112,,male,
 212,Nathan Lu,Maryland,95|144,,male,11
@@ -207,7 +207,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 232,Aashita Mandiwal,Utah,4,,female,9
 233,Adam Smith,,32,,male,
 234,Nolan McDermott,,104,,male,
-235,Paul Yoo,,85|292,,male,
+235,Paul Yoo,Virginia,85|292,,male,11
 236,Jennifer Zhou,,87,,female,
 237,Steven Chan,,101,,male,
 238,Shamik Khowala,California,94,,male,

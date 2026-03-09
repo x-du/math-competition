@@ -188,7 +188,8 @@
       var wantState = stateFilterEl.value;
       out = out.filter(function (s) {
         var st = (s.state || "").trim();
-        if (wantState === "__other__") return !st || !US_STATES_SET[st];
+        if (wantState === "__none__") return !st;
+        if (wantState === "__other__") return st && !US_STATES_SET[st];
         return st === wantState;
       });
     }
@@ -597,9 +598,8 @@
       var wantState = stateFilterEl.value;
       students = students.filter(function (s) {
         var st = (s.state || "").trim();
-        if (wantState === "__other__") {
-          return !st || !US_STATES_SET[st];
-        }
+        if (wantState === "__none__") return !st;
+        if (wantState === "__other__") return st && !US_STATES_SET[st];
         return st === wantState;
       });
     }
