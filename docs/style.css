@@ -743,6 +743,39 @@ body {
   font-weight: 600;
 }
 
+.o-ratio-sort-direction-wrap {
+  display: none;
+  align-items: center;
+  margin-left: 0.5rem;
+}
+
+.o-ratio-sort-direction-wrap.o-ratio-sort-direction-wrap--visible {
+  display: inline-flex;
+}
+
+.sort-direction-btn {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  padding: calc(0.25rem + 1px) 0.65rem;
+  border-radius: calc(var(--radius) - 2px);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+  line-height: 1.25;
+  box-sizing: border-box;
+}
+
+.sort-direction-btn:hover {
+  background: var(--border);
+}
+
+.sort-direction-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
 .awards-ranking-controls .girls-only-label {
   display: inline-flex;
   align-items: center;

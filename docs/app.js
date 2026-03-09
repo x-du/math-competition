@@ -21,7 +21,8 @@
   var contestFilterSummaryEl = document.getElementById("contest-filter-summary");
   var sortToggleEl = document.getElementById("sort-toggle");
 
-  var sortMode = "mcp"; // "records" or "mcp"
+  var sortMode = "mcp"; // "records", "mcp", or "o_ratio"
+  var oRatioSortDesc = true; // true = descending (high to low), false = ascending
   var gradeFilterInitialized = false;
 
   var amoAlertList = [];
@@ -647,14 +648,18 @@
         var count = records.length;
         if (count > 0) {
           var mcpTotal;
-          if (contestFilterActive && sortMode === "mcp") {
+          var oRatio;
+          if (contestFilterActive) {
             mcpTotal = computeMcpFromRecords(records, isGirlsOnly);
-          } else if (isGirlsOnly && student.mcp_w != null) {
-            mcpTotal = Number(student.mcp_w);
           } else {
-            mcpTotal = student.mcp != null ? Number(student.mcp) : 0;
+            if (isGirlsOnly && student.mcp_w != null) {
+              mcpTotal = Number(student.mcp_w);
+            } else {
+              mcpTotal = student.mcp != null ? Number(student.mcp) : 0;
+            }
           }
-          counts.push({ student: student, recordsCount: count, mcpTotal: mcpTotal });
+          oRatio = student.o_ratio != null ? Number(student.o_ratio) : 0;
+          counts.push({ student: student, recordsCount: count, mcpTotal: mcpTotal, oRatio: oRatio });
         }
       }
     }
@@ -672,16 +677,36 @@
     if (rankingTitleTextEl) {
       rankingTitleTextEl.textContent = sortMode === "mcp"
         ? "Top students by " + mcpLabel + " points"
-        : "Top students by # of records";
+        : sortMode === "o_ratio"
+          ? "Top students by O-ratio"
+          : "Top students by # of records";
     }
     if (subtitleEl) {
       if (sortMode === "mcp") {
         subtitleEl.innerHTML = "Sorted by total " + mcpLabel + " (Math Competition Points" + (isGirlsOnly ? " — Women" : "") + "). Points are awarded by competition tier and placement, with recent results weighted more. " +
           "<a href=\"articles/mcp.html\" target=\"_blank\" rel=\"noopener\">Learn more</a>. " +
           "Under community review. Send feedback to: <a href=\"mailto:mathcontestintegrity@gmail.com\">mathcontestintegrity@gmail.com</a>.";
+      } else if (sortMode === "o_ratio") {
+        subtitleEl.innerHTML = "Sorted by O-ratio: (MCP from AMO + JMO) / total MCP. Higher values indicate more of a student's MCP comes from AMO and JMO. " +
+          "Under community review. Send feedback to: <a href=\"mailto:mathcontestintegrity@gmail.com\">mathcontestintegrity@gmail.com</a>.";
       } else {
         subtitleEl.textContent = "Sorted by number of competition records in this database. Not a ranking of ability or talent.";
       }
+    }
+
+    var oRatioSortWrapEl = document.getElementById("o-ratio-sort-direction-wrap");
+    var oRatioSortBtnEl = document.getElementById("o-ratio-sort-direction");
+    if (oRatioSortWrapEl) {
+      if (sortMode === "o_ratio" && isAmoAlertFeatureEnabled()) {
+        oRatioSortWrapEl.classList.add("o-ratio-sort-direction-wrap--visible");
+      } else {
+        oRatioSortWrapEl.classList.remove("o-ratio-sort-direction-wrap--visible");
+      }
+    }
+    if (oRatioSortBtnEl) {
+      oRatioSortBtnEl.textContent = oRatioSortDesc ? "↓ Desc" : "↑ Asc";
+      oRatioSortBtnEl.title = oRatioSortDesc ? "Sort descending (high to low)" : "Sort ascending (low to high)";
+      oRatioSortBtnEl.setAttribute("aria-label", oRatioSortDesc ? "Sort descending (high to low)" : "Sort ascending (low to high)");
     }
 
     computeStateDistributions(counts);
@@ -697,9 +722,17 @@
     }
 
     var isMcp = sortMode === "mcp";
+    var isORatio = sortMode === "o_ratio";
     if (isMcp) {
       counts.sort(function (a, b) {
         if (b.mcpTotal !== a.mcpTotal) return b.mcpTotal - a.mcpTotal;
+        var nameA = (a.student && a.student.name) || "";
+        var nameB = (b.student && b.student.name) || "";
+        return nameA.localeCompare(nameB);
+      });
+    } else if (isORatio) {
+      counts.sort(function (a, b) {
+        if (b.oRatio !== a.oRatio) return oRatioSortDesc ? (b.oRatio - a.oRatio) : (a.oRatio - b.oRatio);
         var nameA = (a.student && a.student.name) || "";
         var nameB = (b.student && b.student.name) || "";
         return nameA.localeCompare(nameB);
@@ -731,6 +764,8 @@
       var valueText;
       if (isMcp) {
         valueText = String(entry.mcpTotal) + " " + mcpLabel;
+      } else if (isORatio) {
+        valueText = (entry.oRatio * 100).toFixed(1) + "% O-ratio";
       } else {
         var label = entry.recordsCount === 1 ? "record" : "records";
         valueText = String(entry.recordsCount) + " " + label;
@@ -776,16 +811,7 @@
     if (gradeFilterEl) gradeFilterEl.value = "__hs__";
     if (stateFilterEl) stateFilterEl.value = "";
     sortMode = "mcp";
-    if (sortToggleEl) {
-      var opts = sortToggleEl.querySelectorAll(".sort-toggle-option");
-      for (var i = 0; i < opts.length; i++) {
-        if (opts[i].getAttribute("data-mode") === "mcp") {
-          opts[i].classList.add("sort-toggle-option--active");
-        } else {
-          opts[i].classList.remove("sort-toggle-option--active");
-        }
-      }
-    }
+    if (sortToggleEl) setSortModeActive("mcp");
     if (contestFilterEl) {
       var allBox = contestFilterEl.querySelector("input[type='checkbox'][value='all']");
       var boxes = contestFilterEl.querySelectorAll("input[type='checkbox']");
@@ -1230,6 +1256,11 @@
         if (amoTrigger) amoTrigger.hidden = !(isAmoAlertFeatureEnabled() && amoAlertList.length > 0);
         var reportBtn = document.getElementById("report-link-btn");
         if (reportBtn) reportBtn.hidden = !isAmoAlertFeatureEnabled();
+        var oRatioOptionEl = document.getElementById("sort-toggle-o-ratio");
+        if (oRatioOptionEl) oRatioOptionEl.hidden = !isAmoAlertFeatureEnabled();
+        if (sortMode === "o_ratio" && !isAmoAlertFeatureEnabled()) {
+          sortMode = "mcp";
+        }
         requestAnimationFrame(function () {
           renderContestList();
           updateContestFilterSummary();
@@ -1282,17 +1313,45 @@
     });
   }
 
+  function setSortModeActive(mode) {
+    if (!sortToggleEl) return;
+    var oRatioEnabled = isAmoAlertFeatureEnabled();
+    if (mode === "o_ratio" && !oRatioEnabled) mode = "mcp";
+    var opts = sortToggleEl.querySelectorAll(".sort-toggle-option");
+    for (var i = 0; i < opts.length; i++) {
+      if (opts[i].getAttribute("data-mode") === mode) {
+        opts[i].classList.add("sort-toggle-option--active");
+      } else {
+        opts[i].classList.remove("sort-toggle-option--active");
+      }
+    }
+  }
+
   if (sortToggleEl) {
-    sortToggleEl.addEventListener("click", function () {
-      sortMode = sortMode === "records" ? "mcp" : "records";
-      var opts = sortToggleEl.querySelectorAll(".sort-toggle-option");
-      for (var i = 0; i < opts.length; i++) {
-        if (opts[i].getAttribute("data-mode") === sortMode) {
-          opts[i].classList.add("sort-toggle-option--active");
+    sortToggleEl.addEventListener("click", function (ev) {
+      var target = ev.target && ev.target.closest ? ev.target.closest(".sort-toggle-option") : null;
+      var oRatioEnabled = isAmoAlertFeatureEnabled();
+      if (target) {
+        var mode = target.getAttribute("data-mode");
+        if (mode && (mode === "records" || mode === "mcp" || (mode === "o_ratio" && oRatioEnabled))) {
+          sortMode = mode;
+        }
+      } else {
+        if (oRatioEnabled) {
+          sortMode = sortMode === "records" ? "mcp" : (sortMode === "mcp" ? "o_ratio" : "records");
         } else {
-          opts[i].classList.remove("sort-toggle-option--active");
+          sortMode = sortMode === "records" ? "mcp" : "records";
         }
       }
+      setSortModeActive(sortMode);
+      renderTopStudentsByRecords();
+    });
+  }
+
+  var oRatioSortDirectionEl = document.getElementById("o-ratio-sort-direction");
+  if (oRatioSortDirectionEl) {
+    oRatioSortDirectionEl.addEventListener("click", function () {
+      oRatioSortDesc = !oRatioSortDesc;
       renderTopStudentsByRecords();
     });
   }

@@ -22,6 +22,7 @@ CONTESTS_SKIP_FOR_SEARCH = {
 
 BMT_CONTESTS = {"bmt", "bmt-algebra", "bmt-calculus", "bmt-discrete", "bmt-geometry"}
 MPFG_SLUGS = {"mpfg", "mpfg-olympiad", "egmo"}  # Gender-restricted: count toward MCP-W only
+AMO_JMO_SLUGS = {"amo", "jmo"}  # Olympiad qualifiers: used for O-ratio
 MATHCOUNTS_SLUG = "mathcounts-national-rank"
 # Contests where state comes from results.csv (not students.csv): the state the student
 # represented at that competition, which may differ from their current state.
@@ -274,9 +275,10 @@ def main() -> None:
         info = students.get(sid, {"name": f"Student {sid}", "aliases": [], "state": "", "gender": "male", "grade_in_2026": None})
         state = (info.get("state") or "").strip() or infer_state_from_records(recs)
 
-        # Compute MCP and MCP-W totals with time decay
+        # Compute MCP and MCP-W totals with time decay; O-ratio = (AMO+JMO MCP) / total MCP
         mcp_total = 0.0
         mcp_w_extra = 0.0
+        mcp_amo_jmo = 0.0
         for r in recs:
             pts = r.get("mcp_points")
             if not pts:
@@ -290,6 +292,10 @@ def main() -> None:
                 mcp_w_extra += weighted
             else:
                 mcp_total += weighted
+                if slug in AMO_JMO_SLUGS:
+                    mcp_amo_jmo += weighted
+
+        o_ratio = round(mcp_amo_jmo / mcp_total, 4) if mcp_total > 0 else 0.0
 
         gender = (info.get("gender") or "male").strip().lower() or "male"
         student_entry = {
@@ -300,6 +306,7 @@ def main() -> None:
             "gender": gender,
             "grade_in_2026": info.get("grade_in_2026"),
             "mcp": round(mcp_total, 2),
+            "o_ratio": o_ratio,
             "records": recs,
         }
         if gender == "female" or mcp_w_extra > 0:
