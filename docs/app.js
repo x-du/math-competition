@@ -1420,6 +1420,17 @@
         if (amoTrigger) amoTrigger.hidden = !(isAmoAlertFeatureEnabled() && amoAlertList.length > 0);
         var reportBtn = document.getElementById("report-link-btn");
         if (reportBtn) reportBtn.hidden = !isAmoAlertFeatureEnabled();
+        var mcpPctOption = document.getElementById("mcp-pct-sort-option");
+        if (mcpPctOption) mcpPctOption.hidden = !isAmoAlertFeatureEnabled();
+        if (!isAmoAlertFeatureEnabled() && sortMode === "mcp_pct") {
+          sortMode = "mcp";
+          if (sortToggleEl) {
+            var opts = sortToggleEl.querySelectorAll(".sort-toggle-option");
+            for (var oi = 0; oi < opts.length; oi++) {
+              opts[oi].classList.toggle("sort-toggle-option--active", opts[oi].getAttribute("data-mode") === "mcp");
+            }
+          }
+        }
         requestAnimationFrame(function () {
           renderContestList();
           updateContestFilterSummary();
