@@ -2,6 +2,21 @@
 
 ## A Unified Ranking System for High School Math Competitors
 
+- [1. Motivation](#1-motivation)
+- [2. Competition Tiers](#2-competition-tiers)
+- [3. Point Distribution](#3-point-distribution)
+- [4. Subject Tests and Sub-Events](#4-subject-tests-and-sub-events)
+- [5. Time Decay and Rolling Window](#5-time-decay-and-rolling-window)
+- [6. Special Rules](#6-special-rules)
+- [7. Aggregation and Final Score](#7-aggregation-and-final-score)
+- [8. Worked Example: HMMT February over 4 Years](#8-worked-example-hmmt-february-over-4-years)
+- [9. Competition Configuration](#9-competition-configuration)
+- [10. Data Pipeline](#10-data-pipeline)
+- [11. MCP %](#11-mcp-)
+- [12. Limitations](#12-limitations)
+- [13. Summary](#13-summary)
+- [Disclaimer](#disclaimer)
+
 ---
 
 ## 1. Motivation
@@ -375,20 +390,57 @@ At build time, the system:
 
 ---
 
-## 11. Summary
+## 11. MCP %
+
+**MCP %** (MCP contribution percentage) measures what fraction of a student's total MCP comes from a selected set of competitions. It answers the question: *"How much of this student's ranking is driven by contest X (or contests X, Y, Z)?"*
+
+### What it means
+
+When you select one or more contests in the database's contest filter (e.g., AMO, HMMT February, or both), MCP % shows the ratio:
+
+$$\text{MCP \%} = \frac{\text{MCP from selected contests}}{\text{Total MCP}}$$
+
+For example, if a student has 2000 total MCP and 1200 of it comes from AMO and USAMO, their MCP % for that selection is 60%. A student whose MCP is entirely from HMMT would show 100% when HMMT is selected and 0% when only AMO is selected.
+
+### How to use it
+
+- **Identify specialization.** Students with high MCP % for a given contest are heavily "specialists" in that competition — their ranking is driven largely by that event. Students with low MCP % for the same contest have diversified their results across many competitions.
+- **Compare contest importance.** Select different contest combinations to see how much each contributes to top students' totals. This helps understand which competitions drive the overall ranking.
+- **Sort and explore.** The database lets you sort by MCP % (ascending or descending) when a contest filter is active. Use this to find students whose MCP is most (or least) concentrated in the selected contests.
+
+MCP % is only meaningful when the contest filter is active. Without a filter, there is no "selected" subset, so MCP % is not computed.
+
+---
+
+## 12. Limitations
+
+Our data covers only students who received **official recognition** at each competition — i.e., those who placed in the ranked list or received an award (Gold, Silver, Bronze, Honorable Mention, etc.). We do not have complete results for all competitors at most events.
+
+Because of this, we set **`min_pts` to 50% of `max_pts`** in the point distribution formula (Section 3). The last-ranked student in our data (Rank N) earns `min_pts`, but in reality they may have outperformed many other competitors who are not in our dataset. A higher floor (50% of max) reduces the penalty for being "last" in a partially observed field.
+
+**If we had complete data** — full results for every competitor at every competition — we could set `min_pts` to a much lower value (e.g., 10% or 5% of `max_pts`). That would spread points more evenly across the full field and better distinguish students who finished near the middle or bottom of the actual competition. Until such data becomes available, the 50% floor is a conservative choice that reflects the limitations of our current coverage.
+
+---
+
+## 13. Summary
+
+MCP adapts the ATP/WTA tennis ranking model to competitive mathematics: competitions are tiered by prestige, points are assigned by placement via a power-law curve, and results are aggregated over a rolling window with geometric time decay. The system unifies rank-based and award-based competitions through a normalized `mcp_rank`, rewards both overall and subject-level performance, and maintains a separate MCP-W ranking for women. The database supports MCP % to analyze contest-specific contribution when filters are applied. Data coverage is limited to officially recognized students, which motivates the 50% min-pts floor.
 
 | Design Decision | Choice | Rationale |
 |---|---|---|
+| Model | ATP/WTA-inspired | Proven tiered system; rewards breadth, handles heterogeneous events, time-relevant |
 | Tier system | 2000 / 1000 / 500 / 250 | Grand Slam for international olympiads; matches competition prestige |
-| Point formula | min + (max − min) × ((N−r)/(N−1))^k | Power-law curve with k=3; Rank 1 = Tier, Rank N = Tier/2 |
+| Rank normalization | `mcp_rank` (avg-rank-for-ties, award blocks) | Unifies rank-based, award-based, and mixed-format competitions |
+| Point formula | min + (max − min) × ((N−r)/(N−1))^k | Power-law curve with k=3; Rank 1 = max_pts, Rank N = min_pts |
+| min_pts | 50% of max_pts | Conservative floor for partially observed fields (see Limitations) |
+| IMO/EGMO/RMM | Medal-based (Gold/Silver/Bronze) | No power-law; full/75%/50% of tier; time decay applies |
+| Subject tests | 50% of tier value | Overall 100%; each subject 50%; rewards specialization |
 | Rolling window | 4 years | Captures a full high school career |
 | Time decay | Geometric (÷2 per year) | Smooth, recency-biased, no cliff effects |
-| IMO/EGMO/RMM | Grand Slam (2000) | Award-based: Gold=2000, Silver=1500, Bronze=1000; time decay applies |
 | MathCounts | No decay, no window | Middle school results are inherently time-limited |
 | MPFG / EGMO | Separate MCP-W | Fairness (gender-restricted); visibility for women |
-| Subject tests | 50% of tier value | Rewards specialization without over-counting |
-
-MCP provides a transparent, principled, and computable ranking of competitive math students — inspired by a system that has worked for professional tennis for decades.
+| MCP % | MCP from selected contests ÷ Total MCP | Identifies specialization; requires contest filter |
+| Data coverage | Officially recognized only | min_pts floor reflects partial data; complete data would allow lower floor |
 
 ---
 
