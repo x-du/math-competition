@@ -277,7 +277,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 306,Abhi Palikala,Virginia,85,,male,13
 307,Steven Lou,New York,49,,male,13
 308,Muztaba Syed,Massachusetts,26,,male,
-309,Aaron Wang,North Carolina,97,,male,
+309,Aaron Wang,North Carolina,97,,male,12
 310,David Kim,Massachusetts,100,,male,
 311,Tony Zhang,Virginia,114|251,,male,12
 312,Rio Schillmoeller,Massachusetts,113,,male,
@@ -360,7 +360,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 392,Justin Guo,Tennessee,145,,male,11
 393,Adam Henry Smith,New Jersey,73,,male,
 394,Alexander Yang,Washington,134|216,Alex Yang,male,9
-395,Boyou Huang,Illinois,125|138,,male,
+395,Boyou Huang,Illinois,125|138,,male,9
 396,Elena Ahn Beckman,California,146,Elena Beckman,female,10
 397,Ayush Bansal,California,147,,male,
 398,Neal Yan,California,47,,male,
@@ -860,7 +860,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 901,Hyun-Jin Kim,Texas,,,male,
 902,Sam Kretzschmar,Minnesota,,,male,
 903,Justin Ma,Virginia,,,male,12
-904,Jaewoo Park,Illinois,,,male,
+904,Jaewoo Park,Illinois,,,male,12
 905,Ryan Tang,Massachusetts,261,,male,
 906,Ryan Wang,California,,,male,
 907,Brian Xue,California,,,male,
@@ -961,7 +961,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1014,Lanie Deng,Missouri,,,female,10
 1015,Jincheng Feng,Maryland,,,male,10
 1016,Neel Jindal,California,,,male,
-1017,Bach Kieu,Illinois,,,male,
+1017,Bach Kieu,Indiana,,,male,11
 1018,Nolan Lin,California,,,male,
 1019,Ishaan Mittal,California,,,male,
 1020,Yinuo Pan,Texas,,,male,
@@ -1132,7 +1132,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1193,Qingzhou Shen,Georgia,,,male,
 1194,Easton Singer,Ohio,,,male,
 1195,Christopher Wu,Texas,,,male,
-1196,Daniel Xia,New Jersey,,,male,
+1196,Daniel Xia,New Jersey,,,male,16
 1197,Ai Xiao,New Hampshire,,,male,
 1198,Owen Yang,Arizona,,,male,
 1199,Victor Yin,California,,,male,
