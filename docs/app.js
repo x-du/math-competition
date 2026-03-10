@@ -996,6 +996,7 @@
     });
   }
 
+  var searchRafId = null;
   function runSearch() {
     var query = (searchEl && searchEl.value) ? searchEl.value.trim() : "";
     emptyEl.hidden = true;
@@ -1011,38 +1012,49 @@
       return;
     }
 
-    var matched = data.students.filter(function (s) { return matchStudent(s, query); });
-    // Search results are not filtered by grade, state, or girls - show all matches
+    if (searchRafId) cancelAnimationFrame(searchRafId);
+    searchRafId = requestAnimationFrame(function () {
+      searchRafId = null;
+      var q = (searchEl && searchEl.value) ? searchEl.value.trim() : "";
+      if (q !== query) return;
 
-    var filteredByContest = matched.map(function (s) {
-      var copy = {};
-      for (var k in s) {
-        if (Object.prototype.hasOwnProperty.call(s, k) && k !== "records") {
-          copy[k] = s[k];
+      var matched = data.students.filter(function (s) { return matchStudent(s, query); });
+      // Search results are not filtered by grade, state, or girls - show all matches
+
+      var filteredByContest = matched.map(function (s) {
+        var copy = {};
+        for (var k in s) {
+          if (Object.prototype.hasOwnProperty.call(s, k) && k !== "records") {
+            copy[k] = s[k];
+          }
         }
+        var recs = s.records || [];
+        copy.records = recs.filter(recordMatchesContestFilter);
+        return copy;
+      }).filter(function (s) {
+        return (s.records || []).length > 0;
+      });
+
+      var total = filteredByContest.length;
+      var toRender = total > 10 ? filteredByContest.slice(0, 10) : filteredByContest;
+      hintEl.textContent = total === 0
+        ? "No students found."
+        : total === 1
+          ? "1 student found."
+          : total > 10
+            ? total + " students found. Showing first 10."
+            : total + " students found.";
+
+      if (total === 0) {
+        emptyEl.hidden = false;
+        if (topStudentsSectionEl) topStudentsSectionEl.hidden = false;
+        return;
       }
-      var recs = s.records || [];
-      copy.records = recs.filter(recordMatchesContestFilter);
-      return copy;
-    }).filter(function (s) {
-      return (s.records || []).length > 0;
+
+      if (topStudentsSectionEl) topStudentsSectionEl.hidden = true;
+
+      resultsEl.innerHTML = toRender.map(function (s) { return renderStudent(s, data.contests || {}); }).join("");
     });
-
-    hintEl.textContent = filteredByContest.length === 0
-      ? "No students found."
-      : filteredByContest.length === 1
-        ? "1 student found."
-        : filteredByContest.length + " students found.";
-
-    if (filteredByContest.length === 0) {
-      emptyEl.hidden = false;
-      if (topStudentsSectionEl) topStudentsSectionEl.hidden = false;
-      return;
-    }
-
-    if (topStudentsSectionEl) topStudentsSectionEl.hidden = true;
-
-    resultsEl.innerHTML = filteredByContest.map(function (s) { return renderStudent(s, data.contests || {}); }).join("");
   }
 
   function keysForPdfDisplay(records, slug) {
@@ -1426,7 +1438,7 @@
   }
 
   if (searchEl) {
-    var debouncedSearch = debounce(runSearch, 120);
+    var debouncedSearch = debounce(runSearch, 80);
     searchEl.addEventListener("input", debouncedSearch);
     searchEl.addEventListener("search", runSearch);
   }
