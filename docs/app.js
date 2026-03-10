@@ -467,7 +467,7 @@
       mcpTotal = totalMcp;
     }
     var mcpPctSuffix = "";
-    if (contestFilterActiveCard && mcpTotal > 0 && totalMcp > 0) {
+    if (sortMode === "mcp_pct" && contestFilterActiveCard && mcpTotal > 0 && totalMcp > 0) {
       var ratio = mcpTotal / totalMcp;
       var pctValCard = Math.round(ratio * 1000) / 10;
       var contestLabelsCard = getSelectedContestLabels();
@@ -861,7 +861,7 @@
       var valueText;
       if (isMcp || isMcpPctSort) {
         valueText = String(entry.mcpTotal) + " " + mcpLabel;
-        if (contestFilterActive && entry.mcpRatio != null) {
+        if (isMcpPctSort && contestFilterActive && entry.mcpRatio != null) {
           var pctVal = Math.round(entry.mcpRatio * 1000) / 10;
           var contestLabels = getSelectedContestLabels();
           var contestsStr = contestLabels.length ? contestLabels.join(", ") : "selected contests";
