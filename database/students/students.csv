@@ -1394,7 +1394,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1460,Woojin Seong,Michigan,307,,male,10
 1461,Dawson Park,Connecticut,161|485,,male,
 1462,Mia Gan,New Jersey,310,,female,
-1463,Kaya Yang,New Jersey,311,,female,
+1463,Kaya Yang,New Jersey,311,Ziyi Kaya Yang,female,
 1464,Kevin Yu,New York,318,,male,
 1465,Henry Xue,New York,289,,male,
 1466,Jack Li,,125,,male,
@@ -1440,7 +1440,6 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1506,Nathan Cho,Maryland,65,,male,15
 1507,Jasen Plamenov Penchev,,338,,male,
 1508,Eric Yang,California,339,,male,
-1509,Maximus Lu,New Jersey,45,,male,
 1510,Xinyi Guo,California,340,,male,
 1511,Maximus Liu,New Jersey,73,,male,15
 1512,Bo Sun,New Jersey,32,,male,
@@ -2147,7 +2146,6 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 2229,Amelie Huang,New Jersey,499,,female,
 2230,Vyom Siriyapu,Pennsylvania,306,,male,
 2231,Manas Goyal,Pennsylvania,306,,male,
-2232,Ziyi Kaya Yang,New Jersey,311,,female,
 2233,Yuming Su,New York,480,,male,
 2234,Akshay Gupta,,490,,male,
 2235,Erika Kawakami,New York,481,,female,
