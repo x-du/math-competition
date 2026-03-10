@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
+  <!-- Google tag (gtag.js) - deferred to avoid blocking initial render -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XE0H6HQX32"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-XE0H6HQX32');
+    if (document.readyState === 'complete') {
+      gtag('config', 'G-XE0H6HQX32');
+    } else {
+      window.addEventListener('load', function(){ gtag('config', 'G-XE0H6HQX32'); });
+    }
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -199,9 +203,10 @@
       <p class="awards-ranking-subtitle">Sorted by number of competition records in this database. Not a ranking of ability or talent.</p>
       <p class="awards-ranking-controls">
         <span class="sort-toggle-wrap">
-          <button type="button" id="sort-toggle" class="sort-toggle" aria-label="Toggle sort mode">
+          <button type="button" id="sort-toggle" class="sort-toggle" aria-label="Sort mode">
             <span class="sort-toggle-option" data-mode="records"># Records</span>
             <span class="sort-toggle-option sort-toggle-option--active" data-mode="mcp">MCP</span>
+            <span class="sort-toggle-option" data-mode="mcp_pct">MCP %</span>
           </button>
         </span>
         <label class="girls-only-label">
@@ -277,6 +282,12 @@
           </label>
         </span>
       </p>
+      <p id="mcp-pct-sort-row" class="mcp-pct-sort-row" hidden>
+        <button type="button" id="mcp-pct-sort-btn" class="mcp-pct-sort-btn" aria-label="Toggle sort direction">
+          Sort descending ↓
+        </button>
+        <span id="mcp-pct-sort-text" class="mcp-pct-sort-text">Sorted descending (highest contribution first).</span>
+      </p>
       <ol id="awards-ranking-list" class="awards-ranking-list" aria-busy="true">
         <script>
         (function(){
@@ -292,6 +303,14 @@
     </section>
 
     <div id="results" class="results"></div>
+    <div id="mcp-pct-popover" class="mcp-pct-popover" hidden role="dialog" aria-labelledby="mcp-pct-popover-title">
+      <div class="mcp-pct-popover-inner">
+        <h3 id="mcp-pct-popover-title" class="mcp-pct-popover-title">MCP contribution %</h3>
+        <p id="mcp-pct-popover-body" class="mcp-pct-popover-body"></p>
+        <button type="button" class="mcp-pct-popover-close" aria-label="Close">×</button>
+      </div>
+      <div class="mcp-pct-popover-backdrop" aria-hidden="true"></div>
+    </div>
     <div id="empty" class="empty-state" hidden>
       <p>No students match your search. Try a different name or partial name.</p>
     </div>
@@ -309,8 +328,6 @@
     <p>Please report issues and official contest results to <a href="mailto:mathcontestintegrity@gmail.com">mathcontestintegrity@gmail.com</a>.</p>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.3/jspdf.plugin.autotable.min.js" crossorigin="anonymous"></script>
   <script src="amo-alert-check.js"></script>
   <script src="app.js"></script>
 </body>

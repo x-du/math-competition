@@ -20,13 +20,17 @@
   var contestFilterTriggerEl = document.getElementById("contest-filter-trigger");
   var contestFilterSummaryEl = document.getElementById("contest-filter-summary");
   var sortToggleEl = document.getElementById("sort-toggle");
+  var mcpPctSortRowEl = document.getElementById("mcp-pct-sort-row");
+  var mcpPctSortBtnEl = document.getElementById("mcp-pct-sort-btn");
 
-  var sortMode = "mcp"; // "records" or "mcp"
+  var sortMode = "mcp"; // "records", "mcp", or "mcp_pct"
   var gradeFilterInitialized = false;
+  var ratioSortAsc = false; // For MCP %: true = ascending (lowest first), false = descending (default)
 
   var amoAlertList = [];
   var stateDistPopoverOpen = false;
   var latestStateDist = { students: {}, records: {} };
+  var mcpPctStatsCache = { key: null, html: "" };
 
   function isAmoAlertFeatureEnabled() {
     try {
@@ -84,6 +88,24 @@
     "bamo-12": function (slug) { return slug.indexOf("bamo-12") !== -1; },
     bmt: function (slug) { return slug.indexOf("bmt") === 0; }
   };
+
+  var CONTEST_FILTER_LABELS = {
+    usamo: "USAMO", usajmo: "USAJMO", imo: "IMO", rmm: "RMM", egmo: "EGMO",
+    "hmmt-feb": "HMMT Feb", "hmmt-nov": "HMMT Nov", "pumac-a": "PUMaC Div A", "pumac-b": "PUMaC Div B",
+    mathcounts: "Mathcounts", cmimc: "CMIMC", arml: "ARML", dmm: "DMM", cmm: "CMM",
+    mpfg: "MPFG", "mpfg-olympiad": "MPFG Olympiad", "bamo-8": "BAMO-8", "bamo-12": "BAMO-12", bmt: "BMT"
+  };
+
+  function getSelectedContestLabels() {
+    var vals = getActiveContestFilterValues();
+    if (!vals.length || vals.indexOf("all") !== -1) return [];
+    var labels = [];
+    for (var i = 0; i < vals.length; i++) {
+      var lbl = CONTEST_FILTER_LABELS[vals[i]];
+      if (lbl) labels.push(lbl);
+    }
+    return labels;
+  }
 
   function getActiveContestFilterValues() {
     if (!contestFilterEl) return [];
@@ -436,14 +458,26 @@
 
     var totalRecords = records.length;
     var mcpTotal;
-    if (isContestFilterActive()) {
-      mcpTotal = computeMcpFromRecords(records, (document.getElementById("girls-only") || {}).checked);
+    var isGirlsOnlyCard = (document.getElementById("girls-only") || {}).checked;
+    var totalMcp = isGirlsOnlyCard && student.mcp_w != null ? Number(student.mcp_w) : (student.mcp != null ? Number(student.mcp) : 0);
+    var contestFilterActiveCard = isContestFilterActive();
+    if (contestFilterActiveCard) {
+      mcpTotal = computeMcpFromRecords(records, isGirlsOnlyCard);
     } else {
-      mcpTotal = student.mcp != null ? Number(student.mcp) : 0;
+      mcpTotal = totalMcp;
     }
+    var mcpPctSuffix = "";
+    if (contestFilterActiveCard && mcpTotal > 0 && totalMcp > 0) {
+      var ratio = mcpTotal / totalMcp;
+      var pctValCard = Math.round(ratio * 1000) / 10;
+      var contestLabelsCard = getSelectedContestLabels();
+      var contestsStrCard = contestLabelsCard.length ? contestLabelsCard.join(", ") : "selected contests";
+      mcpPctSuffix = " (<button type=\"button\" class=\"mcp-pct-trigger\" data-pct=\"" + pctValCard + "\" data-contests=\"" + escapeHtml(contestsStrCard) + "\">" + pctValCard + "%</button>)";
+    }
+    var mcpDisplay = mcpTotal > 0 ? "<span class=\"student-stat\">" + mcpTotal + " MCP" + mcpPctSuffix + "</span>" : "";
     var statsHtml = "<span class=\"student-stats\">" +
       "<span class=\"student-stat\">" + totalRecords + (totalRecords === 1 ? " record" : " records") + "</span>" +
-      (mcpTotal > 0 ? "<span class=\"student-stat\">" + mcpTotal + " MCP</span>" : "") +
+      mcpDisplay +
       "</span>";
 
     var mcpBtnHtml = "";
@@ -639,6 +673,13 @@
 
     var isGirlsOnly = girlsOnlyEl && girlsOnlyEl.checked;
     var contestFilterActive = isContestFilterActive();
+    var isMcpPct = sortMode === "mcp_pct";
+
+    if (mcpPctSortRowEl) mcpPctSortRowEl.hidden = !isMcpPct;
+    var mcpPctSortTextEl = document.getElementById("mcp-pct-sort-text");
+    if (mcpPctSortTextEl) mcpPctSortTextEl.textContent = ratioSortAsc ? "Sorted ascending (lowest contribution first)." : "Sorted descending (highest contribution first).";
+    if (mcpPctSortBtnEl) mcpPctSortBtnEl.textContent = ratioSortAsc ? "Sort ascending ↑" : "Sort descending ↓";
+
     var counts = [];
     if (students && students.length) {
       for (var i = 0; i < students.length; i++) {
@@ -646,15 +687,22 @@
         var records = (student.records || []).filter(recordMatchesContestFilter);
         var count = records.length;
         if (count > 0) {
-          var mcpTotal;
-          if (contestFilterActive && sortMode === "mcp") {
-            mcpTotal = computeMcpFromRecords(records, isGirlsOnly);
-          } else if (isGirlsOnly && student.mcp_w != null) {
-            mcpTotal = Number(student.mcp_w);
-          } else {
-            mcpTotal = student.mcp != null ? Number(student.mcp) : 0;
+          var mcpTotal = null;
+          var mcpRatio = null;
+          var filteredMcp = contestFilterActive ? computeMcpFromRecords(records, isGirlsOnly) : null;
+          var totalMcp = isGirlsOnly && student.mcp_w != null ? Number(student.mcp_w) : (student.mcp != null ? Number(student.mcp) : 0);
+          if (sortMode === "mcp") {
+            mcpTotal = contestFilterActive ? filteredMcp : totalMcp;
+            if (contestFilterActive && totalMcp > 0) {
+              mcpRatio = filteredMcp / totalMcp;
+            }
+          } else if (sortMode === "mcp_pct") {
+            if (contestFilterActive && totalMcp > 0) {
+              mcpRatio = filteredMcp / totalMcp;
+            }
+            mcpTotal = totalMcp;
           }
-          counts.push({ student: student, recordsCount: count, mcpTotal: mcpTotal });
+          counts.push({ student: student, recordsCount: count, mcpTotal: mcpTotal, mcpRatio: mcpRatio });
         }
       }
     }
@@ -668,13 +716,17 @@
 
     var rankingTitleTextEl = document.getElementById("ranking-title-text");
     var subtitleEl = topStudentsSectionEl && topStudentsSectionEl.querySelector(".awards-ranking-subtitle");
-    var mcpLabel = (isGirlsOnly && sortMode === "mcp") ? "MCP-W" : "MCP";
+    var mcpLabel = (isGirlsOnly && (sortMode === "mcp" || sortMode === "mcp_pct")) ? "MCP-W" : "MCP";
     if (rankingTitleTextEl) {
-      rankingTitleTextEl.textContent = sortMode === "mcp"
-        ? "Top students by " + mcpLabel + " points"
-        : "Top students by # of records";
+      if (isMcpPct) {
+        rankingTitleTextEl.textContent = "Students by " + mcpLabel + " contribution %";
+      } else {
+        rankingTitleTextEl.textContent = sortMode === "mcp"
+          ? "Top students by " + mcpLabel + " points"
+          : "Top students by # of records";
+      }
     }
-    if (subtitleEl) {
+    if (subtitleEl && !isMcpPct) {
       if (sortMode === "mcp") {
         subtitleEl.innerHTML = "Sorted by total " + mcpLabel + " (Math Competition Points" + (isGirlsOnly ? " — Women" : "") + "). Points are awarded by competition tier and placement, with recent results weighted more. " +
           "<a href=\"articles/mcp.html\" target=\"_blank\" rel=\"noopener\">Learn more</a>. " +
@@ -688,6 +740,10 @@
     if (stateDistPopoverOpen) renderStateDistCharts();
 
     if (!counts.length) {
+      if (subtitleEl && isMcpPct) {
+        subtitleEl.innerHTML = "Select a few contests, e.g. AMO, to see the contribution of that contest to the total MCP. Shows how much of each student's total MCP comes from the selected contests. See <a href=\"articles/mcp.html#11-mcp-\" target=\"_blank\" rel=\"noopener\">MCP %</a> section for details. " +
+          "<a href=\"#\" class=\"mcp-pct-filter-link\">Open contest filter</a>";
+      }
       var emptyMsg = (girlsOnlyEl && girlsOnlyEl.checked)
         ? "No female students with records in this view."
         : "No record data available yet.";
@@ -696,8 +752,29 @@
       return;
     }
 
+    if (isMcpPct && !contestFilterActive) {
+      if (subtitleEl) {
+        subtitleEl.innerHTML = "Select a few contests to see MCP contribution %. See <a href=\"articles/mcp.html#11-mcp-\" target=\"_blank\" rel=\"noopener\">MCP %</a> section for details. " +
+          "<a href=\"#\" class=\"mcp-pct-filter-link\">Open contest filter</a>";
+      }
+      awardsRankingListEl.innerHTML = "<li class=\"awards-ranking-empty\"><a href=\"#\" class=\"mcp-pct-filter-link\">Open contest filter</a></li>";
+      awardsRankingListEl.setAttribute("aria-busy", "false");
+      return;
+    }
+
     var isMcp = sortMode === "mcp";
-    if (isMcp) {
+    var isMcpPctSort = sortMode === "mcp_pct";
+    if (isMcpPctSort) {
+      counts.sort(function (a, b) {
+        var ra = a.mcpRatio != null ? a.mcpRatio : -1;
+        var rb = b.mcpRatio != null ? b.mcpRatio : -1;
+        var cmp = ratioSortAsc ? ra - rb : rb - ra;
+        if (cmp !== 0) return cmp;
+        var nameA = (a.student && a.student.name) || "";
+        var nameB = (b.student && b.student.name) || "";
+        return nameA.localeCompare(nameB);
+      });
+    } else if (isMcp) {
       counts.sort(function (a, b) {
         if (b.mcpTotal !== a.mcpTotal) return b.mcpTotal - a.mcpTotal;
         var nameA = (a.student && a.student.name) || "";
@@ -714,6 +791,59 @@
     }
 
     var top = counts.slice(0, 100);
+
+    if (subtitleEl && isMcpPct) {
+      var statsHtml = "";
+      if (contestFilterActive) {
+        var contestFilterKey = getActiveContestFilterValues().join(",");
+        if (mcpPctStatsCache.key !== contestFilterKey) {
+          var allStudents = data.students || [];
+          var allForStats = [];
+          for (var ai = 0; ai < allStudents.length; ai++) {
+            var st = allStudents[ai];
+            var totalMcpSt = st.mcp != null ? Number(st.mcp) : 0;
+            if (totalMcpSt <= 0) continue;
+            var recsFiltered = (st.records || []).filter(recordMatchesContestFilter);
+            var filteredMcpSt = computeMcpFromRecords(recsFiltered, false);
+            var ratioSt = filteredMcpSt / totalMcpSt;
+            allForStats.push({ totalMcp: totalMcpSt, mcpRatio: ratioSt });
+          }
+          allForStats.sort(function (a, b) { return b.totalMcp - a.totalMcp; });
+          var top100ByMcp = allForStats.slice(0, 100);
+          var ratios = [];
+          for (var k = 0; k < top100ByMcp.length; k++) {
+            var r = top100ByMcp[k].mcpRatio;
+            if (r != null && !isNaN(r)) ratios.push(r);
+          }
+          mcpPctStatsCache.key = contestFilterKey;
+          if (ratios.length > 0) {
+            var sum = 0;
+            var minR = ratios[0];
+            var maxR = ratios[0];
+            for (var kk = 0; kk < ratios.length; kk++) {
+              sum += ratios[kk];
+              if (ratios[kk] < minR) minR = ratios[kk];
+              if (ratios[kk] > maxR) maxR = ratios[kk];
+            }
+            var avg = sum / ratios.length;
+            var sortedRatios = ratios.slice().sort(function (a, b) { return a - b; });
+            var median = sortedRatios.length % 2 === 1
+              ? sortedRatios[Math.floor(sortedRatios.length / 2)]
+              : (sortedRatios[sortedRatios.length / 2 - 1] + sortedRatios[sortedRatios.length / 2]) / 2;
+            var fmt = function (x) { return (Math.round(x * 1000) / 10) + "%"; };
+            var contestLabels = getSelectedContestLabels();
+            var contestPhrase = contestLabels.length > 0 ? contestLabels.join(", ") : "selected contests";
+            mcpPctStatsCache.html = " Among the top 100 students by total MCP, contribution from " + contestPhrase + ": avg " + fmt(avg) + ", min " + fmt(minR) + ", max " + fmt(maxR) + ", median " + fmt(median) + ". Due to limited data, do not make judgments without careful review.";
+          } else {
+            mcpPctStatsCache.html = "";
+          }
+        }
+        statsHtml = mcpPctStatsCache.html;
+      }
+      subtitleEl.innerHTML = "Select a few contests, e.g. AMO, to see the contribution of that contest to the total MCP. Shows how much of each student's total MCP comes from the selected contests. See <a href=\"articles/mcp.html#11-mcp-\" target=\"_blank\" rel=\"noopener\">MCP %</a> section for details." +
+        statsHtml + " <a href=\"#\" class=\"mcp-pct-filter-link\">Open contest filter</a>";
+    }
+
     var items = [];
     for (var i = 0; i < top.length; i++) {
       var entry = top[i];
@@ -729,8 +859,14 @@
         gradeHtml = " <span class=\"awards-ranking-grade\" title=\"Current grade (school year starts Sept 1)\">" + gradeLabel + "</span>";
       }
       var valueText;
-      if (isMcp) {
+      if (isMcp || isMcpPctSort) {
         valueText = String(entry.mcpTotal) + " " + mcpLabel;
+        if (contestFilterActive && entry.mcpRatio != null) {
+          var pctVal = Math.round(entry.mcpRatio * 1000) / 10;
+          var contestLabels = getSelectedContestLabels();
+          var contestsStr = contestLabels.length ? contestLabels.join(", ") : "selected contests";
+          valueText += " (<button type=\"button\" class=\"mcp-pct-trigger\" data-pct=\"" + pctVal + "\" data-contests=\"" + escapeHtml(contestsStr) + "\">" + pctVal + "%</button>)";
+        }
       } else {
         var label = entry.recordsCount === 1 ? "record" : "records";
         valueText = String(entry.recordsCount) + " " + label;
@@ -739,7 +875,7 @@
         "<li class=\"awards-ranking-item\">" +
           "<span class=\"awards-ranking-position\">#" + (i + 1) + "</span>" +
           "<span class=\"awards-ranking-name\" data-student-name=\"" + escapeHtml(String(s.name || "")) + "\">" + escapeHtml(displayName) + gradeHtml + "</span>" +
-          "<span class=\"awards-ranking-count\" data-student-name=\"" + escapeHtml(String(s.name || "")) + "\">" + escapeHtml(valueText) + "</span>" +
+          "<span class=\"awards-ranking-count\" data-student-name=\"" + escapeHtml(String(s.name || "")) + "\">" + valueText + "</span>" +
         "</li>"
       );
     }
@@ -776,6 +912,7 @@
     if (gradeFilterEl) gradeFilterEl.value = "__hs__";
     if (stateFilterEl) stateFilterEl.value = "";
     sortMode = "mcp";
+    ratioSortAsc = false;
     if (sortToggleEl) {
       var opts = sortToggleEl.querySelectorAll(".sort-toggle-option");
       for (var i = 0; i < opts.length; i++) {
@@ -918,6 +1055,38 @@
     return keys.filter(function (k) { return !omit[k]; });
   }
 
+  var jspdfLoadPromise = null;
+  function loadJsPdf(cb) {
+    var JsPDFConstructor = (typeof jspdf !== "undefined" && jspdf.jsPDF) ? jspdf.jsPDF : (typeof jsPDF !== "undefined" ? jsPDF : null);
+    if (JsPDFConstructor) { cb(JsPDFConstructor); return; }
+    if (jspdfLoadPromise) {
+      jspdfLoadPromise.then(function () {
+        var C = (typeof jspdf !== "undefined" && jspdf.jsPDF) ? jspdf.jsPDF : (typeof jsPDF !== "undefined" ? jsPDF : null);
+        cb(C);
+      });
+      return;
+    }
+    jspdfLoadPromise = new Promise(function (resolve, reject) {
+      var s1 = document.createElement("script");
+      s1.src = "https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js";
+      s1.crossOrigin = "anonymous";
+      s1.onload = function () {
+        var s2 = document.createElement("script");
+        s2.src = "https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.3/jspdf.plugin.autotable.min.js";
+        s2.crossOrigin = "anonymous";
+        s2.onload = function () { resolve(); };
+        s2.onerror = reject;
+        document.body.appendChild(s2);
+      };
+      s1.onerror = reject;
+      document.body.appendChild(s1);
+    });
+    jspdfLoadPromise.then(function () {
+      var C = (typeof jspdf !== "undefined" && jspdf.jsPDF) ? jspdf.jsPDF : (typeof jsPDF !== "undefined" ? jsPDF : null);
+      cb(C);
+    }).catch(function () { cb(null); });
+  }
+
   function exportStudentToPdf(cardEl) {
     if (!cardEl) return;
     var studentId = cardEl.getAttribute("data-student-id");
@@ -935,19 +1104,20 @@
       alert("Student data not found.");
       return;
     }
-    var JsPDFConstructor = (typeof jspdf !== "undefined" && jspdf.jsPDF) ? jspdf.jsPDF : (typeof jsPDF !== "undefined" ? jsPDF : null);
-    if (!JsPDFConstructor) {
-      alert("PDF export is not available. Please refresh the page and try again.");
-      return;
-    }
     var btn = cardEl.querySelector(".export-pdf-student-btn");
     if (btn) btn.disabled = true;
     var studentName = (student.name || "").trim();
     var state = (student.state || "").trim();
     var filename = "math-competition-" + (studentName ? studentName.replace(/\W+/g, "-") : "student") + ".pdf";
 
-    try {
-      var doc = new JsPDFConstructor({ orientation: "p", unit: "mm", format: "a4" });
+    loadJsPdf(function (JsPDFConstructor) {
+      if (!JsPDFConstructor) {
+        alert("PDF export is not available. Please refresh the page and try again.");
+        if (btn) btn.disabled = false;
+        return;
+      }
+      try {
+        var doc = new JsPDFConstructor({ orientation: "p", unit: "mm", format: "a4" });
       var margin = 10;
       var y = margin;
 
@@ -1037,11 +1207,12 @@
         y = doc.lastAutoTable.finalY + 10;
       }
 
-      doc.save(filename);
-    } catch (err) {
-      alert("Failed to generate PDF: " + (err && err.message ? err.message : "Unknown error"));
-    }
-    if (btn) btn.disabled = false;
+        doc.save(filename);
+      } catch (err) {
+        alert("Failed to generate PDF: " + (err && err.message ? err.message : "Unknown error"));
+      }
+      if (btn) btn.disabled = false;
+    });
   }
 
   var PIE_COLORS = [
@@ -1202,10 +1373,17 @@
           var recs = students[s].records || [];
           for (var r = 0; r < recs.length; r++) {
             var rec = recs[r];
-            if (si.length && rec.c != null) { rec.contest_slug = si[rec.c]; delete rec.c; }
-            for (var sk in km) {
-              if (Object.prototype.hasOwnProperty.call(rec, sk)) {
-                rec[km[sk]] = rec[sk]; delete rec[sk];
+            if (si.length && rec.c != null) {
+              rec.contest_slug = si[rec.c];
+              delete rec.c;
+            }
+            var keys = Object.keys(rec);
+            for (var ki = 0; ki < keys.length; ki++) {
+              var sk = keys[ki];
+              var longKey = km[sk];
+              if (longKey) {
+                rec[longKey] = rec[sk];
+                delete rec[sk];
               }
             }
           }
@@ -1237,6 +1415,7 @@
           bindContestListPopover();
           bindAmoAlertPopover();
           bindStateDistPopover();
+          bindMcpPctPopover();
           runSearch();
         });
       })
@@ -1283,17 +1462,35 @@
   }
 
   if (sortToggleEl) {
-    sortToggleEl.addEventListener("click", function () {
-      sortMode = sortMode === "records" ? "mcp" : "records";
+    sortToggleEl.addEventListener("click", function (e) {
+      var opt = e.target && e.target.closest && e.target.closest(".sort-toggle-option");
+      if (!opt) return;
+      var mode = opt.getAttribute("data-mode");
+      if (!mode || mode === sortMode) return;
+      sortMode = mode;
       var opts = sortToggleEl.querySelectorAll(".sort-toggle-option");
       for (var i = 0; i < opts.length; i++) {
-        if (opts[i].getAttribute("data-mode") === sortMode) {
-          opts[i].classList.add("sort-toggle-option--active");
-        } else {
-          opts[i].classList.remove("sort-toggle-option--active");
-        }
+        opts[i].classList.toggle("sort-toggle-option--active", opts[i].getAttribute("data-mode") === sortMode);
       }
       renderTopStudentsByRecords();
+      runSearch();
+    });
+  }
+
+  if (mcpPctSortBtnEl) {
+    mcpPctSortBtnEl.addEventListener("click", function () {
+      ratioSortAsc = !ratioSortAsc;
+      renderTopStudentsByRecords();
+    });
+  }
+
+  if (topStudentsSectionEl && contestFilterTriggerEl) {
+    topStudentsSectionEl.addEventListener("click", function (e) {
+      var link = e.target && e.target.closest && e.target.closest(".mcp-pct-filter-link");
+      if (!link) return;
+      e.preventDefault();
+      var popover = document.getElementById("contest-filter-popover");
+      if (popover && popover.hidden) contestFilterTriggerEl.click();
     });
   }
 
@@ -1363,50 +1560,87 @@
     });
   }
 
+  function handleResultsClick(event) {
+    var target = event.target;
+    if (target && target.classList && target.classList.contains("export-pdf-student-btn")) {
+      var card = target.closest(".student-card");
+      if (card) exportStudentToPdf(card);
+      return;
+    }
+    if (target && target.classList && target.classList.contains("mcp-breakdown-btn")) {
+      var wrap = target.closest(".mcp-breakdown-wrap");
+      if (!wrap) return;
+      var popover = wrap.querySelector(".mcp-breakdown-popover");
+      var dataEl = wrap.querySelector(".mcp-breakdown-data");
+      if (!popover || !dataEl) return;
+      popover.hidden = false;
+      var canvas = popover.querySelector(".mcp-breakdown-canvas");
+      var legend = popover.querySelector(".mcp-breakdown-legend");
+      try {
+        var contribData = JSON.parse(dataEl.textContent);
+        drawPieChartOnElements(canvas, legend, contribData);
+      } catch (e) { /* ignore */ }
+      return;
+    }
+    if (target && target.classList && (target.classList.contains("mcp-breakdown-close") || target.classList.contains("mcp-breakdown-backdrop"))) {
+      var pop = target.closest(".mcp-breakdown-popover");
+      if (pop) pop.hidden = true;
+      return;
+    }
+    if (!target || !target.classList || !target.classList.contains("student-name")) return;
+    var nameAttr = target.getAttribute("data-student-name");
+    var name = (nameAttr || target.textContent || "").trim();
+    if (!name || !searchEl) return;
+    searchEl.value = name;
+    runSearch();
+    searchEl.blur();
+    if (typeof searchEl.setSelectionRange === "function") {
+      var len = name.length;
+      searchEl.setSelectionRange(len, len);
+    }
+    var firstCard = resultsEl.querySelector(".student-card");
+    if (firstCard && typeof firstCard.scrollIntoView === "function") {
+      firstCard.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
+
   if (resultsEl) {
-    resultsEl.addEventListener("click", function (event) {
-      var target = event.target;
-      if (target && target.classList && target.classList.contains("export-pdf-student-btn")) {
-        var card = target.closest(".student-card");
-        if (card) exportStudentToPdf(card);
-        return;
-      }
-      if (target && target.classList && target.classList.contains("mcp-breakdown-btn")) {
-        var wrap = target.closest(".mcp-breakdown-wrap");
-        if (!wrap) return;
-        var popover = wrap.querySelector(".mcp-breakdown-popover");
-        var dataEl = wrap.querySelector(".mcp-breakdown-data");
-        if (!popover || !dataEl) return;
-        popover.hidden = false;
-        var canvas = popover.querySelector(".mcp-breakdown-canvas");
-        var legend = popover.querySelector(".mcp-breakdown-legend");
-        try {
-          var contribData = JSON.parse(dataEl.textContent);
-          drawPieChartOnElements(canvas, legend, contribData);
-        } catch (e) { /* ignore */ }
-        return;
-      }
-      if (target && target.classList && (target.classList.contains("mcp-breakdown-close") || target.classList.contains("mcp-breakdown-backdrop"))) {
-        var pop = target.closest(".mcp-breakdown-popover");
-        if (pop) pop.hidden = true;
-        return;
-      }
-      if (!target || !target.classList || !target.classList.contains("student-name")) return;
-      var nameAttr = target.getAttribute("data-student-name");
-      var name = (nameAttr || target.textContent || "").trim();
-      if (!name || !searchEl) return;
-      searchEl.value = name;
-      runSearch();
-      searchEl.blur();
-      if (typeof searchEl.setSelectionRange === "function") {
-        var len = name.length;
-        searchEl.setSelectionRange(len, len);
-      }
-      var firstCard = resultsEl.querySelector(".student-card");
-      if (firstCard && typeof firstCard.scrollIntoView === "function") {
-        firstCard.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
-    });
+    resultsEl.addEventListener("click", handleResultsClick);
+  }
+
+  function openMcpPctPopover(triggerEl) {
+    if (!triggerEl) return;
+    var pct = triggerEl.getAttribute("data-pct");
+    var contests = triggerEl.getAttribute("data-contests") || "selected contests";
+    var bodyEl = document.getElementById("mcp-pct-popover-body");
+    var popover = document.getElementById("mcp-pct-popover");
+    if (!bodyEl || !popover) return;
+    bodyEl.textContent = "MCP points achieved in " + contests + " is " + (pct != null ? pct : "—") + "% of the total MCP.";
+    popover.hidden = false;
+  }
+
+  function handleMcpPctTrigger(event) {
+    var target = event.target;
+    var el = target && target.nodeType === 1 ? target : (target && (target.parentElement || target.parentNode));
+    var mcpTrigger = el && el.closest ? el.closest(".mcp-pct-trigger") : null;
+    if (mcpTrigger) {
+      event.preventDefault();
+      event.stopPropagation();
+      openMcpPctPopover(mcpTrigger);
+    }
+  }
+
+  document.addEventListener("click", handleMcpPctTrigger, true);
+  document.addEventListener("touchend", handleMcpPctTrigger, true);
+
+  function bindMcpPctPopover() {
+    var popover = document.getElementById("mcp-pct-popover");
+    var closeBtn = popover && popover.querySelector(".mcp-pct-popover-close");
+    var backdrop = popover && popover.querySelector(".mcp-pct-popover-backdrop");
+    if (!popover) return;
+    function close() { popover.hidden = true; }
+    if (closeBtn) closeBtn.addEventListener("click", close);
+    if (backdrop) backdrop.addEventListener("click", close);
   }
 
   if (awardsRankingListEl) {

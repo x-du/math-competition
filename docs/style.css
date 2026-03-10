@@ -463,6 +463,93 @@ body {
   color: var(--text);
 }
 
+/* MCP % explanation popover */
+#mcp-pct-popover[hidden] {
+  display: none !important;
+  pointer-events: none !important;
+}
+
+.mcp-pct-popover {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.mcp-pct-popover-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.mcp-pct-popover-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 22rem;
+  width: 100%;
+  padding: 1.25rem 1.5rem 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  font-size: 0.9rem;
+}
+
+.mcp-pct-popover-title {
+  margin: 0 2rem 0.5rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.mcp-pct-popover-body {
+  margin: 0 0 0.75rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.mcp-pct-popover-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.mcp-pct-popover-close:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.mcp-pct-trigger {
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 2px;
+  padding: 0.1em 0.15em;
+  margin: -0.1em -0.15em;
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.mcp-pct-trigger:hover {
+  color: var(--accent);
+}
+
 /* Main */
 .main {
   max-width: 72rem;
@@ -711,7 +798,7 @@ body {
   gap: 0.4rem 1rem;
 }
 
-/* Sort toggle (# Records / MCP) */
+/* Sort toggle (# Records / MCP / MCP %) */
 .sort-toggle-wrap {
   display: inline-flex;
   align-items: center;
@@ -741,6 +828,49 @@ body {
   background: var(--accent);
   color: var(--bg);
   font-weight: 600;
+}
+
+/* MCP % sort direction (below filters, visible when MCP % mode) */
+.mcp-pct-sort-row {
+  margin: 0.5rem 0 0.75rem;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mcp-pct-sort-text {
+  color: var(--text-muted);
+}
+
+.mcp-pct-sort-row[hidden] {
+  display: none !important;
+}
+
+.mcp-pct-filter-link {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.mcp-pct-filter-link:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+.mcp-pct-sort-btn {
+  padding: 0.25rem 0.65rem;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  border-radius: calc(var(--radius) - 2px);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.mcp-pct-sort-btn:hover {
+  background: var(--border);
+  color: var(--text);
 }
 
 .awards-ranking-controls .girls-only-label {
