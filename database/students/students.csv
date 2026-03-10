@@ -1454,7 +1454,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1521,Harry Haiwen Gao,New York,,Harry Gao,male,
 1523,JUNNING SHAO,,,,male,
 1524,David Zhang,New Jersey,,,male,13
-1525,Aaron Xie,Florida,,,male,
+1525,Aaron Xie,New Jersey,,,male,
 1526,Patrick Liang,California,,,male,
 1528,Huanqi Zhang,Massachusetts,,,male,
 1529,Daniel Gong Li,Maryland,,,male,11
@@ -1481,7 +1481,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1552,Daniel Tian Wu,Massachusetts,,,male,
 1554,YI SUIHAN,China,,,male,
 1555,Quang (Benny) Le,Georgia,,,male,
-1556,Max Liang,Florida,,,male,
+1556,Max Liang,New Jersey,,,male,
 1557,Sidarth Singh,,487,,male,
 1558,Brian Sun,,492,,male,
 1559,Jeremy Zhang,,,,male,
