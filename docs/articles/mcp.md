@@ -1,3 +1,8 @@
+---
+title: MCP — Math Competition Points
+description: "MCP (Math Competition Points) is a unified ranking system for US high school math competitors, modeled after ATP/WTA tennis. Tier-based points, time decay, and aggregation across HMMT, PUMaC, AMO, ARML, and more."
+---
+
 # MCP — Math Competition Points
 
 ## A Unified Ranking System for High School Math Competitors

@@ -1,3 +1,8 @@
+---
+title: Articles
+description: "Articles about the math competition database: how to use it, integrity ratings for US contests, spotting potential cheating, and the MCP ranking system."
+---
+
 ## Articles
 
 - [How to Use This Database](HowToUse.md)

@@ -1,3 +1,8 @@
+---
+title: Integrity in US Math Competitions
+description: "Integrity ratings (1-10) for USAMO, USAJMO, AMC, AIME, HMMT, MathCounts, PUMaC, and other US math competitions. Based on community discussions and documented cheating incidents."
+---
+
 # Integrity in US Math Competitions
 
 Integrity ratings for major US math competitions, based on community discussions (Reddit, AoPS forums), documented incidents, and structural analysis of each competition's format.

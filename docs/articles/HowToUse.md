@@ -1,3 +1,8 @@
+---
+title: How to Use This Database
+description: "How to use the math competition database to verify student track records. Search by name, filter by contest, and identify consistent performance across USAMO, HMMT, PUMaC, and other high-integrity contests."
+---
+
 # How to Use This Database
 
 ## Purpose
