@@ -121,7 +121,7 @@ The standard time-decay rule (Section 5) still applies.
 
 **All other competitions:** Every `mcp_rank` is converted to points via a **power-law curve** between a maximum and a floor:
 
-$$\text{mcp}\_\text{points}(r) = \text{round}\left(\text{min}\_\text{pts} + (\text{max}\_\text{pts} - \text{min}\_\text{pts}) \times \left(\frac{N - r}{N - 1}\right)^k\right)$$
+$$\text{mcp}\_\text{points}(r) = \text{min}\_\text{pts} + (\text{max}\_\text{pts} - \text{min}\_\text{pts}) \times \left(\frac{N - r}{N - 1}\right)^k$$
 
 
 | Variable | Description | Example Value |
