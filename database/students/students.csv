@@ -15,9 +15,9 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 14,Nathan Liu,Texas,13|86|110,,male,9
 15,Jiayu Ellie Su,New Jersey,14,,female,10
 16,James Stewart,Texas,15,,male,7
-17,Dylan Wang,California,16|94,,male,
+17,Dylan Wang,California,16|94,,male,8
 18,Bowen Deng,New Jersey,17,,male,
-19,Vihaan Gupta,California,18,,male,
+19,Vihaan Gupta,California,18,,male,10
 20,Ashvin Sinha,Florida,19,,male,11
 21,David Fox,California,9|94,,male,10
 22,Ian Rui,Washington,20,,male,11
@@ -48,7 +48,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 47,Shaohuan Zhang,Michigan,30|34|298,Nick Zhang,male,12
 48,Varun Gadi,Georgia,31,,male,11
 49,Amogh Akella,Texas,24|110,,male,12
-50,Yunzhe Bai,Massachusetts,26,,male,
+50,Yunzhe Bai,Massachusetts,26,,male,12
 52,Aiden Yuchan Jung,Korea,33|62,,male,
 53,Xiaohan Zhang,China,17|44,,male,
 54,HyunWoo Choi,Korea,33,,male,
@@ -1743,7 +1743,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1823,Qi Huang,,,,male,
 1824,Eddie Wang,,,,male,
 1825,Jeffery Wang,California,,,male,
-1826,Chloe So,California,,,female,
+1826,Chloe So,California,,,female,11
 1827,Pranav Bodapati,,,,male,
 1828,Brianna Zheng,,,,female,
 1829,Joshua Balmin,,,,male,
