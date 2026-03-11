@@ -398,7 +398,7 @@ At build time, the system:
 
 When you select one or more contests in the database's contest filter (e.g., AMO, HMMT February, or both), MCP % shows the ratio:
 
-$$\text{MCP \%} = \frac{\text{MCP from selected contests}}{\text{Total MCP}}$$
+$$\text{MCP}\% = \frac{\text{MCP from selected contests}}{\text{Total MCP}}$$
 
 For example, if a student has 2000 total MCP and 1200 of it comes from AMO and USAMO, their MCP % for that selection is 60%. A student whose MCP is entirely from HMMT would show 100% when HMMT is selected and 0% when only AMO is selected.
 
