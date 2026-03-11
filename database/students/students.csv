@@ -865,9 +865,9 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 906,Ryan Wang,California,,,male,
 907,Brian Xue,California,,,male,
 908,Vincent Yu,Indiana,,,male,
-909,Joey Zheng,Arizona,,,male,
+909,Joey Zheng,Arizona,,,male,9
 910,Ryan Zhu,"British Columbia, Canada",474,,male,
-911,Eric Zou,California,480,,male,
+911,Eric Zou,California,480,,male,9
 912,Brett Chang,California,,,male,
 913,Samarth Das,Texas,300,,male,
 914,Bryan Fu,Texas,252,,male,
@@ -934,7 +934,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 986,Kyle Lin,Texas,,,male,
 988,Kevin Long,New Jersey,,,male,
 989,Richard Wang,Texas,,,male,11
-990,Leo Wu,"Ontario, Canada",,,male,
+990,Leo Wu,"Ontario, Canada",,,male,11
 991,Haofang Zhu,California,,,male,
 992,Aidan Bai,California,,,male,11
 993,Andrew Chai,New Jersey,478,,male,
@@ -1155,7 +1155,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1216,Kevin Wang,,,,male,
 1217,Daniel Wang,Oklahoma,,,male,15
 1218,Yingshan Xiao,"Ontario, Canada",,,female,13
-1219,Laura Zhang,,,,female,
+1219,Laura Zhang,Virginia,,,female,13
 1220,Henry Zheng,Minnesota,,,male,14
 1221,Yoobin Cha,Arizona,,,male,13
 1222,Patrick Chu,,,,male,
@@ -1395,7 +1395,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1461,Dawson Park,Connecticut,161|485,,male,
 1462,Mia Gan,New Jersey,310,,female,
 1463,Kaya Yang,New Jersey,311,Ziyi Kaya Yang,female,
-1464,Kevin Yu,New York,318,,male,
+1464,Kevin Yu,New York,318,,male,11
 1465,Henry Xue,New York,289,,male,
 1466,Jack Li,Illinois,125,,male,
 1467,Lucas Wang,California,326,,male,
@@ -1451,7 +1451,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1518,Matthew Ji Chen,Minnesota,78,,male,
 1519,Leo Wu,California,,,male,
 1520,Xuanyi Zhang,California,,,male,
-1521,Harry Haiwen Gao,New York,,Harry Gao,male,
+1521,Harry Haiwen Gao,New York,,Harry Gao,male,11
 1523,JUNNING SHAO,,,,male,
 1524,David Zhang,New Jersey,,,male,13
 1525,Aaron Xie,New Jersey,,,male,
