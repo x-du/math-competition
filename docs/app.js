@@ -30,6 +30,54 @@
   var stateDistPopoverOpen = false;
   var latestStateDist = { students: {}, records: {} };
   var mcpPctStatsCache = { key: null, html: "" };
+  var savedFilters = {};
+
+  var FILTERS_KEY = "mathcomp_filters";
+
+  function saveFilters() {
+    try {
+      var f = {
+        girls: girlsOnlyEl ? girlsOnlyEl.checked : false,
+        grade: gradeFilterEl ? gradeFilterEl.value : "",
+        state: stateFilterEl ? stateFilterEl.value : "",
+        sortMode: sortMode,
+        ratioSortAsc: ratioSortAsc,
+        search: searchEl ? searchEl.value : "",
+        contest: getActiveContestFilterValues()
+      };
+      savedFilters = f;
+      localStorage.setItem(FILTERS_KEY, JSON.stringify(f));
+    } catch (e) { /* ignore */ }
+  }
+
+  function restoreFilters() {
+    try {
+      var s = localStorage.getItem(FILTERS_KEY);
+      if (!s) return;
+      var f = JSON.parse(s);
+      savedFilters = f;
+      if (girlsOnlyEl && f.girls != null) girlsOnlyEl.checked = !!f.girls;
+      if (stateFilterEl && f.state != null) stateFilterEl.value = f.state;
+      if (searchEl && f.search != null) searchEl.value = f.search;
+      if (f.sortMode) sortMode = f.sortMode;
+      if (f.ratioSortAsc != null) ratioSortAsc = f.ratioSortAsc;
+      if (sortToggleEl) {
+        var opts = sortToggleEl.querySelectorAll(".sort-toggle-option");
+        for (var oi = 0; oi < opts.length; oi++) {
+          opts[oi].classList.toggle("sort-toggle-option--active", opts[oi].getAttribute("data-mode") === sortMode);
+        }
+      }
+      if (contestFilterEl && f.contest && Array.isArray(f.contest)) {
+        var allBox = contestFilterEl.querySelector("input[type='checkbox'][value='all']");
+        var boxes = contestFilterEl.querySelectorAll("input[type='checkbox']");
+        var isAll = f.contest.length === 0 || f.contest.indexOf("all") >= 0;
+        for (var i = 0; i < boxes.length; i++) {
+          var val = boxes[i].value;
+          boxes[i].checked = val === "all" ? isAll : (f.contest.indexOf(val) >= 0);
+        }
+      }
+    } catch (e) { /* ignore */ }
+  }
 
   function showHiddenFeature() {
     try {
@@ -241,6 +289,7 @@
         var st = (s.state || "").trim();
         if (wantState === "__none__") return !st;
         if (wantState === "__other__") return st && !US_STATES_SET[st];
+        if (wantState === "US") return st && US_STATES_SET[st];
         return st === wantState;
       });
     }
@@ -359,8 +408,13 @@
   }
 
   function renderRecordRow(record, allKeys) {
+    var slug = record.contest_slug || record.contest || "";
+    var yr = record.year || "";
+    var yearContent = (slug && yr)
+      ? "<a href=\"#\" class=\"csv-row-year-link\" data-contest=\"" + escapeHtml(slug) + "\" data-year=\"" + escapeHtml(yr) + "\">" + escapeHtml(yr) + "</a>"
+      : escapeHtml(yr);
     var cells = [
-      "<td class=\"num\" data-col=\"year\">", escapeHtml(record.year || ""), "</td>"
+      "<td class=\"num\" data-col=\"year\">", yearContent, "</td>"
     ];
     for (var i = 0; i < allKeys.length; i++) {
       var key = allKeys[i];
@@ -550,7 +604,7 @@
     }
     slugs.sort(compareContestSlugs);
     var parts = [];
-    var githubBase = "https://github.com/x-du/math-competition/blob/main/database/contests/";
+    var csvViewerBase = "csv-viewer.html";
     for (var i = 0; i < slugs.length; i++) {
       var slug = slugs[i];
       var c = contests[slug];
@@ -571,9 +625,10 @@
         var filenames = Array.isArray(fileEntry) ? fileEntry : [fileEntry];
         for (var f = 0; f < filenames.length; f++) {
           var filename = filenames[f] || "results.csv";
-          var yearHref = githubBase + slug + "/year%3D" + yr + "/" + encodeURIComponent(filename);
+          var branch = (data.branch && data.branch !== "main") ? data.branch : "";
+          var yearHref = csvViewerBase + "?contest=" + encodeURIComponent(slug) + "&year=" + encodeURIComponent(yr) + "&file=" + encodeURIComponent(filename) + "&name=" + encodeURIComponent(name) + (branch ? "&branch=" + encodeURIComponent(branch) : "");
           var label = filenames.length > 1 ? yr + " (" + filename.replace(/^results_?/, "").replace(/\.csv$/i, "") + ")" : yr;
-          yearLinks.push("<a href=\"" + yearHref + "\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"contest-list-year-link\">" + escapeHtml(label) + "</a>");
+          yearLinks.push("<a href=\"" + yearHref + "\" class=\"contest-list-year-link\">" + escapeHtml(label) + "</a>");
         }
       }
       var yearLine = yearLinks.length ? "<span class=\"contest-list-years\">" + yearLinks.join(", ") + "</span>" : "";
@@ -636,10 +691,24 @@
         noneOpt.textContent = "No grade";
         gradeFilterEl.appendChild(noneOpt);
       }
-      var valToRestore = currentValue || "";
-      var optExists = gradeFilterEl.querySelector("option[value=\"" + valToRestore + "\"]");
+      var valToRestore = currentValue !== undefined && currentValue !== null ? currentValue : (savedFilters && "grade" in savedFilters ? savedFilters.grade : "__hs__");
+      var optExists = false;
+      for (var oi = 0; oi < gradeFilterEl.options.length; oi++) {
+        if (gradeFilterEl.options[oi].value === valToRestore) {
+          optExists = true;
+          break;
+        }
+      }
       if (!gradeFilterInitialized) {
-        gradeFilterEl.value = "__hs__";
+        var toUse = (savedFilters && "grade" in savedFilters) ? savedFilters.grade : "__hs__";
+        var toUseExists = false;
+        for (var oj = 0; oj < gradeFilterEl.options.length; oj++) {
+          if (gradeFilterEl.options[oj].value === toUse) {
+            toUseExists = true;
+            break;
+          }
+        }
+        gradeFilterEl.value = toUseExists ? toUse : "__hs__";
         gradeFilterInitialized = true;
       } else if (optExists) {
         gradeFilterEl.value = valToRestore;
@@ -671,6 +740,7 @@
         var st = (s.state || "").trim();
         if (wantState === "__none__") return !st;
         if (wantState === "__other__") return st && !US_STATES_SET[st];
+        if (wantState === "US") return st && US_STATES_SET[st];
         return st === wantState;
       });
     }
@@ -936,11 +1006,13 @@
       }
       updateContestFilterSummary();
     }
+    saveFilters();
     renderTopStudentsByRecords();
   }
 
   var searchRafId = null;
   function runSearch() {
+    saveFilters();
     var query = (searchEl && searchEl.value) ? searchEl.value.trim() : "";
     emptyEl.hidden = true;
     resultsEl.innerHTML = "";
@@ -1313,14 +1385,32 @@
   }
 
   function init() {
+    restoreFilters();
+    if (!showHiddenFeature() && sortMode === "mcp_pct") {
+      sortMode = "mcp";
+      if (sortToggleEl) {
+        var opts = sortToggleEl.querySelectorAll(".sort-toggle-option");
+        for (var oi = 0; oi < opts.length; oi++) {
+          opts[oi].classList.toggle("sort-toggle-option--active", opts[oi].getAttribute("data-mode") === "mcp");
+        }
+      }
+      saveFilters();
+    }
+    var controlsEl = document.querySelector(".awards-ranking-controls");
+    if (controlsEl) controlsEl.style.visibility = "visible";
     setLoading(true);
     var base = document.querySelector("script[src$='app.js']").src.replace(/\/[^/]*$/, "");
-    fetch(base + "/data.json")
-      .then(function (res) {
+    Promise.all([
+      fetch(base + "/data.json").then(function (res) {
         if (!res.ok) throw new Error("Failed to load data: " + res.status);
         return res.json();
-      })
-      .then(function (json) {
+      }),
+      fetch(base + "/branch.json").then(function (res) {
+        return res.ok ? res.json() : {};
+      }).catch(function () { return {}; })
+    ]).then(function (arr) {
+      var json = arr[0];
+      var branchCfg = arr[1];
         var si = json.slug_index || [];
         var km = json.key_map || {};
         var students = json.students || [];
@@ -1344,6 +1434,7 @@
           }
         }
         data = json;
+        data.branch = (branchCfg && branchCfg.branch) ? branchCfg.branch : "main";
         var order = json.contest_order || [];
         var orderMap = {};
         if (order && order.length) {
@@ -1358,15 +1449,6 @@
         setLoading(false);
         var mcpPctOption = document.getElementById("mcp-pct-sort-option");
         if (mcpPctOption) mcpPctOption.hidden = !showHiddenFeature();
-        if (!showHiddenFeature() && sortMode === "mcp_pct") {
-          sortMode = "mcp";
-          if (sortToggleEl) {
-            var opts = sortToggleEl.querySelectorAll(".sort-toggle-option");
-            for (var oi = 0; oi < opts.length; oi++) {
-              opts[oi].classList.toggle("sort-toggle-option--active", opts[oi].getAttribute("data-mode") === "mcp");
-            }
-          }
-        }
         requestAnimationFrame(function () {
           renderContestList();
           updateContestFilterSummary();
@@ -1374,6 +1456,7 @@
           bindContestListPopover();
           bindStateDistPopover();
           bindMcpPctPopover();
+          bindCsvPopover();
           runSearch();
         });
       })
@@ -1400,6 +1483,7 @@
 
   if (girlsOnlyEl) {
     girlsOnlyEl.addEventListener("change", function () {
+      saveFilters();
       renderTopStudentsByRecords();
       runSearch();
     });
@@ -1407,6 +1491,7 @@
 
   if (gradeFilterEl) {
     gradeFilterEl.addEventListener("change", function () {
+      saveFilters();
       renderTopStudentsByRecords();
       runSearch();
     });
@@ -1414,6 +1499,7 @@
 
   if (stateFilterEl) {
     stateFilterEl.addEventListener("change", function () {
+      saveFilters();
       renderTopStudentsByRecords();
       runSearch();
     });
@@ -1430,6 +1516,7 @@
       for (var i = 0; i < opts.length; i++) {
         opts[i].classList.toggle("sort-toggle-option--active", opts[i].getAttribute("data-mode") === sortMode);
       }
+      saveFilters();
       renderTopStudentsByRecords();
       runSearch();
     });
@@ -1438,6 +1525,7 @@
   if (mcpPctSortBtnEl) {
     mcpPctSortBtnEl.addEventListener("click", function () {
       ratioSortAsc = !ratioSortAsc;
+      saveFilters();
       renderTopStudentsByRecords();
     });
   }
@@ -1513,13 +1601,120 @@
         }
       }
       updateContestFilterSummary();
+      saveFilters();
       renderTopStudentsByRecords();
       runSearch();
     });
   }
 
+  var RAW_BASE = "https://raw.githubusercontent.com/x-du/math-competition/";
+  var CSV_VIEWER_BASE = "csv-viewer.html";
+
+  function showCsvPopover(contest, year) {
+    var csvPopover = document.getElementById("csv-popover");
+    var csvTitle = document.getElementById("csv-popover-title");
+    var csvLoading = document.getElementById("csv-popover-loading");
+    var csvError = document.getElementById("csv-popover-error");
+    var csvTableWrap = document.getElementById("csv-popover-table-wrap");
+    var csvTable = document.getElementById("csv-popover-table");
+    var csvOpenTab = document.getElementById("csv-popover-open-tab");
+    if (!csvPopover || !csvTitle) return;
+
+    var contestYearFiles = data.contest_year_files || {};
+    var filesByYear = contestYearFiles[contest] || {};
+    var fileEntry = filesByYear[year] || "results.csv";
+    var file = Array.isArray(fileEntry) ? (fileEntry[0] || "results.csv") : fileEntry;
+
+    var contestInfo = (data.contests || {})[contest] || {};
+    var contestName = contestInfo.contest_name || contest;
+    var title = contestName + " " + year;
+    csvTitle.textContent = title;
+    csvLoading.hidden = false;
+    csvError.hidden = true;
+    csvTableWrap.hidden = true;
+    csvOpenTab.hidden = true;
+    csvPopover.hidden = false;
+
+    var branch = (data.branch && data.branch !== "main") ? data.branch : "main";
+    var rawUrl = RAW_BASE + encodeURIComponent(branch) + "/database/contests/" + encodeURIComponent(contest) + "/year%3D" + encodeURIComponent(year) + "/" + encodeURIComponent(file);
+    var viewerUrl = CSV_VIEWER_BASE + "?contest=" + encodeURIComponent(contest) + "&year=" + encodeURIComponent(year) + "&file=" + encodeURIComponent(file) + "&name=" + encodeURIComponent(contestName);
+
+    fetch(rawUrl)
+      .then(function (res) {
+        if (!res.ok) throw new Error("Failed to load: " + res.status);
+        return res.text();
+      })
+      .then(function (text) {
+        csvLoading.hidden = true;
+        var result = (typeof Papa !== "undefined" && Papa.parse) ? Papa.parse(text, { header: true, skipEmptyLines: true }) : { data: [], meta: { fields: [] }, errors: [] };
+        if (result.errors && result.errors.length) {
+          csvError.textContent = "Parse error: " + (result.errors[0].message || "Unknown");
+          csvError.hidden = false;
+          csvOpenTab.href = viewerUrl;
+          csvOpenTab.hidden = false;
+          return;
+        }
+        var csvData = result.data || [];
+        var fields = (result.meta.fields || []).filter(function (f) { return f !== "student_id"; });
+        if (!fields.length && csvData.length) fields = Object.keys(csvData[0]).filter(function (f) { return f !== "student_id"; });
+        if (!csvData.length && !fields.length) {
+          csvError.textContent = "Empty or invalid CSV.";
+          csvError.hidden = false;
+          csvOpenTab.href = viewerUrl;
+          csvOpenTab.hidden = false;
+          return;
+        }
+        var colAlign = [];
+        for (var i = 0; i < fields.length; i++) {
+          var allNum = true;
+          for (var r = 0; r < csvData.length; r++) {
+            var v = csvData[r][fields[i]];
+            if (v != null && String(v).trim() !== "" && !/^\d+(\.\d+)?$/.test(String(v).trim())) {
+              allNum = false;
+              break;
+            }
+          }
+          colAlign[i] = allNum ? "num" : "";
+        }
+        var thead = "<thead><tr>";
+        for (var i = 0; i < fields.length; i++) {
+          thead += "<th scope=\"col\"" + (colAlign[i] ? " class=\"" + colAlign[i] + "\"" : "") + ">" + escapeHtml(fields[i]) + "</th>";
+        }
+        thead += "</tr></thead>";
+        var tbody = "<tbody>";
+        for (var r = 0; r < csvData.length; r++) {
+          tbody += "<tr>";
+          for (var i = 0; i < fields.length; i++) {
+            var val = csvData[r][fields[i]] != null ? String(csvData[r][fields[i]]) : "";
+            tbody += "<td" + (colAlign[i] ? " class=\"" + colAlign[i] + "\"" : "") + ">" + escapeHtml(val) + "</td>";
+          }
+          tbody += "</tr>";
+        }
+        tbody += "</tbody>";
+        csvTable.innerHTML = thead + tbody;
+        csvTableWrap.hidden = false;
+        csvOpenTab.href = viewerUrl;
+        csvOpenTab.hidden = false;
+      })
+      .catch(function (err) {
+        csvLoading.hidden = true;
+        csvError.textContent = "Could not load CSV: " + (err.message || err);
+        csvError.hidden = false;
+        csvOpenTab.href = viewerUrl;
+        csvOpenTab.hidden = false;
+      });
+  }
+
   function handleResultsClick(event) {
     var target = event.target;
+    var yearLink = target && target.closest ? target.closest(".csv-row-year-link") : null;
+    if (yearLink) {
+      event.preventDefault();
+      var contest = yearLink.getAttribute("data-contest");
+      var year = yearLink.getAttribute("data-year");
+      if (contest && year) showCsvPopover(contest, year);
+      return;
+    }
     if (target && target.classList && target.classList.contains("export-pdf-student-btn")) {
       var card = target.closest(".student-card");
       if (card) exportStudentToPdf(card);
@@ -1595,6 +1790,16 @@
     var popover = document.getElementById("mcp-pct-popover");
     var closeBtn = popover && popover.querySelector(".mcp-pct-popover-close");
     var backdrop = popover && popover.querySelector(".mcp-pct-popover-backdrop");
+    if (!popover) return;
+    function close() { popover.hidden = true; }
+    if (closeBtn) closeBtn.addEventListener("click", close);
+    if (backdrop) backdrop.addEventListener("click", close);
+  }
+
+  function bindCsvPopover() {
+    var popover = document.getElementById("csv-popover");
+    var closeBtn = popover && popover.querySelector(".csv-popover-close");
+    var backdrop = popover && popover.querySelector(".csv-popover-backdrop");
     if (!popover) return;
     function close() { popover.hidden = true; }
     if (closeBtn) closeBtn.addEventListener("click", close);
