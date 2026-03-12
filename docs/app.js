@@ -79,7 +79,10 @@
     } catch (e) { /* ignore */ }
   }
 
+  // TEMP: set to true to show hidden feature without ?a=1; set to false to require URL param again
+  var FORCE_HIDDEN_FEATURE = true;
   function showHiddenFeature() {
+    if (FORCE_HIDDEN_FEATURE) return true;
     try {
       var params = new URLSearchParams(window.location.search);
       return params.get("a") === "1";
