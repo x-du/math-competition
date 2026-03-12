@@ -172,7 +172,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 194,Linden Marcus Lee,Minnesota,78,,male,
 196,Won Jang,California,77,,male,
 197,Karthik Seetharaman,Massachusetts,76,,male,
-198,Eddie Wei,,79,,male,
+198,Eddie Wei,Massachusetts,79,,male,
 199,Jerry Liu,California,80,,male,
 200,Benjamin Andrew Fan,California,77,,male,
 201,Zani Xu,Virginia,10|72,,male,14
@@ -388,7 +388,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 420,Simona Gagarova,Bulgaria,153,,female,
 421,Yifan Kang,Massachusetts,14,,male,
 422,Ryan Bai,California,2,,male,
-423,Elena Baskakova,,158,,female,
+423,Elena Baskakova,Massachusetts,158,,female,
 424,Derek Zhao,Massachusetts,26,,male,
 425,Andrew Tu,Connecticut,43,,male,14
 426,Emily Ma,"Ontario, Canada",128,,female,14
@@ -1140,38 +1140,38 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1201,David Zhang,Utah,212,,male,13
 1202,Kevin Liu,Pennsylvania,205, ,male,12
 1203,Samuel Wang,Massachusetts,263,Sam Wang,male,
-1204,Arnav Adhikari,,,,male,
-1205,Brian Bi,,,,male,
-1206,Aryan Bora,,,,male,
-1207,Ryan Dong,,,,male,
-1208,Nikash Gupta,,,,male,
-1209,Luke Huang,,,,male,
-1210,Brendon Jiang,,,,male,
-1211,Minkyu Jo,,,,male,
-1212,Weijie-Jay Li,,,,male,
+1204,Arnav Adhikari,Texas,,,male,
+1205,Brian Bi,California,,,male,
+1206,Aryan Bora,Texas,,,male,
+1207,Ryan Dong,Texas,,,male,
+1208,Nikash Gupta,California,,,male,
+1209,Luke Huang,New York,,,male,
+1210,Brendon Jiang,California,,,male,
+1211,Minkyu Jo,Idaho,,,male,
+1212,Weijie-Jay Li,New York,,,male,
 1213,Alan Lu,California,,,male,
-1214,Ruiyang Luo,,,,male,
-1215,Rico Qi,,,,male,
-1216,Kevin Wang,,,,male,
+1214,Ruiyang Luo,California,,,male,
+1215,Rico Qi,Washington,,,male,
+1216,Kevin Wang,Texas,,,male,
 1217,Daniel Wang,Oklahoma,,,male,15
 1218,Yingshan Xiao,"Ontario, Canada",,,female,13
 1219,Laura Zhang,Virginia,,,female,13
 1220,Henry Zheng,Minnesota,,,male,14
 1221,Yoobin Cha,Arizona,,,male,13
-1222,Patrick Chu,,,,male,
+1222,Patrick Chu,California,,,male,
 1223,Aiden Feyerherm,Virginia,132|270,,male,13
-1224,Ethan Han,,,,male,
+1224,Ethan Han,California,,,male,
 1225,Alexander Jun,Texas,,,male,
 1226,Katherine Li,New York,318,,female,13
 1227,Tina Li,Texas,,,female,14
-1228,Bhaumik Mehta,,,,male,
+1228,Bhaumik Mehta,New Jersey,,,male,
 1229,Vishal Nandakumar,Virginia,,,male,14
-1230,Zian Shi,,,,male,
+1230,Zian Shi,New Jersey,,,male,
 1231,Joseph Vulakh,Kentucky,,,male,14
-1232,Henry Yao,,,,male,
-1233,Davido Zhang,,,,male,
+1232,Henry Yao,California,,,male,
+1233,Davido Zhang,New Hampshire,,,male,
 1234,Andrew Zhao,Massachusetts,,,male,14
-1235,Alex Zheng,,,,male,
+1235,Alex Zheng,Texas,,,male,
 1236,Ricky Hu,California,,,male,
 1237,Zander Li,"Ontario, Canada",,,male,
 1238,Ethan Song,California,,,male,
