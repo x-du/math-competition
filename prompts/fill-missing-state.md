@@ -36,7 +36,12 @@ These sources always have state information. Check all available years for the s
 
 Use the first non-empty state you find for that `student_id`.
 
-### 2.2 State from other contests: explicit state column or LLM lookup by school name
+### 2.2 State from Math Kangaroo USA winners
+
+- **`scripts/fill_state_from_mk_national_csv.py`** uses local `database/contests/mk-national/` CSV files. Matches by student_id (if present in mk-national) or by name when the name appears with exactly one state. Run: `python scripts/fill_state_from_mk_national_csv.py [--dry-run]`.
+- **`scripts/fill_state_from_math_kangaroo.py`** fetches [Math Kangaroo National and State Winners](https://mathkangaroo.org/mks/national-and-state-winners/) PDFs (grades 2–12), parses (name, grade, state), and matches missing-state students by name. Run: `python scripts/fill_state_from_math_kangaroo.py [--dry-run]`.
+
+### 2.3 State from other contests: explicit state column or LLM lookup by school name
 
 - Search other contest result files under `database/contests/` that contain **state**, **school**, **team**, or **site** columns.
 - For each such file, look up rows where `student_id` matches the student.  
@@ -47,7 +52,7 @@ Use the first non-empty state you find for that `student_id`.
 
 Match only by **student_id**; do not use name alone to assign state.
 
-### 2.3 State from team name
+### 2.4 State from team name
 
 - **Only if** the student has **team_ids** in `students.csv` or appears in contest-specific team files (e.g. `database/contests/<contest>-teams/year=<year>/teams.csv` with `team_id`, `team_name`, `student_ids`), and **only when a non-empty team name exists** for that student: look up the **team_name** and, if it clearly indicates a state (e.g. “Texas A&M”, “California Math Club”), you may set state from that. Prefer unambiguous state references in the team name; if ambiguous, leave state blank.
 - **If there is no team name** (e.g. student has no team_ids, or team record has no team_name), **skip this step**; do not guess state from team.
@@ -56,7 +61,7 @@ Match only by **student_id**; do not use name alone to assign state.
 
 ## 3. Update students.csv
 
-- For each student with missing state for whom you found a state in steps 2.1–2.3, update **only** the `state` column for that `student_id` in `database/students/students.csv`.
+- For each student with missing state for whom you found a state in steps 2.1–2.4, update **only** the `state` column for that `student_id` in `database/students/students.csv`.
 - Do not add or remove rows; do not change `student_id` or infer state from name-only matches.
 - Leave `state` blank for any student for whom no state could be found using the rules above.
 
@@ -64,6 +69,6 @@ Match only by **student_id**; do not use name alone to assign state.
 
 ## Summary
 
-1. List students in `students.csv` with empty `state`. Do **not** use a script to apply updates.
-2. For each, use **student_id** only to look up state in: (1) mathcounts-national, mathcounts-national-rank, AMO, and JMO (use state from those CSVs when present), (2) other contest CSVs—use explicit **state** column when present; when only **school name** is present and non-empty, use an **LLM to search** for the state by school name and assign only when the result is clear, (3) team name only when non-empty and it clearly indicates state.
+1. List students in `students.csv` with empty `state`.
+2. For each, use **student_id** only to look up state in: (1) mathcounts-national, mathcounts-national-rank, AMO, and JMO (use state from those CSVs when present), (2) Math Kangaroo: run `scripts/fill_state_from_mk_national_csv.py` (local mk-national CSVs) or `scripts/fill_state_from_math_kangaroo.py` (fetches PDFs), (3) other contest CSVs—use explicit **state** column when present; when only **school name** is present and non-empty, use an **LLM to search** for the state by school name and assign only when the result is clear, (4) team name only when non-empty and it clearly indicates state.
 3. Update `state` in `students.csv` manually (or via LLM-assisted edits) only when you have a clear, student_id-based source. Never guess based on student name alone.
