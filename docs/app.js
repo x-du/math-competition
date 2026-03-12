@@ -30,6 +30,53 @@
   var stateDistPopoverOpen = false;
   var latestStateDist = { students: {}, records: {} };
   var mcpPctStatsCache = { key: null, html: "" };
+  var savedFilters = {};
+
+  var FILTERS_KEY = "mathcomp_filters";
+
+  function saveFilters() {
+    try {
+      var f = {
+        girls: girlsOnlyEl ? girlsOnlyEl.checked : false,
+        grade: gradeFilterEl ? gradeFilterEl.value : "",
+        state: stateFilterEl ? stateFilterEl.value : "",
+        sortMode: sortMode,
+        ratioSortAsc: ratioSortAsc,
+        search: searchEl ? searchEl.value : "",
+        contest: getActiveContestFilterValues()
+      };
+      localStorage.setItem(FILTERS_KEY, JSON.stringify(f));
+    } catch (e) { /* ignore */ }
+  }
+
+  function restoreFilters() {
+    try {
+      var s = localStorage.getItem(FILTERS_KEY);
+      if (!s) return;
+      var f = JSON.parse(s);
+      savedFilters = f;
+      if (girlsOnlyEl && f.girls != null) girlsOnlyEl.checked = !!f.girls;
+      if (stateFilterEl && f.state != null) stateFilterEl.value = f.state;
+      if (searchEl && f.search != null) searchEl.value = f.search;
+      if (f.sortMode) sortMode = f.sortMode;
+      if (f.ratioSortAsc != null) ratioSortAsc = f.ratioSortAsc;
+      if (sortToggleEl) {
+        var opts = sortToggleEl.querySelectorAll(".sort-toggle-option");
+        for (var oi = 0; oi < opts.length; oi++) {
+          opts[oi].classList.toggle("sort-toggle-option--active", opts[oi].getAttribute("data-mode") === sortMode);
+        }
+      }
+      if (contestFilterEl && f.contest && Array.isArray(f.contest)) {
+        var allBox = contestFilterEl.querySelector("input[type='checkbox'][value='all']");
+        var boxes = contestFilterEl.querySelectorAll("input[type='checkbox']");
+        var isAll = f.contest.length === 0 || f.contest.indexOf("all") >= 0;
+        for (var i = 0; i < boxes.length; i++) {
+          var val = boxes[i].value;
+          boxes[i].checked = val === "all" ? isAll : (f.contest.indexOf(val) >= 0);
+        }
+      }
+    } catch (e) { /* ignore */ }
+  }
 
   function showHiddenFeature() {
     try {
@@ -550,7 +597,7 @@
     }
     slugs.sort(compareContestSlugs);
     var parts = [];
-    var githubBase = "https://github.com/x-du/math-competition/blob/main/database/contests/";
+    var csvViewerBase = "csv-viewer.html";
     for (var i = 0; i < slugs.length; i++) {
       var slug = slugs[i];
       var c = contests[slug];
@@ -571,7 +618,8 @@
         var filenames = Array.isArray(fileEntry) ? fileEntry : [fileEntry];
         for (var f = 0; f < filenames.length; f++) {
           var filename = filenames[f] || "results.csv";
-          var yearHref = githubBase + slug + "/year%3D" + yr + "/" + encodeURIComponent(filename);
+          var branch = (data.branch && data.branch !== "main") ? data.branch : "";
+          var yearHref = csvViewerBase + "?contest=" + encodeURIComponent(slug) + "&year=" + encodeURIComponent(yr) + "&file=" + encodeURIComponent(filename) + "&name=" + encodeURIComponent(name) + (branch ? "&branch=" + encodeURIComponent(branch) : "");
           var label = filenames.length > 1 ? yr + " (" + filename.replace(/^results_?/, "").replace(/\.csv$/i, "") + ")" : yr;
           yearLinks.push("<a href=\"" + yearHref + "\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"contest-list-year-link\">" + escapeHtml(label) + "</a>");
         }
@@ -636,10 +684,12 @@
         noneOpt.textContent = "No grade";
         gradeFilterEl.appendChild(noneOpt);
       }
-      var valToRestore = currentValue || "";
+      var valToRestore = currentValue || (savedFilters && savedFilters.grade) || "";
       var optExists = gradeFilterEl.querySelector("option[value=\"" + valToRestore + "\"]");
       if (!gradeFilterInitialized) {
-        gradeFilterEl.value = "__hs__";
+        var toUse = (savedFilters && savedFilters.grade) || "__hs__";
+        var optExistsForSaved = gradeFilterEl.querySelector("option[value=\"" + toUse + "\"]");
+        gradeFilterEl.value = optExistsForSaved ? toUse : "__hs__";
         gradeFilterInitialized = true;
       } else if (optExists) {
         gradeFilterEl.value = valToRestore;
@@ -936,11 +986,13 @@
       }
       updateContestFilterSummary();
     }
+    saveFilters();
     renderTopStudentsByRecords();
   }
 
   var searchRafId = null;
   function runSearch() {
+    saveFilters();
     var query = (searchEl && searchEl.value) ? searchEl.value.trim() : "";
     emptyEl.hidden = true;
     resultsEl.innerHTML = "";
@@ -1315,12 +1367,17 @@
   function init() {
     setLoading(true);
     var base = document.querySelector("script[src$='app.js']").src.replace(/\/[^/]*$/, "");
-    fetch(base + "/data.json")
-      .then(function (res) {
+    Promise.all([
+      fetch(base + "/data.json").then(function (res) {
         if (!res.ok) throw new Error("Failed to load data: " + res.status);
         return res.json();
-      })
-      .then(function (json) {
+      }),
+      fetch(base + "/branch.json").then(function (res) {
+        return res.ok ? res.json() : {};
+      }).catch(function () { return {}; })
+    ]).then(function (arr) {
+      var json = arr[0];
+      var branchCfg = arr[1];
         var si = json.slug_index || [];
         var km = json.key_map || {};
         var students = json.students || [];
@@ -1344,6 +1401,7 @@
           }
         }
         data = json;
+        data.branch = (branchCfg && branchCfg.branch) ? branchCfg.branch : "main";
         var order = json.contest_order || [];
         var orderMap = {};
         if (order && order.length) {
@@ -1368,6 +1426,7 @@
           }
         }
         requestAnimationFrame(function () {
+          restoreFilters();
           renderContestList();
           updateContestFilterSummary();
           renderTopStudentsByRecords();
@@ -1400,6 +1459,7 @@
 
   if (girlsOnlyEl) {
     girlsOnlyEl.addEventListener("change", function () {
+      saveFilters();
       renderTopStudentsByRecords();
       runSearch();
     });
@@ -1407,6 +1467,7 @@
 
   if (gradeFilterEl) {
     gradeFilterEl.addEventListener("change", function () {
+      saveFilters();
       renderTopStudentsByRecords();
       runSearch();
     });
@@ -1414,6 +1475,7 @@
 
   if (stateFilterEl) {
     stateFilterEl.addEventListener("change", function () {
+      saveFilters();
       renderTopStudentsByRecords();
       runSearch();
     });
@@ -1430,6 +1492,7 @@
       for (var i = 0; i < opts.length; i++) {
         opts[i].classList.toggle("sort-toggle-option--active", opts[i].getAttribute("data-mode") === sortMode);
       }
+      saveFilters();
       renderTopStudentsByRecords();
       runSearch();
     });
@@ -1438,6 +1501,7 @@
   if (mcpPctSortBtnEl) {
     mcpPctSortBtnEl.addEventListener("click", function () {
       ratioSortAsc = !ratioSortAsc;
+      saveFilters();
       renderTopStudentsByRecords();
     });
   }
@@ -1513,6 +1577,7 @@
         }
       }
       updateContestFilterSummary();
+      saveFilters();
       renderTopStudentsByRecords();
       runSearch();
     });

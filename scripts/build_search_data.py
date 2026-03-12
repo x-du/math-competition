@@ -7,6 +7,7 @@ Output: docs/data.json
 import csv
 import json
 import re
+import subprocess
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -357,6 +358,24 @@ def main() -> None:
                     r[long_to_short[long_key]] = r.pop(long_key)
 
     OUTPUT_JSON.parent.mkdir(parents=True, exist_ok=True)
+
+    # Write branch.json for csv-viewer to fetch from current branch
+    branch = "main"
+    try:
+        result = subprocess.run(
+            ["git", "rev-parse", "--abbrev-ref", "HEAD"],
+            capture_output=True,
+            text=True,
+            cwd=REPO_ROOT,
+            timeout=5,
+        )
+        if result.returncode == 0 and result.stdout.strip():
+            branch = result.stdout.strip()
+    except (subprocess.SubprocessError, FileNotFoundError):
+        pass
+    with open(REPO_ROOT / "docs" / "branch.json", "w", encoding="utf-8") as f:
+        json.dump({"branch": branch}, f)
+
     with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
         json.dump(
             {
