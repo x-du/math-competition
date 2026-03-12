@@ -149,7 +149,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 164,Steve Zhang,California,69,,male,14
 165,Max Xu,New Hampshire,63,,male,15
 166,Roger Fan,California,69,,male,14
-167,Sebastian Attlan,,70,,male,
+167,Sebastian Attlan,Illinois,70,,male,15
 169,Nilay Mishra,California,60|74,,male,15
 170,Krishna Pothapragada,Illinois,11,,male,14
 171,Evan Chang,New Jersey,1,,male,
@@ -307,7 +307,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 337,Emily Yu,New York,29,,female,13
 338,Katrina Liu,California,59,,female,11
 339,Ruoqing Yang,China,35,,male,
-340,Vincent Loh,,124,,male,
+340,Vincent Loh,Pennsylvania,124,,male,
 341,Alex Zhan,California,39,,male,10
 342,Christopher Kirilov Sakaliyski,New York,11,,male,
 343,Jason Lee,North Carolina,130,,male,10
