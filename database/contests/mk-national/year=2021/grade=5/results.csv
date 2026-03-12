@@ -1,0 +1,422 @@
+student_id,student_name,state,grade,score,rank,national_percentile,mcp_rank
+3060,Alicia Fei,California,5,120,1,,11.5
+5594,Anandita Mukherjee,California,5,120,1,,11.5
+5595,Junwon Jahng,California,5,120,1,,11.5
+2409,Oscar Varodayan,California,5,120,1,,11.5
+19,Vihaan Gupta,California,5,120,1,,11.5
+3674,William Sun,California,5,120,1,,11.5
+377,Xiaoran Han,California,5,120,1,,11.5
+3670,Zion Qu,California,5,120,1,,11.5
+5596,Nicholas Tong,Connecticut,5,120,1,,11.5
+3746,Sheehan Banka,Georgia,5,120,1,,11.5
+694,Christopher Sakaliyski,Illinois,5,120,1,,11.5
+3163,Julia Shtiliyanova,Massachusetts,5,120,1,,11.5
+830,Rajarshi Mandal,Massachusetts,5,120,1,,11.5
+3661,Ryan Li,Massachusetts,5,120,1,,11.5
+65,Selena Ge,Massachusetts,5,120,1,,11.5
+352,Eric Ding,Minnesota,5,120,1,,11.5
+5597,Victor Li,Missouri,5,120,1,,11.5
+3593,Leeoz Nebat,Nevada,5,120,1,,11.5
+3683,Ethan Greenblatt,New York,5,120,1,,11.5
+3748,Thomas Wu,Texas,5,120,1,,11.5
+1010,Erin Bian,Washington,5,120,1,,11.5
+1333,Shuyin Liu,Washington,5,120,1,,11.5
+3760,Ashleen Pathri,California,5,117,2,,24.5
+2440,Itai Firstenberg,California,5,117,2,,24.5
+3646,Jaden Huang,Massachusetts,5,117,2,,24.5
+3644,Jacob Levinshteyn,Minnesota,5,117,2,,24.5
+5598,Rohan Musti,Arizona,5,116,3,,28.5
+5599,Aiden Lee,California,5,116,3,,28.5
+3665,Tanish Parida,Massachusetts,5,116,3,,28.5
+5600,Andrew Li,Missouri,5,116,3,,28.5
+4029,Abhiraj Sarkar,Alabama,5,115,4,,46.5
+5601,Adeline Chen,California,5,115,4,,46.5
+3818,Ayaan Aggarwal,California,5,115,4,,46.5
+5602,Isabella Wu,California,5,115,4,,46.5
+3119,Matthew Lau,California,5,115,4,,46.5
+2415,Minghao Guo,California,5,115,4,,46.5
+3146,Petey Bunsongsikul,California,5,115,4,,46.5
+28,Rohan Nayak Mallick,California,5,115,4,,46.5
+1947,Tejo Madhavarapu,California,5,115,4,,46.5
+3805,Vishnudev Hari,California,5,115,4,,46.5
+5603,William Lv,California,5,115,4,,46.5
+5604,Ruichen Han,Indiana,5,115,4,,46.5
+3835,Hanna Zamana,Kentucky,5,115,4,,46.5
+3738,Roger Gao,Massachusetts,5,115,4,,46.5
+3123,Vidyut Kartik,Massachusetts,5,115,4,,46.5
+1545,Arda Eroz,Maryland,5,115,4,,46.5
+5605,Vihan Netra,Maryland,5,115,4,,46.5
+3722,Hillel Ziskind,New Jersey,5,115,4,,46.5
+5606,Rebecca Jihyo Kim,New Jersey,5,115,4,,46.5
+5607,Siddharth Mirchandani,New Jersey,5,115,4,,46.5
+5608,Aviyan Panday,New York,5,115,4,,46.5
+3066,Evander Protopapas,New York,5,115,4,,46.5
+5609,Michael Shakhnovich,New York,5,115,4,,46.5
+1332,Yunong Wu,New York,5,115,4,,46.5
+3717,Evgenii Matros,Pennsylvania,5,115,4,,46.5
+3710,Bryan Kuang,Texas,5,115,4,,46.5
+5610,Lauren Chen,Texas,5,115,4,,46.5
+5611,Yikai Wang,Virginia,5,115,4,,46.5
+3073,Ella Qiu,Washington,5,115,4,,46.5
+3685,Iveta Zhovtobriukh,Washington,5,115,4,,46.5
+5612,Olivia Wang,Washington,5,115,4,,46.5
+5613,Xinyue Liu,Washington,5,115,4,,46.5
+3653,Katherine Su,Texas,5,114,5,,63.0
+912,Brett Chang,California,5,113,6,,65.0
+5614,Lylia Zheng,California,5,113,6,,65.0
+3631,Advait Ajay,Oregon,5,113,6,,65.0
+1286,Aarav Mann,California,5,112,7,,71.0
+3677,Adyant Bhavsar,California,5,112,7,,71.0
+3684,Gareth Lee,California,5,112,7,,71.0
+3696,Uday Shankar,California,5,112,7,,71.0
+3692,Satya Kokonda,Delaware,5,112,7,,71.0
+3127,Grant Liu,Illinois,5,112,7,,71.0
+3103,Alexander Gao,Indiana,5,112,7,,71.0
+3092,Anika Malyavanatham,Oregon,5,112,7,,71.0
+2291,Timothy Wu,Washington,5,112,7,,71.0
+3876,Anish Varada,California,5,111,8,,84.5
+1029,Atticus Stewart,California,5,111,8,,84.5
+3576,Michael Tang,California,5,111,8,,84.5
+3735,Olivia Zhu,California,5,111,8,,84.5
+3664,Sohum Vajaria,California,5,111,8,,84.5
+817,Girish Prasad,Connecticut,5,111,8,,84.5
+3143,Trisha Dutta,Massachusetts,5,111,8,,84.5
+5615,Ayden Huang,Missouri,5,111,8,,84.5
+3561,Rohit Barua,New Jersey,5,111,8,,84.5
+3663,Siddarth Sankar,Pennsylvania,5,111,8,,84.5
+3873,Alakh Gajjar,Texas,5,111,8,,84.5
+3877,Anvita Gandhari,Virginia,5,111,8,,84.5
+4107,Violet Yan,Virginia,5,111,8,,84.5
+5616,Yixuan Wang,Virginia,5,111,8,,84.5
+3779,Anshul Arul,Washington,5,111,8,,84.5
+5617,Eva Akulova,Washington,5,111,8,,84.5
+5618,Gordon Bu,Washington,5,111,8,,84.5
+3935,Pia Gupta,Washington,5,111,8,,84.5
+819,William Shan,Arizona,5,110,9,,113.5
+2501,Aidan Shin,California,5,110,9,,113.5
+5619,Alyssa Liu,California,5,110,9,,113.5
+3633,Bhuvi Tawari,California,5,110,9,,113.5
+3108,Brandon Lowenstein,California,5,110,9,,113.5
+3110,Daniel Farcas,California,5,110,9,,113.5
+1019,Ishaan Mittal,California,5,110,9,,113.5
+5620,Luca Busracamwongs,California,5,110,9,,113.5
+5621,Markel Zeng,California,5,110,9,,113.5
+3130,Matthew Wang,California,5,110,9,,113.5
+3843,Michael Jin,California,5,110,9,,113.5
+3936,Raman Ravikumar,California,5,110,9,,113.5
+5622,Yifan Liu,California,5,110,9,,113.5
+5623,Zhengyin Zhu,California,5,110,9,,113.5
+866,Hayden Hughes,Connecticut,5,110,9,,113.5
+5624,Charles Parslow,Illinois,5,110,9,,113.5
+5625,Jovin Alenghat,Illinois,5,110,9,,113.5
+3947,Ziang Zhuang,Louisiana,5,110,9,,113.5
+3709,Ayaka Hatabu,Massachusetts,5,110,9,,113.5
+3882,Diya Koul,Massachusetts,5,110,9,,113.5
+4230,Ian Liu,Massachusetts,5,110,9,,113.5
+1673,Ian Wang,Massachusetts,5,110,9,,113.5
+3668,Vivek Varanasi,Massachusetts,5,110,9,,113.5
+3772,William Wu,Massachusetts,5,110,9,,113.5
+3730,Matthew Zhang,Maryland,5,110,9,,113.5
+3074,Ethan Liu,Michigan,5,110,9,,113.5
+820,Anirudh Pulugurtha,New Hampshire,5,110,9,,113.5
+3784,David Rivilis,New Hampshire,5,110,9,,113.5
+3525,Aarav Kumar,New Jersey,5,110,9,,113.5
+3662,Shiraz Naser,New Jersey,5,110,9,,113.5
+5626,Kai Tsuboyama,New York,5,110,9,,113.5
+3096,Ryan Chen,New York,5,110,9,,113.5
+5627,Claire Ding,Pennsylvania,5,110,9,,113.5
+5628,Harry Liu,Texas,5,110,9,,113.5
+3695,Stephan Lugovoy,Virginia,5,110,9,,113.5
+5629,Antony Missine,Washington,5,110,9,,113.5
+5630,Anusha Arora,Washington,5,110,9,,113.5
+5631,Keane Qu,Washington,5,110,9,,113.5
+24,Ruien Chen,Washington,5,110,9,,113.5
+5632,Xiaoyan Yan,Washington,5,110,9,,113.5
+3681,Elliot Seo,California,5,109,10,,135.5
+5633,JiaJing Liang,California,5,109,10,,135.5
+5634,Srinithi Peripydi,California,5,109,10,,135.5
+801,Leo Hong,North Carolina,5,109,10,,135.5
+5635,Aditya Mondal,California,5,108,11,,145.0
+5636,Ronak Bose,California,5,108,11,,145.0
+5637,Sean Huang,California,5,108,11,,145.0
+2494,Sophia Fan,California,5,108,11,,145.0
+5638,Vibha Santhanakrishnan,California,5,108,11,,145.0
+5639,Evan Li,Georgia,5,108,11,,145.0
+5640,Grady Schroeder,Illinois,5,108,11,,145.0
+5641,Gabriel Panaitescu,Massachusetts,5,108,11,,145.0
+3078,Michelle Zheng,Massachusetts,5,108,11,,145.0
+3065,Stephen Wang,Massachusetts,5,108,11,,145.0
+3737,Reyansh Khubani,New Jersey,5,108,11,,145.0
+5642,Harshvardhan Bhangale,Ohio,5,108,11,,145.0
+41,Eddy Zhang,Pennsylvania,5,108,11,,145.0
+3095,Prajit Saravanan,Texas,5,108,11,,145.0
+3811,Aayush Gupta,Washington,5,108,11,,145.0
+5643,Jason Tae,Arizona,5,107,12,,169.0
+5644,Aarav Vignesh,California,5,107,12,,169.0
+3912,Andersen Edmonds,California,5,107,12,,169.0
+3071,Boyan Manolov,California,5,107,12,,169.0
+5645,Jason Yang,California,5,107,12,,169.0
+1076,Kevin Li,California,5,107,12,,169.0
+5646,Kevin Mathew,California,5,107,12,,169.0
+3689,Konstantin Edunov,California,5,107,12,,169.0
+3166,Lucas Chen,California,5,107,12,,169.0
+5647,Maksim Begar,California,5,107,12,,169.0
+2433,Nathan Chen,California,5,107,12,,169.0
+5648,Vedant Maheshwari,California,5,107,12,,169.0
+3098,Waroon Thapanangkun,California,5,107,12,,169.0
+5649,David Lei,Connecticut,5,107,12,,169.0
+3838,Jason Eum,Delaware,5,107,12,,169.0
+3951,Antony Wang,Georgia,5,107,12,,169.0
+3647,Jakub Angelow,Illinois,5,107,12,,169.0
+3908,Adelle Freink,Massachusetts,5,107,12,,169.0
+3836,Isaac Goodman,Massachusetts,5,107,12,,169.0
+4090,Priyam Ajwaliya,Massachusetts,5,107,12,,169.0
+3942,Samuel Minow,Massachusetts,5,107,12,,169.0
+3906,Yuecheng Wu,Massachusetts,5,107,12,,169.0
+3807,Walter Isard,North Carolina,5,107,12,,169.0
+5650,David Yu,New Jersey,5,107,12,,169.0
+3934,Olivia Markesic,New York,5,107,12,,169.0
+813,Joseph Liang,Oregon,5,107,12,,169.0
+3727,Jerry Huang,Pennsylvania,5,107,12,,169.0
+5651,Pranay Gudladona,Texas,5,107,12,,169.0
+5652,Richard Zhang,Texas,5,107,12,,169.0
+3883,Ekansh Arora,Virginia,5,107,12,,169.0
+3895,Nathan Park,Virginia,5,107,12,,169.0
+5653,Junheng Wang,Washington,5,107,12,,169.0
+5654,Kuan Dai,Washington,5,107,12,,169.0
+3702,Alec Timothy Nudo,California,5,106,13,,201.0
+5655,Arnav Gokhale,California,5,106,13,,201.0
+5656,Bryan Ge,California,5,106,13,,201.0
+4043,Douglas Nottage,California,5,106,13,,201.0
+5657,Emily Qian,California,5,106,13,,201.0
+5658,Felix Zhang,California,5,106,13,,201.0
+3652,Karina Quach,California,5,106,13,,201.0
+5659,Max Zhang,California,5,106,13,,201.0
+3731,Michelle Li,California,5,106,13,,201.0
+5660,Nikhil Sangani,California,5,106,13,,201.0
+5661,Niyati Ramanathan,California,5,106,13,,201.0
+5662,Sophie Sun,California,5,106,13,,201.0
+3854,Vanshikaa Anand,California,5,106,13,,201.0
+3856,Warren Zhong,California,5,106,13,,201.0
+1731,Yanlin Huang,California,5,106,13,,201.0
+3690,Pavan Kapoor,Connecticut,5,106,13,,201.0
+5663,Jiaxi Ji,Illinois,5,106,13,,201.0
+3679,Daniel Ramakrishna,Massachusetts,5,106,13,,201.0
+3641,Elif Uygun,Massachusetts,5,106,13,,201.0
+4078,Krish Nath,Massachusetts,5,106,13,,201.0
+5664,Tashan Behara,Massachusetts,5,106,13,,201.0
+5665,Anabelle Krom-Hernandez,New Jersey,5,106,13,,201.0
+2197,Bobby Qian,New Jersey,5,106,13,,201.0
+5666,Vaibhav Sitaraman,New Jersey,5,106,13,,201.0
+5667,Brighten Sun,New York,5,106,13,,201.0
+5668,Shiva Marti,New York,5,106,13,,201.0
+3888,Hudson Fong,Oklahoma,5,106,13,,201.0
+1400,Audrey Hou,Oregon,5,106,13,,201.0
+3076,John Kong,Oregon,5,106,13,,201.0
+5669,Michael Moshchuk,Washington,5,106,13,,201.0
+3794,Natalie Gan,Washington,5,106,13,,201.0
+5670,Aaron Anghel,California,5,105,14,,230.5
+5671,Andrea Wang,California,5,105,14,,230.5
+3825,Dylan Huang,California,5,105,14,,230.5
+1717,Eva Lin,California,5,105,14,,230.5
+3578,Hanyu Zhang,California,5,105,14,,230.5
+5672,Netra Khot,California,5,105,14,,230.5
+5673,Peter Parra,California,5,105,14,,230.5
+3978,Vyom Saxena,California,5,105,14,,230.5
+5674,Henry Buczkiewicz,Connecticut,5,105,14,,230.5
+5675,Evan Yang,Florida,5,105,14,,230.5
+3141,Kaustubh Bukkapatnam,Illinois,5,105,14,,230.5
+3669,Yuhan Chenhe,Illinois,5,105,14,,230.5
+4184,Zimou Z,Illinois,5,105,14,,230.5
+4074,Haniya Hussain,Massachusetts,5,105,14,,230.5
+4053,Khwaja Hussain,Massachusetts,5,105,14,,230.5
+2156,Aryaveer Shishodia,New Jersey,5,105,14,,230.5
+5676,Emre Dogan,New Jersey,5,105,14,,230.5
+3122,Surya Raghavan,New Jersey,5,105,14,,230.5
+5677,Vishnu Srikant,New Jersey,5,105,14,,230.5
+5678,Athena Grinsai,New York,5,105,14,,230.5
+5679,Julien Okenczyc,Pennsylvania,5,105,14,,230.5
+5680,Andrew Lu,Texas,5,105,14,,230.5
+3833,Gaya Kulatilaka,Texas,5,105,14,,230.5
+5681,Mikaela Tereshkov,Virginia,5,105,14,,230.5
+5682,Daniel Shendure,Washington,5,105,14,,230.5
+5683,Ella Sun,Washington,5,105,14,,230.5
+3113,Manan Ghosh,Washington,5,105,14,,230.5
+3144,Yan Levin,Washington,5,105,14,,230.5
+385,Ali Zaman,California,5,104,15,,249.0
+3104,Arpit Panda,California,5,104,15,,249.0
+3720,Henry Deng,California,5,104,15,,249.0
+5684,Sidhvin Palaniappan,California,5,104,15,,249.0
+5685,Yeojoon Yoon,Massachusetts,5,104,15,,249.0
+5686,Asya Chen,Texas,5,104,15,,249.0
+5687,Siddharth Surapaneni,Virginia,5,104,15,,249.0
+5688,Leonardo Zhou,Washington,5,104,15,,249.0
+824,Wesley Wu,Washington,5,104,15,,249.0
+5689,Alivia Cui,California,5,103,16,,264.5
+3707,Aria Sanil,California,5,103,16,,264.5
+5690,Daniel Wang,California,5,103,16,,264.5
+3890,Ishita Gaikwad,California,5,103,16,,264.5
+5691,Jinxian Cao,California,5,103,16,,264.5
+1050,Jonathan Yu,California,5,103,16,,264.5
+5692,Joseph Baek,California,5,103,16,,264.5
+3170,Steven Shu,California,5,103,16,,264.5
+3903,Sudhir Venkatraman,California,5,103,16,,264.5
+3072,Tanisha Bhugra,California,5,103,16,,264.5
+3162,Jacob Weng,Georgia,5,103,16,,264.5
+3153,Thanishkka Vijayabaskar,Georgia,5,103,16,,264.5
+5693,Ananya Iyer,Illinois,5,103,16,,264.5
+5694,Ethan Li,Massachusetts,5,103,16,,264.5
+3116,Jeffrey Yin,Massachusetts,5,103,16,,264.5
+3739,Ruben Lee,Massachusetts,5,103,16,,264.5
+821,Taiwen Feng,Michigan,5,103,16,,264.5
+5695,Nikit Chitteti,New Jersey,5,103,16,,264.5
+5696,Aneesh Jakkamsetti,New York,5,103,16,,264.5
+4067,Dheeraj Garg,Pennsylvania,5,103,16,,264.5
+3853,Surya Charan Garimella,Pennsylvania,5,103,16,,264.5
+5697,Dayana Veys,Washington,5,103,16,,264.5
+4077,Kairui Dai,Arizona,5,102,17,,293.0
+5698,Aangi Mehta,California,5,102,17,,293.0
+5699,Alvin Siamwalla,California,5,102,17,,293.0
+3775,Andrew Eroshin,California,5,102,17,,293.0
+5700,Annie Jin,California,5,102,17,,293.0
+3711,Clara Lee,California,5,102,17,,293.0
+3787,Eli Chen,California,5,102,17,,293.0
+5701,Ethan Ge,California,5,102,17,,293.0
+3150,Julia Matveyev,California,5,102,17,,293.0
+3791,Leonardo Lin,California,5,102,17,,293.0
+5702,Lucas Della Vigna,California,5,102,17,,293.0
+4082,Matea Gebala,California,5,102,17,,293.0
+3967,Ojasya Machiraju,California,5,102,17,,293.0
+5703,Ryan Lu,California,5,102,17,,293.0
+3743,Sameer Rajdev,California,5,102,17,,293.0
+5704,Vishakha Shastri,California,5,102,17,,293.0
+5705,Arnav Patel,Georgia,5,102,17,,293.0
+3691,Sanjay Magesh,Illinois,5,102,17,,293.0
+3666,Tiger Kumar,Indiana,5,102,17,,293.0
+3086,Arnav Sreeram,Massachusetts,5,102,17,,293.0
+5706,Gauri Bhakta,Massachusetts,5,102,17,,293.0
+5707,Justina Sun,Massachusetts,5,102,17,,293.0
+1626,Mia Zhao,Massachusetts,5,102,17,,293.0
+5708,Shubham Kulkarni,Massachusetts,5,102,17,,293.0
+5709,Jeffrey Wu,Michigan,5,102,17,,293.0
+5710,Alen Sahakyan,Missouri,5,102,17,,293.0
+3879,Daniel Mun,New York,5,102,17,,293.0
+5711,Jonathan Safro,South Carolina,5,102,17,,293.0
+5712,Kangjue Wang,Texas,5,102,17,,293.0
+5713,Shaarda Krishna,Texas,5,102,17,,293.0
+284,Alexander Liu,Virginia,5,102,17,,293.0
+5714,Aiyin Gou,Washington,5,102,17,,293.0
+5715,Olivia Sun,Washington,5,102,17,,293.0
+3973,Siddhant Lodha,Washington,5,102,17,,293.0
+5716,Stephan Yang,Washington,5,102,17,,293.0
+3125,Alex Shi,California,5,101,18,,333.5
+5717,Alexander Shi,California,5,101,18,,333.5
+5718,Amy Chen,California,5,101,18,,333.5
+5719,Andrew Ho,California,5,101,18,,333.5
+5720,Dennis Bi,California,5,101,18,,333.5
+3713,Elaine Saum,California,5,101,18,,333.5
+5721,Elaine Wen,California,5,101,18,,333.5
+5722,Emma Wang,California,5,101,18,,333.5
+5723,Hongkang Zhao,California,5,101,18,,333.5
+3837,Jaeho Lee,California,5,101,18,,333.5
+3960,Jeremy Lee,California,5,101,18,,333.5
+5724,Kerim Lahmar,California,5,101,18,,333.5
+3840,Kevin Yang,California,5,101,18,,333.5
+5725,Luke Tang,California,5,101,18,,333.5
+5726,Natalie Dong,California,5,101,18,,333.5
+3382,Rohan Singh,California,5,101,18,,333.5
+4247,Shravan Sundar,California,5,101,18,,333.5
+5727,Maadhav Subramanian,Connecticut,5,101,18,,333.5
+3795,Olivia Wang,Connecticut,5,101,18,,333.5
+5728,Shiven Brahmkshatriya,Connecticut,5,101,18,,333.5
+5729,Megha Sandrapaty,Florida,5,101,18,,333.5
+5730,YoYo Qu,Florida,5,101,18,,333.5
+3764,Debarghya Das,Illinois,5,101,18,,333.5
+5731,Michael Chen,Illinois,5,101,18,,333.5
+5732,Tanisha Lalwani,Illinois,5,101,18,,333.5
+5733,David Wang,Massachusetts,5,101,18,,333.5
+5734,Shaurya Bedre,Massachusetts,5,101,18,,333.5
+5735,Shreyan Mazumder,Massachusetts,5,101,18,,333.5
+5736,Jolee Xian,Maryland,5,101,18,,333.5
+3124,Aditya Joshi,New York,5,101,18,,333.5
+3137,Christoffer Lamtan,New York,5,101,18,,333.5
+5737,Ethan Ding,New York,5,101,18,,333.5
+3067,Frederik Bultje,New York,5,101,18,,333.5
+3688,Justin Koo,New York,5,101,18,,333.5
+5738,Vivienne Ding,New York,5,101,18,,333.5
+3809,Yuxuan Jiang,Oregon,5,101,18,,333.5
+5739,Allison Guan,Pennsylvania,5,101,18,,333.5
+5740,Derek Su,Pennsylvania,5,101,18,,333.5
+3089,Yuantao Tang,Pennsylvania,5,101,18,,333.5
+772,Tanish Shetty,Utah,5,101,18,,333.5
+5741,Ajay Balusu,Virginia,5,101,18,,333.5
+5742,Mayukh Krishna Aduru,Virginia,5,101,18,,333.5
+3732,Michelle Lin,Virginia,5,101,18,,333.5
+5743,Andrew Chen,Washington,5,101,18,,333.5
+5744,Kevin Wu,Washington,5,101,18,,333.5
+5745,William Han,Washington,5,101,18,,333.5
+5746,Vivian Pinto,Arizona,5,100,19,,374.5
+5747,Aaron Lei,California,5,100,19,,374.5
+3700,Aaryan Samanta,California,5,100,19,,374.5
+5748,Alice Shao,California,5,100,19,,374.5
+5749,Angela Wang,California,5,100,19,,374.5
+5750,Armaan Syed,California,5,100,19,,374.5
+5751,Charlene Li,California,5,100,19,,374.5
+5752,Claire Mao,California,5,100,19,,374.5
+5753,Crystal Gu,California,5,100,19,,374.5
+1825,Jeffery Wang,California,5,100,19,,374.5
+3687,Jessica Jin,California,5,100,19,,374.5
+1866,Jonathan Li,California,5,100,19,,374.5
+3165,Katherine Yang,California,5,100,19,,374.5
+5754,Katie Xie,California,5,100,19,,374.5
+5755,Liesel Park,California,5,100,19,,374.5
+5756,Sebastian Liang,California,5,100,19,,374.5
+5757,Arya Ravikumar,Iowa,5,100,19,,374.5
+5758,Alexandra Ryskin,Illinois,5,100,19,,374.5
+5759,Edward Jiang,Illinois,5,100,19,,374.5
+5760,Melanie Ma,Illinois,5,100,19,,374.5
+3788,Emma Wei,Indiana,5,100,19,,374.5
+3100,Kiran Oliver,Maryland,5,100,19,,374.5
+3157,Chandhana Lingam Muhilan,New Jersey,5,100,19,,374.5
+5761,Jianing Liu,New Jersey,5,100,19,,374.5
+3796,Pranav Naveen,New Jersey,5,100,19,,374.5
+5762,Esther Lee,New York,5,100,19,,374.5
+5763,Isha Patil,New York,5,100,19,,374.5
+3728,Konstantine Okon,New York,5,100,19,,374.5
+5764,Max Chang,New York,5,100,19,,374.5
+3790,Keerthana Visveish,Pennsylvania,5,100,19,,374.5
+5765,Sophia Wang,Texas,5,100,19,,374.5
+5766,Jacob Lu,Washington,5,100,19,,374.5
+5767,Owen T Zhang,Washington,5,100,19,,374.5
+3800,Shujun Liu,Washington,5,100,19,,374.5
+5768,Sophy Xu,Washington,5,100,19,,374.5
+5769,Videep Mannava,Washington,5,100,19,,374.5
+4025,Aarav Agarwal,California,5,99,20,,407.0
+5770,Angela Baykshtite,California,5,99,20,,407.0
+5771,Arohi Sharma,California,5,99,20,,407.0
+3782,Boyan Han,California,5,99,20,,407.0
+5772,Christopher Jiang,California,5,99,20,,407.0
+3411,Ella Wang,California,5,99,20,,407.0
+5773,Hank Sun,California,5,99,20,,407.0
+5774,Hyunhoo Bae,California,5,99,20,,407.0
+5775,Isato Otaki,California,5,99,20,,407.0
+4080,Lucas Lee,California,5,99,20,,407.0
+5776,Rishika Nanda,California,5,99,20,,407.0
+5777,Ryan Li,California,5,99,20,,407.0
+3135,Sruthi Manoj,California,5,99,20,,407.0
+5778,Vyom Shukla,California,5,99,20,,407.0
+5779,Ishaani Molugu,Florida,5,99,20,,407.0
+5780,Baruni Soni,Illinois,5,99,20,,407.0
+3828,Eric Liu,Massachusetts,5,99,20,,407.0
+5781,Leila Alencar,Massachusetts,5,99,20,,407.0
+3965,Lucas Shang,Massachusetts,5,99,20,,407.0
+5782,Vivan Netra,Maryland,5,99,20,,407.0
+3855,Vihaan Limaye,Michigan,5,99,20,,407.0
+5783,Megan Wang,Minnesota,5,99,20,,407.0
+5784,Vinay Parekunnel,Missouri,5,99,20,,407.0
+3099,Daniel Dimitrov,North Carolina,5,99,20,,407.0
+5785,Ashwin Kannan,New Jersey,5,99,20,,407.0
+5786,Anna Vasylenko,New York,5,99,20,,407.0
+5787,Daniel Obreja,Washington,5,99,20,,407.0
+3686,Jaeyeol Oh,Washington,5,99,20,,407.0
+5788,Jinghang Chen,Washington,5,99,20,,407.0

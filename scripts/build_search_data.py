@@ -18,6 +18,7 @@ OUTPUT_JSON = REPO_ROOT / "docs" / "data.json"
 
 CONTESTS_SKIP_FOR_SEARCH = {
     "mathcounts-national",
+    "mk-national",  # Record only (statement info); not shown on website, no MCP
 }
 
 BMT_CONTESTS = {"bmt", "bmt-algebra", "bmt-calculus", "bmt-discrete", "bmt-geometry"}
@@ -147,7 +148,7 @@ def collect_result_files() -> list:
             if not year_dir.is_dir() or not year_dir.name.startswith("year="):
                 continue
             year = year_dir.name.replace("year=", "")
-            for csv_path in sorted(year_dir.glob("*.csv")):
+            for csv_path in sorted(year_dir.glob("**/*.csv")):
                 out.append((slug, year, csv_path))
     return out
 
@@ -214,6 +215,15 @@ def main() -> None:
                 "contest_slug": slug,
             }
             skip_keys = {"student_id", "student_id ", "student_name", "state"}
+            # Don't expose school from AMO/JMO results on the website (still in .csv)
+            if slug in ("amo", "jmo"):
+                skip_keys = skip_keys | {"school"}
+            # Don't expose team from ARML/MMATHS results on the website (still in .csv)
+            if slug in ("arml", "mmaths"):
+                skip_keys = skip_keys | {"team"}
+            # Don't expose team_name from DMM results on the website (still in .csv)
+            if slug == "dmm":
+                skip_keys = skip_keys | {"team_name"}
             for k, v in row.items():
                 if k is None:
                     continue

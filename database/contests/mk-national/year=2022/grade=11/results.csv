@@ -1,0 +1,105 @@
+student_id,student_name,state,grade,score,rank,national_percentile,mcp_rank
+3210,Alan Kappler,Oregon,11,120,1,,6.5
+148,Alan Vladimiroff,Virginia,11,120,1,,6.5
+3211,Aman Jain,California,11,120,1,,6.5
+3212,Arul Mazumder,Massachusetts,11,120,1,,6.5
+2802,Kaden Nguyen,California,11,120,1,,6.5
+1492,Nicole Shen,California,11,120,1,,6.5
+169,Nilay Mishra,California,11,120,1,,6.5
+3213,Ritvik Garg,Massachusetts,11,120,1,,6.5
+1985,Sai Konkimalla,Arizona,11,120,1,,6.5
+2803,Sharvaa Selvan,Florida,11,120,1,,6.5
+3214,Sophia Sun,Maryland,11,120,1,,6.5
+149,Suyash Pandit,Oregon,11,120,1,,6.5
+1991,Ari Wang,Colorado,11,116,2,,16.5
+2799,Arianna Cao,California,11,116,2,,16.5
+926,Asher Wu,Washington,11,116,2,,16.5
+3215,Darsh Patel,Nevada,11,116,2,,16.5
+2813,David Magidson,Washington,11,116,2,,16.5
+3216,Jake Langlois,Pennsylvania,11,116,2,,16.5
+1977,Siddharth Doppalapudi,Alabama,11,116,2,,16.5
+1633,William Du,Massachusetts,11,116,2,,16.5
+2821,Alexey Tatarinov,Pennsylvania,11,115,3,,28.5
+2801,Arul Kolla,California,11,115,3,,28.5
+465,Chun Yeung Wong,New York,11,115,3,,28.5
+3217,Guanzhen Song,California,11,115,3,,28.5
+3218,Julia Kozak,New York,11,115,3,,28.5
+454,Kavan Doctor,California,11,115,3,,28.5
+1338,Lisa Fung,California,11,115,3,,28.5
+3219,Megan Gu,Maryland,11,115,3,,28.5
+1438,Nikhil Mudumbi,New Jersey,11,115,3,,28.5
+2095,Nividh Singh,Oregon,11,115,3,,28.5
+2805,Noah Shi,Washington,11,115,3,,28.5
+1380,Riya Gupta,California,11,115,3,,28.5
+3220,Shishir Vargheese,Kansas,11,115,3,,28.5
+2807,Tanmay Gupta,Massachusetts,11,115,3,,28.5
+3221,Vishal Thyagarajan,Texas,11,115,3,,28.5
+3222,Vivek Vallurupalli,Massachusetts,11,115,3,,28.5
+3223,Jettae Schroff,California,11,113,4,,37.0
+3224,Amruta Dharmapurikar,California,11,112,5,,39.0
+3225,Daniel Ma,Illinois,11,112,5,,39.0
+3226,Ramsey Makan,Florida,11,112,5,,39.0
+3227,Ananth Kashyap,Pennsylvania,11,111,6,,44.5
+3228,Artem Torubarov,New Jersey,11,111,6,,44.5
+2804,David Rubin,New York,11,111,6,,44.5
+3229,Mark Neumann,California,11,111,6,,44.5
+2070,Megan Davi,Nevada,11,111,6,,44.5
+2010,Richard Yu,Georgia,11,111,6,,44.5
+3230,Victor Donchenko,California,11,111,6,,44.5
+3231,Victor Li,Oregon,11,111,6,,44.5
+3232,Baomo Zhu,California,11,110,7,,50.0
+1979,Daniel Zhao,Alabama,11,110,7,,50.0
+3233,Richard Zhu,California,11,110,7,,50.0
+3234,Ayan Bhatia,California,11,108,8,,52.5
+3235,Daniel Long,New Jersey,11,108,8,,52.5
+3236,Asanshay Gupta,Georgia,11,107,9,,55.0
+2814,Daniel (Dawn) McCrorey,Washington,11,107,9,,55.0
+3237,Manan Vora,Washington,11,107,9,,55.0
+3238,Duong Le,New York,11,106,10,,58.5
+2809,Isaac Mitchell,Colorado,11,106,10,,58.5
+3239,Keaton Xu,Kansas,11,106,10,,58.5
+2815,Maya Smith,Massachusetts,11,106,10,,58.5
+3240,Apoorva Talwalkar,California,11,105,11,,61.5
+3241,Yiran Wang,California,11,105,11,,61.5
+3242,Shashwat Rao,Virginia,11,104,12,,63.0
+3243,Kevin Yao,Maryland,11,103,13,,65.0
+2810,Krishna Grandhe,Texas,11,103,13,,65.0
+3244,William Opich,New York,11,103,13,,65.0
+3245,Alisha Paul,Connecticut,11,102,14,,69.5
+3246,Andrew Jin,California,11,102,14,,69.5
+3247,Charles Chen,California,11,102,14,,69.5
+3248,Lynn Tao,Virginia,11,102,14,,69.5
+3249,Madeline Jiang,Massachusetts,11,102,14,,69.5
+2817,Riley Bonner,California,11,102,14,,69.5
+3250,Alexandra Levinshteyn,Minnesota,11,101,15,,76.0
+3251,Casey Kong,Kansas,11,101,15,,76.0
+2819,Colin Colbert,Nevada,11,101,15,,76.0
+2816,Phoebe Ong,California,11,101,15,,76.0
+3252,Riley Chin,New Hampshire,11,101,15,,76.0
+2806,Stewart Kwok,California,11,101,15,,76.0
+3253,Yash Agrawal,Florida,11,101,15,,76.0
+3254,Alexander Khilko,Connecticut,11,100,16,,82.0
+3255,Aswath Karai,Michigan,11,100,16,,82.0
+3256,Joshua Sujo,California,11,100,16,,82.0
+3257,Stephanie Han,Michigan,11,100,16,,82.0
+3258,Thomas Breydo,New York,11,100,16,,82.0
+3259,Edward Ju,Guam,11,99,17,,86.0
+3260,Francis Wang,Michigan,11,99,17,,86.0
+3261,Qinzi (Wendy) Wang,California,11,99,17,,86.0
+3262,David Zhukovsky,Massachusetts,11,98,18,,90.0
+3263,Kimberly You,Michigan,11,98,18,,90.0
+3264,Rebecca Serodio,Massachusetts,11,98,18,,90.0
+3265,Samarth Pusegaonkar,California,11,98,18,,90.0
+3266,Srikar Mallajosyula,Massachusetts,11,98,18,,90.0
+3267,Anna Gu,Maryland,11,97,19,,96.0
+3268,Constantin Matros,Pennsylvania,11,97,19,,96.0
+3269,Elina Lee,Maryland,11,97,19,,96.0
+3270,Mihir Nagarkatti,Massachusetts,11,97,19,,96.0
+3271,Mollee Ye,New Hampshire,11,97,19,,96.0
+3272,Nathan Wang,Nevada,11,97,19,,96.0
+3273,Victor Proykov,Nevada,11,97,19,,96.0
+3274,Eunyul Kim,California,11,96,20,,102.0
+3275,Patrick Kulaga,Illinois,11,96,20,,102.0
+3276,Samantha Wu,Maryland,11,96,20,,102.0
+3277,Sean Lim,New York,11,96,20,,102.0
+3278,Shaher Naser,New Jersey,11,96,20,,102.0

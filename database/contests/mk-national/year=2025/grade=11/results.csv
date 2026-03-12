@@ -1,0 +1,74 @@
+student_id,student_name,state,grade,score,rank,national_percentile,mcp_rank
+466,Allan Yuan,Alabama,11,120,1,99.3,2.0
+1081,Jason Liu,Pennsylvania,11,120,1,99.3,2.0
+916,Lucas Hinds,Tennessee,11,120,1,99.3,2.0
+2567,Siddharth Nair,New York,11,116,2,99,4.0
+2568,Adam Yanco,Massachusetts,11,115,3,96.6,8.0
+2569,Aishwarya Agrawal,Washington,11,115,3,96.6,8.0
+2570,Alexander Sheffield,New York,11,115,3,96.6,8.0
+2571,Andrey Kalashnikov,Massachusetts,11,115,3,96.6,8.0
+2284,Arnav Adepu,New Jersey,11,115,3,96.6,8.0
+2572,Kavin Nathan,Texas,11,115,3,96.6,8.0
+2573,Tyler Germain,Massachusetts,11,115,3,96.6,8.0
+2574,Wonjun Choi,North Carolina,11,112,4,96.3,12.0
+2575,Evan Zhang,Maryland,11,111,5,95.2,14.0
+2576,Haydn Chan,Illinois,11,111,5,95.2,14.0
+2577,Kefei Liao,California,11,111,5,95.2,14.0
+2578,Aiden Yejoon Kim,Oklahoma,11,110,6,91.5,21.0
+313,Andrew Feng,Pennsylvania,11,110,6,91.5,21.0
+2282,Anish Sankar,Massachusetts,11,110,6,91.5,21.0
+262,Aryan Raj,Virginia,11,110,6,91.5,21.0
+2579,Baixuan Chen,California,11,110,6,91.5,21.0
+2580,Edward Feng,California,11,110,6,91.5,21.0
+2581,Gordon Cheng,California,11,110,6,91.5,21.0
+2582,Harini Venkatesh,New Hampshire,11,110,6,91.5,21.0
+2583,Leya Balayoghan,Washington,11,110,6,91.5,21.0
+504,Samanyu Ganesh,Georgia,11,110,6,91.5,21.0
+2584,Tony Song,Maryland,11,110,6,91.5,21.0
+2585,Clemens Brass,New York,11,108,7,91.2,27.0
+2253,Ayan Dalmia,New Jersey,11,107,8,90.5,28.5
+2586,Kedaar Shankarnarayan,New Jersey,11,107,8,90.5,28.5
+2587,Krithik Prasad,Illinois,11,106,9,89.1,31.5
+2588,Michelle Nogin,California,11,106,9,89.1,31.5
+2589,Siddharth Pasari,New York,11,106,9,89.1,31.5
+345,Soham Dam,Pennsylvania,11,106,9,89.1,31.5
+2590,Arush Goswami,Oregon,11,105,10,87.1,36.5
+2591,Bhavin Dang,Arizona,11,105,10,87.1,36.5
+2592,Henry Chen,Illinois,11,105,10,87.1,36.5
+2593,Ishaan Nagireddi,Georgia,11,105,10,87.1,36.5
+2594,Jiajun Luo,Connecticut,11,105,10,87.1,36.5
+2595,Serena Feng,California,11,105,10,87.1,36.5
+2596,Ellen Kolesnikova,Georgia,11,103,11,86.7,40.0
+2597,Alexa Chang,California,11,102,12,84.7,43.5
+2598,Kai Marcelais,Washington,11,102,12,84.7,43.5
+2599,Plato Wong,California,11,102,12,84.7,43.5
+2600,Yiting Zhu,California,11,102,12,84.7,43.5
+2601,Yuting Liu,Virginia,11,102,12,84.7,43.5
+2602,Zarif Ahanaf,Pennsylvania,11,102,12,84.7,43.5
+2603,Brandon Hu,Virginia,11,101,13,82.3,50.0
+2604,Philemon Kuo,Maryland,11,101,13,82.3,50.0
+2605,Raymond Menkov,New Hampshire,11,101,13,82.3,50.0
+2606,Rithik Vir,California,11,101,13,82.3,50.0
+2607,Ritvik Ranjan,Georgia,11,101,13,82.3,50.0
+2608,Roy Wang,Illinois,11,101,13,82.3,50.0
+913,Samarth Das,Texas,11,101,13,82.3,50.0
+2609,Albert Ding,Tennessee,11,100,14,81.6,54.5
+1891,Jessica Wu,Michigan,11,100,14,81.6,54.5
+2610,Michael Chen,North Carolina,11,99,15,81.3,56.0
+2611,Redger Xu,California,11,98,16,81,57.0
+2612,Allen Li,New York,11,97,17,78.6,61.0
+2613,Brian Tay,Virginia,11,97,17,78.6,61.0
+2614,Daniel Liu,California,11,97,17,78.6,61.0
+2615,Karthik Prasad,Illinois,11,97,17,78.6,61.0
+1957,Mihir Kotbagi,California,11,97,17,78.6,61.0
+2616,Nathan Chan,California,11,97,17,78.6,61.0
+2617,Prithvi Anickode,Arizona,11,97,17,78.6,61.0
+2618,Daniel Mezhirov,Massachusetts,11,96,18,77.2,66.5
+2619,Darius Cleaver,Illinois,11,96,18,77.2,66.5
+2620,Justin Li,Maryland,11,96,18,77.2,66.5
+2621,Rachit Sakurikar,New Jersey,11,96,18,77.2,66.5
+2622,Akshara Kumar,New Jersey,11,95,19,75.9,70.5
+2623,Sophie Huang,Maryland,11,95,19,75.9,70.5
+2624,Yifan Sheng,California,11,95,19,75.9,70.5
+2625,Zhuoqun Yang,New York,11,95,19,75.9,70.5
+2626,Pranav Balasubramanian,California,11,93,20,75.5,73.0

@@ -1,0 +1,77 @@
+student_id,student_name,state,grade,score,rank,national_percentile,mcp_rank
+2749,Cheng Ma,California,10,120,1,,2.5
+1081,Jason Liu,Pennsylvania,10,120,1,,2.5
+916,Lucas Hinds,Tennessee,10,120,1,,2.5
+504,Samanyu Ganesh,Georgia,10,120,1,,2.5
+666,Shruti Arun,Colorado,10,116,2,,5.5
+665,Sohil Rathi,California,10,116,2,,5.5
+466,Allan Yuan,Alabama,10,115,3,,9.0
+1006,David Wang,Maryland,10,115,3,,9.0
+2588,Michelle Nogin,California,10,115,3,,9.0
+345,Soham Dam,Pennsylvania,10,115,3,,9.0
+2584,Tony Song,Maryland,10,115,3,,9.0
+752,Arjun Agarwal,Oregon,10,112,4,,12.0
+2579,Baixuan Chen,California,10,111,5,,13.5
+2599,Plato Wong,California,10,111,5,,13.5
+2570,Alexander Sheffield,New York,10,110,6,,16.5
+2582,Harini Venkatesh,New Hampshire,10,110,6,,16.5
+2586,Kedaar Shankarnarayan,New Jersey,10,110,6,,16.5
+2750,Renee Wang,Illinois,10,110,6,,16.5
+328,Aryan Agrawal,Washington,10,108,7,,19.0
+2569,Aishwarya Agrawal,Washington,10,107,8,,20.5
+2751,Mia Liu,California,10,107,8,,20.5
+2597,Alexa Chang,California,10,106,9,,24.0
+1885,Arnav Ahuja,California,10,106,9,,24.0
+262,Aryan Raj,Virginia,10,106,9,,24.0
+2587,Krithik Prasad,Illinois,10,106,9,,24.0
+2752,Matthew Lkhagvasuren,California,10,106,9,,24.0
+2571,Andrey Kalashnikov,Massachusetts,10,105,10,,30.5
+2591,Bhavin Dang,Arizona,10,105,10,,30.5
+2603,Brandon Hu,Virginia,10,105,10,,30.5
+2753,Hanyuan Qu,California,10,105,10,,30.5
+1891,Jessica Wu,Michigan,10,105,10,,30.5
+2754,Matthew Kokhan,Washington,10,105,10,,30.5
+1617,Michael Retakh,New York,10,105,10,,30.5
+2755,Xizhi Zhang,California,10,105,10,,30.5
+2756,Mark Menaker,California,10,104,11,,35.0
+2757,Fedor Myshkin,Massachusetts,10,103,12,,37.0
+2606,Rithik Vir,California,10,103,12,,37.0
+2758,Vishwa Srinivasan,Massachusetts,10,103,12,,37.0
+1478,Alexander Peev,Washington,10,102,13,,40.0
+2593,Ishaan Nagireddi,Georgia,10,102,13,,40.0
+2759,Neil Sriram,New York,10,102,13,,40.0
+2590,Arush Goswami,Oregon,10,101,14,,45.5
+2760,Ekaansh Agrawal,Washington,10,101,14,,45.5
+2592,Henry Chen,Illinois,10,101,14,,45.5
+2577,Kefei Liao,California,10,101,14,,45.5
+2761,Matthew Karp,New York,10,101,14,,45.5
+2762,Rishi Salvi,California,10,101,14,,45.5
+2623,Sophie Huang,Maryland,10,101,14,,45.5
+1951,Suhani Pahuja,California,10,101,14,,45.5
+2763,Aahan Mahakud,New Jersey,10,100,15,,51.0
+2764,Mihir Gupta,California,10,100,15,,51.0
+2624,Yifan Sheng,California,10,100,15,,51.0
+2765,Daniel Adler,California,10,99,16,,54.0
+2766,Petr Kisselev,Virginia,10,99,16,,54.0
+2767,Siming Chen,Massachusetts,10,99,16,,54.0
+2585,Clemens Brass,New York,10,98,17,,57.0
+2616,Nathan Chan,California,10,98,17,,57.0
+1746,Sri Sumukh Vulava,Kentucky,10,98,17,,57.0
+2568,Adam Yanco,Massachusetts,10,97,18,,61.5
+2284,Arnav Adepu,New Jersey,10,97,18,,61.5
+2768,Crystal Huang,California,10,97,18,,61.5
+2769,Dan Wiechman,New York,10,97,18,,61.5
+2770,Jake Y Lee,California,10,97,18,,61.5
+2771,Sophie He,Massachusetts,10,97,18,,61.5
+2594,Jiajun Luo,Connecticut,10,96,19,,66.5
+2615,Karthik Prasad,Illinois,10,96,19,,66.5
+2608,Roy Wang,Illinois,10,96,19,,66.5
+2402,Sanjana Ramesh,Michigan,10,96,19,,66.5
+2578,Aiden Yejoon Kim,Oklahoma,10,95,20,,72.5
+2609,Albert Ding,Tennessee,10,95,20,,72.5
+313,Andrew Feng,Pennsylvania,10,95,20,,72.5
+2772,Anna Voorhis,California,10,95,20,,72.5
+2583,Leya Balayoghan,Washington,10,95,20,,72.5
+2773,Noah Kim,Massachusetts,10,95,20,,72.5
+2774,Paul Pan,Massachusetts,10,95,20,,72.5
+2775,Xiyuan Zhang,California,10,95,20,,72.5
