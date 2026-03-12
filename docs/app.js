@@ -289,6 +289,7 @@
         var st = (s.state || "").trim();
         if (wantState === "__none__") return !st;
         if (wantState === "__other__") return st && !US_STATES_SET[st];
+        if (wantState === "US") return st && US_STATES_SET[st];
         return st === wantState;
       });
     }
@@ -739,6 +740,7 @@
         var st = (s.state || "").trim();
         if (wantState === "__none__") return !st;
         if (wantState === "__other__") return st && !US_STATES_SET[st];
+        if (wantState === "US") return st && US_STATES_SET[st];
         return st === wantState;
       });
     }

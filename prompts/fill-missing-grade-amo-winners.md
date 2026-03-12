@@ -4,6 +4,8 @@
 
 **Rule:** Always use **student_id** to identify students. Join AMO results with `students.csv` by `student_id`. Update only rows where `grade_in_2026` is empty or missing.
 
+**IMPORTANT:** Only search for and update students who **do not** already have `grade_in_2026` labeled. Before adding any student to the target list, verify that their `grade_in_2026` column is empty in `students.csv`. Do not search for or touch students who already have a grade.
+
 ---
 
 ## 1. Identify AMO winners with missing grade
@@ -20,7 +22,7 @@
 
 3. Read `database/students/students.csv` (columns: `student_id`, `student_name`, `state`, `team_ids`, `alias`, `gender`, `grade_in_2026`).
 
-4. For each `student_id` that appears in AMO results, check the corresponding row in `students.csv`. If `grade_in_2026` is empty, blank, or missing, add that student to the **target list**. These are the only students you may update.
+4. For each `student_id` that appears in AMO results, check the corresponding row in `students.csv`. **Only if** `grade_in_2026` is empty, blank, or missing, add that student to the **target list**. Skip any student who already has a non-empty `grade_in_2026`—do not add them to the target list. These are the only students you may search for or update.
 
 5. Output the target list: `student_id`, `student_name`, `alias` (if any), and the AMO year(s) and award(s) they won. This helps with search context.
 
