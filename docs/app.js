@@ -621,7 +621,7 @@
           var branch = (data.branch && data.branch !== "main") ? data.branch : "";
           var yearHref = csvViewerBase + "?contest=" + encodeURIComponent(slug) + "&year=" + encodeURIComponent(yr) + "&file=" + encodeURIComponent(filename) + "&name=" + encodeURIComponent(name) + (branch ? "&branch=" + encodeURIComponent(branch) : "");
           var label = filenames.length > 1 ? yr + " (" + filename.replace(/^results_?/, "").replace(/\.csv$/i, "") + ")" : yr;
-          yearLinks.push("<a href=\"" + yearHref + "\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"contest-list-year-link\">" + escapeHtml(label) + "</a>");
+          yearLinks.push("<a href=\"" + yearHref + "\" class=\"contest-list-year-link\">" + escapeHtml(label) + "</a>");
         }
       }
       var yearLine = yearLinks.length ? "<span class=\"contest-list-years\">" + yearLinks.join(", ") + "</span>" : "";
@@ -1365,6 +1365,19 @@
   }
 
   function init() {
+    restoreFilters();
+    if (!showHiddenFeature() && sortMode === "mcp_pct") {
+      sortMode = "mcp";
+      if (sortToggleEl) {
+        var opts = sortToggleEl.querySelectorAll(".sort-toggle-option");
+        for (var oi = 0; oi < opts.length; oi++) {
+          opts[oi].classList.toggle("sort-toggle-option--active", opts[oi].getAttribute("data-mode") === "mcp");
+        }
+      }
+      saveFilters();
+    }
+    var controlsEl = document.querySelector(".awards-ranking-controls");
+    if (controlsEl) controlsEl.style.visibility = "visible";
     setLoading(true);
     var base = document.querySelector("script[src$='app.js']").src.replace(/\/[^/]*$/, "");
     Promise.all([
@@ -1416,17 +1429,7 @@
         setLoading(false);
         var mcpPctOption = document.getElementById("mcp-pct-sort-option");
         if (mcpPctOption) mcpPctOption.hidden = !showHiddenFeature();
-        if (!showHiddenFeature() && sortMode === "mcp_pct") {
-          sortMode = "mcp";
-          if (sortToggleEl) {
-            var opts = sortToggleEl.querySelectorAll(".sort-toggle-option");
-            for (var oi = 0; oi < opts.length; oi++) {
-              opts[oi].classList.toggle("sort-toggle-option--active", opts[oi].getAttribute("data-mode") === "mcp");
-            }
-          }
-        }
         requestAnimationFrame(function () {
-          restoreFilters();
           renderContestList();
           updateContestFilterSummary();
           renderTopStudentsByRecords();
