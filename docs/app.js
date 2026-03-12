@@ -544,7 +544,10 @@
       }
     }
     var slugs = [];
-    for (var k in contests) if (Object.prototype.hasOwnProperty.call(contests, k)) slugs.push(k);
+    for (var k in contests) if (Object.prototype.hasOwnProperty.call(contests, k)) {
+      if (k.indexOf("mk-national") === 0) continue;  // Record only; not shown on website
+      slugs.push(k);
+    }
     slugs.sort(compareContestSlugs);
     var parts = [];
     var githubBase = "https://github.com/x-du/math-competition/blob/main/database/contests/";
