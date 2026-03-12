@@ -1653,8 +1653,8 @@
           return;
         }
         var csvData = result.data || [];
-        var fields = result.meta.fields || [];
-        if (!fields.length && csvData.length) fields = Object.keys(csvData[0]);
+        var fields = (result.meta.fields || []).filter(function (f) { return f !== "student_id"; });
+        if (!fields.length && csvData.length) fields = Object.keys(csvData[0]).filter(function (f) { return f !== "student_id"; });
         if (!csvData.length && !fields.length) {
           csvError.textContent = "Empty or invalid CSV.";
           csvError.hidden = false;
