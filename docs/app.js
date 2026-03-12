@@ -45,6 +45,7 @@
         search: searchEl ? searchEl.value : "",
         contest: getActiveContestFilterValues()
       };
+      savedFilters = f;
       localStorage.setItem(FILTERS_KEY, JSON.stringify(f));
     } catch (e) { /* ignore */ }
   }
@@ -684,12 +685,24 @@
         noneOpt.textContent = "No grade";
         gradeFilterEl.appendChild(noneOpt);
       }
-      var valToRestore = currentValue || (savedFilters && savedFilters.grade) || "";
-      var optExists = gradeFilterEl.querySelector("option[value=\"" + valToRestore + "\"]");
+      var valToRestore = currentValue !== undefined && currentValue !== null ? currentValue : (savedFilters && "grade" in savedFilters ? savedFilters.grade : "__hs__");
+      var optExists = false;
+      for (var oi = 0; oi < gradeFilterEl.options.length; oi++) {
+        if (gradeFilterEl.options[oi].value === valToRestore) {
+          optExists = true;
+          break;
+        }
+      }
       if (!gradeFilterInitialized) {
-        var toUse = (savedFilters && savedFilters.grade) || "__hs__";
-        var optExistsForSaved = gradeFilterEl.querySelector("option[value=\"" + toUse + "\"]");
-        gradeFilterEl.value = optExistsForSaved ? toUse : "__hs__";
+        var toUse = (savedFilters && "grade" in savedFilters) ? savedFilters.grade : "__hs__";
+        var toUseExists = false;
+        for (var oj = 0; oj < gradeFilterEl.options.length; oj++) {
+          if (gradeFilterEl.options[oj].value === toUse) {
+            toUseExists = true;
+            break;
+          }
+        }
+        gradeFilterEl.value = toUseExists ? toUse : "__hs__";
         gradeFilterInitialized = true;
       } else if (optExists) {
         gradeFilterEl.value = valToRestore;
