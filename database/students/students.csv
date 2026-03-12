@@ -191,7 +191,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 216,Lingfei Tang,North Carolina,92|109,,female,11
 217,Sophia Jin,New York,49|96,,female,12
 218,William Qian,Maryland,95|144|266,,male,11
-219,Grisham Paimagam,North Carolina,97,,male,
+219,Grisham Paimagam,North Carolina,97,,male,11
 220,Luca Pieleanu,Massachusetts,98|268,,male,
 221,Anderson Hao,Virginia,85|122,,male,11
 222,Yunbo Li,Maryland,99,,male,
@@ -265,7 +265,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 292,Justin Mu,California,118,,male,
 293,Gabriel Levin,New York,49,,male,
 294,Samuel Wang,Virginia,26,,male,16
-296,Hansen Shieh,Massachusetts,113,,male,
+296,Hansen Shieh,Massachusetts,113,,male,12
 297,Christopher Lu,New York,123,,male,
 298,Ian Buchanan,New York,49,,male,
 299,Xuzhou Ren,Florida,19,,male,
@@ -328,7 +328,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 360,Rui Ouyang,Canada,128,,male,
 361,Kai Yi,California,2,,male,
 362,Rithik Gumpu,New Jersey,37|119|484,,male,12
-363,Michael Luo,Minnesota,6,,male,
+363,Michael Luo,Minnesota,6,,male,12
 364,Ekam Kaur,Texas,15,,female,12
 365,Harish Loghashankar,California,27,,male,11
 366,Ethan Kun Song,Connecticut,2,,male,
@@ -845,7 +845,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 886,Warren Bei,"British Columbia, Canada",,,male,13
 887,Neil Krishnan,California,,,male,13
 888,Jian Kweon,California,,,male,13
-889,Tony Lu,Texas,,,male,
+889,Tony Lu,Texas,,,male,11
 890,Hanson Bai,California,,,male,
 891,Andrew Brahms,New Jersey,,,male,
 892,Edward Cha,Massachusetts,,,male,
