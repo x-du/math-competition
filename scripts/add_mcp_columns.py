@@ -109,14 +109,16 @@ def process_rank_mode(rows, rank_col):
 
 
 def process_rank_mixed_mode(rows, rank_col):
-    """Process competitions where rank column has both numbers and 'Honorable Mention'."""
+    """Process competitions where rank column has both numbers and a non-numeric group.
+    Supports: 'Honorable Mention' (BAMO), 'DHM (Top 10%)' (BrUMO).
+    """
     numeric_rows = []
     hm_rows = []
     excluded = []
 
     for i, row in enumerate(rows):
         raw = row.get(rank_col, '').strip()
-        if raw.lower().startswith('honorable'):
+        if raw.lower().startswith('honorable') or raw.upper().startswith('DHM'):
             hm_rows.append(i)
         else:
             num, is_num = parse_rank_value(raw)

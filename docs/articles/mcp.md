@@ -90,6 +90,7 @@ Competitions are classified into four tiers — **2000**, **1000**, **500**, and
 | **DMM** | ~50 | Duke Math Meet. |
 | **CMM** | ~10 | Caltech Math Meet. |
 | **BAMO-8** | ~30 | Bay Area Mathematical Olympiad, middle school division. |
+| **BrUMO Division A** | ~25 | Brown University Math Olympiad Division A. Rankings from top 1 through DHM (Top 10%). |
 
 **Why these are Tier 250:** These are well-run competitions with good problems but draw smaller or more geographically concentrated fields. They provide valuable competitive experience and meaningful results, but a strong finish here carries less weight than the same finish at a national-level event.
 
@@ -111,7 +112,7 @@ Before computing points, all results are normalized to a single numeric `mcp_ran
 - Bronze: positions 33–87 → `mcp_rank = 60`
 - HM: positions 88–155 → `mcp_rank = 121.5`
 
-**For mixed-format competitions** (BAMO-12, BAMO-8): Numeric ranks come first, followed by Honorable Mention as a group.
+**For mixed-format competitions** (BAMO-12, BAMO-8, BrUMO Division A): Numeric ranks come first, followed by a non-numeric group. BAMO uses Honorable Mention; BrUMO uses DHM (Top 10%).
 
 **For MathCounts National**: Numeric ranks (1, 2) → Semi-finalists (S) → Quarter-finalists (Q) → Countdown 9–12 (C) → remaining numeric ranks (13+). Each code group is treated as a tied block.
 
@@ -358,6 +359,7 @@ Result files are discovered dynamically — all result CSVs within each competit
 | DMM | 250 | 100% | rank |
 | CMM | 250 | 100% | rank |
 | BAMO-8 | 250 | 100% | rank_mixed |
+| BrUMO Division A | 250 | 100% | rank_mixed |
 
 ---
 
@@ -371,7 +373,7 @@ All result CSVs are processed using the competition configuration. For each file
 
 - **`rank`**: numeric ranks with average-rank-for-ties.
 - **`award`**: award strings (Gold, Silver, Bronze, HM) mapped to positional blocks.
-- **`rank_mixed`**: numeric ranks followed by Honorable Mention as a tied group.
+- **`rank_mixed`**: numeric ranks followed by a non-numeric group (Honorable Mention for BAMO, DHM (Top 10%) for BrUMO).
 - **`mathcounts`**: numeric ranks + special codes (S, Q, C) treated as tied blocks.
 
 The computed `mcp_rank` column is written back into the CSV.

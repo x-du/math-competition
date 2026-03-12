@@ -86,6 +86,7 @@
     "mpfg-olympiad": function (slug) { return slug.indexOf("mpfg-olympiad") !== -1; },
     "bamo-8": function (slug) { return slug.indexOf("bamo-8") !== -1; },
     "bamo-12": function (slug) { return slug.indexOf("bamo-12") !== -1; },
+    "brumo-a": function (slug) { return slug.indexOf("brumo-a") === 0; },
     bmt: function (slug) { return slug.indexOf("bmt") === 0; }
   };
 
@@ -93,7 +94,7 @@
     usamo: "USAMO", usajmo: "USAJMO", imo: "IMO", rmm: "RMM", egmo: "EGMO",
     "hmmt-feb": "HMMT Feb", "hmmt-nov": "HMMT Nov", "pumac-a": "PUMaC Div A", "pumac-b": "PUMaC Div B",
     mathcounts: "Mathcounts", cmimc: "CMIMC", arml: "ARML", dmm: "DMM", cmm: "CMM",
-    mmaths: "MMATHS", mpfg: "MPFG", "mpfg-olympiad": "MPFG Olympiad", "bamo-8": "BAMO-8", "bamo-12": "BAMO-12", bmt: "BMT"
+    mmaths: "MMATHS", mpfg: "MPFG", "mpfg-olympiad": "MPFG Olympiad", "bamo-8": "BAMO-8", "bamo-12": "BAMO-12", "brumo-a": "BrUMO Div A", bmt: "BMT"
   };
 
   function getSelectedContestLabels() {
