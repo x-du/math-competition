@@ -393,6 +393,148 @@ body {
   color: var(--accent);
 }
 
+/* CSV popover */
+#csv-popover[hidden] {
+  display: none !important;
+  pointer-events: none !important;
+}
+
+.csv-popover {
+  position: fixed;
+  inset: 0;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.csv-popover-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.csv-popover-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 56rem;
+  width: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.csv-popover-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.csv-popover-close:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.csv-popover-title {
+  margin: 0 2rem 0.5rem 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.csv-popover-loading {
+  padding: 2rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.csv-popover-error {
+  padding: 1rem;
+  color: #f87171;
+  background: rgba(248, 113, 113, 0.1);
+  border-radius: var(--radius);
+}
+
+.csv-popover-table-wrap {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.csv-popover-table-scroll {
+  overflow: auto;
+  max-height: 70vh;
+}
+
+.csv-popover-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.csv-popover-table th,
+.csv-popover-table td {
+  padding: 0.4rem 0.6rem;
+  text-align: left;
+  border: 1px solid var(--border);
+}
+
+.csv-popover-table th {
+  background: rgba(60, 90, 160, 0.85);
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+  color: var(--text);
+  border-bottom: 2px solid var(--border);
+}
+
+.csv-popover-table tr:hover td {
+  background: rgba(124, 156, 224, 0.08);
+}
+
+.csv-popover-table .num {
+  text-align: right;
+}
+
+.csv-popover-open-tab {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.csv-popover-open-tab:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+.csv-row-year-link {
+  color: var(--accent);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.csv-row-year-link:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
 /* Main */
 .main {
   max-width: 72rem;

@@ -407,8 +407,13 @@
   }
 
   function renderRecordRow(record, allKeys) {
+    var slug = record.contest_slug || record.contest || "";
+    var yr = record.year || "";
+    var yearContent = (slug && yr)
+      ? "<a href=\"#\" class=\"csv-row-year-link\" data-contest=\"" + escapeHtml(slug) + "\" data-year=\"" + escapeHtml(yr) + "\">" + escapeHtml(yr) + "</a>"
+      : escapeHtml(yr);
     var cells = [
-      "<td class=\"num\" data-col=\"year\">", escapeHtml(record.year || ""), "</td>"
+      "<td class=\"num\" data-col=\"year\">", yearContent, "</td>"
     ];
     for (var i = 0; i < allKeys.length; i++) {
       var key = allKeys[i];
@@ -1449,6 +1454,7 @@
           bindContestListPopover();
           bindStateDistPopover();
           bindMcpPctPopover();
+          bindCsvPopover();
           runSearch();
         });
       })
@@ -1599,8 +1605,114 @@
     });
   }
 
+  var RAW_BASE = "https://raw.githubusercontent.com/x-du/math-competition/";
+  var CSV_VIEWER_BASE = "csv-viewer.html";
+
+  function showCsvPopover(contest, year) {
+    var csvPopover = document.getElementById("csv-popover");
+    var csvTitle = document.getElementById("csv-popover-title");
+    var csvLoading = document.getElementById("csv-popover-loading");
+    var csvError = document.getElementById("csv-popover-error");
+    var csvTableWrap = document.getElementById("csv-popover-table-wrap");
+    var csvTable = document.getElementById("csv-popover-table");
+    var csvOpenTab = document.getElementById("csv-popover-open-tab");
+    if (!csvPopover || !csvTitle) return;
+
+    var contestYearFiles = data.contest_year_files || {};
+    var filesByYear = contestYearFiles[contest] || {};
+    var fileEntry = filesByYear[year] || "results.csv";
+    var file = Array.isArray(fileEntry) ? (fileEntry[0] || "results.csv") : fileEntry;
+
+    var contestInfo = (data.contests || {})[contest] || {};
+    var contestName = contestInfo.contest_name || contest;
+    var title = contestName + " " + year;
+    csvTitle.textContent = title;
+    csvLoading.hidden = false;
+    csvError.hidden = true;
+    csvTableWrap.hidden = true;
+    csvOpenTab.hidden = true;
+    csvPopover.hidden = false;
+
+    var branch = (data.branch && data.branch !== "main") ? data.branch : "main";
+    var rawUrl = RAW_BASE + encodeURIComponent(branch) + "/database/contests/" + encodeURIComponent(contest) + "/year%3D" + encodeURIComponent(year) + "/" + encodeURIComponent(file);
+    var viewerUrl = CSV_VIEWER_BASE + "?contest=" + encodeURIComponent(contest) + "&year=" + encodeURIComponent(year) + "&file=" + encodeURIComponent(file) + "&name=" + encodeURIComponent(contestName);
+
+    fetch(rawUrl)
+      .then(function (res) {
+        if (!res.ok) throw new Error("Failed to load: " + res.status);
+        return res.text();
+      })
+      .then(function (text) {
+        csvLoading.hidden = true;
+        var result = (typeof Papa !== "undefined" && Papa.parse) ? Papa.parse(text, { header: true, skipEmptyLines: true }) : { data: [], meta: { fields: [] }, errors: [] };
+        if (result.errors && result.errors.length) {
+          csvError.textContent = "Parse error: " + (result.errors[0].message || "Unknown");
+          csvError.hidden = false;
+          csvOpenTab.href = viewerUrl;
+          csvOpenTab.hidden = false;
+          return;
+        }
+        var csvData = result.data || [];
+        var fields = result.meta.fields || [];
+        if (!fields.length && csvData.length) fields = Object.keys(csvData[0]);
+        if (!csvData.length && !fields.length) {
+          csvError.textContent = "Empty or invalid CSV.";
+          csvError.hidden = false;
+          csvOpenTab.href = viewerUrl;
+          csvOpenTab.hidden = false;
+          return;
+        }
+        var colAlign = [];
+        for (var i = 0; i < fields.length; i++) {
+          var allNum = true;
+          for (var r = 0; r < csvData.length; r++) {
+            var v = csvData[r][fields[i]];
+            if (v != null && String(v).trim() !== "" && !/^\d+(\.\d+)?$/.test(String(v).trim())) {
+              allNum = false;
+              break;
+            }
+          }
+          colAlign[i] = allNum ? "num" : "";
+        }
+        var thead = "<thead><tr>";
+        for (var i = 0; i < fields.length; i++) {
+          thead += "<th scope=\"col\"" + (colAlign[i] ? " class=\"" + colAlign[i] + "\"" : "") + ">" + escapeHtml(fields[i]) + "</th>";
+        }
+        thead += "</tr></thead>";
+        var tbody = "<tbody>";
+        for (var r = 0; r < csvData.length; r++) {
+          tbody += "<tr>";
+          for (var i = 0; i < fields.length; i++) {
+            var val = csvData[r][fields[i]] != null ? String(csvData[r][fields[i]]) : "";
+            tbody += "<td" + (colAlign[i] ? " class=\"" + colAlign[i] + "\"" : "") + ">" + escapeHtml(val) + "</td>";
+          }
+          tbody += "</tr>";
+        }
+        tbody += "</tbody>";
+        csvTable.innerHTML = thead + tbody;
+        csvTableWrap.hidden = false;
+        csvOpenTab.href = viewerUrl;
+        csvOpenTab.hidden = false;
+      })
+      .catch(function (err) {
+        csvLoading.hidden = true;
+        csvError.textContent = "Could not load CSV: " + (err.message || err);
+        csvError.hidden = false;
+        csvOpenTab.href = viewerUrl;
+        csvOpenTab.hidden = false;
+      });
+  }
+
   function handleResultsClick(event) {
     var target = event.target;
+    var yearLink = target && target.closest ? target.closest(".csv-row-year-link") : null;
+    if (yearLink) {
+      event.preventDefault();
+      var contest = yearLink.getAttribute("data-contest");
+      var year = yearLink.getAttribute("data-year");
+      if (contest && year) showCsvPopover(contest, year);
+      return;
+    }
     if (target && target.classList && target.classList.contains("export-pdf-student-btn")) {
       var card = target.closest(".student-card");
       if (card) exportStudentToPdf(card);
@@ -1676,6 +1788,16 @@
     var popover = document.getElementById("mcp-pct-popover");
     var closeBtn = popover && popover.querySelector(".mcp-pct-popover-close");
     var backdrop = popover && popover.querySelector(".mcp-pct-popover-backdrop");
+    if (!popover) return;
+    function close() { popover.hidden = true; }
+    if (closeBtn) closeBtn.addEventListener("click", close);
+    if (backdrop) backdrop.addEventListener("click", close);
+  }
+
+  function bindCsvPopover() {
+    var popover = document.getElementById("csv-popover");
+    var closeBtn = popover && popover.querySelector(".csv-popover-close");
+    var backdrop = popover && popover.querySelector(".csv-popover-backdrop");
     if (!popover) return;
     function close() { popover.hidden = true; }
     if (closeBtn) closeBtn.addEventListener("click", close);

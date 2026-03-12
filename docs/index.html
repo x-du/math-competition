@@ -318,6 +318,21 @@
       </div>
       <div class="mcp-pct-popover-backdrop" aria-hidden="true"></div>
     </div>
+    <div id="csv-popover" class="csv-popover" hidden role="dialog" aria-labelledby="csv-popover-title">
+      <div class="csv-popover-inner">
+        <h2 id="csv-popover-title" class="csv-popover-title">Loading…</h2>
+        <div id="csv-popover-loading" class="csv-popover-loading">Loading CSV…</div>
+        <div id="csv-popover-error" class="csv-popover-error" hidden></div>
+        <div id="csv-popover-table-wrap" class="csv-popover-table-wrap" hidden>
+          <div class="csv-popover-table-scroll">
+            <table class="csv-popover-table" id="csv-popover-table" aria-label="Contest results"></table>
+          </div>
+        </div>
+        <a id="csv-popover-open-tab" class="csv-popover-open-tab" href="#" target="_blank" rel="noopener noreferrer" hidden>Open in new tab</a>
+        <button type="button" class="csv-popover-close" aria-label="Close">×</button>
+      </div>
+      <div class="csv-popover-backdrop" aria-hidden="true"></div>
+    </div>
     <div id="empty" class="empty-state" hidden>
       <p>No students match your search. Try a different name or partial name.</p>
     </div>
@@ -335,6 +350,7 @@
     <p>Please report issues and official contest results to <a href="mailto:mathcontestintegrity@gmail.com">mathcontestintegrity@gmail.com</a>.</p>
   </footer>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
