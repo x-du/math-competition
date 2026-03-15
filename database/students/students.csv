@@ -1146,7 +1146,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1208,Nikash Gupta,California,,,male,
 1209,Luke Huang,New York,,,male,
 1210,Brendon Jiang,California,,,male,
-1211,Minkyu Jo,Idaho,,,male,
+1211,Minkyu Jo,Idaho,,Minyku Jo,male,
 1212,Weijie-Jay Li,New York,,,male,
 1213,Alan Lu,California,,,male,
 1214,Ruiyang Luo,California,,,male,
@@ -1189,7 +1189,6 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1252,Haoqing Hong,Massachusetts,,,male,
 1253,Joyce Huang,Washington,,,female,13
 1254,Jefferson Ji,Massachusetts,268,,male,
-1255,Minyku Jo,Idaho,,,male,
 1256,Seoyeon Kim,Kansas,,,male,
 1257,Michael Li,Michigan,,,male,14
 1258,WeiWei Luo,Canada,,,male,

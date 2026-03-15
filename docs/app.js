@@ -113,6 +113,11 @@
     };
   }
 
+  function formatMcpPct(ratio) {
+    var pctVal = Math.round(Math.min(ratio, 1) * 10000) / 100;
+    return parseFloat(pctVal.toFixed(2)).toString();
+  }
+
   var CONTEST_FILTER_CONFIG = {
     all: function () { return true; },
     usamo: function (slug) { return slug === "amo"; },
@@ -527,10 +532,10 @@
     var mcpPctSuffix = "";
     if (sortMode === "mcp_pct" && contestFilterActiveCard && mcpTotal > 0 && totalMcp > 0) {
       var ratio = mcpTotal / totalMcp;
-      var pctValCard = Math.round(ratio * 1000) / 10;
+      var pctValCard = formatMcpPct(ratio);
       var contestLabelsCard = getSelectedContestLabels();
       var contestsStrCard = contestLabelsCard.length ? contestLabelsCard.join(", ") : "selected contests";
-      mcpPctSuffix = " (<button type=\"button\" class=\"mcp-pct-trigger\" data-pct=\"" + pctValCard + "\" data-contests=\"" + escapeHtml(contestsStrCard) + "\">" + pctValCard + "%</button>)";
+      mcpPctSuffix = " (<button type=\"button\" class=\"mcp-pct-trigger\" data-pct=\"" + escapeHtml(pctValCard) + "\" data-contests=\"" + escapeHtml(contestsStrCard) + "\">" + pctValCard + "%</button>)";
     }
     var mcpDisplay = mcpTotal > 0 ? "<span class=\"student-stat\">" + mcpTotal + " MCP" + mcpPctSuffix + "</span>" : "";
     var statsHtml = "<span class=\"student-stats\">" +
@@ -842,11 +847,17 @@
     var isMcp = sortMode === "mcp";
     var isMcpPctSort = sortMode === "mcp_pct";
     if (isMcpPctSort) {
+      var RATIO_EPS = 1e-10; // Treat ratios within epsilon as equal (avoids fp noise for 100%, etc.)
       counts.sort(function (a, b) {
-        var ra = a.mcpRatio != null ? a.mcpRatio : -1;
-        var rb = b.mcpRatio != null ? b.mcpRatio : -1;
+        var ra = Math.min(a.mcpRatio != null ? a.mcpRatio : -1, 1);
+        var rb = Math.min(b.mcpRatio != null ? b.mcpRatio : -1, 1);
         var cmp = ratioSortAsc ? ra - rb : rb - ra;
-        if (cmp !== 0) return cmp;
+        if (Math.abs(cmp) >= RATIO_EPS) return cmp;
+        // Tie on ratio: break by MCP value (higher MCP first when descending, lower first when ascending)
+        var ma = a.mcpTotal != null ? a.mcpTotal : 0;
+        var mb = b.mcpTotal != null ? b.mcpTotal : 0;
+        var mcpCmp = ratioSortAsc ? ma - mb : mb - ma;
+        if (mcpCmp !== 0) return mcpCmp;
         var nameA = (a.student && a.student.name) || "";
         var nameB = (b.student && b.student.name) || "";
         return nameA.localeCompare(nameB);
@@ -907,7 +918,7 @@
             var median = sortedRatios.length % 2 === 1
               ? sortedRatios[Math.floor(sortedRatios.length / 2)]
               : (sortedRatios[sortedRatios.length / 2 - 1] + sortedRatios[sortedRatios.length / 2]) / 2;
-            var fmt = function (x) { return (Math.round(x * 1000) / 10) + "%"; };
+            var fmt = function (x) { return formatMcpPct(x) + "%"; };
             var contestLabels = getSelectedContestLabels();
             var contestPhrase = contestLabels.length > 0 ? contestLabels.join(", ") : "selected contests";
             mcpPctStatsCache.html = " Among the top 100 students by total MCP, contribution from " + contestPhrase + ": avg " + fmt(avg) + ", min " + fmt(minR) + ", max " + fmt(maxR) + ", median " + fmt(median) + ". Due to limited data, do not make judgments without careful review.";
@@ -939,10 +950,10 @@
       if (isMcp || isMcpPctSort) {
         valueText = String(entry.mcpTotal) + " " + mcpLabel;
         if (isMcpPctSort && contestFilterActive && entry.mcpRatio != null) {
-          var pctVal = Math.round(entry.mcpRatio * 1000) / 10;
+          var pctVal = formatMcpPct(entry.mcpRatio);
           var contestLabels = getSelectedContestLabels();
           var contestsStr = contestLabels.length ? contestLabels.join(", ") : "selected contests";
-          valueText += " (<button type=\"button\" class=\"mcp-pct-trigger\" data-pct=\"" + pctVal + "\" data-contests=\"" + escapeHtml(contestsStr) + "\">" + pctVal + "%</button>)";
+          valueText += " (<button type=\"button\" class=\"mcp-pct-trigger\" data-pct=\"" + escapeHtml(pctVal) + "\" data-contests=\"" + escapeHtml(contestsStr) + "\">" + pctVal + "%</button>)";
         }
       } else {
         var label = entry.recordsCount === 1 ? "record" : "records";
