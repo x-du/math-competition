@@ -1,6 +1,6 @@
 ---
 title: MCP — Math Competition Points
-description: "MCP (Math Competition Points) is a unified ranking system for US high school math competitors, modeled after ATP/WTA tennis. Tier-based points, time decay, and aggregation across HMMT, PUMaC, AMO, ARML, and more."
+description: "MCP (Math Competition Points) is a unified ranking system for US high school math competitors, modeled after ATP/WTA tennis. Tier-based points, time decay, and aggregation across HMMT, PUMaC, AMO, ARML, and more. v2: dynamic min_pts and competition-size-based N."
 ---
 
 # MCP — Math Competition Points
@@ -20,6 +20,7 @@ description: "MCP (Math Competition Points) is a unified ranking system for US h
 - [11. MCP %](#11-mcp-)
 - [12. Limitations](#12-limitations)
 - [13. Summary](#13-summary)
+- [Document History](#document-history)
 - [Disclaimer](#disclaimer)
 
 ---
@@ -129,24 +130,25 @@ The standard time-decay rule (Section 5) still applies.
 
 $$\text{mcp}\_\text{points}(r) = \text{min}\_\text{pts} + (\text{max}\_\text{pts} - \text{min}\_\text{pts}) \times \left(\frac{N - r}{N - 1}\right)^k$$
 
+| Variable | Description |
+|---|---|
+| `r` | The current rank being calculated |
+| `max_pts` | The maximum points awarded (at Rank 1) = Tier × weight |
+| `min_pts` | **Calculated** (see below) — the floor at Rank N |
+| `N` | The **total size of the competition** (all participants) |
+| `k` | The steepness coefficient (3) |
 
-| Variable | Description | Example Value |
-|---|---|---|
-| `r` | The current rank being calculated | 1 … 100 |
-| `max_pts` | The maximum points awarded (at Rank 1) | 1000 |
-| `min_pts` | The floor/minimum points awarded (at Rank N) | 500 |
-| `N` | The total number of ranked students | 100 |
-| `k` | The steepness coefficient | 3 |
-
-The derived values are:
+**Derived values:**
 - `max_pts` = `Tier × weight` (1000 for Tier 1000 overall, 500 for Tier 1000 subject tests at 50%)
-- `min_pts` = `Tier × 0.5 × weight` (500 for Tier 1000 overall, 250 for Tier 1000 subject tests at 50%)
+- `min_pts` is decided by whether the competition has a selection process:
+  - **No selection process** (open competition): `min_pts` = **10**. Examples: ARML, BAMO, DMM, CMIMC, MMATHS, CMM, BMT, BrUMO.
+  - **Selection process** (selective competition): `min_pts` = **higher value**. Examples: USAMO, USAJMO, HMMT February, HMMT November, MPFG, MathCounts National. The exact higher value can be defined in the implementation (e.g., based on tier or competition size).
 
-This guarantees two anchor points:
-- **Rank 1 always earns exactly `max_pts`.**
-- **Rank N (last ranked) always earns exactly `min_pts`.**
+**Awardees only receive points.** Since we only know the awardees, we only calculate and assign points for the awardees. Students whose ranks are unknown (e.g., ranks 51–2000 when only top 50 are recognized) receive **0 points**.
 
-Between these anchors, the steepness coefficient $k$ controls how quickly points drop off. With $k = 3$, the curve is convex — top ranks are separated by large point gaps while lower ranks are compressed together near the floor:
+**Full competition records.** The same algorithm applies when full competition records become available. Whether we have partial data (top 50 of 2000) or complete data (all 2000 ranks), the formula, `min_pts` calculation, and point distribution remain identical. No migration or recalibration is needed.
+
+Between the anchors, the steepness coefficient $k$ controls how quickly points drop off. With $k = 3$, the curve is convex — top ranks are separated by large point gaps while lower ranks are compressed together near the floor:
 
 ![Power-law interpolation from max_pts to min_pts](img/power_law_curve.png)
 
@@ -154,13 +156,56 @@ Try the formula interactively: [Desmos calculator](https://www.desmos.com/calcul
 
 **Why this formula?**
 
-- **Fixed endpoints.** Rank 1 = max_pts, Rank N = min_pts. The two anchor points are always respected regardless of field size.
-- **Tunable steepness.** The exponent $k$ controls how much the curve rewards top finishers. Higher $k$ concentrates more points at the top. With $k = 3$, the top ~20% of finishers earn the majority of the point spread while lower ranks converge toward the floor.
-- **Self-adapting to field size.** The same formula and $k$ value work across competitions with 10 or 100 ranked students. The fraction $(N - r)/(N - 1)$ normalizes rank position to a 0–1 scale.
+- **Reflects true competition size.** Using the actual competition size (N) rather than the number of awardees means a student who placed 50th among 2,000 is scored appropriately, not as if they were 50th among 50.
+- **Fair across different publication practices.** HMMT publishes top 50; BMT publishes top 50%; USAMO publishes only awards. Dynamic `min_pts` adjusts for each competition's structure.
+- **Accounts for selection.** Selective competitions (USAMO, HMMT, MPFG) have pre-qualified fields. A higher floor for these ensures even the last qualifier gets points that reflect an elite field.
+- **Fixed endpoints.** Rank 1 = max_pts; the theoretical floor at Rank N = min_pts. The two anchor points are always respected.
 - **Handles ties naturally.** Fractional `mcp_rank` values (from averaged ties) plug directly into the formula. Tied students earn identical points.
-- **Unified formula.** The same formula handles rank-based, award-based, and mixed-format competitions. No separate award-to-points tables are needed.
 
-*Students not in the ranked list receive 0 points. A comprehensive worked example covering all rules is given in Section 8.*
+### Worked Example (Power-Law Formula)
+
+| Parameter | Value |
+|---|---|
+| Competition size (N) | 2000 |
+| Number of awardees (A) | 50 (top 50 only) |
+| Tier | 1000 |
+| `max_pts` | 1000 |
+| `min_pts` | 10 |
+
+**Anchor points:**
+- **Rank 1:** 1000 points
+- **Rank 2000:** 10 points (theoretical floor; we have no data for this rank)
+
+**Rank 50** (last awarded rank): $\text{mcp}\_\text{points}(50) = 10 + (1000 - 10) \times \left(\frac{2000 - 50}{2000 - 1}\right)^3 \approx 929$
+
+**Ranks 51–2000:** No official recognition → **0 points**.
+
+### Estimated Competition Sizes
+
+The algorithm requires the **total competition size (N)** for each event. Below are estimated sizes from official websites, [AoPS](https://artofproblemsolving.com/), and recent results. Numbers may vary by year.
+
+| Competition | Tier | Est. Size (N) | Awardees | Selection | min_pts |
+|---|---|---|---|---|---|
+| **HMMT February** | 1000 | ~800 | ~50 | Selective (invitation/registration) | 100 |
+| **HMMT November** | 500 | ~720 | ~50 | Open | 10 |
+| **PUMaC Division A** | 1000 | ~180 | ~40–45 | Open | 10 |
+| **PUMaC Division B** | 500 | ~180 | ~32–48 | Open | 10 |
+| **BMT Individual** | 1000 | ~630 | ~135–315 | Open | 10 |
+| **ARML Individual** | 1000 | ~1,600 | ~45–65 | Open | 10 |
+| **USAMO** | 1000 | ~280 | ~135–155 | Selective (AMC/AIME qualifiers) | 200 |
+| **USAJMO** | 500 | ~220 | ~143–166 | Selective (AMC/AIME qualifiers) | 200 |
+| **CMIMC** | 500 | ~200 | ~10 | Open | 10 |
+| **BAMO-12** | 500 | ~240 | ~25–36 | Open | 10 |
+| **BAMO-8** | 250 | ~420 | ~30–35 | Open | 10 |
+| **MathCounts National** | 500 | 224 | 56 | Selective (state qualifiers) | 100 |
+| **MPFG** | 500 | ~275 | ~60–75 | Selective (AMC qualifiers) | 100 |
+| **MPFG-Olympiad** | 500 | ~75 | ~20–32 | Selective (MPFG invitees) | 100 |
+| **MMATHS** | 250 | ~750 | ~99–105 | Open | 10 |
+| **DMM** | 250 | ~270 | ~51 | Open | 10 |
+| **CMM** | 250 | ~60 | ~10 | Open | 10 |
+| **BrUMO Division A** | 250 | ~300 | ~22–24 | Open | 10 |
+
+*Note: Open = min_pts 10; Selective = min_pts higher (implementation-defined).*
 
 ---
 
@@ -175,7 +220,7 @@ Many competitions include both an overall individual ranking and separate subjec
 
 Subject tests use the same unified formula from Section 3 with `weight = 0.5`:
 - `max_pts = Tier × 0.5` (e.g. 500 for a Tier 1000 subject test)
-- `min_pts = Tier × 0.5 × 0.5` (e.g. 250 for a Tier 1000 subject test)
+- `min_pts` follows the same dynamic rule as overall (10 for open, higher for selective competitions)
 
 The `mcp_rank` column is pre-computed and stored in each subject test CSV, just like overall results. `mcp_points` is computed dynamically at build time.
 
@@ -423,23 +468,21 @@ MCP % is only meaningful when the contest filter is active. Without a filter, th
 
 Our data covers only students who received **official recognition** at each competition — i.e., those who placed in the ranked list or received an award (Gold, Silver, Bronze, Honorable Mention, etc.). We do not have complete results for all competitors at most events.
 
-Because of this, we set **`min_pts` to 50% of `max_pts`** in the point distribution formula (Section 3). The last-ranked student in our data (Rank N) earns `min_pts`, but in reality they may have outperformed many other competitors who are not in our dataset. A higher floor (50% of max) reduces the penalty for being "last" in a partially observed field.
-
-**If we had complete data** — full results for every competitor at every competition — we could set `min_pts` to a much lower value (e.g., 10% or 5% of `max_pts`). That would spread points more evenly across the full field and better distinguish students who finished near the middle or bottom of the actual competition. Until such data becomes available, the 50% floor is a conservative choice that reflects the limitations of our current coverage.
+Because of this, we use **competition size (N)** and **dynamic `min_pts`** in the point distribution formula (Section 3). Students whose ranks are unknown (e.g., ranks 51–2000 when only top 50 are published) receive **0 points**. The algorithm uses estimated competition sizes where full data is unavailable. When full results become available, the same formula applies without recalibration.
 
 ---
 
 ## 13. Summary
 
-MCP adapts the ATP/WTA tennis ranking model to competitive mathematics: competitions are tiered by prestige, points are assigned by placement via a power-law curve, and results are aggregated over a rolling window with geometric time decay. The system unifies rank-based and award-based competitions through a normalized `mcp_rank`, rewards both overall and subject-level performance, and maintains a separate MCP-W ranking for women. The database supports MCP % to analyze contest-specific contribution when filters are applied. Data coverage is limited to officially recognized students, which motivates the 50% min-pts floor.
+MCP adapts the ATP/WTA tennis ranking model to competitive mathematics: competitions are tiered by prestige, points are assigned by placement via a power-law curve, and results are aggregated over a rolling window with geometric time decay. The system unifies rank-based and award-based competitions through a normalized `mcp_rank`, rewards both overall and subject-level performance, and maintains a separate MCP-W ranking for women. The database supports MCP % to analyze contest-specific contribution when filters are applied. Data coverage is limited to officially recognized students; N is competition size and `min_pts` is dynamic (10 for open, higher for selective competitions).
 
 | Design Decision | Choice | Rationale |
 |---|---|---|
 | Model | ATP/WTA-inspired | Proven tiered system; rewards breadth, handles heterogeneous events, time-relevant |
 | Tier system | 2000 / 1000 / 500 / 250 | Grand Slam for international olympiads; matches competition prestige |
 | Rank normalization | `mcp_rank` (avg-rank-for-ties, award blocks) | Unifies rank-based, award-based, and mixed-format competitions |
-| Point formula | min + (max − min) × ((N−r)/(N−1))^k | Power-law curve with k=3; Rank 1 = max_pts, Rank N = min_pts |
-| min_pts | 50% of max_pts | Conservative floor for partially observed fields (see Limitations) |
+| Point formula | min + (max − min) × ((N−r)/(N−1))^k | Power-law curve with k=3; Rank 1 = max_pts; N = competition size |
+| min_pts | Dynamic (10 open, higher selective) | Reflects true field size; fair across publication practices |
 | IMO/EGMO/RMM | Medal-based (Gold/Silver/Bronze) | No power-law; full/75%/50% of tier; time decay applies |
 | Subject tests | 50% of tier value | Overall 100%; each subject 50%; rewards specialization |
 | Rolling window | 4 years | Captures a full high school career |
@@ -447,7 +490,16 @@ MCP adapts the ATP/WTA tennis ranking model to competitive mathematics: competit
 | MathCounts | No decay, no window | Middle school results are inherently time-limited |
 | MPFG / EGMO | Separate MCP-W | Fairness (gender-restricted); visibility for women |
 | MCP % | MCP from selected contests ÷ Total MCP | Identifies specialization; requires contest filter |
-| Data coverage | Officially recognized only | min_pts floor reflects partial data; complete data would allow lower floor |
+| Data coverage | Officially recognized only | Awardees receive points; others 0; N from estimated competition size |
+
+---
+
+## Document History
+
+| Version | Date | Description |
+|---------|------|-------------|
+| v1 | Initial | Original MCP specification: tier-based points, power-law curve, N = number of awardees, min_pts = 50% of max_pts |
+| v2 | 3/14/2026 | Point distribution upgrade: N = competition size (total participants); dynamic min_pts (10 for open, higher for selective); awardees only receive points |
 
 ---
 
