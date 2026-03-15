@@ -104,6 +104,7 @@
       font-variant-numeric: tabular-nums;
     }
     .ranking-table .num { text-align: right; font-variant-numeric: tabular-nums; }
+    .ranking-table th.has-tooltip { cursor: help; text-decoration: underline dotted; text-underline-offset: 3px; }
     .ranking-table .impact-high { color: var(--rank-high); }
     .ranking-table .impact-mid { color: var(--rank-mid); }
     .loading-msg { color: var(--text-muted); font-style: italic; }
@@ -382,8 +383,8 @@
               <tr>
                 <th class="rank-col">#</th>
                 <th>Competition</th>
-                <th class="num">Impact Index</th>
-                <th class="num">Overlap</th>
+                <th class="num has-tooltip" data-tooltip="MCP-weighted % of overall elite (top 100) captured by this competition's top 100. Higher = stronger signal of elite standing." tabindex="0" role="button">Impact Index</th>
+                <th class="num has-tooltip" data-tooltip="Number of this competition's top 100 who are also in the overall top 100, out of the competition's total top 100." tabindex="0" role="button">Overlap</th>
               </tr>
             </thead>
             <tbody id="impact-tbody"></tbody>
@@ -598,6 +599,31 @@
     const backdrop = popover.querySelector('.top100-popover-backdrop');
     if (closeBtn) closeBtn.addEventListener('click', closeTop100Popover);
     if (backdrop) backdrop.addEventListener('click', closeTop100Popover);
+  })();
+
+  // Tap-friendly tooltip for column headers (same pattern as mcp_contrib in app.js)
+  (function () {
+    let activeTooltip = null;
+    function dismissTooltip() {
+      if (activeTooltip && activeTooltip.parentNode) {
+        activeTooltip.parentNode.removeChild(activeTooltip);
+      }
+      activeTooltip = null;
+    }
+    document.addEventListener('click', function (ev) {
+      const th = ev.target && ev.target.closest ? ev.target.closest('.has-tooltip') : null;
+      if (!th) { dismissTooltip(); return; }
+      const text = th.getAttribute('data-tooltip');
+      if (!text) return;
+      ev.stopPropagation();
+      dismissTooltip();
+      const tip = document.createElement('div');
+      tip.className = 'col-tooltip';
+      tip.textContent = text;
+      th.style.position = 'relative';
+      th.appendChild(tip);
+      activeTooltip = tip;
+    }, true);
   })();
 
   function escapeHtml(s) {
