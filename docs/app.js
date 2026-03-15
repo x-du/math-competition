@@ -28,7 +28,7 @@
   var ratioSortAsc = false; // For MCP %: true = ascending (lowest first), false = descending (default)
 
   var stateDistPopoverOpen = false;
-  var latestStateDist = { students: {}, records: {} };
+  var latestStateDist = { students: {}, records: {}, mcp: {} };
   var mcpPctStatsCache = { key: null, html: "" };
   var savedFilters = {};
 
@@ -1266,16 +1266,20 @@
   function computeStateDistributions(counts) {
     var studentsByState = {};
     var recordsByState = {};
+    var mcpByState = {};
     for (var i = 0; i < counts.length; i++) {
       var state = (counts[i].student.state || "").trim() || "Unknown";
       studentsByState[state] = (studentsByState[state] || 0) + 1;
       recordsByState[state] = (recordsByState[state] || 0) + counts[i].recordsCount;
+      var mcp = counts[i].mcpTotal != null ? Number(counts[i].mcpTotal) : 0;
+      mcpByState[state] = (mcpByState[state] || 0) + mcp;
     }
     latestStateDist.students = studentsByState;
     latestStateDist.records = recordsByState;
+    latestStateDist.mcp = mcpByState;
   }
 
-  function drawPieChartOnElements(canvas, legendEl, distMap) {
+  function drawPieChartOnElements(canvas, legendEl, distMap, valueFormatter) {
     if (!canvas || !legendEl) return;
 
     var entries = [];
@@ -1345,13 +1349,14 @@
     }
 
     var legendHtml = [];
+    var fmt = typeof valueFormatter === "function" ? valueFormatter : function (v) { return v; };
     for (var i = 0; i < main.length; i++) {
       var pct = ((main[i].value / total) * 100).toFixed(1);
       legendHtml.push(
         "<div class=\"state-dist-legend-item\">" +
           "<span class=\"state-dist-legend-swatch\" style=\"background:" + PIE_COLORS[i % PIE_COLORS.length] + "\"></span>" +
           "<span class=\"state-dist-legend-label\">" + escapeHtml(main[i].label) + "</span>" +
-          "<span class=\"state-dist-legend-value\">" + main[i].value + " (" + pct + "%)</span>" +
+          "<span class=\"state-dist-legend-value\">" + fmt(main[i].value) + " (" + pct + "%)</span>" +
         "</div>"
       );
     }
@@ -1368,6 +1373,12 @@
       document.getElementById("state-dist-records-canvas"),
       document.getElementById("state-dist-records-legend"),
       latestStateDist.records
+    );
+    drawPieChartOnElements(
+      document.getElementById("state-dist-mcp-canvas"),
+      document.getElementById("state-dist-mcp-legend"),
+      latestStateDist.mcp,
+      function (v) { return Math.round(v).toLocaleString() + " MCP"; }
     );
   }
 
