@@ -32,8 +32,8 @@ cmm,CMM,Caltech Math Meet. Annual mathematics competition at Caltech with indivi
 mpfg,MPFG,Math Prize for Girls. Annual competition at MIT by Advantage Testing Foundation for top female high school mathematicians.,https://mathprize.atfoundation.org/,500,1.0,rank,place
 mpfg-olympiad,MPFG Olympiad,"Olympiad competition by Advantage Testing Foundation for top female high school mathematicians, with Gold, Silver, and Bronze medals.",https://mathprize.atfoundation.org/,500,1.0,award,award
 mmaths,MMATHS,"Math Majors of America Tournament for High Schools. Team-based contest at multiple university sites, run by undergraduate math students.",https://www.mmaths.org/mmaths,250,1.0,rank,rank
-bmt,BMT,Berkeley Math Tournament. Annual competition at UC Berkeley with individual and team rounds.,https://bmt.berkeley.edu/,1000,1.0,rank,rank
-bmt-algebra,BMT — Algebra,Algebra subject test at the Berkeley Math Tournament.,https://bmt.berkeley.edu/,1000,0.5,rank,rank
+bmt,BMT,Berkeley Math Tournament. Annual competition at UC Berkeley with individual and team rounds.,https://bmt.berkeley.edu/,1000,1.0,bmt,rank
+bmt-algebra,BMT — Algebra,Algebra subject test at the Berkeley Math Tournament.,https://bmt.berkeley.edu/,1000,0.5,bmt,rank
 bmt-calculus,BMT — Calculus,Calculus subject test at the Berkeley Math Tournament.,https://bmt.berkeley.edu/,1000,0.5,rank,rank
 bmt-discrete,BMT — Discrete,Discrete mathematics subject test at the Berkeley Math Tournament.,https://bmt.berkeley.edu/,1000,0.5,rank,rank
 bmt-geometry,BMT — Geometry,Geometry subject test at the Berkeley Math Tournament.,https://bmt.berkeley.edu/,1000,0.5,rank,rank

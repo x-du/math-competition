@@ -171,6 +171,57 @@ def process_award_mode(rows, rank_col, folder):
     return rank_map, N, excluded
 
 
+def process_bmt_mode(rows, rank_col):
+    """
+    Process BMT General results: Top Scores (rank 1-10), Distinguished HM (Top 20%),
+    Honorable Mention (Top 50%). Uses rank when numeric, award when rank is empty.
+    """
+    rank_rows = []
+    dhm_rows = []
+    hm_rows = []
+    excluded = []
+
+    award_col = 'award'
+    for i, row in enumerate(rows):
+        raw_rank = row.get(rank_col, '').strip()
+        award = row.get(award_col, '').strip()
+
+        num, is_num = parse_rank_value(raw_rank)
+        if is_num and isinstance(num, (int, float)):
+            rank_rows.append((num, i))
+        elif award == 'Distinguished HM (Top 20%)':
+            dhm_rows.append(i)
+        elif award == 'Honorable Mention (Top 50%)':
+            hm_rows.append(i)
+        elif award == 'Top Scores' and not raw_rank:
+            excluded.append(i)
+        else:
+            excluded.append(i)
+
+    rank_rows.sort(key=lambda x: x[0])
+
+    groups = []
+    if rank_rows:
+        current_key = rank_rows[0][0]
+        current_indices = [rank_rows[0][1]]
+        for rank_val, idx in rank_rows[1:]:
+            if rank_val == current_key:
+                current_indices.append(idx)
+            else:
+                groups.append((current_key, current_indices))
+                current_key = rank_val
+                current_indices = [idx]
+        groups.append((current_key, current_indices))
+    if dhm_rows:
+        groups.append(('DHM', dhm_rows))
+    if hm_rows:
+        groups.append(('HM', hm_rows))
+
+    rank_map = assign_mcp_rank_to_groups(groups)
+    N = len(rank_rows) + len(dhm_rows) + len(hm_rows)
+    return rank_map, N, excluded
+
+
 def process_mathcounts_mode(rows, rank_col):
     """Process MathCounts with special rank codes: S, Q, C between numeric ranks."""
     numeric_before = []  # ranks 1-2 etc (before S)
@@ -252,6 +303,8 @@ def process_file(filepath, comp):
         rank_map, N, excluded = process_award_mode(rows, rank_col, comp['folder'])
     elif mode == 'mathcounts':
         rank_map, N, excluded = process_mathcounts_mode(rows, rank_col)
+    elif mode == 'bmt':
+        rank_map, N, excluded = process_bmt_mode(rows, rank_col)
     else:
         print(f"  Unknown mode: {mode}")
         return 0
