@@ -35,8 +35,8 @@ mmaths,MMATHS,"Math Majors of America Tournament for High Schools. Team-based co
 bmt,BMT,Berkeley Math Tournament. Annual competition at UC Berkeley with individual and team rounds.,https://bmt.berkeley.edu/,500,1.0,bmt,rank
 bmt-algebra,BMT — Algebra,Algebra subject test at the Berkeley Math Tournament.,https://bmt.berkeley.edu/,500,0.5,bmt,rank
 bmt-calculus,BMT — Calculus,Calculus subject test at the Berkeley Math Tournament.,https://bmt.berkeley.edu/,500,0.5,rank,rank
-bmt-discrete,BMT — Discrete,Discrete mathematics subject test at the Berkeley Math Tournament.,https://bmt.berkeley.edu/,500,0.5,rank,rank
-bmt-geometry,BMT — Geometry,Geometry subject test at the Berkeley Math Tournament.,https://bmt.berkeley.edu/,500,0.5,rank,rank
+bmt-discrete,BMT — Discrete,Discrete mathematics subject test at the Berkeley Math Tournament.,https://bmt.berkeley.edu/,500,0.5,bmt,rank
+bmt-geometry,BMT — Geometry,Geometry subject test at the Berkeley Math Tournament.,https://bmt.berkeley.edu/,500,0.5,bmt,rank
 bamo-8,BAMO-8,"Bay Area Mathematical Olympiad, middle school division. Annual proof-based contest for students in the Bay Area.",https://www.bamo.org/,250,1.0,rank_mixed,rank
 bamo-12,BAMO-12,"Bay Area Mathematical Olympiad, high school division. Annual proof-based contest for students in the Bay Area.",https://www.bamo.org/,500,1.0,rank_mixed,rank
 mk-national,Math Kangaroo National,"Math Kangaroo USA national-level winners by grade (record only; not shown on website, no MCP).",https://mathkangaroo.org/mks/,,,rank,rank
