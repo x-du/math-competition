@@ -8,6 +8,7 @@ import csv
 import json
 import re
 import subprocess
+import sys
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -469,6 +470,17 @@ def main() -> None:
         )
 
     print(f"Wrote {len(result_students)} students with records to {OUTPUT_JSON}")
+
+    # Build competition_data.json for crank.html
+    try:
+        subprocess.run(
+            [sys.executable, str(REPO_ROOT / "scripts" / "build_competition_data.py")],
+            cwd=REPO_ROOT,
+            check=True,
+            timeout=30,
+        )
+    except (subprocess.CalledProcessError, FileNotFoundError, subprocess.TimeoutExpired):
+        pass  # Non-fatal; crank page can use stale competition_data.json
 
 
 if __name__ == "__main__":

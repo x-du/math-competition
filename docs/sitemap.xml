@@ -26,6 +26,16 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://mathintegrity.org/articles/how-to-compare-competitions.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mathintegrity.org/crank.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://mathintegrity.org/articles/mcp.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

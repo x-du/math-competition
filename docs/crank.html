@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XE0H6HQX32"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XE0H6HQX32');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Competition rankings: impact index (CII) and geographic attraction for US math competitions.">
+  <title>Competition Ranking — Math Competition</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon-48.png" type="image/png" sizes="48x48">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+  <style>
+    .ranking-toggle {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      margin: 1.5rem 0 2rem;
+    }
+    .ranking-toggle-btn {
+      padding: 0.6rem 1.5rem;
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: color 0.2s, background 0.2s, border-color 0.2s;
+    }
+    .ranking-toggle-btn:hover {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.04);
+    }
+    .ranking-toggle-btn.active {
+      color: var(--accent);
+      background: rgba(124, 156, 224, 0.12);
+      border-color: var(--accent);
+    }
+    .ranking-panel {
+      display: none;
+      margin-bottom: 2.5rem;
+    }
+    .ranking-panel.active {
+      display: block;
+    }
+    .ranking-section {
+      margin-bottom: 2.5rem;
+      padding: 1.25rem 1.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+    .ranking-section h2 {
+      margin: 0 0 0.75rem;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+    .ranking-section p {
+      margin: 0 0 1rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+    .ranking-section a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .ranking-section a:hover {
+      text-decoration: underline;
+    }
+    .ranking-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+    .ranking-table th,
+    .ranking-table td {
+      padding: 0.6rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .ranking-table th {
+      font-weight: 600;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .ranking-table tr:last-child td { border-bottom: none; }
+    .ranking-table tr:hover td { background: rgba(255, 255, 255, 0.02); }
+    .ranking-table .rank-col {
+      width: 1%;
+      white-space: nowrap;
+      text-align: left;
+      font-variant-numeric: tabular-nums;
+    }
+    .ranking-table .num { text-align: right; font-variant-numeric: tabular-nums; }
+    .ranking-table .impact-high { color: var(--rank-high); }
+    .ranking-table .impact-mid { color: var(--rank-mid); }
+    .loading-msg { color: var(--text-muted); font-style: italic; }
+    .ranking-nav { margin-top: 1rem; }
+    .ranking-nav a { color: var(--accent); text-decoration: none; }
+    .ranking-nav a:hover { text-decoration: underline; }
+    .attraction-viz {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    @media (max-width: 768px) {
+      .attraction-viz { grid-template-columns: 1fr; }
+    }
+    .attraction-chart-wrap {
+      background: var(--bg);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      min-height: 320px;
+    }
+    .attraction-chart-wrap h3 {
+      margin: 0 0 1rem;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    .attraction-chart-wrap canvas {
+      max-width: 100%;
+      max-height: 280px;
+    }
+    .us-map-wrap {
+      background: var(--bg);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      overflow: hidden;
+    }
+    .us-map-wrap h3 {
+      margin: 0 0 1rem;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    .us-map-wrap svg {
+      width: 100%;
+      height: auto;
+      max-height: 400px;
+    }
+    .us-map-wrap .state {
+      stroke: var(--border);
+      stroke-width: 0.5;
+      cursor: pointer;
+      transition: fill 0.2s;
+    }
+    .us-map-wrap .state:hover {
+      fill: var(--accent);
+      opacity: 0.8;
+    }
+    .us-map-wrap .state-label {
+      font-size: 10px;
+      font-weight: 600;
+      fill: var(--text);
+      stroke: var(--bg);
+      stroke-width: 2px;
+      paint-order: stroke fill;
+      pointer-events: none;
+      text-anchor: middle;
+      dominant-baseline: central;
+    }
+    .map-gradient-legend {
+      margin-top: 0.75rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      width: 200px;
+    }
+    .map-gradient-bar-wrap {
+      margin-bottom: 0.25rem;
+    }
+    .map-gradient-bar {
+      display: block;
+      border-radius: 4px;
+      overflow: hidden;
+      width: 100%;
+    }
+    .map-gradient-labels {
+      display: flex;
+      justify-content: space-between;
+    }
+    .us-map-wrap .state-tooltip {
+      position: absolute;
+      padding: 0.5rem 0.75rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.85rem;
+      pointer-events: none;
+      z-index: 10;
+      box-shadow: var(--shadow);
+    }
+    .attraction-select-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.5rem 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .attraction-select-wrap label {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+    .attraction-select-wrap select {
+      padding: 0.4rem 0.75rem;
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      color: var(--text);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .attraction-selected-name {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+    .attraction-selected-name a.attraction-website-link {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+    .attraction-selected-name a.attraction-website-link:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+    .impact-competition-btn {
+      background: none;
+      border: none;
+      padding: 0;
+      font: inherit;
+      color: var(--accent);
+      cursor: pointer;
+      text-align: left;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .impact-competition-btn:hover {
+      color: var(--accent-hover, #9ab4e8);
+    }
+    .impact-website-link {
+      margin-left: 0.35rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.85em;
+    }
+    .impact-website-link:hover {
+      color: var(--accent);
+    }
+    #top100-popover[hidden] {
+      display: none !important;
+      pointer-events: none !important;
+    }
+    .top100-popover {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    .top100-popover-backdrop {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    .top100-popover-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 42rem;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 1.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .top100-popover-title {
+      margin: 0 2rem 0.5rem 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    .top100-popover-close {
+      position: absolute;
+      top: 0.75rem;
+      right: 0.75rem;
+      width: 2rem;
+      height: 2rem;
+      padding: 0;
+      font-size: 1.5rem;
+      line-height: 1;
+      color: var(--text-muted);
+      background: none;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .top100-popover-close:hover {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.06);
+    }
+    .top100-popover-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    @media (max-width: 768px) {
+      .top100-popover-grid { grid-template-columns: 1fr; }
+    }
+    .top100-popover-col h4 {
+      margin: 0 0 0.5rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+    .top100-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-size: 0.9rem;
+      max-height: 360px;
+      overflow-y: auto;
+    }
+    .top100-list li {
+      padding: 0.35rem 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .top100-list li:last-child { border-bottom: none; }
+    .top100-list .rank {
+      flex-shrink: 0;
+      width: 2rem;
+      color: var(--text-muted);
+      font-variant-numeric: tabular-nums;
+    }
+    .top100-list .name {
+      flex: 1;
+    }
+    .top100-list li.in-both .name {
+      color: var(--rank-high);
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>Competition Ranking</h1>
+    <p class="tagline">Compare math competitions by impact index and geographic attraction.</p>
+    <div class="ranking-toggle" role="tablist" aria-label="View mode">
+      <button type="button" class="ranking-toggle-btn active" data-panel="impact" role="tab" aria-selected="true">Impact (CII)</button>
+      <button type="button" class="ranking-toggle-btn" data-panel="attraction" role="tab" aria-selected="false">Attraction</button>
+    </div>
+    <a href="index.html" class="back-link">&larr; Back to student records</a>
+  </header>
+
+  <main class="main">
+    <!-- Impact (CII) Panel -->
+    <section id="panel-impact" class="ranking-panel active" role="tabpanel">
+      <section class="ranking-section">
+        <h2>Competition Impact Index</h2>
+        <p>% of overall elite MCP (top 100) captured by this competition's top 100. Higher = stronger signal of elite standing. <a href="articles/how-to-compare-competitions">Learn more</a>.</p>
+        <p id="impact-loading" class="loading-msg">Loading data…</p>
+        <div class="records-table-wrap" id="impact-wrap" style="display:none">
+          <table class="ranking-table" id="impact-table">
+            <thead>
+              <tr>
+                <th class="rank-col">#</th>
+                <th>Competition</th>
+                <th class="num">Impact Index</th>
+                <th class="num">Overlap</th>
+              </tr>
+            </thead>
+            <tbody id="impact-tbody"></tbody>
+          </table>
+        </div>
+        <div id="top100-popover" class="top100-popover" hidden role="dialog" aria-labelledby="top100-popover-title">
+          <div class="top100-popover-inner">
+            <h3 id="top100-popover-title" class="top100-popover-title">Top 100 Students</h3>
+            <div class="top100-popover-grid">
+              <div class="top100-popover-col">
+                <h4 id="top100-contest-title">This competition</h4>
+                <ol class="top100-list" id="top100-contest-list"></ol>
+              </div>
+              <div class="top100-popover-col">
+                <h4>All competitions (MCP)</h4>
+                <ol class="top100-list" id="top100-overall-list"></ol>
+              </div>
+            </div>
+            <button type="button" class="top100-popover-close" aria-label="Close">×</button>
+          </div>
+          <div class="top100-popover-backdrop" aria-hidden="true"></div>
+        </div>
+        <p class="ranking-nav"><a href="articles/how-to-compare-competitions">How to Compare Competitions</a> · <a href="articles/mcp">MCP methodology</a></p>
+      </section>
+    </section>
+
+    <!-- Attraction Panel -->
+    <section id="panel-attraction" class="ranking-panel" role="tabpanel" hidden>
+      <section class="ranking-section">
+        <h2>Geographic Attraction</h2>
+        <p>Student distribution by state. Select a competition to see where its participants come from, or view all students.</p>
+        <div class="attraction-select-wrap">
+          <label for="attraction-contest">Competition:</label>
+          <select id="attraction-contest">
+            <option value="__all__">All students</option>
+          </select>
+          <span id="attraction-selected-name" class="attraction-selected-name" style="display:none"></span>
+        </div>
+        <p id="attraction-loading" class="loading-msg">Loading data…</p>
+        <div id="attraction-viz-wrap" style="display:none" class="attraction-viz">
+          <div class="attraction-chart-wrap">
+            <h3>Students by State</h3>
+            <canvas id="attraction-pie-canvas" width="300" height="280"></canvas>
+            <div id="attraction-pie-legend" class="state-dist-legend"></div>
+          </div>
+          <div class="us-map-wrap">
+            <h3>US Map — Students per State</h3>
+            <div id="us-map-container"></div>
+            <div id="us-map-gradient-legend" class="map-gradient-legend"></div>
+            <div id="us-map-tooltip" class="state-tooltip" style="display:none"></div>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Data from <code>math-competition</code> database. Re-run <code>scripts/build_search_data.py</code> to refresh.</p>
+    <p><a href="articles/how-to-compare-competitions">How to Compare Math Competitions</a></p>
+    <p><a href="index.html">Back to student records</a></p>
+    <p class="disclaimer">Disclaimer: Rankings and geographic distributions are derived from this database’s methodology and are not official or endorsed by any competition. Data may be incomplete; see the linked article for methodology and limitations.</p>
+  </footer>
+
+  <script>
+(function() {
+  const HOST_STATE = {
+    'hmmt-feb': 'Massachusetts', 'hmmt-nov': 'Massachusetts',
+    'hmmt-feb-algebra-number-theory': 'Massachusetts', 'hmmt-feb-combo': 'Massachusetts', 'hmmt-feb-geometry': 'Massachusetts',
+    'hmmt-nov-general': 'Massachusetts', 'hmmt-nov-theme': 'Massachusetts',
+    'pumac': 'New Jersey', 'pumac-b': 'New Jersey',
+    'cmimc': 'Pennsylvania', 'cmimc-algebra': 'Pennsylvania', 'cmimc-comb': 'Pennsylvania', 'cmimc-geometry': 'Pennsylvania',
+    'bmt': 'California', 'bmt-algebra': 'California', 'bmt-calculus': 'California', 'bmt-discrete': 'California', 'bmt-geometry': 'California',
+    'dmm': 'North Carolina', 'cmm': 'California',
+    'bamo-8': 'California', 'bamo-12': 'California',
+    'brumo-a': 'Rhode Island',
+    'mpfg': 'Massachusetts', 'mpfg-olympiad': 'Massachusetts'
+  };
+
+  const MAIN_CONTESTS = ['hmmt-feb', 'hmmt-nov', 'pumac', 'pumac-b', 'cmimc', 'arml', 'bmt', 'dmm', 'cmm', 'bamo-12', 'bamo-8', 'mmaths', 'brumo-a'];
+
+  const CONTEST_DISPLAY_NAMES = {
+    'hmmt-feb': 'HMMT February', 'hmmt-nov': 'HMMT November',
+    'pumac': 'PUMaC Division A', 'pumac-b': 'PUMaC Division B',
+    'cmimc': 'CMIMC', 'arml': 'ARML', 'bmt': 'BMT', 'dmm': 'DMM', 'cmm': 'CMM',
+    'bamo-12': 'BAMO-12', 'bamo-8': 'BAMO-8', 'mmaths': 'MMATHS', 'brumo-a': 'BrUMO Division A',
+    'amo': 'USAMO', 'jmo': 'USAJMO', 'mathcounts-national-rank': 'MathCounts National',
+    'imo': 'IMO', 'egmo': 'EGMO', 'rmm': 'RMM',
+    'mpfg': 'MPFG', 'mpfg-olympiad': 'MPFG Olympiad'
+  };
+
+  const CONTEST_FULL_NAMES = {
+    'amo': 'United States of America Mathematical Olympiad',
+    'jmo': 'USA Junior Mathematical Olympiad',
+    'hmmt-feb': 'Harvard-MIT Mathematics Tournament (February)',
+    'hmmt-nov': 'Harvard-MIT Mathematics Tournament (November)',
+    'pumac': 'Princeton University Mathematics Competition (Division A)',
+    'pumac-b': 'Princeton University Mathematics Competition (Division B)',
+    'cmimc': 'Carnegie Mellon Informatics and Mathematics Competition',
+    'arml': 'American Regions Mathematics League',
+    'bmt': 'Berkeley Math Tournament',
+    'dmm': 'Duke Math Meet',
+    'cmm': 'Caltech Math Meet',
+    'bamo-12': 'Bay Area Mathematical Olympiad (High School)',
+    'bamo-8': 'Bay Area Mathematical Olympiad (Middle School)',
+    'mmaths': 'Yale MMATHS',
+    'brumo-a': 'Brown University Math Olympiad (Division A)',
+    'mathcounts-national-rank': 'MathCounts National Competition',
+    'mpfg': 'Math Prize for Girls',
+    'mpfg-olympiad': 'MPFG Olympiad',
+    'imo': 'International Mathematical Olympiad',
+    'egmo': 'European Girls\' Mathematical Olympiad',
+    'rmm': 'Romanian Master of Mathematics'
+  };
+
+  // State name -> FIPS code for US map
+  const STATE_TO_FIPS = {
+    'Alabama': '01', 'Alaska': '02', 'Arizona': '04', 'Arkansas': '05', 'California': '06',
+    'Colorado': '08', 'Connecticut': '09', 'Delaware': '10', 'District of Columbia': '11',
+    'Florida': '12', 'Georgia': '13', 'Hawaii': '15', 'Idaho': '16', 'Illinois': '17',
+    'Indiana': '18', 'Iowa': '19', 'Kansas': '20', 'Kentucky': '21', 'Louisiana': '22',
+    'Maine': '23', 'Maryland': '24', 'Massachusetts': '25', 'Michigan': '26', 'Minnesota': '27',
+    'Mississippi': '28', 'Missouri': '29', 'Montana': '30', 'Nebraska': '31', 'Nevada': '32',
+    'New Hampshire': '33', 'New Jersey': '34', 'New Mexico': '35', 'New York': '36',
+    'North Carolina': '37', 'North Dakota': '38', 'Ohio': '39', 'Oklahoma': '40', 'Oregon': '41',
+    'Pennsylvania': '42', 'Rhode Island': '44', 'South Carolina': '45', 'South Dakota': '46',
+    'Tennessee': '47', 'Texas': '48', 'Utah': '49', 'Vermont': '50', 'Virginia': '51',
+    'Washington': '53', 'West Virginia': '54', 'Wisconsin': '55', 'Wyoming': '56'
+  };
+  const FIPS_TO_STATE = Object.fromEntries(Object.entries(STATE_TO_FIPS).map(([k, v]) => [v, k]));
+  // State abbreviation -> full name (for compact JSON format)
+  const STATE_ABBR_TO_FULL = { 'AL':'Alabama','AK':'Alaska','AZ':'Arizona','AR':'Arkansas','CA':'California','CO':'Colorado','CT':'Connecticut','DE':'Delaware','DC':'District of Columbia','FL':'Florida','GA':'Georgia','HI':'Hawaii','ID':'Idaho','IL':'Illinois','IN':'Indiana','IA':'Iowa','KS':'Kansas','KY':'Kentucky','LA':'Louisiana','ME':'Maine','MD':'Maryland','MA':'Massachusetts','MI':'Michigan','MN':'Minnesota','MS':'Mississippi','MO':'Missouri','MT':'Montana','NE':'Nebraska','NV':'Nevada','NH':'New Hampshire','NJ':'New Jersey','NM':'New Mexico','NY':'New York','NC':'North Carolina','ND':'North Dakota','OH':'Ohio','OK':'Oklahoma','OR':'Oregon','PA':'Pennsylvania','RI':'Rhode Island','SC':'South Carolina','SD':'South Dakota','TN':'Tennessee','TX':'Texas','UT':'Utah','VT':'Vermont','VA':'Virginia','WA':'Washington','WV':'West Virginia','WI':'Wisconsin','WY':'Wyoming' };
+
+  const PIE_COLORS = [
+    '#60a5fa', '#f472b6', '#34d399', '#fbbf24', '#a78bfa',
+    '#fb923c', '#22d3ee', '#f87171', '#4ade80', '#e879f9',
+    '#38bdf8', '#facc15', '#2dd4bf', '#818cf8', '#fb7185'
+  ];
+  const MAP_GRADIENT_LOW = '#1e3a5f';
+  const MAP_GRADIENT_HIGH = '#60a5fa';
+
+  function humanizeSlug(slug) {
+    return CONTEST_DISPLAY_NAMES[slug] || slug.split('-').map(s => s.charAt(0).toUpperCase() + s.slice(1)).join(' ');
+  }
+
+  // Toggle buttons
+  document.querySelectorAll('.ranking-toggle-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const panel = btn.dataset.panel;
+      document.querySelectorAll('.ranking-toggle-btn').forEach(b => {
+        b.classList.toggle('active', b.dataset.panel === panel);
+        b.setAttribute('aria-selected', b.dataset.panel === panel);
+      });
+      document.querySelectorAll('.ranking-panel').forEach(p => {
+        const isActive = p.id === 'panel-' + panel;
+        p.classList.toggle('active', isActive);
+        p.hidden = !isActive;
+      });
+      if (panel === 'attraction' && attractionDataReady) {
+        updateAttractionViz();
+      }
+    });
+  });
+
+  let cachedData = null;
+  let attractionDataReady = false;
+  let pieChart = null;
+  let stateCountsByContest = null;
+  let contestWebsites = {};
+
+  function resolveTop100Entry(entry, names) {
+    if (typeof entry === 'object' && entry !== null && 'id' in entry) return entry;
+    return { id: entry, name: (names && names[String(entry)]) || '' };
+  }
+
+  function openTop100Popover(slug, impactRows, top100Overall, names) {
+    const popover = document.getElementById('top100-popover');
+    const titleEl = document.getElementById('top100-popover-title');
+    const contestTitle = document.getElementById('top100-contest-title');
+    const contestList = document.getElementById('top100-contest-list');
+    const overallList = document.getElementById('top100-overall-list');
+
+    const row = impactRows.find(r => r.slug === slug);
+    const rawContestTop100 = (row && row.top100) ? row.top100 : [];
+    const rawOverall = Array.isArray(top100Overall) ? top100Overall : [];
+    const contestTop100 = rawContestTop100.map(e => resolveTop100Entry(e, names));
+    const overall = rawOverall.map(e => resolveTop100Entry(e, names));
+
+    const overallIds = new Set(overall.map(s => s.id));
+    const inBoth = new Set(contestTop100.filter(s => overallIds.has(s.id)).map(s => s.id));
+
+    titleEl.textContent = 'Top 100 Students — ' + humanizeSlug(slug);
+    contestTitle.textContent = humanizeSlug(slug);
+    contestList.innerHTML = contestTop100.map((s, i) =>
+      `<li${inBoth.has(s.id) ? ' class="in-both"' : ''}><span class="rank">${i + 1}</span><span class="name">${escapeHtml(s.name || '')}</span></li>`
+    ).join('');
+    overallList.innerHTML = overall.map((s, i) =>
+      `<li${inBoth.has(s.id) ? ' class="in-both"' : ''}><span class="rank">${i + 1}</span><span class="name">${escapeHtml(s.name || '')}</span></li>`
+    ).join('');
+
+    popover.hidden = false;
+  }
+
+  function closeTop100Popover() {
+    document.getElementById('top100-popover').hidden = true;
+  }
+
+  // Top 100 popover: close on backdrop or close button
+  (function initTop100Popover() {
+    const popover = document.getElementById('top100-popover');
+    if (!popover) return;
+    const closeBtn = popover.querySelector('.top100-popover-close');
+    const backdrop = popover.querySelector('.top100-popover-backdrop');
+    if (closeBtn) closeBtn.addEventListener('click', closeTop100Popover);
+    if (backdrop) backdrop.addEventListener('click', closeTop100Popover);
+  })();
+
+  function escapeHtml(s) {
+    const div = document.createElement('div');
+    div.textContent = s;
+    return div.innerHTML;
+  }
+
+  function loadAndRender() {
+    const base = document.location.href.replace(/\/[^/]*$/, '') || document.location.origin;
+    function loadData() {
+      return fetch(base + '/competition_data.json')
+        .then(r => { if (!r.ok) throw new Error('Failed: ' + r.status); return r.json(); });
+    }
+    loadData().catch(() => fetch('competition_data.json').then(r => { if (!r.ok) throw new Error('Failed: ' + r.status); return r.json(); }))
+      .then(data => {
+        try {
+        cachedData = data;
+        contestWebsites = data.contest_websites || {};
+        const impactRows = data.impact || [];
+        const names = data.names || {};
+        const rawAttraction = data.attraction || { __all__: {} };
+        stateCountsByContest = {};
+        for (const [contest, dist] of Object.entries(rawAttraction)) {
+          stateCountsByContest[contest] = {};
+          for (const [k, v] of Object.entries(dist || {})) {
+            const fullName = STATE_ABBR_TO_FULL[k] || k;
+            stateCountsByContest[contest][fullName] = v;
+          }
+        }
+        if (!stateCountsByContest.__all__) stateCountsByContest.__all__ = {};
+        const contests = data.contests || ['__all__'];
+
+        // --- Impact Index: show all competitions, competition name opens popover ---
+        const impactTbody = document.getElementById('impact-tbody');
+        const top100Overall = data.top100_overall || [];
+        impactTbody.innerHTML = impactRows.map((row, i) => {
+          const cls = row.pct >= 45 ? 'impact-high' : row.pct >= 35 ? 'impact-mid' : '';
+          const url = contestWebsites[row.slug];
+          const websiteLink = url ? ' <a href="' + escapeHtml(url) + '" target="_blank" rel="noopener" class="impact-website-link" title="Competition website">↗</a>' : '';
+          return `<tr>
+            <td class="rank-col">${i + 1}</td>
+            <td><button type="button" class="impact-competition-btn" data-slug="${escapeHtml(row.slug)}">${escapeHtml(humanizeSlug(row.slug))}</button>${websiteLink}</td>
+            <td class="num ${cls}">${row.pct}%</td>
+            <td class="num">${row.overlap}/${row.n}</td>
+          </tr>`;
+        }).join('');
+
+        impactTbody.querySelectorAll('.impact-competition-btn').forEach(btn => {
+          btn.addEventListener('click', () => openTop100Popover(btn.dataset.slug, impactRows, top100Overall, names));
+        });
+
+        document.getElementById('impact-loading').style.display = 'none';
+        document.getElementById('impact-wrap').style.display = 'block';
+
+        // --- Attraction: populate contest selector ---
+        const sel = document.getElementById('attraction-contest');
+        sel.innerHTML = contests.map(s =>
+          `<option value="${s}">${s === '__all__' ? 'All' : humanizeSlug(s)}</option>`
+        ).join('');
+        sel.addEventListener('change', () => updateAttractionViz());
+
+        attractionDataReady = true;
+        document.getElementById('attraction-loading').style.display = 'none';
+        document.getElementById('attraction-viz-wrap').style.display = 'grid';
+        updateAttractionViz();
+        renderUsMap();
+        } catch (e) {
+          throw new Error('Error processing data: ' + (e && e.message ? e.message : String(e)));
+        }
+      })
+      .catch(err => {
+        const msg = (err && err.message ? err.message : 'Failed to load data.') + ' (Serve from docs/ or ensure competition_data.json exists.)';
+        document.getElementById('impact-loading').textContent = msg;
+        document.getElementById('impact-loading').style.display = 'block';
+        document.getElementById('attraction-loading').textContent = msg;
+      });
+  }
+
+  function getStateDist(contestSlug) {
+    if (!stateCountsByContest) return {};
+    const dist = stateCountsByContest[contestSlug] || stateCountsByContest.__all__ || {};
+    const entries = Object.entries(dist).filter(([k]) => k && !k.includes('Canada') && !k.includes('Korea') && !k.includes('China') && !k.includes('United Kingdom'));
+    entries.sort((a, b) => b[1] - a[1]);
+    return Object.fromEntries(entries);
+  }
+
+  function updateAttractionViz() {
+    const slug = document.getElementById('attraction-contest').value;
+    const nameEl = document.getElementById('attraction-selected-name');
+    if (nameEl) {
+      if (slug === '__all__') {
+        nameEl.textContent = '';
+        nameEl.style.display = 'none';
+      } else {
+        const label = CONTEST_FULL_NAMES[slug] || humanizeSlug(slug);
+        const url = contestWebsites[slug];
+        if (url) {
+          nameEl.innerHTML = '<a href="' + escapeHtml(url) + '" target="_blank" rel="noopener" class="attraction-website-link">' + escapeHtml(label) + '</a>';
+        } else {
+          nameEl.textContent = label;
+        }
+        nameEl.style.display = '';
+      }
+    }
+    const dist = getStateDist(slug);
+
+    // Pie chart
+    const labels = Object.keys(dist).slice(0, 12);
+    const values = labels.map(k => dist[k]);
+    const other = Object.entries(dist).slice(12).reduce((s, [, v]) => s + v, 0);
+    if (other > 0) {
+      labels.push('Other');
+      values.push(other);
+    }
+
+    const ctx = document.getElementById('attraction-pie-canvas').getContext('2d');
+    if (pieChart) pieChart.destroy();
+    pieChart = new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels,
+        datasets: [{
+          data: values,
+          backgroundColor: PIE_COLORS,
+          borderColor: '#18181c',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        color: '#e4e4e7',
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            backgroundColor: '#18181c',
+            titleColor: '#e4e4e7',
+            bodyColor: '#e4e4e7',
+            borderColor: '#2a2a30',
+            borderWidth: 1,
+            callbacks: {
+              label: (ctx) => {
+                const total = ctx.dataset.data.reduce((a, b) => a + b, 0);
+                const pct = ((ctx.raw / total) * 100).toFixed(1);
+                return `${ctx.label}: ${ctx.raw} (${pct}%)`;
+              }
+            }
+          }
+        }
+      }
+    });
+
+    const total = values.reduce((a, b) => a + b, 0);
+    const legendEl = document.getElementById('attraction-pie-legend');
+    if (legendEl && total > 0) {
+      legendEl.innerHTML = labels.map((label, i) => {
+        const val = values[i];
+        const pct = ((val / total) * 100).toFixed(1);
+        return '<div class="state-dist-legend-item">' +
+          '<span class="state-dist-legend-swatch" style="background:' + PIE_COLORS[i % PIE_COLORS.length] + '"></span>' +
+          '<span class="state-dist-legend-label">' + escapeHtml(label) + '</span>' +
+          '<span class="state-dist-legend-value">' + val + ' (' + pct + '%)</span>' +
+          '</div>';
+      }).join('');
+    } else if (legendEl) {
+      legendEl.innerHTML = '<p class="state-dist-empty">No data available.</p>';
+    }
+
+    // Update map colors
+    updateMapColors(dist);
+  }
+
+  let usMapSvg = null;
+  let usMapPath = null;
+  let usMapFeatures = null;
+
+  function renderUsMap() {
+    const container = document.getElementById('us-map-container');
+    const tooltip = document.getElementById('us-map-tooltip');
+
+    fetch('https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json')
+      .then(r => r.json())
+      .then(us => {
+        if (typeof topojson === 'undefined') {
+          container.innerHTML = '<p class="loading-msg">Map unavailable (topojson not loaded).</p>';
+          return;
+        }
+        const states = topojson.feature(us, us.objects.states);
+        usMapFeatures = states.features;
+        const width = Math.min(500, container.offsetWidth || container.parentElement?.offsetWidth || 500);
+        const height = 350;
+        const projection = d3.geoAlbersUsa().fitSize([width, height], states);
+        usMapPath = d3.geoPath().projection(projection);
+
+        const svg = d3.select(container)
+          .append('svg')
+          .attr('viewBox', `0 0 ${width} ${height}`)
+          .attr('preserveAspectRatio', 'xMidYMid meet');
+
+        const g = svg.append('g');
+
+        g.selectAll('path')
+          .data(states.features)
+          .join('path')
+          .attr('class', 'state')
+          .attr('data-fips', d => d.id)
+          .attr('d', usMapPath)
+          .on('mouseover', function(ev, d) {
+            const fips = String(d.id).padStart(2, '0');
+            const stateName = FIPS_TO_STATE[fips] || 'State ' + fips;
+            const count = usMapStateCounts[stateName] || 0;
+            tooltip.textContent = `${stateName}: ${count} students`;
+            tooltip.style.display = 'block';
+            tooltip.style.left = (ev.pageX + 12) + 'px';
+            tooltip.style.top = (ev.pageY + 12) + 'px';
+          })
+          .on('mouseout', () => {
+            tooltip.style.display = 'none';
+          })
+          .on('mousemove', (ev) => {
+            tooltip.style.left = (ev.pageX + 12) + 'px';
+            tooltip.style.top = (ev.pageY + 12) + 'px';
+          });
+
+        const labelsG = g.append('g').attr('class', 'state-labels');
+        labelsG.selectAll('text')
+          .data(states.features)
+          .join('text')
+          .attr('class', 'state-label')
+          .attr('data-fips', d => d.id)
+          .attr('x', d => {
+            const c = usMapPath.centroid(d);
+            return c[0];
+          })
+          .attr('y', d => {
+            const c = usMapPath.centroid(d);
+            return c[1];
+          })
+          .text('');
+
+        usMapSvg = svg.node();
+        usMapStateCounts = {};
+        updateMapColors(getStateDist('__all__'));
+        requestAnimationFrame(() => updateMapColors(getStateDist('__all__')));
+      })
+      .catch(err => {
+        container.innerHTML = '<p class="loading-msg">Map unavailable: ' + (err && err.message ? err.message : 'failed to load') + '</p>';
+      });
+  }
+
+  let usMapStateCounts = {};
+
+  function interpolateColor(t) {
+    const parse = (hex) => {
+      const r = parseInt(hex.slice(1, 3), 16), g = parseInt(hex.slice(3, 5), 16), b = parseInt(hex.slice(5, 7), 16);
+      return [r, g, b];
+    };
+    const [r1, g1, b1] = parse(MAP_GRADIENT_LOW);
+    const [r2, g2, b2] = parse(MAP_GRADIENT_HIGH);
+    const r = Math.round(r1 + (r2 - r1) * t);
+    const g = Math.round(g1 + (g2 - g1) * t);
+    const b = Math.round(b1 + (b2 - b1) * t);
+    return '#' + [r, g, b].map(x => x.toString(16).padStart(2, '0')).join('');
+  }
+
+  function updateMapColors(dist) {
+    if (!stateCountsByContest) return;
+    usMapStateCounts = dist || {};
+    const states = d3.select('#us-map-container').selectAll('.state');
+    if (states.empty()) return;
+    const fipsToCount = {};
+    const counts = Object.entries(usMapStateCounts)
+      .filter(([k]) => STATE_TO_FIPS[k])
+      .map(([, v]) => v)
+      .filter(c => c > 0);
+    const maxCount = counts.length ? Math.max(...counts) : 1;
+    const colorScale = (count) => count <= 0 ? '#2a2a30' : interpolateColor(Math.min(1, count / maxCount));
+
+    Object.entries(usMapStateCounts).forEach(([stateName, count]) => {
+      const fips = STATE_TO_FIPS[stateName];
+      if (fips) fipsToCount[fips] = count;
+    });
+
+    states.each(function() {
+      const fips = this.getAttribute('data-fips');
+      const fid = String(fips || '').padStart(2, '0');
+      const count = fipsToCount[fid] || 0;
+      const color = colorScale(count);
+      this.style.setProperty('fill', color);
+      this.setAttribute('fill', color);
+    });
+
+    const labels = d3.select('#us-map-container').selectAll('.state-label');
+    if (!labels.empty()) {
+      labels
+        .text(function() {
+          const fips = this.getAttribute('data-fips');
+          const fid = String(fips).padStart(2, '0');
+          const count = fipsToCount[fid] || 0;
+          return count > 0 ? String(count) : '';
+        });
+    }
+
+    const legendEl = document.getElementById('us-map-gradient-legend');
+    if (legendEl && maxCount > 0) {
+      const gradientId = 'map-gradient-fill';
+      legendEl.innerHTML = '<div class="map-gradient-bar-wrap">' +
+        '<svg width="200" height="20" class="map-gradient-bar">' +
+        '<defs><linearGradient id="' + gradientId + '" x1="0" x2="1" y1="0" y2="0">' +
+        '<stop offset="0" stop-color="' + MAP_GRADIENT_LOW + '"/>' +
+        '<stop offset="1" stop-color="' + MAP_GRADIENT_HIGH + '"/>' +
+        '</linearGradient></defs>' +
+        '<rect width="200" height="20" fill="url(#' + gradientId + ')"/>' +
+        '</svg></div>' +
+        '<div class="map-gradient-labels"><span>0</span><span>' + maxCount + ' students</span></div>';
+      legendEl.style.display = 'block';
+    } else if (legendEl) {
+      legendEl.innerHTML = '';
+      legendEl.style.display = 'none';
+    }
+  }
+
+  loadAndRender();
+})();
+  </script>
+</body>
+</html>

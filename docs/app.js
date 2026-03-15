@@ -203,7 +203,7 @@
     } else if (selectedNonAll.length === 1) {
       text = selectedNonAll[0] + " selected";
     } else {
-      text = String(selectedNonAll.length) + " contests selected";
+      text = String(selectedNonAll.length) + " competitions selected";
     }
 
     contestFilterSummaryEl.textContent = text;
@@ -534,7 +534,7 @@
       var ratio = mcpTotal / totalMcp;
       var pctValCard = formatMcpPct(ratio);
       var contestLabelsCard = getSelectedContestLabels();
-      var contestsStrCard = contestLabelsCard.length ? contestLabelsCard.join(", ") : "selected contests";
+      var contestsStrCard = contestLabelsCard.length ? contestLabelsCard.join(", ") : "selected competitions";
       mcpPctSuffix = " (<button type=\"button\" class=\"mcp-pct-trigger\" data-pct=\"" + escapeHtml(pctValCard) + "\" data-contests=\"" + escapeHtml(contestsStrCard) + "\">" + pctValCard + "%</button>)";
     }
     var mcpDisplay = mcpTotal > 0 ? "<span class=\"student-stat\">" + mcpTotal + " MCP" + mcpPctSuffix + "</span>" : "";
@@ -823,8 +823,8 @@
 
     if (!counts.length) {
       if (subtitleEl && isMcpPct) {
-        subtitleEl.innerHTML = "Select a few contests, e.g. AMO, to see the contribution of that contest to the total MCP. Shows how much of each student's total MCP comes from the selected contests. See <a href=\"articles/mcp.html#11-mcp-\" target=\"_blank\" rel=\"noopener\">MCP %</a> section for details. " +
-          "<a href=\"#\" class=\"mcp-pct-filter-link\">Open contest filter</a>";
+        subtitleEl.innerHTML = "Select a few competitions, e.g. AMO, to see the contribution of that competition to the total MCP. Shows how much of each student's total MCP comes from the selected competitions. See <a href=\"articles/mcp.html#11-mcp-\" target=\"_blank\" rel=\"noopener\">MCP %</a> section for details. " +
+          "<a href=\"#\" class=\"mcp-pct-filter-link\">Open competition filter</a>";
       }
       var emptyMsg = (girlsOnlyEl && girlsOnlyEl.checked)
         ? "No female students with records in this view."
@@ -836,10 +836,10 @@
 
     if (isMcpPct && !contestFilterActive) {
       if (subtitleEl) {
-        subtitleEl.innerHTML = "Select a few contests to see MCP contribution %. See <a href=\"articles/mcp.html#11-mcp-\" target=\"_blank\" rel=\"noopener\">MCP %</a> section for details. " +
-          "<a href=\"#\" class=\"mcp-pct-filter-link\">Open contest filter</a>";
+        subtitleEl.innerHTML = "Select a few competitions to see MCP contribution %. See <a href=\"articles/mcp.html#11-mcp-\" target=\"_blank\" rel=\"noopener\">MCP %</a> section for details. " +
+          "<a href=\"#\" class=\"mcp-pct-filter-link\">Open competition filter</a>";
       }
-      awardsRankingListEl.innerHTML = "<li class=\"awards-ranking-empty\"><a href=\"#\" class=\"mcp-pct-filter-link\">Open contest filter</a></li>";
+      awardsRankingListEl.innerHTML = "<li class=\"awards-ranking-empty\"><a href=\"#\" class=\"mcp-pct-filter-link\">Open competition filter</a></li>";
       awardsRankingListEl.setAttribute("aria-busy", "false");
       return;
     }
@@ -920,7 +920,7 @@
               : (sortedRatios[sortedRatios.length / 2 - 1] + sortedRatios[sortedRatios.length / 2]) / 2;
             var fmt = function (x) { return formatMcpPct(x) + "%"; };
             var contestLabels = getSelectedContestLabels();
-            var contestPhrase = contestLabels.length > 0 ? contestLabels.join(", ") : "selected contests";
+            var contestPhrase = contestLabels.length > 0 ? contestLabels.join(", ") : "selected competitions";
             mcpPctStatsCache.html = " Among the top 100 students by total MCP, contribution from " + contestPhrase + ": avg " + fmt(avg) + ", min " + fmt(minR) + ", max " + fmt(maxR) + ", median " + fmt(median) + ". Due to limited data, do not make judgments without careful review.";
           } else {
             mcpPctStatsCache.html = "";
@@ -928,8 +928,8 @@
         }
         statsHtml = mcpPctStatsCache.html;
       }
-      subtitleEl.innerHTML = "Select a few contests, e.g. AMO, to see the contribution of that contest to the total MCP. Shows how much of each student's total MCP comes from the selected contests. See <a href=\"articles/mcp.html#11-mcp-\" target=\"_blank\" rel=\"noopener\">MCP %</a> section for details." +
-        statsHtml + " <a href=\"#\" class=\"mcp-pct-filter-link\">Open contest filter</a>";
+      subtitleEl.innerHTML = "Select a few competitions, e.g. AMO, to see the contribution of that competition to the total MCP. Shows how much of each student's total MCP comes from the selected competitions. See <a href=\"articles/mcp.html#11-mcp-\" target=\"_blank\" rel=\"noopener\">MCP %</a> section for details." +
+        statsHtml + " <a href=\"#\" class=\"mcp-pct-filter-link\">Open competition filter</a>";
     }
 
     var items = [];
@@ -952,7 +952,7 @@
         if (isMcpPctSort && contestFilterActive && entry.mcpRatio != null) {
           var pctVal = formatMcpPct(entry.mcpRatio);
           var contestLabels = getSelectedContestLabels();
-          var contestsStr = contestLabels.length ? contestLabels.join(", ") : "selected contests";
+          var contestsStr = contestLabels.length ? contestLabels.join(", ") : "selected competitions";
           valueText += " (<button type=\"button\" class=\"mcp-pct-trigger\" data-pct=\"" + escapeHtml(pctVal) + "\" data-contests=\"" + escapeHtml(contestsStr) + "\">" + pctVal + "%</button>)";
         }
       } else {
