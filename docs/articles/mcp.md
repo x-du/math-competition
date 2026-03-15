@@ -62,11 +62,10 @@ Competitions are classified into four tiers — **2000**, **1000**, **500**, and
 |---|---|---|
 | **HMMT February** | ~50 | Overall individual and subject (Algebra & NT, Combinatorics, Geometry) rankings. The most competitive invitational in the US. |
 | **PUMaC Division A** | 30~45 | Overall individual and subject (Algebra, Combinatorics, Geometry, Number Theory) rankings. Elite division of Princeton's competition. |
-| **BMT Individual** | ~10 | Overall individual and subject (Algebra, Calculus, Discrete, Geometry) rankings at Berkeley Math Tournament. Only considers top scores. |
 | **ARML Individual** | ~64 | Individual round ranking at the American Regions Math League. |
 | **USAMO** | ~150 | USA Mathematical Olympiad. The pinnacle national olympiad. Awards only (no individual ranks). |
 
-**Why these are Tier 1000:** These represent the most difficult and prestigious open competitions available to US high school students. HMMT February and PUMaC Division A draw the strongest fields in the country. USAMO is the national olympiad. ARML's individual round, while part of a team-oriented event, ranks students individually against the entire national field. BMT's top individual award recognizes the strongest performer at a major West Coast tournament with a strong field. We would like to include SMT (Stanford Math Tournament) in this tier, but SMT does not publish results. (SMT, talk to us 🙂)
+**Why these are Tier 1000:** These represent the most difficult and prestigious open competitions available to US high school students. HMMT February and PUMaC Division A draw the strongest fields in the country. USAMO is the national olympiad. ARML's individual round, while part of a team-oriented event, ranks students individually against the entire national field. We would like to include SMT (Stanford Math Tournament) in this tier, but SMT does not publish results. (SMT, talk to us 🙂)
 
 ### Tier 500 — Major Competitions
 
@@ -75,13 +74,14 @@ Competitions are classified into four tiers — **2000**, **1000**, **500**, and
 | **HMMT November** | ~50 | Overall individual and subject (General, Theme) rankings. |
 | **PUMaC Division B** | ~36 | Overall individual and subject (Algebra, Combinatorics, Geometry, Number Theory) rankings. |
 | **USAJMO** | ~150 | USA Junior Mathematical Olympiad. Awards only (no individual ranks). |
+| **BMT** | ~10 | Berkeley Math Tournament — overall individual and subject (Algebra, Calculus, Discrete, Geometry) rankings. |
 | **CMIMC** | ~10 | Carnegie Mellon competition — overall individual and subject (Algebra & NT, Combinatorics & CS, Geometry) rankings. |
 | **BAMO-12** | ~25 | Bay Area Mathematical Olympiad, high school division. |
 | **MathCounts National** | ~56 | National ranking. **Special rules apply** (see Section 5). |
 | **MPFG** | ~75 | Math Prize for Girls. **Counted toward MCP-W only** (see Section 6). |
 | **MPFG-Olympiad** | ~32 | MPFG Olympiad round. **Counted toward MCP-W only** (see Section 6). |
 
-**Why these are Tier 500:** These competitions are highly respected but either draw a somewhat less elite field than Tier 1000, or serve a specific sub-population. HMMT November is a strong competition but is explicitly positioned as a step below HMMT February. PUMaC Division B is the standard division below Division A. USAJMO targets students who qualify but not at the AMO level. CMIMC and BAMO-12 are strong regionals with competitive fields.
+**Why these are Tier 500:** These competitions are highly respected but either draw a somewhat less elite field than Tier 1000, or serve a specific sub-population. HMMT November is a strong competition but is explicitly positioned as a step below HMMT February. PUMaC Division B is the standard division below Division A. USAJMO targets students who qualify but not at the AMO level. BMT is a major West Coast tournament with a strong field. CMIMC and BAMO-12 are strong regionals with competitive fields.
 
 ### Tier 250 — Competitive Regionals
 
@@ -142,7 +142,7 @@ $$\text{mcp}\_\text{points}(r) = \text{min}\_\text{pts} + (\text{max}\_\text{pts
 - `max_pts` = `Tier × weight` (1000 for Tier 1000 overall, 500 for Tier 1000 subject tests at 50%)
 - `min_pts` is decided by whether the competition has a selection process:
   - **No selection process** (open competition): `min_pts` = **10**. Examples: ARML, BAMO, DMM, CMIMC, MMATHS, CMM, BMT, BrUMO.
-  - **Selection process** (selective competition): `min_pts` = **higher value**. Examples: USAMO, USAJMO, HMMT February, HMMT November, MPFG, MathCounts National. The exact higher value can be defined in the implementation (e.g., based on tier or competition size).
+  - **Selection process** (selective competition): `min_pts` = **100** or **200**. Examples: HMMT February, MPFG, MPFG-Olympiad, MathCounts National use 100; USAMO, USAJMO use 200. See [scripts/build_search_data.py](../../scripts/build_search_data.py) `MCP_V2_PARAMS` for the authoritative values per contest.
 
 **Awardees only receive points.** Since we only know the awardees, we only calculate and assign points for the awardees. Students whose ranks are unknown (e.g., ranks 51–2000 when only top 50 are recognized) receive **0 points**.
 
@@ -182,7 +182,7 @@ Try the formula interactively: [Desmos calculator](https://www.desmos.com/calcul
 
 ### Estimated Competition Sizes
 
-The algorithm requires the **total competition size (N)** for each event. Below are estimated sizes from official websites, [AoPS](https://artofproblemsolving.com/), and recent results. Numbers may vary by year.
+The algorithm requires the **total competition size (N)** and **min_pts** for each event. The canonical source is `MCP_V2_PARAMS` in [scripts/build_search_data.py](../../scripts/build_search_data.py). Below are the values used in the implementation (N and min_pts may vary by year for some contests, e.g. BMT 2023 uses N=270).
 
 | Competition | Tier | Est. Size (N) | Awardees | Selection | min_pts |
 |---|---|---|---|---|---|
@@ -190,7 +190,7 @@ The algorithm requires the **total competition size (N)** for each event. Below 
 | **HMMT November** | 500 | ~720 | ~50 | Open | 10 |
 | **PUMaC Division A** | 1000 | ~180 | ~40–45 | Open | 10 |
 | **PUMaC Division B** | 500 | ~180 | ~32–48 | Open | 10 |
-| **BMT Individual** | 1000 | ~630 | ~135–315 | Open | 10 |
+| **BMT Individual** | 500 | ~630 | ~135–315 | Open | 10 |
 | **ARML Individual** | 1000 | ~1,600 | ~45–65 | Open | 10 |
 | **USAMO** | 1000 | ~280 | ~135–155 | Selective (AMC/AIME qualifiers) | 200 |
 | **USAJMO** | 500 | ~220 | ~143–166 | Selective (AMC/AIME qualifiers) | 200 |
@@ -205,7 +205,7 @@ The algorithm requires the **total competition size (N)** for each event. Below 
 | **CMM** | 250 | ~60 | ~10 | Open | 10 |
 | **BrUMO Division A** | 250 | ~300 | ~22–24 | Open | 10 |
 
-*Note: Open = min_pts 10; Selective = min_pts higher (implementation-defined).*
+*Note: Open = min_pts 10; Selective = min_pts 100 or 200. See `MCP_V2_PARAMS` in [scripts/build_search_data.py](../../scripts/build_search_data.py) for the authoritative N and min_pts per contest and year.*
 
 ---
 
@@ -376,11 +376,11 @@ Result files are discovered dynamically — all result CSVs within each competit
 | PUMaC A — Combinatorics | 1000 | 50% | rank |
 | PUMaC A — Geometry | 1000 | 50% | rank |
 | PUMaC A — Number Theory | 1000 | 50% | rank |
-| BMT Individual (overall) | 1000 | 100% | rank |
-| BMT — Algebra | 1000 | 50% | rank |
-| BMT — Calculus | 1000 | 50% | rank |
-| BMT — Discrete | 1000 | 50% | rank |
-| BMT — Geometry | 1000 | 50% | rank |
+| BMT Individual (overall) | 500 | 100% | bmt |
+| BMT — Algebra | 500 | 50% | bmt |
+| BMT — Calculus | 500 | 50% | bmt |
+| BMT — Discrete | 500 | 50% | bmt |
+| BMT — Geometry | 500 | 50% | bmt |
 | ARML Individual | 1000 | 100% | rank |
 | USAMO | 1000 | 100% | award |
 | HMMT November (overall) | 500 | 100% | rank |
@@ -397,7 +397,7 @@ Result files are discovered dynamically — all result CSVs within each competit
 | CMIMC — Combinatorics & CS | 500 | 50% | rank |
 | CMIMC — Geometry | 500 | 50% | rank |
 | BAMO-12 | 500 | 100% | rank_mixed |
-| MathCounts National | 500 | 100% | rank |
+| MathCounts National | 500 | 100% | mathcounts |
 | MPFG (→ MCP-W) | 500 | 100% | rank |
 | MPFG-Olympiad (→ MCP-W) | 500 | 100% | award |
 | MMATHS | 250 | 100% | rank |
@@ -419,6 +419,7 @@ All result CSVs are processed using the competition configuration. For each file
 - **`rank`**: numeric ranks with average-rank-for-ties.
 - **`award`**: award strings (Gold, Silver, Bronze, HM) mapped to positional blocks.
 - **`rank_mixed`**: numeric ranks followed by a non-numeric group (Honorable Mention for BAMO, DHM (Top 10%) for BrUMO).
+- **`bmt`**: BMT-specific ranking (top scores, DHM, HM).
 - **`mathcounts`**: numeric ranks + special codes (S, Q, C) treated as tied blocks.
 
 The computed `mcp_rank` column is written back into the CSV.

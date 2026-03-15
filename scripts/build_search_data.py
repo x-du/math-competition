@@ -37,7 +37,7 @@ K_STEEPNESS = 3
 # N = total participants; min_pts = 10 for open, higher for selective.
 # Each slug maps to { year: (N, min_pts) }; use "default" for years not explicitly listed.
 # Subject tests inherit from parent (e.g. hmmt-feb-algebra-number-theory -> hmmt-feb).
-# See docs/articles/mcp_v2.md for source.
+# See docs/articles/mcp.md for source.
 MCP_V2_PARAMS = {
     "hmmt-feb": {"default": (800, 100)},
     "hmmt-nov": {"default": (720, 10)},
