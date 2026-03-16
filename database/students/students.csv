@@ -518,7 +518,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 551,Sneha Kundu,Minnesota,191,,female,12
 552,Kevin Qiu,Minnesota,191,,male,12
 553,Jinu Lee,Minnesota,191,,male,13
-554,Ryan Wu,Mississippi,192,,male,13
+554,Ryan Wu,California,192,,male,13
 555,Grant Zhang,Mississippi,192,,male,12
 556,Hadley Green,Mississippi,192,,female,13
 557,Brantley Denson,Mississippi,192,,male,13
@@ -836,7 +836,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 875,Rohan Pavuluri,Michigan,225,,male,
 876,Aiden Dai,New York,11,,male,
 877,Heyang Felicity Ni,New Jersey,42,,male,
-878,Andrew Wen,Massachusetts,14,,male,15
+878,Andrew Wen,California,14,,male,15
 879,Andy Xu,New Jersey,14,,male,
 881,Yichen Cedric Xiao,New York,42,,male,
 882,Benjamin Chen,Illinois,241,,male,15
@@ -899,7 +899,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 942,Mingze Wang,New Jersey,,,male,
 943,Tangjian Wang,Connecticut,,,male,
 944,Doris Wu,"Ontario, Canada",,,female,
-945,Alex Chen,California,,,male,15
+945,Alex Chen,California,,,male,
 946,Yixuan Chen,"Ontario, Canada",,,male,
 947,Pahan Dewasurendra,California,,,male,
 948,Hanqin Gu,Ohio,,,male,
@@ -1173,7 +1173,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1235,Alex Zheng,Texas,,,male,
 1236,Ricky Hu,California,,,male,
 1237,Zander Li,"Ontario, Canada",,,male,
-1238,Ethan Song,California,,,male,
+1238,Ethan Song,California,,Ethan K Song,male,
 1240,Ishani Agarwal,California,,,female,13
 1241,Anay Aggarwal,Oregon,,,male,
 1242,Samarth Bhargav,Virginia,,,male,13
@@ -1863,7 +1863,6 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1945,Tommy Zhou,,,,male,
 1946,Ivan Yu,,,,male,
 1947,Tejo Madhavarapu,California,,,male,
-1948,Ethan K Song,Virginia,,,male,
 1949,Emily Wu,Washington,,,female,
 1950,Rachel Li,California,,,female,
 1951,Suhani Pahuja,California,,,male,
@@ -6163,3 +6162,5 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 6255,Jaxon Choi,California,,,male,
 6256,Sophie Liu,Connecticut,,,female,
 6257,David Dong,North Carolina,,,male,
+6258,Bryan Li,California,,,male,
+6259,Alex Chen,Missouri,,,male,15

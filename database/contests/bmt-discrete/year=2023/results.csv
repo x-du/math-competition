@@ -25,7 +25,7 @@ student_id,student_name,year,subject,bmt_student_id,team_name,school,award,rank,
 1947,Tejo Madhavarapu,2023,Discrete,005B,,,Distinguished HM (Top 20%),,,32.5
 1827,Pranav Bodapati,2023,Discrete,011A,,,Distinguished HM (Top 20%),,,32.5
 1832,Andrew Tian,2023,Discrete,015E,,,Distinguished HM (Top 20%),,,32.5
-1948,Ethan K Song,2023,Discrete,017C,,,Distinguished HM (Top 20%),,,32.5
+1238,Ethan K Song,2023,Discrete,017C,,,Distinguished HM (Top 20%),,,32.5
 665,Sohil Rathi,2023,Discrete,030D,,,Distinguished HM (Top 20%),,,32.5
 1431,Neel Kolhe,2023,Discrete,030E,,,Distinguished HM (Top 20%),,,32.5
 211,Chenghao Hu,2023,Discrete,034A,,,Distinguished HM (Top 20%),,,32.5
@@ -69,7 +69,7 @@ student_id,student_name,year,subject,bmt_student_id,team_name,school,award,rank,
 166,Roger Fan,2023,Discrete,039D,,,Honorable Mention (Top 50%),,,69.5
 929,Nathan Ye,2023,Discrete,039F,,,Honorable Mention (Top 50%),,,69.5
 1916,Nicholas Weng,2023,Discrete,041A,,,Honorable Mention (Top 50%),,,69.5
-516,Bryan Li,2023,Discrete,043A,,,Honorable Mention (Top 50%),,,69.5
+6258,Bryan Li,2023,Discrete,043A,,,Honorable Mention (Top 50%),,,69.5
 885,Aarush Vailaya,2023,Discrete,046D,,,Honorable Mention (Top 50%),,,69.5
 1397,Sylvia Chen,2023,Discrete,047B,,,Honorable Mention (Top 50%),,,69.5
 1867,Kyle Lei,2023,Discrete,052C,,,Honorable Mention (Top 50%),,,69.5
