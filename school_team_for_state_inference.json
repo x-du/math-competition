@@ -1,0 +1,595 @@
+[
+  {
+    "student_id": 1310,
+    "student_name": "Dylan Zhang",
+    "schools_and_teams": [
+      "Team",
+      "Club Name"
+    ]
+  },
+  {
+    "student_id": 1419,
+    "student_name": "Zhan Jin",
+    "schools_and_teams": [
+      "FROM X TO INFINITY",
+      "Individuals Team 153"
+    ]
+  },
+  {
+    "student_id": 1451,
+    "student_name": "Mihir Kumar",
+    "schools_and_teams": [
+      "Math-M-Addicts 1"
+    ]
+  },
+  {
+    "student_id": 1452,
+    "student_name": "Anand Swaroop",
+    "schools_and_teams": [
+      "RSM - A"
+    ]
+  },
+  {
+    "student_id": 1455,
+    "student_name": "Daniel David",
+    "schools_and_teams": [
+      "BMT",
+      "Benjamin's Mom's Team"
+    ]
+  },
+  {
+    "student_id": 1459,
+    "student_name": "Brian Zhao",
+    "schools_and_teams": [
+      "Benjamin's Dad's Team"
+    ]
+  },
+  {
+    "student_id": 1469,
+    "student_name": "Michael Wu",
+    "schools_and_teams": [
+      "D1 Moggers"
+    ]
+  },
+  {
+    "student_id": 1472,
+    "student_name": "Zekai Wang",
+    "schools_and_teams": [
+      "OveRZealous TEsserAct Manufacturers"
+    ]
+  },
+  {
+    "student_id": 1478,
+    "student_name": "Alexander Peev",
+    "schools_and_teams": [
+      "RSM - B"
+    ]
+  },
+  {
+    "student_id": 1479,
+    "student_name": "Roy Brauwerman",
+    "schools_and_teams": [
+      "REST Assured"
+    ]
+  },
+  {
+    "student_id": 1488,
+    "student_name": "Bella Li",
+    "schools_and_teams": [
+      "OveRZealous TEsserAct Manufacturers"
+    ]
+  },
+  {
+    "student_id": 1489,
+    "student_name": "Leon Du",
+    "schools_and_teams": [
+      "A Kettle of Hawks"
+    ]
+  },
+  {
+    "student_id": 1557,
+    "student_name": "Sidarth Singh",
+    "schools_and_teams": [
+      "Tigers"
+    ]
+  },
+  {
+    "student_id": 1579,
+    "student_name": "Daniel Cai",
+    "schools_and_teams": [
+      "ABML"
+    ]
+  },
+  {
+    "student_id": 1631,
+    "student_name": "Kaiqi Xu",
+    "schools_and_teams": [
+      "Individuals Team 160"
+    ]
+  },
+  {
+    "student_id": 1666,
+    "student_name": "Michael Ren",
+    "schools_and_teams": [
+      "Individuals Team 154"
+    ]
+  },
+  {
+    "student_id": 1793,
+    "student_name": "Lucas Lin",
+    "schools_and_teams": [
+      "Warriors"
+    ]
+  },
+  {
+    "student_id": 1859,
+    "student_name": "Benjamin Liu",
+    "schools_and_teams": [
+      "Warriors"
+    ]
+  },
+  {
+    "student_id": 2145,
+    "student_name": "Yeojun Jung",
+    "schools_and_teams": [
+      "Individuals Team 190"
+    ]
+  },
+  {
+    "student_id": 2149,
+    "student_name": "Monish Saravana Kumar",
+    "schools_and_teams": [
+      "Pirates B"
+    ]
+  },
+  {
+    "student_id": 2151,
+    "student_name": "Ryan Gong",
+    "schools_and_teams": [
+      "Individuals Team 191"
+    ]
+  },
+  {
+    "student_id": 2154,
+    "student_name": "Evan Goldman",
+    "schools_and_teams": [
+      "Small L Club"
+    ]
+  },
+  {
+    "student_id": 2155,
+    "student_name": "Joshua Shi",
+    "schools_and_teams": [
+      "THE Labubu"
+    ]
+  },
+  {
+    "student_id": 2157,
+    "student_name": "Bret Huang",
+    "schools_and_teams": [
+      "Individuals Team 189"
+    ]
+  },
+  {
+    "student_id": 2159,
+    "student_name": "Grace Liang",
+    "schools_and_teams": [
+      "MHSProfessionalJobbers"
+    ]
+  },
+  {
+    "student_id": 2162,
+    "student_name": "Likhith Malipati",
+    "schools_and_teams": [
+      "Pirates B"
+    ]
+  },
+  {
+    "student_id": 2171,
+    "student_name": "Minhe Liu",
+    "schools_and_teams": [
+      "MHSProfessionalJobbers"
+    ]
+  },
+  {
+    "student_id": 2178,
+    "student_name": "Iris Gao",
+    "schools_and_teams": [
+      "Pirates B"
+    ]
+  },
+  {
+    "student_id": 2179,
+    "student_name": "Eric Yuan",
+    "schools_and_teams": [
+      "Individuals Team 189"
+    ]
+  },
+  {
+    "student_id": 2200,
+    "student_name": "Patrick Gao",
+    "schools_and_teams": [
+      "Small L Club"
+    ]
+  },
+  {
+    "student_id": 2212,
+    "student_name": "Andrew Zhou",
+    "schools_and_teams": [
+      "Big L"
+    ]
+  },
+  {
+    "student_id": 2217,
+    "student_name": "Joel Pulikkan",
+    "schools_and_teams": [
+      "MHSProfessionalJobbers"
+    ]
+  },
+  {
+    "student_id": 2220,
+    "student_name": "Hyunjae Cho",
+    "schools_and_teams": [
+      "Individuals Team 169"
+    ]
+  },
+  {
+    "student_id": 2224,
+    "student_name": "Diyansha Singh",
+    "schools_and_teams": [
+      "Pirates B"
+    ]
+  },
+  {
+    "student_id": 2234,
+    "student_name": "Akshay Gupta",
+    "schools_and_teams": [
+      "Big L",
+      "Big L Club"
+    ]
+  },
+  {
+    "student_id": 2237,
+    "student_name": "Jacqueline Lu",
+    "schools_and_teams": [
+      "MHSProfessionalJobbers"
+    ]
+  },
+  {
+    "student_id": 2247,
+    "student_name": "Orion Lan",
+    "schools_and_teams": [
+      "MHSProfessionalJobbers"
+    ]
+  },
+  {
+    "student_id": 2256,
+    "student_name": "James Li",
+    "schools_and_teams": [
+      "Cougz"
+    ]
+  },
+  {
+    "student_id": 2260,
+    "student_name": "Shreyan Lingampalli",
+    "schools_and_teams": [
+      "Cougz"
+    ]
+  },
+  {
+    "student_id": 2261,
+    "student_name": "Isabella Hu",
+    "schools_and_teams": [
+      "CCC"
+    ]
+  },
+  {
+    "student_id": 2262,
+    "student_name": "Howard Ziyuan Tang",
+    "schools_and_teams": [
+      "Individuals Team 162"
+    ]
+  },
+  {
+    "student_id": 2266,
+    "student_name": "Luca Huang",
+    "schools_and_teams": [
+      "Charter"
+    ]
+  },
+  {
+    "student_id": 2275,
+    "student_name": "Alexander Coutras",
+    "schools_and_teams": [
+      "Cougz"
+    ]
+  },
+  {
+    "student_id": 2278,
+    "student_name": "Alek Lee",
+    "schools_and_teams": [
+      "Charter"
+    ]
+  },
+  {
+    "student_id": 2287,
+    "student_name": "Anish Chhabra",
+    "schools_and_teams": [
+      "Individuals Team 162"
+    ]
+  },
+  {
+    "student_id": 2289,
+    "student_name": "Yiming Huang",
+    "schools_and_teams": [
+      "MHSProfessionalJobbers"
+    ]
+  },
+  {
+    "student_id": 2290,
+    "student_name": "Brooks Wang",
+    "schools_and_teams": [
+      "Cougz"
+    ]
+  },
+  {
+    "student_id": 2291,
+    "student_name": "Timothy Wu",
+    "schools_and_teams": [
+      "Fat L Club",
+      "Big L Club"
+    ]
+  },
+  {
+    "student_id": 2299,
+    "student_name": "Gloria Yu",
+    "schools_and_teams": [
+      "Just Woo It"
+    ]
+  },
+  {
+    "student_id": 2302,
+    "student_name": "Tyler Ren",
+    "schools_and_teams": [
+      "Team :blobcosy:"
+    ]
+  },
+  {
+    "student_id": 2303,
+    "student_name": "Anthony Woo",
+    "schools_and_teams": [
+      "Just Woo It"
+    ]
+  },
+  {
+    "student_id": 2304,
+    "student_name": "Shravan Balaji",
+    "schools_and_teams": [
+      "CSW A"
+    ]
+  },
+  {
+    "student_id": 2305,
+    "student_name": "Tristan Wan",
+    "schools_and_teams": [
+      "Just Woo It"
+    ]
+  },
+  {
+    "student_id": 2306,
+    "student_name": "Matthew Xie",
+    "schools_and_teams": [
+      "Individuals Team 152"
+    ]
+  },
+  {
+    "student_id": 2307,
+    "student_name": "Konnor Lee",
+    "schools_and_teams": [
+      "MHSProfessionalJobbers"
+    ]
+  },
+  {
+    "student_id": 2308,
+    "student_name": "Satvik Dasariraju",
+    "schools_and_teams": [
+      "Just Woo It"
+    ]
+  },
+  {
+    "student_id": 2310,
+    "student_name": "Bocheng David Zhang",
+    "schools_and_teams": [
+      "Individuals Team 153"
+    ]
+  },
+  {
+    "student_id": 2311,
+    "student_name": "Aaron Li",
+    "schools_and_teams": [
+      "Team :blobcosy:"
+    ]
+  },
+  {
+    "student_id": 2317,
+    "student_name": "Alice Xie",
+    "schools_and_teams": [
+      "Just Woo It"
+    ]
+  },
+  {
+    "student_id": 2320,
+    "student_name": "Cody Cheng",
+    "schools_and_teams": [
+      "Individuals Team 152"
+    ]
+  },
+  {
+    "student_id": 2321,
+    "student_name": "Yaliang Yuan",
+    "schools_and_teams": [
+      "Individuals Team 153"
+    ]
+  },
+  {
+    "student_id": 2322,
+    "student_name": "Renee Hong",
+    "schools_and_teams": [
+      "Big L Club"
+    ]
+  },
+  {
+    "student_id": 2327,
+    "student_name": "Alexander Dang",
+    "schools_and_teams": [
+      "Team :blobcosy:"
+    ]
+  },
+  {
+    "student_id": 2329,
+    "student_name": "Austin Lin",
+    "schools_and_teams": [
+      "Warriors"
+    ]
+  },
+  {
+    "student_id": 2332,
+    "student_name": "Mia Lu",
+    "schools_and_teams": [
+      "CSW A"
+    ]
+  },
+  {
+    "student_id": 2334,
+    "student_name": "Iris Yan",
+    "schools_and_teams": [
+      "Individuals Team 154"
+    ]
+  },
+  {
+    "student_id": 2340,
+    "student_name": "Andrew Kalashnikov",
+    "schools_and_teams": [
+      "MathSchool 2"
+    ]
+  },
+  {
+    "student_id": 2343,
+    "student_name": "Arman Ayazi",
+    "schools_and_teams": [
+      "EightTimesEpsilon"
+    ]
+  },
+  {
+    "student_id": 2344,
+    "student_name": "Erik Ji",
+    "schools_and_teams": [
+      "Pirates B"
+    ]
+  },
+  {
+    "student_id": 2346,
+    "student_name": "Angela Ding",
+    "schools_and_teams": [
+      "Individuals Team 190"
+    ]
+  },
+  {
+    "student_id": 2348,
+    "student_name": "Sunny(Puguang) Zhao",
+    "schools_and_teams": [
+      "Individuals Team 191"
+    ]
+  },
+  {
+    "student_id": 2349,
+    "student_name": "Jason Zeng",
+    "schools_and_teams": [
+      "worse walrus"
+    ]
+  },
+  {
+    "student_id": 2379,
+    "student_name": "Rishi Shah",
+    "schools_and_teams": [
+      "Small L Club"
+    ]
+  },
+  {
+    "student_id": 2382,
+    "student_name": "Divit Mehra",
+    "schools_and_teams": [
+      "Pirates A"
+    ]
+  },
+  {
+    "student_id": 2386,
+    "student_name": "Spencer Wang",
+    "schools_and_teams": [
+      "Karkaboingus"
+    ]
+  },
+  {
+    "student_id": 2388,
+    "student_name": "Nikhil Reddy",
+    "schools_and_teams": [
+      "Multivariants"
+    ]
+  },
+  {
+    "student_id": 2393,
+    "student_name": "Alexander Amrhein",
+    "schools_and_teams": [
+      "MathSchool 1"
+    ]
+  },
+  {
+    "student_id": 2399,
+    "student_name": "Zifan Zhao",
+    "schools_and_teams": [
+      "Saxons"
+    ]
+  },
+  {
+    "student_id": 2400,
+    "student_name": "Ian Liao",
+    "schools_and_teams": [
+      "Saxons"
+    ]
+  },
+  {
+    "student_id": 2402,
+    "student_name": "Sanjana Ramesh",
+    "schools_and_teams": [
+      "ICAE2"
+    ]
+  },
+  {
+    "student_id": 2403,
+    "student_name": "Meghana Myneni",
+    "schools_and_teams": [
+      "ICAE4"
+    ]
+  },
+  {
+    "student_id": 2404,
+    "student_name": "Siddharth Sangi",
+    "schools_and_teams": [
+      "Team Tau"
+    ]
+  },
+  {
+    "student_id": 2405,
+    "student_name": "Matthew Zhang",
+    "schools_and_teams": [
+      "Team Tau"
+    ]
+  },
+  {
+    "student_id": 2512,
+    "student_name": "Gary Hu",
+    "schools_and_teams": [
+      "Math Advance Team C"
+    ]
+  }
+]
