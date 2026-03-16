@@ -24,7 +24,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 23,Jeffrey Yin,Virginia,21,,male,12
 24,Ruien Chen,Washington,7|89,Ryan Chen,male,10
 25,Rohan Garg,California,9|94|118,,male,12
-26,Ryan Li,Ohio,5,,male,
+26,Ryan Li,Ohio,5,,male,16
 27,Bolei Wang,New Hampshire,3|71,Benny Wang,male,12
 28,Rohan Nayak Mallick,California,2|59,,male,10
 29,Patrick Du,Virginia,10|72|85|215|290,,male,11
@@ -3566,7 +3566,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 3658,Mikaela Tereshkov,Florida,,,female,
 3659,Oleksandr Voloshyn,California,,,male,
 3660,Oskar Tomala,Massachusetts,,,male,
-3661,Ryan Li,Massachusetts,,,male,
+3661,Ryan Li,Massachusetts,,,male,10
 3662,Shiraz Naser,New Jersey,,,male,
 3663,Siddarth Sankar,Pennsylvania,,,male,
 3664,Sohum Vajaria,California,,,male,
