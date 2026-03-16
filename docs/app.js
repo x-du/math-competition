@@ -3,6 +3,8 @@
 
   var data = { students: [], contests: {} };
   var searchEl = document.getElementById("search");
+  var searchInputWrapEl = document.getElementById("search-input-wrap");
+  var studentCardBackEl = document.getElementById("student-card-back");
   var resultsEl = document.getElementById("results");
   var emptyEl = document.getElementById("empty");
   var loadingEl = document.getElementById("loading");
@@ -31,8 +33,45 @@
   var latestStateDist = { students: {}, records: {}, mcp: {} };
   var mcpPctStatsCache = { key: null, html: "" };
   var savedFilters = {};
+  var searchValueBeforeStudentCard = null;
 
   var FILTERS_KEY = "mathcomp_filters";
+
+  function getStudentIdFromUrl() {
+    try {
+      var params = new URLSearchParams(window.location.search);
+      var id = params.get("student_id");
+      if (id == null || id === "") return null;
+      var n = parseInt(id, 10);
+      return isNaN(n) ? null : n;
+    } catch (e) { return null; }
+  }
+
+  function navigateToStudentCard(studentId) {
+    try {
+      var url = new URL(window.location.href);
+      url.searchParams.set("student_id", String(studentId));
+      window.history.replaceState({}, "", url.toString());
+    } catch (e) { /* ignore */ }
+  }
+
+  function clearStudentIdFromUrl() {
+    try {
+      var url = new URL(window.location.href);
+      url.searchParams.delete("student_id");
+      window.history.replaceState({}, "", url.toString());
+    } catch (e) { /* ignore */ }
+  }
+
+  function navigateToStudentAndScroll(studentId) {
+    navigateToStudentCard(studentId);
+    runSearch();
+    if (searchEl) searchEl.blur();
+    var firstCard = resultsEl && resultsEl.querySelector(".student-card");
+    if (firstCard && typeof firstCard.scrollIntoView === "function") {
+      firstCard.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
 
   function saveFilters() {
     try {
@@ -116,6 +155,11 @@
   function formatMcpPct(ratio) {
     var pctVal = Math.round(Math.min(ratio, 1) * 10000) / 100;
     return parseFloat(pctVal.toFixed(2)).toString();
+  }
+
+  function formatMcpValue(n) {
+    if (n == null || isNaN(n)) return "—";
+    return parseFloat(Number(n).toFixed(2)).toString();
   }
 
   var CONTEST_FILTER_CONFIG = {
@@ -462,43 +506,44 @@
     return { bySlug: bySlug, slugs: slugs };
   }
 
-  function renderStudent(student, contestsMap) {
+  function renderStudent(student, contestsMap, headerOnly) {
     var records = (student.records || []).slice();
-    records = records.filter(recordMatchesContestFilter);
     var grouped = groupRecordsByContest(records);
     var bySlug = grouped.bySlug;
     var slugs = grouped.slugs;
     var state = student.state || "";
 
     var sections = [];
-    for (var i = 0; i < slugs.length; i++) {
-      var slug = slugs[i];
-      var contestRecords = bySlug[slug];
-      contestRecords.sort(function (a, b) {
-        var yA = a.year || "";
-        var yB = b.year || "";
-        return yA > yB ? -1 : yA < yB ? 1 : 0;
-      });
-      var allKeys = allRecordHeaders(contestRecords);
-      var headerCells = "<th data-col=\"year\">" + escapeHtml("Year") + "</th>" + allKeys.map(function (k) {
-        var label = k.replace(/_/g, " ");
-        var tip = COLUMN_TOOLTIPS[k];
-        var tipAttr = tip ? " data-tooltip=\"" + escapeHtml(tip) + "\" class=\"has-tooltip\" tabindex=\"0\" role=\"button\"" : "";
-        return "<th data-col=\"" + escapeHtml(k) + "\"" + tipAttr + ">" + escapeHtml(label) + "</th>";
-      }).join("");
-      var rows = contestRecords.map(function (r) { return renderRecordRow(r, allKeys); }).join("");
+    if (!headerOnly) {
+      for (var i = 0; i < slugs.length; i++) {
+        var slug = slugs[i];
+        var contestRecords = bySlug[slug];
+        contestRecords.sort(function (a, b) {
+          var yA = a.year || "";
+          var yB = b.year || "";
+          return yA > yB ? -1 : yA < yB ? 1 : 0;
+        });
+        var allKeys = allRecordHeaders(contestRecords);
+        var headerCells = "<th data-col=\"year\">" + escapeHtml("Year") + "</th>" + allKeys.map(function (k) {
+          var label = k.replace(/_/g, " ");
+          var tip = COLUMN_TOOLTIPS[k];
+          var tipAttr = tip ? " data-tooltip=\"" + escapeHtml(tip) + "\" class=\"has-tooltip\" tabindex=\"0\" role=\"button\"" : "";
+          return "<th data-col=\"" + escapeHtml(k) + "\"" + tipAttr + ">" + escapeHtml(label) + "</th>";
+        }).join("");
+        var rows = contestRecords.map(function (r) { return renderRecordRow(r, allKeys); }).join("");
 
-      sections.push(
-        "<div class=\"contest-section\">" +
-          renderContestInfo(slug, contestsMap) +
-          "<div class=\"records-table-wrap\">" +
-            "<table class=\"records-table\">" +
-              "<thead><tr>" + headerCells + "</tr></thead>" +
-              "<tbody>" + rows + "</tbody>" +
-            "</table>" +
-          "</div>" +
-        "</div>"
-      );
+        sections.push(
+          "<div class=\"contest-section\">" +
+            renderContestInfo(slug, contestsMap) +
+            "<div class=\"records-table-wrap\">" +
+              "<table class=\"records-table\">" +
+                "<thead><tr>" + headerCells + "</tr></thead>" +
+                "<tbody>" + rows + "</tbody>" +
+              "</table>" +
+            "</div>" +
+          "</div>"
+        );
+      }
     }
 
     var aliasesHtml = "";
@@ -537,7 +582,7 @@
       var contestsStrCard = contestLabelsCard.length ? contestLabelsCard.join(", ") : "selected competitions";
       mcpPctSuffix = " (<button type=\"button\" class=\"mcp-pct-trigger\" data-pct=\"" + escapeHtml(pctValCard) + "\" data-contests=\"" + escapeHtml(contestsStrCard) + "\">" + pctValCard + "%</button>)";
     }
-    var mcpDisplay = mcpTotal > 0 ? "<span class=\"student-stat\">" + mcpTotal + " MCP" + mcpPctSuffix + "</span>" : "";
+    var mcpDisplay = mcpTotal > 0 ? "<span class=\"student-stat\">" + formatMcpValue(mcpTotal) + " MCP" + mcpPctSuffix + "</span>" : "";
     var statsHtml = "<span class=\"student-stats\">" +
       "<span class=\"student-stat\">" + totalRecords + (totalRecords === 1 ? " record" : " records") + "</span>" +
       mcpDisplay +
@@ -565,7 +610,7 @@
           "<button type=\"button\" class=\"mcp-breakdown-btn\" aria-label=\"MCP breakdown\">MCP</button>" +
           "<div class=\"mcp-breakdown-popover\" hidden>" +
             "<div class=\"mcp-breakdown-popover-inner\">" +
-              "<h3 class=\"mcp-breakdown-title\">" + escapeHtml(student.name || "Student") + " — MCP Breakdown — " + escapeHtml(String(mcpTotal)) + " pts</h3>" +
+              "<h3 class=\"mcp-breakdown-title\">" + escapeHtml(student.name || "Student") + " — MCP Breakdown — " + escapeHtml(formatMcpValue(mcpTotal)) + " pts</h3>" +
               "<canvas class=\"mcp-breakdown-canvas\" width=\"260\" height=\"260\"></canvas>" +
               "<div class=\"mcp-breakdown-legend\"></div>" +
               "<button type=\"button\" class=\"mcp-breakdown-close\" aria-label=\"Close\">×</button>" +
@@ -576,6 +621,7 @@
         "</span>";
     }
 
+    var contestsHtml = headerOnly ? "" : "<div class=\"student-contests\">" + sections.join("") + "</div>";
     return (
       "<article class=\"student-card\" data-student-id=\"" + escapeHtml(String(student.id)) + "\">" +
         "<div class=\"student-header\">" +
@@ -585,7 +631,7 @@
           mcpBtnHtml +
           "<button type=\"button\" class=\"export-pdf-student-btn\" aria-label=\"Export this student to PDF\">Export to PDF</button>" +
         "</div>" +
-        "<div class=\"student-contests\">" + sections.join("") + "</div>" +
+        contestsHtml +
       "</article>"
     );
   }
@@ -951,7 +997,7 @@
       }
       var valueText;
       if (isMcp || isMcpPctSort) {
-        valueText = String(entry.mcpTotal) + " " + mcpLabel;
+        valueText = formatMcpValue(entry.mcpTotal) + " " + mcpLabel;
         if (isMcpPctSort && contestFilterActive && entry.mcpRatio != null) {
           var pctVal = formatMcpPct(entry.mcpRatio);
           var contestLabels = getSelectedContestLabels();
@@ -965,8 +1011,8 @@
       items.push(
         "<li class=\"awards-ranking-item\">" +
           "<span class=\"awards-ranking-position\">#" + (i + 1) + "</span>" +
-          "<span class=\"awards-ranking-name\" data-student-name=\"" + escapeHtml(String(s.name || "")) + "\">" + escapeHtml(displayName) + gradeHtml + "</span>" +
-          "<span class=\"awards-ranking-count\" data-student-name=\"" + escapeHtml(String(s.name || "")) + "\">" + valueText + "</span>" +
+          "<span class=\"awards-ranking-name\" data-student-id=\"" + escapeHtml(String(s.id || "")) + "\" data-student-name=\"" + escapeHtml(String(s.name || "")) + "\">" + escapeHtml(displayName) + gradeHtml + "</span>" +
+          "<span class=\"awards-ranking-count\" data-student-id=\"" + escapeHtml(String(s.id || "")) + "\" data-student-name=\"" + escapeHtml(String(s.name || "")) + "\">" + valueText + "</span>" +
         "</li>"
       );
     }
@@ -1031,11 +1077,52 @@
   function runSearch() {
     saveFilters();
     var query = (searchEl && searchEl.value) ? searchEl.value.trim() : "";
+    var urlStudentId = getStudentIdFromUrl();
     emptyEl.hidden = true;
     resultsEl.innerHTML = "";
 
     if (searchClearEl) {
-      searchClearEl.hidden = !query;
+      searchClearEl.hidden = !query && !urlStudentId;
+    }
+    var inStudentCardView = !!urlStudentId;
+    if (searchInputWrapEl) searchInputWrapEl.hidden = inStudentCardView;
+    if (hintEl) hintEl.hidden = inStudentCardView;
+    if (studentCardBackEl) studentCardBackEl.hidden = !inStudentCardView;
+
+    if (urlStudentId != null) {
+      var student = null;
+      for (var i = 0; i < data.students.length; i++) {
+        if (data.students[i].id === urlStudentId) {
+          student = data.students[i];
+          break;
+        }
+      }
+      if (student) {
+        searchValueBeforeStudentCard = (searchEl && searchEl.value) ? searchEl.value.trim() : "";
+        if (searchEl) searchEl.value = (student.name || "").trim();
+        if (searchClearEl) searchClearEl.hidden = true;
+        hintEl.textContent = "1 student found.";
+        if (topStudentsSectionEl) topStudentsSectionEl.hidden = true;
+        var copy = {};
+        for (var k in student) {
+          if (Object.prototype.hasOwnProperty.call(student, k) && k !== "records") {
+            copy[k] = student[k];
+          }
+        }
+        var recs = student.records || [];
+        copy.records = recs;
+        if (recs.length > 0) {
+          resultsEl.innerHTML = renderStudent(copy, data.contests || {});
+        } else {
+          emptyEl.hidden = false;
+          emptyEl.innerHTML = "<p class=\"empty-state\">No records for this student.</p>";
+        }
+        return;
+      }
+      clearStudentIdFromUrl();
+      if (searchInputWrapEl) searchInputWrapEl.hidden = false;
+      if (hintEl) hintEl.hidden = false;
+      if (studentCardBackEl) studentCardBackEl.hidden = true;
     }
 
     if (!query) {
@@ -1053,22 +1140,21 @@
       var matched = data.students.filter(function (s) { return matchStudent(s, query); });
       // Search results are not filtered by grade, state, or girls - show all matches
 
-      var filteredByContest = matched.map(function (s) {
+      var searchResults = matched.map(function (s) {
         var copy = {};
         for (var k in s) {
           if (Object.prototype.hasOwnProperty.call(s, k) && k !== "records") {
             copy[k] = s[k];
           }
         }
-        var recs = s.records || [];
-        copy.records = recs.filter(recordMatchesContestFilter);
+        copy.records = s.records || [];
         return copy;
       }).filter(function (s) {
         return (s.records || []).length > 0;
       });
 
-      var total = filteredByContest.length;
-      var toRender = total > 10 ? filteredByContest.slice(0, 10) : filteredByContest;
+      var total = searchResults.length;
+      var toRender = total > 10 ? searchResults.slice(0, 10) : searchResults;
       hintEl.textContent = total === 0
         ? "No students found."
         : total === 1
@@ -1085,7 +1171,7 @@
 
       if (topStudentsSectionEl) topStudentsSectionEl.hidden = true;
 
-      resultsEl.innerHTML = toRender.map(function (s) { return renderStudent(s, data.contests || {}); }).join("");
+      resultsEl.innerHTML = toRender.map(function (s) { return renderStudent(s, data.contests || {}, true); }).join("");
     });
   }
 
@@ -1504,10 +1590,28 @@
     searchClearEl.addEventListener("click", function () {
       if (!searchEl) return;
       searchEl.value = "";
+      clearStudentIdFromUrl();
       runSearch();
       searchEl.focus();
     });
   }
+
+  if (studentCardBackEl) {
+    studentCardBackEl.addEventListener("click", function (e) {
+      e.preventDefault();
+      if (searchEl) searchEl.value = (searchValueBeforeStudentCard != null ? searchValueBeforeStudentCard : "");
+      searchValueBeforeStudentCard = null;
+      clearStudentIdFromUrl();
+      if (searchInputWrapEl) searchInputWrapEl.hidden = false;
+      studentCardBackEl.hidden = true;
+      runSearch();
+      if (searchEl) searchEl.focus();
+    });
+  }
+
+  window.addEventListener("popstate", function () {
+    runSearch();
+  });
 
   if (girlsOnlyEl) {
     girlsOnlyEl.addEventListener("change", function () {
@@ -1768,9 +1872,17 @@
       if (pop) pop.hidden = true;
       return;
     }
-    if (!target || !target.classList || !target.classList.contains("student-name")) return;
-    var nameAttr = target.getAttribute("data-student-name");
-    var name = (nameAttr || target.textContent || "").trim();
+    var nameEl = target && target.closest ? target.closest(".student-name") : null;
+    if (!nameEl) return;
+    var card = nameEl.closest ? nameEl.closest(".student-card") : null;
+    var studentId = card ? card.getAttribute("data-student-id") : null;
+    if (studentId != null && studentId !== "") {
+      event.preventDefault();
+      navigateToStudentAndScroll(studentId);
+      return;
+    }
+    var nameAttr = nameEl.getAttribute("data-student-name");
+    var name = (nameAttr || nameEl.textContent || "").trim();
     if (!name || !searchEl) return;
     searchEl.value = name;
     runSearch();
@@ -1841,6 +1953,12 @@
         target = target.parentNode;
       }
       if (!target || target === awardsRankingListEl) return;
+      var studentId = target.getAttribute("data-student-id");
+      if (studentId != null && studentId !== "") {
+        event.preventDefault();
+        navigateToStudentAndScroll(studentId);
+        return;
+      }
       var name = (target.getAttribute("data-student-name") || target.textContent || "").trim();
       if (!name || !searchEl) return;
       searchEl.value = name;

@@ -552,9 +552,30 @@ body {
   margin-bottom: 0.75rem;
 }
 
+.student-card-back {
+  display: inline-block;
+  font-size: 0.95rem;
+  color: var(--accent);
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+}
+
+.student-card-back[hidden] {
+  display: none;
+}
+
+.student-card-back:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
 .search-input-wrap {
   position: relative;
   display: block;
+}
+
+.search-input-wrap[hidden] {
+  display: none;
 }
 
 .search-input {
@@ -621,6 +642,10 @@ body {
   margin-top: 0.5rem;
   font-size: 0.875rem;
   color: var(--text-muted);
+}
+
+.search-hint[hidden] {
+  display: none;
 }
 
 .contest-filter-row {
