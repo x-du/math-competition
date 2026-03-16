@@ -1405,7 +1405,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1473,Pun Tresattayapan,Michigan,298,,male,12
 1474,Benjamin Tang,California,319,,male,
 1475,Hridaan Mehta,New Jersey,297|465|491,,male,
-1476,Ian Cheng,Virginia,321,,male,
+1476,Ian Cheng,Virginia,321,,male,8
 1477,Tiger Deng,Virginia,292,,male,10
 1478,Alexander Peev,Washington,315,,male,
 1479,Roy Brauwerman,,313,,male,
@@ -4500,7 +4500,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 4590,Mihir Shetty,Massachusetts,,,,
 4591,Narasimhan Ramanujam,Pennsylvania,,,,
 4592,Noah Johnson,New York,,,,
-4593,Oliver Lu,Virginia,,,,
+4593,Oliver Lu,,,,,
 4594,Pranav Tella,North Carolina,,,,
 4595,Rhea Rudrapatna,Alaska,,,,
 4596,Risuning Xu,Maryland,,,,
