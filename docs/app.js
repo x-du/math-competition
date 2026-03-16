@@ -783,6 +783,9 @@
               mcpRatio = filteredMcp / totalMcp;
             }
             mcpTotal = totalMcp;
+          } else {
+            /* For records sort: still populate mcpTotal for state distribution chart */
+            mcpTotal = contestFilterActive ? filteredMcp : totalMcp;
           }
           counts.push({ student: student, recordsCount: count, mcpTotal: mcpTotal, mcpRatio: mcpRatio });
         }
