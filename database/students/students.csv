@@ -183,7 +183,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 207,Annie Huaiyu Wang,Washington,90,,female,
 209,Hongming Allan Zhao,New Jersey,42,,male,
 210,Eric Zhu,North Carolina,92|109,Eric P Zhu,male,11
-211,Chenghao Hu,California,93|112,,male,
+211,Chenghao Hu,California,93|112,,male,11
 212,Nathan Lu,Maryland,95|144,,male,11
 213,Darren Han,Texas,86,,male,11
 214,Eric Guo,New Jersey,32|73|317,,male,
@@ -849,7 +849,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 890,Hanson Bai,California,,,male,
 891,Andrew Brahms,New Jersey,,,male,
 892,Edward Cha,Massachusetts,,,male,
-893,Hugh Cheng,California,,,male,
+893,Hugh Cheng,California,,,male,13
 894,Kailua Cheng,California,,,female,12
 895,Perry Dai,"Ontario, Canada",,,male,
 896,Aron Fekete,New Hampshire,,,male,13
@@ -1464,7 +1464,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1536,Jay Wang,California,,,male,8
 1537,Benjamin Li,Massachusetts,,,male,
 1538,yizhang Guo,,,,male,
-1539,Eric Zhong,New York,480,,male,
+1539,Eric Zhong,New York,480,,male,12
 1540,David Luo,,,,male,
 1541,Tane Park,Maryland,466,,male,10
 1542,XIAOYUETENG,China,,,male,
@@ -6146,3 +6146,20 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 6236,Ayden Bi,,,,,
 6237,Michael Shi,,,,,
 6238,Aditya Hariharan,,,,,
+6239,Anoushka Agarwal,California,,,,
+6240,Muhammad Sheriff,California,,,,
+6241,Wynn Liang,California,,,,
+6242,Oscar Peterson,California,,,,
+6243,Mo Zhu,California,,,,
+6244,Evan Xiang,Washington,,,,
+6245,Srivibhav Mandapaka,California,,,,
+6246,Hanson Jiang,California,,,,
+6247,Akhil Vuyyuru,Nevada,,,,
+6248,Ethan Sun,California,,,,
+6249,Roger Huynh,California,,,,
+6250,Alvin Zhu,Nevada,,,,
+6251,Pavel Pomozov,California,,,,
+6252,Constantine Ermolenko,Washington,,,,
+6253,Dashiel Karish,California,,,,
+6254,Justin Zhang,Washington,,,,
+6255,Jaxon Choi,California,,,,
