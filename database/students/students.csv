@@ -5681,7 +5681,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 5774,Hyunhoo Bae,California,,,male,
 5775,Isato Otaki,California,,,male,
 5776,Rishika Nanda,California,,,female,
-5777,Ryan Li,California,,,male,
+5777,Ryan Li,California,,,male,10
 5778,Vyom Shukla,California,,,male,
 5779,Ishaani Molugu,Florida,,,female,
 5780,Baruni Soni,Illinois,,,female,
@@ -6164,3 +6164,4 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 6257,David Dong,North Carolina,,,male,
 6258,Bryan Li,California,,,male,
 6259,Alex Chen,Missouri,,,male,15
+6260,Ryan Li,Canada,,,male,
