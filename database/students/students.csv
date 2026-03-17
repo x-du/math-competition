@@ -3,7 +3,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 2,Bryan Sicheng Guo,California,2,Bryan Guo,male,12
 3,Oron Wang,New Hampshire,3|48|83|113,,male,11
 4,Liam Reddy,Utah,4|58,,male,11
-5,Tianyi Li,"Ontario, Canada",5,,male,10
+5,Tianyi Li,"Ontario, Canada",5,Li Tianyi,male,10
 6,Jefferson Tiger Zhou,Minnesota,6|191,Jefferson Zhou,male,10
 7,Benjamin Fu,Washington,7|89,,male,12
 8,Vincent Wang,Texas,8|86,,male,10
@@ -118,7 +118,8 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 125,Pavan Jayaraman,New Jersey,56|66,,male,14
 126,Weian Xie,Connecticut,57,,male,
 127,David Ji,New Jersey,22,,male,13
-128,Brian Zhang,North Carolina,34,,male,13
+128,Brian Zhang,North Carolina,34,,male,14
+129,Brian Zhang,Michigan,,,male,13
 132,Jason Mao,New Jersey,1|32|73|264,,male,13
 134,Maximus Lu,New York,61,,male,15
 135,Eric Shen,California,9,,male,15
@@ -1530,7 +1531,6 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1606,chen zizhuang,China,,Zizhuang Chen,male,
 1607,PengYu Wu,,,,male,
 1608,Weihong Sun,,,,male,
-1609,Li Tianyi,China,,,male,
 1610,Jerry Zhang,Texas,,,male,
 1611,Ziyang Wu,,,,male,
 1612,Daniel Yu,Maryland,,,male,11
