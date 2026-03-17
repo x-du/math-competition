@@ -1,0 +1,11 @@
+student_id,student_name,year,rank,score,p1,p2,p3,p4,p5,mcp_rank
+1,Alexander Wang,2024,1,42,6,7,9,9,11,1
+117,Advaith Avadhanam,2024,2,33,6,7,9,0,11,2.5
+80,Lerchen Zhong,2024,2,33,6,7,9,0,11,2.5
+4,Liam Reddy,2024,4,31,6,7,9,9,0,4
+89,Jordan Lefkowitz,2024,5,25,6,7,9,0,3,5
+53,Xiaohan Zhang,2024,6,24,6,7,9,0,2,7
+98,Elliott Liu,2024,6,24,6,7,0,0,11,7
+110,Wilbert Chu,2024,6,24,6,7,9,2,0,7
+59,Henry Jiang,2024,9,22,6,7,9,0,0,9.5
+3,Oron Wang,2024,9,22,6,7,9,0,0,9.5

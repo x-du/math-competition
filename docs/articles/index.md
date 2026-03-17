@@ -9,4 +9,5 @@ description: "Articles about the math competition database: how to use it, integ
 - [Integrity in US Math Competitions](IntegrityInMathContest.md)
 - [Using data to identify integrity issues](using-data-to-identify-integrity-issues.md)
 - [How to Compare Math Competitions](how-to-compare-competitions.md)
+- [Math Competition Calendar](calendar.md)
 - [MCP — Math Competition Points](mcp.md)
