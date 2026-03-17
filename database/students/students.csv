@@ -1082,7 +1082,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1142,Yuji Wang,New Jersey,,,male,
 1143,Stephen Xia,California,,,male,
 1144,Gene Yang,Washington,,,male,15
-1145,Ming Yang,Arizona,,,male,
+1145,Ming Yang,Arizona,,,male,15
 1146,Matthew Zhao,New York,,,male,15
 1147,Jason Zhong,Connecticut,,,male,
 1148,Aaron Zhou,Texas,,,male,
@@ -1134,7 +1134,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1195,Christopher Wu,Texas,,,male,
 1196,Daniel Xia,New Jersey,,,male,16
 1197,Ai Xiao,New Hampshire,,,male,
-1198,Owen Yang,Arizona,,,male,
+1198,Owen Yang,Arizona,,,male,16
 1199,Victor Yin,California,,,male,
 1200,Alex Wang,Maryland,,,male,12
 1201,David Zhang,Utah,212,,male,13
@@ -2306,7 +2306,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 2396,Chris Cheng,Massachusetts,,,male,
 2397,Erica Xie,Virginia,,,female,
 2398,David He,Maryland,,,male,
-2399,Zifan Zhao,Virginia,,,male,
+2399,Zifan Zhao,Virginia,,,male,11
 2400,Ian Liao,,,,male,
 2401,Abhishek Chand,Florida,,,male,
 2402,Sanjana Ramesh,Michigan,,,female,
@@ -2632,7 +2632,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 2724,Thomas Zheleznyak,Virginia,,,male,
 2725,Patrick Liu,California,,,male,
 2726,Tianzhuo Lu,California,,,male,
-2727,Kevin Zhang,New Jersey,,,male,
+2727,Kevin Zhang,New Jersey,,,male,13
 2728,Sanjay Ravishankar,California,,,male,
 2729,Tejas Ravi,California,,,male,
 2730,Yujun Wang,California,,,male,
@@ -6165,3 +6165,6 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 6258,Bryan Li,California,,,male,
 6259,Alex Chen,Missouri,,,male,15
 6260,Ryan Li,Canada,,,male,
+6261,Daniel Zhao,,,,male,
+6262,Yanming Huang,China,,,male,
+6263,Daniel Wang,Texas,,,male,
