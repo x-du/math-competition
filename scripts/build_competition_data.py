@@ -304,7 +304,7 @@ def main() -> None:
 
     OUTPUT_JSON.parent.mkdir(parents=True, exist_ok=True)
     with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
-        json.dump(output, f, separators=(",", ":"), ensure_ascii=False)
+        json.dump(output, f, separators=(",", ":"), ensure_ascii=False, sort_keys=True)
 
     size_kb = OUTPUT_JSON.stat().st_size / 1024
     print(f"Wrote {len(impact_rows)} impact rows, {len(attraction_filtered)} contests to {OUTPUT_JSON} ({size_kb:.1f} KB)")
