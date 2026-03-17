@@ -26,7 +26,7 @@ CONTESTS_CSV = REPO_ROOT / "database" / "contests" / "contests.csv"
 
 CONTESTS_WITH_CSV_STATE = {"amo", "jmo", "mathcounts-national-rank"}
 MIN_STUDENTS = 1  # Include all contests (show all competitions)
-EXCLUDED_CONTESTS = {"imo", "egmo", "rmm"}  # International olympiads, exclude from CII list
+EXCLUDED_CONTESTS = {"imo", "egmo", "rmm", "hmic"}  # International olympiads + HMIC, exclude from CII list
 
 # Map subject tests to their main competition (for grouping)
 SLUG_TO_GROUP = {
