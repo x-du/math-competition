@@ -1425,7 +1425,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1492,Nicole Shen,California,328,,female,
 1493,Daniel Yang,"Ontario, Canada",329,,male,
 1494,Jeffrey Fang,Oregon,64,,male,
-1495,Jefferey,,330,,male,
+1495,Jefferey,Arizona,330,,male,
 1496,Cecilia Sun,Washington,164,,female,14
 1497,Brandon Lou,New York,49,,male,15
 1498,Joy An,Washington,331,,female,15
@@ -6168,3 +6168,4 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 6261,Daniel Zhao,,,,male,
 6262,Yanming Huang,China,,,male,
 6263,Daniel Wang,Texas,,,male,
+6264,Eddie Wei,California,,,male,

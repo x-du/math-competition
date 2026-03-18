@@ -1,64 +1,64 @@
-student_id,student_name,year,rank,score,mcp_rank
-117,Advaith Avadhanam,2023,1,44.08,1
-143,Ethan Liu,2023,2,37.73,2
-135,Eric Shen,2023,3,36.59,3.5
-140,Isabella Zhu,2023,3,36.59,3.5
-141,Amol Rama,2023,5,31.38,5
-170,Krishna Pothapragada,2023,6,30.32,6.5
-118,Linus Tang,2023,6,30.32,6.5
-132,Jason Mao,2023,8,30.24,8.5
-154,Boris Tsvetanov Gachevski,2023,8,30.24,8.5
-155,Derek Liu,2023,10,29.17,14.5
-2,Bryan Sicheng Guo,2023,10,29.17,14.5
-79,Surya Dinesh,2023,10,29.17,14.5
-136,Jeffrey Chen,2023,10,29.17,14.5
-171,Evan Chang,2023,10,29.17,14.5
-139,Skyler Le,2023,10,29.17,14.5
-27,Bolei Wang,2023,10,29.17,14.5
-138,Alex Zhao,2023,10,29.17,14.5
-398,Neal Yan,2023,10,29.17,14.5
-172,Sumedh Vangara,2023,10,29.17,14.5
-52,Aiden Yuchan Jung,2023,20,26.16,20
-151,Aaron Guo,2023,21,26.15,21
-190,Edward Yu,2023,22,26.14,22
-400,Kelin Zhu,2023,23,25.07,23
-440,Joseph Sukmin Chun,2023,24,25.01,25
-153,Ray Tang,2023,24,25.01,25
-959,Bryan Jiaju Chen,2023,24,25.01,25
-145,Alex Li,2023,27,24.96,27
-59,Henry Jiang,2023,28,23.95,29
-91,Andrew Lin,2023,28,23.95,29
-441,David Wei,2023,28,23.95,29
-442,Paul Gutkovich,2023,31,23.89,35
-443,Aman Jain,2023,31,23.89,35
-110,Wilbert Chu,2023,31,23.89,35
-1,Alexander Wang,2023,31,23.89,35
-103,Allen Wang,2023,31,23.89,35
-353,Shiqiao Zhang,2023,31,23.89,35
-169,Nilay Mishra,2023,31,23.89,35
-161,Caleb Dastrup,2023,31,23.89,35
-142,Alan Bu,2023,31,23.89,35
-98,Elliott Liu,2023,40,22.82,51.5
-116,Justin Zhang,2023,40,22.82,51.5
-444,Michelle Liang,2023,40,22.82,51.5
-147,Zachary Jacob Perry,2023,40,22.82,51.5
-50,Yunzhe Bai,2023,40,22.82,51.5
-213,Darren Han,2023,40,22.82,51.5
-57,Christopher Qiu,2023,40,22.82,51.5
-445,Jeffrey Xu,2023,40,22.82,51.5
-446,Eddie Qiao,2023,40,22.82,51.5
-122,David Jiahui Zhang,2023,40,22.82,51.5
-81,Angela Liu,2023,40,22.82,51.5
-447,Taiga Nishida,2023,40,22.82,51.5
-448,Raina Wu,2023,40,22.82,51.5
-125,Pavan Jayaraman,2023,40,22.82,51.5
-156,Edward Xiong,2023,40,22.82,51.5
-449,William Chenfeng Dai,2023,40,22.82,51.5
-450,Minseok Eli Park,2023,40,22.82,51.5
-148,Alan Vladimiroff,2023,40,22.82,51.5
-158,Vincent Trang,2023,40,22.82,51.5
-174,Dylan Yu,2023,40,22.82,51.5
-62,Evan Fan,2023,40,22.82,51.5
-73,Andrew Carratu,2023,40,22.82,51.5
-167,Sebastian Attlan,2023,40,22.82,51.5
-149,Suyash Pandit,2023,40,22.82,51.5
+student_id,student_name,team,year,rank,score,mcp_rank
+117,Advaith Avadhanam,Random Math Team A,2023,1,44.08,1
+143,Ethan Liu,Texas Momentum A,2023,2,37.73,2
+135,Eric Shen,AlphaStar Academy AIR,2023,3,36.59,3.5
+140,Isabella Zhu,Thomas Jefferson High School for Science and Technology A,2023,3,36.59,3.5
+141,Amol Rama,Random Math Team A,2023,5,31.38,5
+170,Krishna Pothapragada,No Coast Best Coast,2023,6,30.32,6.5
+118,Linus Tang,AlphaStar Academy AIR,2023,6,30.32,6.5
+132,Jason Mao,LV Fire,2023,8,30.24,8.5
+154,Boris Tsvetanov Gachevski,Mix BG,2023,8,30.24,8.5
+155,Derek Liu,San Diego A1,2023,10,29.17,14.5
+2,Bryan Sicheng Guo,San Diego A1,2023,10,29.17,14.5
+79,Surya Dinesh,St. Mark's Texas A,2023,10,29.17,14.5
+136,Jeffrey Chen,No Coast Best Coast,2023,10,29.17,14.5
+171,Evan Chang,LV Fire,2023,10,29.17,14.5
+139,Skyler Le,LV Fire,2023,10,29.17,14.5
+27,Bolei Wang,PEA Red,2023,10,29.17,14.5
+138,Alex Zhao,Washington Gold 1,2023,10,29.17,14.5
+398,Neal Yan,AlphaStar Academy EARTH,2023,10,29.17,14.5
+172,Sumedh Vangara,Poolesville Magnet High School Math Team A,2023,10,29.17,14.5
+52,Aiden Yuchan Jung,KGSEA Math Circle B,2023,20,26.16,20
+151,Aaron Guo,Texas Momentum A,2023,21,26.15,21
+190,Edward Yu,Washington Gold 1,2023,22,26.14,22
+400,Kelin Zhu,Montgomery County Team 1,2023,23,25.07,23
+440,Joseph Sukmin Chun,KGSEA Korea A,2023,24,25.01,25
+153,Ray Tang,Texas Momentum A,2023,24,25.01,25
+959,Bryan Jiaju Chen,PEA Lion,2023,24,25.01,25
+145,Alex Li,Florida Alligators,2023,27,24.96,27
+59,Henry Jiang,Motown All-Stars,2023,28,23.95,29
+91,Andrew Lin,LV Fire,2023,28,23.95,29
+441,David Wei,Thomas Jefferson High School for Science and Technology A,2023,28,23.95,29
+442,Paul Gutkovich,Tin Man,2023,31,23.89,35
+443,Aman Jain,San Diego A1,2023,31,23.89,35
+110,Wilbert Chu,No Coast Best Coast,2023,31,23.89,35
+1,Alexander Wang,LV Fire,2023,31,23.89,35
+103,Allen Wang,LV Fire,2023,31,23.89,35
+353,Shiqiao Zhang,PEA Red,2023,31,23.89,35
+169,Nilay Mishra,Random Math Team A,2023,31,23.89,35
+161,Caleb Dastrup,Poolesville Magnet High School Math Team A,2023,31,23.89,35
+142,Alan Bu,PEA Lion,2023,31,23.89,35
+98,Elliott Liu,San Diego A1,2023,40,22.82,51.5
+116,Justin Zhang,San Diego A1,2023,40,22.82,51.5
+444,Michelle Liang,San Diego A1,2023,40,22.82,51.5
+147,Zachary Jacob Perry,Lexington Alpha,2023,40,22.82,51.5
+50,Yunzhe Bai,Lexington Beta,2023,40,22.82,51.5
+213,Darren Han,Texas Momentum B,2023,40,22.82,51.5
+57,Christopher Qiu,LV Fire,2023,40,22.82,51.5
+445,Jeffrey Xu,LV Ice,2023,40,22.82,51.5
+446,Eddie Qiao,San Diego A2,2023,40,22.82,51.5
+122,David Jiahui Zhang,AlphaStar Academy AIR,2023,40,22.82,51.5
+81,Angela Liu,AlphaStar Academy AIR,2023,40,22.82,51.5
+447,Taiga Nishida,AlphaStar Academy AIR,2023,40,22.82,51.5
+448,Raina Wu,Washington Gold 1,2023,40,22.82,51.5
+125,Pavan Jayaraman,Pirates A,2023,40,22.82,51.5
+156,Edward Xiong,Pirates A,2023,40,22.82,51.5
+449,William Chenfeng Dai,Ontario Math Circles,2023,40,22.82,51.5
+450,Minseok Eli Park,NC School of Science & Math - Team alpha,2023,40,22.82,51.5
+148,Alan Vladimiroff,Thomas Jefferson High School for Science and Technology A,2023,40,22.82,51.5
+158,Vincent Trang,Thomas Jefferson High School for Science and Technology A,2023,40,22.82,51.5
+174,Dylan Yu,Texas Momentum A,2023,40,22.82,51.5
+62,Evan Fan,PEA Lion,2023,40,22.82,51.5
+73,Andrew Carratu,PEA Lion,2023,40,22.82,51.5
+167,Sebastian Attlan,No Coast Best Coast 2,2023,40,22.82,51.5
+149,Suyash Pandit,Pentagon Hexagon Oregon A,2023,40,22.82,51.5

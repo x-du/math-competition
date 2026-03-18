@@ -1,52 +1,52 @@
-student_id,student_name,year,rank,score,mcp_rank
-47,Shaohuan Zhang,2025,1,38.08,1
-351,Tairan Ma,2025,2,33.86,2.5
-21,David Fox,2025,2,33.86,2.5
-54,HyunWoo Choi,2025,,33.74,
-81,Angela Liu,2025,4,32.80,4.5
-25,Rohan Garg,2025,4,32.80,4.5
-59,Henry Jiang,2025,6,32.73,6
-32,Benjamin Jiang,2025,7,32.67,7
-1,Alexander Wang,2025,8,30.59,9
-64,Michael Pok Hon Chen,2025,8,30.59,9
-80,Lerchen Zhong,2025,8,30.59,9
-86,Vikram Sarkar,2025,11,28.39,11.5
-20,Ashvin Sinha,2025,11,28.39,11.5
-29,Patrick Du,2025,13,27.49,13
-4,Liam Reddy,2025,14,26.58,14
-326,Sicheng Zhou,2025,15,26.37,16
-352,Eric Ding,2025,15,26.37,16
-77,Shunyao Yan,2025,15,26.37,16
-354,Suhas Kondapalli,2025,18,25.31,21.5
-353,Shiqiao Zhang,2025,18,25.31,21.5
-317,Michael Aram,2025,18,25.31,21.5
-53,Xiaohan Zhang,2025,18,25.31,21.5
-355,Xinrui Zhou,2025,18,25.31,21.5
-356,LU CHANG,2025,18,25.31,21.5
-357,Ryan Bansal,2025,18,25.31,21.5
-358,Franklin Zhou,2025,18,25.31,21.5
-12,Alan Cheng,2025,26,25.24,32
-343,Jason Lee,2025,26,25.24,32
-74,Zeyi Zou,2025,26,25.24,32
-38,Andy Lu,2025,26,25.24,32
-31,Lewis Lau,2025,26,25.24,32
-27,Bolei Wang,2025,26,25.24,32
-50,Yunzhe Bai,2025,26,25.24,32
-35,William Hua,2025,26,25.24,32
-65,Selena Ge,2025,26,25.24,32
-19,Vihaan Gupta,2025,26,25.24,32
-359,Kai Leon Yamashita,2025,26,25.24,32
-638,Owen J Zhang,2025,26,25.24,32
-360,Rui Ouyang,2025,26,25.24,32
-57,Christopher Qiu,2025,39,25.17,42.5
-62,Evan Fan,2025,39,25.17,42.5
-2,Bryan Sicheng Guo,2025,39,25.17,42.5
-361,Kai Yi,2025,39,25.17,42.5
-362,Rithik Gumpu,2025,39,25.17,42.5
-363,Michael Luo,2025,39,25.17,42.5
-7,Benjamin Fu,2025,39,25.17,42.5
-364,Ekam Kaur,2025,39,25.17,42.5
-365,Harish Loghashankar,2025,47,22.20,47
-97,Eric Wang,2025,48,22.19,48.5
-55,Zongshu Wu,2025,48,22.19,48.5
-366,Ethan Kun Song,2025,50,22.14,50
+student_id,student_name,team,year,rank,score,mcp_rank
+47,Shaohuan Zhang,Motown All-Stars,2025,1,38.08,1
+351,Tairan Ma,Pi Pioneer Group 001,2025,2,33.86,2.5
+21,David Fox,AlphaStar Academy AIR,2025,2,33.86,2.5
+54,HyunWoo Choi,Essential Academy1,2025,,33.74,
+81,Angela Liu,AlphaStar Academy AIR,2025,4,32.80,4.5
+25,Rohan Garg,AlphaStar Academy AIR,2025,4,32.80,4.5
+59,Henry Jiang,Motown All-Stars,2025,6,32.73,6
+32,Benjamin Jiang,Florida Alligators,2025,7,32.67,7
+1,Alexander Wang,Lehigh Valley Fire,2025,8,30.59,9
+64,Michael Pok Hon Chen,ORIGINAL,2025,8,30.59,9
+80,Lerchen Zhong,Texas Momentum A,2025,8,30.59,9
+86,Vikram Sarkar,Connecticut Cyborgs,2025,11,28.39,11.5
+20,Ashvin Sinha,Florida Alligators,2025,11,28.39,11.5
+29,Patrick Du,Thomas Jefferson High School for Science and Technology A,2025,13,27.49,13
+4,Liam Reddy,Utah Arches,2025,14,26.58,14
+326,Sicheng Zhou,PRISMS Falcons,2025,15,26.37,16
+352,Eric Ding,MN gold,2025,15,26.37,16
+77,Shunyao Yan,Thomas Jefferson High School for Science and Technology A,2025,15,26.37,16
+354,Suhas Kondapalli,WWP A,2025,18,25.31,21.5
+353,Shiqiao Zhang,PEA Chestnuts,2025,18,25.31,21.5
+317,Michael Aram,Upstate New York Math Team,2025,18,25.31,21.5
+53,Xiaohan Zhang,QingLong,2025,18,25.31,21.5
+355,Xinrui Zhou,ORIGINAL,2025,18,25.31,21.5
+356,LU CHANG,ORIGINAL,2025,18,25.31,21.5
+357,Ryan Bansal,AlphaStar Academy FIRE,2025,18,25.31,21.5
+358,Franklin Zhou,AlphaStar Academy FIRE,2025,18,25.31,21.5
+12,Alan Cheng,dinglebinglers,2025,26,25.24,32
+343,Jason Lee,dinglebinglers,2025,26,25.24,32
+74,Zeyi Zou,Think Team A,2025,26,25.24,32
+38,Andy Lu,Random Math Team Blue,2025,26,25.24,32
+31,Lewis Lau,Cardigans,2025,26,25.24,32
+27,Bolei Wang,PEA Chestnuts,2025,26,25.24,32
+50,Yunzhe Bai,Lexington Alpha,2025,26,25.24,32
+35,William Hua,Lexington Alpha,2025,26,25.24,32
+65,Selena Ge,Lexington Alpha,2025,26,25.24,32
+19,Vihaan Gupta,Harker Omega,2025,26,25.24,32
+359,Kai Leon Yamashita,Pentagon Hexagon Oregon B,2025,26,25.24,32
+638,Owen J Zhang,Washington Gold 1,2025,26,25.24,32
+360,Rui Ouyang,Ontario Math Circles,2025,26,25.24,32
+57,Christopher Qiu,Lehigh Valley Fire,2025,39,25.17,42.5
+62,Evan Fan,PEA Chestnuts,2025,39,25.17,42.5
+2,Bryan Sicheng Guo,San Diego A1,2025,39,25.17,42.5
+361,Kai Yi,San Diego A1,2025,39,25.17,42.5
+362,Rithik Gumpu,Ohio ARML A,2025,39,25.17,42.5
+363,Michael Luo,MN gold,2025,39,25.17,42.5
+7,Benjamin Fu,Washington Gold 1,2025,39,25.17,42.5
+364,Ekam Kaur,Texas Momentum B,2025,39,25.17,42.5
+365,Harish Loghashankar,Random Math Team Blue,2025,47,22.20,47
+97,Eric Wang,Phillips Academy 1778,2025,48,22.19,48.5
+55,Zongshu Wu,QingLong,2025,48,22.19,48.5
+366,Ethan Kun Song,San Diego A1,2025,50,22.14,50

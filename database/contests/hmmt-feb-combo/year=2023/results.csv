@@ -1,52 +1,52 @@
-student_id,student_name,year,rank,score,mcp_rank
-134,Maximus Lu,2023,1,45.49,1
-93,Jessica Wan,2023,2,40.21,2
-138,Alex Zhao,2023,3,34.67,3.5
-156,Edward Xiong,2023,3,34.67,3.5
-411,Daniel Potievsky,2023,5,33.59,9.5
-144,Huaye Lin,2023,5,33.59,9.5
-150,Kevin Joshua Wu,2023,5,33.59,9.5
-59,Henry Jiang,2023,5,33.59,9.5
-136,Jeffrey Chen,2023,5,33.59,9.5
-1,Alexander Wang,2023,5,33.59,9.5
-132,Jason Mao,2023,5,33.59,9.5
-92,Marvin Mao,2023,5,33.59,9.5
-145,Alex Li,2023,5,33.59,9.5
-149,Suyash Pandit,2023,5,33.59,9.5
-158,Vincent Trang,2023,15,31.68,15
-451,Hankai Zhang,2023,16,31.53,16
-52,Aiden Yuchan Jung,2023,17,31.47,17
-57,Christopher Qiu,2023,18,29.54,19.5
-452,Espen Slettnes,2023,18,29.54,19.5
-163,David Dong,2023,18,29.54,19.5
-125,Pavan Jayaraman,2023,18,29.54,19.5
-453,Shreyan Avi Paliwal,2023,22,28.31,22
-162,Alan Lee,2023,23,28.24,26
-103,Allen Wang,2023,23,28.24,26
-139,Skyler Le,2023,23,28.24,26
-454,Kavan Doctor,2023,23,28.24,26
-117,Advaith Avadhanam,2023,23,28.24,26
-46,Ray Zhao,2023,23,28.24,26
-455,Ryan Chin,2023,23,28.24,26
-456,Joseph Othman,2023,30,27.17,37
-410,Jaemin Kim,2023,30,27.17,37
-457,Ashley Zhu,2023,30,27.17,37
-98,Elliott Liu,2023,30,27.17,37
-458,Aidan Duncan,2023,30,27.17,37
-160,Vincent Zhang,2023,30,27.17,37
-135,Eric Shen,2023,30,27.17,37
-81,Angela Liu,2023,30,27.17,37
-459,Zhara Elenska,2023,30,27.17,37
-460,Peisong Li,2023,30,27.17,37
-148,Alan Vladimiroff,2023,30,27.17,37
-461,Anish Mudide,2023,30,27.17,37
-205,Mingyue Yang,2023,30,27.17,37
-121,Srinivas Arun,2023,30,27.17,37
-462,Jackson Dryg,2023,30,27.17,37
-463,Robin Said Sharif,2023,45,26.40,45
-464,Hyunseok,2023,46,25.32,46
-465,Chun Yeung Wong,2023,47,24.26,47.5
-198,Eddie Wei,2023,47,24.26,47.5
-153,Ray Tang,2023,49,24.20,49
-122,David Jiahui Zhang,2023,50,24.19,50.5
-142,Alan Bu,2023,50,24.19,50.5
+student_id,student_name,team,year,rank,score,mcp_rank
+134,Maximus Lu,Yu's Alligator,2023,1,45.49,1
+93,Jessica Wan,Florida Alligators,2023,2,40.21,2
+138,Alex Zhao,Washington Gold 1,2023,3,34.67,3.5
+156,Edward Xiong,Pirates A,2023,3,34.67,3.5
+411,Daniel Potievsky,Scarecrow,2023,5,33.59,9.5
+144,Huaye Lin,Lexington Alpha,2023,5,33.59,9.5
+150,Kevin Joshua Wu,Montgomery County Team 1,2023,5,33.59,9.5
+59,Henry Jiang,Motown All-Stars,2023,5,33.59,9.5
+136,Jeffrey Chen,No Coast Best Coast,2023,5,33.59,9.5
+1,Alexander Wang,LV Fire,2023,5,33.59,9.5
+132,Jason Mao,LV Fire,2023,5,33.59,9.5
+92,Marvin Mao,Bergen County Academies Team 1,2023,5,33.59,9.5
+145,Alex Li,Florida Alligators,2023,5,33.59,9.5
+149,Suyash Pandit,Pentagon Hexagon Oregon A,2023,5,33.59,9.5
+158,Vincent Trang,Thomas Jefferson High School for Science and Technology A,2023,15,31.68,15
+451,Hankai Zhang,Motown All-Stars,2023,16,31.53,16
+52,Aiden Yuchan Jung,KGSEA Math Circle B,2023,17,31.47,17
+57,Christopher Qiu,LV Fire,2023,18,29.54,19.5
+452,Espen Slettnes,AlphaStar Academy AIR,2023,18,29.54,19.5
+163,David Dong,Washington Gold 1,2023,18,29.54,19.5
+125,Pavan Jayaraman,Pirates A,2023,18,29.54,19.5
+453,Shreyan Avi Paliwal,Pentagon Hexagon Oregon A,2023,22,28.31,22
+162,Alan Lee,Gunn Black,2023,23,28.24,26
+103,Allen Wang,LV Fire,2023,23,28.24,26
+139,Skyler Le,LV Fire,2023,23,28.24,26
+454,Kavan Doctor,Random Math Team A,2023,23,28.24,26
+117,Advaith Avadhanam,Random Math Team A,2023,23,28.24,26
+46,Ray Zhao,Texas Momentum A,2023,23,28.24,26
+455,Ryan Chin,Texas Momentum A,2023,23,28.24,26
+456,Joseph Othman,Tin Man,2023,30,27.17,37
+410,Jaemin Kim,Tin Man,2023,30,27.17,37
+457,Ashley Zhu,Scarecrow,2023,30,27.17,37
+98,Elliott Liu,San Diego A1,2023,30,27.17,37
+458,Aidan Duncan,Lexington Alpha,2023,30,27.17,37
+160,Vincent Zhang,LV Fire,2023,30,27.17,37
+135,Eric Shen,AlphaStar Academy AIR,2023,30,27.17,37
+81,Angela Liu,AlphaStar Academy AIR,2023,30,27.17,37
+459,Zhara Elenska,Mix BG,2023,30,27.17,37
+460,Peisong Li,Ontario Math Circles,2023,30,27.17,37
+148,Alan Vladimiroff,Thomas Jefferson High School for Science and Technology A,2023,30,27.17,37
+461,Anish Mudide,PEA Lion,2023,30,27.17,37
+205,Mingyue Yang,Washington Gold 3,2023,30,27.17,37
+121,Srinivas Arun,Colorado Mathletes,2023,30,27.17,37
+462,Jackson Dryg,Colorado Mathletes,2023,30,27.17,37
+463,Robin Said Sharif,San Diego A2,2023,45,26.40,45
+464,Hyunseok,KGSEA Math Circle B,2023,46,25.32,46
+465,Chun Yeung Wong,Scarecrow,2023,47,24.26,47.5
+198,Eddie Wei,Blackone,2023,47,24.26,47.5
+153,Ray Tang,Texas Momentum A,2023,49,24.20,49
+122,David Jiahui Zhang,AlphaStar Academy AIR,2023,50,24.19,50.5
+142,Alan Bu,PEA Lion,2023,50,24.19,50.5

@@ -1,55 +1,55 @@
-student_id,student_name,year,rank,score,mcp_rank
-52,Aiden Yuchan Jung,2025,,39.23,
-57,Christopher Qiu,2025,1,39.23,1
-1,Alexander Wang,2025,2,37.08,2.5
-2,Bryan Sicheng Guo,2025,2,37.08,2.5
-54,HyunWoo Choi,2025,,37.08,
-56,Channing Yang,2025,4,34.03,4
-67,Andrew Shen,2025,5,32.86,5
-68,Xilong Lin,2025,6,30.67,6
-53,Xiaohan Zhang,2025,7,29.64,7
-60,Haotian Zhou,2025,8,29.59,10.5
-61,Kailin Yang,2025,8,29.59,10.5
-55,Zongshu Wu,2025,8,29.59,10.5
-34,Jiahe Liu,2025,8,29.59,10.5
-10,Ruilin Wang,2025,8,29.59,10.5
-338,Katrina Liu,2025,8,29.59,10.5
-339,Ruoqing Yang,2025,14,27.61,14
-83,Skyler Mao,2025,15,26.49,15
-340,Vincent Loh,2025,16,26.39,16
-341,Alex Zhan,2025,17,25.37,17
-307,Steven Lou,2025,18,24.51,18
-132,Jason Mao,2025,19,24.24,21
-82,Edward Li,2025,19,24.24,21
-342,Christopher Kirilov Sakaliyski,2025,19,24.24,21
-272,Karn Chutinan,2025,19,24.24,21
-46,Ray Zhao,2025,19,24.24,21
-343,Jason Lee,2025,24,23.17,38
-344,Brandon Cai,2025,24,23.17,38
-345,Soham Dam,2025,24,23.17,38
-262,Aryan Raj,2025,24,23.17,38
-97,Eric Wang,2025,24,23.17,38
-62,Evan Fan,2025,24,23.17,38
-73,Andrew Carratu,2025,24,23.17,38
-35,William Hua,2025,24,23.17,38
-308,Muztaba Syed,2025,24,23.17,38
-346,RUIQI SHI,2025,24,23.17,38
-884,Shihan,2025,24,23.17,38
-78,William Zhao,2025,24,23.17,38
-22,Ian Rui,2025,24,23.17,38
-348,Kyle Liao,2025,24,23.17,38
-349,Tianxin Liu,2025,24,23.17,38
-19,Vihaan Gupta,2025,24,23.17,38
-28,Rohan Nayak Mallick,2025,24,23.17,38
-90,Rohan Das,2025,24,23.17,38
-9,Jonathan Du,2025,24,23.17,38
-69,Connor Leong,2025,24,23.17,38
-79,Surya Dinesh,2025,24,23.17,38
-14,Nathan Liu,2025,24,23.17,38
-71,Samuel J. Kretzschmar,2025,24,23.17,38
-70,Alexander Gu,2025,24,23.17,38
-279,Sophia Hou,2025,24,23.17,38
-29,Patrick Du,2025,24,23.17,38
-299,Xuzhou Ren,2025,24,23.17,38
-20,Ashvin Sinha,2025,24,23.17,38
-244,Jacob Ronan Khohayting,2025,24,23.17,38
+student_id,student_name,team,year,rank,score,mcp_rank
+52,Aiden Yuchan Jung,Essential Academy1,2025,,39.23,
+57,Christopher Qiu,Lehigh Valley Fire,2025,1,39.23,1
+1,Alexander Wang,Lehigh Valley Fire,2025,2,37.08,2.5
+2,Bryan Sicheng Guo,San Diego A1,2025,2,37.08,2.5
+54,HyunWoo Choi,Essential Academy1,2025,,37.08,
+56,Channing Yang,Texas Momentum A,2025,4,34.03,4
+67,Andrew Shen,Texas Momentum A,2025,5,32.86,5
+68,Xilong Lin,Southern California Areteem,2025,6,30.67,6
+53,Xiaohan Zhang,QingLong,2025,7,29.64,7
+60,Haotian Zhou,BaiHu,2025,8,29.59,10.5
+61,Kailin Yang,QingLong,2025,8,29.59,10.5
+55,Zongshu Wu,QingLong,2025,8,29.59,10.5
+34,Jiahe Liu,Ohio ARML A,2025,8,29.59,10.5
+10,Ruilin Wang,Thomas Jefferson High School for Science and Technology A,2025,8,29.59,10.5
+338,Katrina Liu,San Diego A2,2025,8,29.59,10.5
+339,Ruoqing Yang,BaiHu,2025,14,27.61,14
+83,Skyler Mao,Random Math Team Blue,2025,15,26.49,15
+340,Vincent Loh,PATiger2022,2025,16,26.39,16
+341,Alex Zhan,Think Team A,2025,17,25.37,17
+307,Steven Lou,Tin Man,2025,18,24.51,18
+132,Jason Mao,Lehigh Valley Fire,2025,19,24.24,21
+82,Edward Li,IowaCity,2025,19,24.24,21
+342,Christopher Kirilov Sakaliyski,No Coast Best Coast,2025,19,24.24,21
+272,Karn Chutinan,Mass ARML Stars,2025,19,24.24,21
+46,Ray Zhao,Texas Momentum A,2025,19,24.24,21
+343,Jason Lee,dinglebinglers,2025,24,23.17,38
+344,Brandon Cai,Lehigh Valley Fire,2025,24,23.17,38
+345,Soham Dam,Nittany Lions,2025,24,23.17,38
+262,Aryan Raj,BBMC-Math Delta,2025,24,23.17,38
+97,Eric Wang,Phillips Academy 1778,2025,24,23.17,38
+62,Evan Fan,PEA Chestnuts,2025,24,23.17,38
+73,Andrew Carratu,PEA Chestnuts,2025,24,23.17,38
+35,William Hua,Lexington Alpha,2025,24,23.17,38
+308,Muztaba Syed,Lexington Beta,2025,24,23.17,38
+346,RUIQI SHI,Spirit of Math School Team A,2025,24,23.17,38
+884,Shihan,nGnu Unscrambled,2025,24,23.17,38
+78,William Zhao,nGnu Unscrambled,2025,24,23.17,38
+22,Ian Rui,121WA,2025,24,23.17,38
+348,Kyle Liao,121WA,2025,24,23.17,38
+349,Tianxin Liu,QingLong,2025,24,23.17,38
+19,Vihaan Gupta,Harker Omega,2025,24,23.17,38
+28,Rohan Nayak Mallick,San Diego A1,2025,24,23.17,38
+90,Rohan Das,AlphaStar Academy AIR,2025,24,23.17,38
+9,Jonathan Du,AlphaStar Academy AIR,2025,24,23.17,38
+69,Connor Leong,AlphaStar Academy FIRE,2025,24,23.17,38
+79,Surya Dinesh,St. Mark's School of Texas Team M,2025,24,23.17,38
+14,Nathan Liu,St. Mark's School of Texas Team M,2025,24,23.17,38
+71,Samuel J. Kretzschmar,MN gold,2025,24,23.17,38
+70,Alexander Gu,Thomas Jefferson High School for Science and Technology A,2025,24,23.17,38
+279,Sophia Hou,Thomas Jefferson High School for Science and Technology A,2025,24,23.17,38
+29,Patrick Du,Thomas Jefferson High School for Science and Technology A,2025,24,23.17,38
+299,Xuzhou Ren,Florida Alligators,2025,24,23.17,38
+20,Ashvin Sinha,Florida Alligators,2025,24,23.17,38
+244,Jacob Ronan Khohayting,Florida Beaches,2025,24,23.17,38

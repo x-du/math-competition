@@ -1,74 +1,74 @@
-student_id,student_name,year,rank,score,mcp_rank
-173,Luke Robitaille,2022,1,48.53,1
-174,Dylan Yu,2022,2,37.74,2
-138,Alex Zhao,2022,3,28.17,4
-93,Jessica Wan,2022,3,28.17,4
-194,Linden Marcus Lee,2022,3,28.17,4
-155,Derek Liu,2022,6,26.14,6
-175,Rishabh Das,2022,7,25.21,7
-177,Reagan Choi,2022,8,24.12,8
-199,Jerry Liu,2022,9,24.07,9
-90,Rohan Das,2022,10,23.95,10
-198,Eddie Wei,2022,11,21.92,11
-452,Espen Slettnes,2022,12,20.99,12
-1293,Olivia Xu,2022,13,20.93,13
-1196,Daniel Xia,2022,14,20.82,43.5
-139,Skyler Le,2022,14,20.82,43.5
-103,Allen Wang,2022,14,20.82,43.5
-1,Alexander Wang,2022,14,20.82,43.5
-62,Evan Fan,2022,14,20.82,43.5
-1490,Alex Hu,2022,14,20.82,43.5
-1491,Samuel Charney,2022,14,20.82,43.5
-144,Huaye Lin,2022,14,20.82,43.5
-119,Jason Zhang,2022,14,20.82,43.5
-1492,Nicole Shen,2022,14,20.82,43.5
-1109,Chris Ge,2022,14,20.82,43.5
-1493,Daniel Yang,2022,14,20.82,43.5
-149,Suyash Pandit,2022,14,20.82,43.5
-1494,Jeffrey Fang,2022,14,20.82,43.5
-107,Annabel Ge,2022,14,20.82,43.5
-449,William Chenfeng Dai,2022,14,20.82,43.5
-1495,Jefferey,2022,14,20.82,43.5
-1198,Owen Yang,2022,14,20.82,43.5
-169,Nilay Mishra,2022,14,20.82,43.5
-454,Kavan Doctor,2022,14,20.82,43.5
-135,Eric Shen,2022,14,20.82,43.5
-183,Johan Ko,2022,14,20.82,43.5
-828,Henry Wang,2022,14,20.82,43.5
-1130,Catherine Li,2022,14,20.82,43.5
-945,Alex Chen,2022,14,20.82,43.5
-122,David Jiahui Zhang,2022,14,20.82,43.5
-189,Yuuki Sawanoi,2022,14,20.82,43.5
-638,Owen J Zhang,2022,14,20.82,43.5
-1496,Cecilia Sun,2022,14,20.82,43.5
-179,Adi Jasuja,2022,14,20.82,43.5
-1497,Brandon Lou,2022,14,20.82,43.5
-1498,Joy An,2022,14,20.82,43.5
-150,Kevin Joshua Wu,2022,14,20.82,43.5
-451,Hankai Zhang,2022,14,20.82,43.5
-200,Benjamin Andrew Fan,2022,14,20.82,43.5
-196,Won Jang,2022,14,20.82,43.5
-116,Justin Zhang,2022,14,20.82,43.5
-444,Michelle Liang,2022,14,20.82,43.5
-1499,Jiakang Chen,2022,14,20.82,43.5
-1181,Paul Hamrick,2022,14,20.82,43.5
-145,Alex Li,2022,14,20.82,43.5
-1500,Kevin Yang,2022,14,20.82,43.5
-187,Kenneth Ang Chen,2022,14,20.82,43.5
-1501,Justin Zhang,2022,14,20.82,43.5
-1438,Nikhil Mudumbi,2022,14,20.82,43.5
-151,Aaron Guo,2022,14,20.82,43.5
-1195,Christopher Wu,2022,14,20.82,43.5
-1502,Isabella Quan,2022,14,20.82,43.5
-1503,Maxwell Zen,2022,14,20.82,43.5
-457,Ashley Zhu,2022,14,20.82,43.5
-882,Benjamin Chen,2022,14,20.82,43.5
-154,Boris Tsvetanov Gachevski,2022,14,20.82,43.5
-1504,Jason Jiang,2022,14,20.82,43.5
-215,Michael Chen,2022,14,20.82,43.5
-125,Pavan Jayaraman,2022,14,20.82,43.5
-140,Isabella Zhu,2022,14,20.82,43.5
-1182,Garrett Heller,2022,14,20.82,43.5
-201,Zani Xu,2022,14,20.82,43.5
-197,Karthik Seetharaman,2022,14,20.82,43.5
-1505,Utkarsh Goyal,2022,14,20.82,43.5
+student_id,student_name,team,year,rank,score,mcp_rank
+173,Luke Robitaille,Texas Momentum A,2022,1,48.53,1
+174,Dylan Yu,Texas Momentum A,2022,2,37.74,2
+138,Alex Zhao,Washington Gold 1,2022,3,28.17,4
+93,Jessica Wan,Florida Alligators,2022,3,28.17,4
+194,Linden Marcus Lee,MN All-State Math Team 1 - Gold,2022,3,28.17,4
+155,Derek Liu,San Diego A1,2022,6,26.14,6
+175,Rishabh Das,Tin Man,2022,7,25.21,7
+177,Reagan Choi,Motown All Stars,2022,8,24.12,8
+199,Jerry Liu,Pleasanton A,2022,9,24.07,9
+90,Rohan Das,AlphaStar Academy FIRE,2022,10,23.95,10
+198,Eddie Wei,EddieSolo,2022,11,21.92,11
+452,Espen Slettnes,AlphaStar Academy AIR,2022,12,20.99,12
+1293,Olivia Xu,Harker Omega,2022,13,20.93,13
+1196,Daniel Xia,Lehigh Valley Fire,2022,14,20.82,43.5
+139,Skyler Le,Lehigh Valley Fire,2022,14,20.82,43.5
+103,Allen Wang,Lehigh Valley Ice,2022,14,20.82,43.5
+1,Alexander Wang,Lehigh Valley Ice,2022,14,20.82,43.5
+62,Evan Fan,Lehigh Valley Ice,2022,14,20.82,43.5
+1490,Alex Hu,Harker Omega,2022,14,20.82,43.5
+1491,Samuel Charney,Lexington Alpha,2022,14,20.82,43.5
+144,Huaye Lin,Lexington Alpha,2022,14,20.82,43.5
+119,Jason Zhang,Motown All Stars,2022,14,20.82,43.5
+1492,Nicole Shen,Spice,2022,14,20.82,43.5
+1109,Chris Ge,Spice,2022,14,20.82,43.5
+1493,Daniel Yang,University of Toronto Schools A,2022,14,20.82,43.5
+149,Suyash Pandit,Pentagon Hexagon Oregon A,2022,14,20.82,43.5
+1494,Jeffrey Fang,Pentagon Hexagon Oregon A,2022,14,20.82,43.5
+107,Annabel Ge,Washington Gold 1,2022,14,20.82,43.5
+449,William Chenfeng Dai,Ontario Math Circles,2022,14,20.82,43.5
+1495,Jefferey,Mathematical Admirers of Chdenmathcounts,2022,14,20.82,43.5
+1198,Owen Yang,Mathematical Admirers of Chdenmathcounts,2022,14,20.82,43.5
+169,Nilay Mishra,Random Math Team C,2022,14,20.82,43.5
+454,Kavan Doctor,Random Math Team C,2022,14,20.82,43.5
+135,Eric Shen,AlphaStar Academy AIR,2022,14,20.82,43.5
+183,Johan Ko,AlphaStar Academy AIR,2022,14,20.82,43.5
+828,Henry Wang,AlphaStar Academy AIR,2022,14,20.82,43.5
+1130,Catherine Li,AlphaStar Academy EARTH,2022,14,20.82,43.5
+945,Alex Chen,AlphaStar Academy EARTH,2022,14,20.82,43.5
+122,David Jiahui Zhang,AlphaStar Academy FIRE,2022,14,20.82,43.5
+189,Yuuki Sawanoi,Washington Gold 2,2022,14,20.82,43.5
+638,Owen J Zhang,Washington Gold 2,2022,14,20.82,43.5
+1496,Cecilia Sun,Washington Gold 3,2022,14,20.82,43.5
+179,Adi Jasuja,Tin Man,2022,14,20.82,43.5
+1497,Brandon Lou,Tin Man,2022,14,20.82,43.5
+1498,Joy An,Wild Boars,2022,14,20.82,43.5
+150,Kevin Joshua Wu,Montgomery County Team 1,2022,14,20.82,43.5
+451,Hankai Zhang,Yellowjackets,2022,14,20.82,43.5
+200,Benjamin Andrew Fan,Orange County Math Circle BrawlphaStars,2022,14,20.82,43.5
+196,Won Jang,Orange County Math Circle BrawlphaStars,2022,14,20.82,43.5
+116,Justin Zhang,San Diego A2,2022,14,20.82,43.5
+444,Michelle Liang,San Diego A2,2022,14,20.82,43.5
+1499,Jiakang Chen,Pleasanton A,2022,14,20.82,43.5
+1181,Paul Hamrick,OHS Pixels Hardcore Team 1,2022,14,20.82,43.5
+145,Alex Li,Florida Alligators,2022,14,20.82,43.5
+1500,Kevin Yang,MN All-State Math Team 1 - Gold,2022,14,20.82,43.5
+187,Kenneth Ang Chen,MN All-State Math Team 1 - Gold,2022,14,20.82,43.5
+1501,Justin Zhang,San Diego A2,2022,14,20.82,43.5
+1438,Nikhil Mudumbi,Bergen County Academies Team 1,2022,14,20.82,43.5
+151,Aaron Guo,Texas Momentum A,2022,14,20.82,43.5
+1195,Christopher Wu,Texas Momentum A,2022,14,20.82,43.5
+1502,Isabella Quan,Texas Momentum A,2022,14,20.82,43.5
+1503,Maxwell Zen,Scarecrow,2022,14,20.82,43.5
+457,Ashley Zhu,Lion,2022,14,20.82,43.5
+882,Benjamin Chen,No Coast Best Coast,2022,14,20.82,43.5
+154,Boris Tsvetanov Gachevski,Burgas A,2022,14,20.82,43.5
+1504,Jason Jiang,NNHS Math TeamA,2022,14,20.82,43.5
+215,Michael Chen,Pirates A,2022,14,20.82,43.5
+125,Pavan Jayaraman,Pirates A,2022,14,20.82,43.5
+140,Isabella Zhu,TJ-A,2022,14,20.82,43.5
+1182,Garrett Heller,,2022,14,20.82,43.5
+201,Zani Xu,TJ-A,2022,14,20.82,43.5
+197,Karthik Seetharaman,Western Mass ARML Stars,2022,14,20.82,43.5
+1505,Utkarsh Goyal,TJ-B,2022,14,20.82,43.5
