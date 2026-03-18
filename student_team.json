@@ -1,0 +1,1646 @@
+{
+  "source": "HMMT archive (feb/nov 2022-2026)",
+  "url_template": "https://hmmt-archive.s3.amazonaws.com/tournaments/{year}/{month}/results/long.htm",
+  "matches_count": 138,
+  "total_missing_state": 517,
+  "student_teams": [
+    {
+      "student_id": "114",
+      "student_name": "Vesselin Nikolaev Markovich",
+      "teams": [
+        {
+          "team": "MG VARNA A",
+          "year": 2023,
+          "tournament": "feb"
+        },
+        {
+          "team": "MG VARNA A",
+          "year": 2024,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "147",
+      "student_name": "Zachary Jacob Perry",
+      "teams": [
+        {
+          "team": "Lexington Alpha",
+          "year": 2023,
+          "tournament": "feb"
+        },
+        {
+          "team": "Lexington Alpha",
+          "year": 2024,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "150",
+      "student_name": "Kevin Joshua Wu",
+      "teams": [
+        {
+          "team": "Montgomery County Team 1",
+          "year": 2022,
+          "tournament": "feb"
+        },
+        {
+          "team": "Montgomery County Team 1",
+          "year": 2023,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "154",
+      "student_name": "Boris Tsvetanov Gachevski",
+      "teams": [
+        {
+          "team": "Burgas A",
+          "year": 2022,
+          "tournament": "feb"
+        },
+        {
+          "team": "Mix BG",
+          "year": 2023,
+          "tournament": "feb"
+        },
+        {
+          "team": "Bulgaria Mixed",
+          "year": 2024,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "167",
+      "student_name": "Sebastian Attlan",
+      "teams": [
+        {
+          "team": "No Coast Best Coast 2",
+          "year": 2023,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "172",
+      "student_name": "Sumedh Vangara",
+      "teams": [
+        {
+          "team": "Poolesville Magnet High School Math Team A",
+          "year": 2023,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "178",
+      "student_name": "Andrew Lee",
+      "teams": [
+        {
+          "team": "Western Mass ARML Stars",
+          "year": 2022,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "181",
+      "student_name": "Raymond Feng",
+      "teams": [
+        {
+          "team": "AlphaStar Academy AIR",
+          "year": 2022,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "183",
+      "student_name": "Johan Ko",
+      "teams": [
+        {
+          "team": "AlphaStar Academy AIR",
+          "year": 2022,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "187",
+      "student_name": "Kenneth Ang Chen",
+      "teams": [
+        {
+          "team": "MN All-State Math Team 1 - Gold",
+          "year": 2022,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "194",
+      "student_name": "Linden Marcus Lee",
+      "teams": [
+        {
+          "team": "MN All-State Math Team 1 - Gold",
+          "year": 2022,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "197",
+      "student_name": "Karthik Seetharaman",
+      "teams": [
+        {
+          "team": "Western Mass ARML Stars",
+          "year": 2022,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "198",
+      "student_name": "Eddie Wei",
+      "teams": [
+        {
+          "team": "EddieSolo",
+          "year": 2022,
+          "tournament": "feb"
+        },
+        {
+          "team": "Blackone",
+          "year": 2023,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "200",
+      "student_name": "Benjamin Andrew Fan",
+      "teams": [
+        {
+          "team": "Orange County Math Circle BrawlphaStars",
+          "year": 2022,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "236",
+      "student_name": "Jennifer Zhou",
+      "teams": [
+        {
+          "team": "Ohio ARML B",
+          "year": 2026,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "271",
+      "student_name": "Ethan Gu",
+      "teams": [
+        {
+          "team": "All Aces Spade",
+          "year": 2025,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "287",
+      "student_name": "Siravit Hengsuvanich",
+      "teams": [
+        {
+          "team": "Phillips Academy A1",
+          "year": 2024,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "293",
+      "student_name": "Gabriel Levin",
+      "teams": [
+        {
+          "team": "Mad Hatter",
+          "year": 2026,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "302",
+      "student_name": "Kenneth Ren",
+      "teams": [
+        {
+          "team": "Scarsdale C",
+          "year": 2024,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "308",
+      "student_name": "Muztaba Syed",
+      "teams": [
+        {
+          "team": "Lexington Alpha",
+          "year": 2024,
+          "tournament": "feb"
+        },
+        {
+          "team": "Lexington Beta",
+          "year": 2025,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "310",
+      "student_name": "David Kim",
+      "teams": [
+        {
+          "team": "Clarke Middle School Math Team",
+          "year": 2023,
+          "tournament": "nov"
+        },
+        {
+          "team": "Lexington Beta",
+          "year": 2026,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "321",
+      "student_name": "Alexander Duncan",
+      "teams": [
+        {
+          "team": "Clarke Middle School Math Team",
+          "year": 2022,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "329",
+      "student_name": "Jiaxuan Gong",
+      "teams": [
+        {
+          "team": "Motown All-Stars",
+          "year": 2024,
+          "tournament": "feb"
+        },
+        {
+          "team": "Motown All-Stars",
+          "year": 2025,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "330",
+      "student_name": "Shangxian Chen",
+      "teams": [
+        {
+          "team": "Southern California Areteem",
+          "year": 2025,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "332",
+      "student_name": "Huaiyu Chen",
+      "teams": [
+        {
+          "team": "Harker Sigma",
+          "year": 2025,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "333",
+      "student_name": "Chuang Yuan",
+      "teams": [
+        {
+          "team": "XuanWu",
+          "year": 2025,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "334",
+      "student_name": "HAOCHEN SUN",
+      "teams": [
+        {
+          "team": "Individuals 1",
+          "year": 2025,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "336",
+      "student_name": "Lianshun Yang",
+      "teams": [
+        {
+          "team": "StoneCity 01",
+          "year": 2025,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "339",
+      "student_name": "Ruoqing Yang",
+      "teams": [
+        {
+          "team": "BaiHu",
+          "year": 2025,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "340",
+      "student_name": "Vincent Loh",
+      "teams": [
+        {
+          "team": "PATiger2022",
+          "year": 2025,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "346",
+      "student_name": "RUIQI SHI",
+      "teams": [
+        {
+          "team": "Spirit of Math School Team A",
+          "year": 2025,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "351",
+      "student_name": "Tairan Ma",
+      "teams": [
+        {
+          "team": "Pi Pioneer Group 001",
+          "year": 2025,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "353",
+      "student_name": "Shiqiao Zhang",
+      "teams": [
+        {
+          "team": "PEA Red",
+          "year": 2023,
+          "tournament": "feb"
+        },
+        {
+          "team": "PEA Chestnuts",
+          "year": 2025,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "354",
+      "student_name": "Suhas Kondapalli",
+      "teams": [
+        {
+          "team": "WWP A",
+          "year": 2025,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "355",
+      "student_name": "Xinrui Zhou",
+      "teams": [
+        {
+          "team": "ORIGINAL",
+          "year": 2025,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "356",
+      "student_name": "LU CHANG",
+      "teams": [
+        {
+          "team": "MathTeam007",
+          "year": 2023,
+          "tournament": "nov"
+        },
+        {
+          "team": "ORIGINAL",
+          "year": 2025,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "360",
+      "student_name": "Rui Ouyang",
+      "teams": [
+        {
+          "team": "Ontario Math Circles",
+          "year": 2025,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "368",
+      "student_name": "Sepehr Salehi Golsefidy",
+      "teams": [
+        {
+          "team": "San Diego A2",
+          "year": 2026,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "369",
+      "student_name": "Mark Tokarev",
+      "teams": [
+        {
+          "team": "Austin Math Team A",
+          "year": 2026,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "373",
+      "student_name": "Patrick Sun",
+      "teams": [
+        {
+          "team": "121WA",
+          "year": 2026,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "374",
+      "student_name": "Rui Gu",
+      "teams": [
+        {
+          "team": "XuanWu",
+          "year": 2026,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "375",
+      "student_name": "Kaden Chen",
+      "teams": [
+        {
+          "team": "Mass ARML Moons",
+          "year": 2026,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "379",
+      "student_name": "Zhenghua Xie",
+      "teams": [
+        {
+          "team": "San Diego A2",
+          "year": 2026,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "380",
+      "student_name": "Chang Lu",
+      "teams": [
+        {
+          "team": "XuanWu",
+          "year": 2026,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "386",
+      "student_name": "Stephen Cui",
+      "teams": [
+        {
+          "team": "West Best",
+          "year": 2026,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "388",
+      "student_name": "Aaron Smith",
+      "teams": [
+        {
+          "team": "LV Ice",
+          "year": 2026,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "393",
+      "student_name": "Adam Henry Smith",
+      "teams": [
+        {
+          "team": "4 Factorials",
+          "year": 2024,
+          "tournament": "nov"
+        },
+        {
+          "team": "LV Ice",
+          "year": 2026,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "395",
+      "student_name": "Boyou Huang",
+      "teams": [
+        {
+          "team": "MathChicago",
+          "year": 2026,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "408",
+      "student_name": "Zixuan Peng",
+      "teams": [
+        {
+          "team": "DoraAIMEon",
+          "year": 2024,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "411",
+      "student_name": "Daniel Potievsky",
+      "teams": [
+        {
+          "team": "Scarecrow",
+          "year": 2023,
+          "tournament": "feb"
+        },
+        {
+          "team": "Tin Man",
+          "year": 2024,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "412",
+      "student_name": "Aditya Pahuja",
+      "teams": [
+        {
+          "team": "Tin Man",
+          "year": 2024,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "414",
+      "student_name": "Changxiu Ji",
+      "teams": [
+        {
+          "team": "DoraAIMEon",
+          "year": 2024,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "417",
+      "student_name": "Sarunyu Thongjarast",
+      "teams": [
+        {
+          "team": "Northfield Mount Hermon Math Club",
+          "year": 2024,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "419",
+      "student_name": "Worrawat Rungaramsin",
+      "teams": [
+        {
+          "team": "Northfield Mount Hermon Math Club",
+          "year": 2024,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "420",
+      "student_name": "Simona Gagarova",
+      "teams": [
+        {
+          "team": "Bulgaria Mixed",
+          "year": 2024,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "423",
+      "student_name": "Elena Baskakova",
+      "teams": [
+        {
+          "team": "Newton South Sines",
+          "year": 2024,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "425",
+      "student_name": "Andrew Tu",
+      "teams": [
+        {
+          "team": "Westchester Area Math Circle",
+          "year": 2022,
+          "tournament": "nov"
+        },
+        {
+          "team": "Connecticut Cyborgs",
+          "year": 2024,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "428",
+      "student_name": "Evan Luo",
+      "teams": [
+        {
+          "team": "San Diego A2",
+          "year": 2024,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "431",
+      "student_name": "Alyara Mahmudova",
+      "teams": [
+        {
+          "team": "Burgas A",
+          "year": 2023,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "437",
+      "student_name": "Marin Hristov Hristov",
+      "teams": [
+        {
+          "team": "Mix BG",
+          "year": 2023,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "438",
+      "student_name": "Bryan Jiaju Chen",
+      "teams": [
+        {
+          "team": "PEA Lion",
+          "year": 2023,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "440",
+      "student_name": "Joseph Sukmin Chun",
+      "teams": [
+        {
+          "team": "KGSEA Korea A",
+          "year": 2023,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "446",
+      "student_name": "Eddie Qiao",
+      "teams": [
+        {
+          "team": "San Diego A1",
+          "year": 2022,
+          "tournament": "feb"
+        },
+        {
+          "team": "San Diego A2",
+          "year": 2023,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "449",
+      "student_name": "William Chenfeng Dai",
+      "teams": [
+        {
+          "team": "Ontario Math Circles",
+          "year": 2022,
+          "tournament": "feb"
+        },
+        {
+          "team": "Ontario Math Circles",
+          "year": 2023,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "453",
+      "student_name": "Shreyan Avi Paliwal",
+      "teams": [
+        {
+          "team": "Pentagon Hexagon Oregon A",
+          "year": 2023,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "458",
+      "student_name": "Aidan Duncan",
+      "teams": [
+        {
+          "team": "Lexington Alpha",
+          "year": 2023,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "459",
+      "student_name": "Zhara Elenska",
+      "teams": [
+        {
+          "team": "Mix BG",
+          "year": 2023,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "460",
+      "student_name": "Peisong Li",
+      "teams": [
+        {
+          "team": "Ontario Math Circles",
+          "year": 2023,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "461",
+      "student_name": "Anish Mudide",
+      "teams": [
+        {
+          "team": "PEA Lion",
+          "year": 2023,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "463",
+      "student_name": "Robin Said Sharif",
+      "teams": [
+        {
+          "team": "San Diego A2",
+          "year": 2022,
+          "tournament": "feb"
+        },
+        {
+          "team": "San Diego A2",
+          "year": 2023,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "465",
+      "student_name": "Chun Yeung Wong",
+      "teams": [
+        {
+          "team": "Scarecrow",
+          "year": 2023,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "1452",
+      "student_name": "Anand Swaroop",
+      "teams": [
+        {
+          "team": "Math School A",
+          "year": 2024,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1457",
+      "student_name": "Ben Li",
+      "teams": [
+        {
+          "team": "NC School of Science &amp; Math - Team alpha",
+          "year": 2022,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "1495",
+      "student_name": "Jefferey",
+      "teams": [
+        {
+          "team": "Mathematical Admirers of Chdenmathcounts",
+          "year": 2022,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "1507",
+      "student_name": "Jasen Plamenov Penchev",
+      "teams": [
+        {
+          "team": "Burgas B",
+          "year": 2022,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "1511",
+      "student_name": "Maximus Liu",
+      "teams": [
+        {
+          "team": "Lehigh Valley Ice",
+          "year": 2022,
+          "tournament": "feb"
+        },
+        {
+          "team": "Pingry A",
+          "year": 2022,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1512",
+      "student_name": "Bo Sun",
+      "teams": [
+        {
+          "team": "Lehigh Valley Fire",
+          "year": 2022,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "1513",
+      "student_name": "Xuezhi Wang",
+      "teams": [
+        {
+          "team": "OS Betelgeuse",
+          "year": 2022,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "1517",
+      "student_name": "Chengcheng Qian",
+      "teams": [
+        {
+          "team": "Populus-3",
+          "year": 2022,
+          "tournament": "feb"
+        }
+      ]
+    },
+    {
+      "student_id": "1537",
+      "student_name": "Benjamin Li",
+      "teams": [
+        {
+          "team": "Fish",
+          "year": 2025,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1540",
+      "student_name": "David Luo",
+      "teams": [
+        {
+          "team": "pauvres de saint f\u00e9licien",
+          "year": 2025,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1542",
+      "student_name": "XIAOYUETENG",
+      "teams": [
+        {
+          "team": "Beijing Forbidden City",
+          "year": 2025,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1543",
+      "student_name": "WANG WEIHAO",
+      "teams": [
+        {
+          "team": "Beijing Forbidden City",
+          "year": 2025,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1550",
+      "student_name": "Johnson Jiang",
+      "teams": [
+        {
+          "team": "Elton Academy Math",
+          "year": 2025,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1554",
+      "student_name": "YI SUIHAN",
+      "teams": [
+        {
+          "team": "Beijing Mingcheng Academy Red Panda",
+          "year": 2025,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1557",
+      "student_name": "Sidarth Singh",
+      "teams": [
+        {
+          "team": "The Tigers",
+          "year": 2025,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1558",
+      "student_name": "Brian Sun",
+      "teams": [
+        {
+          "team": "Euler",
+          "year": 2025,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1559",
+      "student_name": "Jeremy Zhang",
+      "teams": [
+        {
+          "team": "ICALC Learning Centre Math A",
+          "year": 2025,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1565",
+      "student_name": "Nanxuan Zhang",
+      "teams": [
+        {
+          "team": "pauvres de saint f\u00e9licien",
+          "year": 2025,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1570",
+      "student_name": "\u5f20\u946b\u91ce",
+      "teams": [
+        {
+          "team": "Beijing Forbidden City",
+          "year": 2025,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1574",
+      "student_name": "Kayla Jian",
+      "teams": [
+        {
+          "team": "SAS Eagles A",
+          "year": 2025,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1579",
+      "student_name": "Daniel Cai",
+      "teams": [
+        {
+          "team": "AB Math League",
+          "year": 2025,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1580",
+      "student_name": "Christopher Zhang",
+      "teams": [
+        {
+          "team": "AB Math League",
+          "year": 2025,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1581",
+      "student_name": "Eileen Lee",
+      "teams": [
+        {
+          "team": "Russian School of Mathematics Team D",
+          "year": 2025,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1586",
+      "student_name": "David Yoongeun Oh",
+      "teams": [
+        {
+          "team": "Seoul Foreign School",
+          "year": 2025,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1594",
+      "student_name": "Eric Shi Chen",
+      "teams": [
+        {
+          "team": "Fish",
+          "year": 2025,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1598",
+      "student_name": "GONG YICHEN",
+      "teams": [
+        {
+          "team": "Shanghai High School Stallions",
+          "year": 2024,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1599",
+      "student_name": "Joanna Wu",
+      "teams": [
+        {
+          "team": "Individuals 5",
+          "year": 2024,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1603",
+      "student_name": "Xingguo Ding",
+      "teams": [
+        {
+          "team": "St. Paul's School",
+          "year": 2022,
+          "tournament": "nov"
+        },
+        {
+          "team": "St. Paul's School",
+          "year": 2023,
+          "tournament": "nov"
+        },
+        {
+          "team": "St. Paul's School",
+          "year": 2024,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1604",
+      "student_name": "Gavin Guojun Zhao",
+      "teams": [
+        {
+          "team": "Shanghai High School Stallions",
+          "year": 2024,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1605",
+      "student_name": "Aadish Jain",
+      "teams": [
+        {
+          "team": "Individuals 2",
+          "year": 2024,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1606",
+      "student_name": "chen zizhuang",
+      "teams": [
+        {
+          "team": "Shanghai High School Stallions",
+          "year": 2024,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1609",
+      "student_name": "Li Tianyi",
+      "teams": [
+        {
+          "team": "SH Team 001",
+          "year": 2024,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1613",
+      "student_name": "Kaylyn Jinglin Zhang",
+      "teams": [
+        {
+          "team": "University of Toronto Schools A",
+          "year": 2024,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1615",
+      "student_name": "Gong Cheng",
+      "teams": [
+        {
+          "team": "Sugar Club",
+          "year": 2024,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1619",
+      "student_name": "Lingfei Sophia Tang",
+      "teams": [
+        {
+          "team": "Math 4 Fun",
+          "year": 2023,
+          "tournament": "nov"
+        },
+        {
+          "team": "Math 4 Fun",
+          "year": 2024,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1624",
+      "student_name": "Jiya",
+      "teams": [
+        {
+          "team": "Individuals 4",
+          "year": 2024,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1627",
+      "student_name": "Siyuan Du",
+      "teams": [
+        {
+          "team": "Bouncing Seals",
+          "year": 2024,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1629",
+      "student_name": "Jagan Mranal",
+      "teams": [
+        {
+          "team": "LS Math Team B",
+          "year": 2023,
+          "tournament": "nov"
+        },
+        {
+          "team": "LS Math Team",
+          "year": 2024,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1630",
+      "student_name": "Maxime Demers",
+      "teams": [
+        {
+          "team": "G\u00e9om\u00e8tres du nord | Club Math C\u00e9gep de Sherbrooke",
+          "year": 2024,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1631",
+      "student_name": "Kaiqi Xu",
+      "teams": [
+        {
+          "team": "Sugar Club",
+          "year": 2024,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1633",
+      "student_name": "William Du",
+      "teams": [
+        {
+          "team": "All Aces Heart",
+          "year": 2024,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1635",
+      "student_name": "Andrew M Kalashnikov",
+      "teams": [
+        {
+          "team": "Math School A",
+          "year": 2024,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1636",
+      "student_name": "Tymon Sidor",
+      "teams": [
+        {
+          "team": "Swiszczypylki",
+          "year": 2024,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1638",
+      "student_name": "Tianxiang Zhang",
+      "teams": [
+        {
+          "team": "Shanghai High School Stallions",
+          "year": 2024,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1641",
+      "student_name": "Magdalena Pude\u0142ko",
+      "teams": [
+        {
+          "team": "Swiszczypylki",
+          "year": 2024,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1643",
+      "student_name": "Justin Y. Yu",
+      "teams": [
+        {
+          "team": "All Aces Spade",
+          "year": 2024,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1644",
+      "student_name": "Hans Sihan Zhu",
+      "teams": [
+        {
+          "team": "Shanghai High School Stallions",
+          "year": 2024,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1647",
+      "student_name": "Andrew Ma",
+      "teams": [
+        {
+          "team": "University of Toronto Schools A",
+          "year": 2023,
+          "tournament": "nov"
+        },
+        {
+          "team": "University of Toronto Schools A",
+          "year": 2024,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1649",
+      "student_name": "Victoria Sheung",
+      "teams": [
+        {
+          "team": "TAS Math Circle",
+          "year": 2024,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1655",
+      "student_name": "Evan Zhang",
+      "teams": [
+        {
+          "team": "Lion Valley Alpha",
+          "year": 2023,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1656",
+      "student_name": "Kevin Xuanhao Liu",
+      "teams": [
+        {
+          "team": "Lion Valley Alpha",
+          "year": 2023,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1658",
+      "student_name": "Jeffery Zhang",
+      "teams": [
+        {
+          "team": "University of Toronto Schools A",
+          "year": 2023,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1662",
+      "student_name": "Isaac Jo",
+      "teams": [
+        {
+          "team": "LS Math Team",
+          "year": 2022,
+          "tournament": "nov"
+        },
+        {
+          "team": "LS Math Team B",
+          "year": 2023,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1666",
+      "student_name": "Michael Ren",
+      "teams": [
+        {
+          "team": "Syo Math A",
+          "year": 2023,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1668",
+      "student_name": "Grace Liu",
+      "teams": [
+        {
+          "team": "Individuals 4",
+          "year": 2023,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1669",
+      "student_name": "Aryan Saha",
+      "teams": [
+        {
+          "team": "Individuals 6",
+          "year": 2023,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1670",
+      "student_name": "Sophie Yinuo Zheng",
+      "teams": [
+        {
+          "team": "Traditional Salad",
+          "year": 2023,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1673",
+      "student_name": "Ian Wang",
+      "teams": [
+        {
+          "team": "BASIS M&P",
+          "year": 2023,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1674",
+      "student_name": "Sohji Matsuda",
+      "teams": [
+        {
+          "team": "Individuals 5",
+          "year": 2023,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1675",
+      "student_name": "Mingxuan Zhang",
+      "teams": [
+        {
+          "team": "Beijing Forbidden City",
+          "year": 2023,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1679",
+      "student_name": "Huiran Zheng",
+      "teams": [
+        {
+          "team": "MathTeam007",
+          "year": 2023,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1687",
+      "student_name": "Alex Lige Dong",
+      "teams": [
+        {
+          "team": "Taipei Math Team",
+          "year": 2022,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1688",
+      "student_name": "Kai",
+      "teams": [
+        {
+          "team": "The Punching Protractors",
+          "year": 2022,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1690",
+      "student_name": "Kylan Z Huang",
+      "teams": [
+        {
+          "team": "Lollipop Guild",
+          "year": 2022,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1692",
+      "student_name": "Sally Yuejie Wang",
+      "teams": [
+        {
+          "team": "Clarke Middle School Math Team",
+          "year": 2022,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1710",
+      "student_name": "Arsenii Zharkov",
+      "teams": [
+        {
+          "team": "Russian School of Mathematics Team B",
+          "year": 2022,
+          "tournament": "nov"
+        }
+      ]
+    },
+    {
+      "student_id": "1711",
+      "student_name": "Aren",
+      "teams": [
+        {
+          "team": "Individuals 1",
+          "year": 2022,
+          "tournament": "nov"
+        }
+      ]
+    }
+  ]
+}

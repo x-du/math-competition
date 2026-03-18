@@ -1,0 +1,173 @@
+student_id,student_name,state,grade,score,rank,national_percentile,mcp_rank
+2959,Akshay Chokshi,Illinois,8,120,1,,5.5
+267,Anshul Mantri,Oregon,8,120,1,,5.5
+2677,Avery Xu,New York,8,120,1,,5.5
+1455,Daniel David,Massachusetts,8,120,1,,5.5
+2960,Evan Zhang,Pennsylvania,8,120,1,,5.5
+2683,Jevin Xu,Virginia,8,120,1,,5.5
+2781,Michael Mirkin,Massachusetts,8,120,1,,5.5
+2660,Timothy Chen,California,8,120,1,,5.5
+48,Varun Gadi,Georgia,8,120,1,,5.5
+2638,Vikram Goudar,Virginia,8,120,1,,5.5
+1962,Atticus Masuzawa,California,8,117,2,,13.0
+365,Harish Loghashankar,California,8,117,2,,13.0
+1040,Nathan Mei,Michigan,8,117,2,,13.0
+701,Solon Xia,Kansas,8,117,2,,13.0
+2961,Thomas Isernhagen,New Jersey,8,117,2,,13.0
+2680,Anirudh Sengupta,North Carolina,8,116,3,,22.5
+2962,Austin James Candidato,New York,8,116,3,,22.5
+2630,Connor Kong,California,8,116,3,,22.5
+69,Connor Leong,California,8,116,3,,22.5
+2779,Curtis Wu,Massachusetts,8,116,3,,22.5
+1052,Edward Zhang,California,8,116,3,,22.5
+2963,Ethan Guo,Maryland,8,116,3,,22.5
+2658,Gina Li,Massachusetts,8,116,3,,22.5
+2964,Jack Lu,New York,8,116,3,,22.5
+2965,Mason Boucher,Maryland,8,116,3,,22.5
+2966,Mihir Busani,Missouri,8,116,3,,22.5
+2776,Rehan Babu,California,8,116,3,,22.5
+2652,Varyan Jain,Arizona,8,116,3,,22.5
+2967,Zachary Wong,New Jersey,8,116,3,,22.5
+1351,Annabel Rong,Georgia,8,115,4,,31.5
+244,Jacob Ronan Khohayting,Florida,8,115,4,,31.5
+2645,Michael Jian,California,8,115,4,,31.5
+238,Shamik Khowala,California,8,115,4,,31.5
+2968,Ashmit Arasada,California,8,114,5,,34.0
+1521,Harry Haiwen Gao,New York,8,113,6,,35.5
+2969,Lucas Cai,California,8,113,6,,35.5
+1452,Anand Swaroop,Massachusetts,8,112,7,,42.0
+2970,Anish Kodali,Tennessee,8,112,7,,42.0
+2971,Charles Huang,California,8,112,7,,42.0
+2972,Christopher Wang,Maryland,8,112,7,,42.0
+2342,Jason Yin,New York,8,112,7,,42.0
+1939,Kristiyan Kurtev,California,8,112,7,,42.0
+2651,Lucas Park,California,8,112,7,,42.0
+2973,Neil Dutta,Massachusetts,8,112,7,,42.0
+722,Paul Harmon,Montana,8,112,7,,42.0
+1311,Sarah Li,Virginia,8,112,7,,42.0
+2974,Yixuan Li,Maryland,8,112,7,,42.0
+2631,Aditya Jagavkar,New Jersey,8,111,8,,55.5
+2787,Aniket Mangalampalli,California,8,111,8,,55.5
+2632,Anthony Wang,Nevada,8,111,8,,55.5
+2672,Graham Hoggan,California,8,111,8,,55.5
+2975,Jasmine Li,California,8,111,8,,55.5
+2976,Kyle Chian,California,8,111,8,,55.5
+2270,Michael Pylypovych,New Jersey,8,111,8,,55.5
+2977,Nana Kim,Georgia,8,111,8,,55.5
+2663,Platon Gorkavy,Massachusetts,8,111,8,,55.5
+830,Rajarshi Mandal,Massachusetts,8,111,8,,55.5
+2978,Sameer Nagarkatti,Massachusetts,8,111,8,,55.5
+2647,Soham Pattnaik,Virginia,8,111,8,,55.5
+2979,Tahmin Uddin,Massachusetts,8,111,8,,55.5
+2980,William Liu,California,8,111,8,,55.5
+2981,Yixuan Xu,Washington,8,111,8,,55.5
+2982,Ziyao Ma,Massachusetts,8,111,8,,55.5
+799,Kesav Kalanidhi,North Carolina,8,110,9,,64.5
+2983,Pranav Sivakumar,California,8,110,9,,64.5
+2984,Abhinav Eadhara,Virginia,8,108,10,,69.0
+2985,Harry Furst,California,8,108,10,,69.0
+2783,Jason Lee,New Jersey,8,108,10,,69.0
+2986,Rishik Shenolikar,Maryland,8,108,10,,69.0
+1745,Shaurya Chauhan,California,8,108,10,,69.0
+2690,Somil Sarode,California,8,108,10,,69.0
+2987,Theenash Sengupta,California,8,108,10,,69.0
+2988,Aarav Ashwani,California,8,107,11,,79.0
+2989,Alice Luo,California,8,107,11,,79.0
+2990,Anthony Mokhov,California,8,107,11,,79.0
+2656,Ethan Cao,California,8,107,11,,79.0
+2991,Jason Lee,California,8,107,11,,79.0
+2678,Jennifer Wang,Indiana,8,107,11,,79.0
+2992,Jessica Hsieh,Maryland,8,107,11,,79.0
+2993,Krish Jha,Washington,8,107,11,,79.0
+2994,Nathan Ye,Oregon,8,107,11,,79.0
+2995,Paxton Lin,California,8,107,11,,79.0
+2608,Roy Wang,Illinois,8,107,11,,79.0
+2648,Vlad Vynarchuk,Massachusetts,8,107,11,,79.0
+2996,Zachary Cha,California,8,107,11,,79.0
+2791,Alexander Ordukhanyan,New York,8,106,12,,91.0
+1401,Caroline Huang,Georgia,8,106,12,,91.0
+2691,Jai Bindlish,Washington,8,106,12,,91.0
+2997,Julia Salamacha,California,8,106,12,,91.0
+2998,Kaartic Muralidharan,Pennsylvania,8,106,12,,91.0
+2999,Max Xie,Washington,8,106,12,,91.0
+2786,Narnia Poddar,New York,8,106,12,,91.0
+3000,Neel Chellapilla,California,8,106,12,,91.0
+704,Samuel Kingston,Kentucky,8,106,12,,91.0
+2699,Timofey Gafurov,Virginia,8,106,12,,91.0
+3001,Vatsal Srivastava,California,8,106,12,,91.0
+3002,Anray Sheng,Massachusetts,8,105,13,,99.0
+3003,Arkar Tan,California,8,105,13,,99.0
+1275,Rohith Thomas,Colorado,8,105,13,,99.0
+3004,Ruijing Tang,Illinois,8,105,13,,99.0
+3005,William Hong,California,8,105,13,,99.0
+3006,Angela Jing,New York,8,104,14,,102.5
+2637,Sophia Zhu,Washington,8,104,14,,102.5
+3007,Aarush Prasad,California,8,103,15,,109.5
+3008,Aiden Tretyak,Illinois,8,103,15,,109.5
+3009,Ansh Gupta,Virginia,8,103,15,,109.5
+2676,Anshul Raghav,Washington,8,103,15,,109.5
+3010,Atharv Joshi,Massachusetts,8,103,15,,109.5
+3011,Brian Sun,Massachusetts,8,103,15,,109.5
+2164,Derek Peng,New Jersey,8,103,15,,109.5
+3012,Naaisha Agarwal,Massachusetts,8,103,15,,109.5
+3013,Navya Jain,Washington,8,103,15,,109.5
+1299,Parsa Adhami,South Carolina,8,103,15,,109.5
+2674,Samhitha Kamatala,Illinois,8,103,15,,109.5
+3014,Vihaan Paliwal,Oregon,8,103,15,,109.5
+3015,Abhrottha Roy,Massachusetts,8,102,16,,126.0
+3016,Avishi Anurag,Virginia,8,102,16,,126.0
+3017,Cooper Ho,New York,8,102,16,,126.0
+3018,Derek Zhao,Oregon,8,102,16,,126.0
+3019,Jeffrey Dong,Massachusetts,8,102,16,,126.0
+3020,Jiaxin Xu,Illinois,8,102,16,,126.0
+2667,Joseph Franklin,North Carolina,8,102,16,,126.0
+699,Mahi Kohli,Kansas,8,102,16,,126.0
+3021,Nikhil Tamvada,California,8,102,16,,126.0
+3022,Oscar Lee,Illinois,8,102,16,,126.0
+740,Raghav Arun,North Carolina,8,102,16,,126.0
+3023,Rayyan Ahmed Siddiq,Massachusetts,8,102,16,,126.0
+2798,Revanth Raparla,Texas,8,102,16,,126.0
+3024,Rohan Kommareddy,California,8,102,16,,126.0
+3025,Rushil Yeole,Michigan,8,102,16,,126.0
+762,Sadie Enright,Rhode Island,8,102,16,,126.0
+2670,Stefan Donisa,Illinois,8,102,16,,126.0
+3026,Summer Chu,North Carolina,8,102,16,,126.0
+3027,Theeran Sathish Kumar,California,8,102,16,,126.0
+2665,Victor Wang,Maryland,8,102,16,,126.0
+3028,Vishnu Mukku,Connecticut,8,102,16,,126.0
+3029,Arden Peng,Minnesota,8,101,17,,140.0
+3030,Daniel Vaidhyan,California,8,101,17,,140.0
+3031,Naoki Matsuda,California,8,101,17,,140.0
+3032,Paul Norberg,California,8,101,17,,140.0
+3033,Poorva Khambekar,California,8,101,17,,140.0
+3034,Richard Sun,California,8,101,17,,140.0
+1734,Sohum Uttamchandani,California,8,101,17,,140.0
+1359,Alena Kutsuk,California,8,100,18,,146.5
+3035,Doyoon Lee,California,8,100,18,,146.5
+3036,Magaranth Rajkumar,Illinois,8,100,18,,146.5
+3037,Ryder Morton,Massachusetts,8,100,18,,146.5
+3038,Shripriya Kalbhavi,California,8,100,18,,146.5
+3039,Srijith Abhyuday Sathyanarayanan,California,8,100,18,,146.5
+2661,Akash Krothapalli,Washington,8,99,19,,153.5
+3040,Jack Iyer,Pennsylvania,8,99,19,,153.5
+3041,Jacob Peyghambarian,Utah,8,99,19,,153.5
+3042,Kaylee Zhao,Alabama,8,99,19,,153.5
+2664,Rachel Shuai,Florida,8,99,19,,153.5
+2673,Rohan Danda,Massachusetts,8,99,19,,153.5
+3043,Sanya Doshi,Washington,8,99,19,,153.5
+3044,Shriyadita De,Maryland,8,99,19,,153.5
+3045,Aidan Tan,Massachusetts,8,98,20,,165.0
+3046,Alan Sai,Maryland,8,98,20,,165.0
+3047,Alex Kim,California,8,98,20,,165.0
+3048,Aryan Mootakoduru,Massachusetts,8,98,20,,165.0
+3049,Atharv Dirisala,California,8,98,20,,165.0
+3050,Cavon Hajimiri,California,8,98,20,,165.0
+3051,Jihoo Won,California,8,98,20,,165.0
+3052,Max Malyk,Wisconsin,8,98,20,,165.0
+2684,Maxwell Lisuwandi,Massachusetts,8,98,20,,165.0
+3053,Nicholas Kim,New Jersey,8,98,20,,165.0
+3054,Nitinreddy Vaka,California,8,98,20,,165.0
+3055,Noah Nixon,Tennessee,8,98,20,,165.0
+3056,Taison Scofield,Minnesota,8,98,20,,165.0
+3057,Vaibhav Varadha,Delaware,8,98,20,,165.0
+3058,Vasu Ganesa,California,8,98,20,,165.0

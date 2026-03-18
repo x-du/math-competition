@@ -1,0 +1,47 @@
+student_id,student_name,state,grade,score,rank,national_percentile,mcp_rank
+2453,Alex Gu,California,12,120,1,,6.5
+3171,Arushi Mantri,Oregon,12,120,1,,6.5
+3172,Chirag Verma,Washington,12,120,1,,6.5
+3173,Clarence Lam,Maryland,12,120,1,,6.5
+3174,Daniel Salkinder,New York,12,120,1,,6.5
+3175,Dmitriy Shvydkoy,Illinois,12,120,1,,6.5
+1192,James Rydell,California,12,120,1,,6.5
+3176,Justin Li,Texas,12,120,1,,6.5
+184,Kevin Zhao,Massachusetts,12,120,1,,6.5
+3177,Nathra Ramrajvel,Illinois,12,120,1,,6.5
+3178,Saathvik Selvan,Florida,12,120,1,,6.5
+3179,Tony Tzolov,Pennsylvania,12,120,1,,6.5
+178,Andrew Lee,Massachusetts,12,117,2,,13.5
+1173,Daniel Yuan,Maryland,12,117,2,,13.5
+3180,Eric Wang,Pennsylvania,12,116,3,,16.0
+3181,Garima Bansal,California,12,116,3,,16.0
+3182,Rahul Bansal,California,12,116,3,,16.0
+3183,Eric Lee,California,12,115,4,,21.0
+3184,Michael Ferguson,North Carolina,12,115,4,,21.0
+3185,Ori Helmer,Illinois,12,115,4,,21.0
+3186,Sathvik Medapati,New Jersey,12,115,4,,21.0
+884,Shihan Kanungo,California,12,115,4,,21.0
+3187,Stefan Popescu,Virginia,12,115,4,,21.0
+3188,Yunchan Hwang,Virginia,12,115,4,,21.0
+3189,Kevin Xu,Virginia,12,112,5,,25.0
+3190,Joshua Bennett,Virginia,12,111,6,,26.0
+3191,Efe Eroz,Maryland,12,110,7,,28.0
+3192,Lucas Guillet,Illinois,12,110,7,,28.0
+3193,Simon Kerr,Utah,12,110,7,,28.0
+3194,Leonard Bian,Maryland,12,107,8,,30.0
+3195,Joaquin Perkins,California,12,105,9,,31.0
+3196,Spencer May,New Hampshire,12,103,10,,32.0
+3197,Mark Chudnovsky,Massachusetts,12,102,11,,33.0
+3198,Ryan Badi,New Jersey,12,98,12,,34.0
+3199,Ryan Grosso,Arizona,12,97,13,,35.5
+1077,Xinyi Li,Texas,12,97,13,,35.5
+3200,Andrew Dunstan,Utah,12,94,14,,37.5
+3201,Sara Kapasi,Georgia,12,94,14,,37.5
+3202,Pranav Bandla,Virginia,12,92,15,,39.0
+3203,Vidit Pokharna,Florida,12,91,16,,40.0
+3204,Ankur Moolky,Oregon,12,90,17,,41.0
+3205,David Arthur,Wisconsin,12,89,18,,43.0
+3206,Jayvik Joshi,North Carolina,12,89,18,,43.0
+3207,Theo Bakshi,California,12,89,18,,43.0
+3208,Iris Levey,New Hampshire,12,83,19,,45.0
+3209,Sarah Lepkowitz,California,12,81,20,,46.0

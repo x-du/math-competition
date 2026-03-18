@@ -1,0 +1,13 @@
+student_id,student_name,year,rank,score,p1,p2,p3,p4,p5,mcp_rank
+1,Alexander Wang,2023,1,31,6,7,9,9,0,1
+159,Karthik Vedula,2023,2,22,6,7,9,0,0,3
+140,Isabella Zhu,2023,2,22,6,7,9,0,0,3
+155,Derek Liu,2023,2,22,6,7,0,9,0,3
+52,Aiden Yuchan Jung,2023,5,20,6,7,0,2,5,5.5
+161,Caleb Dastrup,2023,5,20,6,6,0,8,0,5.5
+59,Henry Jiang,2023,7,17,6,7,0,3,1,7
+117,Advaith Avadhanam,2023,8,16,6,7,0,3,0,8.5
+118,Linus Tang,2023,8,16,6,7,0,3,0,8.5
+116,Justin Zhang,2023,10,13,6,7,0,0,0,11
+125,Pavan Jayaraman,2023,10,13,3,7,0,3,0,11
+98,Elliott Liu,2023,10,13,6,7,0,0,0,11

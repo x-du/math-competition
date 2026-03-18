@@ -1,26 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
+  <!-- Google tag (gtag.js) - deferred to avoid blocking initial render -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XE0H6HQX32"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-XE0H6HQX32');
+    if (document.readyState === 'complete') {
+      gtag('config', 'G-XE0H6HQX32');
+    } else {
+      window.addEventListener('load', function(){ gtag('config', 'G-XE0H6HQX32'); });
+    }
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Search US math competition records by student name. Database of USAMO, USAJMO, HMMT, PUMaC, MathCounts, ARML, and other high-integrity in-person competitions. Verify student track records.">
+  <link rel="canonical" href="https://mathintegrity.org/">
+  <meta property="og:title" content="Math Competition Records — Student Search">
+  <meta property="og:description" content="Search US math competition records by student name. Database of USAMO, USAJMO, HMMT, PUMaC, MathCounts, ARML, and other high-integrity in-person competitions.">
+  <meta property="og:url" content="https://mathintegrity.org/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Math Competition Records — Student Search">
+  <meta name="twitter:description" content="Search US math competition records by student name. Database of USAMO, USAJMO, HMMT, PUMaC, MathCounts, ARML, and other high-integrity competitions.">
   <title>Math Competition — Student Records</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon-48.png" type="image/png" sizes="48x48">
+  <link rel="icon" href="favicon-192.png" type="image/png" sizes="192x192">
   <link rel="stylesheet" href="style.css">
   <link rel="preload" href="data.json" as="fetch" crossorigin>
+  <style>.awards-ranking-controls{visibility:hidden}</style>
 </head>
 <body>
   <header class="header">
-    <a href="report.html" id="report-link-btn" class="report-link-btn" hidden>Report Integrity Concern</a>
     <h1>Math Competition Records</h1>
     <p class="tagline">Search by student name to view competition history.</p>
-    <button type="button" id="contest-list-trigger" class="contest-list-trigger" aria-expanded="false" aria-haspopup="true" aria-controls="contest-list-popover">Contests in this database</button>
+    <button type="button" id="contest-list-trigger" class="contest-list-trigger" aria-expanded="false" aria-haspopup="true" aria-controls="contest-list-popover">Competitions in this database</button>
+    <span class="contest-list-trigger-sep" aria-hidden="true"> · </span>
+    <a href="crank.html" class="contest-list-trigger">Competition ranking</a>
     <div class="contest-filter-row">
       <span id="contest-filter-wrap" class="contest-filter-wrap">
         <button
@@ -31,7 +49,7 @@
           aria-haspopup="true"
           aria-controls="contest-filter-popover"
         >
-          Contest filter
+          Competition filter
         </button>
         <span id="contest-filter-summary" class="contest-filter-summary">All selected</span>
         <div
@@ -42,8 +60,8 @@
           aria-labelledby="contest-filter-popover-title"
         >
           <div class="contest-filter-popover-inner">
-            <h3 id="contest-filter-popover-title" class="contest-filter-popover-title">Filter by contest</h3>
-            <div id="contest-filter" class="contest-filter-options" aria-label="Filter by contest">
+            <h3 id="contest-filter-popover-title" class="contest-filter-popover-title">Filter by competition</h3>
+            <div id="contest-filter" class="contest-filter-options" aria-label="Filter by competition">
               <label class="contest-filter-option">
                 <input type="checkbox" value="all" checked>
                 All
@@ -105,6 +123,10 @@
                 CMM
               </label>
               <label class="contest-filter-option">
+                <input type="checkbox" value="mmaths">
+                MMATHS
+              </label>
+              <label class="contest-filter-option">
                 <input type="checkbox" value="mpfg">
                 MPFG
               </label>
@@ -121,6 +143,10 @@
                 BAMO-12
               </label>
               <label class="contest-filter-option">
+                <input type="checkbox" value="brumo-a">
+                BrUMO Div A
+              </label>
+              <label class="contest-filter-option">
                 <input type="checkbox" value="bmt">
                 BMT
               </label>
@@ -133,29 +159,20 @@
     </div>
     <div id="contest-list-popover" class="contest-list-popover" hidden role="dialog" aria-labelledby="contest-list-popover-title">
       <div class="contest-list-popover-inner">
-        <h2 id="contest-list-popover-title" class="contest-list-popover-title">Contests in this database</h2>
+        <h2 id="contest-list-popover-title" class="contest-list-popover-title">Competitions in this database</h2>
         <div id="contest-list" class="contest-list"></div>
         <button type="button" class="contest-list-popover-close" aria-label="Close">×</button>
       </div>
       <div class="contest-list-popover-backdrop" aria-hidden="true"></div>
     </div>
 
-    <button type="button" id="amo-alert-trigger" class="amo-alert-trigger" aria-label="AMO 2025 Gold/Silver/Bronze/Honorable Mention no-track alert" hidden>AMO alert</button>
-    <div id="amo-alert-popover" class="amo-alert-popover" hidden role="dialog" aria-labelledby="amo-alert-popover-title">
-      <div class="amo-alert-popover-inner">
-        <h2 id="amo-alert-popover-title" class="amo-alert-popover-title">AMO 2025 rising stars! (Or not!)</h2>
-        <p id="amo-alert-summary" class="amo-alert-summary"></p>
-        <ul id="amo-alert-list" class="amo-alert-list"></ul>
-        <button type="button" class="amo-alert-popover-close" aria-label="Close">×</button>
-      </div>
-      <div class="amo-alert-popover-backdrop" aria-hidden="true"></div>
-    </div>
   </header>
 
   <main class="main">
     <div class="search-wrap">
+      <a href="#" id="student-card-back" class="student-card-back" hidden aria-label="Back to search">← Back to search</a>
       <label for="search" class="sr-only">Search by student name</label>
-      <div class="search-input-wrap">
+      <div class="search-input-wrap" id="search-input-wrap">
         <input
           type="search"
           id="search"
@@ -191,6 +208,11 @@
               <canvas id="state-dist-records-canvas"></canvas>
               <div id="state-dist-records-legend" class="state-dist-legend"></div>
             </div>
+            <div class="state-dist-chart-wrap">
+              <h4 class="state-dist-chart-title">MCP by State</h4>
+              <canvas id="state-dist-mcp-canvas"></canvas>
+              <div id="state-dist-mcp-legend" class="state-dist-legend"></div>
+            </div>
           </div>
           <button type="button" class="state-dist-popover-close" aria-label="Close">×</button>
         </div>
@@ -199,9 +221,10 @@
       <p class="awards-ranking-subtitle">Sorted by number of competition records in this database. Not a ranking of ability or talent.</p>
       <p class="awards-ranking-controls">
         <span class="sort-toggle-wrap">
-          <button type="button" id="sort-toggle" class="sort-toggle" aria-label="Toggle sort mode">
+          <button type="button" id="sort-toggle" class="sort-toggle" aria-label="Sort mode">
             <span class="sort-toggle-option" data-mode="records"># Records</span>
             <span class="sort-toggle-option sort-toggle-option--active" data-mode="mcp">MCP</span>
+            <span class="sort-toggle-option" id="mcp-pct-sort-option" data-mode="mcp_pct" hidden>MCP %</span>
           </button>
         </span>
         <label class="girls-only-label">
@@ -220,6 +243,7 @@
             <span class="state-filter-caption">State:</span>
             <select id="state-filter" class="state-filter-select" aria-label="Filter by state">
               <option value="">All states</option>
+              <option value="US">US</option>
               <option value="Alabama">Alabama</option>
               <option value="Alaska">Alaska</option>
               <option value="Arizona">Arizona</option>
@@ -277,6 +301,12 @@
           </label>
         </span>
       </p>
+      <p id="mcp-pct-sort-row" class="mcp-pct-sort-row" hidden>
+        <button type="button" id="mcp-pct-sort-btn" class="mcp-pct-sort-btn" aria-label="Toggle sort direction">
+          Sort descending ↓
+        </button>
+        <span id="mcp-pct-sort-text" class="mcp-pct-sort-text">Sorted descending (highest contribution first).</span>
+      </p>
       <ol id="awards-ranking-list" class="awards-ranking-list" aria-busy="true">
         <script>
         (function(){
@@ -292,6 +322,29 @@
     </section>
 
     <div id="results" class="results"></div>
+    <div id="mcp-pct-popover" class="mcp-pct-popover" hidden role="dialog" aria-labelledby="mcp-pct-popover-title">
+      <div class="mcp-pct-popover-inner">
+        <h3 id="mcp-pct-popover-title" class="mcp-pct-popover-title">MCP contribution %</h3>
+        <p id="mcp-pct-popover-body" class="mcp-pct-popover-body"></p>
+        <button type="button" class="mcp-pct-popover-close" aria-label="Close">×</button>
+      </div>
+      <div class="mcp-pct-popover-backdrop" aria-hidden="true"></div>
+    </div>
+    <div id="csv-popover" class="csv-popover" hidden role="dialog" aria-labelledby="csv-popover-title">
+      <div class="csv-popover-inner">
+        <h2 id="csv-popover-title" class="csv-popover-title">Loading…</h2>
+        <div id="csv-popover-loading" class="csv-popover-loading">Loading CSV…</div>
+        <div id="csv-popover-error" class="csv-popover-error" hidden></div>
+        <div id="csv-popover-table-wrap" class="csv-popover-table-wrap" hidden>
+          <div class="csv-popover-table-scroll">
+            <table class="csv-popover-table" id="csv-popover-table" aria-label="Competition results"></table>
+          </div>
+        </div>
+        <a id="csv-popover-open-tab" class="csv-popover-open-tab" href="#" target="_blank" rel="noopener noreferrer" hidden>Open in new tab</a>
+        <button type="button" class="csv-popover-close" aria-label="Close">×</button>
+      </div>
+      <div class="csv-popover-backdrop" aria-hidden="true"></div>
+    </div>
     <div id="empty" class="empty-state" hidden>
       <p>No students match your search. Try a different name or partial name.</p>
     </div>
@@ -304,14 +357,14 @@
     <p><a href="articles/HowToUse">How to Use This Database</a></p>
     <p><a href="articles/IntegrityInMathContest">Note on Integrity in US Math Competitions</a></p>
     <p><a href="articles/using-data-to-identify-integrity-issues">Using data to identify integrity issues</a></p>
-    <p><a href="articles/">Other articles</a></p>  
-  </p>
-    <p>Please report issues and official contest results to <a href="mailto:mathcontestintegrity@gmail.com">mathcontestintegrity@gmail.com</a>.</p>
+    <p><a href="articles/how-to-compare-competitions">How to Compare Math Competitions</a></p>
+    <p><a href="crank.html">Competition Ranking</a></p>
+    <p><a href="articles/">Other articles</a></p>
+    <p><a href="report.html">Report integrity concern</a></p>
+    <p>Please report issues and official competition results to <a href="mailto:mathcontestintegrity@gmail.com">mathcontestintegrity@gmail.com</a>.</p>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.3/jspdf.plugin.autotable.min.js" crossorigin="anonymous"></script>
-  <script src="amo-alert-check.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

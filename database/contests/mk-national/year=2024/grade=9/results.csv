@@ -1,0 +1,70 @@
+student_id,student_name,state,grade,score,rank,national_percentile,mcp_rank
+2342,Jason Yin,New York,9,120,1,,1.5
+2776,Rehan Babu,California,9,120,1,,1.5
+48,Varun Gadi,Georgia,9,117,2,,3.0
+1401,Caroline Huang,Georgia,9,115,3,,5.5
+2643,Daisy Ying,Virginia,9,115,3,,5.5
+244,Jacob Ronan Khohayting,Florida,9,115,3,,5.5
+2648,Vlad Vynarchuk,Massachusetts,9,115,3,,5.5
+2777,Jacob Wu,California,9,112,4,,8.5
+701,Solon Xia,Kansas,9,112,4,,8.5
+2778,Chit Ming Yuen,California,9,111,5,,11.0
+2779,Curtis Wu,Massachusetts,9,111,5,,11.0
+2780,Ziqi Wang,California,9,111,5,,11.0
+1351,Annabel Rong,Georgia,9,110,6,,14.0
+2681,Brais Macknik-Conde,Tennessee,9,110,6,,14.0
+2781,Michael Mirkin,Massachusetts,9,110,6,,14.0
+2782,Hauming Yuen,California,9,109,7,,16.5
+263,Jonathan Liu,Massachusetts,9,109,7,,16.5
+2658,Gina Li,Massachusetts,9,108,8,,18.0
+267,Anshul Mantri,Oregon,9,107,9,,21.0
+2645,Michael Jian,California,9,107,9,,21.0
+740,Raghav Arun,North Carolina,9,107,9,,21.0
+1275,Rohith Thomas,Colorado,9,107,9,,21.0
+2660,Timothy Chen,California,9,107,9,,21.0
+2653,Aidan Cao,California,9,106,10,,27.5
+1052,Edward Zhang,California,9,106,10,,27.5
+1348,Haruka Kimura,Connecticut,9,106,10,,27.5
+2783,Jason Lee,New Jersey,9,106,10,,27.5
+320,Jeremy Yang,Maryland,9,106,10,,27.5
+2634,Josh Tsimberg,Texas,9,106,10,,27.5
+799,Kesav Kalanidhi,North Carolina,9,106,10,,27.5
+1333,Shuyin Liu,Washington,9,106,10,,27.5
+2661,Akash Krothapalli,Washington,9,105,11,,33.5
+2680,Anirudh Sengupta,North Carolina,9,105,11,,33.5
+2784,Billy Leng,California,9,105,11,,33.5
+2785,Chenxi Lu,New York,9,105,11,,33.5
+2786,Narnia Poddar,New York,9,103,12,,36.5
+2627,Wynn Marple,California,9,103,12,,36.5
+2787,Aniket Mangalampalli,California,9,102,13,,38.5
+2788,Bethesda Yeh,Massachusetts,9,102,13,,38.5
+1359,Alena Kutsuk,California,9,101,14,,43.5
+2207,Charles Wang,New Jersey,9,101,14,,43.5
+1569,JiSu Bang,New York,9,101,14,,43.5
+2635,Levi Gould,Minnesota,9,101,14,,43.5
+2647,Soham Pattnaik,Virginia,9,101,14,,43.5
+2665,Victor Wang,Maryland,9,101,14,,43.5
+2638,Vikram Goudar,Virginia,9,101,14,,43.5
+2789,Zachary Wong,Illinois,9,101,14,,43.5
+2632,Anthony Wang,Nevada,9,100,15,,49.0
+2684,Maxwell Lisuwandi,Massachusetts,9,100,15,,49.0
+2669,Shourya Vyas,Texas,9,100,15,,49.0
+2790,Guillem Elizalde,New Hampshire,9,99,16,,51.0
+2791,Alexander Ordukhanyan,New York,9,98,17,,55.0
+2683,Jevin Xu,Virginia,9,98,17,,55.0
+2792,Joey Yeong,New York,9,98,17,,55.0
+2793,Raj Randery,Massachusetts,9,98,17,,55.0
+2674,Samhitha Kamatala,Illinois,9,98,17,,55.0
+2690,Somil Sarode,California,9,98,17,,55.0
+2794,Vibhun Naredla,Virginia,9,98,17,,55.0
+2676,Anshul Raghav,Washington,9,97,18,,59.5
+2795,Nancy Zhang,Texas,9,97,18,,59.5
+2796,Amber Weng,Maryland,9,96,19,,63.5
+2639,Arnav Prabhudesai,Massachusetts,9,96,19,,63.5
+2630,Connor Kong,California,9,96,19,,63.5
+2633,Dev Batra,California,9,96,19,,63.5
+1780,Pablo Zhang,California,9,96,19,,63.5
+2797,Stas Chadrys,New York,9,96,19,,63.5
+2677,Avery Xu,New York,9,95,20,,68.0
+2663,Platon Gorkavy,Massachusetts,9,95,20,,68.0
+2798,Revanth Raparla,Texas,9,95,20,,68.0

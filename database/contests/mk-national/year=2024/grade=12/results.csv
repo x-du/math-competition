@@ -1,0 +1,36 @@
+student_id,student_name,state,grade,score,rank,national_percentile,mcp_rank
+115,Aaron Hu,Florida,12,120,1,,5.5
+441,David Wei,Virginia,12,120,1,,5.5
+1445,Derek Xu,New York,12,120,1,,5.5
+423,Elena Baskakova,Massachusetts,12,120,1,,5.5
+548,Michael Lu,New York,12,120,1,,5.5
+2701,Patrick Ying,Virginia,12,120,1,,5.5
+2702,Sam Rozansky,North Carolina,12,120,1,,5.5
+1116,Shreyas Singh,Illinois,12,120,1,,5.5
+121,Srinivas Arun,Colorado,12,120,1,,5.5
+1371,Zaee Shah,California,12,120,1,,5.5
+1134,Sebastian Prasanna,Massachusetts,12,117,2,,11.0
+2703,Golden Peng,Minnesota,12,116,3,,12.0
+2704,Chinmay Govind,Pennsylvania,12,115,4,,13.0
+2705,Justin Chan,Washington,12,111,5,,14.0
+2706,Aditya Gupta,Illinois,12,108,6,,16.5
+2707,Harsh Akunuri,New Jersey,12,108,6,,16.5
+2708,James Kim,Alabama,12,108,6,,16.5
+2709,Maya Viswanathan,Illinois,12,108,6,,16.5
+2710,Taohan Lin,Virginia,12,107,7,,19.0
+1799,Rahul Tacke,Massachusetts,12,106,8,,20.5
+455,Ryan Chin,Texas,12,106,8,,20.5
+2711,Eshaan Debnath,New Jersey,12,105,9,,22.0
+2712,Priya Adiga,Illinois,12,103,10,,23.0
+2713,Ethan Kuang,Massachusetts,12,101,11,,24.0
+2714,Vedant Rathi,Illinois,12,99,12,,25.0
+2715,Ananya Mahadevan,California,12,97,13,,26.0
+2015,Kangsan Yoon,Guam,12,92,14,,27.0
+2716,Alexandra Kim,California,12,91,15,,28.0
+2296,Arjun Saha Choudhury,New Jersey,12,88,16,,29.0
+2717,Katherine Li,Arizona,12,84,17,,30.0
+2718,Sharanya Chatterjee,Florida,12,83,18,,31.0
+2719,Anshul Prabu,California,12,81,19,,33.0
+2720,Jakub Pienkowski,New York,12,81,19,,33.0
+2721,Jason Nguyen,Texas,12,81,19,,33.0
+2722,Victor Longinov,Massachusetts,12,80,20,,35.0

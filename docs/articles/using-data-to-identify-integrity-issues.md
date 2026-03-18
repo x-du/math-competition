@@ -1,3 +1,8 @@
+---
+title: Using Data to Spot Potential Integrity Issues in Math Competitions
+description: "Guide for coaches and administrators: use the math competition database to check if a student's track record looks consistent and when to investigate further."
+---
+
 # Using Data to Spot Potential Integrity Issues in Math Competitions
 
 A short guide for coaches, administrators, and parents: how to use a public database of math competition results to check whether a student’s track record looks consistent—and when to look closer.

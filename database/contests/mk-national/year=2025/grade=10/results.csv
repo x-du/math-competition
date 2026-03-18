@@ -1,0 +1,87 @@
+student_id,student_name,state,grade,score,rank,national_percentile,mcp_rank
+267,Anshul Mantri,Oregon,10,120,1,98.8,3.5
+1006,David Wang,Maryland,10,120,1,98.8,3.5
+263,Jonathan Liu,Massachusetts,10,120,1,98.8,3.5
+48,Varun Gadi,Georgia,10,120,1,98.8,3.5
+2627,Wynn Marple,California,10,120,1,98.8,3.5
+2628,Zakhar Lazarevich,Massachusetts,10,120,1,98.8,3.5
+2629,Roni Shaheen,Virginia,10,117,2,98.3,7.5
+701,Solon Xia,Kansas,10,117,2,98.3,7.5
+2630,Connor Kong,California,10,116,3,98.1,9.0
+2631,Aditya Jagavkar,New Jersey,10,115,4,95.7,14.5
+2632,Anthony Wang,Nevada,10,115,4,95.7,14.5
+2633,Dev Batra,California,10,115,4,95.7,14.5
+2634,Josh Tsimberg,Texas,10,115,4,95.7,14.5
+925,Kalan Warusa,Virginia,10,115,4,95.7,14.5
+2635,Levi Gould,Minnesota,10,115,4,95.7,14.5
+740,Raghav Arun,North Carolina,10,115,4,95.7,14.5
+2636,SaiPranav Chamarthy,California,10,115,4,95.7,14.5
+2637,Sophia Zhu,Washington,10,115,4,95.7,14.5
+2638,Vikram Goudar,Virginia,10,115,4,95.7,14.5
+2639,Arnav Prabhudesai,Massachusetts,10,112,5,95.2,20.5
+2640,Nickita Korbut,Florida,10,112,5,95.2,20.5
+1401,Caroline Huang,Georgia,10,111,6,94.2,23.5
+1939,Kristiyan Kurtev,California,10,111,6,94.2,23.5
+2641,Ray Zhao,Massachusetts,10,111,6,94.2,23.5
+2642,Shlok Datta Choudhury,Texas,10,111,6,94.2,23.5
+2643,Daisy Ying,Virginia,10,110,7,92.1,30.0
+1052,Edward Zhang,California,10,110,7,92.1,30.0
+244,Jacob Ronan Khohayting,Florida,10,110,7,92.1,30.0
+2644,Janie Zheng,California,10,110,7,92.1,30.0
+2645,Michael Jian,California,10,110,7,92.1,30.0
+2646,Rhea Srinivas,California,10,110,7,92.1,30.0
+2647,Soham Pattnaik,Virginia,10,110,7,92.1,30.0
+2648,Vlad Vynarchuk,Massachusetts,10,110,7,92.1,30.0
+2649,Zukhil Subramanian,California,10,110,7,92.1,30.0
+2650,Lin Vincent,North Carolina,10,109,8,91.6,35.5
+2651,Lucas Park,California,10,109,8,91.6,35.5
+2652,Varyan Jain,Arizona,10,107,9,91.3,37.0
+2653,Aidan Cao,California,10,106,10,90.6,39.0
+2654,Caroline Fu,Virginia,10,106,10,90.6,39.0
+2655,Nicholas Wang,California,10,106,10,90.6,39.0
+2656,Ethan Cao,California,10,105,11,89.4,43.0
+2657,Ethan Mui,California,10,105,11,89.4,43.0
+2658,Gina Li,Massachusetts,10,105,11,89.4,43.0
+2659,Jason Dong,Texas,10,105,11,89.4,43.0
+2660,Timothy Chen,California,10,105,11,89.4,43.0
+2661,Akash Krothapalli,Washington,10,102,12,88.2,48.0
+2662,Jacob Barrett,Connecticut,10,102,12,88.2,48.0
+2663,Platon Gorkavy,Massachusetts,10,102,12,88.2,48.0
+2664,Rachel Shuai,Florida,10,102,12,88.2,48.0
+2665,Victor Wang,Maryland,10,102,12,88.2,48.0
+2666,Alan Lin,California,10,101,13,86.8,53.5
+2667,Joseph Franklin,North Carolina,10,101,13,86.8,53.5
+2668,Linor Lyanda-Geller,Indiana,10,101,13,86.8,53.5
+722,Paul Harmon,Montana,10,101,13,86.8,53.5
+2669,Shourya Vyas,Texas,10,101,13,86.8,53.5
+2670,Stefan Donisa,Illinois,10,101,13,86.8,53.5
+2671,Amrik Majumdar,Virginia,10,100,14,86.1,58.5
+2672,Graham Hoggan,California,10,100,14,86.1,58.5
+2673,Rohan Danda,Massachusetts,10,100,14,86.1,58.5
+2674,Samhitha Kamatala,Illinois,10,100,14,86.1,58.5
+2675,Alisha Jain,California,10,98,15,84.9,63.0
+2676,Anshul Raghav,Washington,10,98,15,84.9,63.0
+2677,Avery Xu,New York,10,98,15,84.9,63.0
+2678,Jennifer Wang,Indiana,10,98,15,84.9,63.0
+2679,Toprak Celikel,Washington,10,98,15,84.9,63.0
+2680,Anirudh Sengupta,North Carolina,10,97,16,84.1,67.0
+2681,Brais Macknik-Conde,Tennessee,10,97,16,84.1,67.0
+2682,Linyun Wang,California,10,97,16,84.1,67.0
+2683,Jevin Xu,Virginia,10,96,17,83.2,71.0
+2684,Maxwell Lisuwandi,Massachusetts,10,96,17,83.2,71.0
+2685,Sophia Lin,Illinois,10,96,17,77.4,71.0
+2686,Tanay Mangal,Massachusetts,10,96,17,81.2,71.0
+2687,Zoya Tahmasian,Massachusetts,10,96,17,83.2,71.0
+2688,Eva Kastoun,New York,10,95,18,82.5,75.0
+2689,Liza Kanne,Wisconsin,10,95,18,82.5,75.0
+2690,Somil Sarode,California,10,95,18,82.5,75.0
+2691,Jai Bindlish,Washington,10,93,19,82.2,77.0
+2692,Alexander Stronger,New York,10,92,20,80,82.0
+2693,Anna Zhang,Georgia,10,92,20,80,82.0
+2694,Bella Yuan,North Carolina,10,92,20,80,82.0
+2695,Chenxi Huang,California,10,92,20,80,82.0
+2696,Hanlin Yang,California,10,92,20,80,82.0
+2697,Nathan Huang,New York,10,92,20,80,82.0
+2698,Ritwik Singh,Washington,10,92,20,80,82.0
+2699,Timofey Gafurov,Virginia,10,92,20,80,82.0
+2700,Vaishnavi Mudumbi,New Jersey,10,92,20,80,82.0

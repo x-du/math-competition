@@ -7,6 +7,8 @@ Output: docs/data.json
 import csv
 import json
 import re
+import subprocess
+import sys
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -18,6 +20,7 @@ OUTPUT_JSON = REPO_ROOT / "docs" / "data.json"
 
 CONTESTS_SKIP_FOR_SEARCH = {
     "mathcounts-national",
+    "mk-national",  # Record only (statement info); not shown on website, no MCP
 }
 
 BMT_CONTESTS = {"bmt", "bmt-algebra", "bmt-calculus", "bmt-discrete", "bmt-geometry"}
@@ -30,6 +33,64 @@ GRAND_SLAM_SLUGS = {"imo", "egmo", "rmm"}  # Award-based points: Gold=100%, Silv
 
 
 K_STEEPNESS = 3
+
+# MCP v2: (competition_size_N, min_pts) per (slug, year).
+# N = total participants; min_pts = 10 for open, higher for selective.
+# Each slug maps to { year: (N, min_pts) }; use "default" for years not explicitly listed.
+# Subject tests inherit from parent (e.g. hmmt-feb-algebra-number-theory -> hmmt-feb).
+# See docs/articles/mcp.md for source.
+MCP_V2_PARAMS = {
+    "hmmt-feb": {"default": (800, 100)},
+    "hmmt-nov": {"default": (720, 10)},
+    "pumac": {"default": (180, 10)},
+    "pumac-b": {"default": (180, 10)},
+    "bmt": {"default": (630, 10), 2025: (630, 10), 2023:(270, 10)},
+    "arml": {"default": (1600, 10)},
+    "amo": {"default": (280, 200)},
+    "jmo": {"default": (220, 200)},
+    "cmimc": {"default": (200, 10)},
+    "bamo-12": {"default": (240, 10)},
+    "bamo-8": {"default": (420, 10)},
+    "mathcounts-national-rank": {"default": (224, 100)},
+    "mpfg": {"default": (275, 100)},
+    "mpfg-olympiad": {"default": (75, 100)},
+    "mmaths": {"default": (750, 10)},
+    "dmm": {"default": (270, 10)},
+    "cmm": {"default": (60, 10)},
+    "brumo-a": {"default": (300, 10)},
+}
+
+
+def get_mcp_v2_params(slug: str, year: str) -> tuple[int | None, int | None]:
+    """Return (N, min_pts) for MCP v2. Returns (None, None) if not in map (fallback to v1)."""
+    base_slug = slug
+    if slug not in MCP_V2_PARAMS:
+        if slug.startswith("hmmt-feb-"):
+            base_slug = "hmmt-feb"
+        elif slug.startswith("hmmt-nov-"):
+            base_slug = "hmmt-nov"
+        elif slug.startswith("pumac-b-"):
+            base_slug = "pumac-b"
+        elif slug.startswith("pumac-") and slug != "pumac-b":
+            base_slug = "pumac"
+        elif slug.startswith("bmt-"):
+            base_slug = "bmt"
+        elif slug.startswith("cmimc-"):
+            base_slug = "cmimc"
+        else:
+            return (None, None)
+
+    params = MCP_V2_PARAMS[base_slug]
+    try:
+        y = int(year)
+    except (ValueError, TypeError):
+        y = None
+    if isinstance(params, dict):
+        if y is not None and y in params:
+            return params[y]
+        return params.get("default", (None, None))
+    return (None, None)
+
 
 GRAND_SLAM_AWARD_MULTIPLIERS = {
     "gold": 1.0,
@@ -50,10 +111,18 @@ def compute_grand_slam_mcp_points(award: str, tier: int, weight: float = 1.0) ->
     return None
 
 
-def compute_mcp_points(mcp_rank: float, N: int, tier: int, weight: float = 1.0) -> int:
-    """Power-law interpolation: rank 1 -> max_pts, rank N -> min_pts (50% of max)."""
+def compute_mcp_points(
+    mcp_rank: float,
+    N: int,
+    tier: int,
+    weight: float = 1.0,
+    min_pts: float | None = None,
+) -> int:
+    """MCP v2 power-law: rank 1 -> max_pts, rank N -> min_pts.
+    If min_pts is None (v1 fallback), use 50% of max_pts."""
     max_pts = tier * weight
-    min_pts = tier * 0.5 * weight
+    if min_pts is None:
+        min_pts = tier * 0.5 * weight
     if N <= 1:
         return round(max_pts)
     return round(min_pts + (max_pts - min_pts) * ((N - mcp_rank) / (N - 1)) ** K_STEEPNESS)
@@ -147,7 +216,7 @@ def collect_result_files() -> list:
             if not year_dir.is_dir() or not year_dir.name.startswith("year="):
                 continue
             year = year_dir.name.replace("year=", "")
-            for csv_path in sorted(year_dir.glob("*.csv")):
+            for csv_path in sorted(year_dir.glob("**/*.csv")):
                 out.append((slug, year, csv_path))
     return out
 
@@ -189,16 +258,25 @@ def main() -> None:
         if not rows:
             continue
 
-        # Count N for mcp_points calculation
-        N = sum(1 for r in rows if (r.get("mcp_rank") or "").strip())
+        # MCP v2: N = competition size; min_pts from selection. Fallback: N = awardees, min_pts = 50% of max.
+        v2_N, v2_min_pts = get_mcp_v2_params(slug, year)
+        if v2_N is not None and v2_min_pts is not None:
+            N = v2_N
+            min_pts_for_mcp = v2_min_pts
+        else:
+            N = sum(1 for r in rows if (r.get("mcp_rank") or "").strip())
+            min_pts_for_mcp = None
 
         for row in rows:
             if slug in BMT_CONTESTS:
+                mcp_rank_str = (row.get("mcp_rank") or "").strip()
+                if not mcp_rank_str:
+                    continue
                 try:
-                    rank = int(row.get("rank", ""))
+                    mcp_rank_val = float(mcp_rank_str)
                 except (ValueError, TypeError):
                     continue
-                if rank < 1 or rank > 10:
+                if mcp_rank_val > 0.2 * N:
                     continue
             sid = row.get("student_id") or row.get("student_id ")
             if sid is not None:
@@ -214,6 +292,15 @@ def main() -> None:
                 "contest_slug": slug,
             }
             skip_keys = {"student_id", "student_id ", "student_name", "state"}
+            # Don't expose school from AMO/JMO results on the website (still in .csv)
+            if slug in ("amo", "jmo"):
+                skip_keys = skip_keys | {"school"}
+            # Don't expose team from ARML/MMATHS results on the website (still in .csv)
+            if slug in ("arml", "mmaths"):
+                skip_keys = skip_keys | {"team"}
+            # Don't expose team_name from DMM results on the website (still in .csv)
+            if slug == "dmm":
+                skip_keys = skip_keys | {"team_name"}
             for k, v in row.items():
                 if k is None:
                     continue
@@ -239,7 +326,9 @@ def main() -> None:
                     pts = compute_grand_slam_mcp_points(award, mcp_tier, mcp_weight)
                 if pts is None and mcp_rank_str and N > 0:
                     mcp_rank = float(mcp_rank_str)
-                    pts = compute_mcp_points(mcp_rank, N, mcp_tier, mcp_weight)
+                    pts = compute_mcp_points(
+                        mcp_rank, N, mcp_tier, mcp_weight, min_pts=min_pts_for_mcp
+                    )
                 if pts is not None:
                     record["mcp_points"] = pts
                     tw = get_time_weight(year, slug, max_year_by_slug.get(slug, 2026))
@@ -347,6 +436,24 @@ def main() -> None:
                     r[long_to_short[long_key]] = r.pop(long_key)
 
     OUTPUT_JSON.parent.mkdir(parents=True, exist_ok=True)
+
+    # Write branch.json for csv-viewer to fetch from current branch
+    branch = "main"
+    try:
+        result = subprocess.run(
+            ["git", "rev-parse", "--abbrev-ref", "HEAD"],
+            capture_output=True,
+            text=True,
+            cwd=REPO_ROOT,
+            timeout=5,
+        )
+        if result.returncode == 0 and result.stdout.strip():
+            branch = result.stdout.strip()
+    except (subprocess.SubprocessError, FileNotFoundError):
+        pass
+    with open(REPO_ROOT / "docs" / "branch.json", "w", encoding="utf-8") as f:
+        json.dump({"branch": branch}, f)
+
     with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
         json.dump(
             {
@@ -363,6 +470,17 @@ def main() -> None:
         )
 
     print(f"Wrote {len(result_students)} students with records to {OUTPUT_JSON}")
+
+    # Build competition_data.json for crank.html
+    try:
+        subprocess.run(
+            [sys.executable, str(REPO_ROOT / "scripts" / "build_competition_data.py")],
+            cwd=REPO_ROOT,
+            check=True,
+            timeout=30,
+        )
+    except (subprocess.CalledProcessError, FileNotFoundError, subprocess.TimeoutExpired):
+        pass  # Non-fatal; crank page can use stale competition_data.json
 
 
 if __name__ == "__main__":

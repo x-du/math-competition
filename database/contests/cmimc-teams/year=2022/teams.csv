@@ -1,19 +1,19 @@
-team_id,team_name,student_ids
-1,Texas Momentum A,173
-2,Cowconuts,181|1179
-3,Random Math,169|117
-4,Math Advance Team C,2512
-5,iodgvypribdt,1154
-6,MA Boys,1166
-7,Glenbrook North,2513
-8,Bulgaria 1,2514
-9,Chair,172
-10,Tin Man,175
-11,MN Gold,2515
-12,PRISMS Falcons,1105
-13,Random Math - Team B,1985
-14,ur mom,466
-15,Motown All-Stars,2516|95
-16,Math Advance Team A,300
-17,Florida Alligators,159
-18,Saratoga 1,436
+team_id,team_name,student_ids,state
+1,Texas Momentum A,173,Texas
+2,Cowconuts,181|1179,California
+3,Random Math,169|117,California
+4,Math Advance Team C,2512,
+5,iodgvypribdt,1154,California
+6,MA Boys,1166,Florida
+7,Glenbrook North,2513,Illinois
+8,Bulgaria 1,2514,Bulgaria
+9,Chair,172,Maryland
+10,Tin Man,175,New York
+11,MN Gold,2515,Minnesota
+12,PRISMS Falcons,1105,New Jersey
+13,Random Math - Team B,1985,Arizona
+14,ur mom,466,Alabama
+15,Motown All-Stars,2516|95,Michigan
+16,Math Advance Team A,300,New Jersey
+17,Florida Alligators,159,Florida
+18,Saratoga 1,436,California

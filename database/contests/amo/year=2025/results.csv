@@ -1,156 +1,156 @@
-student_id,student_name,state,award,mcp_rank
-402,Christopher Bao,Nevada,Gold,10.5
-99,Rohan Bodke,California,Gold,10.5
-73,Andrew Carratu,New Hampshire,Gold,10.5
-272,Karn Chutinan,California,Gold,10.5
-9,Jonathan Du,California,Gold,10.5
-25,Rohan Garg,California,Gold,10.5
-213,Darren Han,Texas,Gold,10.5
-59,Henry Jiang,Michigan,Gold,10.5
-884,Shihan Kanungo,California,Gold,10.5
-327,Hengrui Liang,California,Gold,10.5
-91,Andrew Lin,New Jersey,Gold,10.5
-34,Jiahe Liu,Ohio,Gold,10.5
-262,Aryan Raj,Virginia,Gold,10.5
-4,Liam Reddy,Utah,Gold,10.5
-885,Aarush Vailaya,California,Gold,10.5
-1,Alexander Wang,New Jersey,Gold,10.5
-10,Calvin Wang,Virginia,Gold,10.5
-56,Channing Yang,Texas,Gold,10.5
-113,Feodor Yevtushenko,California,Gold,10.5
-96,Qiao Zhang,California,Gold,10.5
-886,Warren Bei,"British Columbia,Canada",Silver,36.5
-37,Grant Blitz,New Hampshire,Silver,36.5
-24,Ryan Chen,Washington,Silver,36.5
-90,Rohan Das,California,Silver,36.5
-79,Surya Dinesh,Texas,Silver,36.5
-62,Evan Fan,New Hampshire,Silver,36.5
-58,Hannah Fox,California,Silver,36.5
-7,Benjamin Fu,Washington,Silver,36.5
-257,Daniel Ge,Washington,Silver,36.5
-127,David Ji,New Jersey,Silver,36.5
-389,Keshav Karumbunathan,Oregon,Silver,36.5
-364,Ekam Kaur,Texas,Silver,36.5
-887,Neil Krishnan,California,Silver,36.5
-888,Jian Kweon,California,Silver,36.5
-253,Jaeho Lee,Texas,Silver,36.5
-343,Jason Lee,North Carolina,Silver,36.5
-69,Connor Leong,California,Silver,36.5
-889,Tony Lu,Texas,Silver,36.5
-132,Jason Mao,New Jersey,Silver,36.5
-83,Skyler Mao,California,Silver,36.5
-254,Tarun Rapaka,Texas,Silver,36.5
-86,Vikram Sarkar,Connecticut,Silver,36.5
-45,Aaryan Vaishya,Florida,Silver,36.5
-27,Bolei Wang,New Hampshire,Silver,36.5
-289,Kyle Wu,New York,Silver,36.5
-275,Catherine Xu,Iowa,Silver,36.5
-268,Kevin Yang,Washington,Silver,36.5
-387,Royce Yao,Arizona,Silver,36.5
-337,Emily Yu,New York,Silver,36.5
-638,Owen Zhang,Washington,Silver,36.5
-85,Sophia Zhang,New Jersey,Silver,36.5
-80,Lerchen Zhong,Texas,Silver,36.5
-328,Aryan Agrawal,Washington,Bronze,80
-49,Amogh Akella,Texas,Bronze,80
-666,Shruti Arun,Colorado,Bronze,80
-890,Hanson Bai,California,Bronze,80
-891,Andrew Brahms,New Jersey,Bronze,80
-892,Edward Cha,Massachusetts,Bronze,80
-12,Alan Cheng,North Carolina,Bronze,80
-893,Hugh Cheng,California,Bronze,80
-894,Kailua Cheng,California,Bronze,80
-325,Amy Cui,Washington,Bronze,80
-895,Perry Dai,"Ontario, Canada",Bronze,80
-352,Eric Ding,Minnesota,Bronze,80
-896,Aron Fekete,New Hampshire,Bronze,80
-897,Dylan Frake,California,Bronze,80
-898,Hao-Yu Gan,New York,Bronze,80
-112,Jonathan He,Illinois,Bronze,80
-900,Katie He,New York,Bronze,80
-809,Advait Joshi,New Jersey,Bronze,80
-901,Hyun-Jin Kim,Texas,Bronze,80
-2486,Matthias Kim,Washington,Bronze,80
-902,Sam Kretzschmar,Minnesota,Bronze,80
-288,David Lee,New Jersey,Bronze,80
-415,Christopher Li,"Ontario, Canada",Bronze,80
-68,Xilong Lin,California,Bronze,80
-81,Angela Liu,California,Bronze,80
-780,Susie Lu,Washington,Bronze,80
-274,Kai Lum,California,Bronze,80
-903,Justin Ma,Virginia,Bronze,80
-44,Krithik Manoharan,Texas,Bronze,80
-575,Pratham Mukewar,New Hampshire,Bronze,80
-687,Sola Murakami,Hawaii,Bronze,80
-331,Ritwin Narra,California,Bronze,80
-904,Jaewoo Park,Illinois,Bronze,80
-40,Darsh Patel,Florida,Bronze,80
-545,Matthew Qian,Massachusetts,Bronze,80
-57,Christopher Qiu,New Jersey,Bronze,80
-665,Sohil Rathi,California,Bronze,80
-22,Ian Rui,Washington,Bronze,80
-296,Hansen Shieh,Massachusetts,Bronze,80
-905,Ryan Tang,Massachusetts,Bronze,80
-277,Aprameya Tripathy,New Jersey,Bronze,80
-641,Hongning Wang,Washington,Bronze,80
-3,Oron Wang,New Hampshire,Bronze,80
-906,Ryan Wang,California,Bronze,80
-281,Andrew Xing,New York,Bronze,80
-907,Brian Xue,California,Bronze,80
-908,Vincent Yu,Indiana,Bronze,80
-482,David Zhang,California,Bronze,80
-311,Tony Zhang,Virginia,Bronze,80
-13,Michael Zhao,Texas,Bronze,80
-46,Ray Zhao,Texas,Bronze,80
-909,Joey Zheng,Arizona,Bronze,80
-738,Liran Zhou,New York,Bronze,80
-910,Ryan Zhu,"British Columbia, Canada",Bronze,80
-911,Eric Zou,California,Bronze,80
-429,Evan Ashoori,Massachusetts,Honorable Mention,131.5
-50,Yunzhe Bai,Massachusetts,Honorable Mention,131.5
-912,Brett Chang,California,Honorable Mention,131.5
-913,Samarth Das,Texas,Honorable Mention,131.5
-29,Patrick Du,Virginia,Honorable Mention,131.5
-914,Bryan Fu,Texas,Honorable Mention,131.5
-915,Michael Han,Massachusetts,Honorable Mention,131.5
-916,Lucas Hinds,Tennessee,Honorable Mention,131.5
-35,William Hua,Massachusetts,Honorable Mention,131.5
-917,Bennett Huang,Virginia,Honorable Mention,131.5
-918,Jiawen Huang,California,Honorable Mention,131.5
-919,Seojoon Kang,New York,Honorable Mention,131.5
-433,Aarush Khare,California,Honorable Mention,131.5
-920,Taehong Kim,Massachusetts,Honorable Mention,131.5
-921,Alicia Li,New York,Honorable Mention,131.5
-516,Bryan Li,Massachusetts,Honorable Mention,131.5
-922,Rex Li,"Ontario, Canada",Honorable Mention,131.5
-558,Aaron Lin,Missouri,Honorable Mention,131.5
-72,Kevin Liu,Florida,Honorable Mention,131.5
-14,Nathan Liu,Texas,Honorable Mention,131.5
-282,Arjun Pagidi,Virginia,Honorable Mention,131.5
-923,James Qiu,"Ontario, Canada",Honorable Mention,131.5
-924,Victor Sarca,"Ontario, Canada",Honorable Mention,131.5
-259,Maitian Sha,New Jersey,Honorable Mention,131.5
-286,Yusuf Sheikh,Florida,Honorable Mention,131.5
-97,Eric Wang,New Hampshire,Honorable Mention,131.5
-483,Lawson Wang,California,Honorable Mention,131.5
-925,Kalan Warusa,Virginia,Honorable Mention,131.5
-926,Asher Wu,Washington,Honorable Mention,131.5
-927,Arthur Xu,Illinois,Honorable Mention,131.5
-928,Kellen Xue,California,Honorable Mention,131.5
-77,Shunyao Yan,Virginia,Honorable Mention,131.5
-929,Nathan Ye,California,Honorable Mention,131.5
-361,Kai Yi,California,Honorable Mention,131.5
-23,Jeffrey Yin,Virginia,Honorable Mention,131.5
-930,Bole Ying,Pennsylvania,Honorable Mention,131.5
-931,Matthew Yuan,California,Honorable Mention,131.5
-932,Leo Zeng,California,Honorable Mention,131.5
-667,Alex Zhang,"Ontario, Canada",Honorable Mention,131.5
-933,Alexander Zhang,"Ontario, Canada",Honorable Mention,131.5
-934,Charles Zhang,California,Honorable Mention,131.5
-935,Eric Zhang,Illinois,Honorable Mention,131.5
-487,Kyle Zhang,Connecticut,Honorable Mention,131.5
-747,Devin Zhao,Ohio,Honorable Mention,131.5
-87,Max Zhao,Virginia,Honorable Mention,131.5
-33,Roger Zhen,Texas,Honorable Mention,131.5
-475,Owen Zhou,Arizona,Honorable Mention,131.5
-614,Anthony Zou,South Carolina,Honorable Mention,131.5
+student_id,student_name,state,school,award,mcp_rank
+402,Christopher Bao,Nevada,Davidson Academy,Gold,10.5
+99,Rohan Bodke,California,Homestead High School - Cupertino,Gold,10.5
+73,Andrew Carratu,New Hampshire,Phillips Exeter Academy,Gold,10.5
+272,Karn Chutinan,California,Dover Sherborn High School,Gold,10.5
+9,Jonathan Du,California,Alpha Star Academy,Gold,10.5
+25,Rohan Garg,California,Amador Valley High School,Gold,10.5
+213,Darren Han,Texas,University of Texas at Austin,Gold,10.5
+59,Henry Jiang,Michigan,Detroit Country Day School,Gold,10.5
+884,Shihan Kanungo,California,Alpha Star Academy,Gold,10.5
+327,Hengrui Liang,California,Harker Upper School,Gold,10.5
+91,Andrew Lin,New Jersey,Yu's Elite Education,Gold,10.5
+34,Jiahe Liu,Ohio,John Carroll University,Gold,10.5
+262,Aryan Raj,Virginia,Chantilly High School,Gold,10.5
+4,Liam Reddy,Utah,Waterford School,Gold,10.5
+885,Aarush Vailaya,California,Harker Upper School,Gold,10.5
+1,Alexander Wang,New Jersey,Millburn High School,Gold,10.5
+10,Calvin Wang,Virginia,Thomas Jefferson High School for Science and Technology,Gold,10.5
+56,Channing Yang,Texas,Elkins,Gold,10.5
+113,Feodor Yevtushenko,California,UCI-Math Circle,Gold,10.5
+96,Qiao Zhang,California,Sierra Canyon School,Gold,10.5
+886,Warren Bei,"British Columbia,Canada",Vancouver Olympiad School Inc.,Silver,36.5
+37,Grant Blitz,New Hampshire,Science and Arts Academy,Silver,36.5
+24,Ryan Chen,Washington,Eastlake High School,Silver,36.5
+90,Rohan Das,California,Spring Light Education Institute,Silver,36.5
+79,Surya Dinesh,Texas,St. Marks School of Texas,Silver,36.5
+62,Evan Fan,New Hampshire,Phillips Exeter Academy,Silver,36.5
+58,Hannah Fox,California,Proof School - San Francisco,Silver,36.5
+7,Benjamin Fu,Washington,Bellevue High School,Silver,36.5
+257,Daniel Ge,Washington,Newport High School,Silver,36.5
+127,David Ji,New Jersey,Yu's Elite Education,Silver,36.5
+389,Keshav Karumbunathan,Oregon,,Silver,36.5
+364,Ekam Kaur,Texas,UT Dallas,Silver,36.5
+887,Neil Krishnan,California,Harker Upper School,Silver,36.5
+888,Jian Kweon,California,Evergreen Valley High School,Silver,36.5
+253,Jaeho Lee,Texas,Spring Branch Academic Institute SC,Silver,36.5
+343,Jason Lee,North Carolina,North Carolina School of Science and Mathematics,Silver,36.5
+69,Connor Leong,California,Burlingame High School,Silver,36.5
+889,Tony Lu,Texas,St. Marks School of Texas,Silver,36.5
+132,Jason Mao,New Jersey,Morris Hills High School,Silver,36.5
+83,Skyler Mao,California,Saratoga High School,Silver,36.5
+254,Tarun Rapaka,Texas,Elkins,Silver,36.5
+86,Vikram Sarkar,Connecticut,Brunswick School - Upper School - Greenwich,Silver,36.5
+45,Aaryan Vaishya,Florida,H. B. Plant High School,Silver,36.5
+27,Bolei Wang,New Hampshire,Science and Arts Academy,Silver,36.5
+289,Kyle Wu,New York,Hunter College High School,Silver,36.5
+275,Catherine Xu,Iowa,Iowa City West Senior High School,Silver,36.5
+268,Kevin Yang,Washington,Skyline High School - Sammamish,Silver,36.5
+387,Royce Yao,Arizona,University High School - Tucson,Silver,36.5
+337,Emily Yu,New York,Pittsford Mendon High School,Silver,36.5
+638,Owen Zhang,Washington,Bellevue High School,Silver,36.5
+85,Sophia Zhang,New Jersey,Princeton International School of Mathematics and Science,Silver,36.5
+80,Lerchen Zhong,Texas,University of Texas at Austin,Silver,36.5
+328,Aryan Agrawal,Washington,Interlake High School,Bronze,80
+49,Amogh Akella,Texas,University of Texas at Austin,Bronze,80
+666,Shruti Arun,Colorado,Cherry Creek High School,Bronze,80
+890,Hanson Bai,California,Monta Vista High School New Jersey Enrichment,Bronze,80
+891,Andrew Brahms,New Jersey,,Bronze,80
+892,Edward Cha,Massachusetts,Phillips Academy,Bronze,80
+12,Alan Cheng,North Carolina,North Carolina School of Science and Mathematics,Bronze,80
+893,Hugh Cheng,California,Harvard-Westlake School - Studio City,Bronze,80
+894,Kailua Cheng,California,Amador Valley High School,Bronze,80
+325,Amy Cui,Washington,Lakeside School,Bronze,80
+895,Perry Dai,"Ontario, Canada",Linked Key,Bronze,80
+352,Eric Ding,Minnesota,John Marshall High School,Bronze,80
+896,Aron Fekete,New Hampshire,Phillips Exeter Academy,Bronze,80
+897,Dylan Frake,California,Cupertino,Bronze,80
+898,Hao-Yu Gan,New York,Hunter College High School,Bronze,80
+112,Jonathan He,Illinois,Adlai E. Stevenson High School,Bronze,80
+900,Katie He,New York,Frazer School,Bronze,80
+809,Advait Joshi,New Jersey,Livingston High School,Bronze,80
+901,Hyun-Jin Kim,Texas,ACES Learning Center,Bronze,80
+2486,Matthias Kim,Washington,Interlake High School,Bronze,80
+902,Sam Kretzschmar,Minnesota,Spring Lake Park Senior High School,Bronze,80
+288,David Lee,New Jersey,Princeton International School of Mathematics and Science,Bronze,80
+415,Christopher Li,"Ontario, Canada",Olympiads School,Bronze,80
+68,Xilong Lin,California,Fairmont Prep Academy,Bronze,80
+81,Angela Liu,California,Spring Light Education Institute,Bronze,80
+780,Susie Lu,Washington,Ao PS Bellevue,Bronze,80
+274,Kai Lum,California,Random Math Inc.,Bronze,80
+903,Justin Ma,Virginia,Thomas Jefferson High School for Science and Technology,Bronze,80
+44,Krithik Manoharan,Texas,Elkins,Bronze,80
+575,Pratham Mukewar,New Hampshire,Nashua High School South,Bronze,80
+687,Sola Murakami,Hawaii,Iolani School,Bronze,80
+331,Ritwin Narra,California,Alpha Star Academy,Bronze,80
+904,Jaewoo Park,Illinois,University Laboratory High School,Bronze,80
+40,Darsh Patel,Florida,American Heritage School - Plantation,Bronze,80
+545,Matthew Qian,Massachusetts,Ao PS Academy Lexington,Bronze,80
+57,Christopher Qiu,New Jersey,Princeton International School of Mathematics and Science,Bronze,80
+665,Sohil Rathi,California,Alpha Star Academy,Bronze,80
+22,Ian Rui,Washington,Interlake High School,Bronze,80
+296,Hansen Shieh,Massachusetts,RSM-Acton,Bronze,80
+905,Ryan Tang,Massachusetts,Lexington High School,Bronze,80
+277,Aprameya Tripathy,New Jersey,West Windsor-Plainsboro High School North,Bronze,80
+641,Hongning Wang,Washington,Eastlake High School,Bronze,80
+3,Oron Wang,New Hampshire,Gauss Academy of Mathematical Education,Bronze,80
+906,Ryan Wang,California,Amador Valley High School,Bronze,80
+281,Andrew Xing,New York,Frazer School,Bronze,80
+907,Brian Xue,California,Lynbrook High School - San Jose,Bronze,80
+908,Vincent Yu,Indiana,Indiana Ac Sci/Math/Humanities,Bronze,80
+482,David Zhang,California,Dougherty Valley High School,Bronze,80
+311,Tony Zhang,Virginia,Mills E. Godwin High School,Bronze,80
+13,Michael Zhao,Texas,ACES Learning Center,Bronze,80
+46,Ray Zhao,Texas,University of Texas at Austin,Bronze,80
+909,Joey Zheng,Arizona,Basis Mesa,Bronze,80
+738,Liran Zhou,New York,Jericho High School,Bronze,80
+910,Ryan Zhu,"British Columbia, Canada",Vancouver Olympiad School Inc.,Bronze,80
+911,Eric Zou,California,Diamond Bar High School,Bronze,80
+429,Evan Ashoori,Massachusetts,Lexington High School,Honorable Mention,131.5
+50,Yunzhe Bai,Massachusetts,Lexington High School,Honorable Mention,131.5
+912,Brett Chang,California,South Pasadena,Honorable Mention,131.5
+913,Samarth Das,Texas,Russian School of Mathematics - Plano,Honorable Mention,131.5
+29,Patrick Du,Virginia,Thomas Jefferson High School for Science and Technology,Honorable Mention,131.5
+914,Bryan Fu,Texas,,Honorable Mention,131.5
+915,Michael Han,Massachusetts,Frisco/Plano Lexington High School MMC&M (Many Math,Honorable Mention,131.5
+916,Lucas Hinds,Tennessee,,Honorable Mention,131.5
+35,William Hua,Massachusetts,Circles and More) Lexington High School,Honorable Mention,131.5
+917,Bennett Huang,Virginia,Langley High School,Honorable Mention,131.5
+918,Jiawen Huang,California,Arcadia High School - Arcadia,Honorable Mention,131.5
+919,Seojoon Kang,New York,Saint Mary's High School,Honorable Mention,131.5
+433,Aarush Khare,California,Homestead High School - Cupertino,Honorable Mention,131.5
+920,Taehong Kim,Massachusetts,Lexington High School,Honorable Mention,131.5
+921,Alicia Li,New York,Horace Mann School,Honorable Mention,131.5
+516,Bryan Li,Massachusetts,Acton Boxborough High School,Honorable Mention,131.5
+922,Rex Li,"Ontario, Canada",Carleton Univ of Math. & Statistics,Honorable Mention,131.5
+558,Aaron Lin,Missouri,Ladue Horton Watkins High School,Honorable Mention,131.5
+72,Kevin Liu,Florida,Florida Atlantic University,Honorable Mention,131.5
+14,Nathan Liu,Texas,St. Marks School of Texas Thomas Jefferson High,Honorable Mention,131.5
+282,Arjun Pagidi,Virginia,School for Science and Technology,Honorable Mention,131.5
+923,James Qiu,"Ontario, Canada",TT Math School,Honorable Mention,131.5
+924,Victor Sarca,"Ontario, Canada",William Lyon Mackenzie CI West Windsor Plainsboro,Honorable Mention,131.5
+259,Maitian Sha,New Jersey,,Honorable Mention,131.5
+286,Yusuf Sheikh,Florida,High School South American Heritage School - Plantation,Honorable Mention,131.5
+97,Eric Wang,New Hampshire,Nashua High School South,Honorable Mention,131.5
+483,Lawson Wang,California,Saratoga High School,Honorable Mention,131.5
+925,Kalan Warusa,Virginia,Mc Lean High School,Honorable Mention,131.5
+926,Asher Wu,Washington,Pullman High School Naperville Central High,Honorable Mention,131.5
+927,Arthur Xu,Illinois,,Honorable Mention,131.5
+928,Kellen Xue,California,School Arcadia High School,Honorable Mention,131.5
+77,Shunyao Yan,Virginia,Thomas Jefferson High School for Science and Technology,Honorable Mention,131.5
+929,Nathan Ye,California,Henry Gunn High,Honorable Mention,131.5
+361,Kai Yi,California,San Diego Math Circle,Honorable Mention,131.5
+23,Jeffrey Yin,Virginia,Mc Lean High School,Honorable Mention,131.5
+930,Bole Ying,Pennsylvania,Lower Merion High School SpringLight Education,Honorable Mention,131.5
+931,Matthew Yuan,California,,Honorable Mention,131.5
+932,Leo Zeng,California,Institute BASIS Independent Silicon Valley,Honorable Mention,131.5
+667,Alex Zhang,"Ontario, Canada",Linked Key,Honorable Mention,131.5
+933,Alexander Zhang,"Ontario, Canada",TT Math School,Honorable Mention,131.5
+934,Charles Zhang,California,Great Oak High School,Honorable Mention,131.5
+935,Eric Zhang,Illinois,Adlai E. Stevenson High School,Honorable Mention,131.5
+487,Kyle Zhang,Connecticut,Hopkins School,Honorable Mention,131.5
+747,Devin Zhao,Ohio,Granville Schools Thomas Jefferson High,Honorable Mention,131.5
+87,Max Zhao,Virginia,School for Science and Technology,Honorable Mention,131.5
+33,Roger Zhen,Texas,Clear Lake High School,Honorable Mention,131.5
+475,Owen Zhou,Arizona,BASIS Scottsdale,Honorable Mention,131.5
+614,Anthony Zou,South Carolina,River Bluff High School,Honorable Mention,131.5

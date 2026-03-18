@@ -1,0 +1,58 @@
+student_id,student_name,state,grade,score,rank,national_percentile,mcp_rank
+2520,Alex Hart,Georgia,12,120,1,97.4,3.0
+891,Andrew Brahms,New Jersey,12,120,1,97.4,3.0
+2521,Christopher Dickman,Washington,12,120,1,97.4,3.0
+2522,David Deutsch,California,12,120,1,97.4,3.0
+482,David Zhang,California,12,120,1,97.4,3.0
+2523,Anjena Raja,California,12,115,2,88.7,10.5
+549,Elita You,Michigan,12,115,2,88.7,10.5
+2566,Eric Jin,Indiana,12,115,2,88.7,10.5
+2524,Ethan Do,Washington,12,115,2,88.7,10.5
+2525,Ivan Zhang,Maryland,12,115,2,88.7,10.5
+2526,Kylar Cheng,California,12,115,2,88.7,10.5
+2527,Rockwell Li,Virginia,12,115,2,88.7,10.5
+546,Rohith Raghavan,Massachusetts,12,115,2,88.7,10.5
+1927,Satvik Sivaraman,California,12,115,2,88.7,10.5
+2528,Timothy Torubarov,New Jersey,12,115,2,88.7,10.5
+2529,Aidan Zhang,California,12,110,3,83.5,18.5
+1421,Daniel Gilman,New Jersey,12,110,3,83.5,18.5
+2530,Gary Sun,Texas,12,110,3,83.5,18.5
+2531,Gregory Roudenko,Virginia,12,110,3,83.5,18.5
+1629,Jagan Mranal,Massachusetts,12,110,3,83.5,18.5
+2532,Shrey Gupta,Florida,12,110,3,83.5,18.5
+2533,Anshul Gokul,Georgia,12,108,4,82.6,22.0
+2534,Joshua Lin,Illinois,12,107,5,80,24.0
+2535,Lily Tjia,Massachusetts,12,107,5,80,24.0
+2536,Thiruchelvam Thirunavukkarasu,Washington,12,107,5,80,24.0
+2537,Daniil Arnold,Texas,12,106,6,78.3,26.5
+505,Sai Palireddy,Georgia,12,106,6,78.3,26.5
+2538,Gabriel Xu,Virginia,12,105,7,77.4,28.0
+1253,Joyce Huang,Washington,12,101,8,74.8,30.0
+2539,Kevin Park,Virginia,12,101,8,74.8,30.0
+2540,Sofia Alfenito,New York,12,101,8,74.8,30.0
+2541,Justin Bernal,Washington,12,98,9,73.9,32.0
+2542,Miles Wind,Utah,12,97,10,71.3,34.0
+2543,Sreeram Sai Vuppala,New Jersey,12,97,10,71.3,34.0
+769,Yejoon Ham,Tennessee,12,97,10,71.3,34.0
+2544,Cameron Kelm,California,12,96,11,69.6,36.5
+2545,Hamed Fazel-Rezai,California,12,96,11,69.6,36.5
+2546,Isaac Young,Louisiana,12,91,12,67,39.0
+2547,Prattay Bhattacharya,Massachusetts,12,91,12,67,39.0
+2548,Rose Cohen,California,12,91,12,67,39.0
+2549,Lyev Pitram,Pennsylvania,12,90,13,66.1,41.0
+2550,Neelansh Samanta,Pennsylvania,12,89,14,65.2,42.0
+2551,Dakota Pippins,Maryland,12,87,15,62.6,44.0
+2552,Daron Simmons,Florida,12,87,15,62.6,44.0
+2553,Krrish Mishra,New Hampshire,12,87,15,62.6,44.0
+2554,Eli Tomiak,Virginia,12,86,16,59.1,47.5
+2555,Kriti Nandakumar,North Carolina,12,86,16,59.1,47.5
+2556,Smithi Gopalakrishnan,Texas,12,86,16,59.1,47.5
+2557,Sruthi Gopalakrishnan,Texas,12,86,16,59.1,47.5
+2558,Aditya Singh Panwar,Texas,12,83,17,56.5,51.0
+2559,Anjan Yalamanchili,New Hampshire,12,83,17,56.5,51.0
+2560,Shashwath Inamdar,New Jersey,12,83,17,56.5,51.0
+2561,Wesley Maidoh,Louisiana,12,82,18,55.7,53.0
+2562,Anthony Lin,Texas,12,81,19,53,55.0
+2563,Dan Haidau,Illinois,12,81,19,53,55.0
+2564,Tanooj Kanike,Texas,12,81,19,53,55.0
+2565,Sandarika Warjri,Nebraska,12,80,20,52.2,57.0

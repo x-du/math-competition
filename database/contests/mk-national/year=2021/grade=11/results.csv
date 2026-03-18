@@ -1,0 +1,57 @@
+student_id,student_name,state,grade,score,rank,national_percentile,mcp_rank
+2453,Alex Gu,California,11,120,1,,6.5
+3183,Eric Lee,California,11,120,1,,6.5
+4770,Fengyi Huang,California,11,120,1,,6.5
+1192,James Rydell,California,11,120,1,,6.5
+178,Andrew Lee,Massachusetts,11,120,1,,6.5
+197,Karthik Seetharaman,Massachusetts,11,120,1,,6.5
+184,Kevin Zhao,Massachusetts,11,120,1,,6.5
+1173,Daniel Yuan,Maryland,11,120,1,,6.5
+3174,Daniel Salkinder,New York,11,120,1,,6.5
+3171,Arushi Mantri,Oregon,11,120,1,,6.5
+4771,Samuel James Esteban,Virginia,11,120,1,,6.5
+4772,Zimeng Liu,Washington,11,120,1,,6.5
+4773,Eric Ren,California,11,116,2,,14.0
+3177,Nathra Ramrajvel,Illinois,11,116,2,,14.0
+3187,Stefan Popescu,Virginia,11,116,2,,14.0
+3182,Rahul Bansal,California,11,115,3,,17.0
+4774,Xuhui Miao,California,11,115,3,,17.0
+3175,Dmitriy Shvydkoy,Illinois,11,115,3,,17.0
+3173,Clarence Lam,Maryland,11,113,4,,19.5
+3191,Efe Eroz,Maryland,11,113,4,,19.5
+4775,Natalie Shell,Connecticut,11,112,5,,21.0
+3184,Michael Ferguson,North Carolina,11,111,6,,24.0
+3179,Tony Tzolov,Pennsylvania,11,111,6,,24.0
+3193,Simon Kerr,Utah,11,111,6,,24.0
+3190,Joshua Bennett,Virginia,11,111,6,,24.0
+3172,Chirag Verma,Washington,11,111,6,,24.0
+4776,Jennifer Xia,Illinois,11,110,7,,28.0
+4777,Lawrence Zhao,Illinois,11,110,7,,28.0
+4778,Amy Feng,New York,11,110,7,,28.0
+4779,Edward Chen,Georgia,11,109,8,,30.0
+3192,Lucas Guillet,Illinois,11,108,9,,31.0
+3178,Saathvik Selvan,Florida,11,107,10,,32.5
+3194,Leonard Bian,Maryland,11,107,10,,32.5
+4780,Orion Foo,Maryland,11,105,11,,34.5
+4781,Robert Song,Maryland,11,105,11,,34.5
+4782,Arosh De Silva,New Jersey,11,104,12,,36.0
+4783,Sejal Rathi,California,11,103,13,,37.5
+4784,Parth Dedhiya,Pennsylvania,11,103,13,,37.5
+4785,Sophia Shi,California,11,102,14,,39.0
+3195,Joaquin Perkins,California,11,101,15,,41.5
+4786,Tanush Mittal,Massachusetts,11,101,15,,41.5
+4787,Satvik Lolla,Maryland,11,101,15,,41.5
+4788,Alexandra Fefelova,Oregon,11,101,15,,41.5
+4789,Kripa Kini,California,11,100,16,,44.5
+4790,Otto Rahmel,California,11,100,16,,44.5
+3180,Eric Wang,Pennsylvania,11,99,17,,46.5
+3176,Justin Li,Texas,11,99,17,,46.5
+3204,Ankur Moolky,Oregon,11,98,18,,48.0
+4791,Amy Xiu,Michigan,11,97,19,,50.0
+4792,Boyang Zhao,New Jersey,11,97,19,,50.0
+4793,Marcus Ho,Oregon,11,97,19,,50.0
+4794,Oliver Britton,California,11,96,20,,54.0
+4795,Abhinav Mummaneni,Massachusetts,11,96,20,,54.0
+3206,Jayvik Joshi,North Carolina,11,96,20,,54.0
+4796,Carolyn Liu,New York,11,96,20,,54.0
+3188,Yunchan Hwang,Virginia,11,96,20,,54.0

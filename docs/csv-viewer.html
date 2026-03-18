@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSV Viewer — Math Competition Records</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon-48.png" type="image/png" sizes="48x48">
+  <link rel="icon" href="favicon-192.png" type="image/png" sizes="192x192">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <style>
+    .csv-viewer-header {
+      padding: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .csv-viewer-header h1 {
+      margin: 0;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+    .csv-viewer-back {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    .csv-viewer-back:hover {
+      color: var(--accent-hover);
+      text-decoration: underline;
+    }
+    .csv-viewer-main {
+      padding: 1.5rem;
+      max-width: 100%;
+      overflow-x: auto;
+    }
+    .csv-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+    .csv-table th,
+    .csv-table td {
+      padding: 0.5rem 0.75rem;
+      text-align: left;
+      border: 1px solid var(--border);
+    }
+    .csv-table th {
+      background: rgba(60, 90, 160, 0.85);
+      font-weight: 600;
+      position: sticky;
+      top: 0;
+      color: var(--text);
+      border-bottom: 2px solid var(--border);
+    }
+    .csv-table tr:hover td {
+      background: rgba(124, 156, 224, 0.08);
+    }
+    .csv-table th.num,
+    .csv-table td.num {
+      text-align: right;
+    }
+    .csv-loading {
+      padding: 3rem;
+      text-align: center;
+      color: var(--text-muted);
+    }
+    .csv-error {
+      padding: 2rem;
+      color: #f87171;
+      background: rgba(248, 113, 113, 0.1);
+      border-radius: var(--radius);
+      margin: 1rem;
+    }
+    .csv-error a {
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+  <header class="csv-viewer-header">
+    <a href="index.html" class="csv-viewer-back">← Back to search</a>
+    <h1 id="viewer-title">Loading…</h1>
+  </header>
+  <main class="csv-viewer-main">
+    <div id="csv-loading" class="csv-loading">Loading CSV…</div>
+    <div id="csv-error" class="csv-error" hidden></div>
+    <div id="csv-table-wrap" hidden>
+      <table class="csv-table" id="csv-table" aria-label="Contest results"></table>
+    </div>
+  </main>
+
+  <script>
+    (function () {
+      var REPO = "x-du/math-competition";
+      var RAW_BASE_TEMPLATE = "https://raw.githubusercontent.com/" + REPO + "/{branch}/database/contests/";
+
+      function getParams() {
+        var params = new URLSearchParams(window.location.search);
+        return {
+          contest: params.get("contest") || "",
+          year: params.get("year") || "",
+          file: params.get("file") || "results.csv",
+          name: params.get("name") || "",
+          branch: params.get("branch") || ""
+        };
+      }
+
+      function buildRawUrl(branch, contest, year, file) {
+        var base = RAW_BASE_TEMPLATE.replace("{branch}", encodeURIComponent(branch));
+        return base + encodeURIComponent(contest) + "/year%3D" + encodeURIComponent(year) + "/" + encodeURIComponent(file);
+      }
+
+      function escapeHtml(s) {
+        if (s == null) return "";
+        var div = document.createElement("div");
+        div.textContent = s;
+        return div.innerHTML;
+      }
+
+      function isNumericVal(val) {
+        if (val == null || String(val).trim() === "") return true;
+        return /^\d+(\.\d+)?$/.test(String(val).trim());
+      }
+
+      function renderTable(data, fields) {
+        var wrap = document.getElementById("csv-table-wrap");
+        var table = document.getElementById("csv-table");
+        wrap.hidden = false;
+
+        var colAlign = [];
+        for (var i = 0; i < fields.length; i++) {
+          var allNumeric = true;
+          for (var r = 0; r < data.length; r++) {
+            var val = data[r][fields[i]];
+            if (!isNumericVal(val)) {
+              allNumeric = false;
+              break;
+            }
+          }
+          colAlign[i] = allNumeric ? "num" : "";
+        }
+
+        var thead = "<thead><tr>";
+        for (var i = 0; i < fields.length; i++) {
+          thead += "<th scope=\"col\"" + (colAlign[i] ? " class=\"" + colAlign[i] + "\"" : "") + ">" + escapeHtml(fields[i]) + "</th>";
+        }
+        thead += "</tr></thead>";
+
+        var tbody = "<tbody>";
+        for (var r = 0; r < data.length; r++) {
+          tbody += "<tr>";
+          for (var i = 0; i < fields.length; i++) {
+            var val = data[r][fields[i]] != null ? String(data[r][fields[i]]) : "";
+            tbody += "<td" + (colAlign[i] ? " class=\"" + colAlign[i] + "\"" : "") + ">" + escapeHtml(val) + "</td>";
+          }
+          tbody += "</tr>";
+        }
+        tbody += "</tbody>";
+
+        table.innerHTML = thead + tbody;
+      }
+
+      function showError(msg, rawUrl) {
+        document.getElementById("csv-loading").hidden = true;
+        var errEl = document.getElementById("csv-error");
+        errEl.hidden = false;
+        errEl.innerHTML = msg + (rawUrl ? ' <a href="' + escapeHtml(rawUrl) + '" target="_blank" rel="noopener noreferrer">View raw file on GitHub</a>' : "");
+      }
+
+      function run() {
+        var p = getParams();
+        if (!p.contest || !p.year) {
+          showError("Missing contest or year. Use ?contest=brumo-a&year=2026");
+          document.getElementById("viewer-title").textContent = "CSV Viewer";
+          return;
+        }
+
+        var titleName = (p.name && p.name.trim()) ? p.name.trim() : p.contest;
+        var fullTitle = titleName + " " + p.year;
+        document.getElementById("viewer-title").textContent = fullTitle;
+        document.title = fullTitle + " — Math Competition Records";
+
+        var branchFromUrl = (p.branch && p.branch.trim()) ? p.branch.trim() : null;
+        var branchJsonUrl = new URL("branch.json", window.location.href).href;
+
+        function getBranch(cfg) {
+          if (branchFromUrl) return branchFromUrl;
+          return (cfg && cfg.branch) ? cfg.branch : "main";
+        }
+
+        fetch(branchJsonUrl)
+          .then(function (res) {
+            if (res.ok) return res.json();
+            return { branch: "main" };
+          })
+          .catch(function () { return { branch: "main" }; })
+          .then(function (cfg) {
+            var branch = getBranch(cfg);
+            var rawUrl = buildRawUrl(branch, p.contest, p.year, p.file);
+            return fetch(rawUrl).then(function (res) {
+              return { res: res, rawUrl: rawUrl };
+            });
+          })
+          .then(function (_a) {
+            var res = _a.res;
+            var rawUrl = _a.rawUrl;
+            if (!res.ok) throw new Error("Failed to load: " + res.status);
+            return res.text().then(function (text) {
+              return { text: text, rawUrl: rawUrl };
+            });
+          })
+          .then(function (_a) {
+            var text = _a.text;
+            var rawUrl = _a.rawUrl;
+            document.getElementById("csv-loading").hidden = true;
+            var result = Papa.parse(text, { header: true, skipEmptyLines: true });
+            if (result.errors && result.errors.length) {
+              showError("Parse error: " + (result.errors[0].message || "Unknown"), rawUrl);
+              return;
+            }
+            var data = result.data;
+            var fields = result.meta.fields || [];
+            if (!fields.length && data.length) {
+              fields = Object.keys(data[0]);
+            }
+            if (!data.length && !fields.length) {
+              showError("Empty or invalid CSV.", rawUrl);
+              return;
+            }
+            fields = fields.filter(function (f) { return f !== "student_id"; });
+            renderTable(data, fields);
+          })
+          .catch(function (err) {
+            var rawUrl = buildRawUrl("main", p.contest, p.year, p.file);
+            showError("Could not load CSV: " + (err.message || err), rawUrl);
+          });
+      }
+
+      run();
+    })();
+  </script>
+</body>
+</html>

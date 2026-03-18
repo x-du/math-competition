@@ -1,0 +1,44 @@
+student_id,student_name,state,grade,score,rank,national_percentile,mcp_rank
+2824,Amudhan Gurumoorthy,California,11,120,1,,4.0
+441,David Wei,Virginia,11,120,1,,4.0
+2709,Maya Viswanathan,Illinois,11,120,1,,4.0
+548,Michael Lu,New York,11,120,1,,4.0
+2702,Sam Rozansky,North Carolina,11,120,1,,4.0
+1134,Sebastian Prasanna,Massachusetts,11,120,1,,4.0
+1116,Shreyas Singh,Illinois,11,120,1,,4.0
+423,Elena Baskakova,Massachusetts,11,117,2,,8.0
+172,Sumedh Vangara,Maryland,11,116,3,,9.5
+1371,Zaee Shah,California,11,116,3,,9.5
+2706,Aditya Gupta,Illinois,11,115,4,,12.5
+2825,Alexander Korchev,Massachusetts,11,115,4,,12.5
+2701,Patrick Ying,Virginia,11,115,4,,12.5
+121,Srinivas Arun,Colorado,11,115,4,,12.5
+2712,Priya Adiga,Illinois,11,114,5,,15.0
+2713,Ethan Kuang,Massachusetts,11,112,6,,16.5
+2707,Harsh Akunuri,New Jersey,11,112,6,,16.5
+32,Benjamin Jiang,Florida,11,111,7,,18.0
+2826,Athena Nie,New York,11,110,8,,19.5
+2827,Matthew Patkowski,Georgia,11,110,8,,19.5
+2828,Zichang Wang,Virginia,11,109,9,,21.0
+2703,Golden Peng,Minnesota,11,108,10,,22.0
+2829,Anna Chumakov,Massachusetts,11,107,11,,25.0
+1445,Derek Xu,New York,11,107,11,,25.0
+2711,Eshaan Debnath,New Jersey,11,107,11,,25.0
+2830,Katherine Nogin,California,11,107,11,,25.0
+2831,Rishabh Mohapatra,Connecticut,11,107,11,,25.0
+2832,Hanson Du,North Dakota,11,106,12,,28.5
+2714,Vedant Rathi,Illinois,11,106,12,,28.5
+1219,Laura Zhang,Virginia,11,105,13,,30.0
+2833,Haruki Ohara,Massachusetts,11,104,14,,31.5
+2834,Rohan Dalal,Georgia,11,104,14,,31.5
+2835,Ariel Lyanda-Geller,Indiana,11,103,15,,33.5
+2836,Ayush Kumar,Massachusetts,11,103,15,,33.5
+2837,Athena Devashish,Maryland,11,102,16,,35.5
+1799,Rahul Tacke,Massachusetts,11,102,16,,35.5
+2838,Venkatraman Varatharajan,Massachusetts,11,101,17,,37.0
+2715,Ananya Mahadevan,California,11,100,18,,39.0
+2839,Joshua Cortright,California,11,100,18,,39.0
+2840,Qinwen Zheng,New York,11,100,18,,39.0
+2841,Adhitya Chandra,Arizona,11,99,19,,41.5
+2716,Alexandra Kim,California,11,99,19,,41.5
+2705,Justin Chan,Washington,11,98,20,,43.0

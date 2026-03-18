@@ -25,7 +25,7 @@ student_id,student_name,state,rank,team_name,club_name,score,q1,q2,q3,q4,q5,q6,q
 1305,Liang Christopher,North Carolina,9,East Chapel Hill HS Team A,East Chapel Hill High school,7,1,1,1,1,0,0,1,1,1,0,18.5
 1306,Brandon Jia,North Carolina,9,East Chapel Hill HS Team A,East Chapel Hill High school,7,1,1,1,1,0,0,1,1,1,0,18.5
 1307,Jason Sliwowski,North Carolina,9,East Chapel Hill HS Team A,East Chapel Hill High school,7,1,1,1,1,0,0,1,0,1,1,18.5
-163,David Dong,Washington,9,East Chapel Hill HS Team A,East Chapel Hill High school,7,1,1,1,1,0,0,1,1,1,0,18.5
+6257,David Dong,North Carolina,9,East Chapel Hill HS Team A,East Chapel Hill High school,7,1,1,1,1,0,0,1,1,1,0,18.5
 1308,Roman  Mecholsky,Maryland,9,BBMC-math Delta,BBMC-math,7,1,1,1,1,1,0,0,0,1,1,18.5
 1309,Jahl Miraji-Khot,South Carolina,29,Columbia Math Circle Team 1,Columbia Math Circle,6,1,1,1,0,1,0,1,0,1,0,40
 1310,Dylan Zhang,,29,Team,Club Name,6,1,1,1,1,0,0,1,0,1,0,40
@@ -39,7 +39,7 @@ student_id,student_name,state,rank,team_name,club_name,score,q1,q2,q3,q4,q5,q6,q
 1315,Ved Vainateya,North Carolina,29,Cary Academy 2,Cary Academy 1,6,1,1,1,0,1,0,1,0,1,0,40
 1316,Avi Gupta,Maryland,29,MOO,Maryland United,6,1,1,1,1,1,0,0,0,1,0,40
 1317,Yuwei Li,China,29,Shanghai Starriver Bilingual School,Shanghai Starriver Bilingual School,6,1,1,1,1,1,0,0,0,1,0,40
-490,Yanming Huang,Delaware,29,Shanghai Starriver Bilingual School,Shanghai Starriver Bilingual School,6,1,1,1,1,1,0,0,0,0,1,40
+6262,Yanming Huang,China,29,Shanghai Starriver Bilingual School,Shanghai Starriver Bilingual School,6,1,1,1,1,1,0,0,0,0,1,40
 1318,Angelo Chu,Virginia,29,TJ B,TJHSST,6,1,1,1,1,0,0,1,0,1,0,40
 1319,Ryan Singh,Virginia,29,TJ B,TJHSST,6,1,1,1,1,1,0,0,0,1,0,40
 1320,Jeffrey Du,Virginia,29,TJ C,TJHSST,6,1,1,1,1,0,0,1,0,1,0,40
@@ -48,5 +48,5 @@ student_id,student_name,state,rank,team_name,club_name,score,q1,q2,q3,q4,q5,q6,q
 1322,William Li,Virginia,29,TJ D,TJHSST,6,1,1,1,1,1,0,0,0,1,0,40
 391,Watson Houck,South Carolina,29,CMC - Harold,Charlotte Math Club,6,1,1,1,0,1,0,1,0,1,0,40
 1323,Ryan Chan,Virginia,29,Chantilly A,Chantilly Math Club,6,1,1,1,1,1,0,0,0,1,0,40
-1324,Ishidevesh Behera,,29,Ardrey Kell A Team,Ardrey Kell High School,6,1,1,0,1,1,0,1,0,1,0,40
-1325,Atharv Mittal,,29,Ardrey Kell A Team,Ardrey Kell High School,6,1,1,1,1,0,0,1,0,1,0,40
+1324,Ishidevesh Behera,North Carolina,29,Ardrey Kell A Team,Ardrey Kell High School,6,1,1,0,1,1,0,1,0,1,0,40
+1325,Atharv Mittal,North Carolina,29,Ardrey Kell A Team,Ardrey Kell High School,6,1,1,1,1,0,0,1,0,1,0,40

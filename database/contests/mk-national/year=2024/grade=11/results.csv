@@ -1,0 +1,63 @@
+student_id,student_name,state,grade,score,rank,national_percentile,mcp_rank
+891,Andrew Brahms,New Jersey,11,120,1,,7.0
+1421,Daniel Gilman,New Jersey,11,120,1,,7.0
+482,David Zhang,California,11,120,1,,7.0
+2538,Gabriel Xu,Virginia,11,120,1,,7.0
+2531,Gregory Roudenko,Virginia,11,120,1,,7.0
+1253,Joyce Huang,Washington,11,120,1,,7.0
+2535,Lily Tjia,Massachusetts,11,120,1,,7.0
+2723,Phoebe Pan,Virginia,11,120,1,,7.0
+2532,Shrey Gupta,Florida,11,120,1,,7.0
+1260,Tatiana Medved,North Carolina,11,120,1,,7.0
+2724,Thomas Zheleznyak,Virginia,11,120,1,,7.0
+2528,Timothy Torubarov,New Jersey,11,120,1,,7.0
+960,William Chen,California,11,120,1,,7.0
+2533,Anshul Gokul,Georgia,11,117,2,,15.0
+2524,Ethan Do,Washington,11,117,2,,15.0
+604,Joseph Widjaja,Pennsylvania,11,117,2,,15.0
+2529,Aidan Zhang,California,11,115,3,,19.5
+2520,Alex Hart,Georgia,11,115,3,,19.5
+2566,Eric Jin,Indiana,11,115,3,,19.5
+1629,Jagan Mranal,Massachusetts,11,115,3,,19.5
+2725,Patrick Liu,California,11,115,3,,19.5
+505,Sai Palireddy,Georgia,11,115,3,,19.5
+32,Benjamin Jiang,Florida,11,114,4,,23.5
+2726,Tianzhuo Lu,California,11,114,4,,23.5
+2522,David Deutsch,California,11,111,5,,26.5
+1254,Jefferson Ji,Massachusetts,11,111,5,,26.5
+2727,Kevin Zhang,New Jersey,11,111,5,,26.5
+2526,Kylar Cheng,California,11,111,5,,26.5
+1828,Brianna Zheng,California,11,110,6,,29.5
+2728,Sanjay Ravishankar,California,11,110,6,,29.5
+1240,Ishani Agarwal,California,11,109,7,,31.0
+2729,Tejas Ravi,California,11,108,8,,32.5
+2730,Yujun Wang,California,11,108,8,,32.5
+2731,Alexander Ung,Illinois,11,107,9,,35.0
+2527,Rockwell Li,Virginia,11,107,9,,35.0
+2543,Sreeram Sai Vuppala,New Jersey,11,107,9,,35.0
+2732,Ava Park,California,11,106,10,,37.5
+546,Rohith Raghavan,Massachusetts,11,106,10,,37.5
+549,Elita You,Michigan,11,105,11,,39.0
+2534,Joshua Lin,Illinois,11,103,12,,41.0
+2733,Tzuriel Justin Yu,Massachusetts,11,103,12,,41.0
+2734,Zaven Kouchakdjian,Massachusetts,11,103,12,,41.0
+2547,Prattay Bhattacharya,Massachusetts,11,102,13,,43.5
+2548,Rose Cohen,California,11,102,13,,43.5
+2735,Amara Fuchs,New Hampshire,11,101,14,,46.0
+2736,Bryan Yung,Maryland,11,101,14,,46.0
+2525,Ivan Zhang,Maryland,11,101,14,,46.0
+601,Shreyan Paliwal,Oregon,11,100,15,,48.0
+2737,Minh Nguyen,Virginia,11,99,16,,49.0
+2738,Ananya Bezbaruah,Washington,11,98,17,,51.0
+2739,Anthony Dokanchi,California,11,98,17,,51.0
+2740,Haresh Muralidharan,Pennsylvania,11,98,17,,51.0
+2741,Gil Yarsky,New York,11,97,18,,54.0
+2742,Kelly Tai,Pennsylvania,11,97,18,,54.0
+2743,Richard Xie,California,11,97,18,,54.0
+2744,Howard Liu,California,11,96,19,,57.5
+2745,Janice Lee,California,11,96,19,,57.5
+2746,Jared Rosen,Massachusetts,11,96,19,,57.5
+913,Samarth Das,Texas,11,96,19,,57.5
+2747,Ethan Nguyen,California,11,95,20,,61.0
+1927,Satvik Sivaraman,California,11,95,20,,61.0
+2748,Tsz Hin Yuen,California,11,95,20,,61.0

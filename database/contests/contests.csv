@@ -11,6 +11,7 @@ hmmt-nov-theme,HMMT November — Theme,Theme round subject test at November HMMT
 hmmt-feb-algebra-number-theory,HMMT February — Algebra & Number Theory,Algebra and Number Theory subject test at February HMMT.,https://www.hmmt.org/,1000,0.5,rank,rank
 hmmt-feb-geometry,HMMT February — Geometry,Geometry subject test at February HMMT.,https://www.hmmt.org/,1000,0.5,rank,rank
 hmmt-feb-combo,HMMT February — Combinatorics,Combinatorics subject test at February HMMT.,https://www.hmmt.org/,1000,0.5,rank,rank
+hmic,HMIC,HMMT Invitational Competition. Annual online invitational with individual rounds. Difficulty: olympiad level.,https://www.hmmt.org/,,,rank,rank
 pumac,PUMaC — Division A,"Princeton University Mathematics Competition, Division A. Annual team and individual contest.",https://pumac.princeton.edu/,1000,1.0,rank,rank
 pumac-b,PUMaC — Division B,"Princeton University Mathematics Competition, Division B. Annual team and individual contest.",https://pumac.princeton.edu/,500,1.0,rank,rank
 pumac-algebra,PUMaC — Division A Algebra,Algebra subject test (Division A) at PUMaC.,https://pumac.princeton.edu/,1000,0.5,rank,rank
@@ -32,10 +33,12 @@ cmm,CMM,Caltech Math Meet. Annual mathematics competition at Caltech with indivi
 mpfg,MPFG,Math Prize for Girls. Annual competition at MIT by Advantage Testing Foundation for top female high school mathematicians.,https://mathprize.atfoundation.org/,500,1.0,rank,place
 mpfg-olympiad,MPFG Olympiad,"Olympiad competition by Advantage Testing Foundation for top female high school mathematicians, with Gold, Silver, and Bronze medals.",https://mathprize.atfoundation.org/,500,1.0,award,award
 mmaths,MMATHS,"Math Majors of America Tournament for High Schools. Team-based contest at multiple university sites, run by undergraduate math students.",https://www.mmaths.org/mmaths,250,1.0,rank,rank
-bmt,BMT,Berkeley Math Tournament. Annual competition at UC Berkeley with individual and team rounds.,https://bmt.berkeley.edu/,1000,1.0,rank,rank
-bmt-algebra,BMT — Algebra,Algebra subject test at the Berkeley Math Tournament.,https://bmt.berkeley.edu/,1000,0.5,rank,rank
-bmt-calculus,BMT — Calculus,Calculus subject test at the Berkeley Math Tournament.,https://bmt.berkeley.edu/,1000,0.5,rank,rank
-bmt-discrete,BMT — Discrete,Discrete mathematics subject test at the Berkeley Math Tournament.,https://bmt.berkeley.edu/,1000,0.5,rank,rank
-bmt-geometry,BMT — Geometry,Geometry subject test at the Berkeley Math Tournament.,https://bmt.berkeley.edu/,1000,0.5,rank,rank
+bmt,BMT,Berkeley Math Tournament. Annual competition at UC Berkeley with individual and team rounds.,https://bmt.berkeley.edu/,500,1.0,bmt,rank
+bmt-algebra,BMT — Algebra,Algebra subject test at the Berkeley Math Tournament.,https://bmt.berkeley.edu/,500,0.5,bmt,rank
+bmt-calculus,BMT — Calculus,Calculus subject test at the Berkeley Math Tournament.,https://bmt.berkeley.edu/,500,0.5,bmt,rank
+bmt-discrete,BMT — Discrete,Discrete mathematics subject test at the Berkeley Math Tournament.,https://bmt.berkeley.edu/,500,0.5,bmt,rank
+bmt-geometry,BMT — Geometry,Geometry subject test at the Berkeley Math Tournament.,https://bmt.berkeley.edu/,500,0.5,bmt,rank
 bamo-8,BAMO-8,"Bay Area Mathematical Olympiad, middle school division. Annual proof-based contest for students in the Bay Area.",https://www.bamo.org/,250,1.0,rank_mixed,rank
 bamo-12,BAMO-12,"Bay Area Mathematical Olympiad, high school division. Annual proof-based contest for students in the Bay Area.",https://www.bamo.org/,500,1.0,rank_mixed,rank
+mk-national,Math Kangaroo National,"Math Kangaroo USA national-level winners by grade (record only; not shown on website, no MCP).",https://mathkangaroo.org/mks/,,,rank,rank
+brumo-a,BrUMO Division A,Brown University Math Olympiad Division A. Individual rankings from the annual competition at Brown University.,https://www.brumo.org/,250,1.0,rank_mixed,rank
