@@ -1222,7 +1222,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1287,Prince Zhang,"Ontario, Canada",,,male,
 1288,Eric Jia,"Ontario, Canada",,,male,
 1289,Rui Jiang,Florida,,,male,
-1290,Madhav Krishnuswamy,Virginia,,,male,
+1290,Madhav Krishnaswamy,Virginia,,,male,14
 1291,Alex Jun,Texas,,,male,
 1292,Tanishq Paushkar,Ohio,,,male,
 1293,Olivia Xu,California,,,female,14
@@ -4841,7 +4841,6 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 4934,Ranai Shah,Massachusetts,,,male,
 4935,Samay Shah,Massachusetts,,,male,
 4936,Vivek Mehta,Massachusetts,,,male,
-4937,Madhav Krishnaswamy,Virginia,,,male,
 4938,Eva Jain,Washington,,,female,
 4939,Shrey Shah,Washington,,,male,
 4940,Anish Sarkar,California,,,male,
