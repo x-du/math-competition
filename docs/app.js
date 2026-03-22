@@ -12,6 +12,7 @@
   var contestListEl = document.getElementById("contest-list");
   var awardsRankingListEl = document.getElementById("awards-ranking-list");
   var topStudentsSectionEl = document.getElementById("top-students-section");
+  var awardsRankingFiltersEl = document.getElementById("awards-ranking-filters");
   var searchClearEl = document.getElementById("search-clear");
   var girlsOnlyEl = document.getElementById("girls-only");
   var gradeFilterEl = document.getElementById("grade-filter");
@@ -1103,6 +1104,10 @@
         if (searchClearEl) searchClearEl.hidden = true;
         hintEl.textContent = "1 student found.";
         if (topStudentsSectionEl) topStudentsSectionEl.hidden = true;
+        if (awardsRankingFiltersEl) {
+          awardsRankingFiltersEl.hidden = true;
+          awardsRankingFiltersEl.style.display = "none";
+        }
         var copy = {};
         for (var k in student) {
           if (Object.prototype.hasOwnProperty.call(student, k) && k !== "records") {
@@ -1128,7 +1133,16 @@
     if (!query) {
       hintEl.textContent = "Enter at least one character to search.";
       if (topStudentsSectionEl) topStudentsSectionEl.hidden = false;
+      if (awardsRankingFiltersEl) {
+        awardsRankingFiltersEl.hidden = false;
+        awardsRankingFiltersEl.style.display = "";
+      }
       return;
+    }
+
+    if (awardsRankingFiltersEl) {
+      awardsRankingFiltersEl.hidden = true;
+      awardsRankingFiltersEl.style.display = "none";
     }
 
     if (searchRafId) cancelAnimationFrame(searchRafId);
@@ -1510,8 +1524,9 @@
       }
       saveFilters();
     }
-    var controlsEl = document.querySelector(".awards-ranking-controls");
-    if (controlsEl) controlsEl.style.visibility = "visible";
+    document.querySelectorAll(".awards-ranking-controls").forEach(function (el) {
+      el.style.visibility = "visible";
+    });
     setLoading(true);
     var base = document.querySelector("script[src$='app.js']").src.replace(/\/[^/]*$/, "");
     Promise.all([
@@ -1599,13 +1614,13 @@
   if (studentCardBackEl) {
     studentCardBackEl.addEventListener("click", function (e) {
       e.preventDefault();
+      if (searchEl) searchEl.blur();
       if (searchEl) searchEl.value = (searchValueBeforeStudentCard != null ? searchValueBeforeStudentCard : "");
       searchValueBeforeStudentCard = null;
       clearStudentIdFromUrl();
       if (searchInputWrapEl) searchInputWrapEl.hidden = false;
       studentCardBackEl.hidden = true;
       runSearch();
-      if (searchEl) searchEl.focus();
     });
   }
 
