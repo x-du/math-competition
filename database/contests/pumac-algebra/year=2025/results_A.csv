@@ -11,7 +11,7 @@ student_id,student_name,year,division,rank,score,p1,p2,p3,p4,p5,p6,p7,p8,mcp_ran
 7,Benjamin Fu,2025,A,8,10.406,1,1,1,0,1,0,0,0,9
 86,Vikram Sarkar,2025,A,11,9.882,1,1,1,1,0,0,0,0,12
 229,Alexander Sun,2025,A,11,9.882,1,1,1,1,0,0,0,0,12
-230,Peter Bai,2025,A,11,9.882,1,1,1,1,0,0,0,0,12
+50,Peter Bai,2025,A,11,9.882,1,1,1,1,0,0,0,0,12
 36,Jialai She,2025,A,14,9.840,0,0,1,0,1,1,0,0,14
 231,Ryan Karim,2025,A,15,8.985,0,1,1,0,0,0,1,0,15
 232,Aashita Mandiwal,2025,A,16,8.953,1,1,0,0,0,1,0,0,16
