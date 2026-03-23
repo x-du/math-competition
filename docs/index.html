@@ -39,6 +39,14 @@
     <button type="button" id="contest-list-trigger" class="contest-list-trigger" aria-expanded="false" aria-haspopup="true" aria-controls="contest-list-popover">Competitions in this database</button>
     <span class="contest-list-trigger-sep" aria-hidden="true"> · </span>
     <a href="crank.html" class="contest-list-trigger">Competition ranking</a>
+    <div id="contest-list-popover" class="contest-list-popover" hidden role="dialog" aria-labelledby="contest-list-popover-title">
+      <div class="contest-list-popover-inner">
+        <h2 id="contest-list-popover-title" class="contest-list-popover-title">Competitions in this database</h2>
+        <div id="contest-list" class="contest-list"></div>
+        <button type="button" class="contest-list-popover-close" aria-label="Close">×</button>
+      </div>
+      <div class="contest-list-popover-backdrop" aria-hidden="true"></div>
+    </div>
     <div class="contest-filter-row">
       <span id="contest-filter-wrap" class="contest-filter-wrap">
         <button
@@ -157,15 +165,6 @@
         </div>
       </span>
     </div>
-    <div id="contest-list-popover" class="contest-list-popover" hidden role="dialog" aria-labelledby="contest-list-popover-title">
-      <div class="contest-list-popover-inner">
-        <h2 id="contest-list-popover-title" class="contest-list-popover-title">Competitions in this database</h2>
-        <div id="contest-list" class="contest-list"></div>
-        <button type="button" class="contest-list-popover-close" aria-label="Close">×</button>
-      </div>
-      <div class="contest-list-popover-backdrop" aria-hidden="true"></div>
-    </div>
-
   </header>
 
   <main class="main">
@@ -192,7 +191,98 @@
       <span id="search-hint" class="search-hint" aria-live="polite"></span>
     </div>
 
+    <div id="awards-ranking-filters" class="awards-ranking-filters awards-ranking-controls">
+      <label class="girls-only-label">
+        <input type="checkbox" id="girls-only" /> Girls only
+      </label>
+      <span id="grade-filter-wrap" class="grade-filter-wrap">
+        <label class="grade-filter-label">
+          <span class="grade-filter-caption">Grade:</span>
+          <select id="grade-filter" class="grade-filter-select" aria-label="Filter by current grade">
+            <option value="">All grades</option>
+          </select>
+        </label>
+      </span>
+      <span id="state-filter-wrap" class="state-filter-wrap">
+        <label class="state-filter-label">
+          <span class="state-filter-caption">State:</span>
+          <select id="state-filter" class="state-filter-select" aria-label="Filter by state">
+            <option value="">All states</option>
+            <option value="US">US</option>
+            <option value="Alabama">Alabama</option>
+            <option value="Alaska">Alaska</option>
+            <option value="Arizona">Arizona</option>
+            <option value="Arkansas">Arkansas</option>
+            <option value="California">California</option>
+            <option value="Colorado">Colorado</option>
+            <option value="Connecticut">Connecticut</option>
+            <option value="Delaware">Delaware</option>
+            <option value="District of Columbia">District of Columbia</option>
+            <option value="Florida">Florida</option>
+            <option value="Georgia">Georgia</option>
+            <option value="Hawaii">Hawaii</option>
+            <option value="Idaho">Idaho</option>
+            <option value="Illinois">Illinois</option>
+            <option value="Indiana">Indiana</option>
+            <option value="Iowa">Iowa</option>
+            <option value="Kansas">Kansas</option>
+            <option value="Kentucky">Kentucky</option>
+            <option value="Louisiana">Louisiana</option>
+            <option value="Maine">Maine</option>
+            <option value="Maryland">Maryland</option>
+            <option value="Massachusetts">Massachusetts</option>
+            <option value="Michigan">Michigan</option>
+            <option value="Minnesota">Minnesota</option>
+            <option value="Mississippi">Mississippi</option>
+            <option value="Missouri">Missouri</option>
+            <option value="Montana">Montana</option>
+            <option value="Nebraska">Nebraska</option>
+            <option value="Nevada">Nevada</option>
+            <option value="New Hampshire">New Hampshire</option>
+            <option value="New Jersey">New Jersey</option>
+            <option value="New Mexico">New Mexico</option>
+            <option value="New York">New York</option>
+            <option value="North Carolina">North Carolina</option>
+            <option value="North Dakota">North Dakota</option>
+            <option value="Ohio">Ohio</option>
+            <option value="Oklahoma">Oklahoma</option>
+            <option value="Oregon">Oregon</option>
+            <option value="Pennsylvania">Pennsylvania</option>
+            <option value="Rhode Island">Rhode Island</option>
+            <option value="South Carolina">South Carolina</option>
+            <option value="South Dakota">South Dakota</option>
+            <option value="Tennessee">Tennessee</option>
+            <option value="Texas">Texas</option>
+            <option value="Utah">Utah</option>
+            <option value="Vermont">Vermont</option>
+            <option value="Virginia">Virginia</option>
+            <option value="Washington">Washington</option>
+            <option value="West Virginia">West Virginia</option>
+            <option value="Wisconsin">Wisconsin</option>
+            <option value="Wyoming">Wyoming</option>
+            <option value="__none__">No state</option>
+            <option value="__other__">Other</option>
+          </select>
+        </label>
+      </span>
+    </div>
+
     <section id="top-students-section" class="awards-ranking" aria-labelledby="awards-ranking-title">
+      <p class="awards-ranking-controls">
+        <span class="sort-toggle-wrap">
+          <button type="button" id="sort-toggle" class="sort-toggle" aria-label="Sort mode">
+            <span class="sort-toggle-option" data-mode="records"># Records</span>
+            <span class="sort-toggle-option sort-toggle-option--active" data-mode="mcp">MCP</span>
+            <span class="sort-toggle-option" id="mcp-pct-sort-option" data-mode="mcp_pct" hidden>MCP %</span>
+          </button>
+        </span>
+      </p>
+      <p id="mcp-pct-sort-row" class="mcp-pct-sort-row" hidden>
+        <button type="button" id="mcp-pct-sort-btn" class="mcp-pct-sort-btn" aria-label="Toggle sort direction">
+          Sort descending ↓
+        </button>
+        <span id="mcp-pct-sort-text" class="mcp-pct-sort-text">Sorted descending (highest contribution first).</span>
+      </p>
       <h2 id="awards-ranking-title" class="awards-ranking-title"><span id="ranking-title-text">Top students by # of records</span> (<span id="total-student-count">—</span> students, <span id="total-record-count">—</span> records) <button type="button" id="state-dist-trigger" class="state-dist-trigger" aria-expanded="false" aria-controls="state-dist-popover">By state ▸</button></h2>
       <div id="state-dist-popover" class="state-dist-popover" hidden role="dialog" aria-labelledby="state-dist-popover-title">
         <div class="state-dist-popover-inner">
@@ -219,94 +309,6 @@
         <div class="state-dist-popover-backdrop" aria-hidden="true"></div>
       </div>
       <p class="awards-ranking-subtitle">Sorted by number of competition records in this database. Not a ranking of ability or talent.</p>
-      <p class="awards-ranking-controls">
-        <span class="sort-toggle-wrap">
-          <button type="button" id="sort-toggle" class="sort-toggle" aria-label="Sort mode">
-            <span class="sort-toggle-option" data-mode="records"># Records</span>
-            <span class="sort-toggle-option sort-toggle-option--active" data-mode="mcp">MCP</span>
-            <span class="sort-toggle-option" id="mcp-pct-sort-option" data-mode="mcp_pct" hidden>MCP %</span>
-          </button>
-        </span>
-        <label class="girls-only-label">
-          <input type="checkbox" id="girls-only" /> Girls only
-        </label>
-        <span id="grade-filter-wrap" class="grade-filter-wrap">
-          <label class="grade-filter-label">
-            <span class="grade-filter-caption">Grade:</span>
-            <select id="grade-filter" class="grade-filter-select" aria-label="Filter by current grade">
-              <option value="">All grades</option>
-            </select>
-          </label>
-        </span>
-        <span id="state-filter-wrap" class="state-filter-wrap">
-          <label class="state-filter-label">
-            <span class="state-filter-caption">State:</span>
-            <select id="state-filter" class="state-filter-select" aria-label="Filter by state">
-              <option value="">All states</option>
-              <option value="US">US</option>
-              <option value="Alabama">Alabama</option>
-              <option value="Alaska">Alaska</option>
-              <option value="Arizona">Arizona</option>
-              <option value="Arkansas">Arkansas</option>
-              <option value="California">California</option>
-              <option value="Colorado">Colorado</option>
-              <option value="Connecticut">Connecticut</option>
-              <option value="Delaware">Delaware</option>
-              <option value="District of Columbia">District of Columbia</option>
-              <option value="Florida">Florida</option>
-              <option value="Georgia">Georgia</option>
-              <option value="Hawaii">Hawaii</option>
-              <option value="Idaho">Idaho</option>
-              <option value="Illinois">Illinois</option>
-              <option value="Indiana">Indiana</option>
-              <option value="Iowa">Iowa</option>
-              <option value="Kansas">Kansas</option>
-              <option value="Kentucky">Kentucky</option>
-              <option value="Louisiana">Louisiana</option>
-              <option value="Maine">Maine</option>
-              <option value="Maryland">Maryland</option>
-              <option value="Massachusetts">Massachusetts</option>
-              <option value="Michigan">Michigan</option>
-              <option value="Minnesota">Minnesota</option>
-              <option value="Mississippi">Mississippi</option>
-              <option value="Missouri">Missouri</option>
-              <option value="Montana">Montana</option>
-              <option value="Nebraska">Nebraska</option>
-              <option value="Nevada">Nevada</option>
-              <option value="New Hampshire">New Hampshire</option>
-              <option value="New Jersey">New Jersey</option>
-              <option value="New Mexico">New Mexico</option>
-              <option value="New York">New York</option>
-              <option value="North Carolina">North Carolina</option>
-              <option value="North Dakota">North Dakota</option>
-              <option value="Ohio">Ohio</option>
-              <option value="Oklahoma">Oklahoma</option>
-              <option value="Oregon">Oregon</option>
-              <option value="Pennsylvania">Pennsylvania</option>
-              <option value="Rhode Island">Rhode Island</option>
-              <option value="South Carolina">South Carolina</option>
-              <option value="South Dakota">South Dakota</option>
-              <option value="Tennessee">Tennessee</option>
-              <option value="Texas">Texas</option>
-              <option value="Utah">Utah</option>
-              <option value="Vermont">Vermont</option>
-              <option value="Virginia">Virginia</option>
-              <option value="Washington">Washington</option>
-              <option value="West Virginia">West Virginia</option>
-              <option value="Wisconsin">Wisconsin</option>
-              <option value="Wyoming">Wyoming</option>
-              <option value="__none__">No state</option>
-              <option value="__other__">Other</option>
-            </select>
-          </label>
-        </span>
-      </p>
-      <p id="mcp-pct-sort-row" class="mcp-pct-sort-row" hidden>
-        <button type="button" id="mcp-pct-sort-btn" class="mcp-pct-sort-btn" aria-label="Toggle sort direction">
-          Sort descending ↓
-        </button>
-        <span id="mcp-pct-sort-text" class="mcp-pct-sort-text">Sorted descending (highest contribution first).</span>
-      </p>
       <ol id="awards-ranking-list" class="awards-ranking-list" aria-busy="true">
         <script>
         (function(){
