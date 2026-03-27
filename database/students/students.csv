@@ -732,7 +732,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 767,Justus Heibutzki,State Department,210,,male,12
 768,Eric Chen,Tennessee,211|279|469|496,,male,12
 769,Yejoon Ham,Tennessee,211,,male,12
-770,Kevin Chen,New Jersey,220|478|493,,male,11
+770,Kevin Chen,New Jersey,220|478|493,,male,
 771,Wilson St. Martin,Utah,212,,male,12
 772,Tanish Shetty,Utah,212,,male,10
 773,Evan Xia,Vermont,213,,male,11
@@ -6166,3 +6166,4 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 6262,Yanming Huang,China,,,male,
 6263,Daniel Wang,Texas,,,male,
 6264,Eddie Wei,California,,,male,
+6265,Kevin Chen,Texas,,,male,11
