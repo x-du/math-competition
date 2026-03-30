@@ -1210,7 +1210,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1275,Rohith Thomas,Colorado,,,male,
 1276,Tiger Li,"Ontario, Canada",,,male,
 1277,Jeff Zhou,Minnesota,,,male,
-1278,Kaylyn Zhang,"Ontario, Canada",,,female,10
+1278,Kaylyn Zhang,"Ontario, Canada",,Kaylyn Jinglin Zhang,female,10
 1279,Jack Whitney-Epstein,Connecticut,267|312,Jack Whitney,male,12
 1281,Rick Zhou,Washington,,,male,
 1282,Lewis Lou,Maryland,,,male,
@@ -1533,7 +1533,6 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1610,Jerry Zhang,Texas,,,male,
 1611,Ziyang Wu,,,,male,
 1612,Daniel Yu,Maryland,,,male,11
-1613,Kaylyn Jinglin Zhang,Canada,,,female,
 1614,Sirawit Pipittanaban,California,,,male,
 1615,Gong Cheng,,,,male,
 1617,Michael Retakh,New York,480,,male,
