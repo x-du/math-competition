@@ -786,7 +786,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 824,Wesley Wu,Washington,216,,male,10
 826,Max Tsai,Nevada,196,,male,9
 827,Easton Wei,New Jersey,221,,male,9
-828,Henry Wang,California,200,,male,9
+828,Henry Wang,California,200,,male,13
 829,Joseph Girotto,Connecticut,172,,male,10
 830,Rajarshi Mandal,Massachusetts,189|263,,male,10
 831,Alex Gao,Indiana,182,,male,10
@@ -6166,3 +6166,4 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 6263,Daniel Wang,Texas,,,male,
 6264,Eddie Wei,California,,,male,
 6265,Kevin Chen,Texas,,,male,11
+6266,Henry Wang,North Carolina,,,male,9
