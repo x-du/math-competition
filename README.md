@@ -15,7 +15,7 @@ From the repo root:
 python scripts/build_search_data.py
 ```
 
-This writes `docs/data.json` from the `database/` CSVs.
+This writes `docs/data.json` and `docs/competition_data.json` from the `database/` CSVs.
 
 
 ### Data quality
@@ -39,4 +39,4 @@ Serve the `docs` folder (e.g. `python -m http.server 8000 --directory docs` or a
 3. Choose the branch (e.g. `main`) and set the folder to **/docs**.
 4. Save. The site will be at `https://<username>.github.io/math-competition/`.
 
-After updating the database, run `python scripts/build_search_data.py` and commit the updated `docs/data.json`.
+After updating the database, run `python scripts/build_search_data.py` and commit the updated `docs/data.json` and `docs/competition_data.json`.
