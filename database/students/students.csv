@@ -1235,7 +1235,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1301,Gloria Lu,Virginia,,,female,9
 1302,Nelson Huang,North Carolina,,,male,
 1303,Sixun Zheng,China,,,male,
-1304,Ethan Shan,Virginia,,,male,10
+1304,Ethan Shan,Virginia,,,male,11
 1305,Liang Christopher,North Carolina,,,male,
 1306,Brandon Jia,North Carolina,,,male,
 1307,Jason Sliwowski,North Carolina,,,male,
@@ -1379,7 +1379,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 1447,William Wu,Illinois,320,,male,8
 1448,Youran Charlie Gu,New Jersey,42,,male,
 1449,Max Salvestrini,New York,324,,male,
-1450,Arnav Lyengar,Virginia,251,,male,
+1450,Arnav Iyengar,District of Columbia,251,,male,
 1451,Mihir Kumar,,305,,male,
 1452,Anand Swaroop,Massachusetts,314,,male,11
 1453,Steve Cui,Virginia,321,,male,7

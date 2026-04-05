@@ -34,11 +34,20 @@
 </head>
 <body>
   <header class="header">
-    <h1>Math Competition Records</h1>
-    <p class="tagline">Search by student name to view competition history.</p>
-    <button type="button" id="contest-list-trigger" class="contest-list-trigger" aria-expanded="false" aria-haspopup="true" aria-controls="contest-list-popover">Competitions in this database</button>
-    <span class="contest-list-trigger-sep" aria-hidden="true"> · </span>
-    <a href="crank.html" class="contest-list-trigger">Competition ranking</a>
+    <button
+      type="button"
+      id="site-nav-toggle"
+      class="site-nav-toggle"
+      aria-expanded="false"
+      aria-controls="site-nav-drawer"
+      aria-label="Open menu"
+    >
+      <span class="site-nav-toggle-bars" aria-hidden="true"></span>
+    </button>
+    <div class="header-brand">
+      <h1>Math Competition Records</h1>
+      <p class="tagline">Search by student name to view competition history.</p>
+    </div>
     <div id="contest-list-popover" class="contest-list-popover" hidden role="dialog" aria-labelledby="contest-list-popover-title">
       <div class="contest-list-popover-inner">
         <h2 id="contest-list-popover-title" class="contest-list-popover-title">Competitions in this database</h2>
@@ -47,125 +56,40 @@
       </div>
       <div class="contest-list-popover-backdrop" aria-hidden="true"></div>
     </div>
-    <div class="contest-filter-row">
-      <span id="contest-filter-wrap" class="contest-filter-wrap">
-        <button
-          type="button"
-          id="contest-filter-trigger"
-          class="contest-filter-trigger"
-          aria-expanded="false"
-          aria-haspopup="true"
-          aria-controls="contest-filter-popover"
-        >
-          Competition filter
-        </button>
-        <span id="contest-filter-summary" class="contest-filter-summary">All selected</span>
-        <div
-          id="contest-filter-popover"
-          class="contest-filter-popover"
-          hidden
-          role="dialog"
-          aria-labelledby="contest-filter-popover-title"
-        >
-          <div class="contest-filter-popover-inner">
-            <h3 id="contest-filter-popover-title" class="contest-filter-popover-title">Filter by competition</h3>
-            <div id="contest-filter" class="contest-filter-options" aria-label="Filter by competition">
-              <label class="contest-filter-option">
-                <input type="checkbox" value="all" checked>
-                All
-              </label>
-              <label class="contest-filter-option">
-                <input type="checkbox" value="usamo">
-                USAMO
-              </label>
-              <label class="contest-filter-option">
-                <input type="checkbox" value="usajmo">
-                USAJMO
-              </label>
-              <label class="contest-filter-option">
-                <input type="checkbox" value="imo">
-                IMO
-              </label>
-              <label class="contest-filter-option">
-                <input type="checkbox" value="rmm">
-                RMM
-              </label>
-              <label class="contest-filter-option">
-                <input type="checkbox" value="egmo">
-                EGMO
-              </label>
-              <label class="contest-filter-option">
-                <input type="checkbox" value="hmmt-feb">
-                HMMT Feb
-              </label>
-              <label class="contest-filter-option">
-                <input type="checkbox" value="hmmt-nov">
-                HMMT Nov
-              </label>
-              <label class="contest-filter-option">
-                <input type="checkbox" value="pumac-a">
-                PUMaC Div A
-              </label>
-              <label class="contest-filter-option">
-                <input type="checkbox" value="pumac-b">
-                PUMaC Div B
-              </label>
-              <label class="contest-filter-option">
-                <input type="checkbox" value="mathcounts">
-                Mathcounts
-              </label>
-              <label class="contest-filter-option">
-                <input type="checkbox" value="cmimc">
-                CMIMC
-              </label>
-              <label class="contest-filter-option">
-                <input type="checkbox" value="arml">
-                ARML
-              </label>
-              <label class="contest-filter-option">
-                <input type="checkbox" value="dmm">
-                DMM
-              </label>
-              <label class="contest-filter-option">
-                <input type="checkbox" value="cmm">
-                CMM
-              </label>
-              <label class="contest-filter-option">
-                <input type="checkbox" value="mmaths">
-                MMATHS
-              </label>
-              <label class="contest-filter-option">
-                <input type="checkbox" value="mpfg">
-                MPFG
-              </label>
-              <label class="contest-filter-option">
-                <input type="checkbox" value="mpfg-olympiad">
-                MPFG Olympiad
-              </label>
-              <label class="contest-filter-option">
-                <input type="checkbox" value="bamo-8">
-                BAMO-8
-              </label>
-              <label class="contest-filter-option">
-                <input type="checkbox" value="bamo-12">
-                BAMO-12
-              </label>
-              <label class="contest-filter-option">
-                <input type="checkbox" value="brumo-a">
-                BrUMO Div A
-              </label>
-              <label class="contest-filter-option">
-                <input type="checkbox" value="bmt">
-                BMT
-              </label>
-            </div>
-            <button type="button" class="contest-filter-popover-close" aria-label="Close">×</button>
-          </div>
-          <div class="contest-filter-popover-backdrop" aria-hidden="true"></div>
-        </div>
-      </span>
-    </div>
   </header>
+
+  <div id="site-nav-drawer" class="site-nav-drawer" hidden>
+    <div class="site-nav-drawer-backdrop" aria-hidden="true"></div>
+    <nav class="site-nav-drawer-panel" aria-labelledby="site-nav-drawer-title">
+      <div class="site-nav-drawer-header">
+        <h2 class="site-nav-drawer-title" id="site-nav-drawer-title">Menu</h2>
+        <button type="button" class="site-nav-drawer-close" aria-label="Close menu">×</button>
+      </div>
+      <ul class="site-nav-list">
+        <li>
+          <button
+            type="button"
+            id="contest-list-trigger"
+            class="site-nav-item site-nav-item--button"
+            aria-expanded="false"
+            aria-haspopup="true"
+            aria-controls="contest-list-popover"
+          >
+            Competitions in this database
+          </button>
+        </li>
+        <li><a href="crank.html" class="site-nav-item">Competition ranking</a></li>
+      </ul>
+      <h3 class="site-nav-subheading" id="site-nav-articles-heading">Articles</h3>
+      <ul class="site-nav-list site-nav-list--articles" aria-labelledby="site-nav-articles-heading">
+        <li><a href="articles/HowToUse" class="site-nav-item">How to Use This Database</a></li>
+        <li><a href="articles/IntegrityInMathContest" class="site-nav-item">Note on Integrity in US Math Competitions</a></li>
+        <li><a href="articles/using-data-to-identify-integrity-issues" class="site-nav-item">Using data to identify integrity issues</a></li>
+        <li><a href="articles/how-to-compare-competitions" class="site-nav-item">How to Compare Math Competitions</a></li>
+        <li><a href="articles/" class="site-nav-item">Other articles</a></li>
+      </ul>
+    </nav>
+  </div>
 
   <main class="main">
     <div class="search-wrap">
@@ -189,82 +113,208 @@
         >×</button>
       </div>
       <span id="search-hint" class="search-hint" aria-live="polite"></span>
+      <div id="search-apply-filters-wrap" class="search-apply-filters-wrap" hidden>
+        <label class="search-apply-filters-label" title="When on, search matches are limited by the filters above and each card shows only matching competition rows.">
+          <input type="checkbox" id="search-apply-leaderboard-filters" checked />
+          Apply filters to search
+        </label>
+      </div>
     </div>
 
-    <div id="awards-ranking-filters" class="awards-ranking-filters awards-ranking-controls">
-      <label class="girls-only-label">
-        <input type="checkbox" id="girls-only" /> Girls only
-      </label>
-      <span id="grade-filter-wrap" class="grade-filter-wrap">
-        <label class="grade-filter-label">
-          <span class="grade-filter-caption">Grade:</span>
-          <select id="grade-filter" class="grade-filter-select" aria-label="Filter by current grade">
-            <option value="">All grades</option>
-          </select>
+    <div id="awards-ranking-filters" class="awards-ranking-filters">
+      <div class="leaderboard-filters-row leaderboard-filters-row--competition awards-ranking-controls">
+        <span id="contest-filter-wrap" class="contest-filter-wrap">
+          <button
+            type="button"
+            id="contest-filter-trigger"
+            class="contest-filter-trigger"
+            aria-expanded="false"
+            aria-haspopup="true"
+            aria-controls="contest-filter-popover"
+          >
+            Competition filter
+          </button>
+          <span id="contest-filter-summary" class="contest-filter-summary">All selected</span>
+          <div
+            id="contest-filter-popover"
+            class="contest-filter-popover"
+            hidden
+            role="dialog"
+            aria-labelledby="contest-filter-popover-title"
+          >
+            <div class="contest-filter-popover-inner">
+              <h3 id="contest-filter-popover-title" class="contest-filter-popover-title">Filter by competition</h3>
+              <div id="contest-filter" class="contest-filter-options" aria-label="Filter by competition">
+                <label class="contest-filter-option">
+                  <input type="checkbox" value="all" checked>
+                  All
+                </label>
+                <label class="contest-filter-option">
+                  <input type="checkbox" value="usamo">
+                  USAMO
+                </label>
+                <label class="contest-filter-option">
+                  <input type="checkbox" value="usajmo">
+                  USAJMO
+                </label>
+                <label class="contest-filter-option">
+                  <input type="checkbox" value="imo">
+                  IMO
+                </label>
+                <label class="contest-filter-option">
+                  <input type="checkbox" value="rmm">
+                  RMM
+                </label>
+                <label class="contest-filter-option">
+                  <input type="checkbox" value="egmo">
+                  EGMO
+                </label>
+                <label class="contest-filter-option">
+                  <input type="checkbox" value="hmmt-feb">
+                  HMMT Feb
+                </label>
+                <label class="contest-filter-option">
+                  <input type="checkbox" value="hmmt-nov">
+                  HMMT Nov
+                </label>
+                <label class="contest-filter-option">
+                  <input type="checkbox" value="pumac-a">
+                  PUMaC Div A
+                </label>
+                <label class="contest-filter-option">
+                  <input type="checkbox" value="pumac-b">
+                  PUMaC Div B
+                </label>
+                <label class="contest-filter-option">
+                  <input type="checkbox" value="mathcounts">
+                  Mathcounts
+                </label>
+                <label class="contest-filter-option">
+                  <input type="checkbox" value="cmimc">
+                  CMIMC
+                </label>
+                <label class="contest-filter-option">
+                  <input type="checkbox" value="arml">
+                  ARML
+                </label>
+                <label class="contest-filter-option">
+                  <input type="checkbox" value="dmm">
+                  DMM
+                </label>
+                <label class="contest-filter-option">
+                  <input type="checkbox" value="cmm">
+                  CMM
+                </label>
+                <label class="contest-filter-option">
+                  <input type="checkbox" value="mmaths">
+                  MMATHS
+                </label>
+                <label class="contest-filter-option">
+                  <input type="checkbox" value="mpfg">
+                  MPFG
+                </label>
+                <label class="contest-filter-option">
+                  <input type="checkbox" value="mpfg-olympiad">
+                  MPFG Olympiad
+                </label>
+                <label class="contest-filter-option">
+                  <input type="checkbox" value="bamo-8">
+                  BAMO-8
+                </label>
+                <label class="contest-filter-option">
+                  <input type="checkbox" value="bamo-12">
+                  BAMO-12
+                </label>
+                <label class="contest-filter-option">
+                  <input type="checkbox" value="brumo-a">
+                  BrUMO Div A
+                </label>
+                <label class="contest-filter-option">
+                  <input type="checkbox" value="bmt">
+                  BMT
+                </label>
+              </div>
+              <button type="button" class="contest-filter-popover-close" aria-label="Close">×</button>
+            </div>
+            <div class="contest-filter-popover-backdrop" aria-hidden="true"></div>
+          </div>
+        </span>
+      </div>
+      <div class="leaderboard-filters-row leaderboard-filters-row--demographics awards-ranking-controls">
+        <label class="girls-only-label">
+          <input type="checkbox" id="girls-only" /> Girls only
         </label>
-      </span>
-      <span id="state-filter-wrap" class="state-filter-wrap">
-        <label class="state-filter-label">
-          <span class="state-filter-caption">State:</span>
-          <select id="state-filter" class="state-filter-select" aria-label="Filter by state">
-            <option value="">All states</option>
-            <option value="US">US</option>
-            <option value="Alabama">Alabama</option>
-            <option value="Alaska">Alaska</option>
-            <option value="Arizona">Arizona</option>
-            <option value="Arkansas">Arkansas</option>
-            <option value="California">California</option>
-            <option value="Colorado">Colorado</option>
-            <option value="Connecticut">Connecticut</option>
-            <option value="Delaware">Delaware</option>
-            <option value="District of Columbia">District of Columbia</option>
-            <option value="Florida">Florida</option>
-            <option value="Georgia">Georgia</option>
-            <option value="Hawaii">Hawaii</option>
-            <option value="Idaho">Idaho</option>
-            <option value="Illinois">Illinois</option>
-            <option value="Indiana">Indiana</option>
-            <option value="Iowa">Iowa</option>
-            <option value="Kansas">Kansas</option>
-            <option value="Kentucky">Kentucky</option>
-            <option value="Louisiana">Louisiana</option>
-            <option value="Maine">Maine</option>
-            <option value="Maryland">Maryland</option>
-            <option value="Massachusetts">Massachusetts</option>
-            <option value="Michigan">Michigan</option>
-            <option value="Minnesota">Minnesota</option>
-            <option value="Mississippi">Mississippi</option>
-            <option value="Missouri">Missouri</option>
-            <option value="Montana">Montana</option>
-            <option value="Nebraska">Nebraska</option>
-            <option value="Nevada">Nevada</option>
-            <option value="New Hampshire">New Hampshire</option>
-            <option value="New Jersey">New Jersey</option>
-            <option value="New Mexico">New Mexico</option>
-            <option value="New York">New York</option>
-            <option value="North Carolina">North Carolina</option>
-            <option value="North Dakota">North Dakota</option>
-            <option value="Ohio">Ohio</option>
-            <option value="Oklahoma">Oklahoma</option>
-            <option value="Oregon">Oregon</option>
-            <option value="Pennsylvania">Pennsylvania</option>
-            <option value="Rhode Island">Rhode Island</option>
-            <option value="South Carolina">South Carolina</option>
-            <option value="South Dakota">South Dakota</option>
-            <option value="Tennessee">Tennessee</option>
-            <option value="Texas">Texas</option>
-            <option value="Utah">Utah</option>
-            <option value="Vermont">Vermont</option>
-            <option value="Virginia">Virginia</option>
-            <option value="Washington">Washington</option>
-            <option value="West Virginia">West Virginia</option>
-            <option value="Wisconsin">Wisconsin</option>
-            <option value="Wyoming">Wyoming</option>
-            <option value="__none__">No state</option>
-            <option value="__other__">Other</option>
-          </select>
-        </label>
-      </span>
+        <span id="grade-filter-wrap" class="grade-filter-wrap">
+          <label class="grade-filter-label">
+            <span class="grade-filter-caption">Grade:</span>
+            <select id="grade-filter" class="grade-filter-select" aria-label="Filter by current grade">
+              <option value="">All grades</option>
+            </select>
+          </label>
+        </span>
+        <span id="state-filter-wrap" class="state-filter-wrap">
+          <label class="state-filter-label">
+            <span class="state-filter-caption">State:</span>
+            <select id="state-filter" class="state-filter-select" aria-label="Filter by state">
+              <option value="">All states</option>
+              <option value="US">US</option>
+              <option value="Alabama">Alabama</option>
+              <option value="Alaska">Alaska</option>
+              <option value="Arizona">Arizona</option>
+              <option value="Arkansas">Arkansas</option>
+              <option value="California">California</option>
+              <option value="Colorado">Colorado</option>
+              <option value="Connecticut">Connecticut</option>
+              <option value="Delaware">Delaware</option>
+              <option value="District of Columbia">District of Columbia</option>
+              <option value="Florida">Florida</option>
+              <option value="Georgia">Georgia</option>
+              <option value="Hawaii">Hawaii</option>
+              <option value="Idaho">Idaho</option>
+              <option value="Illinois">Illinois</option>
+              <option value="Indiana">Indiana</option>
+              <option value="Iowa">Iowa</option>
+              <option value="Kansas">Kansas</option>
+              <option value="Kentucky">Kentucky</option>
+              <option value="Louisiana">Louisiana</option>
+              <option value="Maine">Maine</option>
+              <option value="Maryland">Maryland</option>
+              <option value="Massachusetts">Massachusetts</option>
+              <option value="Michigan">Michigan</option>
+              <option value="Minnesota">Minnesota</option>
+              <option value="Mississippi">Mississippi</option>
+              <option value="Missouri">Missouri</option>
+              <option value="Montana">Montana</option>
+              <option value="Nebraska">Nebraska</option>
+              <option value="Nevada">Nevada</option>
+              <option value="New Hampshire">New Hampshire</option>
+              <option value="New Jersey">New Jersey</option>
+              <option value="New Mexico">New Mexico</option>
+              <option value="New York">New York</option>
+              <option value="North Carolina">North Carolina</option>
+              <option value="North Dakota">North Dakota</option>
+              <option value="Ohio">Ohio</option>
+              <option value="Oklahoma">Oklahoma</option>
+              <option value="Oregon">Oregon</option>
+              <option value="Pennsylvania">Pennsylvania</option>
+              <option value="Rhode Island">Rhode Island</option>
+              <option value="South Carolina">South Carolina</option>
+              <option value="South Dakota">South Dakota</option>
+              <option value="Tennessee">Tennessee</option>
+              <option value="Texas">Texas</option>
+              <option value="Utah">Utah</option>
+              <option value="Vermont">Vermont</option>
+              <option value="Virginia">Virginia</option>
+              <option value="Washington">Washington</option>
+              <option value="West Virginia">West Virginia</option>
+              <option value="Wisconsin">Wisconsin</option>
+              <option value="Wyoming">Wyoming</option>
+              <option value="__none__">No state</option>
+              <option value="__other__">Other</option>
+            </select>
+          </label>
+        </span>
+      </div>
     </div>
 
     <section id="top-students-section" class="awards-ranking" aria-labelledby="awards-ranking-title">
@@ -356,11 +406,6 @@
   <footer class="footer">
     <p>All information is publicly available on each competition's official website.</p>
     <p>Data from <code>math-competition</code> database. Re-run <code>scripts/build_search_data.py</code> to refresh.</p>
-    <p><a href="articles/HowToUse">How to Use This Database</a></p>
-    <p><a href="articles/IntegrityInMathContest">Note on Integrity in US Math Competitions</a></p>
-    <p><a href="articles/using-data-to-identify-integrity-issues">Using data to identify integrity issues</a></p>
-    <p><a href="articles/how-to-compare-competitions">How to Compare Math Competitions</a></p>
-    <p><a href="articles/">Other articles</a></p>
     <p><a href="report.html">Report integrity concern</a></p>
     <p>Please report issues and official competition results to <a href="mailto:mathcontestintegrity@gmail.com">mathcontestintegrity@gmail.com</a>.</p>
   </footer>

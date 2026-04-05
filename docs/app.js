@@ -20,6 +20,8 @@
   var stateFilterEl = document.getElementById("state-filter");
   var contestFilterWrapEl = document.getElementById("contest-filter-wrap");
   var contestFilterEl = document.getElementById("contest-filter");
+  var searchApplyLeaderboardFiltersEl = document.getElementById("search-apply-leaderboard-filters");
+  var searchApplyFiltersWrapEl = document.getElementById("search-apply-filters-wrap");
   var contestFilterTriggerEl = document.getElementById("contest-filter-trigger");
   var contestFilterSummaryEl = document.getElementById("contest-filter-summary");
   var sortToggleEl = document.getElementById("sort-toggle");
@@ -83,7 +85,8 @@
         sortMode: sortMode,
         ratioSortAsc: ratioSortAsc,
         search: searchEl ? searchEl.value : "",
-        contest: getActiveContestFilterValues()
+        contest: getActiveContestFilterValues(),
+        searchApplyLeaderboardFilters: searchApplyLeaderboardFiltersEl ? searchApplyLeaderboardFiltersEl.checked : true
       };
       savedFilters = f;
       localStorage.setItem(FILTERS_KEY, JSON.stringify(f));
@@ -116,7 +119,51 @@
           boxes[i].checked = val === "all" ? isAll : (f.contest.indexOf(val) >= 0);
         }
       }
+      if (searchApplyLeaderboardFiltersEl && f.searchApplyLeaderboardFilters != null) {
+        searchApplyLeaderboardFiltersEl.checked = !!f.searchApplyLeaderboardFilters;
+      }
     } catch (e) { /* ignore */ }
+  }
+
+  function shouldApplySearchLeaderboardFilters() {
+    return !!(searchApplyLeaderboardFiltersEl && searchApplyLeaderboardFiltersEl.checked);
+  }
+
+  function syncSearchApplyFiltersToggleVisibility() {
+    if (!searchApplyFiltersWrapEl) return;
+    var q = (searchEl && searchEl.value) ? searchEl.value.trim() : "";
+    var sid = getStudentIdFromUrl();
+    searchApplyFiltersWrapEl.hidden = !(q.length > 0 && !sid);
+  }
+
+  function copyStudentShallow(student, records) {
+    var copy = {};
+    for (var k in student) {
+      if (Object.prototype.hasOwnProperty.call(student, k) && k !== "records") {
+        copy[k] = student[k];
+      }
+    }
+    copy.records = records || [];
+    return copy;
+  }
+
+  function buildSearchResultStudents(nameMatched) {
+    if (!shouldApplySearchLeaderboardFilters()) {
+      return nameMatched.map(function (s) {
+        return copyStudentShallow(s, s.records || []);
+      }).filter(function (s) {
+        return (s.records || []).length > 0;
+      });
+    }
+    var afterDemo = applyDemographicFilters(nameMatched);
+    var out = [];
+    for (var i = 0; i < afterDemo.length; i++) {
+      var s = afterDemo[i];
+      var recs = (s.records || []).filter(recordMatchesContestFilter);
+      if (recs.length === 0) continue;
+      out.push(copyStudentShallow(s, recs));
+    }
+    return out;
   }
 
   // TEMP: set to true to show hidden feature without ?a=1; set to false to require URL param again
@@ -255,7 +302,7 @@
   }
 
   function isContestFilterActive() {
-    if (!contestFilterEl || !contestFilterWrapEl || contestFilterWrapEl.hidden) return false;
+    if (!contestFilterEl) return false;
     var selected = getActiveContestFilterValues();
     return selected.length > 0 && selected.indexOf("all") === -1;
   }
@@ -284,7 +331,7 @@
 
   function recordMatchesContestFilter(record) {
     if (!record) return false;
-    if (!contestFilterEl || !contestFilterWrapEl || contestFilterWrapEl.hidden) return true;
+    if (!contestFilterEl) return true;
     var slug = record.contest_slug || record.contest || "";
     if (!slug) return false;
     slug = String(slug).toLowerCase();
@@ -623,14 +670,18 @@
     }
 
     var contestsHtml = headerOnly ? "" : "<div class=\"student-contests\">" + sections.join("") + "</div>";
+    var headerActionsHtml =
+      "<div class=\"student-header-actions\">" +
+        mcpBtnHtml +
+        "<button type=\"button\" class=\"export-pdf-student-btn\" aria-label=\"Export this student to PDF\">Export to PDF</button>" +
+      "</div>";
     return (
       "<article class=\"student-card\" data-student-id=\"" + escapeHtml(String(student.id)) + "\">" +
         "<div class=\"student-header\">" +
           "<h2 class=\"student-name\" data-student-name=\"" + escapeHtml(String(student.name || "")) + "\">" + escapeHtml(student.name) + (stateHtml ? " " + stateHtml : "") + gradeHtml + "</h2>" +
           statsHtml +
           aliasesHtml +
-          mcpBtnHtml +
-          "<button type=\"button\" class=\"export-pdf-student-btn\" aria-label=\"Export this student to PDF\">Export to PDF</button>" +
+          headerActionsHtml +
         "</div>" +
         contestsHtml +
       "</article>"
@@ -1022,6 +1073,58 @@
     awardsRankingListEl.setAttribute("aria-busy", "false");
   }
 
+  function closeSiteNavDrawer() {
+    var drawer = document.getElementById("site-nav-drawer");
+    var toggle = document.getElementById("site-nav-toggle");
+    if (!drawer || drawer.hidden) return;
+    drawer.hidden = true;
+    if (toggle) {
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "Open menu");
+    }
+    document.body.classList.remove("site-nav-open");
+  }
+
+  function bindSiteNavDrawer() {
+    var toggle = document.getElementById("site-nav-toggle");
+    var drawer = document.getElementById("site-nav-drawer");
+    if (!toggle || !drawer) return;
+    var backdrop = drawer.querySelector(".site-nav-drawer-backdrop");
+    var closeBtn = drawer.querySelector(".site-nav-drawer-close");
+    var panel = drawer.querySelector(".site-nav-drawer-panel");
+
+    function openDrawer() {
+      drawer.hidden = false;
+      toggle.setAttribute("aria-expanded", "true");
+      toggle.setAttribute("aria-label", "Close menu");
+      document.body.classList.add("site-nav-open");
+    }
+
+    function isOpen() {
+      return !drawer.hidden;
+    }
+
+    toggle.addEventListener("click", function () {
+      if (isOpen()) closeSiteNavDrawer();
+      else openDrawer();
+    });
+    if (backdrop) {
+      backdrop.addEventListener("click", closeSiteNavDrawer);
+    }
+    if (closeBtn) {
+      closeBtn.addEventListener("click", closeSiteNavDrawer);
+    }
+    if (panel) {
+      panel.addEventListener("click", function (e) {
+        var a = e.target && e.target.closest && e.target.closest("a.site-nav-item");
+        if (a && a.getAttribute("href")) closeSiteNavDrawer();
+      });
+    }
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && isOpen()) closeSiteNavDrawer();
+    });
+  }
+
   function bindContestListPopover() {
     var trigger = document.getElementById("contest-list-trigger");
     var popover = document.getElementById("contest-list-popover");
@@ -1039,7 +1142,12 @@
     }
 
     trigger.addEventListener("click", function () {
-      if (popover.hidden) open(); else close();
+      if (popover.hidden) {
+        closeSiteNavDrawer();
+        open();
+      } else {
+        close();
+      }
     });
     if (closeBtn) closeBtn.addEventListener("click", close);
     if (backdrop) backdrop.addEventListener("click", close);
@@ -1079,6 +1187,7 @@
     saveFilters();
     var query = (searchEl && searchEl.value) ? searchEl.value.trim() : "";
     var urlStudentId = getStudentIdFromUrl();
+    syncSearchApplyFiltersToggleVisibility();
     emptyEl.hidden = true;
     resultsEl.innerHTML = "";
 
@@ -1102,26 +1211,41 @@
         searchValueBeforeStudentCard = (searchEl && searchEl.value) ? searchEl.value.trim() : "";
         if (searchEl) searchEl.value = (student.name || "").trim();
         if (searchClearEl) searchClearEl.hidden = true;
-        hintEl.textContent = "1 student found.";
         if (topStudentsSectionEl) topStudentsSectionEl.hidden = true;
         if (awardsRankingFiltersEl) {
           awardsRankingFiltersEl.hidden = true;
           awardsRankingFiltersEl.style.display = "none";
         }
-        var copy = {};
-        for (var k in student) {
-          if (Object.prototype.hasOwnProperty.call(student, k) && k !== "records") {
-            copy[k] = student[k];
+        if (shouldApplySearchLeaderboardFilters()) {
+          var demo = applyDemographicFilters([student]);
+          if (!demo.length) {
+            hintEl.textContent = "Student excluded by your filters.";
+            emptyEl.hidden = false;
+            emptyEl.innerHTML = "<p>This student does not match your Girls / Grade / State filters. Use <strong>Back to search</strong>, then adjust filters or turn off <strong>Apply filters to search</strong>.</p>";
+            syncSearchApplyFiltersToggleVisibility();
+            return;
           }
         }
-        var recs = student.records || [];
-        copy.records = recs;
+        var recs = (student.records || []).slice();
+        if (shouldApplySearchLeaderboardFilters()) {
+          recs = recs.filter(recordMatchesContestFilter);
+        }
+        var copy = copyStudentShallow(student, recs);
         if (recs.length > 0) {
+          hintEl.textContent = shouldApplySearchLeaderboardFilters()
+            ? "1 student found (filters applied to records)."
+            : "1 student found.";
           resultsEl.innerHTML = renderStudent(copy, data.contests || {});
         } else {
+          hintEl.textContent = shouldApplySearchLeaderboardFilters()
+            ? "No records match your competition filter for this student."
+            : "No records for this student.";
           emptyEl.hidden = false;
-          emptyEl.innerHTML = "<p class=\"empty-state\">No records for this student.</p>";
+          emptyEl.innerHTML = shouldApplySearchLeaderboardFilters()
+            ? "<p class=\"empty-state\">No competition rows match your filter for this student. Use <strong>Back to search</strong>, then open <strong>Competition filter</strong> or turn off <strong>Apply filters to search</strong>.</p>"
+            : "<p class=\"empty-state\">No records for this student.</p>";
         }
+        syncSearchApplyFiltersToggleVisibility();
         return;
       }
       clearStudentIdFromUrl();
@@ -1137,48 +1261,43 @@
         awardsRankingFiltersEl.hidden = false;
         awardsRankingFiltersEl.style.display = "";
       }
+      syncSearchApplyFiltersToggleVisibility();
       return;
     }
 
     if (awardsRankingFiltersEl) {
-      awardsRankingFiltersEl.hidden = true;
-      awardsRankingFiltersEl.style.display = "none";
+      awardsRankingFiltersEl.hidden = false;
+      awardsRankingFiltersEl.style.display = "";
     }
+
+    syncSearchApplyFiltersToggleVisibility();
 
     if (searchRafId) cancelAnimationFrame(searchRafId);
     searchRafId = requestAnimationFrame(function () {
       searchRafId = null;
       var q = (searchEl && searchEl.value) ? searchEl.value.trim() : "";
       if (q !== query) return;
+      syncSearchApplyFiltersToggleVisibility();
 
       var matched = data.students.filter(function (s) { return matchStudent(s, query); });
-      // Search results are not filtered by grade, state, or girls - show all matches
-
-      var searchResults = matched.map(function (s) {
-        var copy = {};
-        for (var k in s) {
-          if (Object.prototype.hasOwnProperty.call(s, k) && k !== "records") {
-            copy[k] = s[k];
-          }
-        }
-        copy.records = s.records || [];
-        return copy;
-      }).filter(function (s) {
-        return (s.records || []).length > 0;
-      });
+      var searchResults = buildSearchResultStudents(matched);
 
       var total = searchResults.length;
       var toRender = total > 10 ? searchResults.slice(0, 10) : searchResults;
+      var filterNote = shouldApplySearchLeaderboardFilters() ? " Filters above apply." : "";
       hintEl.textContent = total === 0
-        ? "No students found."
+        ? "No students found." + filterNote
         : total === 1
-          ? "1 student found."
+          ? "1 student found." + filterNote
           : total > 10
-            ? total + " students found. Showing first 10."
-            : total + " students found.";
+            ? total + " students found. Showing first 10." + filterNote
+            : total + " students found." + filterNote;
 
       if (total === 0) {
         emptyEl.hidden = false;
+        emptyEl.innerHTML = shouldApplySearchLeaderboardFilters()
+          ? "<p>No name matches with your current filters. Try turning off <strong>Apply filters to search</strong> or widening Girls / Grade / State / Competition filter.</p>"
+          : "<p>No students match your search. Try a different name or partial name.</p>";
         if (topStudentsSectionEl) topStudentsSectionEl.hidden = false;
         return;
       }
@@ -1513,6 +1632,7 @@
   }
 
   function init() {
+    bindSiteNavDrawer();
     restoreFilters();
     if (!showHiddenFeature() && sortMode === "mcp_pct") {
       sortMode = "mcp";
@@ -1540,59 +1660,58 @@
     ]).then(function (arr) {
       var json = arr[0];
       var branchCfg = arr[1];
-        var si = json.slug_index || [];
-        var km = json.key_map || {};
-        var students = json.students || [];
-        for (var s = 0; s < students.length; s++) {
-          var recs = students[s].records || [];
-          for (var r = 0; r < recs.length; r++) {
-            var rec = recs[r];
-            if (si.length && rec.c != null) {
-              rec.contest_slug = si[rec.c];
-              delete rec.c;
-            }
-            var keys = Object.keys(rec);
-            for (var ki = 0; ki < keys.length; ki++) {
-              var sk = keys[ki];
-              var longKey = km[sk];
-              if (longKey) {
-                rec[longKey] = rec[sk];
-                delete rec[sk];
-              }
+      var si = json.slug_index || [];
+      var km = json.key_map || {};
+      var students = json.students || [];
+      for (var s = 0; s < students.length; s++) {
+        var recs = students[s].records || [];
+        for (var r = 0; r < recs.length; r++) {
+          var rec = recs[r];
+          if (si.length && rec.c != null) {
+            rec.contest_slug = si[rec.c];
+            delete rec.c;
+          }
+          var keys = Object.keys(rec);
+          for (var ki = 0; ki < keys.length; ki++) {
+            var sk = keys[ki];
+            var longKey = km[sk];
+            if (longKey) {
+              rec[longKey] = rec[sk];
+              delete rec[sk];
             }
           }
         }
-        data = json;
-        data.branch = (branchCfg && branchCfg.branch) ? branchCfg.branch : "main";
-        var order = json.contest_order || [];
-        var orderMap = {};
-        if (order && order.length) {
-          for (var i = 0; i < order.length; i++) {
-            var slug = order[i];
-            if (slug != null && orderMap[slug] == null) {
-              orderMap[slug] = i;
-            }
+      }
+      data = json;
+      data.branch = (branchCfg && branchCfg.branch) ? branchCfg.branch : "main";
+      var order = json.contest_order || [];
+      var orderMap = {};
+      if (order && order.length) {
+        for (var i = 0; i < order.length; i++) {
+          var slug = order[i];
+          if (slug != null && orderMap[slug] == null) {
+            orderMap[slug] = i;
           }
         }
-        data.contest_order_map = orderMap;
-        setLoading(false);
-        var mcpPctOption = document.getElementById("mcp-pct-sort-option");
-        if (mcpPctOption) mcpPctOption.hidden = !showHiddenFeature();
-        requestAnimationFrame(function () {
-          renderContestList();
-          updateContestFilterSummary();
-          renderTopStudentsByRecords();
-          bindContestListPopover();
-          bindStateDistPopover();
-          bindMcpPctPopover();
-          bindCsvPopover();
-          runSearch();
-        });
-      })
-      .catch(function (err) {
-        setLoading(false);
-        resultsEl.innerHTML = "<p class=\"empty-state\">Could not load data. " + escapeHtml(String(err.message)) + "</p>";
+      }
+      data.contest_order_map = orderMap;
+      setLoading(false);
+      var mcpPctOption = document.getElementById("mcp-pct-sort-option");
+      if (mcpPctOption) mcpPctOption.hidden = !showHiddenFeature();
+      requestAnimationFrame(function () {
+        renderContestList();
+        updateContestFilterSummary();
+        renderTopStudentsByRecords();
+        bindContestListPopover();
+        bindStateDistPopover();
+        bindMcpPctPopover();
+        bindCsvPopover();
+        runSearch();
       });
+    }).catch(function (err) {
+      setLoading(false);
+      resultsEl.innerHTML = "<p class=\"empty-state\">Could not load data. " + escapeHtml(String(err.message)) + "</p>";
+    });
   }
 
   if (searchEl) {
@@ -1648,6 +1767,13 @@
     stateFilterEl.addEventListener("change", function () {
       saveFilters();
       renderTopStudentsByRecords();
+      runSearch();
+    });
+  }
+
+  if (searchApplyLeaderboardFiltersEl) {
+    searchApplyLeaderboardFiltersEl.addEventListener("change", function () {
+      saveFilters();
       runSearch();
     });
   }
