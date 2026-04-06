@@ -2122,6 +2122,25 @@ body.site-nav-open {
   color: var(--text-muted);
 }
 
+.mcp-timeline-disclaimer {
+  margin: 1rem 0 0;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.75rem;
+  line-height: 1.45;
+  color: var(--text-muted);
+}
+
+.mcp-timeline-disclaimer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.mcp-timeline-disclaimer a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
 .mcp-timeline-popover-close {
   position: absolute;
   top: 0.75rem;
