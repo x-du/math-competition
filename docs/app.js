@@ -2,6 +2,8 @@
   "use strict";
 
   var data = { students: [], contests: {} };
+  /** Latest competition season year per contest_slug (global), for MCP decay — see build_search_data.get_time_weight. */
+  var maxMcpYearBySlugGlobal = {};
   var searchEl = document.getElementById("search");
   var searchInputWrapEl = document.getElementById("search-input-wrap");
   var studentCardBackEl = document.getElementById("student-card-back");
@@ -39,6 +41,7 @@
   var mcpTimelineChartInstance = null;
   var mcpTimelineSelectedIds = [];
   var MCP_TIMELINE_MAX_STUDENTS = 10;
+  var mcpTimelineApplyFiltersEl = document.getElementById("mcp-timeline-apply-filters");
   var savedFilters = {};
   var searchValueBeforeStudentCard = null;
 
@@ -90,7 +93,8 @@
         ratioSortAsc: ratioSortAsc,
         search: searchEl ? searchEl.value : "",
         contest: getActiveContestFilterValues(),
-        searchApplyLeaderboardFilters: searchApplyLeaderboardFiltersEl ? searchApplyLeaderboardFiltersEl.checked : true
+        searchApplyLeaderboardFilters: searchApplyLeaderboardFiltersEl ? searchApplyLeaderboardFiltersEl.checked : true,
+        mcpTimelineApplyFilters: mcpTimelineApplyFiltersEl ? mcpTimelineApplyFiltersEl.checked : true
       };
       savedFilters = f;
       localStorage.setItem(FILTERS_KEY, JSON.stringify(f));
@@ -125,6 +129,13 @@
       }
       if (searchApplyLeaderboardFiltersEl && f.searchApplyLeaderboardFilters != null) {
         searchApplyLeaderboardFiltersEl.checked = !!f.searchApplyLeaderboardFilters;
+      }
+      if (mcpTimelineApplyFiltersEl) {
+        if (f.mcpTimelineApplyFilters != null) {
+          mcpTimelineApplyFiltersEl.checked = !!f.mcpTimelineApplyFilters;
+        } else if (f.mcpTimelineApplyContestFilter != null) {
+          mcpTimelineApplyFiltersEl.checked = !!f.mcpTimelineApplyContestFilter;
+        }
       }
     } catch (e) { /* ignore */ }
   }
@@ -280,8 +291,8 @@
     return selected;
   }
 
-  function updateContestFilterSummary() {
-    if (!contestFilterEl || !contestFilterSummaryEl) return;
+  function getContestFilterSummaryText() {
+    if (!contestFilterEl) return "All selected";
     var boxes = contestFilterEl.querySelectorAll("input[type='checkbox']");
     var allBox = contestFilterEl.querySelector("input[type='checkbox'][value='all']");
     var totalOptions = boxes.length - (allBox ? 1 : 0);
@@ -298,18 +309,33 @@
       }
     }
 
-    var text = "";
     if (allBox && allBox.checked && selectedNonAll.length === totalOptions) {
-      text = "All selected";
-    } else if (selectedNonAll.length === 0) {
-      text = "All selected";
-    } else if (selectedNonAll.length === 1) {
-      text = selectedNonAll[0] + " selected";
-    } else {
-      text = String(selectedNonAll.length) + " competitions selected";
+      return "All selected";
     }
+    if (selectedNonAll.length === 0) {
+      return "All selected";
+    }
+    if (selectedNonAll.length === 1) {
+      return selectedNonAll[0] + " selected";
+    }
+    return String(selectedNonAll.length) + " competitions selected";
+  }
 
-    contestFilterSummaryEl.textContent = text;
+  function updateMcpTimelineContestSummary() {
+    var el = document.getElementById("mcp-timeline-contest-summary");
+    if (!el) return;
+    var base = getContestFilterSummaryText();
+    if (mcpTimelineApplyFiltersEl && !mcpTimelineApplyFiltersEl.checked) {
+      el.textContent = base + " · not applied to chart";
+    } else {
+      el.textContent = base;
+    }
+  }
+
+  function updateContestFilterSummary() {
+    var text = getContestFilterSummaryText();
+    if (contestFilterSummaryEl) contestFilterSummaryEl.textContent = text;
+    updateMcpTimelineContestSummary();
   }
 
   function isContestFilterActive() {
@@ -322,6 +348,48 @@
     if (!slug) return false;
     var s = String(slug).toLowerCase();
     return s === "mpfg" || s.indexOf("mpfg-olympiad") !== -1 || s === "egmo";
+  }
+
+  var MATHCOUNTS_MCP_SLUG = "mathcounts-national-rank";
+
+  /** Mirrors scripts/build_search_data.py get_time_weight(contestYear, slug, referenceYear). */
+  function timeDecayWeightForPublishedMcp(contestYear, slug, referenceYear) {
+    if (contestYear == null || isNaN(contestYear) || referenceYear == null || isNaN(referenceYear)) return 0;
+    var s = String(slug || "").toLowerCase();
+    if (s === MATHCOUNTS_MCP_SLUG) return 1;
+    var yearsAgo = referenceYear - contestYear;
+    if (yearsAgo < 0 || yearsAgo > 3) return 0;
+    return Math.pow(0.5, yearsAgo);
+  }
+
+  /**
+   * Sum mcp_points × time decay as of calendar year anchorYear. Per contest, decay uses
+   * reference year min(anchorYear, latest season for that slug in the DB), matching published MCP
+   * at the last chart year. Skips results with season year > anchorYear.
+   */
+  function computeMcpFromRecordsAsOf(records, anchorYear, useMcpWCounting) {
+    var total = 0;
+    for (var i = 0; i < records.length; i++) {
+      var r = records[i];
+      var slug = r.contest_slug || r.contest || "";
+      if (!useMcpWCounting && isMcpWOnlySlug(slug)) continue;
+      var pts = r.mcp_points;
+      if (pts == null || Number(pts) <= 0) continue;
+      var cy = parseInt(String(r.year || ""), 10);
+      if (isNaN(cy) || cy > anchorYear) continue;
+      var contestMax = maxMcpYearBySlugGlobal[slug];
+      if (contestMax == null || isNaN(contestMax)) contestMax = anchorYear;
+      var refY = Math.min(anchorYear, contestMax);
+      var w = timeDecayWeightForPublishedMcp(cy, slug, refY);
+      if (w <= 0) continue;
+      total += Number(pts) * w;
+    }
+    return Math.round(total * 100) / 100;
+  }
+
+  function getMcpAtTimelineYear(student, anchorYear, useMcpWCounting) {
+    var recs = filterRecordsForMcpTimeline(student.records || []);
+    return computeMcpFromRecordsAsOf(recs, anchorYear, useMcpWCounting);
   }
 
   function computeMcpFromRecords(records, isGirlsOnly) {
@@ -340,99 +408,37 @@
     return total;
   }
 
+  function mcpTimelineChartUsesLeaderboardFilters() {
+    return !mcpTimelineApplyFiltersEl || mcpTimelineApplyFiltersEl.checked;
+  }
+
   function timelineUseMcpWCounting() {
+    if (!mcpTimelineChartUsesLeaderboardFilters()) return false;
     return !!(girlsOnlyEl && girlsOnlyEl.checked);
   }
 
-  function getStudentMcpTotalForTimelineSort(student, useMcpWCounting) {
-    if (useMcpWCounting && student.mcp_w != null) return Number(student.mcp_w);
-    if (student.mcp != null) return Number(student.mcp);
-    return 0;
-  }
-
-  function incrementalMcpByYear(student, useMcpWCounting) {
-    var m = {};
-    var recs = student.records || [];
-    for (var i = 0; i < recs.length; i++) {
-      var r = recs[i];
-      var c = r.mcp_contrib;
-      if (c == null || Number(c) <= 0) continue;
-      if (!useMcpWCounting) {
-        var slug = r.contest_slug || r.contest || "";
-        if (isMcpWOnlySlug(slug)) continue;
-      }
-      var y = parseInt(String(r.year || ""), 10);
-      if (isNaN(y)) continue;
-      var n = Number(c);
-      m[y] = (m[y] || 0) + n;
-    }
-    return m;
-  }
-
-  function cumulativeSeriesForYears(incMap, yearsSorted) {
-    var run = 0;
-    var out = [];
-    for (var i = 0; i < yearsSorted.length; i++) {
-      run += incMap[yearsSorted[i]] || 0;
-      out.push(run);
-    }
-    return out;
-  }
-
-  function getTop100StudentsForMcpTimeline() {
-    var useW = timelineUseMcpWCounting();
-    var students = applyDemographicFilters(data.students || []);
-    var cand = [];
-    for (var i = 0; i < students.length; i++) {
-      var st = students[i];
-      if (getStudentMcpTotalForTimelineSort(st, useW) > 0) cand.push(st);
-    }
-    cand.sort(function (a, b) {
-      return getStudentMcpTotalForTimelineSort(b, useW) - getStudentMcpTotalForTimelineSort(a, useW);
-    });
-    return cand.slice(0, 100);
-  }
-
-  function timelineCollectYearsFromStudents(students) {
-    var useW = timelineUseMcpWCounting();
-    var set = {};
+  /** X-axis: min..max competition season among records used for the chart (see filter checkbox). */
+  function timelineAnchorYearsFromStudents(students, useMcpWCounting) {
+    var minY = Infinity;
+    var maxY = -Infinity;
     for (var s = 0; s < students.length; s++) {
-      var inc = incrementalMcpByYear(students[s], useW);
-      for (var y in inc) {
-        if (Object.prototype.hasOwnProperty.call(inc, y)) set[y] = true;
+      var recs = filterRecordsForMcpTimeline(students[s].records || []);
+      for (var i = 0; i < recs.length; i++) {
+        var r = recs[i];
+        var slug = r.contest_slug || r.contest || "";
+        if (!useMcpWCounting && isMcpWOnlySlug(slug)) continue;
+        var pts = r.mcp_points;
+        if (pts == null || Number(pts) <= 0) continue;
+        var y = parseInt(String(r.year || ""), 10);
+        if (isNaN(y)) continue;
+        if (y < minY) minY = y;
+        if (y > maxY) maxY = y;
       }
     }
+    if (minY === Infinity || maxY === -Infinity) return [];
     var arr = [];
-    for (var k in set) {
-      if (Object.prototype.hasOwnProperty.call(set, k)) {
-        var yi = parseInt(k, 10);
-        if (!isNaN(yi)) arr.push(yi);
-      }
-    }
-    arr.sort(function (a, b) { return a - b; });
+    for (var ay = minY; ay <= maxY; ay++) arr.push(ay);
     return arr;
-  }
-
-  function baselineAvgCumulativeSeries(top100, years) {
-    var useW = timelineUseMcpWCounting();
-    if (!top100.length || !years.length) return years.map(function () { return 0; });
-    var rows = [];
-    for (var i = 0; i < top100.length; i++) {
-      rows.push(incrementalMcpByYear(top100[i], useW));
-    }
-    var out = [];
-    for (var yi = 0; yi < years.length; yi++) {
-      var sum = 0;
-      for (var j = 0; j < rows.length; j++) {
-        var cum = 0;
-        for (var k = 0; k <= yi; k++) {
-          cum += rows[j][years[k]] || 0;
-        }
-        sum += cum;
-      }
-      out.push(sum / rows.length);
-    }
-    return out;
   }
 
   function findStudentById(sid) {
@@ -486,46 +492,38 @@
       }
       return;
     }
-    var top100 = getTop100StudentsForMcpTimeline();
     var selected = [];
     for (var si = 0; si < mcpTimelineSelectedIds.length; si++) {
       var fs = findStudentById(mcpTimelineSelectedIds[si]);
       if (fs) selected.push(fs);
     }
-    var forYears = top100.concat(selected);
-    var years = timelineCollectYearsFromStudents(forYears);
     if (mcpTimelineChartInstance) {
       mcpTimelineChartInstance.destroy();
       mcpTimelineChartInstance = null;
     }
+    if (!selected.length) {
+      if (emptyEl) {
+        emptyEl.hidden = false;
+        emptyEl.textContent = "Add one or more students above to plot MCP by year.";
+      }
+      return;
+    }
+    var years = timelineAnchorYearsFromStudents(selected, timelineUseMcpWCounting());
     if (!years.length) {
       if (emptyEl) {
         emptyEl.hidden = false;
-        emptyEl.textContent = "No MCP data to chart for the current year range.";
+        emptyEl.textContent = "No MCP timeline data for the selected students.";
       }
       return;
     }
     if (emptyEl) emptyEl.hidden = true;
     var colors = getTimelineChartColorVars();
-    var baseline = baselineAvgCumulativeSeries(top100, years);
     var labels = years.map(String);
-    var datasets = [
-      {
-        label: "Avg of top 100 (by total MCP)",
-        data: baseline,
-        borderColor: colors.muted,
-        backgroundColor: colors.muted,
-        borderWidth: 2,
-        borderDash: [6, 4],
-        pointRadius: 0,
-        tension: 0.15,
-        fill: false
-      }
-    ];
+    var datasets = [];
+    var useWT = timelineUseMcpWCounting();
     for (var di = 0; di < selected.length; di++) {
       var stud = selected[di];
-      var inc = incrementalMcpByYear(stud, timelineUseMcpWCounting());
-      var series = cumulativeSeriesForYears(inc, years);
+      var series = years.map(function (y) { return getMcpAtTimelineYear(stud, y, useWT); });
       var col = PIE_COLORS[di % PIE_COLORS.length];
       datasets.push({
         label: stud.name || "Student",
@@ -607,6 +605,7 @@
       searchValueBeforeStudentCard = null;
       clearStudentIdFromUrl();
       runSearch();
+      updateContestFilterSummary();
       popover.hidden = false;
       trigger.setAttribute("aria-expanded", "true");
       mcpTimelinePopoverOpen = true;
@@ -641,7 +640,7 @@
       var matches = [];
       for (var i = 0; i < all.length; i++) {
         var st = all[i];
-        if (computeMcpFromRecords(st.records || [], useW) <= 0) continue;
+        if (computeMcpFromRecords(filterRecordsForMcpTimeline(st.records || []), useW) <= 0) continue;
         if (!matchStudent(st, q)) continue;
         matches.push(st);
         if (matches.length >= 30) break;
@@ -721,6 +720,15 @@
       });
     }
 
+    if (mcpTimelineApplyFiltersEl) {
+      mcpTimelineApplyFiltersEl.addEventListener("change", function () {
+        saveFilters();
+        updateMcpTimelineContestSummary();
+        renderMcpTimelineChart();
+        if (searchInput && (searchInput.value || "").trim()) runTimelineSearch();
+      });
+    }
+
     document.addEventListener("click", function (e) {
       if (!mcpTimelinePopoverOpen || !searchResults || searchResults.hidden) return;
       if (!popover.contains(e.target)) return;
@@ -733,6 +741,13 @@
       if (e.key !== "Escape" || !mcpTimelinePopoverOpen) return;
       closePopover();
     });
+  }
+
+  /** Records for Performance-by-year chart and search; respects contest filter only when timeline “Apply filters” is on. */
+  function filterRecordsForMcpTimeline(records) {
+    var recs = records || [];
+    if (!mcpTimelineChartUsesLeaderboardFilters()) return recs;
+    return recs.filter(recordMatchesContestFilter);
   }
 
   function recordMatchesContestFilter(record) {
@@ -2102,6 +2117,22 @@
           }
         }
       }
+      maxMcpYearBySlugGlobal = {};
+      for (var sx = 0; sx < students.length; sx++) {
+        var rs = students[sx].records || [];
+        for (var rx = 0; rx < rs.length; rx++) {
+          var rr = rs[rx];
+          var sl = rr.contest_slug;
+          if (!sl) continue;
+          var mpp = rr.mcp_points;
+          if (mpp == null || Number(mpp) <= 0) continue;
+          var yy = parseInt(String(rr.year || ""), 10);
+          if (isNaN(yy)) continue;
+          if (maxMcpYearBySlugGlobal[sl] == null || yy > maxMcpYearBySlugGlobal[sl]) {
+            maxMcpYearBySlugGlobal[sl] = yy;
+          }
+        }
+      }
       data = json;
       data.branch = (branchCfg && branchCfg.branch) ? branchCfg.branch : "main";
       var order = json.contest_order || [];
@@ -2270,8 +2301,10 @@
     contestFilterEl.addEventListener("change", function (event) {
       var target = event.target;
       if (!target || !target.type || target.type !== "checkbox") {
+        updateContestFilterSummary();
         renderTopStudentsByRecords();
         runSearch();
+        refreshMcpTimelineIfOpen();
         return;
       }
       var allBox = contestFilterEl.querySelector("input[type='checkbox'][value='all']");
@@ -2301,6 +2334,7 @@
       saveFilters();
       renderTopStudentsByRecords();
       runSearch();
+      refreshMcpTimelineIfOpen();
     });
   }
 

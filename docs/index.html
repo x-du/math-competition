@@ -403,7 +403,18 @@
       <div id="mcp-timeline-popover" class="mcp-timeline-popover" hidden role="dialog" aria-labelledby="mcp-timeline-popover-title" aria-modal="true">
         <div class="mcp-timeline-popover-inner">
           <h3 id="mcp-timeline-popover-title" class="mcp-timeline-popover-title">Performance by year</h3>
-          <p class="mcp-timeline-desc">Each line is cumulative time-weighted MCP from results through that calendar year. Baseline is the mean of the same metric across the top 100 students by total MCP (respects all student filters). You can add up to 10 students to compare.</p>
+          <p class="mcp-timeline-desc">Each point is MCP as of that calendar year, computed from each result’s stored points using the same time decay rule. The <a href="articles/mcp.html" target="_blank" rel="noopener">MCP methodology</a> article has the full model. Add up to 10 students to compare.</p>
+          <div class="mcp-timeline-options" role="group" aria-labelledby="mcp-timeline-filters-heading">
+            <div class="mcp-timeline-filters-heading" id="mcp-timeline-filters-heading">Filters</div>
+            <div class="mcp-timeline-filter-row">
+              <label class="mcp-timeline-filter-label">
+                <input type="checkbox" id="mcp-timeline-apply-filters" checked />
+                <span>Apply competition filters to this chart</span>
+              </label>
+              <span id="mcp-timeline-contest-summary" class="mcp-timeline-contest-summary" aria-live="polite"></span>
+            </div>
+            <p class="mcp-timeline-filter-hint">When unchecked, every competition counts and the lines use standard MCP (not MCP-W), ignoring the competition filter and Girls Club above.</p>
+          </div>
           <div class="mcp-timeline-add-wrap">
             <label class="mcp-timeline-search-label" for="mcp-timeline-student-search">Add student</label>
             <input type="search" id="mcp-timeline-student-search" class="mcp-timeline-student-search" placeholder="Search by name…" autocomplete="off" aria-autocomplete="list" aria-controls="mcp-timeline-search-results" />
@@ -411,10 +422,10 @@
           </div>
           <div id="mcp-timeline-chips" class="mcp-timeline-chips" aria-live="polite"></div>
           <div class="mcp-timeline-chart-wrap">
-            <canvas id="mcp-timeline-canvas" aria-label="Line chart of cumulative MCP performance by year"></canvas>
+            <canvas id="mcp-timeline-canvas" aria-label="Line chart of MCP as of each calendar year"></canvas>
           </div>
           <p id="mcp-timeline-empty" class="mcp-timeline-empty" hidden>No MCP data to chart for the current year range.</p>
-          <p class="mcp-timeline-disclaimer">Disclaimer: This chart uses this database’s <a href="articles/mcp.html" target="_blank" rel="noopener">MCP (Math Competition Points)</a> model, partial competition coverage, and your current filters. It is for exploration only and is not a complete measure of achievement. Data may be incomplete; do not rely on it as the sole basis for conclusions about any student or competition.</p>
+          <p class="mcp-timeline-disclaimer">Disclaimer: This chart uses this database’s <a href="articles/mcp.html" target="_blank" rel="noopener">MCP (Math Competition Points)</a> model and partial competition coverage. It only contains partial data for the current year. Use the Filters toggle to match or ignore your competition filter and Girls Club (MCP-W) setting. It is for exploration only and is not a complete measure of achievement. Data may be incomplete; do not rely on it as the sole basis for conclusions about any student or competition.</p>
           <button type="button" class="mcp-timeline-popover-close" aria-label="Close">×</button>
         </div>
         <div class="mcp-timeline-popover-backdrop" aria-hidden="true"></div>
