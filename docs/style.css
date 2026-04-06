@@ -108,13 +108,33 @@ body.site-nav-open {
   border-bottom: 1px solid var(--border);
 }
 
-/* Room for theme toggle + menu (index only) */
+/* Room for theme toggle + menu (index only); symmetric so title stays viewport-centered */
 .header:has(#site-nav-toggle) {
+  padding-left: 7rem;
   padding-right: 7rem;
+}
+
+@media (max-width: 540px) {
+  .header:has(#site-nav-toggle) {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  /* Drop below fixed theme + menu controls so centered title does not sit under them */
+  .header:has(#site-nav-toggle) .header-brand {
+    padding-top: 3rem;
+  }
 }
 
 .header-brand {
   text-align: center;
+}
+
+.header:has(#site-nav-toggle) .header-brand {
+  max-width: 72rem;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .header h1 {
@@ -817,6 +837,65 @@ body.site-nav-open {
 
 .search-wrap {
   margin-bottom: 0.75rem;
+}
+
+.search-performance-trigger-wrap {
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.performance-by-year-btn {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+  transition: border-color 0.15s, background 0.15s, color 0.15s;
+}
+
+:root[data-theme="light"] .performance-by-year-btn {
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06);
+}
+
+.performance-by-year-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent-hover);
+  background: var(--nav-toggle-hover);
+}
+
+.performance-by-year-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Competition ranking (crank.html): tab pair matches Performance by year control */
+.ranking-toggle {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 1.5rem 0 2rem;
+}
+
+.ranking-toggle .performance-by-year-btn.active {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--filter-band-competition);
+}
+
+.ranking-toggle .performance-by-year-btn.active:hover {
+  color: var(--accent-hover);
+  border-color: var(--accent-hover);
+  background: var(--nav-toggle-hover);
 }
 
 .student-card-back {
@@ -1858,4 +1937,204 @@ body.site-nav-open {
   .records-table td {
     padding: 0.75rem 1.25rem;
   }
+}
+
+/* MCP cumulative timeline (index line chart) */
+#mcp-timeline-popover[hidden] {
+  display: none !important;
+  pointer-events: none !important;
+}
+
+.mcp-timeline-popover {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.mcp-timeline-popover-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: var(--overlay-backdrop);
+}
+
+.mcp-timeline-popover-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 52rem;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 1.5rem;
+  padding-top: 2.25rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.mcp-timeline-popover-title {
+  margin: 0 2rem 0.5rem 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.mcp-timeline-desc {
+  margin: 0 0 1rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+.mcp-timeline-add-wrap {
+  position: relative;
+  margin-bottom: 0.75rem;
+}
+
+.mcp-timeline-search-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.mcp-timeline-student-search {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.mcp-timeline-student-search:focus {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 1px;
+}
+
+.mcp-timeline-search-results {
+  list-style: none;
+  margin: 0.25rem 0 0;
+  padding: 0;
+  max-height: 11rem;
+  overflow-y: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.mcp-timeline-search-results[hidden] {
+  display: none !important;
+}
+
+.mcp-timeline-search-results li button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--text);
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+}
+
+.mcp-timeline-search-results li:last-child button {
+  border-bottom: none;
+}
+
+.mcp-timeline-search-empty {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.mcp-timeline-search-results li button:hover {
+  background: var(--table-row-hover);
+}
+
+.mcp-timeline-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+  min-height: 0;
+}
+
+.mcp-timeline-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.5rem 0.25rem 0.65rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text);
+  background: var(--filter-band-competition);
+  border: 1px solid var(--filter-band-competition-border);
+  border-radius: 999px;
+}
+
+.mcp-timeline-chip-remove {
+  padding: 0 0.2rem;
+  font-size: 1rem;
+  line-height: 1;
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.mcp-timeline-chip-remove:hover {
+  color: var(--text);
+  background: var(--btn-ghost-hover);
+}
+
+.mcp-timeline-chart-wrap {
+  position: relative;
+  width: 100%;
+  height: min(360px, 50vh);
+  min-height: 240px;
+}
+
+.mcp-timeline-chart-wrap canvas {
+  display: block;
+  max-width: 100%;
+}
+
+.mcp-timeline-empty {
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.mcp-timeline-popover-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.mcp-timeline-popover-close:hover {
+  color: var(--text);
+  background: var(--btn-ghost-hover);
 }

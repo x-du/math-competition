@@ -28,33 +28,6 @@
   <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
   <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
   <style>
-    .ranking-toggle {
-      display: flex;
-      gap: 0.5rem;
-      justify-content: center;
-      margin: 1.5rem 0 2rem;
-    }
-    .ranking-toggle-btn {
-      padding: 0.6rem 1.5rem;
-      font-family: var(--font-sans);
-      font-size: 1rem;
-      font-weight: 500;
-      color: var(--text-muted);
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      cursor: pointer;
-      transition: color 0.2s, background 0.2s, border-color 0.2s;
-    }
-    .ranking-toggle-btn:hover {
-      color: var(--text);
-      background: rgba(255, 255, 255, 0.04);
-    }
-    .ranking-toggle-btn.active {
-      color: var(--accent);
-      background: rgba(124, 156, 224, 0.12);
-      border-color: var(--accent);
-    }
     .ranking-panel {
       display: none;
       margin-bottom: 2.5rem;
@@ -376,8 +349,8 @@
       <p class="tagline">Compare math competitions by impact index and geographic attraction.</p>
     </div>
     <div class="ranking-toggle" role="tablist" aria-label="View mode">
-      <button type="button" class="ranking-toggle-btn active" data-panel="impact" role="tab" aria-selected="true">Impact (CII)</button>
-      <button type="button" class="ranking-toggle-btn" data-panel="attraction" role="tab" aria-selected="false">Attraction</button>
+      <button type="button" class="ranking-toggle-btn performance-by-year-btn active" data-panel="impact" role="tab" aria-selected="true">Impact (CII)</button>
+      <button type="button" class="ranking-toggle-btn performance-by-year-btn" data-panel="attraction" role="tab" aria-selected="false">Attraction</button>
     </div>
   </header>
 

@@ -35,6 +35,10 @@
   var stateDistPopoverOpen = false;
   var latestStateDist = { students: {}, records: {}, mcp: {} };
   var mcpPctStatsCache = { key: null, html: "" };
+  var mcpTimelinePopoverOpen = false;
+  var mcpTimelineChartInstance = null;
+  var mcpTimelineSelectedIds = [];
+  var MCP_TIMELINE_MAX_STUDENTS = 10;
   var savedFilters = {};
   var searchValueBeforeStudentCard = null;
 
@@ -327,6 +331,397 @@
       }
     }
     return total;
+  }
+
+  function timelineUseMcpWCounting() {
+    return !!(girlsOnlyEl && girlsOnlyEl.checked);
+  }
+
+  function getStudentMcpTotalForTimelineSort(student, useMcpWCounting) {
+    if (useMcpWCounting && student.mcp_w != null) return Number(student.mcp_w);
+    if (student.mcp != null) return Number(student.mcp);
+    return 0;
+  }
+
+  function incrementalMcpByYear(student, useMcpWCounting) {
+    var m = {};
+    var recs = student.records || [];
+    for (var i = 0; i < recs.length; i++) {
+      var r = recs[i];
+      var c = r.mcp_contrib;
+      if (c == null || Number(c) <= 0) continue;
+      if (!useMcpWCounting) {
+        var slug = r.contest_slug || r.contest || "";
+        if (isMcpWOnlySlug(slug)) continue;
+      }
+      var y = parseInt(String(r.year || ""), 10);
+      if (isNaN(y)) continue;
+      var n = Number(c);
+      m[y] = (m[y] || 0) + n;
+    }
+    return m;
+  }
+
+  function cumulativeSeriesForYears(incMap, yearsSorted) {
+    var run = 0;
+    var out = [];
+    for (var i = 0; i < yearsSorted.length; i++) {
+      run += incMap[yearsSorted[i]] || 0;
+      out.push(run);
+    }
+    return out;
+  }
+
+  function getTop100StudentsForMcpTimeline() {
+    var useW = timelineUseMcpWCounting();
+    var students = applyDemographicFilters(data.students || []);
+    var cand = [];
+    for (var i = 0; i < students.length; i++) {
+      var st = students[i];
+      if (getStudentMcpTotalForTimelineSort(st, useW) > 0) cand.push(st);
+    }
+    cand.sort(function (a, b) {
+      return getStudentMcpTotalForTimelineSort(b, useW) - getStudentMcpTotalForTimelineSort(a, useW);
+    });
+    return cand.slice(0, 100);
+  }
+
+  function timelineCollectYearsFromStudents(students) {
+    var useW = timelineUseMcpWCounting();
+    var set = {};
+    for (var s = 0; s < students.length; s++) {
+      var inc = incrementalMcpByYear(students[s], useW);
+      for (var y in inc) {
+        if (Object.prototype.hasOwnProperty.call(inc, y)) set[y] = true;
+      }
+    }
+    var arr = [];
+    for (var k in set) {
+      if (Object.prototype.hasOwnProperty.call(set, k)) {
+        var yi = parseInt(k, 10);
+        if (!isNaN(yi)) arr.push(yi);
+      }
+    }
+    arr.sort(function (a, b) { return a - b; });
+    return arr;
+  }
+
+  function baselineAvgCumulativeSeries(top100, years) {
+    var useW = timelineUseMcpWCounting();
+    if (!top100.length || !years.length) return years.map(function () { return 0; });
+    var rows = [];
+    for (var i = 0; i < top100.length; i++) {
+      rows.push(incrementalMcpByYear(top100[i], useW));
+    }
+    var out = [];
+    for (var yi = 0; yi < years.length; yi++) {
+      var sum = 0;
+      for (var j = 0; j < rows.length; j++) {
+        var cum = 0;
+        for (var k = 0; k <= yi; k++) {
+          cum += rows[j][years[k]] || 0;
+        }
+        sum += cum;
+      }
+      out.push(sum / rows.length);
+    }
+    return out;
+  }
+
+  function findStudentById(sid) {
+    var students = data.students || [];
+    var want = String(sid);
+    for (var i = 0; i < students.length; i++) {
+      if (String(students[i].id) === want) return students[i];
+    }
+    return null;
+  }
+
+  function getTimelineChartColorVars() {
+    var styles = getComputedStyle(document.documentElement);
+    return {
+      text: styles.getPropertyValue("--text").trim() || "#e4e4e7",
+      muted: styles.getPropertyValue("--text-muted").trim() || "#a1a1aa",
+      border: styles.getPropertyValue("--border").trim() || "#2a2a30",
+      accent: styles.getPropertyValue("--accent").trim() || "#7c9ce0"
+    };
+  }
+
+  function renderMcpTimelineChips() {
+    var el = document.getElementById("mcp-timeline-chips");
+    if (!el) return;
+    var parts = [];
+    for (var i = 0; i < mcpTimelineSelectedIds.length; i++) {
+      var st = findStudentById(mcpTimelineSelectedIds[i]);
+      if (!st) continue;
+      var nm = st.name || "Student";
+      parts.push(
+        "<span class=\"mcp-timeline-chip\">" +
+          escapeHtml(nm) +
+          "<button type=\"button\" class=\"mcp-timeline-chip-remove\" data-student-id=\"" +
+          escapeHtml(String(st.id)) +
+          "\" aria-label=\"Remove " +
+          escapeHtml(nm) +
+          "\">×</button></span>"
+      );
+    }
+    el.innerHTML = parts.join("");
+  }
+
+  function renderMcpTimelineChart() {
+    var canvas = document.getElementById("mcp-timeline-canvas");
+    var emptyEl = document.getElementById("mcp-timeline-empty");
+    if (!canvas) return;
+    if (typeof Chart === "undefined") {
+      if (emptyEl) {
+        emptyEl.hidden = false;
+        emptyEl.textContent = "Chart library failed to load.";
+      }
+      return;
+    }
+    var top100 = getTop100StudentsForMcpTimeline();
+    var selected = [];
+    for (var si = 0; si < mcpTimelineSelectedIds.length; si++) {
+      var fs = findStudentById(mcpTimelineSelectedIds[si]);
+      if (fs) selected.push(fs);
+    }
+    var forYears = top100.concat(selected);
+    var years = timelineCollectYearsFromStudents(forYears);
+    if (mcpTimelineChartInstance) {
+      mcpTimelineChartInstance.destroy();
+      mcpTimelineChartInstance = null;
+    }
+    if (!years.length) {
+      if (emptyEl) {
+        emptyEl.hidden = false;
+        emptyEl.textContent = "No MCP data to chart for the current year range.";
+      }
+      return;
+    }
+    if (emptyEl) emptyEl.hidden = true;
+    var colors = getTimelineChartColorVars();
+    var baseline = baselineAvgCumulativeSeries(top100, years);
+    var labels = years.map(String);
+    var datasets = [
+      {
+        label: "Avg of top 100 (by total MCP)",
+        data: baseline,
+        borderColor: colors.muted,
+        backgroundColor: colors.muted,
+        borderWidth: 2,
+        borderDash: [6, 4],
+        pointRadius: 0,
+        tension: 0.15,
+        fill: false
+      }
+    ];
+    for (var di = 0; di < selected.length; di++) {
+      var stud = selected[di];
+      var inc = incrementalMcpByYear(stud, timelineUseMcpWCounting());
+      var series = cumulativeSeriesForYears(inc, years);
+      var col = PIE_COLORS[di % PIE_COLORS.length];
+      datasets.push({
+        label: stud.name || "Student",
+        data: series,
+        borderColor: col,
+        backgroundColor: col,
+        borderWidth: 2,
+        pointRadius: 2,
+        tension: 0.15,
+        fill: false
+      });
+    }
+    var ctx = canvas.getContext("2d");
+    mcpTimelineChartInstance = new Chart(ctx, {
+      type: "line",
+      data: { labels: labels, datasets: datasets },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        interaction: { mode: "index", intersect: false },
+        plugins: {
+          legend: {
+            position: "bottom",
+            labels: {
+              color: colors.text,
+              usePointStyle: true,
+              pointStyle: "rect",
+              boxWidth: 14,
+              boxHeight: 14,
+              padding: 12,
+              font: { family: "system-ui, sans-serif", size: 11 }
+            }
+          },
+          tooltip: {
+            callbacks: {
+              label: function (c) {
+                var v = c.parsed.y;
+                return (c.dataset.label || "") + ": " + formatMcpValue(v);
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            ticks: { color: colors.muted, maxRotation: 45, font: { size: 10 } },
+            grid: { color: colors.border }
+          },
+          y: {
+            beginAtZero: true,
+            ticks: {
+              color: colors.muted,
+              callback: function (v) { return formatMcpValue(v); }
+            },
+            grid: { color: colors.border }
+          }
+        }
+      }
+    });
+  }
+
+  function refreshMcpTimelineIfOpen() {
+    if (!mcpTimelinePopoverOpen) return;
+    renderMcpTimelineChips();
+    renderMcpTimelineChart();
+  }
+
+  function bindMcpTimelinePopover() {
+    var trigger = document.getElementById("mcp-timeline-trigger");
+    var popover = document.getElementById("mcp-timeline-popover");
+    var closeBtn = popover && popover.querySelector(".mcp-timeline-popover-close");
+    var backdrop = popover && popover.querySelector(".mcp-timeline-popover-backdrop");
+    var searchInput = document.getElementById("mcp-timeline-student-search");
+    var searchResults = document.getElementById("mcp-timeline-search-results");
+    var chipsEl = document.getElementById("mcp-timeline-chips");
+    if (!trigger || !popover) return;
+
+    function openPopover() {
+      popover.hidden = false;
+      trigger.setAttribute("aria-expanded", "true");
+      mcpTimelinePopoverOpen = true;
+      renderMcpTimelineChips();
+      renderMcpTimelineChart();
+      if (searchInput) {
+        setTimeout(function () { searchInput.focus(); }, 0);
+      }
+    }
+
+    function closePopover() {
+      popover.hidden = true;
+      trigger.setAttribute("aria-expanded", "false");
+      mcpTimelinePopoverOpen = false;
+      if (searchResults) {
+        searchResults.hidden = true;
+        searchResults.innerHTML = "";
+      }
+      if (searchInput) searchInput.value = "";
+    }
+
+    function runTimelineSearch() {
+      if (!searchInput || !searchResults) return;
+      var q = (searchInput.value || "").trim();
+      if (!q) {
+        searchResults.hidden = true;
+        searchResults.innerHTML = "";
+        return;
+      }
+      var useW = timelineUseMcpWCounting();
+      var all = data.students || [];
+      var matches = [];
+      for (var i = 0; i < all.length; i++) {
+        var st = all[i];
+        if (computeMcpFromRecords(st.records || [], useW) <= 0) continue;
+        if (!matchStudent(st, q)) continue;
+        matches.push(st);
+        if (matches.length >= 30) break;
+      }
+      if (!matches.length) {
+        searchResults.innerHTML = "<li class=\"mcp-timeline-search-empty\"><span>No matches</span></li>";
+        searchResults.hidden = false;
+        return;
+      }
+      var li = [];
+      for (var j = 0; j < matches.length; j++) {
+        var m = matches[j];
+        li.push(
+          "<li role=\"presentation\"><button type=\"button\" role=\"option\" class=\"mcp-timeline-pick-student\" data-student-id=\"" +
+            escapeHtml(String(m.id)) +
+            "\">" +
+            escapeHtml(m.name || "Student") +
+            "</button></li>"
+        );
+      }
+      searchResults.innerHTML = li.join("");
+      searchResults.hidden = false;
+    }
+
+    var debouncedTimelineSearch = debounce(runTimelineSearch, 120);
+
+    trigger.addEventListener("click", function () {
+      if (popover.hidden) openPopover(); else closePopover();
+    });
+    if (closeBtn) closeBtn.addEventListener("click", closePopover);
+    if (backdrop) backdrop.addEventListener("click", closePopover);
+
+    if (searchInput) {
+      searchInput.addEventListener("input", debouncedTimelineSearch);
+      searchInput.addEventListener("focus", function () {
+        if ((searchInput.value || "").trim()) runTimelineSearch();
+      });
+    }
+
+    if (searchResults) {
+      searchResults.addEventListener("click", function (e) {
+        var btn = e.target && e.target.closest && e.target.closest(".mcp-timeline-pick-student");
+        if (!btn) return;
+        var sid = btn.getAttribute("data-student-id");
+        if (!sid) return;
+        var exists = false;
+        for (var i = 0; i < mcpTimelineSelectedIds.length; i++) {
+          if (String(mcpTimelineSelectedIds[i]) === String(sid)) {
+            exists = true;
+            break;
+          }
+        }
+        if (exists) return;
+        if (mcpTimelineSelectedIds.length >= MCP_TIMELINE_MAX_STUDENTS) return;
+        mcpTimelineSelectedIds.push(sid);
+        if (searchInput) searchInput.value = "";
+        searchResults.hidden = true;
+        searchResults.innerHTML = "";
+        renderMcpTimelineChips();
+        renderMcpTimelineChart();
+      });
+    }
+
+    if (chipsEl) {
+      chipsEl.addEventListener("click", function (e) {
+        var rm = e.target && e.target.closest && e.target.closest(".mcp-timeline-chip-remove");
+        if (!rm) return;
+        var sid = rm.getAttribute("data-student-id");
+        if (!sid) return;
+        var next = [];
+        for (var i = 0; i < mcpTimelineSelectedIds.length; i++) {
+          if (String(mcpTimelineSelectedIds[i]) !== String(sid)) next.push(mcpTimelineSelectedIds[i]);
+        }
+        mcpTimelineSelectedIds = next;
+        renderMcpTimelineChips();
+        renderMcpTimelineChart();
+      });
+    }
+
+    document.addEventListener("click", function (e) {
+      if (!mcpTimelinePopoverOpen || !searchResults || searchResults.hidden) return;
+      if (!popover.contains(e.target)) return;
+      if (searchInput && (e.target === searchInput || searchInput.contains(e.target))) return;
+      if (searchResults.contains(e.target)) return;
+      searchResults.hidden = true;
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key !== "Escape" || !mcpTimelinePopoverOpen) return;
+      closePopover();
+    });
   }
 
   function recordMatchesContestFilter(record) {
@@ -1108,6 +1503,7 @@
         ic.innerHTML = theme === "light" ? THEME_TOGGLE_SVG_MOON : THEME_TOGGLE_SVG_SUN;
       }
     }
+    refreshMcpTimelineIfOpen();
   }
 
   function bindThemeToggle() {
@@ -1197,35 +1593,6 @@
     });
     if (closeBtn) closeBtn.addEventListener("click", close);
     if (backdrop) backdrop.addEventListener("click", close);
-  }
-
-  function clearAllFilters() {
-    if (girlsOnlyEl) girlsOnlyEl.checked = false;
-    if (gradeFilterEl) gradeFilterEl.value = "__hs__";
-    if (stateFilterEl) stateFilterEl.value = "";
-    sortMode = "mcp";
-    ratioSortAsc = false;
-    if (sortToggleEl) {
-      var opts = sortToggleEl.querySelectorAll(".sort-toggle-option");
-      for (var i = 0; i < opts.length; i++) {
-        if (opts[i].getAttribute("data-mode") === "mcp") {
-          opts[i].classList.add("sort-toggle-option--active");
-        } else {
-          opts[i].classList.remove("sort-toggle-option--active");
-        }
-      }
-    }
-    if (contestFilterEl) {
-      var allBox = contestFilterEl.querySelector("input[type='checkbox'][value='all']");
-      var boxes = contestFilterEl.querySelectorAll("input[type='checkbox']");
-      if (allBox) allBox.checked = true;
-      for (var i = 0; i < boxes.length; i++) {
-        if (boxes[i] !== allBox) boxes[i].checked = true;
-      }
-      updateContestFilterSummary();
-    }
-    saveFilters();
-    renderTopStudentsByRecords();
   }
 
   var searchRafId = null;
@@ -1751,6 +2118,7 @@
         renderTopStudentsByRecords();
         bindContestListPopover();
         bindStateDistPopover();
+        bindMcpTimelinePopover();
         bindMcpPctPopover();
         bindCsvPopover();
         runSearch();
@@ -1799,6 +2167,7 @@
       saveFilters();
       renderTopStudentsByRecords();
       runSearch();
+      refreshMcpTimelineIfOpen();
     });
   }
 
@@ -1807,6 +2176,7 @@
       saveFilters();
       renderTopStudentsByRecords();
       runSearch();
+      refreshMcpTimelineIfOpen();
     });
   }
 
@@ -1815,6 +2185,7 @@
       saveFilters();
       renderTopStudentsByRecords();
       runSearch();
+      refreshMcpTimelineIfOpen();
     });
   }
 
