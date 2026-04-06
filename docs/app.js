@@ -140,6 +140,13 @@
     searchApplyFiltersWrapEl.hidden = !(q.length > 0 && !sid);
   }
 
+  function syncSearchPerformanceButtonVisibility() {
+    var wrap = document.getElementById("search-performance-trigger-wrap");
+    if (!wrap) return;
+    /* Hide only on single-student record view (?student_id=); keep visible for search results */
+    wrap.hidden = getStudentIdFromUrl() != null;
+  }
+
   function copyStudentShallow(student, records) {
     var copy = {};
     for (var k in student) {
@@ -596,6 +603,10 @@
     if (!trigger || !popover) return;
 
     function openPopover() {
+      if (searchEl) searchEl.value = "";
+      searchValueBeforeStudentCard = null;
+      clearStudentIdFromUrl();
+      runSearch();
       popover.hidden = false;
       trigger.setAttribute("aria-expanded", "true");
       mcpTimelinePopoverOpen = true;
@@ -1600,6 +1611,7 @@
     saveFilters();
     var query = (searchEl && searchEl.value) ? searchEl.value.trim() : "";
     var urlStudentId = getStudentIdFromUrl();
+    syncSearchPerformanceButtonVisibility();
     syncSearchApplyFiltersToggleVisibility();
     emptyEl.hidden = true;
     resultsEl.innerHTML = "";
@@ -1665,6 +1677,7 @@
       if (searchInputWrapEl) searchInputWrapEl.hidden = false;
       if (hintEl) hintEl.hidden = false;
       if (studentCardBackEl) studentCardBackEl.hidden = true;
+      syncSearchPerformanceButtonVisibility();
     }
 
     if (!query) {

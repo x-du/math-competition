@@ -844,6 +844,10 @@ body.site-nav-open {
   text-align: center;
 }
 
+#search-performance-trigger-wrap[hidden] {
+  display: none !important;
+}
+
 .performance-by-year-btn {
   font-family: var(--font-sans);
   font-size: 0.9rem;
