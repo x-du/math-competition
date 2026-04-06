@@ -30,15 +30,16 @@
 ## 3. Add the team column to the results table
 
 - Add a new column `team` (or `team_name`) to the results CSV.
+- **Column order:** Place `team` **immediately after** `student_name` (before `year`, `rank`, scores, and any other columns).
 - Fill each row with the team name extracted from the source data for that student.
-- Preserve all existing columns and data; only add the new column and its values.
+- Preserve all existing columns and data; only insert the new column in that position and its values.
 
 **Example:** For `database/contests/hmmt-feb/year=2026/results.csv`:
 
-| student_id | student_name   | year | rank | total_score | ... | team   |
-|------------|----------------|------|------|-------------|-----|--------|
-| 1          | Alexander Wang | 2026 | 1    | 112.14      | ... | LV Fire |
-| 2          | Bryan Sicheng Guo | 2026 | 2 | 109.92      | ... | San Diego A1 |
+| student_id | student_name      | team          | year | rank | total_score | ... |
+|------------|-------------------|---------------|------|------|-------------|-----|
+| 1          | Alexander Wang    | LV Fire       | 2026 | 1    | 112.14      | ... |
+| 2          | Bryan Sicheng Guo | San Diego A1  | 2026 | 2    | 109.92      | ... |
 
 ---
 
@@ -91,6 +92,6 @@
 
 1. Check if `results.csv` has a `team` column; if yes, stop.
 2. Parse source data for `Student Name (Team Name)` and match to existing results rows.
-3. Add `team` column to `results.csv` with the extracted team name per student.
+3. Add `team` to `results.csv` **right after** `student_name`, with the extracted team name per student.
 4. Create/update `database/contests/<contest>-teams/year=<year>/teams.csv` with columns: `team_id`, `team_name`, `student_ids`, `state`.
 5. Rebuild search data.
