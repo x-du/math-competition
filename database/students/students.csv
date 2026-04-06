@@ -242,7 +242,7 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 269,Calvin Garces,Michigan,100,,male,12
 270,Raymond Zhu,Washington,89,,male,11
 271,Ethan Gu,,84,,male,
-272,Karn Chutinan,California,115,,male,13
+272,Karn Chutinan,Massachusetts,115,,male,13
 273,Evin Liang,Massachusetts,26,,male,
 274,Kai Lum,California,112,,male,
 275,Catherine Xu,Iowa,117|286,,female,12
@@ -2281,7 +2281,6 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 2375,Simon Yang,California,,,male,
 2376,Tiancheng Zheng,California,,,male,
 2377,Madelyn Zhu,California,,,female,
-2378,Karn Chutnian,Massachusetts,,,male,
 2379,Rishi Shah,,,,male,
 2380,Dekan Chen,Texas,,,male,
 2381,Mark Yutong Zhao,New Jersey,,,male,
@@ -3313,7 +3312,6 @@ student_id,student_name,state,team_ids,alias,gender,grade_in_2026
 3410,Allison Hung,California,,,female,
 3411,Ella Wang,California,,,female,
 3412,Ian Weatherford,Virginia,,,male,
-3413,Karn Chutinan,Massachusetts,,,male,
 3414,Levi Polsky,Washington,,,male,
 3415,Robert Leonardi,South Carolina,,,male,
 3416,Eldrick Fan,California,,,male,
