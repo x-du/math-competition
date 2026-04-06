@@ -137,7 +137,7 @@
     if (!searchApplyFiltersWrapEl) return;
     var q = (searchEl && searchEl.value) ? searchEl.value.trim() : "";
     var sid = getStudentIdFromUrl();
-    searchApplyFiltersWrapEl.hidden = !(q.length > 0 && !sid);
+    searchApplyFiltersWrapEl.hidden = !(q.length > 0 || sid != null);
   }
 
   function syncSearchPerformanceButtonVisibility() {
@@ -960,7 +960,9 @@
     return { bySlug: bySlug, slugs: slugs };
   }
 
-  function renderStudent(student, contestsMap, headerOnly) {
+  function renderStudent(student, contestsMap, headerOnly, opts) {
+    opts = opts || {};
+    var useCanonicalMcpStats = !!opts.useCanonicalMcpStats;
     var records = (student.records || []).slice();
     var grouped = groupRecordsByContest(records);
     var bySlug = grouped.bySlug;
@@ -1022,7 +1024,7 @@
     var mcpTotal;
     var isGirlsOnlyCard = (document.getElementById("girls-only") || {}).checked;
     var totalMcp = isGirlsOnlyCard && student.mcp_w != null ? Number(student.mcp_w) : (student.mcp != null ? Number(student.mcp) : 0);
-    var contestFilterActiveCard = isContestFilterActive();
+    var contestFilterActiveCard = isContestFilterActive() && !useCanonicalMcpStats;
     if (contestFilterActiveCard) {
       mcpTotal = computeMcpFromRecords(records, isGirlsOnlyCard);
     } else {
@@ -1346,7 +1348,7 @@
         subtitleEl.innerHTML = "Select a few competitions to see MCP contribution %. See <a href=\"articles/mcp.html#11-mcp-\" target=\"_blank\" rel=\"noopener\">MCP %</a> section for details. " +
           "<a href=\"#\" class=\"mcp-pct-filter-link\">Open competition filter</a>";
       }
-      awardsRankingListEl.innerHTML = "<li class=\"awards-ranking-empty\"><a href=\"#\" class=\"mcp-pct-filter-link\">Open competition filter</a></li>";
+      awardsRankingListEl.innerHTML = "";
       awardsRankingListEl.setAttribute("aria-busy", "false");
       return;
     }
@@ -1638,8 +1640,8 @@
         if (searchClearEl) searchClearEl.hidden = true;
         if (topStudentsSectionEl) topStudentsSectionEl.hidden = true;
         if (awardsRankingFiltersEl) {
-          awardsRankingFiltersEl.hidden = true;
-          awardsRankingFiltersEl.style.display = "none";
+          awardsRankingFiltersEl.hidden = false;
+          awardsRankingFiltersEl.style.display = "";
         }
         if (shouldApplySearchLeaderboardFilters()) {
           var demo = applyDemographicFilters([student]);
@@ -1652,23 +1654,14 @@
           }
         }
         var recs = (student.records || []).slice();
-        if (shouldApplySearchLeaderboardFilters()) {
-          recs = recs.filter(recordMatchesContestFilter);
-        }
         var copy = copyStudentShallow(student, recs);
         if (recs.length > 0) {
-          hintEl.textContent = shouldApplySearchLeaderboardFilters()
-            ? "1 student found (filters applied to records)."
-            : "1 student found.";
-          resultsEl.innerHTML = renderStudent(copy, data.contests || {});
+          hintEl.textContent = "1 student found. Full history below; filters apply to search and the leaderboard.";
+          resultsEl.innerHTML = renderStudent(copy, data.contests || {}, false, { useCanonicalMcpStats: true });
         } else {
-          hintEl.textContent = shouldApplySearchLeaderboardFilters()
-            ? "No records match your competition filter for this student."
-            : "No records for this student.";
+          hintEl.textContent = "No records for this student.";
           emptyEl.hidden = false;
-          emptyEl.innerHTML = shouldApplySearchLeaderboardFilters()
-            ? "<p class=\"empty-state\">No competition rows match your filter for this student. Use <strong>Back to search</strong>, then open <strong>Competition filter</strong> or turn off <strong>Apply filters to search</strong>.</p>"
-            : "<p class=\"empty-state\">No records for this student.</p>";
+          emptyEl.innerHTML = "<p class=\"empty-state\">No records for this student.</p>";
         }
         syncSearchApplyFiltersToggleVisibility();
         return;
