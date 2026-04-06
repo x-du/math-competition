@@ -1073,6 +1073,52 @@
     awardsRankingListEl.setAttribute("aria-busy", "false");
   }
 
+  var THEME_STORAGE_KEY = "theme";
+  /* One SVG in the DOM at a time; swap markup on toggle (previous stroke icons). */
+  var THEME_TOGGLE_SVG_SUN =
+    '<svg class="theme-toggle-svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41m11.32-11.32l1.41-1.41"/></svg>';
+  var THEME_TOGGLE_SVG_MOON =
+    '<svg class="theme-toggle-svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+
+  function getDocumentTheme() {
+    return document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
+  }
+
+  function applyDocumentTheme(theme) {
+    var root = document.documentElement;
+    if (theme === "light") {
+      root.setAttribute("data-theme", "light");
+    } else {
+      root.removeAttribute("data-theme");
+    }
+    try {
+      localStorage.setItem(THEME_STORAGE_KEY, theme);
+    } catch (e) {}
+    var btn = document.getElementById("theme-toggle");
+    if (btn) {
+      if (theme === "light") {
+        btn.setAttribute("aria-label", "Switch to dark mode");
+        btn.setAttribute("title", "Dark mode");
+      } else {
+        btn.setAttribute("aria-label", "Switch to light mode");
+        btn.setAttribute("title", "Light mode");
+      }
+      var ic = btn.querySelector(".theme-toggle-icon");
+      if (ic) {
+        ic.innerHTML = theme === "light" ? THEME_TOGGLE_SVG_MOON : THEME_TOGGLE_SVG_SUN;
+      }
+    }
+  }
+
+  function bindThemeToggle() {
+    var btn = document.getElementById("theme-toggle");
+    if (!btn) return;
+    applyDocumentTheme(getDocumentTheme());
+    btn.addEventListener("click", function () {
+      applyDocumentTheme(getDocumentTheme() === "light" ? "dark" : "light");
+    });
+  }
+
   function closeSiteNavDrawer() {
     var drawer = document.getElementById("site-nav-drawer");
     var toggle = document.getElementById("site-nav-toggle");
@@ -1632,6 +1678,7 @@
   }
 
   function init() {
+    bindThemeToggle();
     bindSiteNavDrawer();
     restoreFilters();
     if (!showHiddenFeature() && sortMode === "mcp_pct") {
