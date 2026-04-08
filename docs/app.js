@@ -40,7 +40,9 @@
   var mcpTimelinePopoverOpen = false;
   var mcpTimelineChartInstance = null;
   var mcpTimelineSelectedIds = [];
-  var MCP_TIMELINE_MAX_STUDENTS = 10;
+  var MCP_TIMELINE_MAX_STUDENTS = 20;
+  var SEARCH_RESULTS_DISPLAY_LIMIT = 20;
+  var openMcpTimelinePopover = null;
   var mcpTimelineApplyFiltersEl = document.getElementById("mcp-timeline-apply-filters");
   var savedFilters = {};
   var searchValueBeforeStudentCard = null;
@@ -71,6 +73,18 @@
       url.searchParams.delete("student_id");
       window.history.replaceState({}, "", url.toString());
     } catch (e) { /* ignore */ }
+  }
+
+  /** Same as Back to search: leave single-student URL view and show the search results list. */
+  function exitStudentCardViewToSearchResults() {
+    if (getStudentIdFromUrl() == null) return;
+    if (searchEl) searchEl.blur();
+    if (searchEl) searchEl.value = (searchValueBeforeStudentCard != null ? searchValueBeforeStudentCard : "");
+    searchValueBeforeStudentCard = null;
+    clearStudentIdFromUrl();
+    if (searchInputWrapEl) searchInputWrapEl.hidden = false;
+    if (studentCardBackEl) studentCardBackEl.hidden = true;
+    runSearch();
   }
 
   function navigateToStudentAndScroll(studentId) {
@@ -414,7 +428,8 @@
 
   function timelineUseMcpWCounting() {
     if (!mcpTimelineChartUsesLeaderboardFilters()) return false;
-    return !!(girlsOnlyEl && girlsOnlyEl.checked);
+    var tg = document.getElementById("mcp-timeline-girls-only");
+    return !!(tg && tg.checked);
   }
 
   /** X-axis: min..max competition season among records used for the chart (see filter checkbox). */
@@ -439,6 +454,59 @@
     var arr = [];
     for (var ay = minY; ay <= maxY; ay++) arr.push(ay);
     return arr;
+  }
+
+  /** Latest competition season year in the DB used for MCP-by-year ranking (same record rules as the chart axis). */
+  function getTimelineGlobalMaxSeasonYear(useMcpWCounting) {
+    var maxY = -Infinity;
+    var students = data.students || [];
+    for (var s = 0; s < students.length; s++) {
+      var recs = filterRecordsForMcpTimeline(students[s].records || []);
+      for (var i = 0; i < recs.length; i++) {
+        var r = recs[i];
+        var slug = r.contest_slug || r.contest || "";
+        if (!useMcpWCounting && isMcpWOnlySlug(slug)) continue;
+        var pts = r.mcp_points;
+        if (pts == null || Number(pts) <= 0) continue;
+        var y = parseInt(String(r.year || ""), 10);
+        if (!isNaN(y) && y > maxY) maxY = y;
+      }
+    }
+    if (maxY === -Infinity) {
+      try {
+        return new Date().getFullYear();
+      } catch (e) {
+        return 2026;
+      }
+    }
+    return maxY;
+  }
+
+  var MCP_TIMELINE_TOP_PRESET_COUNT = 10;
+
+  /** Replace chart selection with top students by MCP as of the latest season year (honors Apply competition filters + MCP-W per chart rules). */
+  function setMcpTimelineSelectionToTopByLatestYear() {
+    var useW = timelineUseMcpWCounting();
+    var anchorY = getTimelineGlobalMaxSeasonYear(useW);
+    var scored = [];
+    var students = data.students || [];
+    for (var si = 0; si < students.length; si++) {
+      var st = students[si];
+      if (!studentMatchesMcpTimelineDemographics(st)) continue;
+      var mcpY = getMcpAtTimelineYear(st, anchorY, useW);
+      if (mcpY <= 0) continue;
+      scored.push({ id: st.id, mcp: mcpY });
+    }
+    scored.sort(function (a, b) {
+      if (b.mcp !== a.mcp) return b.mcp - a.mcp;
+      return String(a.id).localeCompare(String(b.id));
+    });
+    var n = MCP_TIMELINE_TOP_PRESET_COUNT;
+    var next = [];
+    for (var k = 0; k < scored.length && next.length < n; k++) {
+      next.push(String(scored[k].id));
+    }
+    mcpTimelineSelectedIds = next;
   }
 
   function findStudentById(sid) {
@@ -479,6 +547,8 @@
       );
     }
     el.innerHTML = parts.join("");
+    var clearAllEl = document.getElementById("mcp-timeline-clear-all");
+    if (clearAllEl) clearAllEl.disabled = mcpTimelineSelectedIds.length === 0;
   }
 
   function renderMcpTimelineChart() {
@@ -558,6 +628,11 @@
             }
           },
           tooltip: {
+            itemSort: function (a, b) {
+              var ya = a.parsed.y != null ? Number(a.parsed.y) : 0;
+              var yb = b.parsed.y != null ? Number(b.parsed.y) : 0;
+              return yb - ya;
+            },
             callbacks: {
               label: function (c) {
                 var v = c.parsed.y;
@@ -598,14 +673,41 @@
     var searchInput = document.getElementById("mcp-timeline-student-search");
     var searchResults = document.getElementById("mcp-timeline-search-results");
     var chipsEl = document.getElementById("mcp-timeline-chips");
+    var clearAllBtn = document.getElementById("mcp-timeline-clear-all");
+    var top10Btn = document.getElementById("mcp-timeline-top-10");
     if (!trigger || !popover) return;
 
-    function openPopover() {
-      if (searchEl) searchEl.value = "";
-      searchValueBeforeStudentCard = null;
-      clearStudentIdFromUrl();
-      runSearch();
+    function clearMcpTimelineStudentSearchUi() {
+      if (searchInput) searchInput.value = "";
+      if (searchResults) {
+        searchResults.hidden = true;
+        searchResults.innerHTML = "";
+      }
+    }
+
+    function addTimelineStudentIfRoom(sid) {
+      if (sid == null || sid === "") return false;
+      for (var i = 0; i < mcpTimelineSelectedIds.length; i++) {
+        if (String(mcpTimelineSelectedIds[i]) === String(sid)) return false;
+      }
+      if (mcpTimelineSelectedIds.length >= MCP_TIMELINE_MAX_STUDENTS) return false;
+      mcpTimelineSelectedIds.push(String(sid));
+      return true;
+    }
+
+    function openPopover(opts) {
+      opts = opts || {};
+      var resetMainSearch = opts.resetMainSearch !== false;
+      if (resetMainSearch) {
+        if (searchEl) searchEl.value = "";
+        searchValueBeforeStudentCard = null;
+        clearStudentIdFromUrl();
+        runSearch();
+      }
       updateContestFilterSummary();
+      if (opts.ensureStudentId != null && opts.ensureStudentId !== "") {
+        addTimelineStudentIfRoom(opts.ensureStudentId);
+      }
       popover.hidden = false;
       trigger.setAttribute("aria-expanded", "true");
       mcpTimelinePopoverOpen = true;
@@ -615,6 +717,8 @@
         setTimeout(function () { searchInput.focus(); }, 0);
       }
     }
+
+    openMcpTimelinePopover = openPopover;
 
     function closePopover() {
       popover.hidden = true;
@@ -668,10 +772,30 @@
     var debouncedTimelineSearch = debounce(runTimelineSearch, 120);
 
     trigger.addEventListener("click", function () {
-      if (popover.hidden) openPopover(); else closePopover();
+      if (popover.hidden) openPopover({ resetMainSearch: true }); else closePopover();
     });
     if (closeBtn) closeBtn.addEventListener("click", closePopover);
     if (backdrop) backdrop.addEventListener("click", closePopover);
+
+    if (top10Btn) {
+      top10Btn.addEventListener("click", function () {
+        setMcpTimelineSelectionToTopByLatestYear();
+        clearMcpTimelineStudentSearchUi();
+        renderMcpTimelineChips();
+        renderMcpTimelineChart();
+        if (searchInput) searchInput.focus();
+      });
+    }
+
+    if (clearAllBtn) {
+      clearAllBtn.addEventListener("click", function () {
+        mcpTimelineSelectedIds = [];
+        clearMcpTimelineStudentSearchUi();
+        renderMcpTimelineChips();
+        renderMcpTimelineChart();
+        if (searchInput) searchInput.focus();
+      });
+    }
 
     if (searchInput) {
       searchInput.addEventListener("input", debouncedTimelineSearch);
@@ -686,19 +810,8 @@
         if (!btn) return;
         var sid = btn.getAttribute("data-student-id");
         if (!sid) return;
-        var exists = false;
-        for (var i = 0; i < mcpTimelineSelectedIds.length; i++) {
-          if (String(mcpTimelineSelectedIds[i]) === String(sid)) {
-            exists = true;
-            break;
-          }
-        }
-        if (exists) return;
-        if (mcpTimelineSelectedIds.length >= MCP_TIMELINE_MAX_STUDENTS) return;
-        mcpTimelineSelectedIds.push(sid);
-        if (searchInput) searchInput.value = "";
-        searchResults.hidden = true;
-        searchResults.innerHTML = "";
+        if (!addTimelineStudentIfRoom(sid)) return;
+        clearMcpTimelineStudentSearchUi();
         renderMcpTimelineChips();
         renderMcpTimelineChart();
       });
@@ -728,6 +841,18 @@
         if (searchInput && (searchInput.value || "").trim()) runTimelineSearch();
       });
     }
+
+    function onMcpTimelineDemographicChange() {
+      renderMcpTimelineChart();
+      if (searchInput && (searchInput.value || "").trim()) runTimelineSearch();
+    }
+
+    var mcpTgirls = document.getElementById("mcp-timeline-girls-only");
+    var mcpTgrade = document.getElementById("mcp-timeline-grade-filter");
+    var mcpTstate = document.getElementById("mcp-timeline-state-filter");
+    if (mcpTgirls) mcpTgirls.addEventListener("change", onMcpTimelineDemographicChange);
+    if (mcpTgrade) mcpTgrade.addEventListener("change", onMcpTimelineDemographicChange);
+    if (mcpTstate) mcpTstate.addEventListener("change", onMcpTimelineDemographicChange);
 
     document.addEventListener("click", function (e) {
       if (!mcpTimelinePopoverOpen || !searchResults || searchResults.hidden) return;
@@ -785,36 +910,74 @@
     return false;
   }
 
+  function studentMatchesDemographicsWithControls(s, girlsEl, gradeEl, gradeWrap, stateEl) {
+    if (!s) return false;
+    if (girlsEl && girlsEl.checked && (s.gender || "").toLowerCase() !== "female") return false;
+    if (gradeEl && gradeWrap && !gradeWrap.hidden && gradeEl.value && gradeEl.value !== "") {
+      var wantLabel = gradeEl.value;
+      var lab = getGradeLabel(s.grade_in_2026);
+      var key = gradeLabelSortKey(lab);
+      if (wantLabel === "__none__") {
+        if (lab !== "") return false;
+      } else if (wantLabel === "__hs__") {
+        if (!((key >= 9 && key <= 12) || lab === "")) return false;
+      } else if (wantLabel === "__prehs__") {
+        if (!(key > 0 && key < 9)) return false;
+      } else if (wantLabel === "__hof__") {
+        if (!(key > 12)) return false;
+      } else if (lab !== wantLabel) {
+        return false;
+      }
+    }
+    if (stateEl && stateEl.value && stateEl.value !== "") {
+      var wantState = stateEl.value;
+      var st = (s.state || "").trim();
+      if (wantState === "__none__") {
+        if (st) return false;
+      } else if (wantState === "__other__") {
+        if (!st || US_STATES_SET[st]) return false;
+      } else if (wantState === "US") {
+        if (!st || !US_STATES_SET[st]) return false;
+      } else if (st !== wantState) {
+        return false;
+      }
+    }
+    return true;
+  }
+
   function applyDemographicFilters(students) {
-    var out = students || [];
-    if (girlsOnlyEl && girlsOnlyEl.checked) {
-      out = out.filter(function (s) {
-        return (s.gender || "").toLowerCase() === "female";
-      });
+    return (students || []).filter(function (s) {
+      return studentMatchesDemographicsWithControls(s, girlsOnlyEl, gradeFilterEl, gradeFilterWrapEl, stateFilterEl);
+    });
+  }
+
+  function studentMatchesMcpTimelineDemographics(s) {
+    return studentMatchesDemographicsWithControls(
+      s,
+      document.getElementById("mcp-timeline-girls-only"),
+      document.getElementById("mcp-timeline-grade-filter"),
+      document.getElementById("mcp-timeline-grade-filter-wrap"),
+      document.getElementById("mcp-timeline-state-filter")
+    );
+  }
+
+  function syncMcpTimelineSelectFromMain(timelineSel, mainSel) {
+    if (!timelineSel || !mainSel) return;
+    var prev = timelineSel.value;
+    timelineSel.innerHTML = mainSel.innerHTML;
+    var keep = false;
+    for (var i = 0; i < timelineSel.options.length; i++) {
+      if (timelineSel.options[i].value === prev) {
+        keep = true;
+        break;
+      }
     }
-    if (gradeFilterEl && gradeFilterWrapEl && !gradeFilterWrapEl.hidden && gradeFilterEl.value && gradeFilterEl.value !== "") {
-      var wantLabel = gradeFilterEl.value;
-      out = out.filter(function (s) {
-        var lab = getGradeLabel(s.grade_in_2026);
-        var key = gradeLabelSortKey(lab);
-        if (wantLabel === "__none__") return lab === "";
-        if (wantLabel === "__hs__") return (key >= 9 && key <= 12) || lab === "";
-        if (wantLabel === "__prehs__") return key > 0 && key < 9;
-        if (wantLabel === "__hof__") return key > 12;
-        return lab === wantLabel;
-      });
-    }
-    if (stateFilterEl && stateFilterEl.value && stateFilterEl.value !== "") {
-      var wantState = stateFilterEl.value;
-      out = out.filter(function (s) {
-        var st = (s.state || "").trim();
-        if (wantState === "__none__") return !st;
-        if (wantState === "__other__") return st && !US_STATES_SET[st];
-        if (wantState === "US") return st && US_STATES_SET[st];
-        return st === wantState;
-      });
-    }
-    return out;
+    timelineSel.value = keep ? prev : "";
+  }
+
+  function syncMcpTimelineSelectOptionsAfterLeaderboardRefresh() {
+    syncMcpTimelineSelectFromMain(document.getElementById("mcp-timeline-grade-filter"), gradeFilterEl);
+    syncMcpTimelineSelectFromMain(document.getElementById("mcp-timeline-state-filter"), stateFilterEl);
   }
 
   function escapeHtml(s) {
@@ -1096,7 +1259,10 @@
     var headerActionsHtml =
       "<div class=\"student-header-actions\">" +
         mcpBtnHtml +
-        "<button type=\"button\" class=\"export-pdf-student-btn\" aria-label=\"Export this student to PDF\">Export to PDF</button>" +
+        "<button type=\"button\" class=\"student-card-performance-btn\" data-student-id=\"" +
+        escapeHtml(String(student.id)) +
+        "\" aria-label=\"Open performance by year chart for this student\">Performance</button>" +
+        "<button type=\"button\" class=\"export-pdf-student-btn\" aria-label=\"Export this student to PDF\">PDF</button>" +
       "</div>";
     return (
       "<article class=\"student-card\" data-student-id=\"" + escapeHtml(String(student.id)) + "\">" +
@@ -1355,6 +1521,8 @@
         : "No record data available yet.";
       awardsRankingListEl.innerHTML = "<li class=\"awards-ranking-empty\">" + escapeHtml(emptyMsg) + "</li>";
       awardsRankingListEl.setAttribute("aria-busy", "false");
+      syncMcpTimelineSelectOptionsAfterLeaderboardRefresh();
+      refreshMcpTimelineIfOpen();
       return;
     }
 
@@ -1365,6 +1533,8 @@
       }
       awardsRankingListEl.innerHTML = "";
       awardsRankingListEl.setAttribute("aria-busy", "false");
+      syncMcpTimelineSelectOptionsAfterLeaderboardRefresh();
+      refreshMcpTimelineIfOpen();
       return;
     }
 
@@ -1494,6 +1664,8 @@
 
     awardsRankingListEl.innerHTML = items.join("");
     awardsRankingListEl.setAttribute("aria-busy", "false");
+    syncMcpTimelineSelectOptionsAfterLeaderboardRefresh();
+    refreshMcpTimelineIfOpen();
   }
 
   var THEME_STORAGE_KEY = "theme";
@@ -1717,14 +1889,15 @@
       var searchResults = buildSearchResultStudents(matched);
 
       var total = searchResults.length;
-      var toRender = total > 10 ? searchResults.slice(0, 10) : searchResults;
+      var lim = SEARCH_RESULTS_DISPLAY_LIMIT;
+      var toRender = total > lim ? searchResults.slice(0, lim) : searchResults;
       var filterNote = shouldApplySearchLeaderboardFilters() ? " Filters above apply." : "";
       hintEl.textContent = total === 0
         ? "No students found." + filterNote
         : total === 1
           ? "1 student found." + filterNote
-          : total > 10
-            ? total + " students found. Showing first 10." + filterNote
+          : total > lim
+            ? total + " students found. Showing first " + lim + "." + filterNote
             : total + " students found." + filterNote;
 
       if (total === 0) {
@@ -2185,13 +2358,7 @@
   if (studentCardBackEl) {
     studentCardBackEl.addEventListener("click", function (e) {
       e.preventDefault();
-      if (searchEl) searchEl.blur();
-      if (searchEl) searchEl.value = (searchValueBeforeStudentCard != null ? searchValueBeforeStudentCard : "");
-      searchValueBeforeStudentCard = null;
-      clearStudentIdFromUrl();
-      if (searchInputWrapEl) searchInputWrapEl.hidden = false;
-      studentCardBackEl.hidden = true;
-      runSearch();
+      exitStudentCardViewToSearchResults();
     });
   }
 
@@ -2444,6 +2611,24 @@
       var contest = yearLink.getAttribute("data-contest");
       var year = yearLink.getAttribute("data-year");
       if (contest && year) showCsvPopover(contest, year);
+      return;
+    }
+    var perfYearBtn = target && target.closest && target.closest(".student-card-performance-btn");
+    if (perfYearBtn) {
+      event.preventDefault();
+      event.stopPropagation();
+      var sid = perfYearBtn.getAttribute("data-student-id");
+      function openPerfPopover() {
+        if (openMcpTimelinePopover && sid != null && sid !== "") {
+          openMcpTimelinePopover({ resetMainSearch: false, ensureStudentId: sid });
+        }
+      }
+      if (getStudentIdFromUrl() != null) {
+        exitStudentCardViewToSearchResults();
+        requestAnimationFrame(openPerfPopover);
+      } else {
+        openPerfPopover();
+      }
       return;
     }
     if (target && target.classList && target.classList.contains("export-pdf-student-btn")) {
