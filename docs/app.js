@@ -427,7 +427,6 @@
   }
 
   function timelineUseMcpWCounting() {
-    if (!mcpTimelineChartUsesLeaderboardFilters()) return false;
     var tg = document.getElementById("mcp-timeline-girls-only");
     return !!(tg && tg.checked);
   }
@@ -578,7 +577,7 @@
       }
       return;
     }
-    var years = timelineAnchorYearsFromStudents(selected, timelineUseMcpWCounting());
+    var years = timelineAnchorYearsFromStudents(selected, false);
     if (!years.length) {
       if (emptyEl) {
         emptyEl.hidden = false;
@@ -590,10 +589,9 @@
     var colors = getTimelineChartColorVars();
     var labels = years.map(String);
     var datasets = [];
-    var useWT = timelineUseMcpWCounting();
     for (var di = 0; di < selected.length; di++) {
       var stud = selected[di];
-      var series = years.map(function (y) { return getMcpAtTimelineYear(stud, y, useWT); });
+      var series = years.map(function (y) { return getMcpAtTimelineYear(stud, y, false); });
       var col = PIE_COLORS[di % PIE_COLORS.length];
       datasets.push({
         label: stud.name || "Student",
