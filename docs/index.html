@@ -24,6 +24,21 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    (function () {
+      var viewportMeta = document.querySelector('meta[name="viewport"]');
+      if (!viewportMeta) return;
+
+      function fitToWidth() {
+        // Re-apply viewport so mobile browsers recompute layout width after rotation.
+        viewportMeta.setAttribute("content", "width=device-width, initial-scale=1");
+      }
+
+      window.addEventListener("orientationchange", function () {
+        setTimeout(fitToWidth, 120);
+      });
+    })();
+  </script>
   <meta name="description" content="Search US math competition records by student name. Database of USAMO, USAJMO, HMMT, PUMaC, MathCounts, ARML, and other high-integrity in-person competitions. Verify student track records.">
   <link rel="canonical" href="https://mathintegrity.org/">
   <meta property="og:title" content="Math Competition Records — Student Search">
