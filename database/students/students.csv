@@ -1566,7 +1566,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1647,Andrew Ma,Canada,,male,
 1648,Andrew Wang,California,,male,
 1649,Victoria Sheung,,,female,
-1650,Isabella Li,Massachusetts,,female,
+1650,Isabella Li,California,,female,
 1651,Xinye Zhang,,,female,
 1652,Lindsay Miao,Connecticut,,female,
 1653,Sicheng Zhou,California,,male,
@@ -6163,3 +6163,4 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6264,Eddie Wei,California,,male,
 6265,Kevin Chen,Texas,,male,11
 6266,Henry Wang,North Carolina,,male,9
+6267,Isabella Li,Massachusetts,,female,
