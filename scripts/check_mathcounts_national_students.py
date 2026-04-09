@@ -19,8 +19,9 @@ def main():
     violations = []
 
     for student in data["students"]:
+        recs = student.get("rec") or student.get("records") or []
         mc_records = [
-            r for r in student.get("records", [])
+            r for r in recs
             if r.get("contest") == CONTEST_NAME
         ]
         if not mc_records:
@@ -35,7 +36,7 @@ def main():
         if count > 3:
             violations.append({
                 "id": student["id"],
-                "name": student["name"],
+                "name": student.get("nm") or student.get("name"),
                 "issue": ">3 appearances",
                 "count": count,
                 "grades": sorted(grades_with_missing),
@@ -45,7 +46,7 @@ def main():
             dupes = {g: c for g, c in Counter(grades_with_missing).items() if c > 1}
             violations.append({
                 "id": student["id"],
-                "name": student["name"],
+                "name": student.get("nm") or student.get("name"),
                 "issue": "duplicate grade values",
                 "count": count,
                 "grades": sorted(grades_with_missing),

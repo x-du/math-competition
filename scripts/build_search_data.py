@@ -30,6 +30,38 @@ MATHCOUNTS_SLUG = "mathcounts-national-rank"
 CONTESTS_WITH_CSV_STATE = {MATHCOUNTS_SLUG, "amo", "jmo"}
 GRAND_SLAM_SLUGS = {"imo", "egmo", "rmm"}  # Award-based points: Gold=100%, Silver=75%, Bronze=50%
 
+# US states: full name -> USPS abbreviation. Exported in data.json as us_state_lookup (abbr -> full).
+STATE_TO_ABBR: dict[str, str] = {
+    "Alabama": "AL", "Alaska": "AK", "Arizona": "AZ", "Arkansas": "AR",
+    "California": "CA", "Colorado": "CO", "Connecticut": "CT", "Delaware": "DE",
+    "District of Columbia": "DC", "Florida": "FL", "Georgia": "GA", "Hawaii": "HI",
+    "Idaho": "ID", "Illinois": "IL", "Indiana": "IN", "Iowa": "IA", "Kansas": "KS",
+    "Kentucky": "KY", "Louisiana": "LA", "Maine": "ME", "Maryland": "MD",
+    "Massachusetts": "MA", "Michigan": "MI", "Minnesota": "MN", "Mississippi": "MS",
+    "Missouri": "MO", "Montana": "MT", "Nebraska": "NE", "Nevada": "NV",
+    "New Hampshire": "NH", "New Jersey": "NJ", "New Mexico": "NM", "New York": "NY",
+    "North Carolina": "NC", "North Dakota": "ND", "Ohio": "OH", "Oklahoma": "OK",
+    "Oregon": "OR", "Pennsylvania": "PA", "Rhode Island": "RI", "South Carolina": "SC",
+    "South Dakota": "SD", "Tennessee": "TN", "Texas": "TX", "Utah": "UT",
+    "Vermont": "VT", "Virginia": "VA", "Washington": "WA", "West Virginia": "WV",
+    "Wisconsin": "WI", "Wyoming": "WY",
+}
+US_STATE_ABBRS = frozenset(STATE_TO_ABBR.values())
+ABBR_TO_FULL: dict[str, str] = {abbr: full for full, abbr in STATE_TO_ABBR.items()}
+
+
+def compress_record_state(raw: str) -> str:
+    """Store USPS code for US states/proper DC; keep full string for non-US (e.g. provinces)."""
+    s = (raw or "").strip()
+    if not s:
+        return ""
+    if s in STATE_TO_ABBR:
+        return STATE_TO_ABBR[s]
+    su = s.upper()
+    if len(su) == 2 and su in US_STATE_ABBRS:
+        return su
+    return s
+
 
 K_STEEPNESS = 3
 
@@ -181,7 +213,7 @@ def load_contests():
 
 
 def load_students() -> dict:
-    """Load students.csv -> { student_id: { name, aliases: [], state, gender } }."""
+    """Load students.csv -> { student_id: { name, aliases (may be empty), state, gender, ... } }."""
     by_id = {}
     with open(STUDENTS_CSV, newline="", encoding="utf-8") as f:
         r = csv.DictReader(f)
@@ -314,7 +346,7 @@ def main() -> None:
             if slug in CONTESTS_WITH_CSV_STATE:
                 state_val = (row.get("state") or "").strip()
                 if state_val:
-                    record["state"] = state_val
+                    record["state"] = compress_record_state(state_val)
 
             # Compute mcp_points from mcp_rank if MCP-eligible
             mcp_rank_str = (row.get("mcp_rank") or "").strip()
@@ -347,8 +379,14 @@ def main() -> None:
                 state = (row.get("state") or "").strip()
                 students[sid] = {"name": name or f"Student {sid}", "aliases": [], "state": state, "gender": "male", "grade_in_2026": None}
 
+    # Normalize any record-level state (US -> abbreviation; non-US unchanged)
+    for recs in records_by_id.values():
+        for r in recs:
+            if r.get("state"):
+                r["state"] = compress_record_state(r["state"])
+
     def infer_state_from_records(records: list[dict]) -> str:
-        """Best-effort fallback: pick first non-empty state from contest records."""
+        """Best-effort fallback: first non-empty state on a record (already USPS abbr for US)."""
         for r in records:
             state = (r.get("state") or "").strip()
             if state:
@@ -361,6 +399,7 @@ def main() -> None:
         recs.sort(key=lambda r: (r.get("year", ""), r.get("contest", "")), reverse=True)
         info = students.get(sid, {"name": f"Student {sid}", "aliases": [], "state": "", "gender": "male", "grade_in_2026": None})
         state = (info.get("state") or "").strip() or infer_state_from_records(recs)
+        state = compress_record_state(state) if state else ""
 
         # Compute MCP and MCP-W totals with time decay
         mcp_total = 0.0
@@ -383,13 +422,15 @@ def main() -> None:
         student_entry = {
             "id": sid,
             "name": info["name"],
-            "aliases": info["aliases"],
             "state": state,
             "gender": gender,
             "grade_in_2026": info.get("grade_in_2026"),
             "mcp": round(mcp_total, 2),
             "records": recs,
         }
+        aliases = info.get("aliases") or []
+        if aliases:
+            student_entry["aliases"] = aliases
         if gender == "female" or mcp_w_extra > 0:
             student_entry["mcp_w"] = round(mcp_total + mcp_w_extra, 2)
 
@@ -414,7 +455,8 @@ def main() -> None:
         for r in s["records"]:
             r["c"] = slug_to_idx[r.pop("contest_slug")]
 
-    # Shorten record keys; key_map maps short -> long for frontend hydration
+    # Shorten record keys; key_map maps short -> long for frontend hydration.
+    # Student object keys use the same map (nm, rec, st, …).
     KEY_MAP = {
         "y": "year", "rk": "rank", "sc": "score", "aw": "award",
         "dv": "division", "ts": "total_score", "tn": "team_name",
@@ -426,6 +468,8 @@ def main() -> None:
         "ir": "international_rank", "ur": "us_rank", "bi": "bmt_student_id",
         "cn": "club_name", "t1": "test1", "t2": "test2", "tt": "total",
         "qa": "q10", "st": "state",
+        "nm": "name", "gd": "gender", "g26": "grade_in_2026",
+        "rec": "records", "al": "aliases", "mw": "mcp_w",
     }
     long_to_short = {v: k for k, v in KEY_MAP.items()}
     for s in result_students:
@@ -433,6 +477,10 @@ def main() -> None:
             for long_key in list(r.keys()):
                 if long_key in long_to_short:
                     r[long_to_short[long_key]] = r.pop(long_key)
+    for s in result_students:
+        for long_key in list(s.keys()):
+            if long_key in long_to_short:
+                s[long_to_short[long_key]] = s.pop(long_key)
 
     OUTPUT_JSON.parent.mkdir(parents=True, exist_ok=True)
 
@@ -454,10 +502,12 @@ def main() -> None:
         json.dump({"branch": branch}, f)
 
     with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
+        # Student "st" and record "st" (→ state): USPS 2-letter for US; full string if not US. Client expands via us_state_lookup.
         json.dump(
             {
                 "slug_index": slug_index,
                 "key_map": KEY_MAP,
+                "us_state_lookup": ABBR_TO_FULL,
                 "students": result_students,
                 "contests": contests,
                 "contest_year_files": contest_year_files,

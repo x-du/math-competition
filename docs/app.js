@@ -2,6 +2,8 @@
   "use strict";
 
   var data = { students: [], contests: {} };
+  /** USPS code -> full name; from data.json. Student `state` and record `state` store short codes for US. */
+  var usStateLookup = {};
   /** Latest competition season year per contest_slug (global), for MCP decay — see build_search_data.get_time_weight. */
   var maxMcpYearBySlugGlobal = {};
   var searchEl = document.getElementById("search");
@@ -929,7 +931,7 @@
     }
     if (stateEl && stateEl.value && stateEl.value !== "") {
       var wantState = stateEl.value;
-      var st = (s.state || "").trim();
+      var st = expandUsStateAbbrev((s.state || "").trim());
       if (wantState === "__none__") {
         if (st) return false;
       } else if (wantState === "__other__") {
@@ -982,6 +984,14 @@
     var div = document.createElement("div");
     div.textContent = s;
     return div.innerHTML;
+  }
+
+  /** USPS code -> full name for display (student or contest row); non-US strings unchanged. */
+  function expandUsStateAbbrev(val) {
+    if (val == null || val === "") return "";
+    var s = String(val).trim();
+    if (usStateLookup && Object.prototype.hasOwnProperty.call(usStateLookup, s)) return usStateLookup[s];
+    return s;
   }
 
   /**
@@ -1101,6 +1111,7 @@
     for (var i = 0; i < allKeys.length; i++) {
       var key = allKeys[i];
       var val = record[key] != null ? record[key] : "";
+      if (key === "state") val = expandUsStateAbbrev(val);
       var cellClass = key === "rank" ? "num rank-" + (val === "1" || val === 1 ? "1" : (val === "2" || val === 2 || val === "3" || val === 3 ? "2" : "")) : "num";
       cells.push("<td class=\"" + cellClass + "\" data-col=\"" + escapeHtml(key) + "\">", escapeHtml(String(val)), "</td>");
     }
@@ -1143,7 +1154,7 @@
     var grouped = groupRecordsByContest(records);
     var bySlug = grouped.bySlug;
     var slugs = grouped.slugs;
-    var state = student.state || "";
+    var state = expandUsStateAbbrev(student.state || "");
 
     var sections = [];
     if (!headerOnly) {
@@ -1430,7 +1441,7 @@
     if (stateFilterEl && stateFilterEl.value && stateFilterEl.value !== "") {
       var wantState = stateFilterEl.value;
       students = students.filter(function (s) {
-        var st = (s.state || "").trim();
+        var st = expandUsStateAbbrev((s.state || "").trim());
         if (wantState === "__none__") return !st;
         if (wantState === "__other__") return st && !US_STATES_SET[st];
         if (wantState === "US") return st && US_STATES_SET[st];
@@ -1628,7 +1639,7 @@
     for (var i = 0; i < top.length; i++) {
       var entry = top[i];
       var s = entry.student || {};
-      var state = s.state || "";
+      var state = expandUsStateAbbrev(s.state || "");
       var displayName = String(s.name || "");
       if (state) {
         displayName += " (" + state + ")";
@@ -1975,7 +1986,7 @@
     var btn = cardEl.querySelector(".export-pdf-student-btn");
     if (btn) btn.disabled = true;
     var studentName = (student.name || "").trim();
-    var state = (student.state || "").trim();
+    var state = expandUsStateAbbrev((student.state || "").trim());
     var filename = "math-competition-" + (studentName ? studentName.replace(/\W+/g, "-") : "student") + ".pdf";
 
     loadJsPdf(function (JsPDFConstructor) {
@@ -2059,6 +2070,7 @@
           var row = [r.year != null ? String(r.year) : ""];
           for (var k = 0; k < keys.length; k++) {
             var val = r[keys[k]];
+            if (keys[k] === "state") val = expandUsStateAbbrev(val);
             row.push(val != null ? String(val) : "");
           }
           return row;
@@ -2095,7 +2107,7 @@
     var recordsByState = {};
     var mcpByState = {};
     for (var i = 0; i < counts.length; i++) {
-      var state = (counts[i].student.state || "").trim() || "Unknown";
+      var state = expandUsStateAbbrev((counts[i].student.state || "").trim()) || "Unknown";
       studentsByState[state] = (studentsByState[state] || 0) + 1;
       recordsByState[state] = (recordsByState[state] || 0) + counts[i].recordsCount;
       var mcp = counts[i].mcpTotal != null ? Number(counts[i].mcpTotal) : 0;
@@ -2266,11 +2278,23 @@
     ]).then(function (arr) {
       var json = arr[0];
       var branchCfg = arr[1];
+      usStateLookup = json.us_state_lookup || {};
+      if (typeof window !== "undefined") window.usStateLookup = usStateLookup;
       var si = json.slug_index || [];
       var km = json.key_map || {};
       var students = json.students || [];
       for (var s = 0; s < students.length; s++) {
-        var recs = students[s].records || [];
+        var stu = students[s];
+        var stuKeys = Object.keys(stu);
+        for (var sji = 0; sji < stuKeys.length; sji++) {
+          var sjk = stuKeys[sji];
+          var stuLong = km[sjk];
+          if (stuLong) {
+            stu[stuLong] = stu[sjk];
+            delete stu[sjk];
+          }
+        }
+        var recs = stu.records || [];
         for (var r = 0; r < recs.length; r++) {
           var rec = recs[r];
           if (si.length && rec.c != null) {

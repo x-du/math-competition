@@ -96,6 +96,19 @@ def get_window_size(group: str) -> int:
     return YEARS_WINDOW
 
 
+def student_records(s: dict) -> list:
+    """data.json uses compact key 'rec' (see key_map); accept legacy 'records'."""
+    return s.get("rec") or s.get("records") or []
+
+
+def student_name(s: dict) -> str:
+    return (s.get("nm") or s.get("name") or "").strip()
+
+
+def student_state(s: dict) -> str:
+    return (s.get("st") or s.get("state") or "").strip()
+
+
 def load_contest_websites() -> dict[str, str]:
     """Load slug -> website from contests.csv."""
     websites: dict[str, str] = {}
@@ -118,7 +131,7 @@ def main() -> None:
     # Collect years that have data per contest group (only editions that exist)
     group_years: dict[str, set[int]] = {}
     for s in students:
-        for r in s.get("records", []):
+        for r in student_records(s):
             c_idx = r.get("c")
             if c_idx is None or c_idx >= len(slug_index):
                 continue
@@ -161,7 +174,7 @@ def main() -> None:
         return year_val in allowed
 
     # Build sid -> name, sid -> mcp
-    sid_to_name: dict[int, str] = {s["id"]: (s.get("name") or "").strip() for s in students}
+    sid_to_name: dict[int, str] = {s["id"]: student_name(s) for s in students}
     sid_to_mcp: dict[int, float] = {s["id"]: float(s.get("mcp") or 0) for s in students}
 
     # Top 100 overall by MCP (from full data - MCP uses time decay)
@@ -177,7 +190,7 @@ def main() -> None:
     # Per-contest: best mcp_rank per student (group subject tests, most recent N editions)
     contest_to_students: dict[str, dict[int, float]] = {}
     for s in students:
-        for r in s.get("records", []):
+        for r in student_records(s):
             if not record_in_window(r):
                 continue
             c_idx = r.get("c")
@@ -228,9 +241,9 @@ def main() -> None:
     # Build sid -> state (prefer contest-specific state for AMO/JMO/MathCounts)
     sid_to_state: dict[int, str] = {}
     for s in students:
-        sid_to_state[s["id"]] = (s.get("state") or "").strip()
+        sid_to_state[s["id"]] = student_state(s)
     for s in students:
-        for r in s.get("records", []):
+        for r in student_records(s):
             st = (r.get("st") or r.get("state") or "").strip()
             if st and r.get("c") is not None:
                 c = slug_index[r["c"]] if r["c"] < len(slug_index) else ""
@@ -240,10 +253,10 @@ def main() -> None:
     # Attraction: state counts per contest (all data, no time filter)
     attraction: dict[str, dict[str, int]] = {"__all__": {}}
     for s in students:
-        state = sid_to_state.get(s["id"], "") or (s.get("state") or "").strip()
+        state = sid_to_state.get(s["id"], "") or student_state(s)
         if state:
             attraction["__all__"][state] = attraction["__all__"].get(state, 0) + 1
-        for r in s.get("records", []):
+        for r in student_records(s):
             c_idx = r.get("c")
             if c_idx is None:
                 continue
