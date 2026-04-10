@@ -411,6 +411,9 @@
         <div id="attraction-viz-wrap" style="display:none" class="attraction-viz">
           <div class="attraction-chart-wrap">
             <h3>Students by State</h3>
+            <div class="state-dist-chart-actions">
+              <button type="button" id="attraction-pie-download-png" class="chart-png-download chart-png-download--compact chart-png-download--icon" aria-label="Download pie chart as PNG"><svg class="chart-png-download__svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></button>
+            </div>
             <canvas id="attraction-pie-canvas" width="300" height="280"></canvas>
             <div id="attraction-pie-legend" class="state-dist-legend"></div>
           </div>
@@ -616,6 +619,369 @@
     return div.innerHTML;
   }
 
+  function sanitizeDownloadFilename(s, fallback) {
+    const base = String(s || fallback || 'chart').replace(/[^a-zA-Z0-9._-]+/g, '-').replace(/^-+|-+$/g, '');
+    return base || fallback || 'chart';
+  }
+
+  const PNG_EXPORT_FOOTER_TEXT = 'mathintegrity.org';
+
+  function getExportThemeColors() {
+    const root = typeof getComputedStyle !== 'undefined' ? getComputedStyle(document.documentElement) : null;
+    return {
+      bg: (root && root.getPropertyValue('--bg').trim()) || '#0f0f12',
+      surface: (root && root.getPropertyValue('--surface').trim()) || '#18181c',
+      border: (root && root.getPropertyValue('--border').trim()) || '#2a2a30',
+      text: (root && root.getPropertyValue('--text').trim()) || '#e4e4e7',
+      textMuted: (root && root.getPropertyValue('--text-muted').trim()) || '#a1a1aa'
+    };
+  }
+
+  /** Percent labels on Geographic Attraction pie (Chart.js has no slice labels by default). */
+  if (typeof Chart !== 'undefined') {
+    Chart.register({
+      id: 'attractionPiePercentLabels',
+      afterDatasetsDraw(chart) {
+        if (!chart.canvas || chart.canvas.id !== 'attraction-pie-canvas') return;
+        if (chart.config.type !== 'pie') return;
+        const ds = chart.data.datasets[0];
+        if (!ds || !ds.data) return;
+        const meta = chart.getDatasetMeta(0);
+        if (!meta || !meta.data || !meta.data.length) return;
+        let total = 0;
+        for (let j = 0; j < ds.data.length; j++) total += Number(ds.data[j]) || 0;
+        if (total <= 0) return;
+        const ctx = chart.ctx;
+        ctx.save();
+        meta.data.forEach((arc, i) => {
+          const value = Number(ds.data[i]);
+          if (!value || !arc || arc.skip) return;
+          const share = value / total;
+          const start = arc.startAngle;
+          const end = arc.endAngle;
+          if (start == null || end == null) return;
+          const span = end - start;
+          if (span < 0.0001) return;
+          let tx;
+          let ty;
+          if (typeof arc.getCenterPoint === 'function') {
+            const p = arc.getCenterPoint(false);
+            if (!p || !Number.isFinite(p.x) || !Number.isFinite(p.y)) return;
+            tx = p.x;
+            ty = p.y;
+          } else {
+            const mid = start + span / 2;
+            const outer = arc.outerRadius;
+            if (!outer || !Number.isFinite(outer) || !Number.isFinite(arc.x) || !Number.isFinite(arc.y)) return;
+            const r = outer * 0.64;
+            tx = arc.x + Math.cos(mid) * r;
+            ty = arc.y + Math.sin(mid) * r;
+          }
+          const pctStr = (share * 100).toFixed(1) + '%';
+          let fontPx = share < 0.04 ? 9 : share < 0.1 ? 10 : 11;
+          if (span < 0.18) fontPx = Math.min(fontPx, 9);
+          ctx.font = 'bold ' + fontPx + 'px system-ui, sans-serif';
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillStyle = '#ffffff';
+          ctx.shadowColor = 'rgba(0,0,0,0.5)';
+          ctx.shadowBlur = 3;
+          ctx.shadowOffsetX = 0;
+          ctx.shadowOffsetY = 1;
+          ctx.fillText(pctStr, tx, ty);
+        });
+        ctx.restore();
+      }
+    });
+  }
+
+  function truncateExportLegendText(ctx, str, maxW) {
+    if (!str || ctx.measureText(str).width <= maxW) return str;
+    const ell = '…';
+    let s = str;
+    while (s.length > 1 && ctx.measureText(s + ell).width > maxW) s = s.slice(0, -1);
+    return s + ell;
+  }
+
+  function measureDomLegendHeight(legendEl, width) {
+    if (!legendEl || legendEl.querySelector('.state-dist-empty')) return 0;
+    const items = legendEl.querySelectorAll('.state-dist-legend-item');
+    if (!items.length) return 0;
+    const rowFontPx = Math.max(11, Math.min(14, Math.round(width / 42)));
+    const rowH = rowFontPx + 6;
+    return 10 + items.length * rowH + 10;
+  }
+
+  function drawDomLegendOntoCanvas(ctx, width, startY, legendEl) {
+    if (!legendEl || legendEl.querySelector('.state-dist-empty')) return 0;
+    const items = legendEl.querySelectorAll('.state-dist-legend-item');
+    if (!items.length) return 0;
+    const theme = getExportThemeColors();
+    const labelCol = theme.text;
+    const valueCol = theme.textMuted;
+    const rowFontPx = Math.max(11, Math.min(14, Math.round(width / 42)));
+    const rowH = rowFontPx + 6;
+    const padX = 12;
+    const padTop = 10;
+    const swatchW = 10;
+    const swatchH = 10;
+    const gap = 8;
+    let y = startY + padTop + rowH / 2;
+    ctx.textBaseline = 'middle';
+    for (let i = 0; i < items.length; i++) {
+      const item = items[i];
+      const swEl = item.querySelector('.state-dist-legend-swatch');
+      const lblEl = item.querySelector('.state-dist-legend-label');
+      const valEl = item.querySelector('.state-dist-legend-value');
+      let col = '#60a5fa';
+      if (swEl) {
+        const st = swEl.getAttribute('style') || '';
+        const m = st.match(/background:\s*([^;]+)/i);
+        if (m) col = m[1].trim();
+        else col = getComputedStyle(swEl).backgroundColor || col;
+      }
+      const label = lblEl ? lblEl.textContent.trim() : '';
+      const val = valEl ? valEl.textContent.trim() : '';
+      ctx.fillStyle = col;
+      ctx.fillRect(padX, y - swatchH / 2, swatchW, swatchH);
+      const textX = padX + swatchW + gap;
+      const maxW = width - textX - padX;
+      ctx.font = rowFontPx + 'px system-ui, -apple-system, "Segoe UI", sans-serif';
+      ctx.textAlign = 'left';
+      ctx.fillStyle = labelCol;
+      const valPart = val ? '  ' + val : '';
+      const valDraw = valPart ? truncateExportLegendText(ctx, valPart, maxW * 0.52) : '';
+      const labelBudget = maxW - (valDraw ? ctx.measureText(valDraw).width : 0);
+      const labelDraw = truncateExportLegendText(ctx, label, Math.max(8, labelBudget));
+      ctx.fillText(labelDraw, textX, y);
+      if (valDraw) {
+        ctx.fillStyle = valueCol;
+        ctx.fillText(valDraw, textX + ctx.measureText(labelDraw).width, y);
+      }
+      y += rowH;
+    }
+    return padTop + items.length * rowH + 10;
+  }
+
+  function measureChartJsDatasetLegendHeight(chart, width) {
+    if (!chart || !chart.data || !chart.data.datasets || !chart.data.datasets.length) return 0;
+    const n = chart.data.datasets.length;
+    const rowFontPx = Math.max(11, Math.min(14, Math.round(width / 42)));
+    const rowH = rowFontPx + 6;
+    return 10 + n * rowH + 10;
+  }
+
+  function legendColorFromDataset(ds) {
+    let c = ds.borderColor || ds.backgroundColor;
+    if (Array.isArray(c)) c = c[0];
+    return c || '#888';
+  }
+
+  function drawChartJsDatasetLegendOntoCanvas(ctx, width, startY, chart) {
+    if (!chart || !chart.data || !chart.data.datasets || !chart.data.datasets.length) return 0;
+    const dss = chart.data.datasets;
+    const labelCol = getExportThemeColors().text;
+    const rowFontPx = Math.max(11, Math.min(14, Math.round(width / 42)));
+    const rowH = rowFontPx + 6;
+    const padX = 12;
+    const padTop = 10;
+    const swatchW = 14;
+    const swatchH = 10;
+    const gap = 8;
+    let y = startY + padTop + rowH / 2;
+    ctx.textBaseline = 'middle';
+    for (let i = 0; i < dss.length; i++) {
+      const ds = dss[i];
+      let lab = ds.label != null ? String(ds.label) : 'Series ' + (i + 1);
+      ctx.fillStyle = legendColorFromDataset(ds);
+      ctx.fillRect(padX, y - swatchH / 2, swatchW, swatchH);
+      const textX = padX + swatchW + gap;
+      const maxW = width - textX - padX;
+      ctx.font = rowFontPx + 'px system-ui, -apple-system, "Segoe UI", sans-serif';
+      ctx.textAlign = 'left';
+      lab = truncateExportLegendText(ctx, lab, maxW);
+      ctx.fillStyle = labelCol;
+      ctx.fillText(lab, textX, y);
+      y += rowH;
+    }
+    return padTop + dss.length * rowH + 10;
+  }
+
+  function composeChartPngExport(sourceCanvas, opts) {
+    opts = opts || {};
+    const legendEl = opts.legendEl || null;
+    const chartJs = opts.chartJs || null;
+    if (!sourceCanvas || !sourceCanvas.getContext) return null;
+    const sw = sourceCanvas.width;
+    const sh = sourceCanvas.height;
+    if (!sw || !sh) return null;
+    let legH = 0;
+    if (legendEl) legH = measureDomLegendHeight(legendEl, sw);
+    if (!legH && chartJs) legH = measureChartJsDatasetLegendHeight(chartJs, sw);
+    const footerH = Math.max(26, Math.round(0.055 * sw));
+    const out = document.createElement('canvas');
+    out.width = sw;
+    out.height = sh + legH + footerH;
+    const ctx = out.getContext('2d');
+    if (!ctx) return null;
+    const theme = getExportThemeColors();
+    const totalH = sh + legH + footerH;
+    ctx.fillStyle = theme.surface;
+    ctx.fillRect(0, 0, sw, totalH);
+    try {
+      ctx.drawImage(sourceCanvas, 0, 0);
+    } catch (e) {
+      return null;
+    }
+    if (legendEl && legH > 0) {
+      ctx.fillStyle = theme.surface;
+      ctx.fillRect(0, sh, sw, legH);
+      ctx.strokeStyle = theme.border;
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(0, sh + 0.5);
+      ctx.lineTo(sw, sh + 0.5);
+      ctx.stroke();
+      drawDomLegendOntoCanvas(ctx, sw, sh, legendEl);
+    } else if (chartJs && legH > 0) {
+      ctx.fillStyle = theme.surface;
+      ctx.fillRect(0, sh, sw, legH);
+      ctx.strokeStyle = theme.border;
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(0, sh + 0.5);
+      ctx.lineTo(sw, sh + 0.5);
+      ctx.stroke();
+      drawChartJsDatasetLegendOntoCanvas(ctx, sw, sh, chartJs);
+    }
+    const footTop = sh + legH;
+    const footerBg = theme.surface;
+    const borderCol = theme.border;
+    const textCol = theme.textMuted;
+    ctx.fillStyle = footerBg;
+    ctx.fillRect(0, footTop, sw, footerH);
+    ctx.strokeStyle = borderCol;
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(0, footTop + 0.5);
+    ctx.lineTo(sw, footTop + 0.5);
+    ctx.stroke();
+    const fontPx = Math.max(12, Math.min(18, Math.round(sw / 36)));
+    ctx.font = '600 ' + fontPx + 'px system-ui, -apple-system, "Segoe UI", sans-serif';
+    ctx.fillStyle = textCol;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(PNG_EXPORT_FOOTER_TEXT, sw / 2, footTop + footerH / 2);
+    return out;
+  }
+
+  function downloadPngDataUrl(dataUrl, filename) {
+    if (!dataUrl || !/^data:image\/png/i.test(String(dataUrl))) return false;
+    const stem = String(filename || 'chart').replace(/\.png$/i, '');
+    const name = sanitizeDownloadFilename(stem, 'chart') + '.png';
+
+    function triggerFromBlobUrl(objUrl) {
+      const a = document.createElement('a');
+      a.href = objUrl;
+      a.download = name;
+      a.rel = 'noopener';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      if (typeof location !== 'undefined' && location.protocol === 'file:') {
+        try {
+          window.open(objUrl, '_blank', 'noopener,noreferrer');
+        } catch (openErr) { /* ignore */ }
+      }
+    }
+
+    try {
+      const comma = String(dataUrl).indexOf(',');
+      if (comma < 0) return false;
+      const b64 = String(dataUrl).slice(comma + 1).replace(/\s/g, '');
+      const bin = atob(b64);
+      const len = bin.length;
+      const arr = new Uint8Array(len);
+      for (let i = 0; i < len; i++) arr[i] = bin.charCodeAt(i);
+      const blob = new Blob([arr], { type: 'image/png' });
+      const objUrl = URL.createObjectURL(blob);
+      triggerFromBlobUrl(objUrl);
+      setTimeout(() => { try { URL.revokeObjectURL(objUrl); } catch (eRev) {} }, 60000);
+      return true;
+    } catch (e1) {
+      try {
+        const a = document.createElement('a');
+        a.href = dataUrl;
+        a.download = name;
+        a.rel = 'noopener';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        return true;
+      } catch (e2) {
+        return false;
+      }
+    }
+  }
+
+  function chartJsExportCanvas(chart) {
+    if (!chart) return null;
+    return chart.canvas || (chart.ctx && chart.ctx.canvas) || null;
+  }
+
+  function chartJsEnsureSize(chart, canvas) {
+    if (!chart || !canvas || typeof chart.resize !== 'function') return;
+    try {
+      if (canvas.width > 0 && canvas.height > 0) return;
+      const wrap = canvas.closest('.attraction-chart-wrap') || canvas.parentElement;
+      if (wrap && wrap.getBoundingClientRect) {
+        const r = wrap.getBoundingClientRect();
+        const rw = Math.max(1, Math.floor(r.width));
+        const rh = Math.max(1, Math.floor(r.height));
+        try {
+          chart.resize(rw, rh);
+        } catch (resizeEx) {
+          chart.resize();
+        }
+      } else {
+        chart.resize();
+      }
+    } catch (e) { /* ignore */ }
+  }
+
+  function downloadChartJsPng(chart, filename, legendEl) {
+    const canvas = chartJsExportCanvas(chart);
+    if (!chart || !canvas) return false;
+    const plugins = chart.options.plugins || (chart.options.plugins = {});
+    const legendOpts = plugins.legend || (plugins.legend = {});
+    const hadDisplayKey = Object.prototype.hasOwnProperty.call(legendOpts, 'display');
+    const prevLegendDisplay = legendOpts.display;
+    if (legendEl) legendOpts.display = false;
+    try {
+      chartJsEnsureSize(chart, canvas);
+      if (typeof chart.update === 'function') chart.update('none');
+      if ((!canvas.width || !canvas.height) && typeof chart.resize === 'function') {
+        chart.resize();
+        if (typeof chart.update === 'function') chart.update('none');
+      }
+      if (!canvas.width || !canvas.height) return false;
+      const composed = composeChartPngExport(canvas, {
+        legendEl: legendEl || null,
+        chartJs: !legendEl ? chart : null
+      });
+      if (!composed) return false;
+      return downloadPngDataUrl(composed.toDataURL('image/png'), filename);
+    } catch (e) {
+      return false;
+    } finally {
+      if (legendEl) {
+        if (hadDisplayKey) legendOpts.display = prevLegendDisplay;
+        else delete legendOpts.display;
+        if (typeof chart.update === 'function') chart.update('none');
+      }
+    }
+  }
+
   function loadAndRender() {
     const base = document.location.href.replace(/\/[^/]*$/, '') || document.location.origin;
     function loadData() {
@@ -726,6 +1092,7 @@
 
     const ctx = document.getElementById('attraction-pie-canvas').getContext('2d');
     if (pieChart) pieChart.destroy();
+    const th = getExportThemeColors();
     pieChart = new Chart(ctx, {
       type: 'pie',
       data: {
@@ -733,21 +1100,32 @@
         datasets: [{
           data: values,
           backgroundColor: PIE_COLORS,
-          borderColor: '#18181c',
+          borderColor: th.border,
           borderWidth: 1
         }]
       },
       options: {
         responsive: true,
         maintainAspectRatio: true,
-        color: '#e4e4e7',
+        animation: false,
+        color: th.text,
         plugins: {
           legend: { display: false },
+          surfaceBackground: {
+            beforeDraw(ch) {
+              const c = ch.ctx;
+              const t = getExportThemeColors();
+              c.save();
+              c.fillStyle = t.surface;
+              c.fillRect(0, 0, ch.width, ch.height);
+              c.restore();
+            }
+          },
           tooltip: {
-            backgroundColor: '#18181c',
-            titleColor: '#e4e4e7',
-            bodyColor: '#e4e4e7',
-            borderColor: '#2a2a30',
+            backgroundColor: th.surface,
+            titleColor: th.text,
+            bodyColor: th.text,
+            borderColor: th.border,
             borderWidth: 1,
             callbacks: {
               label: (ctx) => {
@@ -759,6 +1137,18 @@
           }
         }
       }
+    });
+
+    const pieRef = pieChart;
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        if (pieChart !== pieRef || !pieRef) return;
+        const c = chartJsExportCanvas(pieRef);
+        if (c && typeof pieRef.resize === 'function') {
+          chartJsEnsureSize(pieRef, c);
+          if (typeof pieRef.update === 'function') pieRef.update('none');
+        }
+      });
     });
 
     const total = values.reduce((a, b) => a + b, 0);
@@ -798,7 +1188,9 @@
         }
         const states = topojson.feature(us, us.objects.states);
         usMapFeatures = states.features;
-        const width = Math.min(500, container.offsetWidth || container.parentElement?.offsetWidth || 500);
+        // Avoid fitSize width/height 0 (hidden or not laid out yet) — breaks projection and yields NaN centroids.
+        const rawW = container.offsetWidth || container.parentElement?.offsetWidth || 500;
+        const width = Math.max(200, Math.min(500, rawW));
         const height = 350;
         const projection = d3.geoAlbersUsa().fitSize([width, height], states);
         usMapPath = d3.geoPath().projection(projection);
@@ -839,15 +1231,17 @@
           .join('text')
           .attr('class', 'state-label')
           .attr('data-fips', d => d.id)
-          .attr('x', d => {
+          .each(function(d) {
             const c = usMapPath.centroid(d);
-            return c[0];
-          })
-          .attr('y', d => {
-            const c = usMapPath.centroid(d);
-            return c[1];
-          })
-          .text('');
+            const ok = Number.isFinite(c[0]) && Number.isFinite(c[1]);
+            const x = ok ? c[0] : 0;
+            const y = ok ? c[1] : 0;
+            d3.select(this)
+              .attr('x', x)
+              .attr('y', y)
+              .attr('opacity', ok ? 1 : 0)
+              .text('');
+          });
 
         usMapSvg = svg.node();
         usMapStateCounts = {};
@@ -930,6 +1324,19 @@
       legendEl.style.display = 'none';
     }
   }
+
+  (function bindAttractionPieDownload() {
+    const btn = document.getElementById('attraction-pie-download-png');
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+      const slug = document.getElementById('attraction-contest') && document.getElementById('attraction-contest').value;
+      const slugPart = slug === '__all__' ? 'all-students' : sanitizeDownloadFilename(slug, 'contest');
+      const leg = document.getElementById('attraction-pie-legend');
+      if (!downloadChartJsPng(pieChart, 'attraction-students-by-state-' + slugPart + '.png', leg)) {
+        alert('Nothing to download.');
+      }
+    });
+  })();
 
   loadAndRender();
 })();

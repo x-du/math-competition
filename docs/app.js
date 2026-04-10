@@ -51,6 +51,13 @@
 
   var FILTERS_KEY = "mathcomp_filters";
 
+  /** Download icon; SVG uses pointer-events:none via CSS so delegated clicks hit the button. */
+  var CHART_DOWNLOAD_ICON_HTML =
+    "<svg class=\"chart-png-download__svg\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/><line x1=\"12\" y1=\"15\" x2=\"12\" y2=\"3\"/></svg>";
+
+  /** Appended to the bottom of every exported chart PNG. */
+  var PNG_EXPORT_FOOTER_TEXT = "mathintegrity.org";
+
   function getStudentIdFromUrl() {
     try {
       var params = new URLSearchParams(window.location.search);
@@ -552,111 +559,156 @@
     if (clearAllEl) clearAllEl.disabled = mcpTimelineSelectedIds.length === 0;
   }
 
+  /** Show MCP-by-year PNG only when the line chart area is visible and a chart instance exists. */
+  function syncMcpTimelineDownloadPngButtonVisibility() {
+    var btn = document.getElementById("mcp-timeline-download-png");
+    var toolbar = btn && btn.closest(".mcp-timeline-chart-toolbar");
+    var wrap = document.getElementById("mcp-timeline-chart-wrap");
+    var show = !!(mcpTimelineChartInstance && wrap && !wrap.hidden);
+    if (btn) btn.hidden = !show;
+    if (toolbar) toolbar.hidden = !show;
+  }
+
   function renderMcpTimelineChart() {
-    var canvas = document.getElementById("mcp-timeline-canvas");
-    var emptyEl = document.getElementById("mcp-timeline-empty");
-    if (!canvas) return;
-    if (typeof Chart === "undefined") {
-      if (emptyEl) {
-        emptyEl.hidden = false;
-        emptyEl.textContent = "Chart library failed to load.";
+    try {
+      var canvas = document.getElementById("mcp-timeline-canvas");
+      var emptyEl = document.getElementById("mcp-timeline-empty");
+      var wrap = document.getElementById("mcp-timeline-chart-wrap");
+      if (!canvas) return;
+      if (typeof Chart === "undefined") {
+        if (mcpTimelineChartInstance) {
+          mcpTimelineChartInstance.destroy();
+          mcpTimelineChartInstance = null;
+        }
+        if (wrap) wrap.hidden = true;
+        if (emptyEl) {
+          emptyEl.hidden = false;
+          emptyEl.textContent = "Chart library failed to load.";
+        }
+        return;
       }
-      return;
-    }
-    var selected = [];
-    for (var si = 0; si < mcpTimelineSelectedIds.length; si++) {
-      var fs = findStudentById(mcpTimelineSelectedIds[si]);
-      if (fs) selected.push(fs);
-    }
-    if (mcpTimelineChartInstance) {
-      mcpTimelineChartInstance.destroy();
-      mcpTimelineChartInstance = null;
-    }
-    if (!selected.length) {
-      if (emptyEl) {
-        emptyEl.hidden = false;
-        emptyEl.textContent = "Add one or more students above to plot MCP by year.";
+      var selected = [];
+      for (var si = 0; si < mcpTimelineSelectedIds.length; si++) {
+        var fs = findStudentById(mcpTimelineSelectedIds[si]);
+        if (fs) selected.push(fs);
       }
-      return;
-    }
-    var years = timelineAnchorYearsFromStudents(selected, false);
-    if (!years.length) {
-      if (emptyEl) {
-        emptyEl.hidden = false;
-        emptyEl.textContent = "No MCP timeline data for the selected students.";
+      if (mcpTimelineChartInstance) {
+        mcpTimelineChartInstance.destroy();
+        mcpTimelineChartInstance = null;
       }
-      return;
-    }
-    if (emptyEl) emptyEl.hidden = true;
-    var colors = getTimelineChartColorVars();
-    var labels = years.map(String);
-    var datasets = [];
-    for (var di = 0; di < selected.length; di++) {
-      var stud = selected[di];
-      var series = years.map(function (y) { return getMcpAtTimelineYear(stud, y, false); });
-      var col = PIE_COLORS[di % PIE_COLORS.length];
-      datasets.push({
-        label: stud.name || "Student",
-        data: series,
-        borderColor: col,
-        backgroundColor: col,
-        borderWidth: 2,
-        pointRadius: 2,
-        tension: 0.15,
-        fill: false
-      });
-    }
-    var ctx = canvas.getContext("2d");
-    mcpTimelineChartInstance = new Chart(ctx, {
-      type: "line",
-      data: { labels: labels, datasets: datasets },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        interaction: { mode: "index", intersect: false },
-        plugins: {
-          legend: {
-            position: "bottom",
-            labels: {
-              color: colors.text,
-              usePointStyle: true,
-              pointStyle: "rect",
-              boxWidth: 14,
-              boxHeight: 14,
-              padding: 12,
-              font: { family: "system-ui, sans-serif", size: 11 }
-            }
-          },
-          tooltip: {
-            itemSort: function (a, b) {
-              var ya = a.parsed.y != null ? Number(a.parsed.y) : 0;
-              var yb = b.parsed.y != null ? Number(b.parsed.y) : 0;
-              return yb - ya;
+      if (!selected.length) {
+        if (wrap) wrap.hidden = true;
+        if (emptyEl) {
+          emptyEl.hidden = false;
+          emptyEl.textContent = "Add one or more students above to plot MCP by year.";
+        }
+        return;
+      }
+      var years = timelineAnchorYearsFromStudents(selected, false);
+      if (!years.length) {
+        if (wrap) wrap.hidden = true;
+        if (emptyEl) {
+          emptyEl.hidden = false;
+          emptyEl.textContent = "No MCP timeline data for the selected students.";
+        }
+        return;
+      }
+      if (wrap) wrap.hidden = false;
+      if (emptyEl) emptyEl.hidden = true;
+      var colors = getTimelineChartColorVars();
+      var labels = years.map(String);
+      var datasets = [];
+      for (var di = 0; di < selected.length; di++) {
+        var stud = selected[di];
+        var series = years.map(function (y) { return getMcpAtTimelineYear(stud, y, false); });
+        var col = PIE_COLORS[di % PIE_COLORS.length];
+        datasets.push({
+          label: stud.name || "Student",
+          data: series,
+          borderColor: col,
+          backgroundColor: col,
+          borderWidth: 2,
+          pointRadius: 2,
+          tension: 0.15,
+          fill: false
+        });
+      }
+      var ctx = canvas.getContext("2d");
+      mcpTimelineChartInstance = new Chart(ctx, {
+        type: "line",
+        data: { labels: labels, datasets: datasets },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          animation: false,
+          interaction: { mode: "index", intersect: false },
+          plugins: {
+            legend: {
+              position: "bottom",
+              labels: {
+                color: colors.text,
+                usePointStyle: true,
+                pointStyle: "rect",
+                boxWidth: 14,
+                boxHeight: 14,
+                padding: 12,
+                font: { family: "system-ui, sans-serif", size: 11 }
+              }
             },
-            callbacks: {
-              label: function (c) {
-                var v = c.parsed.y;
-                return (c.dataset.label || "") + ": " + formatMcpValue(v);
+            surfaceBackground: {
+              beforeDraw: function (ch) {
+                var c = ch.ctx;
+                var t = getExportThemeColors();
+                c.save();
+                c.fillStyle = t.surface;
+                c.fillRect(0, 0, ch.width, ch.height);
+                c.restore();
+              }
+            },
+            tooltip: {
+              itemSort: function (a, b) {
+                var ya = a.parsed.y != null ? Number(a.parsed.y) : 0;
+                var yb = b.parsed.y != null ? Number(b.parsed.y) : 0;
+                return yb - ya;
+              },
+              callbacks: {
+                label: function (c) {
+                  var v = c.parsed.y;
+                  return (c.dataset.label || "") + ": " + formatMcpValue(v);
+                }
               }
             }
-          }
-        },
-        scales: {
-          x: {
-            ticks: { color: colors.muted, maxRotation: 45, font: { size: 10 } },
-            grid: { color: colors.border }
           },
-          y: {
-            beginAtZero: true,
-            ticks: {
-              color: colors.muted,
-              callback: function (v) { return formatMcpValue(v); }
+          scales: {
+            x: {
+              ticks: { color: colors.muted, maxRotation: 45, font: { size: 10 } },
+              grid: { color: colors.border }
             },
-            grid: { color: colors.border }
+            y: {
+              beginAtZero: true,
+              ticks: {
+                color: colors.muted,
+                callback: function (v) { return formatMcpValue(v); }
+              },
+              grid: { color: colors.border }
+            }
           }
         }
-      }
-    });
+      });
+      var timelineChartRef = mcpTimelineChartInstance;
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          if (mcpTimelineChartInstance !== timelineChartRef || !timelineChartRef) return;
+          var tlCanvas = chartJsExportCanvas(timelineChartRef);
+          if (tlCanvas && typeof timelineChartRef.resize === "function") {
+            chartJsEnsureSize(timelineChartRef, tlCanvas);
+            if (typeof timelineChartRef.update === "function") timelineChartRef.update("none");
+          }
+        });
+      });
+    } finally {
+      syncMcpTimelineDownloadPngButtonVisibility();
+    }
   }
 
   function refreshMcpTimelineIfOpen() {
@@ -776,6 +828,19 @@
     });
     if (closeBtn) closeBtn.addEventListener("click", closePopover);
     if (backdrop) backdrop.addEventListener("click", closePopover);
+
+    var timelinePngBtn = document.getElementById("mcp-timeline-download-png");
+    if (timelinePngBtn) {
+      timelinePngBtn.addEventListener("click", function () {
+        if (!mcpTimelineChartInstance) {
+          alert("Add at least one student with MCP data to export the chart.");
+          return;
+        }
+        if (!downloadChartJsInstanceAsPng(mcpTimelineChartInstance, "mcp-by-year.png")) {
+          alert("Could not export the chart. Try again after the chart has finished drawing.");
+        }
+      });
+    }
 
     if (top10Btn) {
       top10Btn.addEventListener("click", function () {
@@ -984,6 +1049,577 @@
     var div = document.createElement("div");
     div.textContent = s;
     return div.innerHTML;
+  }
+
+  function sanitizeDownloadFilename(s, fallback) {
+    var base = String(s || fallback || "chart").replace(/[^a-zA-Z0-9._-]+/g, "-").replace(/^-+|-+$/g, "");
+    return base || fallback || "chart";
+  }
+
+  function downloadPngDataUrl(dataUrl, filename) {
+    if (!dataUrl || !/^data:image\/png/i.test(String(dataUrl))) return false;
+    var stem = String(filename || "chart").replace(/\.png$/i, "");
+    var name = sanitizeDownloadFilename(stem, "chart") + ".png";
+
+    function triggerFromBlobUrl(objUrl) {
+      var a = document.createElement("a");
+      a.href = objUrl;
+      a.download = name;
+      a.rel = "noopener";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      if (typeof location !== "undefined" && location.protocol === "file:") {
+        try {
+          window.open(objUrl, "_blank", "noopener,noreferrer");
+        } catch (openErr) { /* ignore */ }
+      }
+    }
+
+    try {
+      var comma = String(dataUrl).indexOf(",");
+      if (comma < 0) return false;
+      var b64 = String(dataUrl)
+        .slice(comma + 1)
+        .replace(/\s/g, "");
+      var bin = atob(b64);
+      var len = bin.length;
+      var arr = new Uint8Array(len);
+      for (var i = 0; i < len; i++) arr[i] = bin.charCodeAt(i);
+      var blob = new Blob([arr], { type: "image/png" });
+      var objUrl = URL.createObjectURL(blob);
+      triggerFromBlobUrl(objUrl);
+      setTimeout(function () {
+        try { URL.revokeObjectURL(objUrl); } catch (eRev) { /* ignore */ }
+      }, 60000);
+      return true;
+    } catch (e1) {
+      try {
+        var a = document.createElement("a");
+        a.href = dataUrl;
+        a.download = name;
+        a.rel = "noopener";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        return true;
+      } catch (e2) {
+        return false;
+      }
+    }
+  }
+
+  /** Resolved CSS theme tokens for canvas export (matches active light/dark). */
+  function getExportThemeColors() {
+    var root = typeof getComputedStyle !== "undefined" ? getComputedStyle(document.documentElement) : null;
+    return {
+      bg: (root && root.getPropertyValue("--bg").trim()) || "#0f0f12",
+      surface: (root && root.getPropertyValue("--surface").trim()) || "#18181c",
+      border: (root && root.getPropertyValue("--border").trim()) || "#2a2a30",
+      text: (root && root.getPropertyValue("--text").trim()) || "#e4e4e7",
+      textMuted: (root && root.getPropertyValue("--text-muted").trim()) || "#a1a1aa"
+    };
+  }
+
+  function truncateExportLegendText(ctx, str, maxW) {
+    if (!str || ctx.measureText(str).width <= maxW) return str;
+    var ell = "…";
+    var s = str;
+    while (s.length > 1 && ctx.measureText(s + ell).width > maxW) s = s.slice(0, -1);
+    return s + ell;
+  }
+
+  function measureDomLegendHeight(legendEl, width) {
+    if (!legendEl || legendEl.querySelector(".state-dist-empty")) return 0;
+    var items = legendEl.querySelectorAll(".state-dist-legend-item");
+    if (!items.length) return 0;
+    var rowFontPx = Math.max(11, Math.min(14, Math.round(width / 42)));
+    var rowH = rowFontPx + 6;
+    return 10 + items.length * rowH + 10;
+  }
+
+  function drawDomLegendOntoCanvas(ctx, width, startY, legendEl, xOff) {
+    xOff = xOff || 0;
+    if (!legendEl || legendEl.querySelector(".state-dist-empty")) return 0;
+    var items = legendEl.querySelectorAll(".state-dist-legend-item");
+    if (!items.length) return 0;
+    var theme = getExportThemeColors();
+    var labelCol = theme.text;
+    var valueCol = theme.textMuted;
+    var rowFontPx = Math.max(11, Math.min(14, Math.round(width / 42)));
+    var rowH = rowFontPx + 6;
+    var padX = 12;
+    var padTop = 10;
+    var swatchW = 10;
+    var swatchH = 10;
+    var gap = 8;
+    var y = startY + padTop + rowH / 2;
+    ctx.textBaseline = "middle";
+    for (var i = 0; i < items.length; i++) {
+      var item = items[i];
+      var swEl = item.querySelector(".state-dist-legend-swatch");
+      var lblEl = item.querySelector(".state-dist-legend-label");
+      var valEl = item.querySelector(".state-dist-legend-value");
+      var col = "#60a5fa";
+      if (swEl) {
+        var st = swEl.getAttribute("style") || "";
+        var m = st.match(/background:\s*([^;]+)/i);
+        if (m) col = m[1].trim();
+        else col = getComputedStyle(swEl).backgroundColor || col;
+      }
+      var label = lblEl ? lblEl.textContent.trim() : "";
+      var val = valEl ? valEl.textContent.trim() : "";
+      ctx.fillStyle = col;
+      ctx.fillRect(padX + xOff, y - swatchH / 2, swatchW, swatchH);
+      var textX = padX + swatchW + gap + xOff;
+      var maxW = width - textX + xOff - padX;
+      ctx.font = rowFontPx + "px system-ui, -apple-system, \"Segoe UI\", sans-serif";
+      ctx.textAlign = "left";
+      ctx.fillStyle = labelCol;
+      var valPart = val ? "  " + val : "";
+      var valDraw = valPart ? truncateExportLegendText(ctx, valPart, maxW * 0.52) : "";
+      var labelBudget = maxW - (valDraw ? ctx.measureText(valDraw).width : 0);
+      var labelDraw = truncateExportLegendText(ctx, label, Math.max(8, labelBudget));
+      ctx.fillText(labelDraw, textX, y);
+      if (valDraw) {
+        ctx.fillStyle = valueCol;
+        ctx.fillText(valDraw, textX + ctx.measureText(labelDraw).width, y);
+      }
+      y += rowH;
+    }
+    return padTop + items.length * rowH + 10;
+  }
+
+  function legendColorFromDataset(ds) {
+    var c = ds.borderColor || ds.backgroundColor;
+    if (Array.isArray(c)) c = c[0];
+    return c || "#888";
+  }
+
+  /**
+   * Read legend label typography from chart.options (same object Chart.js uses on screen).
+   * Falls back to the same defaults as renderMcpTimelineChart (size 11, system-ui sans).
+   */
+  function resolveChartJsLegendLabelStyle(chart) {
+    var fontPx = 11;
+    var fontFamily = "system-ui, sans-serif";
+    var fontWeight = "";
+    var boxW = 14;
+    var boxH = 14;
+    var itemPad = 12;
+    try {
+      var L =
+        chart &&
+        chart.options &&
+        chart.options.plugins &&
+        chart.options.plugins.legend &&
+        chart.options.plugins.legend.labels;
+      if (L && typeof L === "object") {
+        var f = L.font;
+        if (typeof f === "object" && f !== null && typeof f !== "function") {
+          if (f.size != null) {
+            var sz = typeof f.size === "number" ? f.size : parseFloat(f.size);
+            if (!isNaN(sz) && sz > 0) fontPx = sz;
+          }
+          if (typeof f.family === "string" && f.family) fontFamily = f.family;
+          if (f.weight != null && f.weight !== "") fontWeight = String(f.weight);
+        }
+        if (typeof L.boxWidth === "number") boxW = L.boxWidth;
+        if (typeof L.boxHeight === "number") boxH = L.boxHeight;
+        if (typeof L.padding === "number") itemPad = L.padding;
+      }
+    } catch (e) {
+      /* keep defaults */
+    }
+    return {
+      fontPx: fontPx,
+      fontFamily: fontFamily,
+      fontWeight: fontWeight,
+      boxW: boxW,
+      boxH: boxH,
+      itemPad: itemPad
+    };
+  }
+
+  /**
+   * Layout matching MCP-by-year Chart.js legend: position bottom, usePointStyle + rect;
+   * width = chart canvas width (bitmap px).
+   */
+  function buildChartJsBottomLegendLayout(chart, width) {
+    if (!chart || !chart.data || !chart.data.datasets || !chart.data.datasets.length) {
+      return null;
+    }
+    var st = resolveChartJsLegendLabelStyle(chart);
+    var dss = chart.data.datasets;
+    var padLR = 12;
+    var padTop = 10;
+    var padBot = 10;
+    var boxW = st.boxW;
+    var boxH = st.boxH;
+    var itemPad = st.itemPad;
+    var fontPx = st.fontPx;
+    var swatchTextGap = Math.max(4, Math.round(fontPx * 0.45));
+    var rowGap = 8;
+    var wPart = st.fontWeight ? st.fontWeight + " " : "";
+    var fontCanvasString = wPart + fontPx + "px " + st.fontFamily;
+    var maxInnerW = Math.max(0, width - padLR * 2);
+    var tmp = document.createElement("canvas");
+    var tctx = tmp.getContext("2d");
+    if (!tctx) return null;
+    tctx.font = fontCanvasString;
+    var items = [];
+    for (var i = 0; i < dss.length; i++) {
+      var ds = dss[i];
+      var lab0 = ds.label != null ? String(ds.label) : "Series " + (i + 1);
+      var tw0 = tctx.measureText(lab0).width;
+      items.push({
+        labelFull: lab0,
+        color: legendColorFromDataset(ds),
+        itemW: boxW + swatchTextGap + tw0
+      });
+    }
+    var rows = [];
+    var line = [];
+    var lineUsed = 0;
+    for (var j = 0; j < items.length; j++) {
+      var raw = items[j];
+      var prefix = line.length ? itemPad : 0;
+      var lab = raw.labelFull;
+      var tw = tctx.measureText(lab).width;
+      var itemW = boxW + swatchTextGap + tw;
+      var avail = maxInnerW - lineUsed - prefix;
+      if (itemW > avail) {
+        lab = truncateExportLegendText(tctx, raw.labelFull, Math.max(8, avail - boxW - swatchTextGap));
+        tw = tctx.measureText(lab).width;
+        itemW = boxW + swatchTextGap + tw;
+      }
+      if (line.length && lineUsed + prefix + itemW > maxInnerW) {
+        rows.push(line);
+        line = [];
+        lineUsed = 0;
+        prefix = 0;
+        lab = raw.labelFull;
+        tw = tctx.measureText(lab).width;
+        itemW = boxW + swatchTextGap + tw;
+        avail = maxInnerW;
+        if (itemW > avail) {
+          lab = truncateExportLegendText(tctx, raw.labelFull, Math.max(8, avail - boxW - swatchTextGap));
+          tw = tctx.measureText(lab).width;
+          itemW = boxW + swatchTextGap + tw;
+        }
+      }
+      line.push({ label: lab, color: raw.color, itemW: itemW });
+      lineUsed += prefix + itemW;
+    }
+    if (line.length) rows.push(line);
+    var lineH = Math.max(boxH, Math.ceil(fontPx * 1.2));
+    var totalH =
+      padTop + rows.length * lineH + Math.max(0, rows.length - 1) * rowGap + padBot;
+    return {
+      totalH: totalH,
+      rows: rows,
+      padLR: padLR,
+      padTop: padTop,
+      padBot: padBot,
+      boxW: boxW,
+      boxH: boxH,
+      swatchTextGap: swatchTextGap,
+      itemPad: itemPad,
+      fontPx: fontPx,
+      fontCanvasString: fontCanvasString,
+      lineH: lineH,
+      rowGap: rowGap,
+      maxInnerW: maxInnerW
+    };
+  }
+
+  function drawChartJsBottomLegendOntoCanvas(ctx, startY, layout) {
+    if (!layout || !layout.rows || !layout.rows.length) return 0;
+    var theme = getExportThemeColors();
+    var y = startY + layout.padTop;
+    ctx.textBaseline = "middle";
+    for (var ri = 0; ri < layout.rows.length; ri++) {
+      var row = layout.rows[ri];
+      var rowW = 0;
+      for (var ci = 0; ci < row.length; ci++) {
+        if (ci) rowW += layout.itemPad;
+        rowW += row[ci].itemW;
+      }
+      var x = layout.padLR + Math.max(0, (layout.maxInnerW - rowW) / 2);
+      var lineY = y + layout.lineH / 2;
+      for (var cj = 0; cj < row.length; cj++) {
+        var it = row[cj];
+        if (cj > 0) x += layout.itemPad;
+        var boxTop = lineY - layout.boxH / 2;
+        ctx.fillStyle = it.color;
+        ctx.fillRect(x, boxTop, layout.boxW, layout.boxH);
+        ctx.font = layout.fontCanvasString || layout.fontPx + "px system-ui, sans-serif";
+        ctx.textAlign = "left";
+        ctx.fillStyle = theme.text;
+        ctx.fillText(it.label, x + layout.boxW + layout.swatchTextGap, lineY);
+        x += it.itemW;
+      }
+      y += layout.lineH;
+      if (ri < layout.rows.length - 1) y += layout.rowGap;
+    }
+    return layout.totalH;
+  }
+
+  /**
+   * [chart canvas][optional DOM or Chart.js dataset legend][footer with site label].
+   * opts: { legendEl?: Element, chartJs?: Chart } — use chartJs for line charts (dataset rows).
+   */
+  function composeChartPngExport(sourceCanvas, opts) {
+    opts = opts || {};
+    var legendEl = opts.legendEl || null;
+    var chartJs = opts.chartJs || null;
+    if (!sourceCanvas || !sourceCanvas.getContext) return null;
+    var sw = sourceCanvas.width;
+    var sh = sourceCanvas.height;
+    if (!sw || !sh) return null;
+    var legH = 0;
+    var chartLegendLayout = null;
+    if (legendEl) legH = measureDomLegendHeight(legendEl, sw);
+    if (!legH && chartJs) {
+      chartLegendLayout = buildChartJsBottomLegendLayout(chartJs, sw);
+      legH = chartLegendLayout && chartLegendLayout.totalH ? chartLegendLayout.totalH : 0;
+    }
+    var footerH = Math.max(26, Math.round(0.055 * sw));
+    var out = document.createElement("canvas");
+    out.width = sw;
+    out.height = sh + legH + footerH;
+    var ctx = out.getContext("2d");
+    if (!ctx) return null;
+    var theme = getExportThemeColors();
+    ctx.fillStyle = theme.surface;
+    ctx.fillRect(0, 0, sw, sh + legH + footerH);
+    try {
+      ctx.drawImage(sourceCanvas, 0, 0);
+    } catch (e) {
+      return null;
+    }
+    if (legendEl && legH > 0) {
+      ctx.fillStyle = theme.surface;
+      ctx.fillRect(0, sh, sw, legH);
+      ctx.strokeStyle = theme.border;
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(0, sh + 0.5);
+      ctx.lineTo(sw, sh + 0.5);
+      ctx.stroke();
+      drawDomLegendOntoCanvas(ctx, sw, sh, legendEl);
+    } else if (chartLegendLayout && legH > 0) {
+      ctx.fillStyle = theme.surface;
+      ctx.fillRect(0, sh, sw, legH);
+      ctx.strokeStyle = theme.border;
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(0, sh + 0.5);
+      ctx.lineTo(sw, sh + 0.5);
+      ctx.stroke();
+      drawChartJsBottomLegendOntoCanvas(ctx, sh, chartLegendLayout);
+    }
+    var footTop = sh + legH;
+    ctx.fillStyle = theme.surface;
+    ctx.fillRect(0, footTop, sw, footerH);
+    ctx.strokeStyle = theme.border;
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(0, footTop + 0.5);
+    ctx.lineTo(sw, footTop + 0.5);
+    ctx.stroke();
+    var fontPx = Math.max(12, Math.min(18, Math.round(sw / 36)));
+    ctx.font = "600 " + fontPx + "px system-ui, -apple-system, \"Segoe UI\", sans-serif";
+    ctx.fillStyle = theme.textMuted;
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText(PNG_EXPORT_FOOTER_TEXT, sw / 2, footTop + footerH / 2);
+    return out;
+  }
+
+  /**
+   * One PNG: three state-distribution pies (same layout as the popover), column titles, legends, footer.
+   */
+  function composeStateDistributionTriplePng(canvases /* [3] */, legendEls /* [3] */, titles) {
+    if (!canvases || canvases.length !== 3 || !legendEls || legendEls.length !== 3) return null;
+    var c0 = canvases[0];
+    var c1 = canvases[1];
+    var c2 = canvases[2];
+    if (!c0 || !c1 || !c2 || !c0.width || !c1.width || !c2.width || !c0.height || !c1.height || !c2.height) return null;
+    var cwDev = Math.max(c0.width, c1.width, c2.width);
+    var chDev = Math.max(c0.height, c1.height, c2.height);
+    var cwCss = Math.max(c0.clientWidth || 0, c1.clientWidth || 0, c2.clientWidth || 0);
+    var chCss = Math.max(c0.clientHeight || 0, c1.clientHeight || 0, c2.clientHeight || 0);
+    var dpr =
+      typeof window !== "undefined" && window.devicePixelRatio
+        ? window.devicePixelRatio
+        : 1;
+    if (!cwCss) cwCss = Math.max(1, Math.round(cwDev / dpr));
+    if (!chCss) chCss = Math.max(1, Math.round(chDev / dpr));
+    var cw = cwCss;
+    var ch = chCss;
+    var theme = getExportThemeColors();
+    var titleFontPx = Math.max(13, Math.min(17, Math.round(cw / 17)));
+    var titleH = titleFontPx + 14;
+    var gap = Math.max(16, Math.round(cw * 0.08));
+    var outerPad = Math.max(14, Math.round(cw * 0.05));
+    var legHs = [
+      measureDomLegendHeight(legendEls[0], cw),
+      measureDomLegendHeight(legendEls[1], cw),
+      measureDomLegendHeight(legendEls[2], cw)
+    ];
+    var mainH = titleH + ch + Math.max(legHs[0], legHs[1], legHs[2]);
+    var totalW = outerPad * 2 + 3 * cw + 2 * gap;
+    var footerH = Math.max(26, Math.round(0.045 * totalW));
+    var totalH = outerPad + mainH + footerH;
+    var out = document.createElement("canvas");
+    out.width = totalW;
+    out.height = totalH;
+    var ctx = out.getContext("2d");
+    if (!ctx) return null;
+    ctx.fillStyle = theme.surface;
+    ctx.fillRect(0, 0, totalW, totalH);
+    var titlesArr = titles || ["Students by State", "Records by State", "MCP by State"];
+    ctx.textBaseline = "middle";
+    for (var col = 0; col < 3; col++) {
+      var x0 = outerPad + col * (cw + gap);
+      var y0 = outerPad;
+      var cvs = canvases[col];
+      ctx.fillStyle = theme.text;
+      ctx.font = "600 " + titleFontPx + "px system-ui, -apple-system, \"Segoe UI\", sans-serif";
+      ctx.textAlign = "center";
+      ctx.fillText(titlesArr[col], x0 + cw / 2, y0 + titleH / 2);
+      try {
+        ctx.drawImage(cvs, 0, 0, cvs.width, cvs.height, x0, y0 + titleH, cw, ch);
+      } catch (e) {
+        return null;
+      }
+      var legY = y0 + titleH + ch;
+      if (legHs[col] > 0) {
+        ctx.strokeStyle = theme.border;
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(x0 + 0.5, legY + 0.5);
+        ctx.lineTo(x0 + cw - 0.5, legY + 0.5);
+        ctx.stroke();
+        drawDomLegendOntoCanvas(ctx, cw, legY, legendEls[col], x0);
+      }
+    }
+    var footTop = outerPad + mainH;
+    ctx.fillStyle = theme.surface;
+    ctx.fillRect(0, footTop, totalW, footerH);
+    ctx.strokeStyle = theme.border;
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(0, footTop + 0.5);
+    ctx.lineTo(totalW, footTop + 0.5);
+    ctx.stroke();
+    var footFontPx = Math.max(12, Math.min(18, Math.round(totalW / 50)));
+    ctx.font = "600 " + footFontPx + "px system-ui, -apple-system, \"Segoe UI\", sans-serif";
+    ctx.fillStyle = theme.textMuted;
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText(PNG_EXPORT_FOOTER_TEXT, totalW / 2, footTop + footerH / 2);
+    return out;
+  }
+
+  function downloadStateDistributionCombinedPng() {
+    var cvs = [
+      document.getElementById("state-dist-students-canvas"),
+      document.getElementById("state-dist-records-canvas"),
+      document.getElementById("state-dist-mcp-canvas")
+    ];
+    var legs = [
+      document.getElementById("state-dist-students-legend"),
+      document.getElementById("state-dist-records-legend"),
+      document.getElementById("state-dist-mcp-legend")
+    ];
+    for (var i = 0; i < 3; i++) {
+      if (!cvs[i] || !cvs[i].width || !cvs[i].height) {
+        alert("Charts are not ready to export yet.");
+        return false;
+      }
+    }
+    var composed = composeStateDistributionTriplePng(cvs, legs, null);
+    if (!composed) {
+      alert("Could not build the combined image.");
+      return false;
+    }
+    if (!downloadPngDataUrl(composed.toDataURL("image/png"), "state-distribution-by-state.png")) {
+      alert("Could not start download.");
+      return false;
+    }
+    return true;
+  }
+
+  function downloadCanvasAsPng(canvas, filename, legendEl) {
+    if (!canvas || !canvas.getContext) return false;
+    try {
+      if (!canvas.width || !canvas.height) return false;
+      var composed = composeChartPngExport(canvas, { legendEl: legendEl || null, chartJs: null });
+      if (!composed) return false;
+      return downloadPngDataUrl(composed.toDataURL("image/png"), filename);
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function chartJsExportCanvas(chart) {
+    if (!chart) return null;
+    return chart.canvas || (chart.ctx && chart.ctx.canvas) || null;
+  }
+
+  function chartJsEnsureSize(chart, canvas) {
+    if (!chart || !canvas || typeof chart.resize !== "function") return;
+    try {
+      var w = canvas.width;
+      var h = canvas.height;
+      if (w > 0 && h > 0) return;
+      var wrap =
+        canvas.closest(".mcp-timeline-chart-wrap") ||
+        canvas.closest(".attraction-chart-wrap") ||
+        canvas.parentElement;
+      if (wrap && wrap.getBoundingClientRect) {
+        var r = wrap.getBoundingClientRect();
+        var rw = Math.max(1, Math.floor(r.width));
+        var rh = Math.max(1, Math.floor(r.height));
+        try {
+          chart.resize(rw, rh);
+        } catch (resizeEx) {
+          chart.resize();
+        }
+      } else {
+        chart.resize();
+      }
+    } catch (e) { /* ignore */ }
+  }
+
+  function downloadChartJsInstanceAsPng(chart, filename) {
+    var canvas = chartJsExportCanvas(chart);
+    if (!chart || !canvas) return false;
+    var plugins = chart.options.plugins || (chart.options.plugins = {});
+    var legendOpts = plugins.legend || (plugins.legend = {});
+    var hadDisplayKey = Object.prototype.hasOwnProperty.call(legendOpts, "display");
+    var prevLegendDisplay = legendOpts.display;
+    legendOpts.display = false;
+    try {
+      chartJsEnsureSize(chart, canvas);
+      if (typeof chart.update === "function") chart.update("none");
+      if ((!canvas.width || !canvas.height) && typeof chart.resize === "function") {
+        chart.resize();
+        if (typeof chart.update === "function") chart.update("none");
+      }
+      if (!canvas.width || !canvas.height) return false;
+      var composed = composeChartPngExport(canvas, { legendEl: null, chartJs: chart });
+      if (!composed) return false;
+      return downloadPngDataUrl(composed.toDataURL("image/png"), filename);
+    } catch (e) {
+      return false;
+    } finally {
+      if (hadDisplayKey) legendOpts.display = prevLegendDisplay;
+      else delete legendOpts.display;
+      if (typeof chart.update === "function") chart.update("none");
+    }
   }
 
   /** USPS code -> full name for display (student or contest row); non-US strings unchanged. */
@@ -1255,6 +1891,7 @@
             "<div class=\"mcp-breakdown-popover-inner\">" +
               "<h3 class=\"mcp-breakdown-title\">" + escapeHtml(student.name || "Student") + " — MCP Breakdown — " + escapeHtml(formatMcpValue(mcpTotal)) + " pts</h3>" +
               "<canvas class=\"mcp-breakdown-canvas\" width=\"260\" height=\"260\"></canvas>" +
+              "<button type=\"button\" class=\"mcp-breakdown-download-png chart-png-download chart-png-download--icon\" aria-label=\"Download chart as PNG\">" + CHART_DOWNLOAD_ICON_HTML + "</button>" +
               "<div class=\"mcp-breakdown-legend\"></div>" +
               "<button type=\"button\" class=\"mcp-breakdown-close\" aria-label=\"Close\">×</button>" +
             "</div>" +
@@ -2134,7 +2771,16 @@
 
     if (total === 0) {
       var ctx0 = canvas.getContext("2d");
-      ctx0.clearRect(0, 0, canvas.width, canvas.height);
+      var dpr0 = window.devicePixelRatio || 1;
+      var z = 260;
+      canvas.width = z * dpr0;
+      canvas.height = z * dpr0;
+      canvas.style.width = z + "px";
+      canvas.style.height = z + "px";
+      ctx0.setTransform(1, 0, 0, 1, 0, 0);
+      ctx0.scale(dpr0, dpr0);
+      ctx0.fillStyle = getExportThemeColors().surface;
+      ctx0.fillRect(0, 0, z, z);
       legendEl.innerHTML = "<p class=\"state-dist-empty\">No data available.</p>";
       return;
     }
@@ -2153,7 +2799,9 @@
     canvas.style.height = cssSize + "px";
     var ctx = canvas.getContext("2d");
     ctx.scale(dpr, dpr);
-    ctx.clearRect(0, 0, cssSize, cssSize);
+    var pieBg = getExportThemeColors().surface;
+    ctx.fillStyle = pieBg;
+    ctx.fillRect(0, 0, cssSize, cssSize);
 
     var cx = cssSize / 2;
     var cy = cssSize / 2;
@@ -2169,21 +2817,30 @@
       ctx.closePath();
       ctx.fillStyle = PIE_COLORS[i % PIE_COLORS.length];
       ctx.fill();
-      ctx.strokeStyle = "#18181c";
+      var pieTheme = getExportThemeColors();
+      ctx.strokeStyle = pieTheme.border;
       ctx.lineWidth = 2;
       ctx.stroke();
 
-      if (slice.value / total > 0.05) {
-        var midAngle = startAngle + sliceAngle / 2;
-        var labelR = radius * 0.65;
-        var lx = cx + Math.cos(midAngle) * labelR;
-        var ly = cy + Math.sin(midAngle) * labelR;
-        ctx.fillStyle = "#fff";
-        ctx.font = "bold 11px system-ui, sans-serif";
-        ctx.textAlign = "center";
-        ctx.textBaseline = "middle";
-        ctx.fillText(Math.round((slice.value / total) * 100) + "%", lx, ly);
-      }
+      var share = slice.value / total;
+      var midAngle = startAngle + sliceAngle / 2;
+      var labelR = radius * 0.64;
+      var lx = cx + Math.cos(midAngle) * labelR;
+      var ly = cy + Math.sin(midAngle) * labelR;
+      var pctStr = (share * 100).toFixed(1) + "%";
+      var fontPx = share < 0.04 ? 9 : share < 0.1 ? 10 : 11;
+      if (sliceAngle < 0.18) fontPx = Math.min(fontPx, 9);
+      ctx.font = "bold " + fontPx + "px system-ui, sans-serif";
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.fillStyle = "#ffffff";
+      ctx.shadowColor = "rgba(0,0,0,0.5)";
+      ctx.shadowBlur = 3;
+      ctx.shadowOffsetX = 0;
+      ctx.shadowOffsetY = 1;
+      ctx.fillText(pctStr, lx, ly);
+      ctx.shadowBlur = 0;
+      ctx.shadowOffsetY = 0;
       startAngle += sliceAngle;
     }
 
@@ -2246,6 +2903,13 @@
     });
     if (closeBtn) closeBtn.addEventListener("click", closePopover);
     if (backdrop) backdrop.addEventListener("click", closePopover);
+
+    var stateDistAllPngBtn = document.getElementById("state-dist-download-all-png");
+    if (stateDistAllPngBtn) {
+      stateDistAllPngBtn.addEventListener("click", function () {
+        downloadStateDistributionCombinedPng();
+      });
+    }
   }
 
   function init() {
@@ -2658,8 +3322,9 @@
       if (card) exportStudentToPdf(card);
       return;
     }
-    if (target && target.classList && target.classList.contains("mcp-breakdown-btn")) {
-      var wrap = target.closest(".mcp-breakdown-wrap");
+    var breakdownOpenBtn = target && target.closest ? target.closest(".mcp-breakdown-btn") : null;
+    if (breakdownOpenBtn) {
+      var wrap = breakdownOpenBtn.closest(".mcp-breakdown-wrap");
       if (!wrap) return;
       var popover = wrap.querySelector(".mcp-breakdown-popover");
       var dataEl = wrap.querySelector(".mcp-breakdown-data");
@@ -2671,6 +3336,19 @@
         var contribData = JSON.parse(dataEl.textContent);
         drawPieChartOnElements(canvas, legend, contribData);
       } catch (e) { /* ignore */ }
+      return;
+    }
+    var breakdownPngBtn = target && target.closest ? target.closest(".mcp-breakdown-download-png") : null;
+    if (breakdownPngBtn) {
+      var popInner = breakdownPngBtn.closest(".mcp-breakdown-popover-inner");
+      var bdCanvas = popInner && popInner.querySelector(".mcp-breakdown-canvas");
+      var titleEl = popInner && popInner.querySelector(".mcp-breakdown-title");
+      var titleText = titleEl ? titleEl.textContent.trim() : "mcp-breakdown";
+      var fname = sanitizeDownloadFilename(titleText.split(/\s[—-]\s/)[0] || titleText, "mcp-breakdown") + "-breakdown";
+      var bdLeg = popInner && popInner.querySelector(".mcp-breakdown-legend");
+      if (!downloadCanvasAsPng(bdCanvas, fname + ".png", bdLeg)) {
+        alert("Could not export chart.");
+      }
       return;
     }
     if (target && target.classList && (target.classList.contains("mcp-breakdown-close") || target.classList.contains("mcp-breakdown-backdrop"))) {
