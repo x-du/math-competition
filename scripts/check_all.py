@@ -6,9 +6,10 @@ Run all data-quality and validation checks:
   2. find_incomplete_students.py — students missing state, gender, or grade
   3. check_csv_integrity.py — CSV row/column consistency
   4. check_student_ids.py — registry vs contest student_id consistency
-  5. check_hmmt_students.py — HMMT Nov Y vs Feb Y+1 overlapping students
-  6. check_pumac_students.py — PUMaC A vs B division overlaps by year
-  7. check_amo_jmo_same_year.py — no student wins both JMO and AMO in same year
+  5. check_student_name.py — contest student_name vs students.csv (and id/name warnings)
+  6. check_hmmt_students.py — HMMT Nov Y vs Feb Y+1 overlapping students
+  7. check_pumac_students.py — PUMaC A vs B division overlaps by year
+  8. check_amo_jmo_same_year.py — no student wins both JMO and AMO in same year
 
 Exits with status 1 if any script fails. Run from the repo root:
 
@@ -27,6 +28,10 @@ CHECKS = [
     ("find_incomplete_students.py", "Incomplete students (state/gender/grade)"),
     ("check_csv_integrity.py", "CSV integrity (row lengths)"),
     ("check_student_ids.py", "Student ID consistency (registry vs contests)"),
+    (
+        "check_student_name.py",
+        "Contest student_name vs students.csv (resolution + id/name warnings)",
+    ),
     ("check_hmmt_students.py", "HMMT Nov Y vs Feb Y+1 overlapping students"),
     ("check_pumac_students.py", "PUMaC A vs B division overlaps by year"),
     ("check_amo_jmo_same_year.py", "No student wins both JMO and AMO in same year"),

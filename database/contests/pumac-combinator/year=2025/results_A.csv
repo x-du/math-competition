@@ -1,5 +1,5 @@
 student_id,student_name,year,division,rank,score,p1,p2,p3,p4,p5,p6,p7,p8,mcp_rank
-47,Shaohuan (Nick) Zhang,2025,A,1,13.708,1,0,1,1,1,1,0,0,1
+47,Shaohuan Zhang,2025,A,1,13.708,1,0,1,1,1,1,0,0,1
 213,Darren Han,2025,A,2,13.262,1,1,1,0,1,1,0,0,2
 210,Eric Zhu,2025,A,3,11.405,1,1,1,1,1,0,0,0,4
 205,Mingyue Yang,2025,A,3,11.405,1,1,1,1,1,0,0,0,4

@@ -524,7 +524,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 557,Brantley Denson,Mississippi,,male,13
 558,Aaron Lin,Missouri,,male,12
 559,Lucas Zhang,Missouri,,male,13
-560,Alex Wang (MO),Missouri,,male,12
+560,Alex Wang,Missouri,,male,12
 561,Anthony Zhao,Missouri,,male,12
 562,Brendan Cowie,Montana,,male,13
 563,Adam Bukowski,Montana,,male,12
@@ -1622,7 +1622,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1707,Anton Levonian,New Jersey,,male,
 1708,Benjamin Walsh,Illinois,,male,
 1709,Sitong Yi,New York,,female,
-1710,Arsenii Zharkov,Virginia,,male,
+1710,Arsenii Zharkov,Virginia,,male,15
 1711,Aren,,,male,
 1712,Benjamin Wu,Pennsylvania,,male,
 1713,Harry Shen,New York,,male,
