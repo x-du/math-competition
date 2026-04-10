@@ -415,63 +415,6 @@
         </div>
         <div class="state-dist-popover-backdrop" aria-hidden="true"></div>
       </div>
-      <div id="mcp-timeline-popover" class="mcp-timeline-popover" hidden role="dialog" aria-labelledby="mcp-timeline-popover-title" aria-modal="true">
-        <div class="mcp-timeline-popover-inner">
-          <h3 id="mcp-timeline-popover-title" class="mcp-timeline-popover-title">Performance by year</h3>
-          <p class="mcp-timeline-desc">Each point is MCP as of that calendar year, computed from each result’s stored points using the same time decay rule. The <a href="articles/mcp.html" target="_blank" rel="noopener">MCP methodology</a> article has the full model. Add up to 20 students to compare.</p>
-          <div class="mcp-timeline-options" role="group" aria-labelledby="mcp-timeline-filters-heading">
-            <div class="mcp-timeline-filters-heading" id="mcp-timeline-filters-heading">Filters</div>
-            <div class="mcp-timeline-filter-row">
-              <label class="mcp-timeline-filter-label">
-                <input type="checkbox" id="mcp-timeline-apply-filters" checked />
-                <span>Apply competition filters to this chart</span>
-              </label>
-              <span id="mcp-timeline-contest-summary" class="mcp-timeline-contest-summary" aria-live="polite"></span>
-            </div>
-            <p class="mcp-timeline-filter-hint">When unchecked, every competition counts and the lines use standard MCP (not MCP-W), ignoring the competition filter and the student filters below the search box.</p>
-          </div>
-          <div class="mcp-timeline-add-wrap">
-            <div class="mcp-timeline-add-heading">
-              <label class="mcp-timeline-search-label" for="mcp-timeline-student-search">Add student</label>
-              <div class="mcp-timeline-add-actions">
-                <button type="button" id="mcp-timeline-top-10" class="mcp-timeline-add-action-btn" aria-label="Load the 10 students with highest MCP in the latest results year (respects competition filter, Girls / Grade / State below for ranking only, and chart MCP-W toggle)">Top 10</button>
-                <button type="button" id="mcp-timeline-clear-all" class="mcp-timeline-add-action-btn" aria-label="Remove all students from the chart" disabled>Clear all</button>
-              </div>
-            </div>
-            <input type="search" id="mcp-timeline-student-search" class="mcp-timeline-student-search" placeholder="Search by name…" autocomplete="off" aria-autocomplete="list" aria-controls="mcp-timeline-search-results" />
-            <ul id="mcp-timeline-search-results" class="mcp-timeline-search-results" role="listbox" hidden></ul>
-            <div class="leaderboard-filters-row leaderboard-filters-row--demographics awards-ranking-controls mcp-timeline-demographics-row" aria-label="Filter chart by student demographics">
-              <label class="girls-only-label">
-                <input type="checkbox" id="mcp-timeline-girls-only" /> Girls only
-              </label>
-              <span id="mcp-timeline-grade-filter-wrap" class="grade-filter-wrap">
-                <label class="grade-filter-label">
-                  <span class="grade-filter-caption">Grade:</span>
-                  <select id="mcp-timeline-grade-filter" class="grade-filter-select" aria-label="Filter chart by current grade">
-                    <option value="">All grades</option>
-                  </select>
-                </label>
-              </span>
-              <span id="mcp-timeline-state-filter-wrap" class="state-filter-wrap">
-                <label class="state-filter-label">
-                  <span class="state-filter-caption">State:</span>
-                  <select id="mcp-timeline-state-filter" class="state-filter-select" aria-label="Filter chart by state">
-                    <option value="">All states</option>
-                  </select>
-                </label>
-              </span>
-            </div>
-          </div>
-          <div id="mcp-timeline-chips" class="mcp-timeline-chips" aria-live="polite"></div>
-          <div class="mcp-timeline-chart-wrap">
-            <canvas id="mcp-timeline-canvas" aria-label="Line chart of MCP as of each calendar year"></canvas>
-          </div>
-          <p id="mcp-timeline-empty" class="mcp-timeline-empty" hidden>No MCP data to chart for the current year range.</p>
-          <p class="mcp-timeline-disclaimer">Disclaimer: This chart uses this database’s <a href="articles/mcp.html" target="_blank" rel="noopener">MCP (Math Competition Points)</a> model and partial competition coverage. It only contains partial data for the current year. Use the Filters toggle to match or ignore your competition filter. It is for exploration only and is not a complete measure of achievement. Data may be incomplete; do not rely on it as the sole basis for conclusions about any student or competition.</p>
-          <button type="button" class="mcp-timeline-popover-close" aria-label="Close">×</button>
-        </div>
-        <div class="mcp-timeline-popover-backdrop" aria-hidden="true"></div>
-      </div>
       <p class="awards-ranking-subtitle">Sorted by number of competition records in this database. Not a ranking of ability or talent.</p>
       <ol id="awards-ranking-list" class="awards-ranking-list" aria-busy="true">
         <script>
@@ -486,6 +429,64 @@
         </script>
       </ol>
     </section>
+
+    <div id="mcp-timeline-popover" class="mcp-timeline-popover" hidden role="dialog" aria-labelledby="mcp-timeline-popover-title" aria-modal="true">
+      <div class="mcp-timeline-popover-inner">
+        <h3 id="mcp-timeline-popover-title" class="mcp-timeline-popover-title">Performance by year</h3>
+        <p class="mcp-timeline-desc">Each point is MCP as of that calendar year, computed from each result’s stored points using the same time decay rule. The <a href="articles/mcp.html" target="_blank" rel="noopener">MCP methodology</a> article has the full model. Add up to 20 students to compare.</p>
+        <div class="mcp-timeline-options" role="group" aria-labelledby="mcp-timeline-filters-heading">
+          <div class="mcp-timeline-filters-heading" id="mcp-timeline-filters-heading">Filters</div>
+          <div class="mcp-timeline-filter-row">
+            <label class="mcp-timeline-filter-label">
+              <input type="checkbox" id="mcp-timeline-apply-filters" checked />
+              <span>Apply competition filters to this chart</span>
+            </label>
+            <span id="mcp-timeline-contest-summary" class="mcp-timeline-contest-summary" aria-live="polite"></span>
+          </div>
+          <p class="mcp-timeline-filter-hint">When unchecked, every competition counts and the lines use standard MCP (not MCP-W), ignoring the competition filter and the student filters below the search box.</p>
+        </div>
+        <div class="mcp-timeline-add-wrap">
+          <div class="mcp-timeline-add-heading">
+            <label class="mcp-timeline-search-label" for="mcp-timeline-student-search">Add student</label>
+            <div class="mcp-timeline-add-actions">
+              <button type="button" id="mcp-timeline-top-10" class="mcp-timeline-add-action-btn" aria-label="Load the 10 students with highest MCP in the latest results year (respects competition filter, Girls / Grade / State below for ranking only, and chart MCP-W toggle)">Top 10</button>
+              <button type="button" id="mcp-timeline-clear-all" class="mcp-timeline-add-action-btn" aria-label="Remove all students from the chart" disabled>Clear all</button>
+            </div>
+          </div>
+          <input type="search" id="mcp-timeline-student-search" class="mcp-timeline-student-search" placeholder="Search by name…" autocomplete="off" aria-autocomplete="list" aria-controls="mcp-timeline-search-results" />
+          <ul id="mcp-timeline-search-results" class="mcp-timeline-search-results" role="listbox" hidden></ul>
+          <div class="leaderboard-filters-row leaderboard-filters-row--demographics awards-ranking-controls mcp-timeline-demographics-row" aria-label="Filter chart by student demographics">
+            <label class="girls-only-label">
+              <input type="checkbox" id="mcp-timeline-girls-only" /> Girls only
+            </label>
+            <span id="mcp-timeline-grade-filter-wrap" class="grade-filter-wrap">
+              <label class="grade-filter-label">
+                <span class="grade-filter-caption">Grade:</span>
+                <select id="mcp-timeline-grade-filter" class="grade-filter-select" aria-label="Filter chart by current grade">
+                  <option value="">All grades</option>
+                </select>
+              </label>
+            </span>
+            <span id="mcp-timeline-state-filter-wrap" class="state-filter-wrap">
+              <label class="state-filter-label">
+                <span class="state-filter-caption">State:</span>
+                <select id="mcp-timeline-state-filter" class="state-filter-select" aria-label="Filter chart by state">
+                  <option value="">All states</option>
+                </select>
+              </label>
+            </span>
+          </div>
+        </div>
+        <div id="mcp-timeline-chips" class="mcp-timeline-chips" aria-live="polite"></div>
+        <div class="mcp-timeline-chart-wrap">
+          <canvas id="mcp-timeline-canvas" aria-label="Line chart of MCP as of each calendar year"></canvas>
+        </div>
+        <p id="mcp-timeline-empty" class="mcp-timeline-empty" hidden>No MCP data to chart for the current year range.</p>
+        <p class="mcp-timeline-disclaimer">Disclaimer: This chart uses this database’s <a href="articles/mcp.html" target="_blank" rel="noopener">MCP (Math Competition Points)</a> model and partial competition coverage. It only contains partial data for the current year. Use the Filters toggle to match or ignore your competition filter. It is for exploration only and is not a complete measure of achievement. Data may be incomplete; do not rely on it as the sole basis for conclusions about any student or competition.</p>
+        <button type="button" class="mcp-timeline-popover-close" aria-label="Close">×</button>
+      </div>
+      <div class="mcp-timeline-popover-backdrop" aria-hidden="true"></div>
+    </div>
 
     <div id="results" class="results"></div>
     <div id="mcp-pct-popover" class="mcp-pct-popover" hidden role="dialog" aria-labelledby="mcp-pct-popover-title">
