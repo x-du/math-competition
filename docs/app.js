@@ -1060,19 +1060,31 @@
     if (!dataUrl || !/^data:image\/png/i.test(String(dataUrl))) return false;
     var stem = String(filename || "chart").replace(/\.png$/i, "");
     var name = sanitizeDownloadFilename(stem, "chart") + ".png";
+    var ua = typeof navigator !== "undefined" ? navigator.userAgent || "" : "";
+    var isIOS =
+      /iPhone|iPad|iPod/i.test(ua) ||
+      (typeof navigator !== "undefined" &&
+        navigator.platform === "MacIntel" &&
+        navigator.maxTouchPoints > 1);
+    var isFileProtocol = typeof location !== "undefined" && location.protocol === "file:";
 
-    function triggerFromBlobUrl(objUrl) {
+    function triggerPngUrlDownload(url) {
+      if (isIOS) {
+        try {
+          window.open(url, "_blank", "noopener,noreferrer");
+        } catch (e) { /* ignore */ }
+      }
       var a = document.createElement("a");
-      a.href = objUrl;
+      a.href = url;
       a.download = name;
       a.rel = "noopener";
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
-      if (typeof location !== "undefined" && location.protocol === "file:") {
+      if (isFileProtocol && !isIOS) {
         try {
-          window.open(objUrl, "_blank", "noopener,noreferrer");
-        } catch (openErr) { /* ignore */ }
+          window.open(url, "_blank", "noopener,noreferrer");
+        } catch (e2) { /* ignore */ }
       }
     }
 
@@ -1088,20 +1100,14 @@
       for (var i = 0; i < len; i++) arr[i] = bin.charCodeAt(i);
       var blob = new Blob([arr], { type: "image/png" });
       var objUrl = URL.createObjectURL(blob);
-      triggerFromBlobUrl(objUrl);
+      triggerPngUrlDownload(objUrl);
       setTimeout(function () {
         try { URL.revokeObjectURL(objUrl); } catch (eRev) { /* ignore */ }
       }, 60000);
       return true;
     } catch (e1) {
       try {
-        var a = document.createElement("a");
-        a.href = dataUrl;
-        a.download = name;
-        a.rel = "noopener";
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
+        triggerPngUrlDownload(dataUrl);
         return true;
       } catch (e2) {
         return false;
