@@ -931,6 +931,18 @@
       if (e.key !== "Escape" || !mcpTimelinePopoverOpen) return;
       closePopover();
     });
+
+    var scheduleMcpTimelineChartResize = debounce(function () {
+      if (!mcpTimelinePopoverOpen || !mcpTimelineChartInstance) return;
+      var chart = mcpTimelineChartInstance;
+      if (typeof chart.resize !== "function") return;
+      chart.resize();
+      if (typeof chart.update === "function") chart.update("none");
+    }, 120);
+    window.addEventListener("resize", scheduleMcpTimelineChartResize);
+    window.addEventListener("orientationchange", function () {
+      setTimeout(scheduleMcpTimelineChartResize, 160);
+    });
   }
 
   /** Records for Performance-by-year chart and search; respects contest filter only when timeline “Apply filters” is on. */

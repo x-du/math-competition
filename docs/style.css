@@ -2041,6 +2041,9 @@ body.site-nav-open {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+  /* Keep description and controls at a stable size after rotate (esp. iOS Safari). */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 .mcp-timeline-popover-title {
