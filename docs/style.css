@@ -2086,6 +2086,13 @@ body.site-nav-open {
   font-weight: 600;
 }
 
+.state-dist-popover-hint {
+  margin: 0 2rem 0.75rem 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
 .state-dist-popover-toolbar {
   margin: 0 2rem 1rem 0;
 }
@@ -2238,6 +2245,37 @@ body.site-nav-open {
   color: var(--text);
   pointer-events: none;
   box-shadow: var(--shadow);
+}
+
+/* Click/tap: show scrollable student list (stays open when pointer leaves the state) */
+.state-dist-us-map-tooltip.state-dist-us-map-tooltip--names {
+  pointer-events: auto;
+  max-width: min(340px, calc(100vw - 16px));
+  max-height: min(320px, 55vh);
+  overflow-y: auto;
+  padding: 0.65rem 0.85rem;
+  text-align: left;
+}
+
+.state-dist-us-map-tooltip-head {
+  margin: 0 0 0.4rem;
+  font-size: 0.9rem;
+}
+
+.state-dist-us-map-tooltip-namelist {
+  margin: 0;
+  padding-left: 1.15rem;
+  line-height: 1.45;
+}
+
+.state-dist-us-map-tooltip-empty {
+  margin: 0;
+  max-width: 280px;
+}
+
+.state-dist-us-map-names-count {
+  font-weight: 500;
+  color: var(--text-muted);
 }
 
 .map-gradient-legend {

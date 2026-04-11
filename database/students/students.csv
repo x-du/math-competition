@@ -951,7 +951,6 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1000,Arden Lu,Massachusetts,,male,
 1001,Tommy Moseley,Kentucky,,male,
 1002,Alexander Ruan,California,,male,10
-1003,Ben Song,New Jersey,,male,
 1004,Arjun Suresh,Wisconsin,,male,
 1005,Anji Wang,"Ontario, Canada",,male,
 1006,David Wang,Maryland,,male,11
@@ -1217,7 +1216,6 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1278,Kaylyn Zhang,"Ontario, Canada",Kaylyn Jinglin Zhang,female,10
 1279,Jack Whitney-Epstein,Connecticut,Jack Whitney,male,12
 1281,Rick Zhou,Washington,,male,
-1282,Lewis Lou,Maryland,,male,
 1283,Zenghan (Yoll) Feng,Massachusetts,,male,
 1284,Jonathan Zhou,Connecticut,,male,10
 1285,Raine Ma,Connecticut,,male,11

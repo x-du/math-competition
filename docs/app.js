@@ -37,7 +37,7 @@
   var ratioSortAsc = false; // For MCP %: true = ascending (lowest first), false = descending (default)
 
   var stateDistPopoverOpen = false;
-  var latestStateDist = { students: {}, records: {}, mcp: {} };
+  var latestStateDist = { students: {}, records: {}, mcp: {}, studentNamesByState: {} };
   var mcpPctStatsCache = { key: null, html: "" };
   var mcpTimelinePopoverOpen = false;
   var mcpTimelineChartInstance = null;
@@ -2922,20 +2922,36 @@
     var studentsByState = {};
     var recordsByState = {};
     var mcpByState = {};
+    var studentNamesByState = {};
     for (var i = 0; i < counts.length; i++) {
       var state = expandUsStateAbbrev((counts[i].student.state || "").trim()) || "Unknown";
       studentsByState[state] = (studentsByState[state] || 0) + 1;
       recordsByState[state] = (recordsByState[state] || 0) + counts[i].recordsCount;
       var mcp = counts[i].mcpTotal != null ? Number(counts[i].mcpTotal) : 0;
       mcpByState[state] = (mcpByState[state] || 0) + mcp;
+      var nm = ((counts[i].student && counts[i].student.name) || "").trim() || "—";
+      if (!studentNamesByState[state]) studentNamesByState[state] = [];
+      studentNamesByState[state].push(nm);
+    }
+    for (var st in studentNamesByState) {
+      if (Object.prototype.hasOwnProperty.call(studentNamesByState, st)) {
+        studentNamesByState[st].sort(function (a, b) { return a.localeCompare(b, undefined, { sensitivity: "base" }); });
+      }
     }
     latestStateDist.students = studentsByState;
     latestStateDist.records = recordsByState;
     latestStateDist.mcp = mcpByState;
+    latestStateDist.studentNamesByState = studentNamesByState;
   }
 
-  function drawPieChartOnElements(canvas, legendEl, distMap, valueFormatter) {
+  function drawPieChartOnElements(canvas, legendEl, distMap, valueFormatter, enableStateDistSliceNames) {
     if (!canvas || !legendEl) return;
+
+    if (canvas._stateDistPieClickHandler) {
+      canvas.removeEventListener("click", canvas._stateDistPieClickHandler);
+      canvas._stateDistPieClickHandler = null;
+    }
+    canvas.style.cursor = "";
 
     var entries = [];
     for (var k in distMap) {
@@ -2961,6 +2977,7 @@
       ctx0.fillStyle = getExportThemeColors().surface;
       ctx0.fillRect(0, 0, z, z);
       legendEl.innerHTML = "<p class=\"state-dist-empty\">No data available.</p>";
+      canvas._stateDistPieHit = null;
       return;
     }
 
@@ -2986,10 +3003,12 @@
     var cy = cssSize / 2;
     var radius = cssSize / 2 - 8;
     var startAngle = -Math.PI / 2;
+    var segmentsMeta = [];
 
     for (var i = 0; i < main.length; i++) {
       var slice = main[i];
       var sliceAngle = (slice.value / total) * 2 * Math.PI;
+      segmentsMeta.push({ label: slice.label, sliceAngle: sliceAngle });
       ctx.beginPath();
       ctx.moveTo(cx, cy);
       ctx.arc(cx, cy, radius, startAngle, startAngle + sliceAngle);
@@ -3036,6 +3055,57 @@
       );
     }
     legendEl.innerHTML = legendHtml.join("");
+
+    if (enableStateDistSliceNames) {
+      var otherStateLabels = [];
+      for (var oi = MAX_SLICES; oi < entries.length; oi++) {
+        otherStateLabels.push(entries[oi].label);
+      }
+      canvas._stateDistPieHit = {
+        cssSize: cssSize,
+        cx: cx,
+        cy: cy,
+        radius: radius,
+        segments: segmentsMeta,
+        otherStateLabels: otherStateLabels
+      };
+      canvas.style.cursor = "pointer";
+      canvas._stateDistPieClickHandler = function (ev) {
+        ev.stopPropagation();
+        var meta = canvas._stateDistPieHit;
+        if (!meta || !meta.segments || !meta.segments.length) return;
+        var rect = canvas.getBoundingClientRect();
+        var px = ((ev.clientX - rect.left) / rect.width) * meta.cssSize;
+        var py = ((ev.clientY - rect.top) / rect.height) * meta.cssSize;
+        var dx = px - meta.cx;
+        var dy = py - meta.cy;
+        var dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist > meta.radius) return;
+        var ang = Math.atan2(dy, dx);
+        var fromTop = ang + Math.PI / 2;
+        if (fromTop < 0) fromTop += 2 * Math.PI;
+        if (fromTop >= 2 * Math.PI - 1e-10) fromTop -= 2 * Math.PI;
+        var cum = 0;
+        var idx = -1;
+        for (var si = 0; si < meta.segments.length; si++) {
+          var sa = meta.segments[si].sliceAngle;
+          var nextCum = cum + sa;
+          var last = si === meta.segments.length - 1;
+          if (fromTop >= cum - 1e-9 && (last ? fromTop <= nextCum + 1e-7 : fromTop < nextCum - 1e-9)) {
+            idx = si;
+            break;
+          }
+          cum = nextCum;
+        }
+        if (idx < 0) return;
+        var sliceLabel = meta.segments[idx].label;
+        var got = getStudentNamesForStateDistSlice(sliceLabel, meta.otherStateLabels);
+        showStateDistStudentNamesTooltip(ev.clientX, ev.clientY, got.title, got.names);
+      };
+      canvas.addEventListener("click", canvas._stateDistPieClickHandler);
+    } else {
+      canvas._stateDistPieHit = null;
+    }
   }
 
   function interpolateUsMapColor(t) {
@@ -3146,6 +3216,119 @@
     }
   }
 
+  var stateDistMapOutsideClickBound = false;
+  var stateDistMapTooltipClickStopBound = false;
+
+  function clearStateDistMapStudentNameTooltip() {
+    var tip = document.getElementById("state-dist-us-map-tooltip");
+    if (tip) {
+      tip.classList.remove("state-dist-us-map-tooltip--names");
+      tip.textContent = "";
+      tip.innerHTML = "";
+      tip.style.display = "none";
+      tip.style.pointerEvents = "";
+      tip.setAttribute("aria-hidden", "true");
+    }
+  }
+
+  function bindStateDistMapOutsideDismiss() {
+    if (stateDistMapOutsideClickBound) return;
+    stateDistMapOutsideClickBound = true;
+    document.addEventListener("click", function (ev) {
+      if (!stateDistPopoverOpen) return;
+      var el = ev.target;
+      if (!el || !el.closest) return;
+      if (
+        el.closest(".state-dist-us-map-wrap") ||
+        el.closest(".state-dist-charts") ||
+        el.closest("#state-dist-us-map-tooltip")
+      ) {
+        return;
+      }
+      clearStateDistMapStudentNameTooltip();
+    });
+  }
+
+  /** Student list for a pie slice; "Other" merges names from states rolled past MAX_SLICES. */
+  function getStudentNamesForStateDistSlice(sliceLabel, otherStateLabels) {
+    if (sliceLabel === "Other" && otherStateLabels && otherStateLabels.length) {
+      var seen = {};
+      var all = [];
+      for (var i = 0; i < otherStateLabels.length; i++) {
+        var st = otherStateLabels[i];
+        var arr =
+          latestStateDist.studentNamesByState && latestStateDist.studentNamesByState[st]
+            ? latestStateDist.studentNamesByState[st]
+            : [];
+        for (var j = 0; j < arr.length; j++) {
+          var nm = arr[j];
+          if (!seen[nm]) {
+            seen[nm] = true;
+            all.push(nm);
+          }
+        }
+      }
+      all.sort(function (a, b) {
+        return a.localeCompare(b, undefined, { sensitivity: "base" });
+      });
+      return {
+        title: "Other (" + otherStateLabels.length + " states)",
+        names: all
+      };
+    }
+    var names =
+      latestStateDist.studentNamesByState && latestStateDist.studentNamesByState[sliceLabel]
+        ? latestStateDist.studentNamesByState[sliceLabel].slice()
+        : [];
+    return { title: sliceLabel, names: names };
+  }
+
+  function showStateDistStudentNamesTooltip(clientX, clientY, title, names) {
+    bindStateDistMapOutsideDismiss();
+    var tooltip = document.getElementById("state-dist-us-map-tooltip");
+    if (!tooltip) return;
+    if (!stateDistMapTooltipClickStopBound) {
+      stateDistMapTooltipClickStopBound = true;
+      tooltip.addEventListener("click", function (e) {
+        e.stopPropagation();
+      });
+    }
+    tooltip.classList.add("state-dist-us-map-tooltip--names");
+    if (!names || !names.length) {
+      tooltip.innerHTML =
+        "<p class=\"state-dist-us-map-tooltip-empty\">" +
+        escapeHtml(title) +
+        ": no students in this leaderboard view.</p>";
+    } else {
+      var listHtml = names
+        .map(function (n) {
+          return "<li>" + escapeHtml(n) + "</li>";
+        })
+        .join("");
+      tooltip.innerHTML =
+        "<div class=\"state-dist-us-map-tooltip-head\">" +
+        "<strong>" +
+        escapeHtml(title) +
+        "</strong> " +
+        "<span class=\"state-dist-us-map-names-count\">(" +
+        names.length +
+        ")</span></div>" +
+        "<ul class=\"state-dist-us-map-tooltip-namelist\">" +
+        listHtml +
+        "</ul>";
+    }
+    tooltip.style.display = "block";
+    tooltip.style.position = "fixed";
+    tooltip.style.pointerEvents = "auto";
+    var approxW = 340;
+    var approxH = 280;
+    tooltip.style.left =
+      Math.max(8, Math.min(clientX + 12, window.innerWidth - approxW - 8)) + "px";
+    tooltip.style.top =
+      Math.max(8, Math.min(clientY + 12, window.innerHeight - approxH - 8)) + "px";
+    tooltip.setAttribute("aria-hidden", "false");
+  }
+
   function ensureStateDistUsMap() {
     if (typeof d3 === "undefined" || typeof topojson === "undefined" || !topojson.feature) return;
     var container = document.getElementById("state-dist-us-map-container");
@@ -3158,6 +3341,7 @@
     container.setAttribute("data-map-loading", "1");
     container.innerHTML = "<p class=\"state-dist-empty\">Loading map…</p>";
     var tooltip = document.getElementById("state-dist-us-map-tooltip");
+    bindStateDistMapOutsideDismiss();
     fetch("https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json")
       .then(function (r) {
         if (!r.ok) throw new Error(String(r.status));
@@ -3184,6 +3368,7 @@
           .attr("d", path)
           .on("mouseover", function (ev, d) {
             if (!tooltip) return;
+            if (tooltip.classList.contains("state-dist-us-map-tooltip--names")) return;
             var fips = String(d.id).padStart(2, "0");
             var stateName = FIPS_TO_STATE[fips] || ("State " + fips);
             var count = 0;
@@ -3198,15 +3383,26 @@
             tooltip.setAttribute("aria-hidden", "false");
           })
           .on("mouseout", function () {
-            if (tooltip) {
-              tooltip.style.display = "none";
-              tooltip.setAttribute("aria-hidden", "true");
-            }
+            if (!tooltip) return;
+            if (tooltip.classList.contains("state-dist-us-map-tooltip--names")) return;
+            tooltip.style.display = "none";
+            tooltip.setAttribute("aria-hidden", "true");
           })
           .on("mousemove", function (ev) {
             if (!tooltip) return;
+            if (tooltip.classList.contains("state-dist-us-map-tooltip--names")) return;
             tooltip.style.left = ev.pageX + 12 + "px";
             tooltip.style.top = ev.pageY + 12 + "px";
+          })
+          .on("click", function (ev, d) {
+            ev.stopPropagation();
+            var fipsClick = String(d.id).padStart(2, "0");
+            var stateNameClick = FIPS_TO_STATE[fipsClick] || ("State " + fipsClick);
+            var names =
+              latestStateDist.studentNamesByState && latestStateDist.studentNamesByState[stateNameClick]
+                ? latestStateDist.studentNamesByState[stateNameClick].slice()
+                : [];
+            showStateDistStudentNamesTooltip(ev.clientX, ev.clientY, stateNameClick, names);
           });
         var labelsG = g.append("g").attr("class", "state-dist-us-map-labels");
         labelsG.selectAll("text")
@@ -3238,18 +3434,23 @@
     drawPieChartOnElements(
       document.getElementById("state-dist-students-canvas"),
       document.getElementById("state-dist-students-legend"),
-      latestStateDist.students
+      latestStateDist.students,
+      undefined,
+      true
     );
     drawPieChartOnElements(
       document.getElementById("state-dist-records-canvas"),
       document.getElementById("state-dist-records-legend"),
-      latestStateDist.records
+      latestStateDist.records,
+      undefined,
+      true
     );
     drawPieChartOnElements(
       document.getElementById("state-dist-mcp-canvas"),
       document.getElementById("state-dist-mcp-legend"),
       latestStateDist.mcp,
-      function (v) { return Math.round(v).toLocaleString() + " MCP"; }
+      function (v) { return Math.round(v).toLocaleString() + " MCP"; },
+      true
     );
     syncStateDistUsMapColors();
   }
@@ -3277,6 +3478,7 @@
       popover.hidden = true;
       trigger.setAttribute("aria-expanded", "false");
       stateDistPopoverOpen = false;
+      clearStateDistMapStudentNameTooltip();
     }
 
     trigger.addEventListener("click", function () {
