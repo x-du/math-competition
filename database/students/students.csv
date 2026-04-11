@@ -60,7 +60,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 60,Haotian Zhou,China,,male,
 61,Kailin Yang,China,,male,
 62,Evan Fan,New Hampshire,,male,12
-64,Michael Pok Hon Chen,New Jersey,,male,
+64,Michael Pok Hon Chen,New Jersey,Michael Chen,male,
 65,Selena Ge,Massachusetts,,female,10
 67,Andrew Shen,Texas,,male,11
 68,Xilong Lin,California,,male,
@@ -304,7 +304,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 331,Ritwin Narra,California,,male,13
 332,Huaiyu Chen,California,,male,
 333,Chuang Yuan,China,,male,
-334,HAOCHEN SUN,New Jersey,,male,
+334,Haochen Sun,New Jersey,,male,
 335,Yuxin Fu,"Ontario, Canada",,male,
 336,Lianshun Yang,,,male,
 337,Emily Yu,New York,,female,13
@@ -2513,7 +2513,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 2607,Ritvik Ranjan,Georgia,,male,
 2608,Roy Wang,Illinois,,male,
 2609,Albert Ding,Tennessee,,male,
-2610,Michael Chen,North Carolina,,male,
+2610,Michael Chen,North Carolina,,male,12
 2611,Redger Xu,California,,male,
 2612,Allen Li,New York,,male,
 2613,Brian Tay,Virginia,,male,
@@ -3906,7 +3906,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 4002,Ewan Thomson,California,,male,
 4003,Haisley Flanagan,California,,female,
 4004,Kavya Iyer-Srinivasan,California,,female,
-4005,Michael Chen,Massachusetts,,male,
+4005,Michael Chen,Massachusetts,,male,10
 4006,Mihika Nayyar,California,,female,
 4007,Mira Sen,California,,female,
 4008,Moksha Bhatla,Illinois,,female,
@@ -4110,7 +4110,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 4206,Lohith Seera,Illinois,,male,
 4207,Lola Cheng,Washington,,female,
 4208,Mark Raspopov,Massachusetts,,male,
-4209,Michael Chen,Michigan,,male,
+4209,Michael Chen,Michigan,,male,9
 4210,Peter Aravin,California,,male,
 4211,Stella Wang,Washington,,female,
 4212,Stephane Dragusanu,Washington,,male,
@@ -5631,7 +5631,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 5728,Shiven Brahmkshatriya,Connecticut,,male,
 5729,Megha Sandrapaty,Florida,,female,
 5730,YoYo Qu,Florida,,male,
-5731,Michael Chen,Illinois,,male,
+5731,Michael Chen,Illinois,,male,10
 5732,Tanisha Lalwani,Illinois,,female,
 5733,David Wang,Massachusetts,,male,
 5734,Shaurya Bedre,Massachusetts,,male,
@@ -6182,3 +6182,4 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6280,Hans Zhong-Hong Chen,California,,male,
 6281,Kevin Zhang,,,male,
 6282,Timothy Li,California,,male,
+6283,Michael Chen,Kentucky,,male,11
