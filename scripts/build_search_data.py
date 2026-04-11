@@ -187,7 +187,7 @@ def humanize_contest(slug: str) -> str:
 
 
 def load_contests():
-    """Load contests.csv -> ({ folder_name: { contest_name, description, website } }, [folder_name order])."""
+    """Load contests.csv -> ({ folder_name: { contest_name, contest_name_long, description, website, ... } }, [order])."""
     by_slug = {}
     order = []
     if not CONTESTS_CSV.exists():
@@ -204,6 +204,7 @@ def load_contests():
             weight_str = (row.get("mcp_weight") or "").strip()
             by_slug[folder] = {
                 "contest_name": (row.get("contest_name") or "").strip(),
+                "contest_name_long": (row.get("contest_name_long") or "").strip(),
                 "description": (row.get("description") or "").strip(),
                 "website": (row.get("website") or "").strip(),
                 "mcp_tier": int(tier_str) if tier_str else None,
@@ -299,16 +300,6 @@ def main() -> None:
             min_pts_for_mcp = None
 
         for row in rows:
-            if slug in BMT_CONTESTS:
-                mcp_rank_str = (row.get("mcp_rank") or "").strip()
-                if not mcp_rank_str:
-                    continue
-                try:
-                    mcp_rank_val = float(mcp_rank_str)
-                except (ValueError, TypeError):
-                    continue
-                if mcp_rank_val > 0.2 * N:
-                    continue
             sid = row.get("student_id") or row.get("student_id ")
             if sid is not None:
                 sid = str(sid).strip()
@@ -350,12 +341,15 @@ def main() -> None:
 
             # Compute mcp_points from mcp_rank if MCP-eligible
             mcp_rank_str = (row.get("mcp_rank") or "").strip()
+            award_raw = (row.get("award") or "").strip()
+            # BMT only: broad tiers whose award text includes "Top 50%" do not earn MCP.
+            bmt_no_mcp = slug in BMT_CONTESTS and "top 50%" in award_raw.casefold()
             if mcp_tier and mcp_weight:
                 pts = None
                 if slug in GRAND_SLAM_SLUGS:
-                    award = (row.get("award") or "").strip()
+                    award = award_raw
                     pts = compute_grand_slam_mcp_points(award, mcp_tier, mcp_weight)
-                if pts is None and mcp_rank_str and N > 0:
+                if pts is None and mcp_rank_str and N > 0 and not bmt_no_mcp:
                     mcp_rank = float(mcp_rank_str)
                     pts = compute_mcp_points(
                         mcp_rank, N, mcp_tier, mcp_weight, min_pts=min_pts_for_mcp

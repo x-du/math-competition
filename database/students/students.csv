@@ -137,6 +137,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 149,Suyash Pandit,Oregon,,male,15
 150,Kevin Joshua Wu,Maryland,Kevin Wu,male,15
 151,Aaron Guo,Texas,,male,15
+152,Derek Liu,California,,male,
 153,Ray Tang,Texas,,male,15
 154,Boris Tsvetanov Gachevski,Bulgaria,,male,
 155,Derek Liu,California,,male,15
@@ -164,7 +165,9 @@ student_id,student_name,state,alias,gender,grade_in_2026
 180,Andrew Gu,California,,male,16
 181,Raymond Feng,California,,male,
 183,Johan Ko,California,,male,
-184,Kevin Zhao,Massachusetts,,male,12
+184,Kevin Zhao,Massachusetts,,male,16
+185,Kevin Zhao,New Jersey,,male,
+186,Kevin Zhao,Louisiana,,male,12 
 187,Kenneth Ang Chen,Minnesota,,male,
 189,Yuuki Sawanoi,Washington,,male,15
 190,Edward Yu,Washington,,male,15
@@ -233,7 +236,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 259,Maitian Sha,New Jersey,,male,12
 261,Dalbert Wu,California,,male,11
 262,Aryan Raj,Virginia,,male,12
-263,Jonathan Liu,Massachusetts,,male,14
+263,Jonathan Liu,Massachusetts,,male,11
 264,Chloe Weng,Texas,,female,12
 265,James Wu,Massachusetts,,male,
 266,Ethan Imanuel,New Jersey,,male,9
@@ -836,8 +839,9 @@ student_id,student_name,state,alias,gender,grade_in_2026
 875,Rohan Pavuluri,Michigan,,male,
 876,Aiden Dai,New York,,male,
 877,Heyang Felicity Ni,New Jersey,,male,
-878,Andrew Wen,California,,male,15
+878,Andrew Wen,Massachusetts,,male,15
 879,Andy Xu,New Jersey,,male,
+880,Andrew Wen,California,,male,
 881,Yichen Cedric Xiao,New York,,male,
 882,Benjamin Chen,Illinois,,male,15
 884,Shihan Kanungo,California,,male,12
@@ -1450,7 +1454,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1520,Xuanyi Zhang,California,,male,
 1521,Harry Haiwen Gao,New York,Harry Gao,male,11
 1523,JUNNING SHAO,,,male,
-1524,David Zhang,New Jersey,,male,13
+1524,David Zhang,New Jersey,,male,
 1525,Aaron Xie,New Jersey,,male,
 1526,Patrick Liang,California,,male,
 1528,Huanqi Zhang,Massachusetts,,male,10
@@ -1612,8 +1616,9 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1696,Derek Yimo Gao,Massachusetts,,male,
 1697,Charles Chen,Massachusetts,,male,
 1698,Xuancheng Li,California,,male,
-1699,David Li,California,,male,15
+1699,David Li,California,,male,
 1700,Om Mahesh,California,,male,
+1701,David Li,Maryland,,male,15
 1702,Justin Mo,New York,,male,
 1703,Benjamin Witzel,Illinois,,male,
 1704,Michael Voigt,Massachusetts,,male,
@@ -6177,3 +6182,5 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6278,Eitan Daw-Niv,New Jersey,,male,
 6279,Leon Wu,New Jersey,,male,
 6280,Hans Zhong-Hong Chen,California,,male,
+6281,Kevin Zhang,,,male,
+6282,Timothy Li,California,,male,

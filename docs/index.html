@@ -189,7 +189,17 @@
           >
             Competition filter
           </button>
-          <span id="contest-filter-summary" class="contest-filter-summary">All selected</span>
+          <span id="contest-filter-summary" class="contest-filter-summary">All competitions selected</span>
+          <label class="competition-year-filter-label">
+            <span class="competition-year-filter-caption">Year:</span>
+            <select
+              id="competition-year-filter"
+              class="competition-year-filter-select"
+              aria-label="Filter by competition season year"
+            >
+              <option value="">All years</option>
+            </select>
+          </label>
           <div
             id="contest-filter-popover"
             class="contest-filter-popover"
@@ -199,96 +209,7 @@
           >
             <div class="contest-filter-popover-inner">
               <h3 id="contest-filter-popover-title" class="contest-filter-popover-title">Filter by competition</h3>
-              <div id="contest-filter" class="contest-filter-options" aria-label="Filter by competition">
-                <label class="contest-filter-option">
-                  <input type="checkbox" value="all" checked>
-                  All
-                </label>
-                <label class="contest-filter-option">
-                  <input type="checkbox" value="usamo">
-                  USAMO
-                </label>
-                <label class="contest-filter-option">
-                  <input type="checkbox" value="usajmo">
-                  USAJMO
-                </label>
-                <label class="contest-filter-option">
-                  <input type="checkbox" value="imo">
-                  IMO
-                </label>
-                <label class="contest-filter-option">
-                  <input type="checkbox" value="rmm">
-                  RMM
-                </label>
-                <label class="contest-filter-option">
-                  <input type="checkbox" value="egmo">
-                  EGMO
-                </label>
-                <label class="contest-filter-option">
-                  <input type="checkbox" value="hmmt-feb">
-                  HMMT Feb
-                </label>
-                <label class="contest-filter-option">
-                  <input type="checkbox" value="hmmt-nov">
-                  HMMT Nov
-                </label>
-                <label class="contest-filter-option">
-                  <input type="checkbox" value="pumac-a">
-                  PUMaC Div A
-                </label>
-                <label class="contest-filter-option">
-                  <input type="checkbox" value="pumac-b">
-                  PUMaC Div B
-                </label>
-                <label class="contest-filter-option">
-                  <input type="checkbox" value="mathcounts">
-                  Mathcounts
-                </label>
-                <label class="contest-filter-option">
-                  <input type="checkbox" value="cmimc">
-                  CMIMC
-                </label>
-                <label class="contest-filter-option">
-                  <input type="checkbox" value="arml">
-                  ARML
-                </label>
-                <label class="contest-filter-option">
-                  <input type="checkbox" value="dmm">
-                  DMM
-                </label>
-                <label class="contest-filter-option">
-                  <input type="checkbox" value="cmm">
-                  CMM
-                </label>
-                <label class="contest-filter-option">
-                  <input type="checkbox" value="mmaths">
-                  MMATHS
-                </label>
-                <label class="contest-filter-option">
-                  <input type="checkbox" value="mpfg">
-                  MPFG
-                </label>
-                <label class="contest-filter-option">
-                  <input type="checkbox" value="mpfg-olympiad">
-                  MPFG Olympiad
-                </label>
-                <label class="contest-filter-option">
-                  <input type="checkbox" value="bamo-8">
-                  BAMO-8
-                </label>
-                <label class="contest-filter-option">
-                  <input type="checkbox" value="bamo-12">
-                  BAMO-12
-                </label>
-                <label class="contest-filter-option">
-                  <input type="checkbox" value="brumo-a">
-                  BrUMO Div A
-                </label>
-                <label class="contest-filter-option">
-                  <input type="checkbox" value="bmt">
-                  BMT
-                </label>
-              </div>
+              <div id="contest-filter" class="contest-filter-options" aria-label="Filter by competition"></div>
               <button type="button" class="contest-filter-popover-close" aria-label="Close">×</button>
             </div>
             <div class="contest-filter-popover-backdrop" aria-hidden="true"></div>
@@ -412,6 +333,15 @@
               <div id="state-dist-mcp-legend" class="state-dist-legend"></div>
             </div>
           </div>
+          <div class="state-dist-map-section">
+            <h4 class="state-dist-chart-title">US map — students per state</h4>
+            <p class="state-dist-map-note">Same student counts as the pie chart above. Lighter blue = more students in this database.</p>
+            <div class="state-dist-us-map-wrap">
+              <div id="state-dist-us-map-container" class="state-dist-us-map-container"></div>
+              <div id="state-dist-us-map-gradient-legend" class="map-gradient-legend" hidden></div>
+            </div>
+            <div id="state-dist-us-map-tooltip" class="state-dist-us-map-tooltip" style="display:none" aria-hidden="true"></div>
+          </div>
           <button type="button" class="state-dist-popover-close" aria-label="Close">×</button>
         </div>
         <div class="state-dist-popover-backdrop" aria-hidden="true"></div>
@@ -531,6 +461,9 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+  <script src="contest-filter.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

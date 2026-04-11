@@ -23,11 +23,11 @@
   var gradeFilterWrapEl = document.getElementById("grade-filter-wrap");
   var stateFilterEl = document.getElementById("state-filter");
   var contestFilterWrapEl = document.getElementById("contest-filter-wrap");
-  var contestFilterEl = document.getElementById("contest-filter");
   var searchApplyLeaderboardFiltersEl = document.getElementById("search-apply-leaderboard-filters");
   var searchApplyFiltersWrapEl = document.getElementById("search-apply-filters-wrap");
   var contestFilterTriggerEl = document.getElementById("contest-filter-trigger");
-  var contestFilterSummaryEl = document.getElementById("contest-filter-summary");
+  var contestFilterPopoverEl = document.getElementById("contest-filter-popover");
+  var competitionYearFilterEl = document.getElementById("competition-year-filter");
   var sortToggleEl = document.getElementById("sort-toggle");
   var mcpPctSortRowEl = document.getElementById("mcp-pct-sort-row");
   var mcpPctSortBtnEl = document.getElementById("mcp-pct-sort-btn");
@@ -43,11 +43,12 @@
   var mcpTimelineChartInstance = null;
   var mcpTimelineSelectedIds = [];
   var MCP_TIMELINE_MAX_STUDENTS = 20;
-  var SEARCH_RESULTS_DISPLAY_LIMIT = 20;
+  var SEARCH_RESULTS_DISPLAY_LIMIT = 10;
   var openMcpTimelinePopover = null;
   var mcpTimelineApplyFiltersEl = document.getElementById("mcp-timeline-apply-filters");
   var savedFilters = {};
   var searchValueBeforeStudentCard = null;
+  var contestFilter = MathCompContestFilter.create(null);
 
   var FILTERS_KEY = "mathcomp_filters";
 
@@ -115,9 +116,10 @@
         sortMode: sortMode,
         ratioSortAsc: ratioSortAsc,
         search: searchEl ? searchEl.value : "",
-        contest: getActiveContestFilterValues(),
+        contest: contestFilter.getActiveContestFilterValues(),
         searchApplyLeaderboardFilters: searchApplyLeaderboardFiltersEl ? searchApplyLeaderboardFiltersEl.checked : true,
-        mcpTimelineApplyFilters: mcpTimelineApplyFiltersEl ? mcpTimelineApplyFiltersEl.checked : true
+        mcpTimelineApplyFilters: mcpTimelineApplyFiltersEl ? mcpTimelineApplyFiltersEl.checked : true,
+        competitionYear: competitionYearFilterEl ? competitionYearFilterEl.value : ""
       };
       savedFilters = f;
       localStorage.setItem(FILTERS_KEY, JSON.stringify(f));
@@ -141,14 +143,8 @@
           opts[oi].classList.toggle("sort-toggle-option--active", opts[oi].getAttribute("data-mode") === sortMode);
         }
       }
-      if (contestFilterEl && f.contest && Array.isArray(f.contest)) {
-        var allBox = contestFilterEl.querySelector("input[type='checkbox'][value='all']");
-        var boxes = contestFilterEl.querySelectorAll("input[type='checkbox']");
-        var isAll = f.contest.length === 0 || f.contest.indexOf("all") >= 0;
-        for (var i = 0; i < boxes.length; i++) {
-          var val = boxes[i].value;
-          boxes[i].checked = val === "all" ? isAll : (f.contest.indexOf(val) >= 0);
-        }
+      if (f.contest && Array.isArray(f.contest)) {
+        contestFilter.restoreFromSavedArray(f.contest);
       }
       if (searchApplyLeaderboardFiltersEl && f.searchApplyLeaderboardFilters != null) {
         searchApplyLeaderboardFiltersEl.checked = !!f.searchApplyLeaderboardFilters;
@@ -171,7 +167,8 @@
     if (!searchApplyFiltersWrapEl) return;
     var q = (searchEl && searchEl.value) ? searchEl.value.trim() : "";
     var sid = getStudentIdFromUrl();
-    searchApplyFiltersWrapEl.hidden = !(q.length > 0 || sid != null);
+    /* Show only when the user is searching — not on single-student card (?student_id=). */
+    searchApplyFiltersWrapEl.hidden = !(q.length > 0) || sid != null;
   }
 
   function syncSearchPerformanceButtonVisibility() {
@@ -192,6 +189,15 @@
     return copy;
   }
 
+  /** Competition (slug) + optional season year — used for leaderboard, search, MCP timeline when filters apply. */
+  function recordMatchesCompetitionFilters(record) {
+    if (!record || !contestFilter.recordMatchesContestFilter(record)) return false;
+    if (!competitionYearFilterEl || !competitionYearFilterEl.value) return true;
+    var want = String(competitionYearFilterEl.value).trim();
+    var y = record.year != null ? String(record.year).trim() : "";
+    return y === want;
+  }
+
   function buildSearchResultStudents(nameMatched) {
     if (!shouldApplySearchLeaderboardFilters()) {
       return nameMatched.map(function (s) {
@@ -204,7 +210,9 @@
     var out = [];
     for (var i = 0; i < afterDemo.length; i++) {
       var s = afterDemo[i];
-      var recs = (s.records || []).filter(recordMatchesContestFilter);
+      var recs = (s.records || []).filter(function (r) {
+        return recordMatchesCompetitionFilters(r);
+      });
       if (recs.length === 0) continue;
       out.push(copyStudentShallow(s, recs));
     }
@@ -236,6 +244,30 @@
   var US_STATES_SET = {};
   for (var i = 0; i < US_STATES.length; i++) US_STATES_SET[US_STATES[i]] = true;
 
+  /** Full state name → US FIPS (2-digit string) for choropleth map. */
+  var STATE_TO_FIPS = {
+    Alabama: "01", Alaska: "02", Arizona: "04", Arkansas: "05", California: "06",
+    Colorado: "08", Connecticut: "09", Delaware: "10", "District of Columbia": "11",
+    Florida: "12", Georgia: "13", Hawaii: "15", Idaho: "16", Illinois: "17",
+    Indiana: "18", Iowa: "19", Kansas: "20", Kentucky: "21", Louisiana: "22",
+    Maine: "23", Maryland: "24", Massachusetts: "25", Michigan: "26", Minnesota: "27",
+    Mississippi: "28", Missouri: "29", Montana: "30", Nebraska: "31", Nevada: "32",
+    "New Hampshire": "33", "New Jersey": "34", "New Mexico": "35", "New York": "36",
+    "North Carolina": "37", "North Dakota": "38", Ohio: "39", Oklahoma: "40", Oregon: "41",
+    Pennsylvania: "42", "Rhode Island": "44", "South Carolina": "45", "South Dakota": "46",
+    Tennessee: "47", Texas: "48", Utah: "49", Vermont: "50", Virginia: "51",
+    Washington: "53", "West Virginia": "54", Wisconsin: "55", Wyoming: "56"
+  };
+  var FIPS_TO_STATE = {};
+  for (var sn in STATE_TO_FIPS) {
+    if (Object.prototype.hasOwnProperty.call(STATE_TO_FIPS, sn)) {
+      FIPS_TO_STATE[STATE_TO_FIPS[sn]] = sn;
+    }
+  }
+
+  var MAP_GRADIENT_LOW = "#1e3a5f";
+  var MAP_GRADIENT_HIGH = "#60a5fa";
+
   function debounce(fn, ms) {
     var timeout;
     return function () {
@@ -253,118 +285,6 @@
   function formatMcpValue(n) {
     if (n == null || isNaN(n)) return "—";
     return parseFloat(Number(n).toFixed(2)).toString();
-  }
-
-  var CONTEST_FILTER_CONFIG = {
-    all: function () { return true; },
-    usamo: function (slug) { return slug === "amo"; },
-    usajmo: function (slug) { return slug === "jmo"; },
-    imo: function (slug) { return slug.indexOf("imo") !== -1; },
-    rmm: function (slug) { return slug.indexOf("rmm") !== -1; },
-    egmo: function (slug) { return slug.indexOf("egmo") !== -1; },
-    "hmmt-feb": function (slug) { return slug.indexOf("hmmt-feb") === 0; },
-    "hmmt-nov": function (slug) { return slug.indexOf("hmmt-nov") === 0; },
-    "pumac-a": function (slug) {
-      if (slug.indexOf("pumac-b") === 0) return false;
-      return slug.indexOf("pumac") === 0;
-    },
-    "pumac-b": function (slug) { return slug.indexOf("pumac-b") === 0; },
-    mathcounts: function (slug) { return slug.indexOf("mathcounts") !== -1; },
-    cmimc: function (slug) { return slug.indexOf("cmimc") !== -1; },
-    arml: function (slug) { return slug.indexOf("arml") !== -1; },
-    dmm: function (slug) { return slug.indexOf("dmm") !== -1; },
-    cmm: function (slug) { return slug.indexOf("cmm") !== -1; },
-    mmaths: function (slug) { return slug === "mmaths"; },
-    mpfg: function (slug) { return slug === "mpfg"; },
-    "mpfg-olympiad": function (slug) { return slug.indexOf("mpfg-olympiad") !== -1; },
-    "bamo-8": function (slug) { return slug.indexOf("bamo-8") !== -1; },
-    "bamo-12": function (slug) { return slug.indexOf("bamo-12") !== -1; },
-    "brumo-a": function (slug) { return slug.indexOf("brumo-a") === 0; },
-    bmt: function (slug) { return slug.indexOf("bmt") === 0; }
-  };
-
-  var CONTEST_FILTER_LABELS = {
-    usamo: "USAMO", usajmo: "USAJMO", imo: "IMO", rmm: "RMM", egmo: "EGMO",
-    "hmmt-feb": "HMMT Feb", "hmmt-nov": "HMMT Nov", "pumac-a": "PUMaC Div A", "pumac-b": "PUMaC Div B",
-    mathcounts: "Mathcounts", cmimc: "CMIMC", arml: "ARML", dmm: "DMM", cmm: "CMM",
-    mmaths: "MMATHS", mpfg: "MPFG", "mpfg-olympiad": "MPFG Olympiad", "bamo-8": "BAMO-8", "bamo-12": "BAMO-12", "brumo-a": "BrUMO Div A", bmt: "BMT"
-  };
-
-  function getSelectedContestLabels() {
-    var vals = getActiveContestFilterValues();
-    if (!vals.length || vals.indexOf("all") !== -1) return [];
-    var labels = [];
-    for (var i = 0; i < vals.length; i++) {
-      var lbl = CONTEST_FILTER_LABELS[vals[i]];
-      if (lbl) labels.push(lbl);
-    }
-    return labels;
-  }
-
-  function getActiveContestFilterValues() {
-    if (!contestFilterEl) return [];
-    var inputs = contestFilterEl.querySelectorAll("input[type='checkbox']");
-    var selected = [];
-    for (var i = 0; i < inputs.length; i++) {
-      if (inputs[i].checked) selected.push(inputs[i].value);
-    }
-    if (!selected.length || selected.indexOf("all") !== -1) {
-      return ["all"];
-    }
-    return selected;
-  }
-
-  function getContestFilterSummaryText() {
-    if (!contestFilterEl) return "All selected";
-    var boxes = contestFilterEl.querySelectorAll("input[type='checkbox']");
-    var allBox = contestFilterEl.querySelector("input[type='checkbox'][value='all']");
-    var totalOptions = boxes.length - (allBox ? 1 : 0);
-    var selectedNonAll = [];
-
-    for (var i = 0; i < boxes.length; i++) {
-      var box = boxes[i];
-      if (box.value === "all") continue;
-      if (box.checked) {
-        var label = box.parentNode && box.parentNode.textContent
-          ? box.parentNode.textContent.trim()
-          : box.value;
-        selectedNonAll.push(label);
-      }
-    }
-
-    if (allBox && allBox.checked && selectedNonAll.length === totalOptions) {
-      return "All selected";
-    }
-    if (selectedNonAll.length === 0) {
-      return "All selected";
-    }
-    if (selectedNonAll.length === 1) {
-      return selectedNonAll[0] + " selected";
-    }
-    return String(selectedNonAll.length) + " competitions selected";
-  }
-
-  function updateMcpTimelineContestSummary() {
-    var el = document.getElementById("mcp-timeline-contest-summary");
-    if (!el) return;
-    var base = getContestFilterSummaryText();
-    if (mcpTimelineApplyFiltersEl && !mcpTimelineApplyFiltersEl.checked) {
-      el.textContent = base + " · not applied to chart";
-    } else {
-      el.textContent = base;
-    }
-  }
-
-  function updateContestFilterSummary() {
-    var text = getContestFilterSummaryText();
-    if (contestFilterSummaryEl) contestFilterSummaryEl.textContent = text;
-    updateMcpTimelineContestSummary();
-  }
-
-  function isContestFilterActive() {
-    if (!contestFilterEl) return false;
-    var selected = getActiveContestFilterValues();
-    return selected.length > 0 && selected.indexOf("all") === -1;
   }
 
   function isMcpWOnlySlug(slug) {
@@ -756,7 +676,7 @@
         clearStudentIdFromUrl();
         runSearch();
       }
-      updateContestFilterSummary();
+      contestFilter.updateSummary();
       if (opts.ensureStudentId != null && opts.ensureStudentId !== "") {
         addTimelineStudentIfRoom(opts.ensureStudentId);
       }
@@ -901,7 +821,7 @@
     if (mcpTimelineApplyFiltersEl) {
       mcpTimelineApplyFiltersEl.addEventListener("change", function () {
         saveFilters();
-        updateMcpTimelineContestSummary();
+        contestFilter.updateSummary(true);
         renderMcpTimelineChart();
         if (searchInput && (searchInput.value || "").trim()) runTimelineSearch();
       });
@@ -949,23 +869,9 @@
   function filterRecordsForMcpTimeline(records) {
     var recs = records || [];
     if (!mcpTimelineChartUsesLeaderboardFilters()) return recs;
-    return recs.filter(recordMatchesContestFilter);
-  }
-
-  function recordMatchesContestFilter(record) {
-    if (!record) return false;
-    if (!contestFilterEl) return true;
-    var slug = record.contest_slug || record.contest || "";
-    if (!slug) return false;
-    slug = String(slug).toLowerCase();
-    var selected = getActiveContestFilterValues();
-    if (!selected.length || selected.indexOf("all") !== -1) return true;
-    for (var i = 0; i < selected.length; i++) {
-      var key = selected[i];
-      var fn = CONTEST_FILTER_CONFIG[key];
-      if (typeof fn === "function" && fn(slug)) return true;
-    }
-    return false;
+    return recs.filter(function (r) {
+      return recordMatchesCompetitionFilters(r);
+    });
   }
 
   function setLoading(busy) {
@@ -1456,9 +1362,12 @@
   }
 
   /**
-   * One PNG: three state-distribution pies (same layout as the popover), column titles, legends, footer.
+   * One PNG: three state-distribution pies (same layout as the popover), column titles, legends, optional footer.
+   * opts.includeFooter — default true; set false when a US map block + single footer will be appended by export.
    */
-  function composeStateDistributionTriplePng(canvases /* [3] */, legendEls /* [3] */, titles) {
+  function composeStateDistributionTriplePng(canvases /* [3] */, legendEls /* [3] */, titles, opts) {
+    opts = opts || {};
+    var includeFooter = opts.includeFooter !== false;
     if (!canvases || canvases.length !== 3 || !legendEls || legendEls.length !== 3) return null;
     var c0 = canvases[0];
     var c1 = canvases[1];
@@ -1488,7 +1397,7 @@
     ];
     var mainH = titleH + ch + Math.max(legHs[0], legHs[1], legHs[2]);
     var totalW = outerPad * 2 + 3 * cw + 2 * gap;
-    var footerH = Math.max(26, Math.round(0.045 * totalW));
+    var footerH = includeFooter ? Math.max(26, Math.round(0.045 * totalW)) : 0;
     var totalH = outerPad + mainH + footerH;
     var out = document.createElement("canvas");
     out.width = totalW;
@@ -1523,7 +1432,119 @@
         drawDomLegendOntoCanvas(ctx, cw, legY, legendEls[col], x0);
       }
     }
-    var footTop = outerPad + mainH;
+    if (includeFooter) {
+      var footTop = outerPad + mainH;
+      ctx.fillStyle = theme.surface;
+      ctx.fillRect(0, footTop, totalW, footerH);
+      ctx.strokeStyle = theme.border;
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(0, footTop + 0.5);
+      ctx.lineTo(totalW, footTop + 0.5);
+      ctx.stroke();
+      var footFontPx = Math.max(12, Math.min(18, Math.round(totalW / 50)));
+      ctx.font = "600 " + footFontPx + "px system-ui, -apple-system, \"Segoe UI\", sans-serif";
+      ctx.fillStyle = theme.textMuted;
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.fillText(PNG_EXPORT_FOOTER_TEXT, totalW / 2, footTop + footerH / 2);
+    }
+    return out;
+  }
+
+  function getMaxStateDistStudentCount() {
+    var o = latestStateDist && latestStateDist.students ? latestStateDist.students : {};
+    var m = 0;
+    for (var k in o) {
+      if (!Object.prototype.hasOwnProperty.call(o, k)) continue;
+      var n = Number(o[k]);
+      if (!isNaN(n) && n > 0 && n > m) m = n;
+    }
+    return m > 0 ? m : 1;
+  }
+
+  function waitForStateDistMapSvg(callback) {
+    var container = document.getElementById("state-dist-us-map-container");
+    if (!container) {
+      callback(null);
+      return;
+    }
+    var svg = container.querySelector("svg");
+    if (svg) {
+      callback(svg);
+      return;
+    }
+    ensureStateDistUsMap();
+    var start = Date.now();
+    var tid = setInterval(function () {
+      svg = container.querySelector("svg");
+      var empty = container.querySelector(".state-dist-empty");
+      var failed =
+        empty &&
+        (empty.textContent.indexOf("could not") !== -1 || empty.textContent.indexOf("Map could") !== -1);
+      if (svg || failed || Date.now() - start > 15000) {
+        clearInterval(tid);
+        callback(svg || null);
+      }
+    }, 45);
+  }
+
+  function rasterizeSvgToCanvas(svgEl, outCssW, outCssH, callback) {
+    if (!svgEl || typeof svgEl.cloneNode !== "function") {
+      callback(null);
+      return;
+    }
+    var clone = svgEl.cloneNode(true);
+    clone.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+    var vb = svgEl.viewBox && svgEl.viewBox.baseVal;
+    var vw = vb && vb.width ? vb.width : parseFloat(svgEl.getAttribute("width")) || 500;
+    var vh = vb && vb.height ? vb.height : parseFloat(svgEl.getAttribute("height")) || 320;
+    clone.setAttribute("width", String(vw));
+    clone.setAttribute("height", String(vh));
+    var svgStr = new XMLSerializer().serializeToString(clone);
+    var blob = new Blob([svgStr], { type: "image/svg+xml;charset=utf-8" });
+    var url = URL.createObjectURL(blob);
+    var img = new Image();
+    img.onload = function () {
+      var canvas = document.createElement("canvas");
+      var dpr = Math.min(
+        2,
+        typeof window !== "undefined" && window.devicePixelRatio ? window.devicePixelRatio : 2
+      );
+      var ow = Math.max(1, Math.round(outCssW));
+      var oh = Math.max(1, Math.round(outCssH));
+      canvas.width = ow * dpr;
+      canvas.height = oh * dpr;
+      var ctx = canvas.getContext("2d");
+      if (!ctx) {
+        URL.revokeObjectURL(url);
+        callback(null);
+        return;
+      }
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      ctx.scale(dpr, dpr);
+      var theme = getExportThemeColors();
+      ctx.fillStyle = theme.surface;
+      ctx.fillRect(0, 0, ow, oh);
+      try {
+        ctx.drawImage(img, 0, 0, ow, oh);
+      } catch (e) {
+        URL.revokeObjectURL(url);
+        callback(null);
+        return;
+      }
+      URL.revokeObjectURL(url);
+      callback(canvas);
+    };
+    img.onerror = function () {
+      URL.revokeObjectURL(url);
+      callback(null);
+    };
+    img.src = url;
+  }
+
+  function drawStateDistExportFooter(ctx, totalW, footTop, footerH) {
+    var theme = getExportThemeColors();
     ctx.fillStyle = theme.surface;
     ctx.fillRect(0, footTop, totalW, footerH);
     ctx.strokeStyle = theme.border;
@@ -1538,7 +1559,125 @@
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
     ctx.fillText(PNG_EXPORT_FOOTER_TEXT, totalW / 2, footTop + footerH / 2);
-    return out;
+  }
+
+  /**
+   * Append optional US map (rasterized SVG) and a single site footer below the triple-chart canvas.
+   */
+  function finalizeStateDistributionPngWithOptionalMap(tripleCanvas, done) {
+    var theme = getExportThemeColors();
+    var totalW = tripleCanvas.width;
+    var outerPad = Math.max(14, Math.round(totalW * 0.05));
+    var contentW = totalW - 2 * outerPad;
+    var footerH = Math.max(26, Math.round(0.045 * totalW));
+
+    waitForStateDistMapSvg(function (svg) {
+      function onlyTriplePlusFooter() {
+        var out = document.createElement("canvas");
+        out.width = totalW;
+        out.height = tripleCanvas.height + footerH;
+        var ctx = out.getContext("2d");
+        if (!ctx) {
+          done(null);
+          return;
+        }
+        ctx.fillStyle = theme.surface;
+        ctx.fillRect(0, 0, totalW, out.height);
+        ctx.drawImage(tripleCanvas, 0, 0);
+        drawStateDistExportFooter(ctx, totalW, tripleCanvas.height, footerH);
+        done(out);
+      }
+
+      if (!svg) {
+        onlyTriplePlusFooter();
+        return;
+      }
+
+      var vb = svg.viewBox && svg.viewBox.baseVal;
+      var vw = vb && vb.width ? vb.width : 500;
+      var vh = vb && vb.height ? vb.height : 320;
+      var maxMapW = contentW;
+      var maxMapH = 340;
+      var scale = Math.min(maxMapW / vw, maxMapH / vh);
+      var mapDrawW = Math.round(vw * scale);
+      var mapDrawH = Math.round(vh * scale);
+
+      rasterizeSvgToCanvas(svg, mapDrawW, mapDrawH, function (mapCanvas) {
+        if (!mapCanvas) {
+          onlyTriplePlusFooter();
+          return;
+        }
+
+        var maxStudents = getMaxStateDistStudentCount();
+        var sectionGap = 20;
+        var mapTitleFont = Math.max(13, Math.min(17, Math.round(totalW / 17)));
+        var mapTitleH = mapTitleFont + 16;
+        var noteFont = Math.max(10, Math.min(13, Math.round(totalW / 55)));
+        var noteH = noteFont + 12;
+        var gradBarH = 20;
+        var gradLabelH = Math.max(14, noteFont + 4);
+        var gradBlockH = gradBarH + gradLabelH + 4;
+        var mapBlockH = mapTitleH + noteH + mapCanvas.height + 12 + gradBlockH;
+        var newH = tripleCanvas.height + sectionGap + mapBlockH + footerH;
+
+        var out = document.createElement("canvas");
+        out.width = totalW;
+        out.height = newH;
+        var ctx = out.getContext("2d");
+        if (!ctx) {
+          done(null);
+          return;
+        }
+        ctx.fillStyle = theme.surface;
+        ctx.fillRect(0, 0, totalW, newH);
+        ctx.drawImage(tripleCanvas, 0, 0);
+
+        ctx.strokeStyle = theme.border;
+        ctx.lineWidth = 1;
+        var splitY = tripleCanvas.height + sectionGap / 2;
+        ctx.beginPath();
+        ctx.moveTo(outerPad, splitY);
+        ctx.lineTo(totalW - outerPad, splitY);
+        ctx.stroke();
+
+        var y = tripleCanvas.height + sectionGap;
+        ctx.fillStyle = theme.text;
+        ctx.font = "600 " + mapTitleFont + "px system-ui, -apple-system, \"Segoe UI\", sans-serif";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillText("US map — students per state", totalW / 2, y + mapTitleH / 2);
+        y += mapTitleH;
+        ctx.font = noteFont + "px system-ui, -apple-system, \"Segoe UI\", sans-serif";
+        ctx.fillStyle = theme.textMuted;
+        ctx.fillText("Lighter blue = more students in this database.", totalW / 2, y + noteH / 2);
+        y += noteH;
+        var mapX = outerPad + (contentW - mapCanvas.width) / 2;
+        ctx.drawImage(mapCanvas, mapX, y);
+        y += mapCanvas.height + 12;
+
+        var gradW = Math.min(200, contentW);
+        var gx = outerPad + (contentW - gradW) / 2;
+        var ggrad = ctx.createLinearGradient(gx, 0, gx + gradW, 0);
+        ggrad.addColorStop(0, MAP_GRADIENT_LOW);
+        ggrad.addColorStop(1, MAP_GRADIENT_HIGH);
+        ctx.fillStyle = ggrad;
+        ctx.fillRect(gx, y, gradW, gradBarH);
+        ctx.strokeStyle = theme.border;
+        ctx.lineWidth = 1;
+        ctx.strokeRect(gx, y, gradW, gradBarH);
+        y += gradBarH + 4;
+        ctx.font = noteFont + "px system-ui, -apple-system, \"Segoe UI\", sans-serif";
+        ctx.fillStyle = theme.textMuted;
+        ctx.textAlign = "left";
+        ctx.textBaseline = "top";
+        ctx.fillText("0", gx, y);
+        ctx.textAlign = "right";
+        ctx.fillText(maxStudents + " students", gx + gradW, y);
+
+        drawStateDistExportFooter(ctx, totalW, tripleCanvas.height + sectionGap + mapBlockH, footerH);
+        done(out);
+      });
+    });
   }
 
   function downloadStateDistributionCombinedPng() {
@@ -1558,15 +1697,20 @@
         return false;
       }
     }
-    var composed = composeStateDistributionTriplePng(cvs, legs, null);
+    var composed = composeStateDistributionTriplePng(cvs, legs, null, { includeFooter: false });
     if (!composed) {
       alert("Could not build the combined image.");
       return false;
     }
-    if (!downloadPngDataUrl(composed.toDataURL("image/png"), "state-distribution-by-state.png")) {
-      alert("Could not start download.");
-      return false;
-    }
+    finalizeStateDistributionPngWithOptionalMap(composed, function (finalCanvas) {
+      if (!finalCanvas) {
+        alert("Could not build the combined image.");
+        return;
+      }
+      if (!downloadPngDataUrl(finalCanvas.toDataURL("image/png"), "state-distribution-by-state.png")) {
+        alert("Could not start download.");
+      }
+    });
     return true;
   }
 
@@ -1865,7 +2009,7 @@
     var mcpTotal;
     var isGirlsOnlyCard = (document.getElementById("girls-only") || {}).checked;
     var totalMcp = isGirlsOnlyCard && student.mcp_w != null ? Number(student.mcp_w) : (student.mcp != null ? Number(student.mcp) : 0);
-    var contestFilterActiveCard = isContestFilterActive() && !useCanonicalMcpStats;
+    var contestFilterActiveCard = contestFilter.isContestFilterActive() && !useCanonicalMcpStats;
     if (contestFilterActiveCard) {
       mcpTotal = computeMcpFromRecords(records, isGirlsOnlyCard);
     } else {
@@ -1875,7 +2019,7 @@
     if (sortMode === "mcp_pct" && contestFilterActiveCard && mcpTotal > 0 && totalMcp > 0) {
       var ratio = mcpTotal / totalMcp;
       var pctValCard = formatMcpPct(ratio);
-      var contestLabelsCard = getSelectedContestLabels();
+      var contestLabelsCard = contestFilter.getSelectedContestLabels();
       var contestsStrCard = contestLabelsCard.length ? contestLabelsCard.join(", ") : "selected competitions";
       mcpPctSuffix = " (<button type=\"button\" class=\"mcp-pct-trigger\" data-pct=\"" + escapeHtml(pctValCard) + "\" data-contests=\"" + escapeHtml(contestsStrCard) + "\">" + pctValCard + "%</button>)";
     }
@@ -2105,7 +2249,7 @@
     }
 
     var isGirlsOnly = girlsOnlyEl && girlsOnlyEl.checked;
-    var contestFilterActive = isContestFilterActive();
+    var contestFilterActive = contestFilter.isContestFilterActive();
     var isMcpPct = sortMode === "mcp_pct";
 
     if (mcpPctSortRowEl) mcpPctSortRowEl.hidden = !isMcpPct;
@@ -2117,7 +2261,9 @@
     if (students && students.length) {
       for (var i = 0; i < students.length; i++) {
         var student = students[i];
-        var records = (student.records || []).filter(recordMatchesContestFilter);
+        var records = (student.records || []).filter(function (r) {
+          return recordMatchesCompetitionFilters(r);
+        });
         var count = records.length;
         if (count > 0) {
           var mcpTotal = null;
@@ -2241,15 +2387,18 @@
     if (subtitleEl && isMcpPct) {
       var statsHtml = "";
       if (contestFilterActive) {
-        var contestFilterKey = getActiveContestFilterValues().join(",");
-        if (mcpPctStatsCache.key !== contestFilterKey) {
+        var contestFilterKey = contestFilter.getActiveContestFilterValues().join(",");
+        var yearPart = competitionYearFilterEl && competitionYearFilterEl.value ? "|y:" + competitionYearFilterEl.value : "";
+        if (mcpPctStatsCache.key !== contestFilterKey + yearPart) {
           var allStudents = data.students || [];
           var allForStats = [];
           for (var ai = 0; ai < allStudents.length; ai++) {
             var st = allStudents[ai];
             var totalMcpSt = st.mcp != null ? Number(st.mcp) : 0;
             if (totalMcpSt <= 0) continue;
-            var recsFiltered = (st.records || []).filter(recordMatchesContestFilter);
+            var recsFiltered = (st.records || []).filter(function (r) {
+              return recordMatchesCompetitionFilters(r);
+            });
             var filteredMcpSt = computeMcpFromRecords(recsFiltered, false);
             var ratioSt = filteredMcpSt / totalMcpSt;
             allForStats.push({ totalMcp: totalMcpSt, mcpRatio: ratioSt });
@@ -2261,7 +2410,7 @@
             var r = top100ByMcp[k].mcpRatio;
             if (r != null && !isNaN(r)) ratios.push(r);
           }
-          mcpPctStatsCache.key = contestFilterKey;
+          mcpPctStatsCache.key = contestFilterKey + yearPart;
           if (ratios.length > 0) {
             var sum = 0;
             var minR = ratios[0];
@@ -2277,7 +2426,7 @@
               ? sortedRatios[Math.floor(sortedRatios.length / 2)]
               : (sortedRatios[sortedRatios.length / 2 - 1] + sortedRatios[sortedRatios.length / 2]) / 2;
             var fmt = function (x) { return formatMcpPct(x) + "%"; };
-            var contestLabels = getSelectedContestLabels();
+            var contestLabels = contestFilter.getSelectedContestLabels();
             var contestPhrase = contestLabels.length > 0 ? contestLabels.join(", ") : "selected competitions";
             mcpPctStatsCache.html = " Among the top 100 students by total MCP, contribution from " + contestPhrase + ": avg " + fmt(avg) + ", min " + fmt(minR) + ", max " + fmt(maxR) + ", median " + fmt(median) + ". Due to limited data, do not make judgments without careful review.";
           } else {
@@ -2309,7 +2458,7 @@
         valueText = formatMcpValue(entry.mcpTotal) + " " + mcpLabel;
         if (isMcpPctSort && contestFilterActive && entry.mcpRatio != null) {
           var pctVal = formatMcpPct(entry.mcpRatio);
-          var contestLabels = getSelectedContestLabels();
+          var contestLabels = contestFilter.getSelectedContestLabels();
           var contestsStr = contestLabels.length ? contestLabels.join(", ") : "selected competitions";
           valueText += " (<button type=\"button\" class=\"mcp-pct-trigger\" data-pct=\"" + escapeHtml(pctVal) + "\" data-contests=\"" + escapeHtml(contestsStr) + "\">" + pctVal + "%</button>)";
         }
@@ -2491,8 +2640,8 @@
         if (searchClearEl) searchClearEl.hidden = true;
         if (topStudentsSectionEl) topStudentsSectionEl.hidden = true;
         if (awardsRankingFiltersEl) {
-          awardsRankingFiltersEl.hidden = false;
-          awardsRankingFiltersEl.style.display = "";
+          awardsRankingFiltersEl.hidden = true;
+          awardsRankingFiltersEl.style.display = "none";
         }
         if (shouldApplySearchLeaderboardFilters()) {
           var demo = applyDemographicFilters([student]);
@@ -2507,7 +2656,7 @@
         var recs = (student.records || []).slice();
         var copy = copyStudentShallow(student, recs);
         if (recs.length > 0) {
-          hintEl.textContent = "1 student found. Full history below; filters apply to search and the leaderboard.";
+          hintEl.textContent = "1 student found. Full competition history below.";
           resultsEl.innerHTML = renderStudent(copy, data.contests || {}, false, { useCanonicalMcpStats: true });
         } else {
           hintEl.textContent = "No records for this student.";
@@ -2518,10 +2667,15 @@
         return;
       }
       clearStudentIdFromUrl();
+      if (awardsRankingFiltersEl) {
+        awardsRankingFiltersEl.hidden = false;
+        awardsRankingFiltersEl.style.display = "";
+      }
       if (searchInputWrapEl) searchInputWrapEl.hidden = false;
       if (hintEl) hintEl.hidden = false;
       if (studentCardBackEl) studentCardBackEl.hidden = true;
       syncSearchPerformanceButtonVisibility();
+      syncSearchApplyFiltersToggleVisibility();
     }
 
     if (!query) {
@@ -2567,7 +2721,7 @@
       if (total === 0) {
         emptyEl.hidden = false;
         emptyEl.innerHTML = shouldApplySearchLeaderboardFilters()
-          ? "<p>No name matches with your current filters. Try turning off <strong>Apply filters to search</strong> or widening Girls / Grade / State / Competition filter.</p>"
+          ? "<p>No name matches with your current filters. Try turning off <strong>Apply filters to search</strong> or widening Girls / Grade / State / Competition / Year filters.</p>"
           : "<p>No students match your search. Try a different name or partial name.</p>";
         if (topStudentsSectionEl) topStudentsSectionEl.hidden = false;
         return;
@@ -2877,6 +3031,202 @@
     legendEl.innerHTML = legendHtml.join("");
   }
 
+  function interpolateUsMapColor(t) {
+    function parseHex(hex) {
+      return [
+        parseInt(hex.slice(1, 3), 16),
+        parseInt(hex.slice(3, 5), 16),
+        parseInt(hex.slice(5, 7), 16)
+      ];
+    }
+    var a = parseHex(MAP_GRADIENT_LOW);
+    var b = parseHex(MAP_GRADIENT_HIGH);
+    var r = Math.round(a[0] + (b[0] - a[0]) * t);
+    var g = Math.round(a[1] + (b[1] - a[1]) * t);
+    var bl = Math.round(a[2] + (b[2] - a[2]) * t);
+    return "#" + [r, g, bl].map(function (x) { return x.toString(16).padStart(2, "0"); }).join("");
+  }
+
+  function syncStateDistUsMapColors() {
+    var container = document.getElementById("state-dist-us-map-container");
+    if (!container || !container.querySelector("svg")) return;
+    updateStateDistUsMapColors(latestStateDist.students || {});
+  }
+
+  /**
+   * Mirror .state-dist-us-map-state-label in style.css via inline styles so SVG→PNG export
+   * (XMLSerializer) picks up the same typography and stroke halo as the live page.
+   */
+  function applyStateDistUsMapLabelStyles(container) {
+    if (typeof d3 === "undefined") return;
+    var theme = getExportThemeColors();
+    var labels = d3.select(container).selectAll(".state-dist-us-map-state-label");
+    if (labels.empty()) return;
+    labels
+      .style("font-size", "9px")
+      .style("font-weight", "600")
+      .style("font-family", 'system-ui, -apple-system, "Segoe UI", sans-serif')
+      .style("fill", theme.text)
+      .style("stroke", theme.bg)
+      .style("stroke-width", "2px")
+      .style("paint-order", "stroke fill")
+      .style("pointer-events", "none")
+      .attr("text-anchor", "middle")
+      .attr("dominant-baseline", "central");
+  }
+
+  function updateStateDistUsMapColors(distMap) {
+    if (typeof d3 === "undefined") return;
+    var container = document.getElementById("state-dist-us-map-container");
+    if (!container) return;
+    var states = d3.select(container).selectAll(".state-dist-us-map-state");
+    if (states.empty()) return;
+    var merged = distMap || {};
+    var fipsToCount = {};
+    var vals = [];
+    for (var stateName in merged) {
+      if (!Object.prototype.hasOwnProperty.call(merged, stateName)) continue;
+      var fips = STATE_TO_FIPS[stateName];
+      if (fips) {
+        var n = Number(merged[stateName]);
+        if (!isNaN(n) && n > 0) {
+          fipsToCount[fips] = n;
+          vals.push(n);
+        }
+      }
+    }
+    var maxCount = vals.length ? Math.max.apply(null, vals) : 1;
+    function colorScale(count) {
+      if (count <= 0) return "#2a2a30";
+      return interpolateUsMapColor(Math.min(1, count / maxCount));
+    }
+    states.each(function () {
+      var fips = this.getAttribute("data-fips");
+      var fid = String(fips || "").padStart(2, "0");
+      var count = fipsToCount[fid] || 0;
+      var color = colorScale(count);
+      this.style.setProperty("fill", color);
+      this.setAttribute("fill", color);
+    });
+    var labels = d3.select(container).selectAll(".state-dist-us-map-state-label");
+    if (!labels.empty()) {
+      labels.text(function () {
+        var fips = this.getAttribute("data-fips");
+        var fid = String(fips).padStart(2, "0");
+        var count = fipsToCount[fid] || 0;
+        return count > 0 ? String(count) : "";
+      });
+      applyStateDistUsMapLabelStyles(container);
+    }
+    var legendEl = document.getElementById("state-dist-us-map-gradient-legend");
+    if (legendEl && maxCount > 0 && vals.length > 0) {
+      var gradientId = "state-dist-map-gradient-fill";
+      legendEl.innerHTML =
+        "<div class=\"map-gradient-bar-wrap\">" +
+        "<svg width=\"200\" height=\"20\" class=\"map-gradient-bar\">" +
+        "<defs><linearGradient id=\"" + gradientId + "\" x1=\"0\" x2=\"1\" y1=\"0\" y2=\"0\">" +
+        "<stop offset=\"0\" stop-color=\"" + MAP_GRADIENT_LOW + "\"/>" +
+        "<stop offset=\"1\" stop-color=\"" + MAP_GRADIENT_HIGH + "\"/>" +
+        "</linearGradient></defs>" +
+        "<rect width=\"200\" height=\"20\" fill=\"url(#" + gradientId + ")\"/>" +
+        "</svg></div>" +
+        "<div class=\"map-gradient-labels\"><span>0</span><span>" + maxCount + " students</span></div>";
+      legendEl.hidden = false;
+      legendEl.style.display = "block";
+    } else if (legendEl) {
+      legendEl.innerHTML = "";
+      legendEl.hidden = true;
+    }
+  }
+
+  function ensureStateDistUsMap() {
+    if (typeof d3 === "undefined" || typeof topojson === "undefined" || !topojson.feature) return;
+    var container = document.getElementById("state-dist-us-map-container");
+    if (!container) return;
+    if (container.querySelector("svg")) {
+      syncStateDistUsMapColors();
+      return;
+    }
+    if (container.getAttribute("data-map-loading") === "1") return;
+    container.setAttribute("data-map-loading", "1");
+    container.innerHTML = "<p class=\"state-dist-empty\">Loading map…</p>";
+    var tooltip = document.getElementById("state-dist-us-map-tooltip");
+    fetch("https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json")
+      .then(function (r) {
+        if (!r.ok) throw new Error(String(r.status));
+        return r.json();
+      })
+      .then(function (us) {
+        container.removeAttribute("data-map-loading");
+        var states = topojson.feature(us, us.objects.states);
+        var rawW = container.offsetWidth || (container.parentElement && container.parentElement.offsetWidth) || 500;
+        var width = Math.max(200, Math.min(520, rawW));
+        var height = 320;
+        var projection = d3.geoAlbersUsa().fitSize([width, height], states);
+        var path = d3.geoPath().projection(projection);
+        container.innerHTML = "";
+        var svg = d3.select(container).append("svg")
+          .attr("viewBox", "0 0 " + width + " " + height)
+          .attr("preserveAspectRatio", "xMidYMid meet");
+        var g = svg.append("g");
+        g.selectAll("path")
+          .data(states.features)
+          .join("path")
+          .attr("class", "state-dist-us-map-state")
+          .attr("data-fips", function (d) { return d.id; })
+          .attr("d", path)
+          .on("mouseover", function (ev, d) {
+            if (!tooltip) return;
+            var fips = String(d.id).padStart(2, "0");
+            var stateName = FIPS_TO_STATE[fips] || ("State " + fips);
+            var count = 0;
+            if (latestStateDist && latestStateDist.students) {
+              count = latestStateDist.students[stateName] || 0;
+            }
+            tooltip.textContent = stateName + ": " + count + " students";
+            tooltip.style.display = "block";
+            tooltip.style.position = "fixed";
+            tooltip.style.left = ev.pageX + 12 + "px";
+            tooltip.style.top = ev.pageY + 12 + "px";
+            tooltip.setAttribute("aria-hidden", "false");
+          })
+          .on("mouseout", function () {
+            if (tooltip) {
+              tooltip.style.display = "none";
+              tooltip.setAttribute("aria-hidden", "true");
+            }
+          })
+          .on("mousemove", function (ev) {
+            if (!tooltip) return;
+            tooltip.style.left = ev.pageX + 12 + "px";
+            tooltip.style.top = ev.pageY + 12 + "px";
+          });
+        var labelsG = g.append("g").attr("class", "state-dist-us-map-labels");
+        labelsG.selectAll("text")
+          .data(states.features)
+          .join("text")
+          .attr("class", "state-dist-us-map-state-label")
+          .attr("data-fips", function (d) { return d.id; })
+          .each(function (d) {
+            var c = path.centroid(d);
+            var ok = Number.isFinite(c[0]) && Number.isFinite(c[1]);
+            d3.select(this)
+              .attr("x", ok ? c[0] : 0)
+              .attr("y", ok ? c[1] : 0)
+              .attr("opacity", ok ? 1 : 0)
+              .text("");
+          });
+        syncStateDistUsMapColors();
+        requestAnimationFrame(function () {
+          syncStateDistUsMapColors();
+        });
+      })
+      .catch(function () {
+        container.removeAttribute("data-map-loading");
+        container.innerHTML = "<p class=\"state-dist-empty\">Map could not be loaded.</p>";
+      });
+  }
+
   function renderStateDistCharts() {
     drawPieChartOnElements(
       document.getElementById("state-dist-students-canvas"),
@@ -2894,6 +3244,7 @@
       latestStateDist.mcp,
       function (v) { return Math.round(v).toLocaleString() + " MCP"; }
     );
+    syncStateDistUsMapColors();
   }
 
   function bindStateDistPopover() {
@@ -2908,6 +3259,11 @@
       trigger.setAttribute("aria-expanded", "true");
       stateDistPopoverOpen = true;
       renderStateDistCharts();
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          ensureStateDistUsMap();
+        });
+      });
     }
 
     function closePopover() {
@@ -2930,9 +3286,84 @@
     }
   }
 
+  /**
+   * Fill season-year dropdown with years that have at least one record matching the current
+   * competition filter (ignores the year dropdown itself). Omits years with no matching competitions.
+   */
+  function populateCompetitionYearFilterOptions() {
+    if (!competitionYearFilterEl || !data || !data.students) return;
+    var seen = {};
+    var years = [];
+    var students = data.students;
+    for (var i = 0; i < students.length; i++) {
+      var recs = students[i].records || [];
+      for (var j = 0; j < recs.length; j++) {
+        var rec = recs[j];
+        if (!contestFilter.recordMatchesContestFilter(rec)) continue;
+        var y = rec.year;
+        if (y == null || y === "") continue;
+        var ys = String(y).trim();
+        if (!ys) continue;
+        if (!seen[ys]) {
+          seen[ys] = true;
+          years.push(ys);
+        }
+      }
+    }
+    years.sort(function (a, b) {
+      var na = parseInt(a, 10);
+      var nb = parseInt(b, 10);
+      if (!isNaN(na) && !isNaN(nb) && na !== nb) return nb - na;
+      return String(b).localeCompare(String(a), undefined, { numeric: true });
+    });
+    var want =
+      savedFilters && savedFilters.competitionYear != null && savedFilters.competitionYear !== ""
+        ? String(savedFilters.competitionYear)
+        : competitionYearFilterEl.value || "";
+    while (competitionYearFilterEl.options.length > 1) {
+      competitionYearFilterEl.remove(1);
+    }
+    for (var k = 0; k < years.length; k++) {
+      var opt = document.createElement("option");
+      opt.value = years[k];
+      opt.textContent = years[k];
+      competitionYearFilterEl.appendChild(opt);
+    }
+    if (want && seen[want]) {
+      competitionYearFilterEl.value = want;
+    } else {
+      competitionYearFilterEl.value = "";
+    }
+  }
+
   function init() {
     bindThemeToggle();
     bindSiteNavDrawer();
+    contestFilter = MathCompContestFilter.create(document.getElementById("contest-filter"), {
+      summaryEl: document.getElementById("contest-filter-summary"),
+      mcpTimelineSummaryEl: document.getElementById("mcp-timeline-contest-summary"),
+      getMcpTimelineApplyFiltersChecked: function () {
+        return !!(mcpTimelineApplyFiltersEl && mcpTimelineApplyFiltersEl.checked);
+      },
+      onChange: function () {
+        mcpPctStatsCache.key = null;
+        populateCompetitionYearFilterOptions();
+        saveFilters();
+        renderTopStudentsByRecords();
+        runSearch();
+        refreshMcpTimelineIfOpen();
+      }
+    });
+    if (competitionYearFilterEl) {
+      competitionYearFilterEl.addEventListener("change", function () {
+        mcpPctStatsCache.key = null;
+        saveFilters();
+        renderTopStudentsByRecords();
+        runSearch();
+        refreshMcpTimelineIfOpen();
+        contestFilter.updateSummary(true);
+      });
+    }
     restoreFilters();
     if (!showHiddenFeature() && sortMode === "mcp_pct") {
       sortMode = "mcp";
@@ -3023,12 +3454,16 @@
         }
       }
       data.contest_order_map = orderMap;
+      if (typeof contestFilter.setContests === "function") {
+        contestFilter.setContests(data.contests || {});
+      }
+      populateCompetitionYearFilterOptions();
       setLoading(false);
       var mcpPctOption = document.getElementById("mcp-pct-sort-option");
       if (mcpPctOption) mcpPctOption.hidden = !showHiddenFeature();
       requestAnimationFrame(function () {
         renderContestList();
-        updateContestFilterSummary();
+        contestFilter.updateSummary();
         renderTopStudentsByRecords();
         bindContestListPopover();
         bindStateDistPopover();
@@ -3134,14 +3569,13 @@
       var link = e.target && e.target.closest && e.target.closest(".mcp-pct-filter-link");
       if (!link) return;
       e.preventDefault();
-      var popover = document.getElementById("contest-filter-popover");
-      if (popover && popover.hidden) contestFilterTriggerEl.click();
+      if (contestFilterPopoverEl && contestFilterPopoverEl.hidden) contestFilterTriggerEl.click();
     });
   }
 
   if (contestFilterTriggerEl && contestFilterWrapEl) {
     (function () {
-      var popover = document.getElementById("contest-filter-popover");
+      var popover = contestFilterPopoverEl;
       if (!popover) return;
       var closeBtn = popover.querySelector(".contest-filter-popover-close");
       var backdrop = popover.querySelector(".contest-filter-popover-backdrop");
@@ -3166,47 +3600,6 @@
         backdrop.addEventListener("click", closePopover);
       }
     })();
-  }
-
-  if (contestFilterEl) {
-    contestFilterEl.addEventListener("change", function (event) {
-      var target = event.target;
-      if (!target || !target.type || target.type !== "checkbox") {
-        updateContestFilterSummary();
-        renderTopStudentsByRecords();
-        runSearch();
-        refreshMcpTimelineIfOpen();
-        return;
-      }
-      var allBox = contestFilterEl.querySelector("input[type='checkbox'][value='all']");
-      var boxes = contestFilterEl.querySelectorAll("input[type='checkbox']");
-      if (target.value === "all") {
-        for (var i = 0; i < boxes.length; i++) {
-          if (boxes[i] !== allBox) {
-            boxes[i].checked = target.checked;
-          }
-        }
-      } else if (allBox) {
-        if (!target.checked) {
-          allBox.checked = false;
-        } else {
-          var allChecked = true;
-          for (var j = 0; j < boxes.length; j++) {
-            if (boxes[j] === allBox) continue;
-            if (!boxes[j].checked) {
-              allChecked = false;
-              break;
-            }
-          }
-          allBox.checked = allChecked;
-        }
-      }
-      updateContestFilterSummary();
-      saveFilters();
-      renderTopStudentsByRecords();
-      runSearch();
-      refreshMcpTimelineIfOpen();
-    });
   }
 
   var RAW_BASE = "https://raw.githubusercontent.com/x-du/math-competition/";
