@@ -23,6 +23,7 @@ pumac-number-theory,PUMaC — Division A Number Theory,Number Theory subject tes
 pumac-b-combinator,PUMaC — Division B Combinatorics,Combinatorics subject test (Division B) at PUMaC,Combinatorics subject test (Division B) at PUMaC.,https://pumac.princeton.edu/,500,0.5,rank,rank
 pumac-b-number-theory,PUMaC — Division B Number Theory,Number Theory subject test (Division B) at PUMaC,Number Theory subject test (Division B) at PUMaC.,https://pumac.princeton.edu/,500,0.5,rank,rank
 mathcounts-national-rank,MATHCOUNTS National — Rankings,National-level rankings for the MATHCOUNTS competition,National-level rankings for the MATHCOUNTS competition series.,https://www.mathcounts.org/,500,1.0,mathcounts,rank
+mathcounts-national,MATHCOUNTS National — Competitors,MATHCOUNTS National team rosters,State team competitor lists for the MATHCOUNTS National Competition.,https://www.mathcounts.org/,,,mathcounts,rank
 cmimc,CMIMC,Carnegie Mellon Informatics and Mathematics Competition,Carnegie Mellon Informatics and Mathematics Competition. Annual contest at CMU with individual and team rounds.,https://cmimc.math.cmu.edu/math,500,1.0,rank,rank
 cmimc-algebra,CMIMC — Algebra and Number Theory,Algebra and Number Theory subject test at CMIMC,Algebra and Number Theory subject test at CMIMC.,https://cmimc.math.cmu.edu/math,500,0.5,rank,rank
 cmimc-comb,CMIMC — Combinatorics and Computer Science,Combinatorics and Computer Science subject test at CMIMC,Combinatorics and Computer Science subject test at CMIMC.,https://cmimc.math.cmu.edu/math,500,0.5,rank,rank

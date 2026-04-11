@@ -2119,16 +2119,20 @@
       var slug = slugs[i];
       var c = contests[slug];
       var name = (c && c.contest_name) ? c.contest_name : slug;
-      var years = [];
+      var yearSet = {};
       if (yearsBySlug[slug]) {
-        for (var y in yearsBySlug[slug]) if (Object.prototype.hasOwnProperty.call(yearsBySlug[slug], y)) years.push(y);
-        years.sort(function (a, b) { return b.localeCompare(a, undefined, { numeric: true }); });
+        for (var y0 in yearsBySlug[slug]) if (Object.prototype.hasOwnProperty.call(yearsBySlug[slug], y0)) yearSet[y0] = true;
       }
+      var filesByYearForSlug = (contestYearFiles[slug] || {});
+      for (var y1 in filesByYearForSlug) if (Object.prototype.hasOwnProperty.call(filesByYearForSlug, y1)) yearSet[y1] = true;
+      var years = [];
+      for (var yk in yearSet) if (Object.prototype.hasOwnProperty.call(yearSet, yk)) years.push(yk);
+      years.sort(function (a, b) { return b.localeCompare(a, undefined, { numeric: true }); });
       var nameHtml = (c && c.website)
         ? "<a href=\"" + escapeHtml(c.website) + "\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"contest-list-link\">" + escapeHtml(name) + "</a>"
         : "<span class=\"contest-list-item\">" + escapeHtml(name) + "</span>";
       var yearLinks = [];
-      var filesByYear = contestYearFiles[slug] || {};
+      var filesByYear = filesByYearForSlug;
       for (var j = 0; j < years.length; j++) {
         var yr = years[j];
         var fileEntry = filesByYear[yr] || "results.csv";
