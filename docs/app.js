@@ -189,7 +189,10 @@
     return copy;
   }
 
-  /** Competition (slug) + optional season year — used for leaderboard, search, MCP timeline when filters apply. */
+  /**
+   * Competition (slug) + optional season year — leaderboard, search, MCP % stats.
+   * Performance-by-year chart uses contest filter only (see filterRecordsForMcpTimeline), not year.
+   */
   function recordMatchesCompetitionFilters(record) {
     if (!record || !contestFilter.recordMatchesContestFilter(record)) return false;
     if (!competitionYearFilterEl || !competitionYearFilterEl.value) return true;
@@ -865,12 +868,16 @@
     });
   }
 
-  /** Records for Performance-by-year chart and search; respects contest filter only when timeline “Apply filters” is on. */
+  /**
+   * Records for Performance-by-year chart and timeline search.
+   * When “Apply competition filters” is on: same contest selection as the main page, but not season year
+   * (the chart is MCP over calendar years; filtering by one season would break the line).
+   */
   function filterRecordsForMcpTimeline(records) {
     var recs = records || [];
     if (!mcpTimelineChartUsesLeaderboardFilters()) return recs;
     return recs.filter(function (r) {
-      return recordMatchesCompetitionFilters(r);
+      return contestFilter.recordMatchesContestFilter(r);
     });
   }
 
