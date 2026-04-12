@@ -37,7 +37,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 36,Jialai She,New Jersey,,male,
 37,Grant Blitz,New Hampshire,,male,11
 38,Andy Lu,California,,male,11
-39,Maxwell Sun,Rhode Island,,male,9
+39,Maxwell Sun,New Hampshire,,male,9
 40,Darsh Patel,Florida,,male,12
 41,Eddy Zhang,Pennsylvania,,male,10
 42,Benjamin Song,New York,Ben Song,male,10
@@ -729,7 +729,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 761,Shawn Badre,Rhode Island,,male,11
 762,Sadie Enright,Rhode Island,,female,11
 763,Liaoliao Shi,South Carolina,,male,12
-764,Seomgeun Shim,South Carolina,,male,11
+764,Seomgeun Shim,South Carolina,Miguel Shim,male,11
 765,Shaurya Sehgal,South Dakota,,male,11
 766,William Jin,South Dakota,,male,11
 767,Justus Heibutzki,State Department,,male,12
@@ -770,7 +770,6 @@ student_id,student_name,state,alias,gender,grade_in_2026
 805,Shining Sun,New Jersey,,male,11
 806,Simon Deng,Ohio,,male,11
 807,Jonah Wang,Colorado,,male,11
-808,Miguel Shim,South Carolina,,male,11
 809,Advait Joshi,New Jersey,,male,8
 810,Danyang Xu,Massachusetts,,male,10
 811,Brandon Ni,Massachusetts,,male,8
@@ -787,7 +786,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 822,Charlie Wang,Alaska,,male,10
 823,Daniel Wei,Florida,,male,10
 824,Wesley Wu,Washington,,male,10
-826,Max Tsai,Nevada,,male,9
+826,Max Tsai,Nevada,Maxwell Tsai,male,9
 827,Easton Wei,New Jersey,,male,9
 828,Henry Wang,California,,male,13
 829,Joseph Girotto,Connecticut,,male,10
@@ -977,7 +976,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1027,Kevin Xiao,Delaware,,male,
 1028,Jane Xie,New York,,female,11
 1029,Atticus Stewart,California,,male,
-1031,William Chen,Texas,,male,15
+1031,William Chen,Texas,,male,
 1032,Edward Guo,Virginia,,male,11
 1034,Lei He,"Ontario, Canada",,male,
 1035,Daniel Ji,California,,male,
@@ -1045,7 +1044,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1103,John Gupta-She,New York,,male,
 1104,Roy Kang,New York,,male,
 1105,Yichen Xiao,New Jersey,,male,
-1106,Ryan Yang,Connecticut,,male,15
+1106,Ryan Yang,Connecticut,Yunrui Yang,male,15
 1107,Ethan Zhou,Virginia,,male,15
 1108,William Dai,"Ontario, Canada",,male,
 1109,Chris Ge,California,,male,
@@ -1908,7 +1907,6 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1991,Ari Wang,Colorado,,male,15
 1992,Rishi Rai,Colorado,,male,14
 1993,Adeethyia Shankar,Connecticut,,male,15
-1994,Yunrui Yang,Connecticut,,male,15
 1995,Alan Wang,Connecticut,,male,15
 1996,Perryn Chang,Delaware,,male,15
 1997,Jonathan Pei,Delaware,,male,15
@@ -4239,7 +4237,6 @@ student_id,student_name,state,alias,gender,grade_in_2026
 4335,Lily Podlasek,Illinois,,female,
 4336,Makary Chan,Virginia,,male,
 4337,Manya Pradeep,California,,male,
-4338,Maxwell Tsai,Nevada,,male,9
 4339,Mika Kato,California,,male,
 4340,Naisha Rathod,California,,female,
 4341,Nilay Bhate,California,,female,
@@ -6443,7 +6440,6 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6541,Sophie Yu,Nebraska,,female,9
 6542,Haoyi Liu,New Hampshire,,male,9
 6543,Arthur Shu,New Hampshire,,male,8
-6544,Maxwell Sun,New Hampshire,,male,9
 6545,Mark Goldman,New Mexico,,male,9
 6546,Daniel He,New Mexico,,male,9
 6547,Solomon Dumont,Nevada,,male,9
@@ -6616,11 +6612,9 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6715,Gabe Per,New York,,male,11
 6716,Alex Zhang,Ohio,,male,11
 6717,Henry Zheng,Oklahoma,,male,11
-6718,Samuel Ding,Oregon,,male,11
 6719,Erick Zhao,Pennsylvania,,male,11
 6720,Nathan Woo,Rhode Island,,male,11
 6721,Sanjay Dagam,Wisconsin,,male,11
-6722,Jeffrey Xu,Wisconsin,,male,10
 6723,Alexei Zhao,West Virginia,,male,11
 6724,Jerry Yu,Georgia,,male,11
 6725,Sujin Oh,Guam,,female,11
@@ -6630,7 +6624,6 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6729,David Shi,Iowa,,male,11
 6730,Sophie Wu,Idaho,,female,10
 6731,Daniel Yang,Idaho,,male,11
-6732,Grant Blitz,Illinois,,male,11
 6733,Amritha Praveen,Illinois,,female,11
 6734,Jungchul Lee,Indiana,,male,11
 6735,Bryan Yu,Indiana,,male,10
@@ -6648,8 +6641,6 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6747,Arlin Grinolds,North Dakota,,male,10
 6748,Leyton Weigel,North Dakota,,male,11
 6749,Leon Yang,North Dakota,,male,11
-6750,Oron Wang,New Jersey,,male,11
-6751,Liam Reddy,Nevada,,male,11
 6752,Lucas Wu,Nevada,,male,11
 6753,Manesh Palai,Puerto Rico,,male,11
 6754,He Eric Shan,Puerto Rico,,male,10
@@ -6662,7 +6653,6 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6761,Xavier Chandler,Vermont,,male,10
 6762,Connor DuBois,Vermont,,male,11
 6763,Erica Hermann,Vermont,,female,11
-6764,Maxwell Sun,Washington,,male,9
 6765,Zhishuo Li,Wyoming,,male,9
 6766,Conner Stevens,Wyoming,,male,11
 6767,Miriam Washut,Wyoming,,female,11

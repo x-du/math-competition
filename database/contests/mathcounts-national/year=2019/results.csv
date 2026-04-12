@@ -17,7 +17,7 @@ student_id,state,student_name,grade,city,school
 1990,Arkansas,Ellie Feng,7,Conway,Ruth Doyle Middle School
 135,California,Eric Shen,8,San Jose,Miller Middle School
 162,California,Alan Lee,8,Palo Alto,Ellen Fletcher Middle School
-1031,California,William Chen,8,Fremont,William Hopkins Junior High
+960,California,William Chen,8,Fremont,William Hopkins Junior High
 878,California,Andrew Wen,8,Fremont,William Hopkins Junior High
 1991,Colorado,Ari Wang,8,Colorado Springs,Mountain Ridge Middle School
 121,Colorado,Srinivas Arun,7,Greenwood Village,Campus Middle School
@@ -25,7 +25,7 @@ student_id,state,student_name,grade,city,school
 1992,Colorado,Rishi Rai,7,Denver,Challenge School
 1993,Connecticut,Adeethyia Shankar,8,Brookfield,Whisconier Middle School
 399,Connecticut,Mingwen Duan,7,Niantic,East Lyme Middle School
-1994,Connecticut,Yunrui Yang,8,New Haven,The Foote School
+1106,Connecticut,Yunrui Yang,8,New Haven,The Foote School
 1995,Connecticut,Alan Wang,8,Farmington,Irving A. Robbins Middle School
 1996,Delaware,Perryn Chang,8,Wilmington,PS DuPont Middle School
 1997,Delaware,Jonathan Pei,8,Wilmington,PS DuPont Middle School
