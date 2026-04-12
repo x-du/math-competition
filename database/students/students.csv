@@ -384,7 +384,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 413,Jacopo Rizzo,California,,male,
 414,Changxiu Ji,,,male,
 415,Christopher Li,"Ontario, Canada",,male,
-416,Onkit Samanta,Massachusetts,,male,
+416,Onkit Samanta,Washington,,male,
 417,Sarunyu Thongjarast,Massachusetts,,male,
 418,Emily Liu,California,,female,13
 419,Worrawat Rungaramsin,Massachusetts,,female,
@@ -1702,7 +1702,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1784,Grace Zuo,Arizona,,female,
 1785,Aaron Ely,California,,male,
 1786,Elaine Sun,California,,female,
-1787,Samuel Chen,Massachusetts,,male,
+1787,Samuel Chen,Nevada,,male,
 1788,Ada Ji,California,,male,
 1789,Anisha Raghu,California,,male,
 1790,Anson Ng,California,,male,
