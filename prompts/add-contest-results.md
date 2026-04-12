@@ -7,7 +7,7 @@ Add contest results for **{competition}** for the year **{year}**, following the
 ## 1. Follow existing examples
 
 - Inspect the structure under `database/contests/`:
-  - Each contest has a **folder** (e.g. `amo`, `jmo`, `arml`, `mathcounts-national-rank`, `cmimc-algebra`, `pumac`).
+  - Each contest has a **folder** (e.g. `amo`, `jmo`, `arml`, `mathcounts-national`, `mathcounts-national-rank`, `cmimc-algebra`, `pumac`).
   - For each year there is a subfolder `year=<year>` (e.g. `year=2025`).
   - Inside that folder, `results.csv` holds the results.
 - Match the **folder name** and **column schema** to existing contests of the same type when possible (see examples below).

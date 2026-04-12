@@ -2096,17 +2096,6 @@
     if (!contestListEl) return;
     var contests = data.contests || {};
     var contestYearFiles = data.contest_year_files || {};
-    var yearsBySlug = {};
-    var students = data.students || [];
-    for (var s = 0; s < students.length; s++) {
-      var recs = students[s].records || [];
-      for (var r = 0; r < recs.length; r++) {
-        var slug = recs[r].contest_slug;
-        if (!slug) continue;
-        if (!yearsBySlug[slug]) yearsBySlug[slug] = {};
-        yearsBySlug[slug][recs[r].year] = true;
-      }
-    }
     var slugs = [];
     for (var k in contests) if (Object.prototype.hasOwnProperty.call(contests, k)) {
       if (k.indexOf("mk-national") === 0) continue;  // Record only; not shown on website
@@ -2119,11 +2108,8 @@
       var slug = slugs[i];
       var c = contests[slug];
       var name = (c && c.contest_name) ? c.contest_name : slug;
+      var filesByYearForSlug = contestYearFiles[slug] || {};
       var yearSet = {};
-      if (yearsBySlug[slug]) {
-        for (var y0 in yearsBySlug[slug]) if (Object.prototype.hasOwnProperty.call(yearsBySlug[slug], y0)) yearSet[y0] = true;
-      }
-      var filesByYearForSlug = (contestYearFiles[slug] || {});
       for (var y1 in filesByYearForSlug) if (Object.prototype.hasOwnProperty.call(filesByYearForSlug, y1)) yearSet[y1] = true;
       var years = [];
       for (var yk in yearSet) if (Object.prototype.hasOwnProperty.call(yearSet, yk)) years.push(yk);

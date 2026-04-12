@@ -258,10 +258,10 @@ def merge_mathcounts_national_competitors_into_rank(
     records_by_id: dict,
     students: dict,
 ) -> int:
-    """Add mathcounts-national-rank rows from national competitors.csv for students not already listed.
+    """Add mathcounts-national-rank rows from mathcounts-national/year=…/results.csv for students not already listed.
 
     Each added row has rank "Competitor" and no MCP fields. Returns number of records added."""
-    comp_path = CONTESTS_DIR / "mathcounts-national" / f"year={year}" / "competitors.csv"
+    comp_path = CONTESTS_DIR / "mathcounts-national" / f"year={year}" / "results.csv"
     if not comp_path.is_file():
         return 0
     slug = MATHCOUNTS_SLUG
@@ -440,7 +440,7 @@ def main() -> None:
                 students[sid] = {"name": name or f"Student {sid}", "aliases": [], "state": state, "gender": "male", "grade_in_2026": None}
 
     # MATHCOUNTS National Rank: include everyone on the national competitors roster for that year
-    # (rank "Competitor"; no MCP rank/points). Years with competitors.csv but no national-rank results.csv get entries here.
+    # (rank "Competitor"; no MCP rank/points). Years with national roster results.csv but no national-rank results.csv get entries here.
     mc_nat_root = CONTESTS_DIR / "mathcounts-national"
     if mc_nat_root.is_dir():
         for year_dir in sorted(mc_nat_root.iterdir()):
@@ -450,7 +450,7 @@ def main() -> None:
             merge_mathcounts_national_competitors_into_rank(y, records_by_id, students)
 
     # No published national-rank results yet: omit MCP for that season (roster-only years).
-    # A year counts when mathcounts-national has competitors.csv but mathcounts-national-rank has no results.csv.
+    # A year counts when mathcounts-national has results.csv but mathcounts-national-rank has no results.csv.
     mc_rank_root = CONTESTS_DIR / "mathcounts-national-rank"
     mc_nat_years_without_rank_results: set[str] = set()
     if mc_nat_root.is_dir():
@@ -458,7 +458,7 @@ def main() -> None:
             if not year_dir.is_dir() or not year_dir.name.startswith("year="):
                 continue
             y = year_dir.name.replace("year=", "")
-            if not (year_dir / "competitors.csv").is_file():
+            if not (year_dir / "results.csv").is_file():
                 continue
             rank_results = mc_rank_root / f"year={y}" / "results.csv"
             if not rank_results.is_file():
@@ -549,9 +549,9 @@ def main() -> None:
             if not year_dir.is_dir() or not year_dir.name.startswith("year="):
                 continue
             year = year_dir.name.replace("year=", "")
-            comp = year_dir / "competitors.csv"
+            comp = year_dir / "results.csv"
             if comp.is_file():
-                contest_year_files["mathcounts-national"][year] = "competitors.csv"
+                contest_year_files["mathcounts-national"][year] = "results.csv"
 
     # Build slug_index and replace contest_slug strings with compact numeric indices
     slug_set = set()

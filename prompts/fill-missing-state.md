@@ -24,7 +24,7 @@ For each student with missing state, try sources in the following order. Use the
 These sources always have state information. Check all available years for the student’s `student_id`.
 
 - **`database/contests/mathcounts-national/`**  
-  - Per year: `year=<year>/competitors.csv` has columns `student_id`, `state`, `student_name`, `grade`, `city`, `school`.  
+  - Per year: `year=<year>/results.csv` has columns `student_id`, `state`, `student_name`, `grade`, `city`, `school`.  
   - If the student’s `student_id` appears here, use the `state` value from that row.
 - **`database/contests/mathcounts-national-rank/`**  
   - Per year: `year=<year>/results.csv` has columns `student_id`, `student_name`, `state`, `year`, `rank`, `grade`.  
