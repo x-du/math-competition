@@ -253,6 +253,69 @@ def collect_result_files() -> list:
     return out
 
 
+def merge_mathcounts_national_competitors_into_rank(
+    year: str,
+    records_by_id: dict,
+    students: dict,
+) -> int:
+    """Add mathcounts-national-rank rows from national competitors.csv for students not already listed.
+
+    Each added row has rank "Competitor" and no MCP fields. Returns number of records added."""
+    comp_path = CONTESTS_DIR / "mathcounts-national" / f"year={year}" / "competitors.csv"
+    if not comp_path.is_file():
+        return 0
+    slug = MATHCOUNTS_SLUG
+    key = (slug, year)
+    added = 0
+    skip_keys = {"student_id", "student_id ", "student_name", "state", "city", "school"}
+    with open(comp_path, newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            sid_raw = row.get("student_id") or row.get("student_id ")
+            if sid_raw is not None:
+                sid_raw = str(sid_raw).strip()
+            if not sid_raw:
+                continue
+            try:
+                sid = int(sid_raw)
+            except ValueError:
+                continue
+            recs = records_by_id.get(sid, [])
+            if any((r.get("contest_slug"), r.get("year")) == key for r in recs):
+                continue
+            record: dict = {
+                "year": year,
+                "contest_slug": slug,
+                "rank": "Competitor",
+            }
+            for k, v in row.items():
+                if k is None:
+                    continue
+                k = k.strip()
+                if not k or k in skip_keys:
+                    continue
+                if v is not None and str(v).strip() != "":
+                    record[k] = v.strip() if isinstance(v, str) else v
+            state_val = (row.get("state") or "").strip()
+            if state_val:
+                record["state"] = compress_record_state(state_val)
+            if sid not in records_by_id:
+                records_by_id[sid] = []
+            records_by_id[sid].append(record)
+            added += 1
+            if sid not in students:
+                name = (row.get("student_name") or "").strip()
+                state = (row.get("state") or "").strip()
+                students[sid] = {
+                    "name": name or f"Student {sid}",
+                    "aliases": [],
+                    "state": state,
+                    "gender": "male",
+                    "grade_in_2026": None,
+                }
+    return added
+
+
 def main() -> None:
     students = load_students()
     contests, contest_order = load_contests()
@@ -314,6 +377,9 @@ def main() -> None:
                 "contest_slug": slug,
             }
             skip_keys = {"student_id", "student_id ", "student_name", "state"}
+            # Don't expose city/school for MathCounts National (still in roster CSVs)
+            if slug == MATHCOUNTS_SLUG:
+                skip_keys = skip_keys | {"city", "school"}
             # Don't expose school from AMO/JMO results on the website (still in .csv)
             if slug in ("amo", "jmo"):
                 skip_keys = skip_keys | {"school"}
@@ -372,6 +438,42 @@ def main() -> None:
                 name = (row.get("student_name") or "").strip()
                 state = (row.get("state") or "").strip()
                 students[sid] = {"name": name or f"Student {sid}", "aliases": [], "state": state, "gender": "male", "grade_in_2026": None}
+
+    # MATHCOUNTS National Rank: include everyone on the national competitors roster for that year
+    # (rank "Competitor"; no MCP rank/points). Years with competitors.csv but no national-rank results.csv get entries here.
+    mc_nat_root = CONTESTS_DIR / "mathcounts-national"
+    if mc_nat_root.is_dir():
+        for year_dir in sorted(mc_nat_root.iterdir()):
+            if not year_dir.is_dir() or not year_dir.name.startswith("year="):
+                continue
+            y = year_dir.name.replace("year=", "")
+            merge_mathcounts_national_competitors_into_rank(y, records_by_id, students)
+
+    # No published national-rank results yet: omit MCP for that season (roster-only years).
+    # A year counts when mathcounts-national has competitors.csv but mathcounts-national-rank has no results.csv.
+    mc_rank_root = CONTESTS_DIR / "mathcounts-national-rank"
+    mc_nat_years_without_rank_results: set[str] = set()
+    if mc_nat_root.is_dir():
+        for year_dir in sorted(mc_nat_root.iterdir()):
+            if not year_dir.is_dir() or not year_dir.name.startswith("year="):
+                continue
+            y = year_dir.name.replace("year=", "")
+            if not (year_dir / "competitors.csv").is_file():
+                continue
+            rank_results = mc_rank_root / f"year={y}" / "results.csv"
+            if not rank_results.is_file():
+                mc_nat_years_without_rank_results.add(y)
+
+    for recs in records_by_id.values():
+        for r in recs:
+            if r.get("contest_slug") != MATHCOUNTS_SLUG:
+                continue
+            r.pop("city", None)
+            r.pop("school", None)
+            if r.get("year") in mc_nat_years_without_rank_results:
+                r.pop("mcp_rank", None)
+                r.pop("mcp_points", None)
+                r.pop("mcp_contrib", None)
 
     # Normalize any record-level state (US -> abbreviation; non-US unchanged)
     for recs in records_by_id.values():

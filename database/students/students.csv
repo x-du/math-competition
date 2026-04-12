@@ -267,7 +267,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 291,Yuji Peter Wang,New Jersey,,male,
 292,Justin Mu,California,,male,
 293,Gabriel Levin,New York,,male,
-294,Samuel Wang,Virginia,,male,16
+294,Samuel Wang,Virginia,Sam Wang,male,16
 296,Hansen Shieh,Massachusetts,,male,12
 297,Christopher Lu,New York,,male,
 298,Ian Buchanan,New York,,male,
@@ -1045,7 +1045,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1103,John Gupta-She,New York,,male,
 1104,Roy Kang,New York,,male,
 1105,Yichen Xiao,New Jersey,,male,
-1106,Ryan Yang,Connecticut,,male,
+1106,Ryan Yang,Connecticut,,male,15
 1107,Ethan Zhou,Virginia,,male,15
 1108,William Dai,"Ontario, Canada",,male,
 1109,Chris Ge,California,,male,
@@ -4521,7 +4521,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 4617,Adrianna Gavriliou,Connecticut,,female,
 4618,Adya Shipekar,California,,female,
 4619,Ahan Agarwal,Washington,,male,
-4620,Alex Zhang,Pennsylvania,,male,
+4620,Alex Zhang,Pennsylvania,,male,9
 4621,Alexander Lebedinsky,Washington,,male,
 4622,Andy Saraci-Alonso,California,,male,
 4623,Anthony Vissers,Wisconsin,,male,
@@ -6182,7 +6182,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6280,Hans Zhong-Hong Chen,California,,male,
 6281,Kevin Zhang,,,male,
 6282,Timothy Li,California,,male,
-6283,Michael Chen,Kentucky,,male,
+6283,Michael Chen,Kentucky,,male,11
 6284,Rebecca Best,Alaska,,female,8
 6285,Zejun Bi,Alaska,,male,7
 6286,Aayed Hasan,Alaska,,male,7
@@ -6284,8 +6284,8 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6382,John Chen,North Carolina,,male,8
 6383,Olivia Huang,North Carolina,,female,8
 6384,Zixuan Wang,North Carolina,,,8
-6385,Henry Chu,North Dakota,,male,
-6386,Xavier Lippay,North Dakota,,male,
+6385,Henry Chu,North Dakota,,male,8
+6386,Xavier Lippay,North Dakota,,male,8
 6387,Tara Prawira,North Dakota,,female,8
 6388,Daria Raducu,North Dakota,,female,7
 6389,Revanth Athipatla,Nebraska,,male,8
@@ -6666,3 +6666,4 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6765,Zhishuo Li,Wyoming,,male,9
 6766,Conner Stevens,Wyoming,,male,11
 6767,Miriam Washut,Wyoming,,female,11
+6768,Alexander Wang,Tennessee,,male,15
