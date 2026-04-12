@@ -22,7 +22,7 @@ pumac-b-geometry,PUMaC — Division B Geometry,Geometry subject test (Division B
 pumac-number-theory,PUMaC — Division A Number Theory,Number Theory subject test (Division A) at PUMaC,Number Theory subject test (Division A) at PUMaC.,https://pumac.princeton.edu/,1000,0.5,rank,rank
 pumac-b-combinator,PUMaC — Division B Combinatorics,Combinatorics subject test (Division B) at PUMaC,Combinatorics subject test (Division B) at PUMaC.,https://pumac.princeton.edu/,500,0.5,rank,rank
 pumac-b-number-theory,PUMaC — Division B Number Theory,Number Theory subject test (Division B) at PUMaC,Number Theory subject test (Division B) at PUMaC.,https://pumac.princeton.edu/,500,0.5,rank,rank
-mathcounts-national-rank,MATHCOUNTS National,National-level rankings for the MATHCOUNTS competition,National-level rankings for the MATHCOUNTS competition series.,https://www.mathcounts.org/,500,1.0,mathcounts,rank
+mathcounts-national-rank,MATHCOUNTS National Ranks,National-level rankings for the MATHCOUNTS competition,National-level rankings for the MATHCOUNTS competition series.,https://www.mathcounts.org/,500,1.0,mathcounts,rank
 mathcounts-national,MATHCOUNTS National,MATHCOUNTS National team rosters,State team competitor lists for the MATHCOUNTS National Competition.,https://www.mathcounts.org/,,,mathcounts,rank
 cmimc,CMIMC,Carnegie Mellon Informatics and Mathematics Competition,Carnegie Mellon Informatics and Mathematics Competition. Annual contest at CMU with individual and team rounds.,https://cmimc.math.cmu.edu/math,500,1.0,rank,rank
 cmimc-algebra,CMIMC — Algebra and Number Theory,Algebra and Number Theory subject test at CMIMC,Algebra and Number Theory subject test at CMIMC.,https://cmimc.math.cmu.edu/math,500,0.5,rank,rank
