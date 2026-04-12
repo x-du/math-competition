@@ -309,7 +309,7 @@
         </button>
         <span id="mcp-pct-sort-text" class="mcp-pct-sort-text">Sorted descending (highest contribution first).</span>
       </p>
-      <h2 id="awards-ranking-title" class="awards-ranking-title"><span id="ranking-title-text">Top students by # of records</span> (<span id="total-student-count">—</span> students, <span id="total-record-count">—</span> records) <button type="button" id="state-dist-trigger" class="state-dist-trigger" aria-expanded="false" aria-controls="state-dist-popover">By state ▸</button></h2>
+      <h2 id="awards-ranking-title" class="awards-ranking-title"><span id="ranking-title-text">Top students by # of records</span> (<span id="total-student-count">—</span> students, <span id="total-record-count">—</span> records) <span class="awards-ranking-dist-links" role="group" aria-label="Distribution charts"><button type="button" id="state-dist-trigger" class="state-dist-trigger" aria-expanded="false" aria-controls="state-dist-popover">By state ▸</button><span class="awards-ranking-dist-sep" aria-hidden="true">·</span><button type="button" id="gender-dist-trigger" class="state-dist-trigger" aria-expanded="false" aria-controls="gender-dist-popover">By gender ▸</button><span class="awards-ranking-dist-sep" aria-hidden="true">·</span><button type="button" id="grade-dist-trigger" class="state-dist-trigger" aria-expanded="false" aria-controls="grade-dist-popover">By grade ▸</button></span></h2>
       <div id="state-dist-popover" class="state-dist-popover" hidden role="dialog" aria-labelledby="state-dist-popover-title">
         <div class="state-dist-popover-inner">
           <h3 id="state-dist-popover-title" class="state-dist-popover-title">Distribution by State</h3>
@@ -317,7 +317,7 @@
           <p class="state-dist-popover-toolbar">
             <button type="button" id="state-dist-download-all-png" class="chart-png-download chart-png-download--compact chart-png-download--icon" aria-label="Download all charts as one PNG image"><svg class="chart-png-download__svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></button>
           </p>
-          <div class="state-dist-charts">
+          <div class="state-dist-charts demographic-dist-charts">
             <div class="state-dist-chart-wrap">
               <h4 class="state-dist-chart-title">Students by State</h4>
               <canvas id="state-dist-students-canvas"></canvas>
@@ -341,12 +341,68 @@
               <div id="state-dist-us-map-container" class="state-dist-us-map-container"></div>
               <div id="state-dist-us-map-gradient-legend" class="map-gradient-legend" hidden></div>
             </div>
-            <div id="state-dist-us-map-tooltip" class="state-dist-us-map-tooltip" style="display:none" aria-hidden="true"></div>
           </div>
           <button type="button" class="state-dist-popover-close" aria-label="Close">×</button>
         </div>
         <div class="state-dist-popover-backdrop" aria-hidden="true"></div>
       </div>
+      <div id="gender-dist-popover" class="state-dist-popover" hidden role="dialog" aria-labelledby="gender-dist-popover-title" aria-modal="true">
+        <div class="state-dist-popover-inner">
+          <h3 id="gender-dist-popover-title" class="state-dist-popover-title">Distribution by Gender</h3>
+          <p class="state-dist-popover-hint">Click or tap a pie slice to see student names.</p>
+          <p class="state-dist-popover-toolbar">
+            <button type="button" id="gender-dist-download-all-png" class="chart-png-download chart-png-download--compact chart-png-download--icon" aria-label="Download all charts as one PNG image"><svg class="chart-png-download__svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></button>
+          </p>
+          <div class="state-dist-charts demographic-dist-charts">
+            <div class="state-dist-chart-wrap">
+              <h4 class="state-dist-chart-title">Students by Gender</h4>
+              <canvas id="gender-dist-students-canvas"></canvas>
+              <div id="gender-dist-students-legend" class="state-dist-legend"></div>
+            </div>
+            <div class="state-dist-chart-wrap">
+              <h4 class="state-dist-chart-title">Records by Gender</h4>
+              <canvas id="gender-dist-records-canvas"></canvas>
+              <div id="gender-dist-records-legend" class="state-dist-legend"></div>
+            </div>
+            <div class="state-dist-chart-wrap">
+              <h4 class="state-dist-chart-title">MCP by Gender</h4>
+              <canvas id="gender-dist-mcp-canvas"></canvas>
+              <div id="gender-dist-mcp-legend" class="state-dist-legend"></div>
+            </div>
+          </div>
+          <button type="button" class="state-dist-popover-close" aria-label="Close">×</button>
+        </div>
+        <div class="state-dist-popover-backdrop" aria-hidden="true"></div>
+      </div>
+      <div id="grade-dist-popover" class="state-dist-popover" hidden role="dialog" aria-labelledby="grade-dist-popover-title" aria-modal="true">
+        <div class="state-dist-popover-inner">
+          <h3 id="grade-dist-popover-title" class="state-dist-popover-title">Distribution by Grade</h3>
+          <p class="state-dist-popover-hint">Click or tap a pie slice to see student names.</p>
+          <p class="state-dist-popover-toolbar">
+            <button type="button" id="grade-dist-download-all-png" class="chart-png-download chart-png-download--compact chart-png-download--icon" aria-label="Download all charts as one PNG image"><svg class="chart-png-download__svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></button>
+          </p>
+          <div class="state-dist-charts demographic-dist-charts">
+            <div class="state-dist-chart-wrap">
+              <h4 class="state-dist-chart-title">Students by Grade</h4>
+              <canvas id="grade-dist-students-canvas"></canvas>
+              <div id="grade-dist-students-legend" class="state-dist-legend"></div>
+            </div>
+            <div class="state-dist-chart-wrap">
+              <h4 class="state-dist-chart-title">Records by Grade</h4>
+              <canvas id="grade-dist-records-canvas"></canvas>
+              <div id="grade-dist-records-legend" class="state-dist-legend"></div>
+            </div>
+            <div class="state-dist-chart-wrap">
+              <h4 class="state-dist-chart-title">MCP by Grade</h4>
+              <canvas id="grade-dist-mcp-canvas"></canvas>
+              <div id="grade-dist-mcp-legend" class="state-dist-legend"></div>
+            </div>
+          </div>
+          <button type="button" class="state-dist-popover-close" aria-label="Close">×</button>
+        </div>
+        <div class="state-dist-popover-backdrop" aria-hidden="true"></div>
+      </div>
+      <div id="state-dist-us-map-tooltip" class="state-dist-us-map-tooltip" style="display:none" aria-hidden="true"></div>
       <p class="awards-ranking-subtitle">Sorted by number of competition records in this database. Not a ranking of ability or talent.</p>
       <ol id="awards-ranking-list" class="awards-ranking-list" aria-busy="true">
         <script>

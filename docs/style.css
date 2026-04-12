@@ -1411,6 +1411,26 @@ body.site-nav-open {
   font-weight: 600;
 }
 
+/* Three separate distribution links (each opens its own dialog; not one combined popup). */
+.awards-ranking-dist-links {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.15rem 0.35rem;
+  margin-left: 0.4rem;
+  vertical-align: baseline;
+}
+
+.awards-ranking-dist-links .state-dist-trigger {
+  margin-left: 0;
+}
+
+.awards-ranking-dist-sep {
+  color: var(--text-muted);
+  font-weight: 400;
+  user-select: none;
+}
+
 .awards-ranking-subtitle {
   margin: 0.35rem 0 0.75rem;
   font-size: 0.85rem;
@@ -2044,7 +2064,8 @@ body.site-nav-open {
   text-decoration: underline;
 }
 
-#state-dist-popover[hidden] {
+/* Must win over .state-dist-popover { display: flex } so [hidden] works for every distribution dialog. */
+.state-dist-popover[hidden] {
   display: none !important;
   pointer-events: none !important;
 }
@@ -2257,8 +2278,45 @@ body.site-nav-open {
   text-align: left;
 }
 
+.state-dist-us-map-tooltip-head-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.state-dist-us-map-tooltip-head-row .state-dist-us-map-tooltip-empty {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  padding-right: 0;
+}
+
+.state-dist-us-map-tooltip-close {
+  flex-shrink: 0;
+  width: 1.75rem;
+  height: 1.75rem;
+  padding: 0;
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1;
+  color: var(--text-muted);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.state-dist-us-map-tooltip-close:hover {
+  color: var(--text);
+  background: var(--btn-ghost-hover);
+  border-color: var(--border);
+}
+
 .state-dist-us-map-tooltip-head {
   margin: 0 0 0.4rem;
+  padding-right: 2rem;
   font-size: 0.9rem;
 }
 

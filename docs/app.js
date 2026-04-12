@@ -37,7 +37,11 @@
   var ratioSortAsc = false; // For MCP %: true = ascending (lowest first), false = descending (default)
 
   var stateDistPopoverOpen = false;
+  var genderDistPopoverOpen = false;
+  var gradeDistPopoverOpen = false;
   var latestStateDist = { students: {}, records: {}, mcp: {}, studentNamesByState: {} };
+  var latestGenderDist = { students: {}, records: {}, mcp: {}, studentNamesByGender: {} };
+  var latestGradeDist = { students: {}, records: {}, mcp: {}, studentNamesByGrade: {} };
   var mcpPctStatsCache = { key: null, html: "" };
   var mcpTimelinePopoverOpen = false;
   var mcpTimelineChartInstance = null;
@@ -1747,6 +1751,72 @@
     return true;
   }
 
+  function downloadGenderDistributionCombinedPng() {
+    var cvs = [
+      document.getElementById("gender-dist-students-canvas"),
+      document.getElementById("gender-dist-records-canvas"),
+      document.getElementById("gender-dist-mcp-canvas")
+    ];
+    var legs = [
+      document.getElementById("gender-dist-students-legend"),
+      document.getElementById("gender-dist-records-legend"),
+      document.getElementById("gender-dist-mcp-legend")
+    ];
+    for (var i = 0; i < 3; i++) {
+      if (!cvs[i] || !cvs[i].width || !cvs[i].height) {
+        alert("Charts are not ready to export yet.");
+        return false;
+      }
+    }
+    var composed = composeStateDistributionTriplePng(
+      cvs,
+      legs,
+      ["Students by Gender", "Records by Gender", "MCP by Gender"],
+      { includeFooter: true }
+    );
+    if (!composed) {
+      alert("Could not build the combined image.");
+      return false;
+    }
+    if (!downloadPngDataUrl(composed.toDataURL("image/png"), "distribution-by-gender.png")) {
+      alert("Could not start download.");
+    }
+    return true;
+  }
+
+  function downloadGradeDistributionCombinedPng() {
+    var cvs = [
+      document.getElementById("grade-dist-students-canvas"),
+      document.getElementById("grade-dist-records-canvas"),
+      document.getElementById("grade-dist-mcp-canvas")
+    ];
+    var legs = [
+      document.getElementById("grade-dist-students-legend"),
+      document.getElementById("grade-dist-records-legend"),
+      document.getElementById("grade-dist-mcp-legend")
+    ];
+    for (var i = 0; i < 3; i++) {
+      if (!cvs[i] || !cvs[i].width || !cvs[i].height) {
+        alert("Charts are not ready to export yet.");
+        return false;
+      }
+    }
+    var composed = composeStateDistributionTriplePng(
+      cvs,
+      legs,
+      ["Students by Grade", "Records by Grade", "MCP by Grade"],
+      { includeFooter: true }
+    );
+    if (!composed) {
+      alert("Could not build the combined image.");
+      return false;
+    }
+    if (!downloadPngDataUrl(composed.toDataURL("image/png"), "distribution-by-grade.png")) {
+      alert("Could not start download.");
+    }
+    return true;
+  }
+
   function downloadCanvasAsPng(canvas, filename, legendEl) {
     if (!canvas || !canvas.getContext) return false;
     try {
@@ -2356,7 +2426,11 @@
     }
 
     computeStateDistributions(counts);
+    computeGenderDistributions(counts);
+    computeGradeDistributions(counts);
     if (stateDistPopoverOpen) renderStateDistCharts();
+    if (genderDistPopoverOpen) renderGenderDistCharts();
+    if (gradeDistPopoverOpen) renderGradeDistCharts();
 
     if (!counts.length) {
       if (subtitleEl && isMcpPct) {
@@ -2975,7 +3049,67 @@
     latestStateDist.studentNamesByState = studentNamesByState;
   }
 
-  function drawPieChartOnElements(canvas, legendEl, distMap, valueFormatter, enableStateDistSliceNames) {
+  function genderLabelForStudent(student) {
+    var g = ((student && student.gender) || "").trim().toLowerCase();
+    if (g === "female") return "Female";
+    if (g === "male") return "Male";
+    return "Unknown";
+  }
+
+  function computeGenderDistributions(counts) {
+    var studentsByGender = {};
+    var recordsByGender = {};
+    var mcpByGender = {};
+    var studentNamesByGender = {};
+    for (var i = 0; i < counts.length; i++) {
+      var gender = genderLabelForStudent(counts[i].student);
+      studentsByGender[gender] = (studentsByGender[gender] || 0) + 1;
+      recordsByGender[gender] = (recordsByGender[gender] || 0) + counts[i].recordsCount;
+      var mcp = counts[i].mcpTotal != null ? Number(counts[i].mcpTotal) : 0;
+      mcpByGender[gender] = (mcpByGender[gender] || 0) + mcp;
+      var nm = ((counts[i].student && counts[i].student.name) || "").trim() || "—";
+      if (!studentNamesByGender[gender]) studentNamesByGender[gender] = [];
+      studentNamesByGender[gender].push(nm);
+    }
+    for (var k in studentNamesByGender) {
+      if (Object.prototype.hasOwnProperty.call(studentNamesByGender, k)) {
+        studentNamesByGender[k].sort(function (a, b) { return a.localeCompare(b, undefined, { sensitivity: "base" }); });
+      }
+    }
+    latestGenderDist.students = studentsByGender;
+    latestGenderDist.records = recordsByGender;
+    latestGenderDist.mcp = mcpByGender;
+    latestGenderDist.studentNamesByGender = studentNamesByGender;
+  }
+
+  function computeGradeDistributions(counts) {
+    var studentsByGrade = {};
+    var recordsByGrade = {};
+    var mcpByGrade = {};
+    var studentNamesByGrade = {};
+    for (var i = 0; i < counts.length; i++) {
+      var lab = getGradeLabel(counts[i].student && counts[i].student.grade_in_2026);
+      var gradeKey = lab || "No grade";
+      studentsByGrade[gradeKey] = (studentsByGrade[gradeKey] || 0) + 1;
+      recordsByGrade[gradeKey] = (recordsByGrade[gradeKey] || 0) + counts[i].recordsCount;
+      var mcpG = counts[i].mcpTotal != null ? Number(counts[i].mcpTotal) : 0;
+      mcpByGrade[gradeKey] = (mcpByGrade[gradeKey] || 0) + mcpG;
+      var nmG = ((counts[i].student && counts[i].student.name) || "").trim() || "—";
+      if (!studentNamesByGrade[gradeKey]) studentNamesByGrade[gradeKey] = [];
+      studentNamesByGrade[gradeKey].push(nmG);
+    }
+    for (var kg in studentNamesByGrade) {
+      if (Object.prototype.hasOwnProperty.call(studentNamesByGrade, kg)) {
+        studentNamesByGrade[kg].sort(function (a, b) { return a.localeCompare(b, undefined, { sensitivity: "base" }); });
+      }
+    }
+    latestGradeDist.students = studentsByGrade;
+    latestGradeDist.records = recordsByGrade;
+    latestGradeDist.mcp = mcpByGrade;
+    latestGradeDist.studentNamesByGrade = studentNamesByGrade;
+  }
+
+  function drawPieChartOnElements(canvas, legendEl, distMap, valueFormatter, sliceNamesResolver) {
     if (!canvas || !legendEl) return;
 
     if (canvas._stateDistPieClickHandler) {
@@ -3087,10 +3221,10 @@
     }
     legendEl.innerHTML = legendHtml.join("");
 
-    if (enableStateDistSliceNames) {
-      var otherStateLabels = [];
+    if (typeof sliceNamesResolver === "function") {
+      var otherBucketLabels = [];
       for (var oi = MAX_SLICES; oi < entries.length; oi++) {
-        otherStateLabels.push(entries[oi].label);
+        otherBucketLabels.push(entries[oi].label);
       }
       canvas._stateDistPieHit = {
         cssSize: cssSize,
@@ -3098,7 +3232,7 @@
         cy: cy,
         radius: radius,
         segments: segmentsMeta,
-        otherStateLabels: otherStateLabels
+        otherStateLabels: otherBucketLabels
       };
       canvas.style.cursor = "pointer";
       canvas._stateDistPieClickHandler = function (ev) {
@@ -3130,7 +3264,7 @@
         }
         if (idx < 0) return;
         var sliceLabel = meta.segments[idx].label;
-        var got = getStudentNamesForStateDistSlice(sliceLabel, meta.otherStateLabels);
+        var got = sliceNamesResolver(sliceLabel, meta.otherStateLabels);
         showStateDistStudentNamesTooltip(ev.clientX, ev.clientY, got.title, got.names);
       };
       canvas.addEventListener("click", canvas._stateDistPieClickHandler);
@@ -3249,6 +3383,7 @@
 
   var stateDistMapOutsideClickBound = false;
   var stateDistMapTooltipClickStopBound = false;
+  var stateDistNamesEscapeBound = false;
 
   function clearStateDistMapStudentNameTooltip() {
     var tip = document.getElementById("state-dist-us-map-tooltip");
@@ -3265,17 +3400,32 @@
   function bindStateDistMapOutsideDismiss() {
     if (stateDistMapOutsideClickBound) return;
     stateDistMapOutsideClickBound = true;
-    document.addEventListener("click", function (ev) {
-      if (!stateDistPopoverOpen) return;
-      var el = ev.target;
-      if (!el || !el.closest) return;
-      if (
-        el.closest(".state-dist-us-map-wrap") ||
-        el.closest(".state-dist-charts") ||
-        el.closest("#state-dist-us-map-tooltip")
-      ) {
-        return;
-      }
+    /* Capture phase: runs before canvas/map stopPropagation so outside clicks always dismiss the name list. */
+    document.addEventListener(
+      "click",
+      function (ev) {
+        if (!stateDistPopoverOpen && !genderDistPopoverOpen && !gradeDistPopoverOpen) return;
+        var tip = document.getElementById("state-dist-us-map-tooltip");
+        if (!tip || !tip.classList.contains("state-dist-us-map-tooltip--names")) return;
+        var el = ev.target;
+        if (!el || !el.closest) return;
+        if (el.closest("#state-dist-us-map-tooltip")) return;
+        if (el.closest(".state-dist-us-map-wrap")) return;
+        clearStateDistMapStudentNameTooltip();
+      },
+      true
+    );
+  }
+
+  function bindStateDistNamesEscapeDismiss() {
+    if (stateDistNamesEscapeBound) return;
+    stateDistNamesEscapeBound = true;
+    document.addEventListener("keydown", function (e) {
+      if (e.key !== "Escape") return;
+      var tip = document.getElementById("state-dist-us-map-tooltip");
+      if (!tip || !tip.classList.contains("state-dist-us-map-tooltip--names")) return;
+      if (!stateDistPopoverOpen && !genderDistPopoverOpen && !gradeDistPopoverOpen) return;
+      e.preventDefault();
       clearStateDistMapStudentNameTooltip();
     });
   }
@@ -3314,22 +3464,95 @@
     return { title: sliceLabel, names: names };
   }
 
+  function getStudentNamesForGenderDistSlice(sliceLabel, otherGenderLabels) {
+    if (sliceLabel === "Other" && otherGenderLabels && otherGenderLabels.length) {
+      var seenG = {};
+      var allG = [];
+      for (var gi = 0; gi < otherGenderLabels.length; gi++) {
+        var gk = otherGenderLabels[gi];
+        var arrG =
+          latestGenderDist.studentNamesByGender && latestGenderDist.studentNamesByGender[gk]
+            ? latestGenderDist.studentNamesByGender[gk]
+            : [];
+        for (var gj = 0; gj < arrG.length; gj++) {
+          var nmg = arrG[gj];
+          if (!seenG[nmg]) {
+            seenG[nmg] = true;
+            allG.push(nmg);
+          }
+        }
+      }
+      allG.sort(function (a, b) {
+        return a.localeCompare(b, undefined, { sensitivity: "base" });
+      });
+      return {
+        title: "Other (" + otherGenderLabels.length + " categories)",
+        names: allG
+      };
+    }
+    var namesG =
+      latestGenderDist.studentNamesByGender && latestGenderDist.studentNamesByGender[sliceLabel]
+        ? latestGenderDist.studentNamesByGender[sliceLabel].slice()
+        : [];
+    return { title: sliceLabel, names: namesG };
+  }
+
+  function getStudentNamesForGradeDistSlice(sliceLabel, otherGradeLabels) {
+    if (sliceLabel === "Other" && otherGradeLabels && otherGradeLabels.length) {
+      var seenGr = {};
+      var allGr = [];
+      for (var ri = 0; ri < otherGradeLabels.length; ri++) {
+        var rk = otherGradeLabels[ri];
+        var arrR =
+          latestGradeDist.studentNamesByGrade && latestGradeDist.studentNamesByGrade[rk]
+            ? latestGradeDist.studentNamesByGrade[rk]
+            : [];
+        for (var rj = 0; rj < arrR.length; rj++) {
+          var nmr = arrR[rj];
+          if (!seenGr[nmr]) {
+            seenGr[nmr] = true;
+            allGr.push(nmr);
+          }
+        }
+      }
+      allGr.sort(function (a, b) {
+        return a.localeCompare(b, undefined, { sensitivity: "base" });
+      });
+      return {
+        title: "Other (" + otherGradeLabels.length + " grades)",
+        names: allGr
+      };
+    }
+    var namesR =
+      latestGradeDist.studentNamesByGrade && latestGradeDist.studentNamesByGrade[sliceLabel]
+        ? latestGradeDist.studentNamesByGrade[sliceLabel].slice()
+        : [];
+    return { title: sliceLabel, names: namesR };
+  }
+
   function showStateDistStudentNamesTooltip(clientX, clientY, title, names) {
     bindStateDistMapOutsideDismiss();
+    bindStateDistNamesEscapeDismiss();
     var tooltip = document.getElementById("state-dist-us-map-tooltip");
     if (!tooltip) return;
     if (!stateDistMapTooltipClickStopBound) {
       stateDistMapTooltipClickStopBound = true;
       tooltip.addEventListener("click", function (e) {
+        if (e.target && e.target.closest && e.target.closest(".state-dist-us-map-tooltip-close")) return;
         e.stopPropagation();
       });
     }
     tooltip.classList.add("state-dist-us-map-tooltip--names");
+    var closeBtnHtml =
+      "<button type=\"button\" class=\"state-dist-us-map-tooltip-close\" aria-label=\"Close name list\">×</button>";
     if (!names || !names.length) {
       tooltip.innerHTML =
+        "<div class=\"state-dist-us-map-tooltip-head-row\">" +
         "<p class=\"state-dist-us-map-tooltip-empty\">" +
         escapeHtml(title) +
-        ": no students in this leaderboard view.</p>";
+        ": no students in this leaderboard view.</p>" +
+        closeBtnHtml +
+        "</div>";
     } else {
       var listHtml = names
         .map(function (n) {
@@ -3337,6 +3560,7 @@
         })
         .join("");
       tooltip.innerHTML =
+        "<div class=\"state-dist-us-map-tooltip-head-row\">" +
         "<div class=\"state-dist-us-map-tooltip-head\">" +
         "<strong>" +
         escapeHtml(title) +
@@ -3344,9 +3568,19 @@
         "<span class=\"state-dist-us-map-names-count\">(" +
         names.length +
         ")</span></div>" +
+        closeBtnHtml +
+        "</div>" +
         "<ul class=\"state-dist-us-map-tooltip-namelist\">" +
         listHtml +
         "</ul>";
+    }
+    var closeBtn = tooltip.querySelector(".state-dist-us-map-tooltip-close");
+    if (closeBtn) {
+      closeBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        clearStateDistMapStudentNameTooltip();
+      });
     }
     tooltip.style.display = "block";
     tooltip.style.position = "fixed";
@@ -3467,23 +3701,98 @@
       document.getElementById("state-dist-students-legend"),
       latestStateDist.students,
       undefined,
-      true
+      getStudentNamesForStateDistSlice
     );
     drawPieChartOnElements(
       document.getElementById("state-dist-records-canvas"),
       document.getElementById("state-dist-records-legend"),
       latestStateDist.records,
       undefined,
-      true
+      getStudentNamesForStateDistSlice
     );
     drawPieChartOnElements(
       document.getElementById("state-dist-mcp-canvas"),
       document.getElementById("state-dist-mcp-legend"),
       latestStateDist.mcp,
       function (v) { return Math.round(v).toLocaleString() + " MCP"; },
-      true
+      getStudentNamesForStateDistSlice
     );
     syncStateDistUsMapColors();
+  }
+
+  function renderGenderDistCharts() {
+    drawPieChartOnElements(
+      document.getElementById("gender-dist-students-canvas"),
+      document.getElementById("gender-dist-students-legend"),
+      latestGenderDist.students,
+      undefined,
+      getStudentNamesForGenderDistSlice
+    );
+    drawPieChartOnElements(
+      document.getElementById("gender-dist-records-canvas"),
+      document.getElementById("gender-dist-records-legend"),
+      latestGenderDist.records,
+      undefined,
+      getStudentNamesForGenderDistSlice
+    );
+    drawPieChartOnElements(
+      document.getElementById("gender-dist-mcp-canvas"),
+      document.getElementById("gender-dist-mcp-legend"),
+      latestGenderDist.mcp,
+      function (v) { return Math.round(v).toLocaleString() + " MCP"; },
+      getStudentNamesForGenderDistSlice
+    );
+  }
+
+  function renderGradeDistCharts() {
+    drawPieChartOnElements(
+      document.getElementById("grade-dist-students-canvas"),
+      document.getElementById("grade-dist-students-legend"),
+      latestGradeDist.students,
+      undefined,
+      getStudentNamesForGradeDistSlice
+    );
+    drawPieChartOnElements(
+      document.getElementById("grade-dist-records-canvas"),
+      document.getElementById("grade-dist-records-legend"),
+      latestGradeDist.records,
+      undefined,
+      getStudentNamesForGradeDistSlice
+    );
+    drawPieChartOnElements(
+      document.getElementById("grade-dist-mcp-canvas"),
+      document.getElementById("grade-dist-mcp-legend"),
+      latestGradeDist.mcp,
+      function (v) { return Math.round(v).toLocaleString() + " MCP"; },
+      getStudentNamesForGradeDistSlice
+    );
+  }
+
+  function closeGenderDistPopoverUi() {
+    var pop = document.getElementById("gender-dist-popover");
+    var tr = document.getElementById("gender-dist-trigger");
+    if (pop) pop.hidden = true;
+    if (tr) tr.setAttribute("aria-expanded", "false");
+    genderDistPopoverOpen = false;
+    clearStateDistMapStudentNameTooltip();
+  }
+
+  function closeGradeDistPopoverUi() {
+    var pop = document.getElementById("grade-dist-popover");
+    var tr = document.getElementById("grade-dist-trigger");
+    if (pop) pop.hidden = true;
+    if (tr) tr.setAttribute("aria-expanded", "false");
+    gradeDistPopoverOpen = false;
+    clearStateDistMapStudentNameTooltip();
+  }
+
+  function closeStateDistPopoverUi() {
+    var pop = document.getElementById("state-dist-popover");
+    var tr = document.getElementById("state-dist-trigger");
+    if (pop) pop.hidden = true;
+    if (tr) tr.setAttribute("aria-expanded", "false");
+    stateDistPopoverOpen = false;
+    clearStateDistMapStudentNameTooltip();
   }
 
   function bindStateDistPopover() {
@@ -3494,6 +3803,8 @@
     if (!trigger || !popover) return;
 
     function openPopover() {
+      closeGenderDistPopoverUi();
+      closeGradeDistPopoverUi();
       popover.hidden = false;
       trigger.setAttribute("aria-expanded", "true");
       stateDistPopoverOpen = true;
@@ -3506,10 +3817,7 @@
     }
 
     function closePopover() {
-      popover.hidden = true;
-      trigger.setAttribute("aria-expanded", "false");
-      stateDistPopoverOpen = false;
-      clearStateDistMapStudentNameTooltip();
+      closeStateDistPopoverUi();
     }
 
     trigger.addEventListener("click", function () {
@@ -3522,6 +3830,74 @@
     if (stateDistAllPngBtn) {
       stateDistAllPngBtn.addEventListener("click", function () {
         downloadStateDistributionCombinedPng();
+      });
+    }
+  }
+
+  function bindGenderDistPopover() {
+    var trigger = document.getElementById("gender-dist-trigger");
+    var popover = document.getElementById("gender-dist-popover");
+    var closeBtn = popover && popover.querySelector(".state-dist-popover-close");
+    var backdrop = popover && popover.querySelector(".state-dist-popover-backdrop");
+    if (!trigger || !popover) return;
+
+    function openPopover() {
+      closeStateDistPopoverUi();
+      closeGradeDistPopoverUi();
+      popover.hidden = false;
+      trigger.setAttribute("aria-expanded", "true");
+      genderDistPopoverOpen = true;
+      renderGenderDistCharts();
+    }
+
+    function closePopover() {
+      closeGenderDistPopoverUi();
+    }
+
+    trigger.addEventListener("click", function () {
+      if (popover.hidden) openPopover(); else closePopover();
+    });
+    if (closeBtn) closeBtn.addEventListener("click", closePopover);
+    if (backdrop) backdrop.addEventListener("click", closePopover);
+
+    var pngBtn = document.getElementById("gender-dist-download-all-png");
+    if (pngBtn) {
+      pngBtn.addEventListener("click", function () {
+        downloadGenderDistributionCombinedPng();
+      });
+    }
+  }
+
+  function bindGradeDistPopover() {
+    var trigger = document.getElementById("grade-dist-trigger");
+    var popover = document.getElementById("grade-dist-popover");
+    var closeBtn = popover && popover.querySelector(".state-dist-popover-close");
+    var backdrop = popover && popover.querySelector(".state-dist-popover-backdrop");
+    if (!trigger || !popover) return;
+
+    function openPopover() {
+      closeStateDistPopoverUi();
+      closeGenderDistPopoverUi();
+      popover.hidden = false;
+      trigger.setAttribute("aria-expanded", "true");
+      gradeDistPopoverOpen = true;
+      renderGradeDistCharts();
+    }
+
+    function closePopover() {
+      closeGradeDistPopoverUi();
+    }
+
+    trigger.addEventListener("click", function () {
+      if (popover.hidden) openPopover(); else closePopover();
+    });
+    if (closeBtn) closeBtn.addEventListener("click", closePopover);
+    if (backdrop) backdrop.addEventListener("click", closePopover);
+
+    var pngBtn = document.getElementById("grade-dist-download-all-png");
+    if (pngBtn) {
+      pngBtn.addEventListener("click", function () {
+        downloadGradeDistributionCombinedPng();
       });
     }
   }
@@ -3707,6 +4083,8 @@
         renderTopStudentsByRecords();
         bindContestListPopover();
         bindStateDistPopover();
+        bindGenderDistPopover();
+        bindGradeDistPopover();
         bindMcpTimelinePopover();
         bindMcpPctPopover();
         bindCsvPopover();
