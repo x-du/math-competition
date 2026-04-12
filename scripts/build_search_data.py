@@ -25,6 +25,10 @@ CONTESTS_SKIP_FOR_SEARCH = {
 BMT_CONTESTS = {"bmt", "bmt-algebra", "bmt-calculus", "bmt-discrete", "bmt-geometry"}
 MPFG_SLUGS = {"mpfg", "mpfg-olympiad", "egmo"}  # Gender-restricted: count toward MCP-W only
 MATHCOUNTS_SLUG = "mathcounts-national-rank"
+# When rank standings exist, national roster competitors not in the published table (rank "Competitor")
+# get a synthetic rank at the midpoint between last ranked tier (55) and field size N (see MCP_V2_PARAMS).
+def mathcounts_unranked_mcp_rank(N: int) -> float:
+    return (55 + N) / 2
 # Contests where state comes from results.csv (not students.csv): the state the student
 # represented at that competition, which may differ from their current state.
 CONTESTS_WITH_CSV_STATE = {MATHCOUNTS_SLUG, "amo", "jmo"}
@@ -82,7 +86,7 @@ MCP_V2_PARAMS = {
     "cmimc": {"default": (200, 10)},
     "bamo-12": {"default": (240, 10)},
     "bamo-8": {"default": (420, 10)},
-    "mathcounts-national-rank": {"default": (224, 100)},
+    "mathcounts-national-rank": {"default": (224, 100)},  # N=224; unranked roster uses mcp_rank (55+N)/2
     "mpfg": {"default": (275, 100)},
     "mpfg-olympiad": {"default": (75, 100)},
     "mmaths": {"default": (750, 10)},
@@ -260,7 +264,7 @@ def merge_mathcounts_national_competitors_into_rank(
 ) -> int:
     """Add mathcounts-national-rank rows from mathcounts-national/year=…/results.csv for students not already listed.
 
-    Each added row has rank "Competitor" and no MCP fields. Returns number of records added."""
+    Each added row has rank "Competitor". MCP rank/points are filled later when that year has rank standings."""
     comp_path = CONTESTS_DIR / "mathcounts-national" / f"year={year}" / "results.csv"
     if not comp_path.is_file():
         return 0
@@ -474,6 +478,35 @@ def main() -> None:
                 r.pop("mcp_rank", None)
                 r.pop("mcp_points", None)
                 r.pop("mcp_contrib", None)
+
+    # Years with published national standings: roster-only competitors (rank "Competitor") earn MCP using a
+    # synthetic mcp_rank midway between the last ranked tier (55) and field size N (e.g. (55+224)/2 = 139.5).
+    mc_info = contests.get(MATHCOUNTS_SLUG, {})
+    mc_tier = mc_info.get("mcp_tier")
+    mc_weight = mc_info.get("mcp_weight")
+    if mc_tier and mc_weight:
+        for recs in records_by_id.values():
+            for r in recs:
+                if r.get("contest_slug") != MATHCOUNTS_SLUG:
+                    continue
+                y = r.get("year") or ""
+                if y in mc_nat_years_without_rank_results:
+                    continue
+                if str(r.get("rank") or "").strip() != "Competitor":
+                    continue
+                v2_N, v2_min_pts = get_mcp_v2_params(MATHCOUNTS_SLUG, str(y))
+                if v2_N is None or v2_min_pts is None:
+                    continue
+                mcp_rank = mathcounts_unranked_mcp_rank(v2_N)
+                r["mcp_rank"] = mcp_rank
+                pts = compute_mcp_points(
+                    mcp_rank, v2_N, mc_tier, mc_weight, min_pts=v2_min_pts
+                )
+                r["mcp_points"] = pts
+                tw = get_time_weight(str(y), MATHCOUNTS_SLUG, max_year_by_slug.get(MATHCOUNTS_SLUG, 2026))
+                contrib = round(pts * tw, 2)
+                if contrib > 0:
+                    r["mcp_contrib"] = int(contrib) if contrib == int(contrib) else contrib
 
     # Normalize any record-level state (US -> abbreviation; non-US unchanged)
     for recs in records_by_id.values():

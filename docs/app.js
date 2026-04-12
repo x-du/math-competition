@@ -354,6 +354,32 @@
     return total;
   }
 
+  /** Sum mcp_contrib by contest name for pie chart; include MPFG/EGMO only when includeMcpWSlugs is true. */
+  function buildContribByContestMap(records, contestsMap, includeMcpWSlugs) {
+    var contribByContest = {};
+    contestsMap = contestsMap || {};
+    for (var ci = 0; ci < records.length; ci++) {
+      var rec = records[ci];
+      var contrib = rec.mcp_contrib;
+      if (!contrib || contrib <= 0) continue;
+      var cSlug = rec.contest_slug || rec.contest || "other";
+      if (!includeMcpWSlugs && isMcpWOnlySlug(cSlug)) continue;
+      var cInfo = contestsMap[cSlug];
+      var cName = (cInfo && cInfo.contest_name) ? cInfo.contest_name : cSlug;
+      contribByContest[cName] = (contribByContest[cName] || 0) + contrib;
+    }
+    for (var ck in contribByContest) {
+      if (Object.prototype.hasOwnProperty.call(contribByContest, ck)) {
+        contribByContest[ck] = Math.round(contribByContest[ck] * 100) / 100;
+      }
+    }
+    return contribByContest;
+  }
+
+  function isFemaleStudent(student) {
+    return (student && (student.gender || "").toLowerCase()) === "female";
+  }
+
   function mcpTimelineChartUsesLeaderboardFilters() {
     return !mcpTimelineApplyFiltersEl || mcpTimelineApplyFiltersEl.checked;
   }
@@ -1956,6 +1982,7 @@
     opts = opts || {};
     var useCanonicalMcpStats = !!opts.useCanonicalMcpStats;
     var records = (student.records || []).slice();
+    var female = isFemaleStudent(student);
     var grouped = groupRecordsByContest(records);
     var bySlug = grouped.bySlug;
     var slugs = grouped.slugs;
@@ -2013,52 +2040,49 @@
     }
 
     var totalRecords = records.length;
-    var mcpTotal;
-    var isGirlsOnlyCard = (document.getElementById("girls-only") || {}).checked;
-    var totalMcp = isGirlsOnlyCard && student.mcp_w != null ? Number(student.mcp_w) : (student.mcp != null ? Number(student.mcp) : 0);
+    var totalMcpOpen = student.mcp != null ? Number(student.mcp) : 0;
+    var totalMcpW = female && student.mcp_w != null ? Number(student.mcp_w) : totalMcpOpen;
     var contestFilterActiveCard = contestFilter.isContestFilterActive() && !useCanonicalMcpStats;
+    var mcpOpenShown;
+    var mcpWShown;
     if (contestFilterActiveCard) {
-      mcpTotal = computeMcpFromRecords(records, isGirlsOnlyCard);
+      mcpOpenShown = computeMcpFromRecords(records, false);
+      mcpWShown = female ? computeMcpFromRecords(records, true) : mcpOpenShown;
     } else {
-      mcpTotal = totalMcp;
+      mcpOpenShown = totalMcpOpen;
+      mcpWShown = female && student.mcp_w != null ? Number(student.mcp_w) : totalMcpOpen;
     }
-    var mcpPctSuffix = "";
-    if (sortMode === "mcp_pct" && contestFilterActiveCard && mcpTotal > 0 && totalMcp > 0) {
-      var ratio = mcpTotal / totalMcp;
+
+    function mcpPctSuffixFor(totalShown, totalDenom) {
+      if (sortMode !== "mcp_pct" || !contestFilterActiveCard || totalShown <= 0 || totalDenom <= 0) return "";
+      var ratio = totalShown / totalDenom;
       var pctValCard = formatMcpPct(ratio);
       var contestLabelsCard = contestFilter.getSelectedContestLabels();
       var contestsStrCard = contestLabelsCard.length ? contestLabelsCard.join(", ") : "selected competitions";
-      mcpPctSuffix = " (<button type=\"button\" class=\"mcp-pct-trigger\" data-pct=\"" + escapeHtml(pctValCard) + "\" data-contests=\"" + escapeHtml(contestsStrCard) + "\">" + pctValCard + "%</button>)";
+      return " (<button type=\"button\" class=\"mcp-pct-trigger\" data-pct=\"" + escapeHtml(pctValCard) + "\" data-contests=\"" + escapeHtml(contestsStrCard) + "\">" + pctValCard + "%</button>)";
     }
-    var mcpDisplay = mcpTotal > 0 ? "<span class=\"student-stat\">" + formatMcpValue(mcpTotal) + " MCP" + mcpPctSuffix + "</span>" : "";
+
+    var mcpDisplay = "";
+    if (female) {
+      var parts = [];
+      parts.push("<span class=\"student-stat\">" + formatMcpValue(mcpOpenShown) + " MCP" + mcpPctSuffixFor(mcpOpenShown, totalMcpOpen) + "</span>");
+      parts.push("<span class=\"student-stat\">" + formatMcpValue(mcpWShown) + " MCP-W" + mcpPctSuffixFor(mcpWShown, totalMcpW) + "</span>");
+      mcpDisplay = parts.join("");
+    } else if (mcpOpenShown > 0) {
+      mcpDisplay = "<span class=\"student-stat\">" + formatMcpValue(mcpOpenShown) + " MCP" + mcpPctSuffixFor(mcpOpenShown, totalMcpOpen) + "</span>";
+    }
     var statsHtml = "<span class=\"student-stats\">" +
       "<span class=\"student-stat\">" + totalRecords + (totalRecords === 1 ? " record" : " records") + "</span>" +
       mcpDisplay +
       "</span>";
 
-    var mcpBtnHtml = "";
-    if (mcpTotal > 0) {
-      var contribByContest = {};
-      for (var ci = 0; ci < records.length; ci++) {
-        var rec = records[ci];
-        var contrib = rec.mcp_contrib;
-        if (!contrib || contrib <= 0) continue;
-        var cSlug = rec.contest_slug || rec.contest || "other";
-        var cInfo = (contestsMap || {})[cSlug];
-        var cName = (cInfo && cInfo.contest_name) ? cInfo.contest_name : cSlug;
-        contribByContest[cName] = (contribByContest[cName] || 0) + contrib;
-      }
-      for (var ck in contribByContest) {
-        if (Object.prototype.hasOwnProperty.call(contribByContest, ck)) {
-          contribByContest[ck] = Math.round(contribByContest[ck] * 100) / 100;
-        }
-      }
-      mcpBtnHtml =
+    function mcpBreakdownBlock(label, totalPts, contribJson) {
+      return (
         "<span class=\"mcp-breakdown-wrap\">" +
-          "<button type=\"button\" class=\"mcp-breakdown-btn\" aria-label=\"MCP breakdown\">MCP</button>" +
+          "<button type=\"button\" class=\"mcp-breakdown-btn\" aria-label=\"" + escapeHtml(label) + " breakdown\">" + escapeHtml(label) + "</button>" +
           "<div class=\"mcp-breakdown-popover\" hidden>" +
             "<div class=\"mcp-breakdown-popover-inner\">" +
-              "<h3 class=\"mcp-breakdown-title\">" + escapeHtml(student.name || "Student") + " — MCP Breakdown — " + escapeHtml(formatMcpValue(mcpTotal)) + " pts</h3>" +
+              "<h3 class=\"mcp-breakdown-title\">" + escapeHtml(student.name || "Student") + " — " + escapeHtml(label) + " Breakdown — " + escapeHtml(formatMcpValue(totalPts)) + " pts</h3>" +
               "<canvas class=\"mcp-breakdown-canvas\" width=\"260\" height=\"260\"></canvas>" +
               "<button type=\"button\" class=\"mcp-breakdown-download-png chart-png-download chart-png-download--icon\" aria-label=\"Download chart as PNG\">" + CHART_DOWNLOAD_ICON_HTML + "</button>" +
               "<div class=\"mcp-breakdown-legend\"></div>" +
@@ -2066,8 +2090,24 @@
             "</div>" +
             "<div class=\"mcp-breakdown-backdrop\" aria-hidden=\"true\"></div>" +
           "</div>" +
-          "<script type=\"application/json\" class=\"mcp-breakdown-data\">" + JSON.stringify(contribByContest) + "</script>" +
-        "</span>";
+          "<script type=\"application/json\" class=\"mcp-breakdown-data\">" + contribJson + "</script>" +
+        "</span>"
+      );
+    }
+
+    var mcpBtnHtml = "";
+    if (female) {
+      if (mcpWShown > 0) {
+        var contribW = buildContribByContestMap(records, contestsMap, true);
+        if (Object.keys(contribW).length > 0) {
+          mcpBtnHtml = mcpBreakdownBlock("MCP", mcpWShown, JSON.stringify(contribW));
+        }
+      }
+    } else if (mcpOpenShown > 0) {
+      var contribMale = buildContribByContestMap(records, contestsMap, false);
+      if (Object.keys(contribMale).length > 0) {
+        mcpBtnHtml = mcpBreakdownBlock("MCP", mcpOpenShown, JSON.stringify(contribMale));
+      }
     }
 
     var contestsHtml = headerOnly ? "" : "<div class=\"student-contests\">" + sections.join("") + "</div>";
@@ -2875,8 +2915,9 @@
         var body = contestRecords.map(function (r) {
           var row = [r.year != null ? String(r.year) : ""];
           for (var k = 0; k < keys.length; k++) {
-            var val = r[keys[k]];
-            if (keys[k] === "state") val = expandUsStateAbbrev(val);
+            var keyK = keys[k];
+            var val = r[keyK];
+            if (keyK === "state") val = expandUsStateAbbrev(val);
             row.push(val != null ? String(val) : "");
           }
           return row;
