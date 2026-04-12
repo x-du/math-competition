@@ -18,7 +18,7 @@ CONTESTS_CSV = CONTESTS_DIR / "contests.csv"
 OUTPUT_JSON = REPO_ROOT / "docs" / "data.json"
 
 CONTESTS_SKIP_FOR_SEARCH = {
-    "mathcounts-national",
+    "mathcounts-national",  # Roster CSVs only; listed in contest popover, not in student search
     "mk-national",  # Record only (statement info); not shown on website, no MCP
 }
 
@@ -437,6 +437,19 @@ def main() -> None:
             if len(files) == 1:
                 contest_year_files[slug][year] = files[0]
             # else keep as list for multiple files
+
+    # MATHCOUNTS National competitors: show in contest popover + csv-viewer, but not in search (skipped above).
+    mc_nat = CONTESTS_DIR / "mathcounts-national"
+    if mc_nat.is_dir():
+        if "mathcounts-national" not in contest_year_files:
+            contest_year_files["mathcounts-national"] = {}
+        for year_dir in sorted(mc_nat.iterdir()):
+            if not year_dir.is_dir() or not year_dir.name.startswith("year="):
+                continue
+            year = year_dir.name.replace("year=", "")
+            comp = year_dir / "competitors.csv"
+            if comp.is_file():
+                contest_year_files["mathcounts-national"][year] = "competitors.csv"
 
     # Build slug_index and replace contest_slug strings with compact numeric indices
     slug_set = set()
