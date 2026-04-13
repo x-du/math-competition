@@ -45,47 +45,47 @@ student_id,student_name,year,rank,score,team,mcp_rank
 874,Sreehari Vijaybhaskar,2025,38,9,Dallas Individuals 1,41
 1459,Brian Zhao,2025,45,9,Benjamin's Dad's Team,45
 1063,Daniel Zhou,2025,46,9,Daisy - AAMOC 1,46
-329,Jiaxuan Gong,2025,47,9,Motown All-Stars,53.5
-1460,Woojin Seong,2025,47,9,Novi Unicorns,53.5
-1461,Dawson Park,2025,47,9,Hotchkiss Blue,53.5
-50,Peter Bai,2025,47,9,Lexington Alpha,53.5
-670,Sohan Javeri,2025,47,9,Placeholder,53.5
-1462,Mia Gan,2025,47,9,PRISMS Future Falcons,53.5
-1463,Kaya Yang,2025,47,9,PRISMS Young Falcons,53.5
-1464,Kevin Yu,2025,47,9,Theta Math Club,53.5
-1332,Yunong Wu,2025,47,9,Westchester Area Math Circle A,53.5
-817,Girish Prasad,2025,47,9,Westchester Area Math Circle A,53.5
-1465,Henry Xue,2025,47,9,Westchester Area Math Circle B,53.5
-243,Aarush Prasad,2025,47,9,WWP Charmander,53.5
-1466,Jack Li,2025,47,9,Ultraviolet Catastrophe,53.5
-694,Christopher Sakaliyski,2025,47,9,Ultraviolet Catastrophe,53.5
-35,William Hua,2025,61,8,Lexington Alpha,61
-1467,Lucas Wang,2025,62,8,orzzzzzzzzzzzz,62
-47,Shaohuan Zhang,2025,63,8,Cranbrook Aardvarks,63.5
-1468,Zenghan Feng,2025,63,8,Stearns Middle School,63.5
-1087,Justin Seo,2025,65,8,Cranbrook Aardvarks,65
-248,Shaheem Samsudeen,2025,66,8,PESH Math Club,66
-1469,Michael Wu,2025,67,8,D1 Moggers,68.5
-1077,Xinyi Li,2025,67,8,Dallas Math Circle,68.5
-913,Samarth Das,2025,67,8,Dallas Individuals 1,68.5
-284,Alexander Liu,2025,67,8,Mass ARML,68.5
-1470,Tianze Qiu,2025,71,8,Theta Math Club,71
-1471,Jason Yang,2025,72,8,Lexington Alpha,72
-1472,Zekai Wang,2025,73,8,OveRZealous TEsserAct Manufacturers,73
-1473,Pun Tresattayapan,2025,74,8,Cranbrook Aardvarks,74
-1474,Benjamin Tang,2025,75,8,USC Individuals 1,75
-1475,Hridaan Mehta,2025,76,8,CRH 1,76.5
-1476,Ian Cheng,2025,76,8,VAMC2025,76.5
-1477,Tiger Deng,2025,78,8,the snorlaxes,78
-1447,William Wu,2025,79,8,Ultraviolet Catastrophe,79
-401,Emma Li,2025,80,8,PHS Apricot,80
-1350,Chloe Ma,2025,81,8,Hot Pot Lovers,81
-1478,Alexander Peev,2025,82,8,RSM - B,82
-1479,Roy Brauwerman,2025,83,8,REST Assured,83
-1084,Maiya Qiu,2025,84,8,PHS Apricot,84
-1480,Samhith Dewal,2025,85,8,Mass ARML,86
-1481,Bohan Wang,2025,85,8,PRISMS Falcons,86
-1482,Anuraag Pasula,2025,85,8,Academies Math Team,86
+1481,Bohan Wang,2025,47,9,PRISMS Falcons,54
+329,Jiaxuan Gong,2025,47,9,Motown All-Stars,54
+1460,Woojin Seong,2025,47,9,Novi Unicorns,54
+1461,Dawson Park,2025,47,9,Hotchkiss Blue,54
+50,Peter Bai,2025,47,9,Lexington Alpha,54
+670,Sohan Javeri,2025,47,9,Placeholder,54
+1462,Mia Gan,2025,47,9,PRISMS Future Falcons,54
+1463,Kaya Yang,2025,47,9,PRISMS Young Falcons,54
+1464,Kevin Yu,2025,47,9,Theta Math Club,54
+1332,Yunong Wu,2025,47,9,Westchester Area Math Circle A,54
+817,Girish Prasad,2025,47,9,Westchester Area Math Circle A,54
+1465,Henry Xue,2025,47,9,Westchester Area Math Circle B,54
+243,Aarush Prasad,2025,47,9,WWP Charmander,54
+1466,Jack Li,2025,47,9,Ultraviolet Catastrophe,54
+694,Christopher Sakaliyski,2025,47,9,Ultraviolet Catastrophe,54
+35,William Hua,2025,62,8,Lexington Alpha,62
+1467,Lucas Wang,2025,63,8,orzzzzzzzzzzzz,63
+47,Shaohuan Zhang,2025,64,8,Cranbrook Aardvarks,64.5
+1468,Zenghan Feng,2025,64,8,Stearns Middle School,64.5
+1087,Justin Seo,2025,66,8,Cranbrook Aardvarks,66
+248,Shaheem Samsudeen,2025,67,8,PESH Math Club,67
+1469,Michael Wu,2025,68,8,D1 Moggers,69.5
+1077,Xinyi Li,2025,68,8,Dallas Math Circle,69.5
+913,Samarth Das,2025,68,8,Dallas Individuals 1,69.5
+284,Alexander Liu,2025,68,8,Mass ARML,69.5
+1470,Tianze Qiu,2025,72,8,Theta Math Club,72
+1471,Jason Yang,2025,73,8,Lexington Alpha,73
+1472,Zekai Wang,2025,74,8,OveRZealous TEsserAct Manufacturers,74
+1473,Pun Tresattayapan,2025,75,8,Cranbrook Aardvarks,75
+1474,Benjamin Tang,2025,76,8,USC Individuals 1,76
+1475,Hridaan Mehta,2025,77,8,CRH 1,77.5
+1476,Ian Cheng,2025,77,8,VAMC2025,77.5
+1477,Tiger Deng,2025,79,8,the snorlaxes,79
+1447,William Wu,2025,80,8,Ultraviolet Catastrophe,80
+401,Emma Li,2025,81,8,PHS Apricot,81
+1350,Chloe Ma,2025,82,8,Hot Pot Lovers,82
+1478,Alexander Peev,2025,83,8,RSM - B,83
+1479,Roy Brauwerman,2025,84,8,REST Assured,84
+1084,Maiya Qiu,2025,85,8,PHS Apricot,85
+1480,Samhith Dewal,2025,86,8,Mass ARML,86.5
+1482,Anuraag Pasula,2025,86,8,Academies Math Team,86.5
 821,Taiwen Feng,2025,88,8,Cranbrook Aardvarks,88.5
 793,Christopher Cheng,2025,88,8,texington,88.5
 1329,Amy Zhang,2025,90,8,Lexington Zeta,90
