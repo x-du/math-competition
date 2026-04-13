@@ -293,7 +293,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 320,Jeremy Yang,Maryland,,male,11
 321,Alexander Duncan,Massachusetts,,male,
 322,Andrew Shi,California,,male,10
-323,Isaac Chan-Osborn,Illinois,,male,9
+323,Isaac Chan-Osborn,Illinois,,male,8
 324,Benjamin Yin,Massachusetts,,male,
 325,Amy Cui,Washington,,female,12
 326,Sicheng Zhou,New Jersey,,male,
@@ -1410,7 +1410,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1478,Alexander Peev,Washington,,male,
 1479,Roy Brauwerman,,,male,
 1480,Samhith Dewal,Massachusetts,,male,
-1481,Bohan Wang,New Jersey,,male,
+1481,Bohan Wang,New Jersey,,male,10
 1482,Anuraag Pasula,New Jersey,,male,
 1483,Devin Li,Texas,,male,
 1484,April Sun,Massachusetts,,female,
@@ -1729,7 +1729,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1812,Keith Li,California,,male,
 1813,Ronald Wang,California,,male,
 1814,Angela Zhang,,,female,
-1815,Cindy Zhao,,,male,
+1815,Cindy Zhao,,,female,
 1816,Shrey Vishen,,,male,
 1817,Liyan Xu,California,,male,
 1818,Ananya Raghu,Washington,,male,
@@ -1880,7 +1880,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1964,Frank Yuan,California,,male,
 1965,Rohan Shivakumar,,,male,
 1966,Edwin Hou,,,male,
-1967,Allinah Zhan,,,male,
+1967,Allinah Zhan,,,female,
 1968,Yujun Lee,,,male,
 1969,Chengyu Wang,,,male,
 1970,Chase Hikida,California,,male,
@@ -6099,7 +6099,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6200,Thomas Liu,,,male,
 6201,Rishav Bhattacharjee,,,male,
 6202,Bowen Wu,,,male,
-6203,Carter Cai,,,male,
+6203,Carter Cai,California,,male,
 6204,Anshul Panda,,,male,
 6205,Zhendi Cao,,,male,
 6206,Keshav Venkatesh,,,male,
