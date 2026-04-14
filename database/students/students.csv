@@ -992,7 +992,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1045,Michelle Wu,"Ontario, Canada",,female,11
 1046,Terence Wu,Washington,,male,9
 1049,Ryan Yin,Virginia,,male,8
-1050,Jonathan Yu,California,,male,11
+1050,Jonathan Yu,Nevada,,male,6
 1051,Benjamin Zhang,California,,male,11
 1052,Edward Zhang,California,,male,
 1053,Eric Zhang,California,,male,
@@ -6301,7 +6301,6 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6402,Ethan Chang,Nevada,,male,6
 6403,Jimmy Fan,Nevada,,male,7
 6404,Maha'era Neil Aggarwal,Nevada,,,7
-6405,Jonathan Yu,Nevada,,male,6
 6406,Alan Ji,New York,,male,8
 6407,Zale Zhang,New York,,,8
 6408,Nicole Bao,Ohio,,female,8
