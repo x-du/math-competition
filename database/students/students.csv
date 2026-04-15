@@ -991,6 +991,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1044,Colin Wei,Texas,,male,
 1045,Michelle Wu,"Ontario, Canada",,female,11
 1046,Terence Wu,Washington,,male,9
+1047,Jonathan Yu,,,male,
 1049,Ryan Yin,Virginia,,male,8
 1050,Jonathan Yu,Nevada,,male,6
 1051,Benjamin Zhang,California,,male,11
@@ -6674,3 +6675,5 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6784,Eric Wang,Colorado,,male,13
 6785,Eric Wang,New Hampshire,,male,
 6786,Yile Shen,State Department,,,11
+6787,Arnav Kumar,,,,,
+6788,Anton Klisura,,,,,

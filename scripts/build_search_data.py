@@ -412,8 +412,16 @@ def main() -> None:
             # Compute mcp_points from mcp_rank if MCP-eligible
             mcp_rank_str = (row.get("mcp_rank") or "").strip()
             award_raw = (row.get("award") or "").strip()
-            # BMT only: broad tiers whose award text includes "Top 50%" do not earn MCP.
-            bmt_no_mcp = slug in BMT_CONTESTS and "top 50%" in award_raw.casefold()
+            # BMT only: broad award tiers (Distinguished HM / Honorable Mention) are visible in
+            # search results but do not earn MCP points.
+            award_text = award_raw.casefold()
+            bmt_no_mcp = (
+                slug in BMT_CONTESTS
+                and (
+                    "distinguished hm" in award_text
+                    or "honorable mention" in award_text
+                )
+            )
             if mcp_tier and mcp_weight:
                 pts = None
                 if slug in GRAND_SLAM_SLUGS:
