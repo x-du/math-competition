@@ -101,6 +101,12 @@ body.site-nav-open {
   overflow: hidden;
 }
 
+body.contest-filter-popover-open {
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
+}
+
 /* Header */
 .header {
   position: relative;

@@ -4197,15 +4197,36 @@
       if (!popover) return;
       var closeBtn = popover.querySelector(".contest-filter-popover-close");
       var backdrop = popover.querySelector(".contest-filter-popover-backdrop");
+      var inner = popover.querySelector(".contest-filter-popover-inner");
+      var bodyLocked = false;
+      var lockedScrollY = 0;
+
+      function lockBodyScroll() {
+        if (bodyLocked) return;
+        lockedScrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
+        document.body.classList.add("contest-filter-popover-open");
+        document.body.style.top = "-" + String(lockedScrollY) + "px";
+        bodyLocked = true;
+      }
+
+      function unlockBodyScroll() {
+        if (!bodyLocked) return;
+        document.body.classList.remove("contest-filter-popover-open");
+        document.body.style.top = "";
+        window.scrollTo(0, lockedScrollY);
+        bodyLocked = false;
+      }
 
       function openPopover() {
         popover.hidden = false;
         contestFilterTriggerEl.setAttribute("aria-expanded", "true");
+        lockBodyScroll();
       }
 
       function closePopover() {
         popover.hidden = true;
         contestFilterTriggerEl.setAttribute("aria-expanded", "false");
+        unlockBodyScroll();
       }
 
       contestFilterTriggerEl.addEventListener("click", function () {
@@ -4216,6 +4237,14 @@
       }
       if (backdrop) {
         backdrop.addEventListener("click", closePopover);
+      }
+      if (inner) {
+        inner.addEventListener("click", function (e) {
+          e.stopPropagation();
+        });
+        inner.addEventListener("touchend", function (e) {
+          e.stopPropagation();
+        });
       }
     })();
   }
