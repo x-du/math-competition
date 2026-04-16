@@ -790,6 +790,48 @@ body.contest-filter-popover-open {
   font-weight: 500;
 }
 
+/*
+ * Competition filter modal: meet ~44px minimum touch targets (WCAG / platform HIG).
+ * Scoped to this popover only so main-page filter controls stay compact.
+ */
+#contest-filter-popover .contest-filter-option,
+#contest-filter-popover .contest-filter-group-all-label {
+  min-height: 2.75rem;
+  padding: 0.4rem 0.35rem;
+  margin: -0.1rem 0;
+  box-sizing: border-box;
+  align-items: center;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+}
+
+#contest-filter-popover .contest-filter-group-header {
+  min-height: 2.75rem;
+  align-items: center;
+}
+
+#contest-filter-popover .contest-filter-group-toggle {
+  min-height: 2.5rem;
+  padding: 0.45rem 0.4rem;
+}
+
+#contest-filter-popover .contest-filter-group-leaves {
+  gap: 0.25rem 0.5rem;
+}
+
+#contest-filter-popover .contest-filter-options input[type="checkbox"] {
+  width: 1.375rem;
+  height: 1.375rem;
+  min-width: 1.375rem;
+  min-height: 1.375rem;
+  border-radius: 5px;
+}
+
+#contest-filter-popover .contest-filter-options input[type="checkbox"]:checked::after {
+  font-size: 0.82rem;
+}
+
 /* MCP % explanation popover */
 #mcp-pct-popover[hidden] {
   display: none !important;
