@@ -53,6 +53,8 @@
   var savedFilters = {};
   var searchValueBeforeStudentCard = null;
   var contestFilter = MathCompContestFilter.create(null);
+  var contestFilterPopoverOpen = false;
+  var contestFilterHasPendingApply = false;
 
   var FILTERS_KEY = "mathcomp_filters";
 
@@ -173,6 +175,15 @@
     var sid = getStudentIdFromUrl();
     /* Show only when the user is searching — not on single-student card (?student_id=). */
     searchApplyFiltersWrapEl.hidden = !(q.length > 0) || sid != null;
+  }
+
+  function applyContestFilterChangesNow() {
+    mcpPctStatsCache.key = null;
+    populateCompetitionYearFilterOptions();
+    saveFilters();
+    renderTopStudentsByRecords();
+    runSearch();
+    refreshMcpTimelineIfOpen();
   }
 
   function syncSearchPerformanceButtonVisibility() {
@@ -3962,12 +3973,11 @@
         return !!(mcpTimelineApplyFiltersEl && mcpTimelineApplyFiltersEl.checked);
       },
       onChange: function () {
-        mcpPctStatsCache.key = null;
-        populateCompetitionYearFilterOptions();
-        saveFilters();
-        renderTopStudentsByRecords();
-        runSearch();
-        refreshMcpTimelineIfOpen();
+        if (contestFilterPopoverOpen) {
+          contestFilterHasPendingApply = true;
+          return;
+        }
+        applyContestFilterChangesNow();
       }
     });
     if (competitionYearFilterEl) {
@@ -4220,13 +4230,21 @@
       function openPopover() {
         popover.hidden = false;
         contestFilterTriggerEl.setAttribute("aria-expanded", "true");
+        contestFilterPopoverOpen = true;
+        contestFilterHasPendingApply = false;
         lockBodyScroll();
       }
 
       function closePopover() {
+        var shouldApply = contestFilterHasPendingApply;
         popover.hidden = true;
         contestFilterTriggerEl.setAttribute("aria-expanded", "false");
+        contestFilterPopoverOpen = false;
+        contestFilterHasPendingApply = false;
         unlockBodyScroll();
+        if (shouldApply) {
+          applyContestFilterChangesNow();
+        }
       }
 
       contestFilterTriggerEl.addEventListener("click", function () {
@@ -4242,10 +4260,28 @@
         inner.addEventListener("click", function (e) {
           e.stopPropagation();
         });
-        inner.addEventListener("touchend", function (e) {
-          e.stopPropagation();
-        });
       }
+
+      // Make taps on rows feel instant on touch devices by toggling the checkbox on touchend,
+      // and firing a normal change event. This avoids waiting for delayed click synthesis.
+      popover.addEventListener(
+        "touchend",
+        function (e) {
+          var label =
+            e.target &&
+            e.target.closest &&
+            e.target.closest(".contest-filter-option, .contest-filter-group-all-label");
+          if (!label) return;
+          var checkbox = label.querySelector('input[type="checkbox"]');
+          if (!checkbox) return;
+          e.preventDefault();
+          e.stopPropagation();
+          checkbox.checked = !checkbox.checked;
+          var changeEvent = new Event("change", { bubbles: true });
+          checkbox.dispatchEvent(changeEvent);
+        },
+        { passive: false }
+      );
     })();
   }
 
