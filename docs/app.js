@@ -2126,12 +2126,12 @@
     var contestFilterActiveCard = contestFilter.isContestFilterActive() && !useCanonicalMcpStats;
     var mcpOpenShown;
     var mcpWShown;
-    if (contestFilterActiveCard) {
-      mcpOpenShown = computeMcpFromRecords(records, false);
-      mcpWShown = female ? computeMcpFromRecords(records, true) : mcpOpenShown;
-    } else {
+    if (useCanonicalMcpStats) {
       mcpOpenShown = totalMcpOpen;
       mcpWShown = female && student.mcp_w != null ? Number(student.mcp_w) : totalMcpOpen;
+    } else {
+      mcpOpenShown = computeMcpFromRecords(records, false);
+      mcpWShown = female ? computeMcpFromRecords(records, true) : mcpOpenShown;
     }
 
     function mcpPctSuffixFor(totalShown, totalDenom) {
@@ -2386,10 +2386,11 @@
         if (count > 0) {
           var mcpTotal = null;
           var mcpRatio = null;
-          var filteredMcp = contestFilterActive ? computeMcpFromRecords(records, isGirlsOnly) : null;
+          /* MCP from the same record set as counts (competition + season year filters). */
+          var filteredMcp = computeMcpFromRecords(records, isGirlsOnly);
           var totalMcp = isGirlsOnly && student.mcp_w != null ? Number(student.mcp_w) : (student.mcp != null ? Number(student.mcp) : 0);
           if (sortMode === "mcp") {
-            mcpTotal = contestFilterActive ? filteredMcp : totalMcp;
+            mcpTotal = filteredMcp;
             if (contestFilterActive && totalMcp > 0) {
               mcpRatio = filteredMcp / totalMcp;
             }
@@ -2400,7 +2401,7 @@
             mcpTotal = totalMcp;
           } else {
             /* For records sort: still populate mcpTotal for state distribution chart */
-            mcpTotal = contestFilterActive ? filteredMcp : totalMcp;
+            mcpTotal = filteredMcp;
           }
           counts.push({ student: student, recordsCount: count, mcpTotal: mcpTotal, mcpRatio: mcpRatio });
         }
