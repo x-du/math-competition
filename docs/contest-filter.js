@@ -29,7 +29,7 @@
       "pumac-b__number-theory"
     ],
     cmimc: ["cmimc__individual", "cmimc__algebra", "cmimc__comb", "cmimc__geometry"],
-    bmt: ["bmt__individual", "bmt__algebra", "bmt__calculus", "bmt__discrete", "bmt__geometry"]
+    bmt: ["bmt__general", "bmt__algebra", "bmt__calculus", "bmt__discrete", "bmt__geometry"]
   };
 
   function slugOf(record) {
@@ -82,7 +82,7 @@
     add("dmm", function (s) { return s.indexOf("dmm") !== -1; });
     add("cmm", function (s) { return s.indexOf("cmm") !== -1; });
 
-    add("bmt__individual", function (s) { return s === "bmt"; });
+    add("bmt__general", function (s) { return s === "bmt"; });
     add("bmt__algebra", function (s) { return s === "bmt-algebra"; });
     add("bmt__calculus", function (s) { return s === "bmt-calculus"; });
     add("bmt__discrete", function (s) { return s === "bmt-discrete"; });
@@ -123,7 +123,7 @@
     "cmimc__algebra": "CMIMC — Algebra & Number Theory",
     "cmimc__comb": "CMIMC — Combinatorics & CS",
     "cmimc__geometry": "CMIMC — Geometry",
-    "bmt__individual": "BMT — Individual",
+    "bmt__general": "BMT - General",
     "bmt__algebra": "BMT — Algebra",
     "bmt__calculus": "BMT — Calculus",
     "bmt__discrete": "BMT — Discrete",
@@ -233,7 +233,7 @@
     "bamo-8": "bamo-8",
     "bamo-12": "bamo-12",
     "brumo-a": "brumo-a",
-    "bmt__individual": "bmt",
+    "bmt__general": "bmt",
     "bmt__algebra": "bmt-algebra",
     "bmt__calculus": "bmt-calculus",
     "bmt__discrete": "bmt-discrete",
@@ -257,6 +257,7 @@
     var seen = {};
     for (var i = 0; i < saved.length; i++) {
       var v = saved[i];
+      if (v === "bmt__individual") v = "bmt__general";
       if (v === "all") continue;
       if (LEGACY_EXPAND[v]) {
         var exp = LEGACY_EXPAND[v];
@@ -349,6 +350,7 @@
     }
 
     function contestNameForLeafKey(key) {
+      if (key === "bmt__general") return "BMT - General";
       var slug = LEAF_KEY_TO_SLUG[key];
       var m = metaForSlug(slug);
       if (m && m.contest_name) return m.contest_name;
@@ -356,8 +358,10 @@
     }
 
     function nestedCheckboxLabelForLeafKey(key) {
+      if (key === "bmt__general") return "General";
       var full = contestNameForLeafKey(key);
       if (full.indexOf(" — ") !== -1) return full.split(" — ").pop().trim();
+      if (full.indexOf(" - ") !== -1) return full.split(" - ").pop().trim();
       return full;
     }
 
