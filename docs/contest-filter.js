@@ -371,6 +371,7 @@
 
     /** Short label for toolbar summary (contest_name only, not contest_name_long). */
     function summaryShortLabelForGroup(grp) {
+      if (grp.title === "BMT") return "BMT";
       var slug = multiGroupPrimarySlug(grp.title);
       var m = metaForSlug(slug);
       if (m && m.contest_name) return String(m.contest_name).trim();
@@ -433,7 +434,11 @@
           titleSpan.className = "contest-filter-group-heading-text";
           var gSlug = multiGroupPrimarySlug(grp.title);
           var gMeta = metaForSlug(gSlug);
-          appendGroupHeadingShortName(titleSpan, gMeta, grp.title);
+          var headerMeta = gMeta;
+          if (grp.title === "BMT") {
+            headerMeta = { contest_name: "BMT" };
+          }
+          appendGroupHeadingShortName(titleSpan, headerMeta, grp.title);
           toggle.appendChild(chev);
           toggle.appendChild(titleSpan);
           header.appendChild(toggle);
