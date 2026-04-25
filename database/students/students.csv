@@ -6387,7 +6387,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6488,Narmin Guliyeva,Department of Defense,,female,9
 6489,Taeyul Kim,Department of Defense,,male,9
 6490,Lucas Sze,Department of Defense,,male,9
-6491,Edward Chen,Delaware,,male,9
+6491,Edward Chen,Delaware,Eddie Chen,male,9
 6492,Eric Chen,Delaware,,male,9
 6493,Joseph Zhang,Delaware,,male,9
 6494,Gnaneswar Peddesugari,Florida,,male,9
@@ -6502,7 +6502,6 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6604,Gavin Wang,District of Columbia,,male,10
 6605,Cooper McCann,Department of Defense,,male,10
 6606,Ada McCaskey,Department of Defense,,female,10
-6607,Eddie Chen,Delaware,,male,9
 6608,Jahl Miraji-Khot,Delaware,,,10
 6609,Daniel Li,Florida,,male,10
 6610,Martin Ho,Georgia,,male,10
@@ -6675,5 +6674,8 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6784,Eric Wang,Colorado,,male,13
 6785,Eric Wang,New Hampshire,,male,
 6786,Yile Shen,State Department,,,11
-6787,Arnav Kumar,,,,,
-6788,Anton Klisura,,,,,
+6787,Arnav Kumar,,,,
+6788,Anton Klisura,,,,
+6789,Chanwook Park,,,,
+6790,Benjamin Oh,,,,
+6791,Denver Harris,,,,
