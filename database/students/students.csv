@@ -26,7 +26,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 25,Rohan Garg,California,,male,12
 26,Ryan Li,Ohio,,male,16
 27,Bolei Wang,New Hampshire,Benny Wang,male,12
-28,Rohan Nayak Mallick,California,,male,10
+28,Rohan Nayak Mallick,California,Rohan Mallick,male,10
 29,Patrick Du,Virginia,,male,11
 30,Eric Dai,New Jersey,,male,11
 31,Lewis Lau,Maryland,,male,12
@@ -2412,7 +2412,6 @@ student_id,student_name,state,alias,gender,grade_in_2026
 2508,Ben Oh,California,,male,
 2509,Kennan Suen,California,,male,
 2510,Rutvik Arora,California,,male,
-2511,Rohan Mallick,California,,male,10
 2512,Gary Hu,,,male,
 2513,Howard Dai,Illinois,,male,16
 2514,Jasen Penchev,Bulgaria,,male,

@@ -1,5 +1,5 @@
 student_id,student_name,year,subject,bmt_student_id,team_id,team_name,school,award,rank,score,mcp_rank
-2511,Rohan Mallick,2025,Geometry,054D,054,CCA Conspiracy,Canyon Crest Academy Math Team,Top Scores,1,8,1
+28,Rohan Mallick,2025,Geometry,054D,054,CCA Conspiracy,Canyon Crest Academy Math Team,Top Scores,1,8,1
 911,Eric Zou,2025,Geometry,117A,117,Think Overthinker,Think Academy Online,Top Scores,2,8,2
 372,Eric Shu,2025,Geometry,161C,161,AlphaStar Jupiter,AlphaStar Academy,Top Scores,3,8,3
 2510,Rutvik Arora,2025,Geometry,110C,110,MSJ Jupiter,Mission San Jose High School,Top Scores,4,8,4
@@ -30,7 +30,7 @@ student_id,student_name,year,subject,bmt_student_id,team_id,team_name,school,awa
 379,Zhenghua Xie,2025,Geometry,053F,053,,,Distinguished HM (Top 20%),,,66.5
 338,Katrina Liu,2025,Geometry,054A,054,,,Distinguished HM (Top 20%),,,66.5
 992,Aidan Bai,2025,Geometry,054B,054,,,Distinguished HM (Top 20%),,,66.5
-2511,Rohan Mallick,2025,Geometry,054D,054,,,Distinguished HM (Top 20%),,,66.5
+28,Rohan Mallick,2025,Geometry,054D,054,,,Distinguished HM (Top 20%),,,66.5
 6022,Sepehr Golsefidy,2025,Geometry,054E,054,,,Distinguished HM (Top 20%),,,66.5
 377,Xiaoran Han,2025,Geometry,054F,054,,,Distinguished HM (Top 20%),,,66.5
 4426,Matthew Hsiao,2025,Geometry,063B,063,,,Distinguished HM (Top 20%),,,66.5
