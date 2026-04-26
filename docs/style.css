@@ -1246,10 +1246,6 @@ body.contest-filter-popover-open {
   cursor: pointer;
 }
 
-.promotion-banner__close--collapse {
-  right: 2.5rem;
-}
-
 .promotion-banner__close--dismiss {
   right: 0.55rem;
 }

@@ -81,6 +81,7 @@
   var featurePromotions = [];
   var activePromotionIndex = 0;
   var promotionPopoverOpen = false;
+  var promotionOutsidePointerHandler = null;
 
   function parseDateAtStartOfDay(dateStr) {
     if (!dateStr) return null;
@@ -216,6 +217,10 @@
   function renderPromotionBanner() {
     var bannerEl = document.getElementById("promotion-banner");
     if (!bannerEl) return;
+    if (promotionOutsidePointerHandler) {
+      document.removeEventListener("pointerdown", promotionOutsidePointerHandler, true);
+      promotionOutsidePointerHandler = null;
+    }
     var activePromotions = getActivePromotions();
     if (!activePromotions.length) {
       bannerEl.hidden = true;
@@ -249,14 +254,6 @@
       toggleEl.setAttribute("aria-expanded", "false");
     }
 
-    var collapseEl = document.createElement("button");
-    collapseEl.type = "button";
-    collapseEl.className = "promotion-banner__close promotion-banner__close--collapse";
-    collapseEl.setAttribute("aria-label", "Collapse promotion");
-    collapseEl.textContent = "\u2212";
-    collapseEl.addEventListener("click", closePromotionPopover);
-    popoverEl.appendChild(collapseEl);
-
     var dismissEl = document.createElement("button");
     dismissEl.type = "button";
     dismissEl.className = "promotion-banner__close promotion-banner__close--dismiss";
@@ -271,6 +268,15 @@
       promotionPopoverOpen = isOpening;
       toggleEl.setAttribute("aria-expanded", isOpening ? "true" : "false");
     });
+
+    promotionOutsidePointerHandler = function (ev) {
+      if (popoverEl.hidden) return;
+      var target = ev && ev.target;
+      if (!target) return;
+      if (popoverEl.contains(target) || toggleEl.contains(target)) return;
+      closePromotionPopover();
+    };
+    document.addEventListener("pointerdown", promotionOutsidePointerHandler, true);
 
     var contentEl = document.createElement("div");
     contentEl.className = "promotion-banner__content";
