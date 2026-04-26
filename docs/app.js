@@ -65,6 +65,7 @@
     grade_label: "Update Grade"
   };
   var studentReportMenuOpenEl = null;
+  var studentReportMenuOpenCardEl = null;
   var studentReportIpPromise = null;
   var studentReportModalContext = null;
   var studentReportToastTimer = null;
@@ -105,6 +106,10 @@
   function closeStudentReportMenu() {
     if (!studentReportMenuOpenEl) return;
     studentReportMenuOpenEl.hidden = true;
+    if (studentReportMenuOpenCardEl && studentReportMenuOpenCardEl.classList) {
+      studentReportMenuOpenCardEl.classList.remove("student-card--report-menu-open");
+    }
+    studentReportMenuOpenCardEl = null;
     studentReportMenuOpenEl = null;
   }
 
@@ -117,6 +122,13 @@
     var willOpen = !!menu.hidden;
     closeStudentReportMenu();
     menu.hidden = !willOpen;
+    if (willOpen) {
+      var cardEl = triggerBtn.closest(".student-card");
+      if (cardEl && cardEl.classList) {
+        cardEl.classList.add("student-card--report-menu-open");
+        studentReportMenuOpenCardEl = cardEl;
+      }
+    }
     studentReportMenuOpenEl = willOpen ? menu : null;
   }
 
