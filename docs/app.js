@@ -57,6 +57,15 @@
   var contestFilterHasPendingApply = false;
 
   var FILTERS_KEY = "mathcomp_filters";
+  /** Replace with your deployed Google Apps Script URL for student-record error reports. */
+  var STUDENT_RECORD_REPORT_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzzI2_Wxp5S4iF87bzWfX-vw-ClBKva_M33GG-JV7PGKxE287tPnfBK41M5_0WI9nlLeQ/exec";
+  var STUDENT_RECORD_REPORT_TYPES = {
+    account_merge: "Account Merge",
+    state_label: "Label student state",
+    grade_label: "Label student grade"
+  };
+  var studentReportMenuOpenEl = null;
+  var studentReportIpPromise = null;
 
   /** Download icon; SVG uses pointer-events:none via CSS so delegated clicks hit the button. */
   var CHART_DOWNLOAD_ICON_HTML =
@@ -80,6 +89,165 @@
     var dt = new Date(y, mo, d, 0, 0, 0, 0);
     if (isNaN(dt.getTime())) return null;
     return dt;
+  }
+
+  function getClientIpForStudentReport() {
+    if (studentReportIpPromise) return studentReportIpPromise;
+    studentReportIpPromise = fetch("https://api.ipify.org?format=json")
+      .then(function (resp) { return resp.json(); })
+      .then(function (json) { return (json && json.ip) ? String(json.ip) : "unknown"; })
+      .catch(function () { return "unknown"; });
+    return studentReportIpPromise;
+  }
+
+  function closeStudentReportMenu() {
+    if (!studentReportMenuOpenEl) return;
+    studentReportMenuOpenEl.hidden = true;
+    studentReportMenuOpenEl = null;
+  }
+
+  function openStudentReportMenuForButton(triggerBtn) {
+    if (!triggerBtn || !triggerBtn.closest) return;
+    var wrap = triggerBtn.closest(".student-record-report-wrap");
+    if (!wrap) return;
+    var menu = wrap.querySelector(".student-record-report-menu");
+    if (!menu) return;
+    var willOpen = !!menu.hidden;
+    closeStudentReportMenu();
+    menu.hidden = !willOpen;
+    studentReportMenuOpenEl = willOpen ? menu : null;
+  }
+
+  function getStudentReportCardPayload(cardEl) {
+    if (!cardEl || !cardEl.getAttribute) return null;
+    return {
+      student_id: String(cardEl.getAttribute("data-student-id") || "").trim(),
+      student_name: String(cardEl.getAttribute("data-student-name") || "").trim(),
+      student_state: String(cardEl.getAttribute("data-student-state") || "").trim(),
+      student_grade: String(cardEl.getAttribute("data-student-grade") || "").trim()
+    };
+  }
+
+  function submitStudentRecordReport(payload) {
+    if (!STUDENT_RECORD_REPORT_APPS_SCRIPT_URL) {
+      alert("Student-record report endpoint is not configured yet. Set STUDENT_RECORD_REPORT_APPS_SCRIPT_URL in docs/app.js.");
+      return Promise.resolve(false);
+    }
+    var body = JSON.stringify(payload);
+    return fetch(STUDENT_RECORD_REPORT_APPS_SCRIPT_URL, {
+      method: "POST",
+      headers: { "Content-Type": "text/plain" },
+      body: body
+    })
+      .then(function (resp) { return resp.json(); })
+      .then(function (result) {
+        if (result && result.error) throw new Error(result.error);
+        return { ok: true, confirmed: true };
+      })
+      .catch(function (err) {
+        // Apps Script web apps often accept the POST but block JS from reading the response on localhost (CORS).
+        // Retry in no-cors mode so local/dev users do not get a false "Failed to fetch" alert.
+        var msg = (err && err.message) ? String(err.message) : "";
+        if (msg.toLowerCase().indexOf("failed to fetch") === -1) {
+          throw err;
+        }
+        return fetch(STUDENT_RECORD_REPORT_APPS_SCRIPT_URL, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "text/plain" },
+          body: body
+        }).then(function () {
+          return { ok: true, confirmed: false };
+        });
+      });
+  }
+
+  function collectAdditionalStudentReportFields(issueType, currentStudentId) {
+    var issueLabel = STUDENT_RECORD_REPORT_TYPES[issueType] || issueType;
+    var out = { issue_type: issueType, issue_label: issueLabel, detail: "", related_student_id: "" };
+    if (issueType === "account_merge") {
+      var related = window.prompt("Account merge: enter the other student ID (the duplicate profile).");
+      if (related == null) return null;
+      related = String(related).trim();
+      if (!related) {
+        alert("Please enter the other student ID.");
+        return null;
+      }
+      if (String(related) === String(currentStudentId)) {
+        alert("The other student ID must be different.");
+        return null;
+      }
+      out.related_student_id = related;
+      out.detail = "Possible duplicate profiles that should be merged.";
+      return out;
+    }
+    if (issueType === "state_label") {
+      var correctedState = window.prompt("What should the correct state be?");
+      if (correctedState == null) return null;
+      correctedState = String(correctedState).trim();
+      if (!correctedState) {
+        alert("Please provide the correct state.");
+        return null;
+      }
+      out.detail = "Suggested corrected state: " + correctedState;
+      return out;
+    }
+    if (issueType === "grade_label") {
+      var correctedGrade = window.prompt("What should the correct grade be?");
+      if (correctedGrade == null) return null;
+      correctedGrade = String(correctedGrade).trim();
+      if (!correctedGrade) {
+        alert("Please provide the correct grade.");
+        return null;
+      }
+      out.detail = "Suggested corrected grade: " + correctedGrade;
+      return out;
+    }
+    return out;
+  }
+
+  function submitStudentIssueFromCard(cardEl, issueType) {
+    var studentPayload = getStudentReportCardPayload(cardEl);
+    if (!studentPayload || !studentPayload.student_id) {
+      alert("Could not identify the student record.");
+      return;
+    }
+    var additional = collectAdditionalStudentReportFields(issueType, studentPayload.student_id);
+    if (!additional) return;
+    var optionBtn = cardEl.querySelector(".student-record-report-option[data-issue-type=\"" + issueType + "\"]");
+    if (optionBtn) optionBtn.disabled = true;
+    getClientIpForStudentReport()
+      .then(function (ip) {
+        var payload = {
+          issue_type: additional.issue_type,
+          issue_label: additional.issue_label,
+          student_id: studentPayload.student_id,
+          student_name: studentPayload.student_name,
+          student_state: studentPayload.student_state,
+          student_grade: studentPayload.student_grade,
+          related_student_id: additional.related_student_id,
+          detail: additional.detail,
+          page_url: (window && window.location && window.location.href) ? String(window.location.href) : "",
+          user_agent: (navigator && navigator.userAgent) ? String(navigator.userAgent) : "",
+          ip: ip || "unknown",
+          submitted_at: new Date().toISOString()
+        };
+        return submitStudentRecordReport(payload);
+      })
+      .then(function (result) {
+        if (!result || !result.ok) return;
+        if (result.confirmed) {
+          alert("Thanks. Your student-record report has been submitted.");
+        } else {
+          alert("Submitted from local testing mode, but delivery is unconfirmed. Please check Google Sheet.");
+        }
+      })
+      .catch(function (err) {
+        alert("Failed to submit report: " + ((err && err.message) ? err.message : "Unknown error"));
+      })
+      .finally(function () {
+        if (optionBtn) optionBtn.disabled = false;
+      });
   }
 
   function parseDateAtEndOfDay(dateStr) {
@@ -451,8 +619,8 @@
     return out;
   }
 
-  // TEMP: set to true to show hidden feature without ?a=1; set to false to require URL param again
-  var FORCE_HIDDEN_FEATURE = true;
+  // Hidden features are visible only with ?a=1 unless explicitly forced for debugging.
+  var FORCE_HIDDEN_FEATURE = false;
   function showHiddenFeature() {
     if (FORCE_HIDDEN_FEATURE) return true;
     try {
@@ -2406,6 +2574,16 @@
     }
 
     var contestsHtml = headerOnly ? "" : "<div class=\"student-contests\">" + sections.join("") + "</div>";
+    var studentReportMenuHtml =
+      "<span class=\"student-record-report-wrap\">" +
+        "<button type=\"button\" class=\"student-record-report-trigger\" aria-label=\"Report a student record error\" title=\"Report a student record error\">🛠️</button>" +
+        "<div class=\"student-record-report-menu\" hidden>" +
+          "<p class=\"student-record-report-title\">Report student record error</p>" +
+          "<button type=\"button\" class=\"student-record-report-option\" data-issue-type=\"account_merge\">Account Merge</button>" +
+          "<button type=\"button\" class=\"student-record-report-option\" data-issue-type=\"state_label\">Label student state</button>" +
+          "<button type=\"button\" class=\"student-record-report-option\" data-issue-type=\"grade_label\">Label student grade</button>" +
+        "</div>" +
+      "</span>";
     var headerActionsHtml =
       "<div class=\"student-header-actions\">" +
         mcpBtnHtml +
@@ -2413,9 +2591,13 @@
         escapeHtml(String(student.id)) +
         "\" aria-label=\"Open performance by year chart for this student\">Performance</button>" +
         "<button type=\"button\" class=\"export-pdf-student-btn\" aria-label=\"Export this student to PDF\">PDF</button>" +
+        (showHiddenFeature() ? studentReportMenuHtml : "") +
       "</div>";
+    var studentNameSafe = String(student.name || "").trim();
+    var stateSafe = String(state || "").trim();
+    var gradeSafe = String(gradeLabel || "").trim();
     return (
-      "<article class=\"student-card\" data-student-id=\"" + escapeHtml(String(student.id)) + "\">" +
+      "<article class=\"student-card\" data-student-id=\"" + escapeHtml(String(student.id)) + "\" data-student-name=\"" + escapeHtml(studentNameSafe) + "\" data-student-state=\"" + escapeHtml(stateSafe) + "\" data-student-grade=\"" + escapeHtml(gradeSafe) + "\">" +
         "<div class=\"student-header\">" +
           "<h2 class=\"student-name\" data-student-name=\"" + escapeHtml(String(student.name || "")) + "\">" + escapeHtml(student.name) + (stateHtml ? " " + stateHtml : "") + gradeHtml + "</h2>" +
           statsHtml +
@@ -4610,6 +4792,24 @@
 
   function handleResultsClick(event) {
     var target = event.target;
+    var reportTriggerBtn = target && target.closest ? target.closest(".student-record-report-trigger") : null;
+    if (reportTriggerBtn) {
+      event.preventDefault();
+      event.stopPropagation();
+      openStudentReportMenuForButton(reportTriggerBtn);
+      return;
+    }
+    var reportOptionBtn = target && target.closest ? target.closest(".student-record-report-option") : null;
+    if (reportOptionBtn) {
+      event.preventDefault();
+      event.stopPropagation();
+      var issueType = String(reportOptionBtn.getAttribute("data-issue-type") || "");
+      var cardForReport = reportOptionBtn.closest(".student-card");
+      closeStudentReportMenu();
+      if (!issueType || !cardForReport) return;
+      submitStudentIssueFromCard(cardForReport, issueType);
+      return;
+    }
     var yearLink = target && target.closest ? target.closest(".csv-row-year-link") : null;
     if (yearLink) {
       event.preventDefault();
@@ -4728,6 +4928,12 @@
 
   document.addEventListener("click", handleMcpPctTrigger, true);
   document.addEventListener("touchend", handleMcpPctTrigger, true);
+  document.addEventListener("click", function (event) {
+    if (!studentReportMenuOpenEl) return;
+    var target = event.target;
+    if (target && target.closest && target.closest(".student-record-report-wrap")) return;
+    closeStudentReportMenu();
+  }, true);
 
   function bindMcpPctPopover() {
     var popover = document.getElementById("mcp-pct-popover");
