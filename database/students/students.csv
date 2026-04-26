@@ -748,7 +748,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 780,Susie Lu,Washington,,female,13
 781,Jeffrey Zhao,Washington,,male,12
 782,Vinu Chandrasekar,West Virginia,,male,12
-783,Sami El-Hajjar,Wisconsin,,male,11
+783,Sami El-Hajjar,Wisconsin,Sami Elhajjar,male,11
 784,Siddharth Kosaraju,Wisconsin,,male,12
 785,Maya Jadhav,Wisconsin,,female,12
 786,Vaidehi Ramachandrula,Wisconsin,,female,12
@@ -2098,7 +2098,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 2184,Maggie Li,New York,,female,
 2185,Sky Chen,New York,,male,
 2186,Thomas McCurley,California,,male,
-2187,Daniel Wu,Pennsylvania,,male,
+2187,Daniel Wu,Massachusetts,,male,
 2188,Victor Wang,Pennsylvania,,male,
 2189,Shreyan Dutt,Massachusetts,,male,
 2190,Oma Makhija,New Jersey,,female,
@@ -3335,7 +3335,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 3434,Dhruv Vallurupalli,Massachusetts,,male,
 3435,Franklin Yang,California,,male,
 3436,Gabriel Dunu,California,,male,
-3437,Daniel Wu,Maryland,,male,
+3437,Daniel Wu,Maryland,,male,13
 3438,David Katsman,Massachusetts,,male,
 3439,Mahanth Komuravelli,New Jersey,,male,
 3440,Rainier Mayo,California,,female,
@@ -4889,7 +4889,6 @@ student_id,student_name,state,alias,gender,grade_in_2026
 4990,Sanjana Medapati,New Jersey,,female,
 4991,Hao Gu,Oregon,,male,
 4992,Anmol Karan,Virginia,,female,
-4993,Daniel Wu,Virginia,,male,
 4994,Elizabeth Zhang,Virginia,,female,
 4995,Shruthi Hebbar,Arkansas,,female,
 4996,Daniel Jeon,Arizona,,male,
@@ -6677,7 +6676,6 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6789,Chanwook Park,,,male,
 6790,Benjamin Oh,,,male,
 6791,Denver Harris,,,male,
-6793,sami elhajjar,Wisconsin,,male,
 6794,Kevin Li,California,,male,
 6795,Yash Shelar,Missouri,,male,
 6796,Gavin Chen,New York,,male,
