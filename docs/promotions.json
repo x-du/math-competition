@@ -1,0 +1,17 @@
+[
+  {
+    "id": "amm-2026",
+    "enabled": true,
+    "startDate": "2026-04-20",
+    "endDate": "2026-05-26",
+    "showOnLocalhost": true,
+    "label": "Featured competition",
+    "title": "American Masters of Mathematics",
+    "description": "Designed by IMO coaches and medalists for students who enjoy hard math problems.",
+    "dateText": "May 22-25, 2026",
+    "locationText": "Denver, CO",
+    "audienceText": "Grades 10-12",
+    "ctaText": "Learn more on OMEGA",
+    "href": "https://www.omegausa.org/"
+  }
+]

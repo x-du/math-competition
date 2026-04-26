@@ -65,6 +65,220 @@
   /** Appended to the bottom of every exported chart PNG. */
   var PNG_EXPORT_FOOTER_TEXT = "mathintegrity.org";
 
+  /** Loaded from docs/promotions.json */
+  var featurePromotions = [];
+  var activePromotionIndex = 0;
+  var promotionPopoverOpen = false;
+
+  function parseDateAtStartOfDay(dateStr) {
+    if (!dateStr) return null;
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(dateStr).trim());
+    if (!m) return null;
+    var y = parseInt(m[1], 10);
+    var mo = parseInt(m[2], 10) - 1;
+    var d = parseInt(m[3], 10);
+    var dt = new Date(y, mo, d, 0, 0, 0, 0);
+    if (isNaN(dt.getTime())) return null;
+    return dt;
+  }
+
+  function parseDateAtEndOfDay(dateStr) {
+    if (!dateStr) return null;
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(dateStr).trim());
+    if (!m) return null;
+    var y = parseInt(m[1], 10);
+    var mo = parseInt(m[2], 10) - 1;
+    var d = parseInt(m[3], 10);
+    var dt = new Date(y, mo, d, 23, 59, 59, 999);
+    if (isNaN(dt.getTime())) return null;
+    return dt;
+  }
+
+  function isPromotionInActiveWindow(promotion, now) {
+    var nowDate = now || new Date();
+    var start = parseDateAtStartOfDay(promotion && promotion.startDate);
+    var end = parseDateAtEndOfDay(promotion && promotion.endDate);
+    if (start && nowDate < start) return false;
+    if (end && nowDate > end) return false;
+    return true;
+  }
+
+  function isLocalhostHost() {
+    if (typeof window === "undefined" || !window.location) return false;
+    var host = String(window.location.hostname || "").toLowerCase();
+    return host === "localhost" || host === "127.0.0.1" || host === "::1";
+  }
+
+  function getActivePromotions() {
+    var out = [];
+    var now = new Date();
+    var localPreview = isLocalhostHost();
+    for (var i = 0; i < featurePromotions.length; i++) {
+      var p = featurePromotions[i];
+      if (!p || !p.enabled) continue;
+      var inWindow = isPromotionInActiveWindow(p, now);
+      if (!inWindow) continue;
+      if (localPreview && p.showOnLocalhost) {
+        out.push(p);
+        continue;
+      }
+      out.push(p);
+    }
+    return out;
+  }
+
+  function normalizePromotionIndex(count) {
+    if (count <= 0) return 0;
+    if (activePromotionIndex < 0) activePromotionIndex = count - 1;
+    if (activePromotionIndex >= count) activePromotionIndex = 0;
+    return activePromotionIndex;
+  }
+
+  function renderPromotionBanner() {
+    var bannerEl = document.getElementById("promotion-banner");
+    if (!bannerEl) return;
+    var activePromotions = getActivePromotions();
+    if (!activePromotions.length) {
+      bannerEl.hidden = true;
+      bannerEl.innerHTML = "";
+      promotionPopoverOpen = false;
+      return;
+    }
+    var idx = normalizePromotionIndex(activePromotions.length);
+    var promotion = activePromotions[idx];
+
+    bannerEl.innerHTML = "";
+    var popoverId = "promotion-banner-popover";
+
+    var toggleEl = document.createElement("button");
+    toggleEl.type = "button";
+    toggleEl.className = "promotion-banner__toggle";
+    toggleEl.setAttribute("aria-expanded", promotionPopoverOpen ? "true" : "false");
+    toggleEl.setAttribute("aria-controls", popoverId);
+    toggleEl.textContent = "📣 " + (promotion.label || "Featured competition");
+    bannerEl.appendChild(toggleEl);
+
+    var popoverEl = document.createElement("section");
+    popoverEl.id = popoverId;
+    popoverEl.className = "promotion-banner__popover";
+    popoverEl.hidden = !promotionPopoverOpen;
+    bannerEl.appendChild(popoverEl);
+
+    function closePromotionPopover() {
+      popoverEl.hidden = true;
+      promotionPopoverOpen = false;
+      toggleEl.setAttribute("aria-expanded", "false");
+    }
+
+    var collapseEl = document.createElement("button");
+    collapseEl.type = "button";
+    collapseEl.className = "promotion-banner__close promotion-banner__close--collapse";
+    collapseEl.setAttribute("aria-label", "Collapse promotion");
+    collapseEl.textContent = "\u2212";
+    collapseEl.addEventListener("click", closePromotionPopover);
+    popoverEl.appendChild(collapseEl);
+
+    var dismissEl = document.createElement("button");
+    dismissEl.type = "button";
+    dismissEl.className = "promotion-banner__close promotion-banner__close--dismiss";
+    dismissEl.setAttribute("aria-label", "Close promotion popover");
+    dismissEl.textContent = "\u00d7";
+    dismissEl.addEventListener("click", closePromotionPopover);
+    popoverEl.appendChild(dismissEl);
+
+    toggleEl.addEventListener("click", function () {
+      var isOpening = !!popoverEl.hidden;
+      popoverEl.hidden = !isOpening;
+      promotionPopoverOpen = isOpening;
+      toggleEl.setAttribute("aria-expanded", isOpening ? "true" : "false");
+    });
+
+    var contentEl = document.createElement("div");
+    contentEl.className = "promotion-banner__content";
+    popoverEl.appendChild(contentEl);
+
+    if (promotion.label) {
+      var labelEl = document.createElement("p");
+      labelEl.className = "promotion-banner__label";
+      labelEl.textContent = promotion.label;
+      contentEl.appendChild(labelEl);
+    }
+
+    var titleEl = document.createElement("h2");
+    titleEl.className = "promotion-banner__title";
+    titleEl.textContent = promotion.title || "";
+    contentEl.appendChild(titleEl);
+
+    if (promotion.description) {
+      var descEl = document.createElement("p");
+      descEl.className = "promotion-banner__description";
+      descEl.textContent = promotion.description;
+      contentEl.appendChild(descEl);
+    }
+
+    var metaParts = [];
+    if (promotion.dateText) metaParts.push("Date: " + promotion.dateText);
+    if (promotion.locationText) metaParts.push("Location: " + promotion.locationText);
+    if (promotion.audienceText) metaParts.push("Audience: " + promotion.audienceText);
+    if (metaParts.length) {
+      var metaEl = document.createElement("p");
+      metaEl.className = "promotion-banner__meta";
+      metaEl.textContent = metaParts.join(" \u00b7 ");
+      contentEl.appendChild(metaEl);
+    }
+
+    if (promotion.href && promotion.ctaText) {
+      var actionsEl = document.createElement("p");
+      actionsEl.className = "promotion-banner__actions";
+      var ctaEl = document.createElement("a");
+      ctaEl.className = "promotion-banner__cta";
+      ctaEl.href = promotion.href;
+      ctaEl.target = "_blank";
+      ctaEl.rel = "noopener noreferrer";
+      ctaEl.textContent = promotion.ctaText;
+      actionsEl.appendChild(ctaEl);
+      contentEl.appendChild(actionsEl);
+    }
+
+    if (activePromotions.length > 1) {
+      var pagerEl = document.createElement("div");
+      pagerEl.className = "promotion-banner__pager";
+
+      var prevEl = document.createElement("button");
+      prevEl.type = "button";
+      prevEl.className = "promotion-banner__pager-btn";
+      prevEl.textContent = "\u2039 Prev";
+      prevEl.setAttribute("aria-label", "Show previous promotion");
+      prevEl.addEventListener("click", function () {
+        activePromotionIndex = idx - 1;
+        promotionPopoverOpen = true;
+        renderPromotionBanner();
+      });
+      pagerEl.appendChild(prevEl);
+
+      var statusEl = document.createElement("span");
+      statusEl.className = "promotion-banner__pager-status";
+      statusEl.textContent = String(idx + 1) + " / " + String(activePromotions.length);
+      pagerEl.appendChild(statusEl);
+
+      var nextEl = document.createElement("button");
+      nextEl.type = "button";
+      nextEl.className = "promotion-banner__pager-btn";
+      nextEl.textContent = "Next \u203a";
+      nextEl.setAttribute("aria-label", "Show next promotion");
+      nextEl.addEventListener("click", function () {
+        activePromotionIndex = idx + 1;
+        promotionPopoverOpen = true;
+        renderPromotionBanner();
+      });
+      pagerEl.appendChild(nextEl);
+
+      contentEl.appendChild(pagerEl);
+    }
+
+    bannerEl.hidden = false;
+  }
+
   function getStudentIdFromUrl() {
     try {
       var params = new URLSearchParams(window.location.search);
@@ -4014,10 +4228,20 @@
       }),
       fetch(base + "/branch.json").then(function (res) {
         return res.ok ? res.json() : {};
-      }).catch(function () { return {}; })
+      }).catch(function () { return {}; }),
+      fetch(base + "/promotions.json").then(function (res) {
+        if (!res.ok) return [];
+        return res.json();
+      }).catch(function () { return []; })
     ]).then(function (arr) {
       var json = arr[0];
       var branchCfg = arr[1];
+      var promotionsCfg = arr[2];
+      if (Array.isArray(promotionsCfg)) featurePromotions = promotionsCfg;
+      else if (promotionsCfg && Array.isArray(promotionsCfg.promotions)) featurePromotions = promotionsCfg.promotions;
+      else featurePromotions = [];
+      activePromotionIndex = 0;
+      renderPromotionBanner();
       usStateLookup = json.us_state_lookup || {};
       if (typeof window !== "undefined") window.usStateLookup = usStateLookup;
       var si = json.slug_index || [];
