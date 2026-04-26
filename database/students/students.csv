@@ -1410,7 +1410,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1478,Alexander Peev,Washington,,male,
 1479,Roy Brauwerman,,,male,
 1480,Samhith Dewal,Massachusetts,,male,
-1481,Bohan Wang,New Jersey,,male,10
+1481,Bohan Wang,New Jersey,Benny Wang,male,10
 1482,Anuraag Pasula,New Jersey,,male,
 1483,Devin Li,Texas,,male,
 1484,April Sun,Massachusetts,,female,
@@ -6695,7 +6695,6 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6821,Audrey Ma,New York,,female,
 6822,Max Sachelarie-Sandhu,California,,male,
 6825,Gabe Wang,California,,male,
-6826,Benny Wang,New Jersey,,male,
 6827,Steven Xia,California,,male,10
 6828,Eric Xiong,Illinois,,male,
 6830,Alice Yin,Massachusetts,,female,
