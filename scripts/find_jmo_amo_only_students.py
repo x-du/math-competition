@@ -72,14 +72,17 @@ def load_students():
             state_lc = state.lower()
             if "canada" in state_lc or "canda" in state_lc:
                 continue
-            alias = (row.get("alias") or "").strip()
-            rows.append((sid_int, name, state, alias))
-            if alias:
+            alias_field = (row.get("alias") or "").strip()
+            aliases = [a.strip() for a in alias_field.split("|") if a.strip()] if alias_field else []
+            rows.append((sid_int, name, state, aliases))
+            for alias in aliases:
                 alias_names.add(alias)
 
     by_id = {}
-    for sid_int, name, state, alias in rows:
-        is_alias_duplicate = bool(alias_names and alias == "" and name in alias_names)
+    for sid_int, name, state, aliases in rows:
+        # A row is considered an alias-duplicate when its primary name is listed
+        # as an alias on another row, and this row itself has no aliases.
+        is_alias_duplicate = bool(alias_names and not aliases and name in alias_names)
         by_id[sid_int] = {
             "name": name,
             "state": state,
