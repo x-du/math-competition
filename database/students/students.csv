@@ -791,7 +791,6 @@ student_id,student_name,state,alias,gender,grade_in_2026
 828,Henry Wang,California,,male,13
 829,Joseph Girotto,Connecticut,,male,10
 830,Rajarshi Mandal,Massachusetts,,male,10
-831,Alex Gao,Indiana,,male,10
 832,Bryant Yu,Wisconsin,,male,10
 833,Marty Ho,Georgia,,male,10
 834,Henry Lu,Ohio,,male,9
@@ -3005,7 +3004,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 3100,Kiran Oliver,Maryland,,male,
 3101,Michael Zhao,California,,male,
 3102,Srinandasa Ari,Virginia,,male,
-3103,Alexander Gao,Indiana,,male,10
+3103,Alexander Gao,Indiana,Alex Gao,male,10
 3104,Arpit Panda,California,,male,
 3105,Aditya Bhide,Washington,,male,
 3106,Anish Agarwal,California,,male,
