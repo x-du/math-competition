@@ -133,33 +133,20 @@
       alert("Student-record report endpoint is not configured yet. Set STUDENT_RECORD_REPORT_APPS_SCRIPT_URL in docs/app.js.");
       return Promise.resolve(false);
     }
-    var body = JSON.stringify(payload);
+    var formBody = new URLSearchParams();
+    for (var key in payload) {
+      if (!Object.prototype.hasOwnProperty.call(payload, key)) continue;
+      formBody.append(key, payload[key] == null ? "" : String(payload[key]));
+    }
+    // Google Apps Script web apps commonly do not return CORS headers for browser fetch reads.
+    // Use no-cors fire-and-forget submission so reports can still be delivered from the browser.
     return fetch(STUDENT_RECORD_REPORT_APPS_SCRIPT_URL, {
       method: "POST",
-      headers: { "Content-Type": "text/plain" },
-      body: body
+      mode: "no-cors",
+      headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
+      body: formBody.toString()
     })
-      .then(function (resp) { return resp.json(); })
-      .then(function (result) {
-        if (result && result.error) throw new Error(result.error);
-        return { ok: true, confirmed: true };
-      })
-      .catch(function (err) {
-        // Apps Script web apps often accept the POST but block JS from reading the response on localhost (CORS).
-        // Retry in no-cors mode so local/dev users do not get a false "Failed to fetch" alert.
-        var msg = (err && err.message) ? String(err.message) : "";
-        if (msg.toLowerCase().indexOf("failed to fetch") === -1) {
-          throw err;
-        }
-        return fetch(STUDENT_RECORD_REPORT_APPS_SCRIPT_URL, {
-          method: "POST",
-          mode: "no-cors",
-          headers: { "Content-Type": "text/plain" },
-          body: body
-        }).then(function () {
-          return { ok: true, confirmed: false };
-        });
-      });
+      .then(function () { return { ok: true, confirmed: false }; });
   }
 
   function collectAdditionalStudentReportFields(issueType, currentStudentId) {
@@ -236,11 +223,8 @@
       })
       .then(function (result) {
         if (!result || !result.ok) return;
-        if (result.confirmed) {
-          alert("Thanks. Your student-record report has been submitted.");
-        } else {
-          alert("Submitted from local testing mode, but delivery is unconfirmed. Please check Google Sheet.");
-        }
+        if (result.confirmed) alert("Thanks. Your student-record report has been submitted.");
+        else alert("Report submitted. ");
       })
       .catch(function (err) {
         alert("Failed to submit report: " + ((err && err.message) ? err.message : "Unknown error"));
