@@ -324,7 +324,7 @@
           <button type="button" id="sort-toggle" class="sort-toggle" aria-label="Sort mode">
             <span class="sort-toggle-option" data-mode="records"># Records</span>
             <span class="sort-toggle-option sort-toggle-option--active" data-mode="mcp">MCP</span>
-            <span class="sort-toggle-option" id="mcp-pct-sort-option" data-mode="mcp_pct" hidden>MCP %</span>
+            <span class="sort-toggle-option" data-mode="mcp_pct">MCP %</span>
           </button>
         </span>
       </p>
@@ -512,6 +512,24 @@
         <button type="button" class="mcp-pct-popover-close" aria-label="Close">×</button>
       </div>
       <div class="mcp-pct-popover-backdrop" aria-hidden="true"></div>
+    </div>
+
+    <div id="student-report-modal" class="student-report-modal" hidden role="dialog" aria-modal="true" aria-labelledby="student-report-modal-title">
+      <div class="student-report-modal-backdrop" aria-hidden="true"></div>
+      <div class="student-report-modal-panel">
+        <h3 id="student-report-modal-title" class="student-report-modal-title">Report</h3>
+        <div id="student-report-modal-body" class="student-report-modal-body"></div>
+        <p id="student-report-modal-error" class="student-report-modal-error" role="alert" hidden></p>
+        <div class="student-report-modal-actions">
+          <button type="button" class="student-report-modal-cancel" id="student-report-modal-cancel">Cancel</button>
+          <button type="button" class="student-report-modal-submit" id="student-report-modal-submit">Submit</button>
+        </div>
+        <button type="button" class="student-report-modal-close" id="student-report-modal-close" aria-label="Close">×</button>
+      </div>
+    </div>
+    <div id="student-report-toast" class="student-report-toast" hidden>
+      <span id="student-report-toast-text" class="student-report-toast-text"></span>
+      <button type="button" class="student-report-toast-close" id="student-report-toast-close" aria-label="Dismiss notification">×</button>
     </div>
     <div id="csv-popover" class="csv-popover" hidden role="dialog" aria-labelledby="csv-popover-title">
       <div class="csv-popover-inner">

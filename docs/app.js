@@ -61,11 +61,13 @@
   var STUDENT_RECORD_REPORT_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzzI2_Wxp5S4iF87bzWfX-vw-ClBKva_M33GG-JV7PGKxE287tPnfBK41M5_0WI9nlLeQ/exec";
   var STUDENT_RECORD_REPORT_TYPES = {
     account_merge: "Account Merge",
-    state_label: "Label student state",
-    grade_label: "Label student grade"
+    state_label: "Update State",
+    grade_label: "Update Grade"
   };
   var studentReportMenuOpenEl = null;
   var studentReportIpPromise = null;
+  var studentReportModalContext = null;
+  var studentReportToastTimer = null;
 
   /** Download icon; SVG uses pointer-events:none via CSS so delegated clicks hit the button. */
   var CHART_DOWNLOAD_ICON_HTML =
@@ -130,8 +132,7 @@
 
   function submitStudentRecordReport(payload) {
     if (!STUDENT_RECORD_REPORT_APPS_SCRIPT_URL) {
-      alert("Student-record report endpoint is not configured yet. Set STUDENT_RECORD_REPORT_APPS_SCRIPT_URL in docs/app.js.");
-      return Promise.resolve(false);
+      return Promise.reject(new Error("Report endpoint is not configured. Set STUDENT_RECORD_REPORT_APPS_SCRIPT_URL in docs/app.js."));
     }
     var formBody = new URLSearchParams();
     for (var key in payload) {
@@ -145,93 +146,7 @@
       mode: "no-cors",
       headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
       body: formBody.toString()
-    })
-      .then(function () { return { ok: true, confirmed: false }; });
-  }
-
-  function collectAdditionalStudentReportFields(issueType, currentStudentId) {
-    var issueLabel = STUDENT_RECORD_REPORT_TYPES[issueType] || issueType;
-    var out = { issue_type: issueType, issue_label: issueLabel, detail: "", related_student_id: "" };
-    if (issueType === "account_merge") {
-      var related = window.prompt("Account merge: enter the other student ID (the duplicate profile).");
-      if (related == null) return null;
-      related = String(related).trim();
-      if (!related) {
-        alert("Please enter the other student ID.");
-        return null;
-      }
-      if (String(related) === String(currentStudentId)) {
-        alert("The other student ID must be different.");
-        return null;
-      }
-      out.related_student_id = related;
-      out.detail = "Possible duplicate profiles that should be merged.";
-      return out;
-    }
-    if (issueType === "state_label") {
-      var correctedState = window.prompt("What should the correct state be?");
-      if (correctedState == null) return null;
-      correctedState = String(correctedState).trim();
-      if (!correctedState) {
-        alert("Please provide the correct state.");
-        return null;
-      }
-      out.detail = "Suggested corrected state: " + correctedState;
-      return out;
-    }
-    if (issueType === "grade_label") {
-      var correctedGrade = window.prompt("What should the correct grade be?");
-      if (correctedGrade == null) return null;
-      correctedGrade = String(correctedGrade).trim();
-      if (!correctedGrade) {
-        alert("Please provide the correct grade.");
-        return null;
-      }
-      out.detail = "Suggested corrected grade: " + correctedGrade;
-      return out;
-    }
-    return out;
-  }
-
-  function submitStudentIssueFromCard(cardEl, issueType) {
-    var studentPayload = getStudentReportCardPayload(cardEl);
-    if (!studentPayload || !studentPayload.student_id) {
-      alert("Could not identify the student record.");
-      return;
-    }
-    var additional = collectAdditionalStudentReportFields(issueType, studentPayload.student_id);
-    if (!additional) return;
-    var optionBtn = cardEl.querySelector(".student-record-report-option[data-issue-type=\"" + issueType + "\"]");
-    if (optionBtn) optionBtn.disabled = true;
-    getClientIpForStudentReport()
-      .then(function (ip) {
-        var payload = {
-          issue_type: additional.issue_type,
-          issue_label: additional.issue_label,
-          student_id: studentPayload.student_id,
-          student_name: studentPayload.student_name,
-          student_state: studentPayload.student_state,
-          student_grade: studentPayload.student_grade,
-          related_student_id: additional.related_student_id,
-          detail: additional.detail,
-          page_url: (window && window.location && window.location.href) ? String(window.location.href) : "",
-          user_agent: (navigator && navigator.userAgent) ? String(navigator.userAgent) : "",
-          ip: ip || "unknown",
-          submitted_at: new Date().toISOString()
-        };
-        return submitStudentRecordReport(payload);
-      })
-      .then(function (result) {
-        if (!result || !result.ok) return;
-        if (result.confirmed) alert("Thanks. Your student-record report has been submitted.");
-        else alert("Report submitted. ");
-      })
-      .catch(function (err) {
-        alert("Failed to submit report: " + ((err && err.message) ? err.message : "Unknown error"));
-      })
-      .finally(function () {
-        if (optionBtn) optionBtn.disabled = false;
-      });
+    });
   }
 
   function parseDateAtEndOfDay(dateStr) {
@@ -601,18 +516,6 @@
       out.push(copyStudentShallow(s, recs));
     }
     return out;
-  }
-
-  // Hidden features are visible only with ?a=1 unless explicitly forced for debugging.
-  var FORCE_HIDDEN_FEATURE = false;
-  function showHiddenFeature() {
-    if (FORCE_HIDDEN_FEATURE) return true;
-    try {
-      var params = new URLSearchParams(window.location.search);
-      return params.get("a") === "1";
-    } catch (e) {
-      return false;
-    }
   }
 
   var US_STATES = [
@@ -1381,6 +1284,293 @@
     var div = document.createElement("div");
     div.textContent = s;
     return div.innerHTML;
+  }
+
+  function getStudentReportModalStateSelectOptionsHtml() {
+    var parts = ["<option value=\"\">Select a state</option>"];
+    for (var i = 0; i < US_STATES.length; i++) {
+      var nm = US_STATES[i];
+      parts.push(
+        "<option value=\"" + escapeHtml(nm) + "\">" + escapeHtml(nm) + "</option>"
+      );
+    }
+    parts.push("<option value=\"__other__\">Other</option>");
+    return parts.join("");
+  }
+
+  function buildStudentReportModalBodyHtml(issueType) {
+    if (issueType === "account_merge") {
+      return (
+        "<div class=\"student-report-modal-field\">" +
+          "<label for=\"sr-merge-input\">Other student (ID or name)</label>" +
+          "<input type=\"text\" id=\"sr-merge-input\" class=\"student-report-modal-input\" autocomplete=\"off\" />" +
+        "</div>"
+      );
+    }
+    if (issueType === "state_label") {
+      return (
+        "<div class=\"student-report-modal-field\">" +
+          "<label for=\"sr-select-state\">State</label>" +
+          "<select id=\"sr-select-state\" class=\"student-report-modal-select\">" +
+            getStudentReportModalStateSelectOptionsHtml() +
+          "</select>" +
+        "</div>" +
+        "<div id=\"sr-state-other-wrap\" class=\"student-report-modal-field\" hidden>" +
+          "<label for=\"sr-input-state-other\">Other (specify)</label>" +
+          "<input type=\"text\" id=\"sr-input-state-other\" class=\"student-report-modal-input\" autocomplete=\"off\" />" +
+        "</div>"
+      );
+    }
+    if (issueType === "grade_label") {
+      return (
+        "<div class=\"student-report-modal-field\">" +
+          "<label for=\"sr-grade-current\">Current grade</label>" +
+          "<input type=\"text\" id=\"sr-grade-current\" class=\"student-report-modal-input\" autocomplete=\"off\" inputmode=\"numeric\" placeholder=\"e.g. 9, 10, 11\" />" +
+        "</div>" +
+        "<p class=\"student-report-modal-hint\">Enter school grade as a number (for example, 10 or 11).</p>"
+      );
+    }
+    return "<p>Unknown report type.</p>";
+  }
+
+  function setStudentReportModalError(msg) {
+    var err = document.getElementById("student-report-modal-error");
+    if (!err) return;
+    if (msg) {
+      err.textContent = msg;
+      err.hidden = false;
+    } else {
+      err.textContent = "";
+      err.hidden = true;
+    }
+  }
+
+  function wireStudentReportModalFields(issueType) {
+    if (issueType === "state_label") {
+      var sel = document.getElementById("sr-select-state");
+      var owrap = document.getElementById("sr-state-other-wrap");
+      var oin = document.getElementById("sr-input-state-other");
+      if (sel && owrap) {
+        function sync() {
+          owrap.hidden = sel.value !== "__other__";
+          if (oin && !owrap.hidden) {
+            setTimeout(function () {
+              oin.focus();
+            }, 0);
+          }
+        }
+        sel.addEventListener("change", sync);
+        sync();
+      }
+    } else if (issueType === "account_merge") {
+      var minp = document.getElementById("sr-merge-input");
+      if (minp) {
+        setTimeout(function () {
+          minp.focus();
+        }, 0);
+      }
+    } else if (issueType === "grade_label") {
+      var gcur = document.getElementById("sr-grade-current");
+      if (gcur) {
+        setTimeout(function () {
+          gcur.focus();
+        }, 0);
+      }
+    }
+  }
+
+  function closeStudentReportModal() {
+    var modal = document.getElementById("student-report-modal");
+    if (modal) modal.hidden = true;
+    document.body.classList.remove("student-report-modal-open");
+    if (studentReportModalContext && studentReportModalContext.optionBtn) {
+      studentReportModalContext.optionBtn.disabled = false;
+    }
+    studentReportModalContext = null;
+  }
+
+  function hideStudentReportToast() {
+    if (studentReportToastTimer) {
+      clearTimeout(studentReportToastTimer);
+      studentReportToastTimer = null;
+    }
+    var el = document.getElementById("student-report-toast");
+    if (el) {
+      el.hidden = true;
+      el.className = "student-report-toast";
+    }
+    var t = document.getElementById("student-report-toast-text");
+    if (t) t.textContent = "";
+  }
+
+  /** kind: "success" | "error" */
+  function showStudentReportToast(message, kind) {
+    var el = document.getElementById("student-report-toast");
+    var t = document.getElementById("student-report-toast-text");
+    if (!el || !t) return;
+    hideStudentReportToast();
+    t.textContent = message;
+    el.className = "student-report-toast" + (kind === "error" ? " student-report-toast--error" : " student-report-toast--success");
+    el.setAttribute("role", kind === "error" ? "alert" : "status");
+    el.setAttribute("aria-live", kind === "error" ? "assertive" : "polite");
+    el.hidden = false;
+    studentReportToastTimer = setTimeout(function () {
+      hideStudentReportToast();
+    }, 6000);
+  }
+
+  function readStudentReportModalAdditional(issueType, studentIdStr) {
+    var issueLabel = STUDENT_RECORD_REPORT_TYPES[issueType] || issueType;
+    if (issueType === "account_merge") {
+      var minp = document.getElementById("sr-merge-input");
+      var v = minp ? String(minp.value).trim() : "";
+      if (!v) {
+        setStudentReportModalError("Enter the other student\u2019s ID or name.");
+        return null;
+      }
+      if (/^\d+$/.test(v) && String(v) === String(studentIdStr)) {
+        setStudentReportModalError("Choose a different ID than this profile.");
+        return null;
+      }
+      return { issue_type: issueType, issue_label: issueLabel, user_value: v };
+    }
+    if (issueType === "state_label") {
+      var sel = document.getElementById("sr-select-state");
+      var oin = document.getElementById("sr-input-state-other");
+      if (!sel) return null;
+      var st = "";
+      if (sel.value === "__other__") {
+        st = oin ? String(oin.value).trim() : "";
+        if (!st) {
+          setStudentReportModalError("Please specify a state or territory.");
+          return null;
+        }
+      } else {
+        st = String(sel.value).trim();
+        if (!st) {
+          setStudentReportModalError("Select a state.");
+          return null;
+        }
+      }
+      return { issue_type: issueType, issue_label: issueLabel, user_value: st };
+    }
+    if (issueType === "grade_label") {
+      var gcurIn = document.getElementById("sr-grade-current");
+      var v = gcurIn ? String(gcurIn.value).trim() : "";
+      if (!v) {
+        setStudentReportModalError("Enter the current grade (e.g. 9, 10, 11).");
+        return null;
+      }
+      if (!/^\d+$/.test(v)) {
+        setStudentReportModalError("Use a whole number for grade (e.g. 10 or 11).");
+        return null;
+      }
+      return { issue_type: issueType, issue_label: issueLabel, user_value: v };
+    }
+    return null;
+  }
+
+  function submitStudentReportWithPayloadFromModal() {
+    if (!studentReportModalContext) return;
+    var cardEl = studentReportModalContext.cardEl;
+    var additional = readStudentReportModalAdditional(
+      studentReportModalContext.issueType,
+      getStudentReportCardPayload(cardEl).student_id
+    );
+    if (!additional) return;
+    setStudentReportModalError("");
+    var studentPayload = getStudentReportCardPayload(cardEl);
+    // Close first so the UI is not blocked by ipify + report POST (no-cors still waits on the network).
+    closeStudentReportModal();
+    getClientIpForStudentReport()
+      .then(function (ip) {
+        var payload = {
+          issue_type: additional.issue_type,
+          issue_label: additional.issue_label,
+          student_id: studentPayload.student_id,
+          student_name: studentPayload.student_name,
+          student_state: studentPayload.student_state,
+          student_grade: studentPayload.student_grade,
+          user_value: additional.user_value != null ? additional.user_value : "",
+          related_student: additional.user_value != null ? additional.user_value : "",
+          related_student_id: additional.user_value != null ? additional.user_value : "",
+          other_student: additional.user_value != null ? additional.user_value : "",
+          page_url: (window && window.location && window.location.href) ? String(window.location.href) : "",
+          user_agent: (navigator && navigator.userAgent) ? String(navigator.userAgent) : "",
+          ip: ip || "unknown",
+          submitted_at: new Date().toISOString()
+        };
+        return submitStudentRecordReport(payload);
+      })
+      .then(function () {
+        showStudentReportToast("Report sent. Thank you.", "success");
+      })
+      .catch(function (err) {
+        var msg = (err && err.message) ? err.message : "Couldn\u2019t send the report. Check your connection and try again.";
+        showStudentReportToast(msg, "error");
+      });
+  }
+
+  function openStudentReportModal(issueType, cardEl, optionBtn) {
+    var modal = document.getElementById("student-report-modal");
+    var body = document.getElementById("student-report-modal-body");
+    var title = document.getElementById("student-report-modal-title");
+    var sp = getStudentReportCardPayload(cardEl);
+    if (!modal || !body || !title) return;
+    if (!sp || !sp.student_id) {
+      studentReportModalContext = { cardEl: cardEl, issueType: issueType, optionBtn: optionBtn };
+      body.innerHTML = "<p>Could not identify the student record.</p>";
+      title.textContent = "Error";
+      setStudentReportModalError("");
+      var sub0 = document.getElementById("student-report-modal-submit");
+      if (sub0) sub0.hidden = true;
+      modal.hidden = false;
+      return;
+    }
+    studentReportModalContext = { cardEl: cardEl, issueType: issueType, optionBtn: optionBtn };
+    title.textContent = STUDENT_RECORD_REPORT_TYPES[issueType] || "Report";
+    body.innerHTML = buildStudentReportModalBodyHtml(issueType);
+    setStudentReportModalError("");
+    var sub1 = document.getElementById("student-report-modal-submit");
+    if (sub1) sub1.hidden = false;
+    if (issueType === "grade_label") {
+      var gPref = document.getElementById("sr-grade-current");
+      if (gPref) gPref.value = "";
+    }
+    wireStudentReportModalFields(issueType);
+    modal.hidden = false;
+    document.body.classList.add("student-report-modal-open");
+  }
+
+  function bindStudentReportModal() {
+    var modal = document.getElementById("student-report-modal");
+    if (!modal) return;
+    var toastClose = document.getElementById("student-report-toast-close");
+    if (toastClose) {
+      toastClose.addEventListener("click", function () {
+        hideStudentReportToast();
+      });
+    }
+    var closeBtn = document.getElementById("student-report-modal-close");
+    var cancelBtn = document.getElementById("student-report-modal-cancel");
+    var subBtn = document.getElementById("student-report-modal-submit");
+    var back = modal.querySelector(".student-report-modal-backdrop");
+    function onClose() {
+      closeStudentReportModal();
+    }
+    if (closeBtn) closeBtn.addEventListener("click", onClose);
+    if (cancelBtn) cancelBtn.addEventListener("click", onClose);
+    if (back) back.addEventListener("click", onClose);
+    if (subBtn) {
+      subBtn.addEventListener("click", function () {
+        submitStudentReportWithPayloadFromModal();
+      });
+    }
+    document.addEventListener("keydown", function (ev) {
+      if (ev.key === "Escape" && modal && !modal.hidden) {
+        onClose();
+      }
+    });
   }
 
   function sanitizeDownloadFilename(s, fallback) {
@@ -2564,8 +2754,8 @@
         "<div class=\"student-record-report-menu\" hidden>" +
           "<p class=\"student-record-report-title\">Report student record error</p>" +
           "<button type=\"button\" class=\"student-record-report-option\" data-issue-type=\"account_merge\">Account Merge</button>" +
-          "<button type=\"button\" class=\"student-record-report-option\" data-issue-type=\"state_label\">Label student state</button>" +
-          "<button type=\"button\" class=\"student-record-report-option\" data-issue-type=\"grade_label\">Label student grade</button>" +
+          "<button type=\"button\" class=\"student-record-report-option\" data-issue-type=\"state_label\">Update State</button>" +
+          "<button type=\"button\" class=\"student-record-report-option\" data-issue-type=\"grade_label\">Update Grade</button>" +
         "</div>" +
       "</span>";
     var headerActionsHtml =
@@ -2575,7 +2765,7 @@
         escapeHtml(String(student.id)) +
         "\" aria-label=\"Open performance by year chart for this student\">Performance</button>" +
         "<button type=\"button\" class=\"export-pdf-student-btn\" aria-label=\"Export this student to PDF\">PDF</button>" +
-        (showHiddenFeature() ? studentReportMenuHtml : "") +
+        studentReportMenuHtml +
       "</div>";
     var studentNameSafe = String(student.name || "").trim();
     var stateSafe = String(state || "").trim();
@@ -4372,16 +4562,6 @@
       });
     }
     restoreFilters();
-    if (!showHiddenFeature() && sortMode === "mcp_pct") {
-      sortMode = "mcp";
-      if (sortToggleEl) {
-        var opts = sortToggleEl.querySelectorAll(".sort-toggle-option");
-        for (var oi = 0; oi < opts.length; oi++) {
-          opts[oi].classList.toggle("sort-toggle-option--active", opts[oi].getAttribute("data-mode") === "mcp");
-        }
-      }
-      saveFilters();
-    }
     document.querySelectorAll(".awards-ranking-controls").forEach(function (el) {
       el.style.visibility = "visible";
     });
@@ -4476,8 +4656,6 @@
       }
       populateCompetitionYearFilterOptions();
       setLoading(false);
-      var mcpPctOption = document.getElementById("mcp-pct-sort-option");
-      if (mcpPctOption) mcpPctOption.hidden = !showHiddenFeature();
       requestAnimationFrame(function () {
         renderContestList();
         contestFilter.updateSummary();
@@ -4489,6 +4667,7 @@
         bindMcpTimelinePopover();
         bindMcpPctPopover();
         bindCsvPopover();
+        bindStudentReportModal();
         runSearch();
       });
     }).catch(function (err) {
@@ -4791,7 +4970,7 @@
       var cardForReport = reportOptionBtn.closest(".student-card");
       closeStudentReportMenu();
       if (!issueType || !cardForReport) return;
-      submitStudentIssueFromCard(cardForReport, issueType);
+      openStudentReportModal(issueType, cardForReport, reportOptionBtn);
       return;
     }
     var yearLink = target && target.closest ? target.closest(".csv-row-year-link") : null;
