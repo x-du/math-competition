@@ -11,3 +11,5 @@ description: "Articles about the math competition database: how to use it, integ
 - [How to Compare Math Competitions](how-to-compare-competitions.md)
 - [Math Competition Calendar](calendar.md)
 - [MCP — Math Competition Points](mcp.md)
+- [USAMO and USAJMO 2026 Results Analysis](usamo-usajmo-2026-analysis.md)
+
