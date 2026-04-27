@@ -1,5 +1,5 @@
 student_id,student_name,state,alias,gender,grade_in_2026
-1,Alexander Wang,New Jersey,,male,12
+1,Alexander Wang,New Jersey,Alex Wang,male,12
 2,Bryan Sicheng Guo,California,Bryan Guo,male,12
 3,Oron Wang,New Hampshire,,male,11
 4,Liam Reddy,Utah,,male,11
@@ -6698,5 +6698,8 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6827,Steven Xia,California,,male,10
 6828,Eric Xiong,Illinois,,male,
 6830,Alice Yin,Massachusetts,,female,
-6832,Rick Zeng,New York,,male,
-6833,Jaden Zhu,New York,,male,
+6832,Rick Zeng,New York,,male,male
+6833,Jaden Zhu,New York,,male,male
+6834,Minguen Duan,Connecticut,,,male
+6836,Kevin Lu,Texas,,,male
+6837,Edward Li,Maine,,,male

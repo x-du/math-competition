@@ -1,0 +1,21 @@
+student_id,student_name,rank,team,score,tb_corr,tb_time,prize,mcp_rank
+434,Sargam Mondal,1,Central Jersey B,9,1,251,"$1,500",1
+6834,Minguen Duan,2,Connecticut A,8,2,41,"$1,250",2
+1,Alex Wang,3,Lehigh Valley A,8,2,89,"$1,250",3
+4,Liam Reddy,4,Las Vegas B1,8,3,26,"$1,000",4
+1083,Vishnu Mangipudi,5,Washington A1,8,3,29,"$1,000",5
+1610,Jerry Zhang,6,Texas A3,8,4,0,"$1,000",6
+58,Hannah Fox,7,SFBA/NorCal A1,8,4,0,$750,7
+92,Marvin Mao,8,BCA,8,4,0,$750,8
+6836,Kevin Lu,9,Texas A1,7,1,460,$750,9
+89,Jordan Lefkowitz,10,Connecticut A,7,1,538,$750,10
+169,Nilay Mishra,11,SFBA/NorCal A1,7,2,92,$500,11
+115,Aaron Hu,12,Florida A1,7,2,102,$500,12
+57,Christopher Qiu,13,Central Jersey B,7,2,133,$500,13
+273,Evin Liang,14,Lexington,7,2,136,$500,14
+1293,Olivia Xu,15,SFBA/NorCal A1,7,2,150,$500,15
+2803,Sharvaa Selvan,16,Florida A1,7,2,153,$500,16
+482,David Zhang,17,SFBA/NorCal A1,7,2,155,$500,17
+1090,Immanuel Whang,18,Washington A1,7,2,157,$500,18
+76,Kiran Reddy,19,Las Vegas B1,7,2,161,$500,19
+6837,Edward Li,20,Maine,7,2,166,$500,20
