@@ -80,16 +80,30 @@
 </head>
 <body>
   <header class="header">
-    <section id="promotion-banner" class="promotion-banner" hidden aria-live="polite"></section>
-    <button
-      type="button"
-      id="theme-toggle"
-      class="theme-toggle"
-      aria-label="Switch to light mode"
-      title="Light mode"
-    >
-      <span class="theme-toggle-icon" aria-hidden="true"></span>
-    </button>
+    <div class="header-controls">
+      <section id="promotion-banner" class="promotion-banner" hidden aria-live="polite"></section>
+      <div class="header-controls-right">
+        <button
+          type="button"
+          id="theme-toggle"
+          class="theme-toggle"
+          aria-label="Switch to light mode"
+          title="Light mode"
+        >
+          <span class="theme-toggle-icon" aria-hidden="true"></span>
+        </button>
+        <button
+          type="button"
+          id="site-nav-toggle"
+          class="site-nav-toggle"
+          aria-expanded="false"
+          aria-controls="site-nav-drawer"
+          aria-label="Open menu"
+        >
+          <span class="site-nav-toggle-bars" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
     <script>
       (function () {
         var sun =
@@ -103,16 +117,6 @@
         }
       })();
     </script>
-    <button
-      type="button"
-      id="site-nav-toggle"
-      class="site-nav-toggle"
-      aria-expanded="false"
-      aria-controls="site-nav-drawer"
-      aria-label="Open menu"
-    >
-      <span class="site-nav-toggle-bars" aria-hidden="true"></span>
-    </button>
     <div class="header-brand">
       <h1>Math Competition Records</h1>
       <p class="tagline">Search by student name to view competition history.</p>

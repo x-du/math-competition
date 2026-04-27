@@ -157,11 +157,25 @@ body.contest-filter-popover-open {
 }
 
 /* Light / dark theme (index header) */
-.theme-toggle {
+.header-controls {
   position: absolute;
   top: 1.25rem;
-  right: 4.25rem;
+  left: 1rem;
+  right: 1rem;
   z-index: 2;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.header-controls-right {
+  display: inline-flex;
+  align-items: stretch;
+  gap: 0.75rem;
+}
+
+.theme-toggle {
   width: 2.75rem;
   height: 2.75rem;
   padding: 0;
@@ -200,10 +214,6 @@ body.contest-filter-popover-open {
 
 /* Hamburger menu */
 .site-nav-toggle {
-  position: absolute;
-  top: 1.25rem;
-  right: 1rem;
-  z-index: 2;
   width: 2.75rem;
   height: 2.75rem;
   padding: 0;
@@ -1085,10 +1095,7 @@ body.contest-filter-popover-open {
 }
 
 .promotion-banner {
-  position: absolute;
-  left: 1rem;
-  top: 1.25rem;
-  z-index: 2;
+  position: relative;
   width: auto;
   max-width: min(26rem, calc(100vw - 2rem));
   margin: 0;
@@ -1103,10 +1110,11 @@ body.contest-filter-popover-open {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 2.4rem;
-  padding: 0.45rem 0.8rem;
+  height: 2.75rem;
+  padding: 0 0.8rem;
   border: 1px solid #d4a017;
   border-radius: var(--radius);
+  box-sizing: border-box;
   background: #facc15;
   color: #3f2f00;
   font-size: 0.85rem;
@@ -1257,9 +1265,13 @@ body.contest-filter-popover-open {
 }
 
 @media (max-width: 639px) {
-  .promotion-banner {
-    left: 0.75rem;
+  .header-controls {
     top: 0.75rem;
+    left: 0.75rem;
+    right: 0.75rem;
+  }
+
+  .promotion-banner {
     width: auto;
     max-width: calc(100vw - 1.5rem);
   }
