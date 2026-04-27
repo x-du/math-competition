@@ -82,6 +82,17 @@
   var activePromotionIndex = 0;
   var promotionPopoverOpen = false;
   var promotionOutsidePointerHandler = null;
+  var lastTrackedStudentCardViewId = null;
+  var lastTrackedSearchEventKey = null;
+
+  function trackGaEvent(eventName, eventParams) {
+    if (!eventName || typeof window === "undefined") return;
+    var gtagFn = window.gtag;
+    if (typeof gtagFn !== "function") return;
+    try {
+      gtagFn("event", eventName, eventParams || {});
+    } catch (e) { /* ignore */ }
+  }
 
   function parseDateAtStartOfDay(dateStr) {
     if (!dateStr) return null;
@@ -264,6 +275,11 @@
 
     toggleEl.addEventListener("click", function () {
       var isOpening = !!popoverEl.hidden;
+      trackGaEvent("promotion_button_click", {
+        action: isOpening ? "open" : "close",
+        promotion_label: promotion.label || "",
+        promotion_title: promotion.title || ""
+      });
       popoverEl.hidden = !isOpening;
       promotionPopoverOpen = isOpening;
       toggleEl.setAttribute("aria-expanded", isOpening ? "true" : "false");
@@ -321,6 +337,13 @@
       ctaEl.target = "_blank";
       ctaEl.rel = "noopener noreferrer";
       ctaEl.textContent = promotion.ctaText;
+      ctaEl.addEventListener("click", function () {
+        trackGaEvent("promotion_link_click", {
+          promotion_label: promotion.label || "",
+          promotion_title: promotion.title || "",
+          link_url: promotion.href
+        });
+      });
       actionsEl.appendChild(ctaEl);
       contentEl.appendChild(actionsEl);
     }
@@ -477,6 +500,10 @@
   }
 
   function applyContestFilterChangesNow() {
+    var selectedContests = contestFilter.getActiveContestFilterValues();
+    trackGaEvent("contest_filter_change", {
+      selected_contest_count: selectedContests.length
+    });
     mcpPctStatsCache.key = null;
     populateCompetitionYearFilterOptions();
     saveFilters();
@@ -995,6 +1022,9 @@
       }
       if (mcpTimelineSelectedIds.length >= MCP_TIMELINE_MAX_STUDENTS) return false;
       mcpTimelineSelectedIds.push(String(sid));
+      trackGaEvent("mcp_timeline_add_student", {
+        student_id: String(sid)
+      });
       return true;
     }
 
@@ -1011,6 +1041,9 @@
       if (opts.ensureStudentId != null && opts.ensureStudentId !== "") {
         addTimelineStudentIfRoom(opts.ensureStudentId);
       }
+      trackGaEvent("mcp_timeline_open", {
+        selected_count: mcpTimelineSelectedIds.length
+      });
       popover.hidden = false;
       trigger.setAttribute("aria-expanded", "true");
       mcpTimelinePopoverOpen = true;
@@ -3271,6 +3304,9 @@
     }
 
     toggle.addEventListener("click", function () {
+      trackGaEvent("menu_toggle_click", {
+        action: isOpen() ? "close" : "open"
+      });
       if (isOpen()) closeSiteNavDrawer();
       else openDrawer();
     });
@@ -3283,7 +3319,13 @@
     if (panel) {
       panel.addEventListener("click", function (e) {
         var a = e.target && e.target.closest && e.target.closest("a.site-nav-item");
-        if (a && a.getAttribute("href")) closeSiteNavDrawer();
+        if (a && a.getAttribute("href")) {
+          trackGaEvent("menu_item_click", {
+            item_label: (a.textContent || "").trim() || "(empty)",
+            item_href: a.getAttribute("href")
+          });
+          closeSiteNavDrawer();
+        }
       });
     }
     document.addEventListener("keydown", function (e) {
@@ -3308,6 +3350,7 @@
     }
 
     trigger.addEventListener("click", function () {
+      trackGaEvent("menu_item_click", { item_label: "Competitions in this database" });
       if (popover.hidden) {
         closeSiteNavDrawer();
         open();
@@ -3346,6 +3389,12 @@
         }
       }
       if (student) {
+        if (lastTrackedStudentCardViewId !== urlStudentId) {
+          trackGaEvent("student_card_view", {
+            student_id: String(urlStudentId)
+          });
+          lastTrackedStudentCardViewId = urlStudentId;
+        }
         searchValueBeforeStudentCard = (searchEl && searchEl.value) ? searchEl.value.trim() : "";
         if (searchEl) searchEl.value = (student.name || "").trim();
         if (searchClearEl) searchClearEl.hidden = true;
@@ -3388,6 +3437,9 @@
       syncSearchPerformanceButtonVisibility();
       syncSearchApplyFiltersToggleVisibility();
     }
+    if (urlStudentId == null) {
+      lastTrackedStudentCardViewId = null;
+    }
 
     if (!query) {
       hintEl.textContent = "Enter at least one character to search.";
@@ -3421,6 +3473,32 @@
       var lim = SEARCH_RESULTS_DISPLAY_LIMIT;
       var toRender = total > lim ? searchResults.slice(0, lim) : searchResults;
       var filterNote = shouldApplySearchLeaderboardFilters() ? " Filters above apply." : "";
+      var searchEventKey = JSON.stringify({
+        q: query,
+        total: total,
+        girls: girlsOnlyEl ? !!girlsOnlyEl.checked : false,
+        grade: gradeFilterEl ? String(gradeFilterEl.value || "") : "",
+        state: stateFilterEl ? String(stateFilterEl.value || "") : "",
+        year: competitionYearFilterEl ? String(competitionYearFilterEl.value || "") : "",
+        contestCount: contestFilter && contestFilter.getActiveContestFilterValues
+          ? contestFilter.getActiveContestFilterValues().length
+          : 0,
+        applyFilters: shouldApplySearchLeaderboardFilters()
+      });
+      if (searchEventKey !== lastTrackedSearchEventKey) {
+        trackGaEvent("search_performed", {
+          query_length: query.length,
+          results_count: total,
+          used_filters:
+            !!(girlsOnlyEl && girlsOnlyEl.checked) ||
+            !!(gradeFilterEl && gradeFilterEl.value) ||
+            !!(stateFilterEl && stateFilterEl.value) ||
+            !!(competitionYearFilterEl && competitionYearFilterEl.value) ||
+            !!(contestFilter && contestFilter.isContestFilterActive && contestFilter.isContestFilterActive()) ||
+            shouldApplySearchLeaderboardFilters()
+        });
+        lastTrackedSearchEventKey = searchEventKey;
+      }
       hintEl.textContent = total === 0
         ? "No students found." + filterNote
         : total === 1
@@ -4403,6 +4481,7 @@
     if (!trigger || !popover) return;
 
     function openPopover() {
+      trackGaEvent("distribution_popover_open", { type: "state" });
       closeGenderDistPopoverUi();
       closeGradeDistPopoverUi();
       popover.hidden = false;
@@ -4442,6 +4521,7 @@
     if (!trigger || !popover) return;
 
     function openPopover() {
+      trackGaEvent("distribution_popover_open", { type: "gender" });
       closeStateDistPopoverUi();
       closeGradeDistPopoverUi();
       popover.hidden = false;
@@ -4476,6 +4556,7 @@
     if (!trigger || !popover) return;
 
     function openPopover() {
+      trackGaEvent("distribution_popover_open", { type: "grade" });
       closeStateDistPopoverUi();
       closeGenderDistPopoverUi();
       popover.hidden = false;
@@ -4571,6 +4652,9 @@
     });
     if (competitionYearFilterEl) {
       competitionYearFilterEl.addEventListener("change", function () {
+        trackGaEvent("competition_year_filter_change", {
+          value: competitionYearFilterEl.value || "all"
+        });
         mcpPctStatsCache.key = null;
         saveFilters();
         renderTopStudentsByRecords();
@@ -4723,6 +4807,9 @@
 
   if (girlsOnlyEl) {
     girlsOnlyEl.addEventListener("change", function () {
+      trackGaEvent("girls_only_filter_change", {
+        value: girlsOnlyEl.checked ? "on" : "off"
+      });
       saveFilters();
       renderTopStudentsByRecords();
       runSearch();
@@ -4732,6 +4819,9 @@
 
   if (gradeFilterEl) {
     gradeFilterEl.addEventListener("change", function () {
+      trackGaEvent("grade_filter_change", {
+        value: gradeFilterEl.value || "all"
+      });
       saveFilters();
       renderTopStudentsByRecords();
       runSearch();
@@ -4741,6 +4831,9 @@
 
   if (stateFilterEl) {
     stateFilterEl.addEventListener("change", function () {
+      trackGaEvent("state_filter_change", {
+        value: stateFilterEl.value || "all"
+      });
       saveFilters();
       renderTopStudentsByRecords();
       runSearch();
@@ -4750,6 +4843,9 @@
 
   if (searchApplyLeaderboardFiltersEl) {
     searchApplyLeaderboardFiltersEl.addEventListener("change", function () {
+      trackGaEvent("search_apply_filters_toggle_change", {
+        value: searchApplyLeaderboardFiltersEl.checked ? "on" : "off"
+      });
       saveFilters();
       runSearch();
     });
@@ -4762,6 +4858,7 @@
       var mode = opt.getAttribute("data-mode");
       if (!mode || mode === sortMode) return;
       sortMode = mode;
+      trackGaEvent("sort_mode_change", { mode: sortMode });
       var opts = sortToggleEl.querySelectorAll(".sort-toggle-option");
       for (var i = 0; i < opts.length; i++) {
         opts[i].classList.toggle("sort-toggle-option--active", opts[i].getAttribute("data-mode") === sortMode);
@@ -4893,6 +4990,10 @@
 
     var contestInfo = (data.contests || {})[contest] || {};
     var contestName = contestInfo.contest_name || contest;
+    trackGaEvent("csv_popover_open", {
+      contest_slug: contest || "",
+      year: year || ""
+    });
     var title = contestName + " " + year;
     csvTitle.textContent = title;
     csvLoading.hidden = false;
@@ -5062,6 +5163,10 @@
     var studentId = card ? card.getAttribute("data-student-id") : null;
     if (studentId != null && studentId !== "") {
       event.preventDefault();
+      trackGaEvent("search_result_click", {
+        student_id: String(studentId),
+        query_length: searchEl && searchEl.value ? String(searchEl.value).trim().length : 0
+      });
       navigateToStudentAndScroll(studentId);
       return;
     }
