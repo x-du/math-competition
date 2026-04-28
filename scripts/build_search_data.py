@@ -173,25 +173,12 @@ def get_time_weight(year: str, slug: str, current_year: int) -> float:
     return 0.5 ** years_ago
 
 
-def humanize_contest(slug: str) -> str:
-    """Turn contest slug into title, e.g. hmmt-feb-geometry -> HMMT Feb Geometry."""
-    parts = slug.split("-")
-    known_acronyms = {"hmmt", "pumac", "arml", "amc", "aime", "usamo", "mathcounts", "cmimc", "imo", "egmo", "rmm"}
-    out = []
-    for p in parts:
-        if p.lower() in known_acronyms:
-            out.append(p.upper())
-        else:
-            out.append(p.capitalize())
-    return " ".join(out)
-
-
 def load_contests():
     """Load contests.csv -> ({ folder_name: { contest_name, contest_name_long, description, website, ... } }, [order])."""
     by_slug = {}
     order = []
     if not CONTESTS_CSV.exists():
-        return by_slug
+        return by_slug, order
     with open(CONTESTS_CSV, newline="", encoding="utf-8") as f:
         r = csv.DictReader(f)
         for row in r:
@@ -253,20 +240,94 @@ def collect_result_files() -> list:
     return out
 
 
+def arml_site_bucket(row: dict, csv_path: Path) -> str:
+    """Normalize ARML disambiguator for dedup when multiple CSVs exist for the same season.
+
+    Any year may include an optional CSV "site" column; that value wins when present. If "site"
+    is absent, results_<suffix>.csv supplies the suffix (e.g. onsite, offsite)—used for ARML 2022,
+    which is split across two files. A plain results.csv with no "site" yields "". Any other stem
+    (e.g. results_iowa.csv) uses that stem when "site" is absent.
+    """
+    s = (row.get("site") or "").strip().lower()
+    if s:
+        return s
+    stem = csv_path.stem.lower()
+    if stem.startswith("results_"):
+        suffix = stem[len("results_") :]
+        if suffix:
+            return suffix
+    if stem == "results":
+        return ""
+    return stem
+
+
+def dedupe_arml_mcp_per_season(records_by_id: dict) -> None:
+    """If one student has multiple ARML rows in the same season year with MCP, keep only the best rank.
+
+    Applies when a season has more than one results file or overlapping site buckets (e.g. ARML
+    2022's two files). One file per season with unique students per (year, site) needs no stripping.
+    """
+    for recs in records_by_id.values():
+        by_year: dict[str, list[dict]] = {}
+        for r in recs:
+            if r.get("contest_slug") != "arml":
+                continue
+            y = str(r.get("year") or "").strip()
+            if not y:
+                continue
+            by_year.setdefault(y, []).append(r)
+        for group in by_year.values():
+            with_mcp: list[dict] = []
+            for r in group:
+                pts_raw = r.get("mcp_points")
+                if pts_raw is None or str(pts_raw).strip() == "":
+                    continue
+                try:
+                    if float(pts_raw) <= 0:
+                        continue
+                except (TypeError, ValueError):
+                    continue
+                with_mcp.append(r)
+            if len(with_mcp) <= 1:
+                continue
+
+            def rank_sort_key(rec: dict) -> tuple:
+                mr = rec.get("mcp_rank")
+                if mr is None or str(mr).strip() == "":
+                    return (10**9, 0.0)
+                try:
+                    mr_clean = str(mr).strip().replace(" (tie)", "").replace("(tie)", "")
+                    rank_val = float(mr_clean)
+                except (TypeError, ValueError):
+                    return (10**9, 0.0)
+                try:
+                    pts_val = float(rec.get("mcp_points") or 0)
+                except (TypeError, ValueError):
+                    pts_val = 0.0
+                return (rank_val, -pts_val)
+
+            best = min(with_mcp, key=rank_sort_key)
+            for r in with_mcp:
+                if r is best:
+                    continue
+                r.pop("mcp_rank", None)
+                r.pop("mcp_points", None)
+                r.pop("mcp_contrib", None)
+
+
 def merge_mathcounts_national_competitors_into_rank(
     year: str,
     records_by_id: dict,
     students: dict,
-) -> int:
+) -> None:
     """Add mathcounts-national-rank rows from mathcounts-national/year=…/results.csv for students not already listed.
 
     Each added row has rank "Competitor". MCP rank/points are filled later when that year has rank standings."""
     comp_path = CONTESTS_DIR / "mathcounts-national" / f"year={year}" / "results.csv"
     if not comp_path.is_file():
-        return 0
+        return
     slug = MATHCOUNTS_SLUG
     key = (slug, year)
-    added = 0
     skip_keys = {"student_id", "student_id ", "student_name", "state", "city", "school"}
     with open(comp_path, newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f)
@@ -302,7 +363,6 @@ def merge_mathcounts_national_competitors_into_rank(
             if sid not in records_by_id:
                 records_by_id[sid] = []
             records_by_id[sid].append(record)
-            added += 1
             if sid not in students:
                 name = (row.get("student_name") or "").strip()
                 state = (row.get("state") or "").strip()
@@ -313,7 +373,6 @@ def merge_mathcounts_national_competitors_into_rank(
                     "gender": "male",
                     "grade_in_2026": None,
                 }
-    return added
 
 
 def main() -> None:
@@ -338,7 +397,6 @@ def main() -> None:
         if slug in CONTESTS_SKIP_FOR_SEARCH:
             continue
         contest_info = contests.get(slug, {})
-        contest_title = (contest_info.get("contest_name") or "").strip() or humanize_contest(slug)
         mcp_tier = contest_info.get("mcp_tier")
         mcp_weight = contest_info.get("mcp_weight")
 
@@ -397,6 +455,13 @@ def main() -> None:
                     if v is not None and str(v).strip() != "":
                         record[k] = v.strip() if isinstance(v, str) else v
 
+            # ARML: optional "site" on any year (copied from CSV above). If missing, infer from
+            # results_<suffix>.csv only so multi-file seasons dedupe correctly (2022 = two files).
+            if slug == "arml":
+                site_bucket = arml_site_bucket(row, csv_path)
+                if site_bucket and not (record.get("site") or "").strip():
+                    record["site"] = site_bucket
+
             # For MATHCOUNTS, USAMO, USJMO: store state from the CSV (not students.csv) so we show
             # the state the student represented at that competition, which may differ from their
             # current state in students.csv.
@@ -438,14 +503,26 @@ def main() -> None:
             if sid not in records_by_id:
                 records_by_id[sid] = []
             recs = records_by_id[sid]
-            key = (record["contest_slug"], record["year"])
-            if any((r.get("contest_slug"), r.get("year")) == key for r in recs):
-                continue
+            if slug == "arml":
+                site_key = (record.get("site") or "").strip().lower()
+                if any(
+                    r.get("contest_slug") == "arml"
+                    and str(r.get("year") or "") == str(record["year"])
+                    and (r.get("site") or "").strip().lower() == site_key
+                    for r in recs
+                ):
+                    continue
+            else:
+                key = (record["contest_slug"], record["year"])
+                if any((r.get("contest_slug"), r.get("year")) == key for r in recs):
+                    continue
             recs.append(record)
             if sid not in students:
                 name = (row.get("student_name") or "").strip()
                 state = (row.get("state") or "").strip()
                 students[sid] = {"name": name or f"Student {sid}", "aliases": [], "state": state, "gender": "male", "grade_in_2026": None}
+
+    dedupe_arml_mcp_per_season(records_by_id)
 
     # MATHCOUNTS National Rank: include everyone on the national competitors roster for that year
     # (rank "Competitor"; no MCP rank/points). Years with national roster results.csv but no national-rank results.csv get entries here.
