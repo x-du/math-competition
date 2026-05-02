@@ -81,6 +81,7 @@
     add("arml", function (s) { return s.indexOf("arml") !== -1; });
     add("dmm", function (s) { return s.indexOf("dmm") !== -1; });
     add("cmm", function (s) { return s.indexOf("cmm") !== -1; });
+    add("jhmt", function (s) { return s === "jhmt"; });
 
     add("bmt__general", function (s) { return s === "bmt"; });
     add("bmt__algebra", function (s) { return s === "bmt-algebra"; });
@@ -137,6 +138,7 @@
     arml: "ARML",
     dmm: "DMM",
     cmm: "CMM",
+    jhmt: "JHMT",
     mmaths: "MMATHS",
     mpfg: "MPFG",
     "mpfg-olympiad": "MPFG Olympiad",
@@ -161,6 +163,7 @@
     { multi: false, keys: ["arml"] },
     { multi: false, keys: ["dmm"] },
     { multi: false, keys: ["cmm"] },
+    { multi: false, keys: ["jhmt"] },
     { multi: false, keys: ["mmaths"] },
     { multi: false, keys: ["mpfg"] },
     { multi: false, keys: ["mpfg-olympiad"] },
@@ -227,6 +230,7 @@
     arml: "arml",
     dmm: "dmm",
     cmm: "cmm",
+    jhmt: "jhmt",
     mmaths: "mmaths",
     mpfg: "mpfg",
     "mpfg-olympiad": "mpfg-olympiad",

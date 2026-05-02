@@ -89,6 +89,7 @@ MCP_V2_PARAMS = {
     "dmm": {"default": (270, 10)},
     "cmm": {"default": (60, 10)},
     "brumo-a": {"default": (300, 10)},
+    "jhmt": {"default": (150, 10)},
 }
 
 

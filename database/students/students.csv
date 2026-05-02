@@ -6697,8 +6697,18 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6827,Steven Xia,California,,male,10
 6828,Eric Xiong,Illinois,,male,
 6830,Alice Yin,Massachusetts,,female,
-6832,Rick Zeng,New York,,male,male
-6833,Jaden Zhu,New York,,male,male
-6834,Minguen Duan,Connecticut,,,male
-6836,Kevin Lu,Texas,,,male
-6837,Edward Li,Maine,,,male
+6832,Rick Zeng,New York,,male,
+6833,Jaden Zhu,New York,,male,
+6834,Minguen Duan,Connecticut,,male,
+6836,Kevin Lu,Texas,,male,
+6837,Edward Li,Maine,,male,
+6838,Vibhu Konduru,,,male,
+6839,Maks G,,,male,
+6840,Abhijay Banerjee,,,male,
+6841,Samuel Zhang,Virginia,,male,10
+6842,Riyan Nayak,,,male,
+6843,Joe Li,,,male,
+6844,Victor Shi,,,male,
+6845,Daniel Peng,,,male,
+6846,Ashvik Mahapatra,,,male,
+6847,Maxim Kudryashov,,,male,

@@ -92,6 +92,7 @@ Competitions are classified into four tiers — **2000**, **1000**, **500**, and
 | **CMM** | ~10 | Caltech Math Meet. |
 | **BAMO-8** | ~30 | Bay Area Mathematical Olympiad, middle school division. |
 | **BrUMO Division A** | ~25 | Brown University Math Olympiad Division A. Rankings from top 1 through DHM (Top 10%). |
+| **JHMT** | ~25–40 | Johns Hopkins Math Tournament — high school individual (published winners and honorable mentions). Student-run; Baltimore-area field with national attendees. |
 
 **Why these are Tier 250:** These are well-run competitions with good problems but draw smaller or more geographically concentrated fields. They provide valuable competitive experience and meaningful results, but a strong finish here carries less weight than the same finish at a national-level event.
 
@@ -141,7 +142,7 @@ $$\text{mcp}\_\text{points}(r) = \text{min}\_\text{pts} + (\text{max}\_\text{pts
 **Derived values:**
 - `max_pts` = `Tier × weight` (1000 for Tier 1000 overall, 500 for Tier 1000 subject tests at 50%)
 - `min_pts` is decided by whether the competition has a selection process:
-  - **No selection process** (open competition): `min_pts` = **10**. Examples: ARML, BAMO, DMM, CMIMC, MMATHS, CMM, BMT, BrUMO.
+  - **No selection process** (open competition): `min_pts` = **10**. Examples: ARML, BAMO, DMM, CMIMC, MMATHS, CMM, BMT, BrUMO, JHMT.
   - **Selection process** (selective competition): `min_pts` = **100** or **200**. Examples: HMMT February, MPFG, MPFG-Olympiad, MathCounts National use 100; USAMO, USAJMO use 200. See [scripts/build_search_data.py](../../scripts/build_search_data.py) `MCP_V2_PARAMS` for the authoritative values per contest.
 
 **Awardees only receive points.** Since we only know the awardees, we only calculate and assign points for the awardees. Students whose ranks are unknown (e.g., ranks 51–2000 when only top 50 are recognized) receive **0 points**.
@@ -204,6 +205,7 @@ The algorithm requires the **total competition size (N)** and **min_pts** for ea
 | **DMM** | 250 | ~270 | ~51 | Open | 10 |
 | **CMM** | 250 | ~60 | ~10 | Open | 10 |
 | **BrUMO Division A** | 250 | ~300 | ~22–24 | Open | 10 |
+| **JHMT** | 250 | ~150 | ~30–40 (published) | Open | 10 |
 
 *Note: Open = min_pts 10; Selective = min_pts 100 or 200. See `MCP_V2_PARAMS` in [scripts/build_search_data.py](../../scripts/build_search_data.py) for the authoritative N and min_pts per contest and year.*
 
@@ -405,6 +407,9 @@ Result files are discovered dynamically — all result CSVs within each competit
 | CMM | 250 | 100% | rank |
 | BAMO-8 | 250 | 100% | rank_mixed |
 | BrUMO Division A | 250 | 100% | rank_mixed |
+| JHMT | 250 | 100% | rank |
+
+**Contests in the database without MCP points:** **HMIC** has no `mcp_tier` in `contests.csv` (no MCP). **Math Kangaroo National** (`mk-national`) has no tier and is record-only. **MATHCOUNTS National** team rosters (`mathcounts-national`) do not earn MCP; national **ranking** uses `mathcounts-national-rank`. See [scripts/build_search_data.py](../../scripts/build_search_data.py) and `contests.csv`.
 
 ---
 
@@ -501,6 +506,7 @@ MCP adapts the ATP/WTA tennis ranking model to competitive mathematics: competit
 |---------|------|-------------|
 | v1 | Initial | Original MCP specification: tier-based points, power-law curve, N = number of awardees, min_pts = 50% of max_pts |
 | v2 | 3/14/2026 | Point distribution upgrade: N = competition size (total participants); dynamic min_pts (10 for open, higher for selective); awardees only receive points |
+| v2.1 | 5/2026 | Documented **JHMT** (Tier 250); noted HMIC / MK / MC roster entries without MCP |
 
 ---
 
