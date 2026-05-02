@@ -317,14 +317,26 @@
       contentEl.appendChild(descEl);
     }
 
-    var metaParts = [];
-    if (promotion.dateText) metaParts.push("Date: " + promotion.dateText);
-    if (promotion.locationText) metaParts.push("Location: " + promotion.locationText);
-    if (promotion.audienceText) metaParts.push("Audience: " + promotion.audienceText);
-    if (metaParts.length) {
+    var metaChunks = [];
+    if (promotion.dateText) metaChunks.push({ kind: "plain", text: "Date: " + promotion.dateText });
+    if (promotion.deadlineText) metaChunks.push({ kind: "deadline", text: promotion.deadlineText });
+    if (promotion.locationText) metaChunks.push({ kind: "plain", text: "Location: " + promotion.locationText });
+    if (promotion.audienceText) metaChunks.push({ kind: "plain", text: "Audience: " + promotion.audienceText });
+    if (metaChunks.length) {
       var metaEl = document.createElement("p");
       metaEl.className = "promotion-banner__meta";
-      metaEl.textContent = metaParts.join(" \u00b7 ");
+      for (var mi = 0; mi < metaChunks.length; mi++) {
+        if (mi > 0) metaEl.appendChild(document.createTextNode(" \u00b7 "));
+        var mc = metaChunks[mi];
+        if (mc.kind === "deadline") {
+          var deadlineSpan = document.createElement("span");
+          deadlineSpan.className = "promotion-banner__deadline";
+          deadlineSpan.textContent = mc.text;
+          metaEl.appendChild(deadlineSpan);
+        } else {
+          metaEl.appendChild(document.createTextNode(mc.text));
+        }
+      }
       contentEl.appendChild(metaEl);
     }
 

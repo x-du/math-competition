@@ -1198,6 +1198,15 @@ body.contest-filter-popover-open {
   font-size: 0.85rem;
 }
 
+.promotion-banner__deadline {
+  color: #f87171;
+  font-weight: 600;
+}
+
+:root[data-theme="light"] .promotion-banner__deadline {
+  color: #dc2626;
+}
+
 .promotion-banner__actions {
   margin-top: 0.65rem;
 }
