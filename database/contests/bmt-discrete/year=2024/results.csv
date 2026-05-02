@@ -22,7 +22,7 @@ student_id,student_name,year,subject,bmt_student_id,team_id,team_name,school,awa
 2472,Kaison Fong,2024,Discrete,036E,036,,,Distinguished HM (Top 20%),,,45.5
 6998,Tej Nadkarni,2024,Discrete,046C,046,,,Distinguished HM (Top 20%),,,45.5
 105,Myungbeen Choi,2024,Discrete,054F,054,,,Distinguished HM (Top 20%),,,45.5
-7008,Andrew Junwon Jahng,2024,Discrete,055C,055,,,Distinguished HM (Top 20%),,,45.5
+5595,Andrew Junwon Jahng,2024,Discrete,055C,055,,,Distinguished HM (Top 20%),,,45.5
 1268,Larry Wu,2024,Discrete,056E,056,,,Distinguished HM (Top 20%),,,45.5
 377,Xiaoran Han,2024,Discrete,056F,056,,,Distinguished HM (Top 20%),,,45.5
 422,Ryan Bai,2024,Discrete,057B,057,,,Distinguished HM (Top 20%),,,45.5
@@ -40,7 +40,7 @@ student_id,student_name,year,subject,bmt_student_id,team_id,team_name,school,awa
 1819,Andrew Shin,2024,Discrete,077C,077,,,Distinguished HM (Top 20%),,,45.5
 1802,Daniel Zhu,2024,Discrete,077E,077,,,Distinguished HM (Top 20%),,,45.5
 6219,Pascal Qin,2024,Discrete,077F,077,,,Distinguished HM (Top 20%),,,45.5
-7009,Hans Chen,2024,Discrete,081A,081,,,Distinguished HM (Top 20%),,,45.5
+6176,Hans Chen,2024,Discrete,081A,081,,,Distinguished HM (Top 20%),,,45.5
 1262,Advaith Mopuri,2024,Discrete,085E,085,,,Distinguished HM (Top 20%),,,45.5
 1742,NitinReddy Vaka,2024,Discrete,104A,104,,,Distinguished HM (Top 20%),,,45.5
 1734,Sohum Uttamchandani,2024,Discrete,104B,104,,,Distinguished HM (Top 20%),,,45.5
@@ -70,7 +70,7 @@ student_id,student_name,year,subject,bmt_student_id,team_id,team_name,school,awa
 7001,Kaka Zhang,2024,Discrete,155E,155,,,Distinguished HM (Top 20%),,,45.5
 1599,Joanna Wu,2024,Discrete,166A,166,,,Distinguished HM (Top 20%),,,45.5
 6206,Keshav Venkatesh,2024,Discrete,168D,168,,,Distinguished HM (Top 20%),,,45.5
-6971,Zack Berchenko,2024,Discrete,182C,182,,,Distinguished HM (Top 20%),,,45.5
+1009,Zack Berchenko,2024,Discrete,182C,182,,,Distinguished HM (Top 20%),,,45.5
 482,David Zhang,2024,Discrete,185F,185,,,Distinguished HM (Top 20%),,,45.5
 6974,Benjamin Wang,2024,Discrete,188B,188,,,Distinguished HM (Top 20%),,,45.5
 1877,Andrew Peng,2024,Discrete,188F,188,,,Distinguished HM (Top 20%),,,45.5

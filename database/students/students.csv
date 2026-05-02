@@ -70,7 +70,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 72,Kevin Liu,Florida,,male,12
 73,Andrew Carratu,New Hampshire,,male,13
 74,Zeyi Zou,California,,male,
-76,Kiran Reddy,Nevada,,male,13
+76,Kiran Reddy,Utah,,male,13
 77,Shunyao Yan,Virginia,,male,10
 78,William Zhao,California,,male,
 79,Surya Dinesh,Texas,,male,13
@@ -954,7 +954,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1006,David Wang,Maryland,,male,11
 1007,Oliver Zhang,Massachusetts,,male,
 1008,Vivian Zhong,California,,female,11
-1009,Zachary Berchenko,Minnesota,,male,
+1009,Zachary Berchenko,Minnesota,Zack Berchenko,male,
 1010,Erin Bian,Washington,,female,10
 1011,Krittika Chandra,California,,female,10
 1012,Michael Chang,Texas,,male,11
@@ -1751,7 +1751,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1835,Chen Andrew,California,,male,
 1836,Gaurav Gupta,California,,male,
 1837,Pratham Mehta,,,male,
-1838,Yuan Chen,,,male,
+1838,Yuan Chen,California,,male,
 1839,Aster Deng,,,male,
 1840,Amber Mo,,,male,
 1841,Asher Ding,California,,male,
@@ -2373,7 +2373,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 2469,Vinci Ho,California,,male,
 2470,Ryan Lee,California,,male,
 2471,Anju Aoi,California,,female,
-2472,Kaison Fong,,,male,
+2472,Kaison Fong,Nevada,,male,
 2473,Justin Fu,California,,male,
 2474,Rithwik Gupta,California,,male,
 2475,Connor Huh,California,,male,
@@ -2866,7 +2866,6 @@ student_id,student_name,state,alias,gender,grade_in_2026
 2964,Jack Lu,New York,,male,
 2965,Mason Boucher,Maryland,,male,
 2966,Mihir Busani,Missouri,,male,
-2967,Zachary Wong,New Jersey,,male,
 2968,Ashmit Arasada,California,,male,
 2969,Lucas Cai,California,,male,
 2970,Anish Kodali,Tennessee,,male,
@@ -5488,7 +5487,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 5592,Cynthia Zou,Washington,,female,
 5593,Harry Zhao,Washington,,male,
 5594,Anandita Mukherjee,California,,female,
-5595,Junwon Jahng,California,,male,
+5595,Junwon Jahng,California,Andrew Junwon Jahng,male,
 5596,Nicholas Tong,Connecticut,,male,
 5597,Victor Li,Missouri,,male,
 5598,Rohan Musti,Arizona,,male,
@@ -5912,8 +5911,8 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6017,Alexander Kong,Minnesota,,male,
 6018,Ethan Chan,California,,male,
 6019,Lucas (Zihe) Wang,California,,male,
-6020,Kaden Wu,,,male,
-6021,Rebecca Luo,,,female,
+6020,Kaden Wu,California,,male,
+6021,Rebecca Luo,California,,female,
 6022,Sepehr Golsefidy,,,male,
 6023,Tianran Li,,,male,
 6024,Adam Fang,,,male,
@@ -5998,7 +5997,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6103,Athithan Elamaran,,,male,
 6104,Shuhan Li,California,,male,
 6105,Kaavin Prasanna,,,male,
-6106,Guhan Bhagatram,,,male,
+6106,Guhan Bhagatram,,Guhan Yaugand Bhagatram,male,
 6107,Rohan Aynor,,,male,
 6108,Caroline Yuan,,,female,
 6109,Shawn Zeng,California,,male,
@@ -6047,7 +6046,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6152,Brian Chung,,,male,
 6153,Jewon Shin,,,male,
 6154,Chanew Kim,,,female,
-6155,Neil Dixit,,,male,
+6155,Neil Dixit,California,,male,
 6156,James Dong,,,male,
 6157,Michael Ma,,,male,
 6158,Evan Gai,,,male,
@@ -6068,7 +6067,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6173,Joel Jones,,,male,
 6174,Derek Wang,,,male,
 6175,Pranav Burra,,,male,
-6176,HANS ZHONG-HONG CHEN,,,male,
+6176,HANS ZHONG-HONG CHEN,,Hans Chen,male,
 6177,Revaant Srivastav,,,male,
 6178,Grace Ji,,,female,
 6179,Aarav Gupta,,,male,
@@ -6111,7 +6110,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6216,Ansh Taneja,,,male,
 6217,Caleb Loh,,,male,
 6218,Arav Bansal,,,male,
-6219,Pascal Qin,,,male,
+6219,Pascal Qin,California,,male,
 6220,Anne Huang,California,,female,
 6221,Melody Song,California,,female,
 6222,John Oh,,,male,
@@ -6414,11 +6413,11 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6520,Poppy Sandin,Maine,,female,9
 6521,Chaithanya Budida,Michigan,,male,9
 6522,Akshaj Malraj,Michigan,,male,9
-6523,William Masanz,Minnesota,,male,9
+6523,William Masanz,Minnesota,Will Masanz,male,9
 6524,Ansh Singh,Minnesota,,male,9
 6525,Lucas Lai,Missouri,,male,9
 6526,Charles Yong,Missouri,,male,9
-6527,Sasha Challagolla,Mississippi,,,9
+6527,Sasha Challagolla,Mississippi,,female,9
 6528,Lucos Ma,Mississippi,,male,8
 6529,Daniel Wu,Mississippi,,male,7
 6530,Austin Yang,Mississippi,,male,9
@@ -6507,7 +6506,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6615,Alex Hudson,Hawaii,,male,10
 6616,Noah Shin,Hawaii,,male,10
 6617,Ethan Ding,Iowa,,male,10
-6618,Jiwon Kim,Iowa,,,10
+6618,Jiwon Kim,Iowa,,female,10
 6619,Kyros Wu,Iowa,,male,10
 6620,Aiden Li,Idaho,,male,10
 6621,Anna Lim,Idaho,,female,10
@@ -6550,7 +6549,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6658,Ethan Li,New York,,male,10
 6659,Aryan Agarwal,Ohio,,male,10
 6660,Samuel Joo,Ohio,,male,10
-6661,Addison Baker,Oklahoma,,,10
+6661,Addison Baker,Oklahoma,,female,10
 6662,Khushi Mody,Oklahoma,,female,10
 6663,Jeffrey Fan,Pennsylvania,,male,10
 6664,Luis Collazo,Puerto Rico,,male,10
@@ -6580,7 +6579,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6688,Alan Sheng,Alabama,,male,11
 6689,Bennet Chen,Arkansas,,male,11
 6690,Shangyu Wu,Arkansas,,male,11
-6691,Jisu Bang,Colorado,,,11
+6691,Jisu Bang,Colorado,,female,11
 6692,Alex Zhang,Colorado,,male,11
 6693,Abby Kesmodel,Connecticut,,female,11
 6694,Jacob Levine,District of Columbia,,male,11
@@ -6640,7 +6639,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6754,He Eric Shan,Puerto Rico,,male,10
 6755,Noah Lueking,South Dakota,,male,10
 6756,Archishman Roy Ghatak,State Department,,male,11
-6757,Xiwen Yao,State Department,,,11
+6757,Xiwen Yao,State Department,,female,11
 6758,Seungwan Han,Tennessee,,male,11
 6759,Roshan Ramanan,Tennessee,,male,11
 6760,Tristan Samuel,Virgin Islands,,male,11
@@ -6712,3 +6711,165 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6845,Daniel Peng,,,male,
 6846,Ashvik Mahapatra,,,male,
 6847,Maxim Kudryashov,,,male,
+6848,Andy Chac,California,,male,
+6849,Advay Salhotra,,,male,
+6850,Ira Banga,,,male,
+6851,Vivian Yue,,,female,
+6852,Irvin Ji,,,male,
+6853,Haoran Ding,,,male,
+6854,Daniel Hwang,,,male,
+6855,Joshua Wu,,,male,
+6856,Everett Keninger,,,male,
+6857,Aaron Luo,,,male,
+6858,Aanya Singh,,,female,
+6859,Rohan Goyal,,,male,
+6860,Tanvi Dhoot,,,female,
+6861,Lily Junkar,,,female,
+6862,Vera Solberg,,,female,
+6863,Jessie Cao,,,female,
+6864,Jessica Cao,,,female,
+6865,Arush Gajula,,,male,
+6866,Aarini Chadha,,,female,
+6867,Harshil Shah,,,male,
+6868,James Fan,,,male,
+6869,Navya Singh,,,female,
+6870,Aryan Singhal,,,male,
+6871,Jacob Bae,,,male,
+6872,Alina Zhu,,,female,
+6873,Vidyuth Naveenkumar,,,male,
+6874,Subat Begzad,,,,
+6875,Anusha Kapoor,,,female,
+6876,Katherine Ying,,,female,
+6877,Ashley Cheng,,,female,
+6878,Yizhi Fang,,,,
+6879,Jai Gupta,,,male,
+6880,Taiji Kawaguchi,,,male,
+6881,Jiawei Parks,,,male,
+6882,Allison Zhang,Minnesota,,female,
+6883,Eleanore Ternes,,,female,
+6884,Madeline Hu,,,female,
+6886,Karthikeyan Ganesan,,,male,
+6887,Anwen Li,,,,
+6888,Huy Lai,,,male,
+6889,Megan Hu,,,female,
+6890,Christon Rex,,,male,
+6891,Taoyu She,,,,
+6892,Divij Bhatia,,,male,
+6894,Eric Zhao,,,male,
+6895,Ronan Keel,,,male,
+6896,Brian Guo,,,male,
+6897,Rachel Dong,,,female,
+6898,Jason Kim,California,,male,
+6899,Charlie Huang,California,,male,
+6900,Matthew Xia,California,,male,
+6901,Brian Law,California,,male,
+6902,Mihika Nayak,,,female,
+6903,Ethan Klets,,,male,
+6904,Ruhan Upreti,,,male,
+6905,Yuenjen Li,,,,
+6906,Navya Rao,,,female,
+6907,Jonathan Pak,,,male,
+6908,Aniket Yeleswarapu,,,male,
+6909,Zachary Zeng,,,male,
+6910,SHENGBO LIN,,,male,
+6911,Saathvik Kooturu,,,male,
+6912,Liyue Xiao,California,,female,
+6913,Huini Xu,California,,female,
+6914,Tony Chung,,,male,
+6915,Eli Moore,,,male,
+6916,Andrew Fan,,,male,
+6917,Minghao Zou,,,male,
+6918,William Zhu,,,male,
+6919,Isha Ramakrishna,,,female,
+6920,Enzo Satoto,,,male,
+6921,Joseph Joseph,,,male,
+6922,Alex Yakovlev,,,male,
+6923,Aditya Pokhriyal,,,male,
+6924,Heechan Choi,,,male,
+6925,Amanda Lai,,,female,
+6926,Merdy Udatha,,,,
+6927,Minseo Choi,,,female,
+6928,Caitlynn Sue,,,female,
+6929,Claire Tian,,,female,
+6930,Crystal Xie,,,female,
+6931,Vansh Jariwala,,,male,
+6932,Krish Kowkuntla,,,male,
+6933,Arya Srikar Reddy,,,male,
+6934,Zach Triantos,,,male,
+6935,Sanjay Anand,,,male,
+6936,Vir Chhabra,,,male,
+6937,Bing-Dong Liu,,,male,
+6938,Aratrika Pal,,,female,
+6939,Carter Cherry,,,male,
+6940,Shaamak Goyal,,,male,
+6941,Ari Philip,,,male,
+6942,Ayan Khasgiwala,,,male,
+6943,Ernie Fu,,,male,
+6944,Shaanvi Mishra,,,female,
+6945,Khunhoon Lee,,,,
+6946,Srikar Papineni,,,male,
+6947,Ziqi (Lisa) Zheng,,,female,
+6948,Brendan Gho,,,male,
+6949,Tanisha Arora,,,female,
+6950,Isabelle Hu,,,female,
+6951,Benjamin Jin,,,male,
+6952,Cynthia Deng,California,,female,
+6953,Atharv Naphade,California,,male,
+6954,Wentian He,California,,male,
+6955,Stephen Lin,California,,male,
+6956,Lindsey Jiang,,,female,
+6957,Hyowon Han,,,female,
+6958,Qihang Wang,,,male,
+6959,Anika Rajaram,,,female,
+6960,Ishan Mysore,,,male,
+6961,Isaac Sun,California,,male,
+6962,Gatik Goyal,,,male,
+6963,Shresth Mishra,,,male,
+6964,I Chen Chou,California,,,
+6965,Nikita Mirghasemi,,,female,
+6966,Joseph Lim,,,male,
+6967,Arthur Tu,,,male,
+6968,John Li,,,male,
+6969,Howard Qian,,,male,
+6970,Rui Huang,,,male,
+6972,Brian Choi,,,male,
+6973,Shreyas Swaminathan,,,male,
+6974,Benjamin Wang,,,male,
+6975,Mihika Bansal,,,female,
+6976,Muhammad Ammar,,,male,
+6977,Mokshit Kidambi Sesha Sai,,,male,
+6978,Zoravar Sahota,,,male,
+6979,Dylan Perazzo,,,male,
+6980,Jonathan Bui,,,male,
+6981,Charles Bi,,,male,
+6982,Ethan Hang,,,male,
+6983,Jefferson Kajiwara,,,male,
+6984,Aiden Shi,,,male,
+6985,Vinayak Sinha,,,male,
+6986,Eric Santoro,,,male,
+6987,Kshitij Tomar,,,male,
+6988,William Lin,,,male,
+6989,Dhruv Lalchandani,,,male,
+6990,Matus Vecera,California,,male,
+6991,Michael Bai,,,male,
+6992,Kaushik Madapati,,,male,
+6993,Tanav Changal,,,male,
+6994,Jimmy Ning,California,,male,
+6995,Kenny Tran,,,male,
+6996,Jerry Yang,,,male,
+6997,Tobias Marek,,,male,
+6998,Tej Nadkarni,,,male,
+6999,Samuel Rothstein,,,male,
+7000,Shannon Ruan,,,female,
+7001,Kaka Zhang,,,,
+7002,Aditya Peddi,,,male,
+7003,Hansen He,California,,male,
+7004,Nadia Karpenko,,,female,
+7005,Riya Mehrotra,,,female,
+7006,Bowen Duan,California,,male,
+7007,Sthanav Murali,,,male,
+7010,Vincent Wong,,,male,
+7011,Yiwen Liang,,,female,
+7012,Nancy Chen,,,female,
+7013,Shane Lee,,,male,
+7014,Miaomiao Yu,,,female,
