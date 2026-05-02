@@ -1,5 +1,9 @@
-student_id,student_name,award,rank,us_rank,P1,P2,P3,P4,P5,P6,total,mcp_rank
-58,Hannah Fox,Gold Medal,1,1,7,7,7,7,7,6,41,1
-93,Jessica Wan,Gold Medal,2,2,7,7,7,7,7,3,38,2
-81,Angela Liu,Gold Medal,6,3,7,7,7,7,7,1,36,3
-956,Kristie Sue,Gold Medal,6,4,7,7,7,7,7,1,36,4
+student_id,student_name,country,award,rank,us_rank,P1,P2,P3,P4,P5,P6,total,mcp_rank
+58,Hannah Fox,United States of America,Gold Medal,1,1,7,7,7,7,7,6,41,1
+93,Jessica Wan,United States of America,Gold Medal,2,2,7,7,7,7,7,3,38,2
+5313,Angela Liu,United States of America,Gold Medal,6,3,7,7,7,7,7,1,36,3
+956,Kristie Sue,United States of America,Gold Medal,6,4,7,7,7,7,7,1,36,4
+426,Emily Ma,Canada,Silver Medal,26,,3,7,7,7,7,1,32,
+338,Katrina Liu,Canada,Silver Medal,37,,7,7,0,5,7,1,27,
+1641,Magdalena Pudełko,Poland,Silver Medal,40,,3,7,7,7,0,2,26,
+420,Simona Gagarova,Bulgaria,Bronze Medal,70,,3,7,7,1,1,1,20,

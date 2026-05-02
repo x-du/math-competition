@@ -1,5 +1,8 @@
-student_id,student_name,award,rank,us_rank,P1,P2,P3,P4,P5,P6,total,mcp_rank
-140,Isabella Zhu,Gold Medal,1,1,7,7,7,7,7,7,42,1
-93,Jessica Wan,Gold Medal,1,2,7,7,7,7,7,7,42,2
-123,Vivian Loh,Gold Medal,1,3,7,7,7,7,7,7,42,3
-956,Kristie Sue,Gold Medal,18,4,7,7,7,7,3,7,38,4
+student_id,student_name,country,award,rank,us_rank,P1,P2,P3,P4,P5,P6,total,mcp_rank
+140,Isabella Zhu,United States of America,Gold Medal,1,1,7,7,7,7,7,7,42,1
+93,Jessica Wan,United States of America,Gold Medal,1,2,7,7,7,7,7,7,42,2
+123,Vivian Loh,United States of America,Gold Medal,1,3,7,7,7,7,7,7,42,3
+956,Kristie Sue,United States of America,Gold Medal,18,4,7,7,7,7,3,7,38,4
+1360,Yifan Emma Tang,Canada,Silver Medal,47,,7,7,2,7,7,2,32,
+1111,Cordelia Hu,Canada,Bronze Medal,75,,2,5,7,3,3,4,24,
+1218,Yingshan Xiao,Canada,Bronze Medal,75,,0,7,7,3,7,0,24,
