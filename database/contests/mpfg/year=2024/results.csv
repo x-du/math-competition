@@ -1,4 +1,4 @@
-student_id,student_name,state,grade,school,place,year,score,prize,mcp_rank
+student_id,student_name,state,grade,school,rank,year,score,prize,mcp_rank
 666,Shruti Arun,Colorado,11th,Cherry Creek HS,1,2024,15,"$15,000",3.5
 81,Angela Liu,California,12th,Homeschool,1,2024,15,"$15,000",3.5
 279,Sophia Hou,Virginia,11th,Thomas Jefferson HSST,1,2024,15,"$15,000",3.5

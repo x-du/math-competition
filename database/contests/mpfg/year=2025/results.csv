@@ -1,4 +1,4 @@
-student_id,student_name,state,grade,school,place,year,score,prize,mcp_rank
+student_id,student_name,state,grade,school,rank,year,score,prize,mcp_rank
 65,Selena Ge,Massachusetts,10th,Lexington HS,1,2025,15,"$50,000",1
 1327,Jiaqi Wu,California,12th,Harvard-Westlake HS,2,2025,13,"$11,400",3
 279,Sophia Hou,Virginia,12th,Thomas Jefferson HSST,2,2025,13,"$11,400",3

@@ -1,4 +1,4 @@
-student_id,student_name,state,grade,school,place,year,score,prize,mcp_rank
+student_id,student_name,state,grade,school,rank,year,score,prize,mcp_rank
 93,Jessica Wan,Florida,12th,Florida Virtual School,1,2023,17,"$18,000",1
 65,Selena Ge,Massachusetts,8th,Jonas Clarke MS,2,2023,14,"$20,000",2
 58,Hannah Fox,California,11th,Proof School,3,2023,12,"$10,000",3

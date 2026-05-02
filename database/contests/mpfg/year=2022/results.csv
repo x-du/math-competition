@@ -1,4 +1,4 @@
-student_id,student_name,state,grade,school,place,year,score,prize,mcp_rank
+student_id,student_name,state,grade,school,rank,year,score,prize,mcp_rank
 93,Jessica Wan,Florida,11th,Florida Virtual School,1,2022,17,"$50,000",1
 140,Isabella Zhu,Virginia,12th,Thomas Jefferson HSST,2,2022,15,"$20,000",2
 1240,Ishani Agarwal,California,10th,Saratoga HS,3,2022,12,$7000,3.5
