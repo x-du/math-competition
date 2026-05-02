@@ -658,6 +658,21 @@ def main() -> None:
             if (year_dir / "official-scores.csv").is_file():
                 contest_year_files["imo"][y] = "official-scores.csv"
 
+    # RMM: same as IMO / EGMO — one link per year (avoid duplicate year entries from results.csv +
+    # official-scores.csv both being globbed). Prefer official full scoreboard when present.
+    rmm_root = CONTESTS_DIR / "rmm"
+    if rmm_root.is_dir():
+        if "rmm" not in contest_year_files:
+            contest_year_files["rmm"] = {}
+        for year_dir in sorted(rmm_root.iterdir()):
+            if not year_dir.is_dir() or not year_dir.name.startswith("year="):
+                continue
+            y = year_dir.name.replace("year=", "")
+            if (year_dir / "official-scores.csv").is_file():
+                contest_year_files["rmm"][y] = "official-scores.csv"
+            elif (year_dir / "results.csv").is_file():
+                contest_year_files["rmm"][y] = "results.csv"
+
     # MATHCOUNTS National competitors: show in contest popover + csv-viewer, but not in search (skipped above).
     mc_nat = CONTESTS_DIR / "mathcounts-national"
     if mc_nat.is_dir():
