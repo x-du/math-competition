@@ -250,7 +250,11 @@
     toggleEl.className = "promotion-banner__toggle";
     toggleEl.setAttribute("aria-expanded", promotionPopoverOpen ? "true" : "false");
     toggleEl.setAttribute("aria-controls", popoverId);
-    toggleEl.textContent = "📣 " + (promotion.label || "Featured competition");
+    var toggleButtonText =
+      activePromotions.length === 1
+        ? promotion.label || "Featured competition"
+        : "Announcements";
+    toggleEl.textContent = "📣 " + toggleButtonText;
     bannerEl.appendChild(toggleEl);
 
     var popoverEl = document.createElement("section");

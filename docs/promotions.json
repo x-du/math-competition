@@ -14,5 +14,17 @@
     "audienceText": "Grades 10-12",
     "ctaText": "Learn more on OMEGA",
     "href": "https://www.omegausa.org/"
-  }
+  },
+  {
+    "id": "bmt-jhmt-results-2026",
+    "enabled": true,
+    "startDate": "2026-05-02",
+    "endDate": "2026-05-31",
+    "showOnLocalhost": true,
+    "label": "New results",
+    "title": "BMT 2024 & JHMT 2025–2026",
+    "description": "Berkeley Math Tournament 2024 and Johns Hopkins Math Tournament 2025 and 2026 results are now available on mathintegrity.org. MathIntegrity has reached the milestone of more than 10,000 competition records.",
+    "ctaText": "Visit mathintegrity.org",
+    "href": ""
+  }  
 ]
