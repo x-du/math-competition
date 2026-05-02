@@ -633,6 +633,19 @@ def main() -> None:
                 contest_year_files[slug][year] = files[0]
             # else keep as list for multiple files
 
+    # EGMO: "Competitions in this database" popover and csv-viewer default to the official full
+    # scoreboard when official-scores.csv exists (per-year folder); otherwise keep results.csv.
+    egmo_root = CONTESTS_DIR / "egmo"
+    if egmo_root.is_dir():
+        if "egmo" not in contest_year_files:
+            contest_year_files["egmo"] = {}
+        for year_dir in sorted(egmo_root.iterdir()):
+            if not year_dir.is_dir() or not year_dir.name.startswith("year="):
+                continue
+            y = year_dir.name.replace("year=", "")
+            if (year_dir / "official-scores.csv").is_file():
+                contest_year_files["egmo"][y] = "official-scores.csv"
+
     # MATHCOUNTS National competitors: show in contest popover + csv-viewer, but not in search (skipped above).
     mc_nat = CONTESTS_DIR / "mathcounts-national"
     if mc_nat.is_dir():
