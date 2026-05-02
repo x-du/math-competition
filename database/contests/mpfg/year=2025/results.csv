@@ -1,22 +1,22 @@
 student_id,student_name,state,grade,school,place,year,score,prize,mcp_rank
 65,Selena Ge,Massachusetts,10th,Lexington HS,1,2025,15,"$50,000",1
-1327,Jiaqi Wu,California,12th,Harvard-Westlake HS,2,2025,13,"$11,400",2
-279,Sophia Hou,Virginia,12th,Thomas Jefferson HSST,3,2025,13,"$11,400",3
-666,Shruti Arun,Colorado,12th,Cherry Creek HS,4,2025,13,"$11,400",4
+1327,Jiaqi Wu,California,12th,Harvard-Westlake HS,2,2025,13,"$11,400",3
+279,Sophia Hou,Virginia,12th,Thomas Jefferson HSST,2,2025,13,"$11,400",3
+666,Shruti Arun,Colorado,12th,Cherry Creek HS,2,2025,13,"$11,400",3
 1328,Lina Wang,New York,11th,Stony Brook School,5,2025,12,$4000,5
-1329,Amy Zhang,California,12th,Cupertino HS,6,2025,11,$800,6
-1330,Shibao Huang,New York,12th,Stuyvesant HS,7,2025,11,$800,7
-275,Catherine Xu,Iowa,12th,Iowa City West SHS,8,2025,11,$800,8
-1331,Olivia Laido,New Jersey,9th,High Technology HS,9,2025,11,$800,9
-227,Sylvia Lee,Massachusetts,11th,Lexington HS,10,2025,11,$800,10
-217,Sophia Jin,New York,12th,Stuyvesant HS,11,2025,11,$800,11
-1332,Yunong Wu,New York,10th,Rye Country Day School,12,2025,11,$800,12
-15,Jiayu Ellie Su,New Jersey,10th,Phillips Academy Andover,13,2025,11,$800,13
-894,Kailua Cheng,California,12th,Amador Valley HS,14,2025,11,$800,14
-1333,Shuyin Liu,Washington,9th,Newport HS,15,2025,11,$800,15
-523,Jennifer Hu,Indiana,12th,Carmel HS,16,2025,11,$800,16
-325,Amy Cui,Washington,12th,Lakeside School,17,2025,11,$800,17
-1334,Sophie Zhang,"Ontario, Canada",12th,Havergal College,18,2025,11,$800,18
+1329,Amy Zhang,California,12th,Cupertino HS,6,2025,11,$800,12
+1330,Shibao Huang,New York,12th,Stuyvesant HS,6,2025,11,$800,12
+275,Catherine Xu,Iowa,12th,Iowa City West SHS,6,2025,11,$800,12
+1331,Olivia Laido,New Jersey,9th,High Technology HS,6,2025,11,$800,12
+227,Sylvia Lee,Massachusetts,11th,Lexington HS,6,2025,11,$800,12
+217,Sophia Jin,New York,12th,Stuyvesant HS,6,2025,11,$800,12
+1332,Yunong Wu,New York,10th,Rye Country Day School,6,2025,11,$800,12
+15,Jiayu Ellie Su,New Jersey,10th,Phillips Academy Andover,6,2025,11,$800,12
+894,Kailua Cheng,California,12th,Amador Valley HS,6,2025,11,$800,12
+1333,Shuyin Liu,Washington,9th,Newport HS,6,2025,11,$800,12
+523,Jennifer Hu,Indiana,12th,Carmel HS,6,2025,11,$800,12
+325,Amy Cui,Washington,12th,Lakeside School,6,2025,11,$800,12
+1334,Sophie Zhang,"Ontario, Canada",12th,Havergal College,6,2025,11,$800,12
 1011,Krittika Chandra,California,10th,Palo Alto HS,19,2025,10,Honorable Mention,23
 1341,Hwiseo Irene Choi,Massachusetts,12th,Lexington HS,19,2025,10,Honorable Mention,23
 520,Angela Ho,Illinois,12th,Adlai Stevenson HS,19,2025,10,Honorable Mention,23

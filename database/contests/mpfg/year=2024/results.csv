@@ -1,21 +1,21 @@
 student_id,student_name,state,grade,school,place,year,score,prize,mcp_rank
-666,Shruti Arun,Colorado,11th,Cherry Creek HS,1,2024,15,"$15,000",1
-81,Angela Liu,California,12th,Homeschool,2,2024,15,"$15,000",2
-279,Sophia Hou,Virginia,11th,Thomas Jefferson HSST,3,2024,15,"$15,000",3
-780,Susie Lu,Washington,11th,Stanford Online HS,4,2024,15,"$15,000",4
-900,Katie He,Florida,12th,The Frazer School,5,2024,15,"$15,000",5
-1335,Katherine Liu,Texas,12th,Clements HS,6,2024,15,"$15,000",6
-520,Angela Ho,Illinois,11th,Stevenson HS,7,2024,14,$1000,7
-58,Hannah Fox,California,12th,Proof School,8,2024,14,$1000,8
-65,Selena Ge,Massachusetts,9th,Lexington HS,9,2024,14,$1000,9
-303,Alansha Jiang,Washington,12th,Newport HS,10,2024,14,$1000,10
-383,Laura Wang,Washington,9th,Lakeside School,11,2024,14,$1000,11
-961,Alyssa Chu,New York,12th,Rye Country Day School,12,2024,14,$1000,12
-337,Emily Yu,New York,12th,Mendon HS,13,2024,14,$1000,13
-544,Ivy Guo,Maryland,12th,Blair HS,14,2024,14,$1000,14
-1073,Angie Huang,Minnesota,11th,East Ridge HS,15,2024,14,Honorable Mention,16
-227,Sylvia Lee,Massachusetts,10th,Lexington HS,15,2024,14,Honorable Mention,16
-1084,Maiya Qiu,New Jersey,10th,Princeton HS,15,2024,14,Honorable Mention,16
+666,Shruti Arun,Colorado,11th,Cherry Creek HS,1,2024,15,"$15,000",3.5
+81,Angela Liu,California,12th,Homeschool,1,2024,15,"$15,000",3.5
+279,Sophia Hou,Virginia,11th,Thomas Jefferson HSST,1,2024,15,"$15,000",3.5
+780,Susie Lu,Washington,11th,Stanford Online HS,1,2024,15,"$15,000",3.5
+900,Katie He,Florida,12th,The Frazer School,1,2024,15,"$15,000",3.5
+1335,Katherine Liu,Texas,12th,Clements HS,1,2024,15,"$15,000",3.5
+520,Angela Ho,Illinois,11th,Stevenson HS,7,2024,14,$1000,12
+58,Hannah Fox,California,12th,Proof School,7,2024,14,$1000,12
+65,Selena Ge,Massachusetts,9th,Lexington HS,7,2024,14,$1000,12
+303,Alansha Jiang,Washington,12th,Newport HS,7,2024,14,$1000,12
+383,Laura Wang,Washington,9th,Lakeside School,7,2024,14,$1000,12
+961,Alyssa Chu,New York,12th,Rye Country Day School,7,2024,14,$1000,12
+337,Emily Yu,New York,12th,Mendon HS,7,2024,14,$1000,12
+544,Ivy Guo,Maryland,12th,Blair HS,7,2024,14,$1000,12
+1073,Angie Huang,Minnesota,11th,East Ridge HS,7,2024,14,Honorable Mention,12
+227,Sylvia Lee,Massachusetts,10th,Lexington HS,7,2024,14,Honorable Mention,12
+1084,Maiya Qiu,New Jersey,10th,Princeton HS,7,2024,14,Honorable Mention,12
 894,Kailua Cheng,California,11th,Amador Valley HS,18,2024,13,Honorable Mention,20.5
 1226,Katherine Li,New York,12th,Syosset HS,18,2024,13,Honorable Mention,20.5
 1349,Grace Lu,New York,11th,Syosset HS,18,2024,13,Honorable Mention,20.5
