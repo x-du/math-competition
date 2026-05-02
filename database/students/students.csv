@@ -108,7 +108,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 115,Aaron Hu,Florida,,male,14
 116,Justin Zhang,California,,male,
 117,Advaith Avadhanam,California,,male,14
-118,Linus Tang,Nevada,,male,14
+118,Linus Tang,California,,male,14
 119,Jason Zhang,Michigan,,male,14
 120,Jacob Xu,Massachusetts,,male,
 121,Srinivas Arun,Colorado,,male,14
@@ -387,7 +387,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 416,Onkit Samanta,Washington,,male,
 417,Sarunyu Thongjarast,Massachusetts,,male,
 418,Emily Liu,California,,female,13
-419,Worrawat Rungaramsin,Massachusetts,,female,
+419,Worrawat Rungaramsin,Massachusetts,,male,
 420,Simona Gagarova,Bulgaria,,female,
 421,Yifan Kang,Massachusetts,,male,
 422,Ryan Bai,California,,male,
@@ -1106,7 +1106,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1165,Adam Tang,California,,male,16
 1166,Albert Wang,Florida,,male,
 1167,Zifan Wang,New Jersey,,male,
-1168,Kaixin Wang,China,,male,
+1168,Kaixin Wang,Canada,,male,
 1169,Jaedon Whyte,Florida,,male,
 1171,Daniel Xu,California,,male,
 1172,Eric Yang,New Hampshire,,male,16

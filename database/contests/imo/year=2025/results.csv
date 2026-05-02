@@ -1,7 +1,13 @@
-student_id,student_name,year,us_rank,international_rank,total_score,award,mcp_rank
-96,Qiao Zhang,2025,1,7,39,Gold,1
-1,Alexander Wang,2025,2,9,37,Gold,2
-91,Andrew Lin,2025,3,12,36,Gold,3
-10,Ruilin Wang,2025,4,12,36,Gold,4
-272,Karn Chutinan,2025,5,27,35,Gold,5
-58,Hannah Fox,2025,6,81,33,Silver,6
+student_id,student_name,country,award,rank,us_rank,P1,P2,P3,P4,P5,P6,total,mcp_rank
+886,Warren Bei,Canada,Gold medal,1,,7,7,7,7,7,7,42,
+96,Qiao Zhang,United States of America,Gold medal,7,1,7,7,7,7,7,4,39,1
+1,Alexander Wang,United States of America,Gold medal,9,2,7,7,7,7,7,2,37,2
+91,Andrew Lin,United States of America,Gold medal,12,3,7,7,7,7,7,1,36,3
+10,Ruilin Wang,United States of America,Gold medal,12,4,7,7,7,7,7,1,36,4
+272,Karn Chutinan,United States of America,Gold medal,27,5,7,7,7,6,7,1,35,5
+1641,Magdalena Pudełko,Poland,Gold medal,27,,7,7,7,6,7,1,35,
+58,Hannah Fox,United States of America,Silver medal,81,6,7,7,5,7,7,0,33,6
+990,Leo Wu,Canada,Silver medal,148,,7,1,6,7,7,0,28,
+1276,Tiger Li,Canada,Bronze medal,272,,7,0,0,7,7,0,21,
+605,Nirvana Rosabella Marrero Tiodang,Puerto Rico,Honourable mention,478,,7,1,0,0,0,0,8,
+757,Lucas Carlo,Puerto Rico,,549,,2,0,0,1,0,0,3,

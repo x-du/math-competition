@@ -1,7 +1,11 @@
-student_id,student_name,year,us_rank,international_rank,total_score,award,mcp_rank
-155,Derek Liu,2022,1,12,40,Gold,1
-173,Luke Robitaille,2022,2,19,37,Gold,2
-1151,Kevin Cong,2022,3,23,36,Gold,3
-135,Eric Shen,2022,4,23,36,Gold,4
-180,Andrew Gu,2022,5,45,33,Silver,5
-1152,Ram Goel,2022,6,230,25,Bronze,6
+student_id,student_name,country,award,rank,us_rank,P1,P2,P3,P4,P5,P6,total,mcp_rank
+6368,Derek Liu,United States of America,Gold medal,12,1,7,7,5,7,7,7,40,1
+173,Luke Robitaille,United States of America,Gold medal,19,2,7,7,2,7,7,7,37,2
+135,Eric Shen,United States of America,Gold medal,23,3,7,7,7,7,7,1,36,3
+1151,Kevin Cong,United States of America,Gold medal,23,4,7,7,2,7,7,6,36,4
+886,Warren Bei,Canada,Gold medal,23,,7,7,1,7,7,7,36,
+180,Andrew Gu,United States of America,Silver medal,45,5,7,7,0,7,7,5,33,5
+1168,Kaixin Wang,Canada,Silver medal,84,,7,7,2,0,7,7,30,
+1154,Kevin Min,Canada,Silver medal,84,,7,7,2,7,7,0,30,
+1152,Ram Goel,United States of America,Bronze medal,230,6,7,7,0,7,4,0,25,6
+1190,Evan Lu,Canada,Honourable mention,343,,7,6,3,0,2,0,18,

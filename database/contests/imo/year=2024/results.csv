@@ -1,7 +1,11 @@
-student_id,student_name,year,us_rank,international_rank,total_score,award,mcp_rank
-1,Alexander Wang,2024,1,3,38,Gold,1
-93,Jessica Wan,2024,2,5,35,Gold,2
-118,Linus Tang,2024,3,14,32,Gold,3
-170,Krishna Pothapragada,2024,4,19,31,Gold,4
-96,Qiao Zhang,2024,5,47,29,Gold,5
-89,Jordan Lefkowitz,2024,6,76,27,Silver,6
+student_id,student_name,country,award,rank,us_rank,P1,P2,P3,P4,P5,P6,total,mcp_rank
+1,Alexander Wang,United States of America,Gold medal,3,1,7,7,3,7,7,7,38,1
+93,Jessica Wan,United States of America,Gold medal,5,2,7,7,5,7,7,2,35,2
+118,Linus Tang,United States of America,Gold medal,14,3,7,7,3,7,7,1,32,3
+170,Krishna Pothapragada,United States of America,Gold medal,19,4,7,6,2,7,7,2,31,4
+96,Qiao Zhang,United States of America,Gold medal,47,5,7,7,0,5,7,3,29,5
+89,Jordan Lefkowitz,United States of America,Silver medal,76,6,7,7,6,7,0,0,27,6
+886,Warren Bei,Canada,Silver medal,76,,7,1,3,7,3,6,27,
+621,Sebastian Chase,Hong Kong,Silver medal,147,,7,7,0,7,1,0,22,
+426,Emily Ma,Canada,Bronze medal,182,,7,5,0,7,1,1,21,
+605,Nirvana Rosabella Marrero Tiodang,Puerto Rico,Honourable mention,457,,7,0,0,1,1,0,9,

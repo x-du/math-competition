@@ -646,6 +646,18 @@ def main() -> None:
             if (year_dir / "official-scores.csv").is_file():
                 contest_year_files["egmo"][y] = "official-scores.csv"
 
+    # IMO: prefer full official scoreboard when official-scores.csv exists (same pattern as EGMO).
+    imo_root = CONTESTS_DIR / "imo"
+    if imo_root.is_dir():
+        if "imo" not in contest_year_files:
+            contest_year_files["imo"] = {}
+        for year_dir in sorted(imo_root.iterdir()):
+            if not year_dir.is_dir() or not year_dir.name.startswith("year="):
+                continue
+            y = year_dir.name.replace("year=", "")
+            if (year_dir / "official-scores.csv").is_file():
+                contest_year_files["imo"][y] = "official-scores.csv"
+
     # MATHCOUNTS National competitors: show in contest popover + csv-viewer, but not in search (skipped above).
     mc_nat = CONTESTS_DIR / "mathcounts-national"
     if mc_nat.is_dir():

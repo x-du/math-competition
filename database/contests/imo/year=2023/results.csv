@@ -1,7 +1,13 @@
-student_id,student_name,year,us_rank,international_rank,total_score,award,mcp_rank
-155,Derek Liu,2023,1,1,42,Gold,1
-1,Alexander Wang,2023,2,6,41,Gold,2
-144,Huaye Lin,2023,3,12,37,Gold,3
-135,Eric Shen,2023,4,12,37,Gold,4
-138,Alex Zhao,2023,5,28,35,Gold,5
-134,Maximus Lu,2023,6,71,30,Silver,6
+student_id,student_name,country,award,rank,us_rank,P1,P2,P3,P4,P5,P6,total,mcp_rank
+6368,Derek Liu,United States of America,Gold medal,1,1,7,7,7,7,7,7,42,1
+1,Alexander Wang,United States of America,Gold medal,6,2,7,7,7,7,7,6,41,2
+886,Warren Bei,Canada,Gold medal,9,,7,7,7,7,7,5,40,
+135,Eric Shen,United States of America,Gold medal,12,3,7,7,7,7,7,2,37,3
+2488,Alex Zhao,United States of America,Gold medal,28,4,7,7,7,7,7,0,35,4
+134,Maximus Lu,United States of America,Silver medal,71,5,7,7,7,7,2,0,30,5
+1122,Dhruv Basu,Canada,Silver medal,82,,7,1,7,7,7,0,29,
+1168,Kaixin Wang,Canada,Silver medal,104,,7,0,7,7,7,0,28,
+1119,Haozhe Yang,Canada,Bronze medal,145,,7,7,0,7,3,0,24,
+621,Sebastian Chase,Hong Kong,Bronze medal,297,,7,1,0,7,3,0,18,
+605,Nirvana Rosabella Marrero Tiodang,Puerto Rico,Honourable mention,459,,7,1,0,1,0,0,9,
+2099,Jerry Chen,Puerto Rico,,554,,2,0,0,0,0,0,2,
