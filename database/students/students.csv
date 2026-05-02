@@ -260,7 +260,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 284,Alexander Liu,Virginia,Alex Liu,male,10
 285,Leo Yu,Texas,,male,
 286,Yusuf Sheikh,Florida,,male,13
-287,Siravit Hengsuvanich,Massachusetts,,male,
+287,Siravit Hengsuvanich,Thailand,,male,
 288,David Lee,California,,male,
 289,Kyle Wu,New York,,male,12
 290,Daniel Lu,State Department,,male,13
@@ -385,7 +385,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 414,Changxiu Ji,,,male,
 415,Christopher Li,"Ontario, Canada",,male,
 416,Onkit Samanta,Washington,,male,
-417,Sarunyu Thongjarast,Massachusetts,,male,
+417,Sarunyu Thongjarast,Thailand,,male,
 418,Emily Liu,California,,female,13
 419,Worrawat Rungaramsin,Massachusetts,,male,
 420,Simona Gagarova,Bulgaria,,female,
@@ -1533,7 +1533,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1610,Jerry Zhang,Texas,,male,
 1611,Ziyang Wu,,,male,
 1612,Daniel Yu,Maryland,,male,11
-1614,Sirawit Pipittanaban,California,,male,
+1614,Sirawit Pipittanaban,Thailand,,male,
 1615,Gong Cheng,,,male,
 1617,Michael Retakh,New York,,male,
 1618,Brayden Choi,Washington,,male,
