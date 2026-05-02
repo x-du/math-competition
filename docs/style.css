@@ -552,6 +552,7 @@ body.contest-filter-popover-open {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
+  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .contest-filter-summary {
@@ -562,6 +563,17 @@ body.contest-filter-popover-open {
 .contest-filter-trigger:hover {
   border-color: var(--accent);
   color: var(--accent-hover);
+  background: var(--nav-toggle-hover);
+  box-shadow: 0 1px 12px rgba(124, 156, 224, 0.22);
+}
+
+.contest-filter-trigger:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+:root[data-theme="light"] .contest-filter-trigger:hover {
+  box-shadow: 0 1px 12px rgba(74, 103, 200, 0.18);
 }
 
 #contest-filter-popover[hidden] {
