@@ -104,7 +104,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 111,ERIC MINGHAO LIU,China,,male,
 112,Jonathan He,Illinois,,male,12
 113,Feodor Yevtushenko,California,,male,12
-114,Vesselin Nikolaev Markovich,Bulgaria,,male,
+114,Vesselin Nikolaev Markovich,Bulgaria,Vesselin Markovich,male,
 115,Aaron Hu,Florida,,male,14
 116,Justin Zhang,California,,male,
 117,Advaith Avadhanam,California,,male,14
@@ -139,7 +139,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 151,Aaron Guo,Texas,,male,15
 152,Derek Liu,California,,male,
 153,Ray Tang,Texas,,male,15
-154,Boris Tsvetanov Gachevski,Bulgaria,,male,
+154,Boris Tsvetanov Gachevski,Bulgaria,Gachevski Boris,male,
 155,Derek Liu,California,,male,15
 156,Edward Xiong,New Jersey,,male,15
 158,Vincent Trang,Virginia,,male,15

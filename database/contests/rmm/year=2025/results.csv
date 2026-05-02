@@ -1,7 +1,8 @@
-student_id,student_name,year,us_rank,international_rank,total_score,award,mcp_rank
-113,Feodor Yevtushenko,2025,1,10,26,Silver,1
-277,Aprameya Tripathy,2025,2,11,25,Silver,2
-13,Michael Zhao,2025,3,16,23,Silver,3
-3,Oron Wang,2025,4,19,22,Silver,4
-91,Andrew Lin,2025,5,22,21,Silver,5
-99,Rohan Bodke,2025,6,26,19,Bronze,6
+student_id,student_name,country,year,us_rank,international_rank,total_score,award,mcp_rank
+113,Feodor Yevtushenko,United States of America,2025,1,10,26,Silver,1
+277,Aprameya Tripathy,United States of America,2025,2,11,25,Silver,2
+13,Michael Zhao,United States of America,2025,3,16,23,Silver,3
+3,Oron Wang,United States of America,2025,4,19,22,Silver,4
+91,Andrew Lin,United States of America,2025,5,22,21,Silver,5
+99,Rohan Bodke,United States of America,2025,6,26,19,Bronze,6
+114,Vesselin Nikolaev Markovich,Bulgaria,2025,,35,17,Bronze,
