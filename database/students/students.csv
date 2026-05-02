@@ -797,7 +797,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 835,Sean Lee,State Department,,male,10
 836,Ethan Wang,Connecticut,,male,10
 837,Evan Ho,Hawaii,,male,10
-838,Jason Bo,California,,male,8
+838,Jason Bo,California,Jingxuan Bo,male,8
 839,Victor Yang,New York,Zelong Yang,male,8
 840,Andrew Du,Virginia,,male,9
 841,Shlok Mukund,Massachusetts,,male,8
@@ -1483,7 +1483,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1557,Sidarth Singh,,,male,
 1558,Brian Sun,New Jersey,,male,
 1559,Jeremy Zhang,California,,male,
-1560,Luke Song An,California,,male,
+1560,Luke Song An,Pennsylvania,,male,
 1561,Raymond Wang,New Jersey,,male,
 1562,Ryan Zhu,New Jersey,,male,
 1563,Hayden Hughes,New York,,male,9
@@ -3027,7 +3027,6 @@ student_id,student_name,state,alias,gender,grade_in_2026
 3125,Alex Shi,California,,male,
 3126,Evan Han,California,,male,
 3127,Grant Liu,Illinois,,male,
-3128,Jingxuan Bo,California,,male,
 3129,Joshua Lee,California,,male,
 3130,Matthew Wang,California,,male,
 3131,Mohita Chepeni,Massachusetts,,female,
@@ -6149,7 +6148,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6253,Dashiel Karish,California,,male,
 6254,Justin Zhang,Washington,,male,
 6255,Jaxon Choi,California,,male,
-6256,Sophie Liu,Connecticut,,female,
+6256,Sophie Liu,Connecticut,,female,9
 6257,David Dong,North Carolina,,male,
 6258,Bryan Li,California,,male,
 6259,Alex Chen,Missouri,,male,15
