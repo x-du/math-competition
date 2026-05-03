@@ -221,7 +221,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 244,Jacob Ronan Khohayting,Florida,Jacob Khohayting,male,11
 245,Corwin Eisenbeiss,New York,,male,11
 246,Vincent Pirozzo,Michigan,,male,10
-247,Niranjan Rao,California,,male,
+247,Niranjan Rao,California,,male,11
 248,Shaheem Samsudeen,Texas,,male,8
 249,Sam Tsui,Massachusetts,Samuel Tsui,male,
 250,Juntian Deng,Utah,,male,12
@@ -1647,7 +1647,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1731,Yanlin Huang,California,,male,
 1732,Yichen Wu,California,,male,
 1733,Yifan Hu,California,,male,
-1734,Sohum Uttamchandani,California,,male,
+1734,Sohum Uttamchandani,California,,male,11
 1735,Situ Zhao,,,male,
 1736,Rucha Kore,California,,male,
 1737,Shannon Zhang,California,,male,
