@@ -233,7 +233,7 @@ The `mcp_rank` column is pre-computed and stored in each subject test CSV, just 
 |---|---|---|
 | HMMT February | `hmmt-feb` ~50 (100%) | Algebra & NT ~50, Combinatorics ~56, Geometry ~50 (50% each) |
 | HMMT November | `hmmt-nov` ~50 (100%) | General ~82, Theme ~50 (50% each) |
-| PUMaC Division A | `pumac` ~44 (100%) | Algebra ~30, Combinatorics ~31, Geometry ~32, Number Theory ~32 (50% each) |
+| PUMaC Division A | `pumac-a` ~44 (100%) | `pumac-a-algebra` ~30, `pumac-a-combinator` ~31, `pumac-a-geometry` ~32, `pumac-a-number-theory` ~32 (50% each) |
 | PUMaC Division B | `pumac-b` ~36 (100%) | Algebra ~34, Combinatorics ~31, Geometry ~51, Number Theory ~30 (50% each) |
 | BMT | `bmt` ~10 (100%) | Algebra ~11, Calculus ~12, Discrete ~10, Geometry ~12 (50% each) |
 | CMIMC | `cmimc` ~10 (100%) | Algebra & NT ~10, Combinatorics & CS ~10, Geometry ~10 (50% each) |

@@ -59,11 +59,11 @@
     add("hmmt-nov__general", function (s) { return s === "hmmt-nov-general"; });
     add("hmmt-nov__theme", function (s) { return s === "hmmt-nov-theme"; });
 
-    add("pumac-a__individual", function (s) { return s === "pumac"; });
-    add("pumac-a__algebra", function (s) { return s === "pumac-algebra"; });
-    add("pumac-a__combinator", function (s) { return s === "pumac-combinator"; });
-    add("pumac-a__geometry", function (s) { return s === "pumac-geometry"; });
-    add("pumac-a__number-theory", function (s) { return s === "pumac-number-theory"; });
+    add("pumac-a__individual", function (s) { return s === "pumac-a"; });
+    add("pumac-a__algebra", function (s) { return s === "pumac-a-algebra"; });
+    add("pumac-a__combinator", function (s) { return s === "pumac-a-combinator"; });
+    add("pumac-a__geometry", function (s) { return s === "pumac-a-geometry"; });
+    add("pumac-a__number-theory", function (s) { return s === "pumac-a-number-theory"; });
 
     add("pumac-b__individual", function (s) { return s === "pumac-b"; });
     add("pumac-b__algebra", function (s) { return s === "pumac-b-algebra"; });
@@ -212,11 +212,11 @@
     "hmmt-nov__individual": "hmmt-nov",
     "hmmt-nov__general": "hmmt-nov-general",
     "hmmt-nov__theme": "hmmt-nov-theme",
-    "pumac-a__individual": "pumac",
-    "pumac-a__algebra": "pumac-algebra",
-    "pumac-a__combinator": "pumac-combinator",
-    "pumac-a__geometry": "pumac-geometry",
-    "pumac-a__number-theory": "pumac-number-theory",
+    "pumac-a__individual": "pumac-a",
+    "pumac-a__algebra": "pumac-a-algebra",
+    "pumac-a__combinator": "pumac-a-combinator",
+    "pumac-a__geometry": "pumac-a-geometry",
+    "pumac-a__number-theory": "pumac-a-number-theory",
     "pumac-b__individual": "pumac-b",
     "pumac-b__algebra": "pumac-b-algebra",
     "pumac-b__combinator": "pumac-b-combinator",
@@ -248,7 +248,7 @@
   var MULTI_GROUP_TITLE_TO_SLUG = {
     "HMMT February": "hmmt-feb",
     "HMMT November": "hmmt-nov",
-    "PUMaC Division A": "pumac",
+    "PUMaC Division A": "pumac-a",
     "PUMaC Division B": "pumac-b",
     CMIMC: "cmimc",
     BMT: "bmt"

@@ -75,7 +75,7 @@ K_STEEPNESS = 3
 MCP_V2_PARAMS = {
     "hmmt-feb": {"default": (800, 100)},
     "hmmt-nov": {"default": (720, 10)},
-    "pumac": {"default": (180, 10)},
+    "pumac-a": {"default": (180, 10)},
     "pumac-b": {"default": (180, 10)},
     # General: database/contests/bmt/year=*/results.csv (subject column General); default = latest year General N
     "bmt": {"default": (500, 10), 2023: (260, 10), 2024: (384, 10), 2025: (610, 10)},
@@ -111,8 +111,8 @@ def get_mcp_v2_params(slug: str, year: str) -> tuple[int | None, int | None]:
             base_slug = "hmmt-nov"
         elif slug.startswith("pumac-b-"):
             base_slug = "pumac-b"
-        elif slug.startswith("pumac-") and slug != "pumac-b":
-            base_slug = "pumac"
+        elif slug.startswith("pumac-a-"):
+            base_slug = "pumac-a"
         elif slug.startswith("bmt-"):
             base_slug = "bmt"
         elif slug.startswith("cmimc-"):
@@ -239,7 +239,7 @@ def load_students() -> dict:
 
 def collect_result_files() -> list:
     """Return list of (contest_slug, year, path) for every result/competitors CSV.
-    Includes all contest dirs (e.g. mathcounts-national-rank, hmmt-feb, pumac, etc.)."""
+    Includes all contest dirs (e.g. mathcounts-national-rank, hmmt-feb, pumac-a, etc.)."""
     out = []
     for contest_dir in sorted(CONTESTS_DIR.iterdir()):
         if not contest_dir.is_dir():

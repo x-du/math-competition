@@ -4,7 +4,7 @@ Check for students who appear in both PUMaC division A and division B
 in the same year.
 
 A‑division contests are any contest whose slug starts with "pumac"
-but not "pumac-b" (e.g. "pumac", "pumac-algebra", "pumac-geometry", ...).
+but not "pumac-b" (e.g. "pumac-a", "pumac-a-algebra", "pumac-a-geometry", ...).
 B‑division contests are any contest whose slug starts with "pumac-b"
 (e.g. "pumac-b", "pumac-b-geometry", ...).
 

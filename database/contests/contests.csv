@@ -12,14 +12,14 @@ hmmt-feb-algebra-number-theory,HMMT February — Algebra & Number Theory,Algebra
 hmmt-feb-geometry,HMMT February — Geometry,Geometry subject test at February HMMT,Geometry round at February HMMT.,https://www.hmmt.org/,1000,0.5,rank,rank
 hmmt-feb-combo,HMMT February — Combinatorics,Combinatorics round at February HMMT,Combinatorics subject test at February HMMT.,https://www.hmmt.org/,1000,0.5,rank,rank
 hmic,HMIC,HMMT Invitational Competition,HMMT Invitational Competition. Annual online invitational with individual rounds. Difficulty: olympiad level.,https://www.hmmt.org/,,,rank,rank
-pumac,PUMaC — Division A,"Princeton University Mathematics Competition, Division A","Princeton University Mathematics Competition, Division A. Annual team and individual contest.",https://pumac.princeton.edu/,1000,1.0,rank,rank
+pumac-a,PUMaC — Division A,"Princeton University Mathematics Competition, Division A","Princeton University Mathematics Competition, Division A. Annual team and individual contest.",https://pumac.princeton.edu/,1000,1.0,rank,rank
 pumac-b,PUMaC — Division B,"Princeton University Mathematics Competition, Division B","Princeton University Mathematics Competition, Division B. Annual team and individual contest.",https://pumac.princeton.edu/,500,1.0,rank,rank
-pumac-algebra,PUMaC — Division A Algebra,Algebra subject test (Division A) at PUMaC,Algebra subject test (Division A) at PUMaC.,https://pumac.princeton.edu/,1000,0.5,rank,rank
+pumac-a-algebra,PUMaC — Division A Algebra,Algebra subject test (Division A) at PUMaC,Algebra subject test (Division A) at PUMaC.,https://pumac.princeton.edu/,1000,0.5,rank,rank
 pumac-b-algebra,PUMaC — Division B Algebra,Algebra subject test (Division B) at PUMaC,Algebra subject test (Division B) at PUMaC.,https://pumac.princeton.edu/,500,0.5,rank,rank
-pumac-combinator,PUMaC — Division A Combinatorics,Combinatorics subject test (Division A) at PUMaC,Combinatorics subject test (Division A) at PUMaC.,https://pumac.princeton.edu/,1000,0.5,rank,rank
-pumac-geometry,PUMaC — Division A Geometry,Geometry subject test (Division A) at PUMaC,Geometry subject test (Division A) at PUMaC.,https://pumac.princeton.edu/,1000,0.5,rank,rank
+pumac-a-combinator,PUMaC — Division A Combinatorics,Combinatorics subject test (Division A) at PUMaC,Combinatorics subject test (Division A) at PUMaC.,https://pumac.princeton.edu/,1000,0.5,rank,rank
+pumac-a-geometry,PUMaC — Division A Geometry,Geometry subject test (Division A) at PUMaC,Geometry subject test (Division A) at PUMaC.,https://pumac.princeton.edu/,1000,0.5,rank,rank
 pumac-b-geometry,PUMaC — Division B Geometry,Geometry subject test (Division B) at PUMaC,Geometry subject test (Division B) at PUMaC.,https://pumac.princeton.edu/,500,0.5,rank,rank
-pumac-number-theory,PUMaC — Division A Number Theory,Number Theory subject test (Division A) at PUMaC,Number Theory subject test (Division A) at PUMaC.,https://pumac.princeton.edu/,1000,0.5,rank,rank
+pumac-a-number-theory,PUMaC — Division A Number Theory,Number Theory subject test (Division A) at PUMaC,Number Theory subject test (Division A) at PUMaC.,https://pumac.princeton.edu/,1000,0.5,rank,rank
 pumac-b-combinator,PUMaC — Division B Combinatorics,Combinatorics subject test (Division B) at PUMaC,Combinatorics subject test (Division B) at PUMaC.,https://pumac.princeton.edu/,500,0.5,rank,rank
 pumac-b-number-theory,PUMaC — Division B Number Theory,Number Theory subject test (Division B) at PUMaC,Number Theory subject test (Division B) at PUMaC.,https://pumac.princeton.edu/,500,0.5,rank,rank
 mathcounts-national-rank,Mathcounts,National finals: official ranks plus national competitors from state teams (merged in search; each student once).,National-level MATHCOUNTS national competition results.,https://www.mathcounts.org/,500,1.0,mathcounts,rank
