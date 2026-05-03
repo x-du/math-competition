@@ -782,8 +782,12 @@ body.contest-filter-popover-open {
   font-size: 0.8rem;
   font-weight: 500;
   color: var(--text-muted);
-  cursor: pointer;
+  cursor: default;
   white-space: nowrap;
+}
+
+.contest-filter-group-all-label input[type="checkbox"] {
+  cursor: pointer;
 }
 
 .contest-filter-group--collapsed .contest-filter-group-leaves,
@@ -825,6 +829,11 @@ body.contest-filter-popover-open {
   align-items: center;
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
+  cursor: default;
+}
+
+#contest-filter-popover .contest-filter-option input[type="checkbox"],
+#contest-filter-popover .contest-filter-group-all-label input[type="checkbox"] {
   cursor: pointer;
 }
 
@@ -854,13 +863,13 @@ body.contest-filter-popover-open {
   font-size: 0.82rem;
 }
 
-#contest-filter-popover .contest-filter-option:hover,
-#contest-filter-popover .contest-filter-group-all-label:hover {
+#contest-filter-popover .contest-filter-option:has(input[type="checkbox"]:hover),
+#contest-filter-popover .contest-filter-group-all-label:has(input[type="checkbox"]:hover) {
   background: var(--btn-ghost-hover);
 }
 
-#contest-filter-popover .contest-filter-option:active,
-#contest-filter-popover .contest-filter-group-all-label:active {
+#contest-filter-popover .contest-filter-option:has(input[type="checkbox"]:active),
+#contest-filter-popover .contest-filter-group-all-label:has(input[type="checkbox"]:active) {
   background: rgba(255, 255, 255, 0.08);
 }
 

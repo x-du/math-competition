@@ -4963,18 +4963,17 @@
         });
       }
 
-      // Make taps on rows feel instant on touch devices by toggling the checkbox on touchend,
-      // and firing a normal change event. This avoids waiting for delayed click synthesis.
+      // Make taps on the checkbox feel instant on touch devices by toggling on touchend
+      // and firing a normal change event. (Text is not part of the hit target; do not toggle on label rows.)
       popover.addEventListener(
         "touchend",
         function (e) {
-          var label =
-            e.target &&
-            e.target.closest &&
-            e.target.closest(".contest-filter-option, .contest-filter-group-all-label");
-          if (!label) return;
-          var checkbox = label.querySelector('input[type="checkbox"]');
+          var checkbox = e.target && e.target.type === "checkbox" ? e.target : null;
           if (!checkbox) return;
+          var row =
+            checkbox.closest &&
+            checkbox.closest(".contest-filter-option, .contest-filter-group-all-label");
+          if (!row) return;
           e.preventDefault();
           e.stopPropagation();
           checkbox.checked = !checkbox.checked;

@@ -387,15 +387,19 @@
       containerEl.innerHTML = "";
       multiGroupMetas = [];
 
-      var allLabel = document.createElement("label");
-      allLabel.className = "contest-filter-option contest-filter-option--all";
+      var allRow = document.createElement("div");
+      allRow.className = "contest-filter-option contest-filter-option--all";
       allBox = document.createElement("input");
       allBox.type = "checkbox";
       allBox.value = "all";
       allBox.checked = true;
-      allLabel.appendChild(allBox);
-      allLabel.appendChild(document.createTextNode(" All"));
-      containerEl.appendChild(allLabel);
+      var allText = document.createElement("span");
+      allText.id = "cf-lbl-all";
+      allText.textContent = "All";
+      allBox.setAttribute("aria-labelledby", allText.id);
+      allRow.appendChild(allBox);
+      allRow.appendChild(allText);
+      containerEl.appendChild(allRow);
 
       var singleBuffer = [];
 
@@ -449,17 +453,21 @@
 
           var showGroupAll = grp.keys.length > 1;
           if (showGroupAll) {
-            var allLab = document.createElement("label");
-            allLab.className = "contest-filter-group-all-label";
+            var allRow = document.createElement("div");
+            allRow.className = "contest-filter-group-all-label";
             var ga = document.createElement("input");
             ga.type = "checkbox";
             ga.setAttribute("data-role", "group-all");
             ga.setAttribute("data-group-id", String(gid));
             ga.checked = true;
             meta.groupAllBox = ga;
-            allLab.appendChild(ga);
-            allLab.appendChild(document.createTextNode(" All"));
-            header.appendChild(allLab);
+            var gaText = document.createElement("span");
+            gaText.id = "cf-lbl-group-all-" + String(gid);
+            gaText.textContent = "All";
+            ga.setAttribute("aria-labelledby", gaText.id);
+            allRow.appendChild(ga);
+            allRow.appendChild(gaText);
+            header.appendChild(allRow);
           }
 
           wrap.appendChild(header);
@@ -481,15 +489,19 @@
           for (var li = 0; li < grp.keys.length; li++) {
             var key = grp.keys[li];
             var shortLabel = nestedCheckboxLabelForLeafKey(key);
-            var lab = document.createElement("label");
-            lab.className = "contest-filter-option contest-filter-option--nested";
+            var row = document.createElement("div");
+            row.className = "contest-filter-option contest-filter-option--nested";
             var inp = document.createElement("input");
             inp.type = "checkbox";
             inp.value = key;
             inp.checked = true;
-            lab.appendChild(inp);
-            lab.appendChild(document.createTextNode(" " + shortLabel));
-            leaves.appendChild(lab);
+            var shortSpan = document.createElement("span");
+            shortSpan.id = "cf-lbl-" + key;
+            shortSpan.textContent = shortLabel;
+            inp.setAttribute("aria-labelledby", shortSpan.id);
+            row.appendChild(inp);
+            row.appendChild(shortSpan);
+            leaves.appendChild(row);
             leafInputs[key] = inp;
           }
           wrap.appendChild(leaves);
@@ -497,15 +509,18 @@
           multiGroupMetas.push(meta);
         } else {
           var key0 = grp.keys[0];
-          var flat = document.createElement("label");
+          var flat = document.createElement("div");
           flat.className = "contest-filter-option contest-filter-option--single";
           var inp0 = document.createElement("input");
           inp0.type = "checkbox";
           inp0.value = key0;
           inp0.checked = true;
+          var labelSpan = document.createElement("span");
+          labelSpan.id = "cf-lbl-" + key0;
+          appendFirstLevelLabelSpans(labelSpan, metaForSlug(LEAF_KEY_TO_SLUG[key0]), contestNameForLeafKey(key0));
+          inp0.setAttribute("aria-labelledby", labelSpan.id);
           flat.appendChild(inp0);
-          flat.appendChild(document.createTextNode(" "));
-          appendFirstLevelLabelSpans(flat, metaForSlug(LEAF_KEY_TO_SLUG[key0]), contestNameForLeafKey(key0));
+          flat.appendChild(labelSpan);
           leafInputs[key0] = inp0;
           singleBuffer.push(flat);
         }
