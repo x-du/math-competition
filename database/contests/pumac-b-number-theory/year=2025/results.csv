@@ -1,31 +1,31 @@
-student_id,team_name,student_name,year,division,rank,score,p1,p2,p3,p4,p5,p6,p7,p8,mcp_rank
-2147,MH Math Knightmares,Arjun Pandey,2025,B,1,24.74,1,1,1,1,1,1,1,1,1
-809,Big L Club,Advait Joshi,2025,B,2,16.239,1,1,1,1,0,0,1,1,2
-993,Ridge Mu Alpha Theta,Andrew Chai,2025,B,3,16.174,1,1,1,1,1,1,0,0,4
-738,Jericho A,Liran Zhou,2025,B,3,16.174,1,1,1,1,1,1,0,0,4
-30,Millburn Mathematical Madpeople,Eric Dai,2025,B,3,16.174,1,1,1,1,1,1,0,0,4
-1084,PHS Avocado,Maiya Qiu,2025,B,6,11.577,1,1,1,1,1,0,0,0,6.5
-2143,Gunn Math,Max Li,2025,B,6,11.577,1,1,1,1,1,0,0,0,6.5
-850,Greater Boston,Eric Huang,2025,B,8,10.948,1,1,1,1,0,0,1,0,8.5
-2152,Pingry,Suvid Bordia,2025,B,8,10.948,1,1,1,1,0,0,1,0,8.5
-841,Greater Boston,Shlok Mukund,2025,B,10,9.346,0,1,1,1,0,0,1,0,10
-811,Greater Boston,Brandon Ni,2025,B,11,9.108,1,1,0,1,0,0,1,0,11
-844,Jericho A,Ryan Zhang,2025,B,12,8.96,1,1,1,0,1,0,0,0,12.5
-1541,EightTimesEpsilon,Tane Park,2025,B,12,8.96,1,1,1,0,1,0,0,0,12.5
-2157,Individuals Team 189,Bret Huang,2025,B,14,8.332,1,1,1,0,0,0,1,0,14.5
-1562,Millburn Mathematical Madpeople 2,Ryan Zhu,2025,B,14,8.332,1,1,1,0,0,0,1,0,14.5
-1069,Hotchkiss,Sophie Chen,2025,B,16,7.673,1,1,1,1,0,0,0,0,19
-2195,Hotchkiss,Pimmy Maneepairoj,2025,B,16,7.673,1,1,1,1,0,0,0,0,19
-1403,Lexington Gamma,Kalina Liu,2025,B,16,7.673,1,1,1,1,0,0,0,0,19
-2196,Jericho B,Kyle Chen,2025,B,16,7.673,1,1,1,1,0,0,0,0,19
-2197,Millburn Mathematical Madpeople 2,Bobby Qian,2025,B,16,7.673,1,1,1,1,0,0,0,0,19
-2161,Greater Boston,Karam Gill,2025,B,16,7.673,1,1,1,1,0,0,0,0,19
-2198,Gunn Math,Aarush Rachakonda,2025,B,16,7.673,1,1,1,1,0,0,0,0,19
-1272,PRISMS Young Falcons,Angelica Feng,2025,B,23,6.73,0,1,1,0,0,0,1,0,23
-2199,Newark Red Team,Jonathan Borges,2025,B,24,6.718,1,0,1,0,0,0,1,0,25
-2200,Small L Club,Patrick Gao,2025,B,24,6.718,1,0,1,0,0,0,1,0,25
-2201,Millburn Mathematical Madpeople,Florina Zhu,2025,B,24,6.718,1,0,1,0,0,0,1,0,25
-2202,OSS ORCAS,Shaoyan (Evan) Chen,2025,B,27,6.491,1,1,0,0,0,0,1,0,27
-1575,Lexington Gamma,Charles Zheng,2025,B,28,6.071,0,1,1,1,0,0,0,0,29
-754,PHS Avocado,William Liu,2025,B,28,6.071,0,1,1,1,0,0,0,0,29
-2177,PHS Avocado,Oscar Huang,2025,B,28,6.071,0,1,1,1,0,0,0,0,29
+student_id,team_name,team_id,student_name,year,division,rank,score,p1,p2,p3,p4,p5,p6,p7,p8,mcp_rank
+2147,MH Math Knightmares,13,Arjun Pandey,2025,B,1,24.74,1,1,1,1,1,1,1,1,1
+809,Big L Club,6,Advait Joshi,2025,B,2,16.239,1,1,1,1,0,0,1,1,2
+993,Ridge Mu Alpha Theta,5,Andrew Chai,2025,B,3,16.174,1,1,1,1,1,1,0,0,4
+738,Jericho A,2,Liran Zhou,2025,B,3,16.174,1,1,1,1,1,1,0,0,4
+30,Millburn Mathematical Madpeople,1,Eric Dai,2025,B,3,16.174,1,1,1,1,1,1,0,0,4
+1084,PHS Avocado,11,Maiya Qiu,2025,B,6,11.577,1,1,1,1,1,0,0,0,6.5
+2143,Gunn Math,8,Max Li,2025,B,6,11.577,1,1,1,1,1,0,0,0,6.5
+850,Greater Boston,4,Eric Huang,2025,B,8,10.948,1,1,1,1,0,0,1,0,8.5
+2152,Pingry,21,Suvid Bordia,2025,B,8,10.948,1,1,1,1,0,0,1,0,8.5
+841,Greater Boston,4,Shlok Mukund,2025,B,10,9.346,0,1,1,1,0,0,1,0,10
+811,Greater Boston,4,Brandon Ni,2025,B,11,9.108,1,1,0,1,0,0,1,0,11
+844,Jericho A,2,Ryan Zhang,2025,B,12,8.96,1,1,1,0,1,0,0,0,12.5
+1541,EightTimesEpsilon,18,Tane Park,2025,B,12,8.96,1,1,1,0,1,0,0,0,12.5
+2157,Individuals Team 189,9,Bret Huang,2025,B,14,8.332,1,1,1,0,0,0,1,0,14.5
+1562,Millburn Mathematical Madpeople 2,22,Ryan Zhu,2025,B,14,8.332,1,1,1,0,0,0,1,0,14.5
+1069,Hotchkiss,33,Sophie Chen,2025,B,16,7.673,1,1,1,1,0,0,0,0,19
+2195,Hotchkiss,33,Pimmy Maneepairoj,2025,B,16,7.673,1,1,1,1,0,0,0,0,19
+1403,Lexington Gamma,28,Kalina Liu,2025,B,16,7.673,1,1,1,1,0,0,0,0,19
+2196,Jericho B,27,Kyle Chen,2025,B,16,7.673,1,1,1,1,0,0,0,0,19
+2197,Millburn Mathematical Madpeople 2,22,Bobby Qian,2025,B,16,7.673,1,1,1,1,0,0,0,0,19
+2161,Greater Boston,4,Karam Gill,2025,B,16,7.673,1,1,1,1,0,0,0,0,19
+2198,Gunn Math,8,Aarush Rachakonda,2025,B,16,7.673,1,1,1,1,0,0,0,0,19
+1272,PRISMS Young Falcons,10,Angelica Feng,2025,B,23,6.73,0,1,1,0,0,0,1,0,23
+2199,Newark Red Team,35,Jonathan Borges,2025,B,24,6.718,1,0,1,0,0,0,1,0,25
+2200,Small L Club,23,Patrick Gao,2025,B,24,6.718,1,0,1,0,0,0,1,0,25
+2201,Millburn Mathematical Madpeople,1,Florina Zhu,2025,B,24,6.718,1,0,1,0,0,0,1,0,25
+2202,OSS ORCAS,14,Shaoyan (Evan) Chen,2025,B,27,6.491,1,1,0,0,0,0,1,0,27
+1575,Lexington Gamma,28,Charles Zheng,2025,B,28,6.071,0,1,1,1,0,0,0,0,29
+754,PHS Avocado,11,William Liu,2025,B,28,6.071,0,1,1,1,0,0,0,0,29
+2177,PHS Avocado,11,Oscar Huang,2025,B,28,6.071,0,1,1,1,0,0,0,0,29

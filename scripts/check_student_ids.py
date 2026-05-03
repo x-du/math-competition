@@ -9,7 +9,10 @@ database/contests:
    (missing from registry / orphan references).
 3. Student IDs listed in database/contests/<slug>-teams/year=<y>/teams.csv
    that never appear in that contest's results for the same year — for BMT,
-   `bmt/algeb*/year=<y>/results.csv` (all five divisions) are unioned.
+   `bmt/.../year=<y>/results.csv` (all five divisions) are unioned; for **pumac-b**,
+   composite `pumac-b` plus **pumac-b-algebra**, **pumac-b-combinator**,
+   **pumac-b-geometry**, and **pumac-b-number-theory** are unioned (subject-only
+   competitors are not listed on division-wide `pumac-b/results.csv`).
 
 Run from the repo root:
 
@@ -29,6 +32,14 @@ STUDENTS_CSV = REPO_ROOT / "database" / "students" / "students.csv"
 CONTESTS_DIR = REPO_ROOT / "database" / "contests"
 
 BMT_DIVISIONS = ("bmt", "bmt-algebra", "bmt-calculus", "bmt-discrete", "bmt-geometry")
+
+PUMAC_B_DIVISIONS = (
+    "pumac-b",
+    "pumac-b-algebra",
+    "pumac-b-combinator",
+    "pumac-b-geometry",
+    "pumac-b-number-theory",
+)
 
 
 def load_students() -> Tuple[Dict[str, Dict[str, str]], Set[str]]:
@@ -103,6 +114,8 @@ def results_student_ids_for_contest_year(contest_slug: str, year: str) -> Tuple[
     found_file = False
     if contest_slug == "bmt":
         paths = [CONTESTS_DIR / d / f"year={year}" / "results.csv" for d in BMT_DIVISIONS]
+    elif contest_slug == "pumac-b":
+        paths = [CONTESTS_DIR / d / f"year={year}" / "results.csv" for d in PUMAC_B_DIVISIONS]
     else:
         paths = [CONTESTS_DIR / contest_slug / f"year={year}" / "results.csv"]
     for p in paths:

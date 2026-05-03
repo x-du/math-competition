@@ -4,8 +4,8 @@ student_id,student_name,year,division,rank,score,p1,p2,p3,p4,p5,p6,p7,p8,mcp_ran
 1,Alexander Wang,2023,A,1,15.192,1,1,1,0,0,1,0,1,2
 102,Andrew Li,2023,A,4,13.195,1,0,0,1,1,0,1,0,4
 400,Kelin Zhu,2023,A,5,11.403,1,0,1,1,1,0,0,0,5
-1414,Kailin Kevin Yang,2023,A,6,10.24,1,1,1,1,0,0,0,0,6
-1415,Yutong Mark Zhao,2023,A,7,9.025,1,0,0,1,0,0,1,0,7
+61,Kailin Kevin Yang,2023,A,6,10.24,1,1,1,1,0,0,0,0,6
+1531,Yutong Mark Zhao,2023,A,7,9.025,1,0,0,1,0,0,1,0,7
 56,Channing Yang,2023,A,8,8.891,1,0,0,0,0,1,0,1,8
 103,Allen Wang,2023,A,9,8.668,1,0,1,0,1,0,0,0,9
 86,Vikram Sarkar,2023,A,10,8.198,1,0,1,0,0,0,0,1,10

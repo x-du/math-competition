@@ -57,6 +57,8 @@ python scripts/build_search_data.py
 
 so **`docs/data.json`** stays in sync.
 
+**Roster validation:** `scripts/check_student_ids.py` treats **`pumac-b-teams`** like **BMT**: a student counts as “in results” if they appear on **`pumac-b`** composite **`results.csv`** or on any Division B subject test (**`pumac-b-algebra`**, **`pumac-b-combinator`**, **`pumac-b-geometry`**, **`pumac-b-number-theory`**) for that year—because composite Division B lists fewer students than the subject rounds.
+
 ---
 
 ## Related prompts

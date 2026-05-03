@@ -1,23 +1,23 @@
 team_id,team_name,student_ids,state
-1,Big L Club,2291|2166|2009|2322|2316,New Jersey
-2,CRH Math Team,1053|949|2323|138,California
-3,CRLS Omega,1134|2335|2300,Massachusetts
-4,CSW A,2304|2332,
-5,Edison Academy Magnet School,958|2318|2319|2292|2333,New Jersey
-6,Garnet Valley Math Team,2312|2246|2330,Pennsylvania
-7,Hotchkiss Blue,119|1652|2285|2339,Connecticut
-8,Individuals Team 152,1685|2320|2330,New York
+2,CRH Math Team,949|1106|2258|2323|2488,Connecticut
+3,CRLS Omega,1134|1393|2301|2335,Massachusetts
+5,Edison Academy Magnet School,958|2292|2318|2328|2333,New Jersey
+7,Hotchkiss Blue,126|1652|2285|2484,Connecticut
+8,Individuals Team 152,1685|2306|2320,New York
 9,Individuals Team 153,1419|2310|2321,
-10,Individuals Team 154,2334|1666,Texas
-11,Jericho High School A,2267|1685|2239|978|2337,New York
-12,Just Woo It,2308|2299|2317|2305,
-13,Knights Beta,2309|2263|382,New York
-14,MHSProfessionalJobbers,1123|445|2307|2171|2326|127,New Jersey
-15,Millburn Mathematical Madpeople,3|2338|2Big L Club326|2253,New Jersey
-16,PRISMS Young Falcons,2138|2319|2300,New Jersey
-17,Pingry Team A,2257|407|2315|2324|1621|1623,New Jersey
-18,Ridge Mu Alpha Theta,1942,
-19,Sierra Canyon School,96|1874|2313|2314|2186|2191|2288,California
-20,Team :blobcosy:,2311|2301|2327,California
-21,Ward Melville Math Team,548|184|2339,New York
-22,Warriors,1793|1646|2010|2329|1707,California
+11,Jericho High School A,738|979|2222|2239|2267|2316|2337,New York
+12,Just Woo It,2299|2303|2305|2308|2317,
+14,MHSProfessionalJobbers,127|445|1176|2171|2307,New Jersey
+15,Millburn Mathematical Madpeople,3|2253|2283|2326|2338,New Jersey
+16,PRISMS Young Falcons,2205|2300|2319,New Jersey
+17,Pingry Team A,407|1623|1686|2227|2257|2315|2324,New Jersey
+19,Sierra Canyon School,96|1940|2186|2191|2265|2288|2313|2314,California
+21,Ward Melville Math Team,548|2336|2339|2406,New York
+22,Warriors,1707|7022|2076|2329,
+23,Individuals Team 154,1666|2334,
+24,Knights Beta,2263|2309|2485|2492,
+25,Team :blobcosy:,2302|2311|2327,
+26,Garnet Valley Math Team,1712|2246|2312|2330,
+27,Big L Club,554|1355|2075|2234|2291|2322|2727,
+28,Ridge Mu Alpha Theta,101|2008,
+29,CSW A,2304|2332,

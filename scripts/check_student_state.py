@@ -7,8 +7,9 @@ or starts with **`Individuals `**, e.g. **`Individuals 1`**, or contains **`Lead
 or **`bmt-teams`** rows whose **`school`** is **`Think Academy Online`**):
 
   1. On the same team, two or more students with non-empty states have
-     different states (exceptions: Connecticut + New York; Maryland + Virginia;
-     Arizona + California; California + Nevada; New Jersey + Pennsylvania + New York together;
+     different states (exceptions: Connecticut + New York; Connecticut + New Jersey;
+     Maryland + Virginia; Arizona + California; California + Nevada;
+     New Jersey + Pennsylvania + New York together;
      any roster that includes **`State Department`** (mixable with other states); or **`teams.csv` team `state`
      is **`China`** allowing mixed member geography). If **`teams.csv`
      has no team `state`**, this warning is shown whenever members disagree,
@@ -48,6 +49,7 @@ STUDENTS_CSV = DATABASE / "students" / "students.csv"
 # warnings when both values lie in the same set (e.g. team NJ vs student NY).
 COMPATIBLE_STATE_GROUPS: tuple[frozenset[str], ...] = (
     frozenset({"Connecticut", "New York"}),
+    frozenset({"Connecticut", "New Jersey"}),
     frozenset({"Maryland", "Virginia"}),
     frozenset({"Arizona", "California"}),
     frozenset({"California", "Nevada"}),
@@ -185,7 +187,7 @@ def check_year(
 
         # Roster: 2+ distinct member states. If team row has a state, allow unknown member
         # states to skip this; if team row has no state, still warn (conflict is visible).
-        # Skip when all states fall in an allowed group (CT/NY, MD/VA, NJ/PA/NY),
+        # Skip when all states fall in an allowed group (CT/NY, CT/NJ, MD/VA, NJ/PA/NY),
         # roster includes State Department (mixable with other states),
         # or team row is China (mixed provinces / registrants OK).
         multi_bad = (

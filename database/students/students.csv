@@ -58,7 +58,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 58,Hannah Fox,California,,female,13
 59,Henry Jiang,Michigan,,male,13
 60,Haotian Zhou,China,,male,
-61,Kailin Yang,New Jersey,,male,
+61,Kailin Yang,New Jersey,Kailin Kevin Yang,male,
 62,Evan Fan,New Hampshire,,male,12
 64,Michael Pok Hon Chen,New Jersey,Michael Chen,male,
 65,Selena Ge,Massachusetts,,female,10
@@ -274,7 +274,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 298,Ian Buchanan,New York,,male,
 299,Xuzhou Ren,Florida,,male,
 300,Isaac Chen,New Jersey,,male,13
-301,Harry Kim,New York,,male,
+301,Harry Kim,Massachusetts,,male,
 302,Kenneth Ren,New York,,male,
 303,Alansha Jiang,Washington,,female,13
 304,Jerry Xu,Massachusetts,,male,
@@ -564,7 +564,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 593,Harshita Ganga,Ohio,,male,13
 594,Reese Zong,Ohio,,female,12
 595,Aiden Kim,Oklahoma,,male,12
-596,Ethan Li,Oklahoma,,male,13
+596,Ethan Li,,,male,
 597,Nityant Chandupatla,Oklahoma,,male,13
 598,Justin Burns,Oklahoma,,male,13
 600,Justin Xia,Oregon,,male,13
@@ -1347,8 +1347,6 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1411,Jake Frazer,Florida,,male,
 1412,Isaac Zhu,North Carolina,,male,
 1413,Samuel Goodman,Nevada,,male,16
-1414,Kailin Kevin Yang,California,,male,
-1415,Yutong Mark Zhao,California,,male,
 1417,Daniel He,Maryland,,male,14
 1418,Corey Zhao,Massachusetts,,male,
 1419,Zhan Jin,,,male,
@@ -1360,7 +1358,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1425,David Ruan,Maryland,,male,15
 1426,Aaron Xiong,Florida,,male,
 1427,Yeyin Eva Zhu,California,,male,
-1428,Jacob Paltrowitz,California,,male,
+1428,Jacob Paltrowitz,New York,,male,
 1430,Milo Stammers,Maryland,,male,14
 1431,Neel Kolhe,California,,male,
 1432,Nikhil Mathihalli,,,male,
@@ -2113,6 +2111,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 2206,Jacob Chung,New Jersey,,male,
 2207,Charles Wang,New Jersey,,male,
 2208,YEOJUN JAY JUNG,New Jersey,,male,
+2209,Charles Wang,,,male,
 2210,Krivi Partani,New York,,male,
 2211,Guanjie Zhao,New York,,male,
 2212,Andrew Zhou,New Jersey,,male,
@@ -6874,3 +6873,8 @@ student_id,student_name,state,alias,gender,grade_in_2026
 7019,Michael Sun,,,male,
 7020,Terry Huang,,,male,
 7021,Michael Li,,,male,
+7022,Benjamin Liu,,,male,
+7023,Felix Liu,,,male,
+7024,Eric Zou,New York,,male,
+7025,Emma Li,,,female,
+7026,Ethan Li,Oklahoma,,male,13
