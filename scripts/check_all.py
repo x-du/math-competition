@@ -10,6 +10,7 @@ Run all data-quality and validation checks:
   6. check_hmmt_students.py — HMMT Nov Y vs Feb Y+1 overlapping students
   7. check_pumac_students.py — PUMaC A vs B division overlaps by year
   8. check_amo_jmo_same_year.py — no student wins both JMO and AMO in same year
+  9. check_results_duplicates.py — no duplicate student_id or identical rows per results.csv
 
 Exits with status 1 if any script fails. Run from the repo root:
 
@@ -35,6 +36,10 @@ CHECKS = [
     ("check_hmmt_students.py", "HMMT Nov Y vs Feb Y+1 overlapping students"),
     ("check_pumac_students.py", "PUMaC A vs B division overlaps by year"),
     ("check_amo_jmo_same_year.py", "No student wins both JMO and AMO in same year"),
+    (
+        "check_results_duplicates.py",
+        "No duplicate student_id or identical rows in contest results.csv files",
+    ),
 ]
 
 
