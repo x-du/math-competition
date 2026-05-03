@@ -1,6 +1,6 @@
 student_id,student_name,year,rank,score,mcp_rank
 210,Eric P Zhu,2024,1,37.16,1
-1600,Peter Wang,2024,2,36.3,2.5
+291,Peter Wang,2024,2,36.3,2.5
 1601,Dongyoon Shin,2024,2,36.3,2.5
 575,Pratham Mukewar,2024,4,36.08,4.5
 1599,Joanna Wu,2024,4,36.08,4.5
@@ -24,7 +24,7 @@ student_id,student_name,year,rank,score,mcp_rank
 1611,Ziyang Wu,2024,22,29.73,24
 895,Perry Dai,2024,22,29.73,24
 1603,Xingguo Ding,2024,22,29.73,24
-1619,Lingfei Sophia Tang,2024,22,29.73,24
+216,Lingfei Sophia Tang,2024,22,29.73,24
 204,Alexander Svoronos,2024,27,27.76,27
 17,Dylan Wang,2024,28,26.66,28
 1606,Zizhuang Chen,2024,29,26.65,29.5

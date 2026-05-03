@@ -2,13 +2,13 @@ student_id,student_name,year,rank,score,mcp_rank
 8,Vincent Wang,2023,1,39.08,1
 1632,Eric Zang,2023,2,32.73,2
 12,Alan Cheng,2023,3,31.59,5
-1653,Sicheng Zhou,2023,3,31.59,5
+326,Sicheng Zhou,2023,3,31.59,5
 948,Hanqin Gu,2023,3,31.59,5
 949,Peyton Li,2023,3,31.59,5
 780,Susie Lu,2023,3,31.59,5
 320,Jeremy Yang,2023,8,28.56,8
 989,Richard Wang,2023,9,28.5,9
-1655,Evan Zhang,2023,10,27.43,10
+2960,Evan Zhang,2023,10,27.43,10
 584,Raymond Ge,2023,11,26.32,13
 1670,Sophie Yinuo Zheng,2023,11,26.32,13
 356,LU CHANG,2023,11,26.32,13
@@ -41,7 +41,7 @@ student_id,student_name,year,rank,score,mcp_rank
 1664,Jiya Neelesh Deo Dani,2023,40,22.19,40
 1394,Emily Zhang,2023,41,22.15,41
 1612,Daniel Yu,2023,42,21.14,44.5
-1619,Lingfei Sophia Tang,2023,42,21.14,44.5
+216,Lingfei Sophia Tang,2023,42,21.14,44.5
 1567,Samuel Lin,2023,42,21.14,44.5
 1676,Joshua Kou,2023,42,21.14,44.5
 1677,Ryan Chase Casey,2023,42,21.14,44.5

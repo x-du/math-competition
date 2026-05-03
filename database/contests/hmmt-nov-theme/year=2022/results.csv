@@ -6,7 +6,7 @@ student_id,student_name,year,rank,score,mcp_rank
 86,Vikram Sarkar,2022,5,33.24,5
 1231,Joseph Vulakh,2022,6,29.07,6
 1227,Tina Li,2022,7,28.29,7
-1659,Sophia Zhang,2022,8,28.15,8.5
+85,Sophia Zhang,2022,8,28.15,8.5
 1683,Alexander Yunjae Jun,2022,8,28.15,8.5
 1681,Tanishq Pauskar,2022,10,28.08,10
 1639,Henry Han,2022,11,25.96,12
@@ -44,7 +44,7 @@ student_id,student_name,year,rank,score,mcp_rank
 320,Jeremy Yang,2022,32,18.54,37.5
 1711,Aren,2022,44,16.69,44
 1712,Benjamin Wu,2022,45,16.5,45
-1600,Peter Wang,2022,46,15.65,46.5
+291,Peter Wang,2022,46,15.65,46.5
 1713,Harry Shen,2022,46,15.65,46.5
 1714,Justin Lai,2022,48,15.58,49
 830,Rajarshi Mandal,2022,48,15.58,49

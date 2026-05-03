@@ -23,6 +23,8 @@ Each file should include `bmt_student_id` and a **`team_id`** column (see §1). 
 
 Related prompt for other contests: `prompts/add-team-column-and-teams.md` (different schema and rules; BMT uses the workflow below).
 
+**Automation:** To regenerate `bmt-teams` from the five BMT `results.csv` files for a year, run `python scripts/sync_contest_teams.py bmt <year>` (or `python scripts/sync_contest_teams.py <year>`). See `prompts/sync-contest-teams.md` for all contest-team commands.
+
 ---
 
 ## 1. Team ID from `bmt_student_id` (BMT-specific)
@@ -114,6 +116,9 @@ When you have a pasted list in a form like:
 
 ## 7. After updating
 
+- Optionally rebuild `bmt-teams` from the five result CSVs:  
+  `python scripts/sync_contest_teams.py bmt <year>`  
+  (see `prompts/sync-contest-teams.md`).
 - Run from repo root:  
   `python scripts/build_search_data.py`  
   so that `docs/data.json` reflects the changes.

@@ -1,51 +1,51 @@
-student_id,student_name,year,rank,total_score,general_score,theme_score,mcp_rank
-1653,Sicheng Zhou,2023,1,82.89,51.3,31.59,1
-1654,David Taehee Lee,2023,2,67.83,42.65,25.17,2.5
-548,Michael Lu,2023,2,67.83,42.65,25.17,2.5
-8,Vincent Wang,2023,4,64.52,25.43,39.08,4
-989,Richard Wang,2023,5,63.59,35.08,28.5,5
-948,Hanqin Gu,2023,6,62.57,30.98,31.59,6
-280,Aaron Le,2023,7,60.58,39.57,21.01,7
-12,Alan Cheng,2023,8,60.42,28.83,31.59,8
-1655,Evan Zhang,2023,9,58.35,30.92,27.43,9
-1632,Eric Zang,2023,10,58.28,25.54,32.73,10
-320,Jeremy Yang,2023,11,57.45,28.89,28.56,11
-1656,Kevin Xuanhao Liu,2023,12,57.31,38.49,18.82,12
-780,Susie Lu,2023,13,56.96,25.37,31.59,13
-1657,Le Yi Tan,2023,14,56.21,31.03,25.17,14
-356,LU CHANG,2023,15,56.11,29.8,26.32,15
-220,Luca Pieleanu,2023,16,55.98,37.16,18.82,16
-1658,Jeffery Zhang,2023,17,55.98,30.73,25.24,17
-304,Jerry Xu,2023,18,55.91,30.73,25.17,18
-67,Andrew Shen,2023,19,54.84,29.59,25.24,19
-1603,Xingguo Ding,2023,20,54.77,29.59,25.17,20.5
-1218,Yingshan Xiao,2023,20,54.77,29.59,25.17,20.5
-218,William Qian,2023,22,53.91,35.08,18.82,23.5
-279,Sophia Hou,2023,22,53.91,35.08,18.82,23.5
-1659,Sophia Zhang,2023,22,53.91,35.08,18.82,23.5
-482,David Zhang,2023,22,53.91,35.08,18.82,23.5
-318,David Yu,2023,26,53.7,28.53,25.17,26
-1619,Lingfei Sophia Tang,2023,27,52.12,30.98,21.14,27
-603,Aidan Le,2023,28,52.06,35.08,16.98,28.5
-1077,Xinyi Li,2023,28,52.06,35.08,16.98,28.5
-811,Brandon Ni,2023,30,51.87,35.08,16.79,30
-249,Sam Tsui,2023,31,51.49,25.17,26.32,31
-1660,Troy Yang,2023,32,50.73,25.49,25.24,32
-212,Nathan Lu,2023,33,50.67,29.59,21.08,33
-1661,Hwiseo,2023,34,50.66,25.49,25.17,34
-1662,Isaac Jo,2023,35,50.49,25.24,25.24,35
-1220,Henry Zheng,2023,36,50.15,35.34,14.8,36
-1663,Victor Lin,2023,37,49.86,31.03,18.82,37
-263,Jonathan Liu,2023,38,49.75,35.08,14.66,38
-577,Vedant Patil,2023,39,49.62,30.8,18.82,39
-1519,Leo Wu,2023,40,49.49,30.67,18.82,40.5
-49,Amogh Akella,2023,40,49.49,30.67,18.82,40.5
-1634,Yeyin Zhu,2023,42,49.04,38.55,10.5,42
-1664,Jiya Neelesh Deo Dani,2023,43,48.76,26.57,22.19,43
-1665,William Jimenez,2023,44,48.42,29.59,18.82,45.5
-862,Ethan Shi,2023,44,48.42,29.59,18.82,45.5
-1666,Michael Ren,2023,44,48.42,29.59,18.82,45.5
-754,William Liu,2023,44,48.42,29.59,18.82,45.5
-949,Peyton Li,2023,48,48.26,16.67,31.59,48
-545,Matthew Qian,2023,49,47.72,37.16,10.56,49
-1471,Jason Yang,2023,50,47.7,25.49,22.21,50
+student_id,student_name,team,team_id,year,rank,total_score,general_score,theme_score,mcp_rank
+326,Sicheng Zhou,PRISMS Falcons,1,2023,1,82.89,51.3,31.59,1
+1654,David Taehee Lee,PRISMS Falcons,1,2023,2,67.83,42.65,25.17,2.5
+548,Michael Lu,Ward Melville Math Team D,2,2023,2,67.83,42.65,25.17,2.5
+8,Vincent Wang,All Aces Spade,3,2023,4,64.52,25.43,39.08,4
+989,Richard Wang,Texas Thunder,4,2023,5,63.59,35.08,28.5,5
+948,Hanqin Gu,fun math,5,2023,6,62.57,30.98,31.59,6
+280,Aaron Le,Lion Valley Alpha,6,2023,7,60.58,39.57,21.01,7
+12,Alan Cheng,Math 4 Fun,7,2023,8,60.42,28.83,31.59,8
+2960,Evan Zhang,Lion Valley Alpha,6,2023,9,58.35,30.92,27.43,9
+1632,Eric Zang,Texas Typhoon,8,2023,10,58.28,25.54,32.73,10
+320,Jeremy Yang,Maryland United,9,2023,11,57.45,28.89,28.56,11
+1202,Kevin Xuanhao Liu,Lion Valley Alpha,6,2023,12,57.31,38.49,18.82,12
+780,Susie Lu,Individuals 2,10,2023,13,56.96,25.37,31.59,13
+1657,Le Yi Tan,Texas Typhoon,8,2023,14,56.21,31.03,25.17,14
+356,LU CHANG,MathTeam007,11,2023,15,56.11,29.8,26.32,15
+220,Luca Pieleanu,Russian School of Mathematics Team A,12,2023,16,55.98,37.16,18.82,16
+1658,Jeffery Zhang,University of Toronto Schools A,13,2023,17,55.98,30.73,25.24,17
+304,Jerry Xu,Lexington Armadillo,14,2023,18,55.91,30.73,25.17,18
+67,Andrew Shen,Texas Tornado,15,2023,19,54.84,29.59,25.24,19
+1603,Xingguo Ding,St. Paul's School,16,2023,20,54.77,29.59,25.17,20.5
+1218,Yingshan Xiao,Maple,17,2023,20,54.77,29.59,25.17,20.5
+218,William Qian,Maryland United,9,2023,22,53.91,35.08,18.82,23.5
+279,Sophia Hou,LS Math Team B,18,2023,22,53.91,35.08,18.82,23.5
+85,Sophia Zhang,PRISMS Falcons,1,2023,22,53.91,35.08,18.82,23.5
+482,David Zhang,Traditional Salad,19,2023,22,53.91,35.08,18.82,23.5
+318,David Yu,Maryland United,9,2023,26,53.7,28.53,25.17,26
+216,Lingfei Sophia Tang,Math 4 Fun,7,2023,27,52.12,30.98,21.14,27
+603,Aidan Le,Lion Valley Alpha,6,2023,28,52.06,35.08,16.98,28.5
+1077,Xinyi Li,Texas Thunder,4,2023,28,52.06,35.08,16.98,28.5
+811,Brandon Ni,Lexington Armadillo,14,2023,30,51.87,35.08,16.79,30
+249,Sam Tsui,Lexington Armadillo,14,2023,31,51.49,25.17,26.32,31
+1660,Troy Yang,BISV Bobcats A,20,2023,32,50.73,25.49,25.24,32
+212,Nathan Lu,Maryland United,9,2023,33,50.67,29.59,21.08,33
+1661,Hwiseo,Lexington Armadillo,14,2023,34,50.66,25.49,25.17,34
+1662,Isaac Jo,LS Math Team B,18,2023,35,50.49,25.24,25.24,35
+1220,Henry Zheng,MN gold,21,2023,36,50.15,35.34,14.8,36
+1663,Victor Lin,Texas Academy of Math and Science A,22,2023,37,49.86,31.03,18.82,37
+263,Jonathan Liu,Lexington Banana,23,2023,38,49.75,35.08,14.66,38
+577,Vedant Patil,The NH Celestials 2,24,2023,39,49.62,30.8,18.82,39
+1519,Leo Wu,Bayview Team A1,25,2023,40,49.49,30.67,18.82,40.5
+49,Amogh Akella,Texas Thunder,4,2023,40,49.49,30.67,18.82,40.5
+1634,Yeyin Zhu,PRISMS Young Falcons,26,2023,42,49.04,38.55,10.5,42
+1664,Jiya Neelesh Deo Dani,Texas Tornado,15,2023,43,48.76,26.57,22.19,43
+1665,William Jimenez,Benet Academy,27,2023,44,48.42,29.59,18.82,45.5
+862,Ethan Shi,Westchester Area Math Circle,28,2023,44,48.42,29.59,18.82,45.5
+1666,Michael Ren,Syo Math A,29,2023,44,48.42,29.59,18.82,45.5
+754,William Liu,Lion Valley Alpha,6,2023,44,48.42,29.59,18.82,45.5
+949,Peyton Li,Choate Math Team,30,2023,48,48.26,16.67,31.59,48
+545,Matthew Qian,CCHS Math,31,2023,49,47.72,37.16,10.56,49
+1471,Jason Yang,Lexington Armadillo,14,2023,50,47.7,25.49,22.21,50

@@ -1,57 +1,57 @@
-student_id,student_name,team,year,rank,score,mcp_rank
-118,Linus Tang,AlphaStar Academy AIR,2024,1,28.54,1
-421,Yifan Kang,Phillips Academy 1778,2024,2,27.31,2.5
-109,Ziyi Yang,Beijing Loong,2024,2,27.31,2.5
-102,Andrew Li,Tin Man,2024,4,25.33,4
-147,Zachary Jacob Perry,Lexington Alpha,2024,5,25.17,12.5
-1,Alexander Wang,Lehigh Valley Fire,2024,5,25.17,12.5
-97,Eric Wang,Phillips Academy 1778,2024,5,25.17,12.5
-113,Feodor Yevtushenko,Individuals 7,2024,5,25.17,12.5
-107,Annabel Ge,Washington Gold 1,2024,5,25.17,12.5
-638,Owen J Zhang,Washington Gold 1,2024,5,25.17,12.5
-114,Vesselin Nikolaev Markovich,MG VARNA A,2024,5,25.17,12.5
-53,Xiaohan Zhang,Beijing Loong,2024,5,25.17,12.5
-80,Lerchen Zhong,Texas Momentum A,2024,5,25.17,12.5
-90,Rohan Das,AlphaStar Academy AIR,2024,5,25.17,12.5
-422,Ryan Bai,San Diego A1,2024,5,25.17,12.5
-28,Rohan Nayak Mallick,San Diego A2,2024,5,25.17,12.5
-92,Marvin Mao,Bergen County Academies Team 1,2024,5,25.17,12.5
-201,Zani Xu,Thomas Jefferson High School for Science and Technology A,2024,5,25.17,12.5
-105,Myungbeen Choi,Cougars B,2024,5,25.17,12.5
-21,David Fox,AlphaStar Academy EARTH,2024,5,25.17,12.5
-55,Zongshu Wu,Beijing Loong,2024,21,22.96,21
-111,ERIC MINGHAO LIU,Mathsyyds,2024,22,22.12,22
-423,Elena Baskakova,Newton South Sines,2024,23,22.07,23
-89,Jordan Lefkowitz,Connecticut Cyborgs,2024,24,21.01,24
-308,Muztaba Syed,Lexington Alpha,2024,25,20.95,26.5
-73,Andrew Carratu,Exeter Red,2024,25,20.95,26.5
-125,Pavan Jayaraman,WWP A,2024,25,20.95,26.5
-126,Weian Xie,Hotchkiss Indigo,2024,25,20.95,26.5
-81,Angela Liu,AlphaStar Academy AIR,2024,29,20.82,30
-110,Wilbert Chu,No Coast Best Coast,2024,29,20.82,30
-362,Rithik Gumpu,WWP A,2024,29,20.82,30
-252,Arnav Iyengar,BBMC-Math Delta,2024,32,19.89,32
-23,Jeffrey Yin,BBMC-Math Delta,2024,33,18.89,44.5
-424,Derek Zhao,Lexington Alpha,2024,33,18.89,44.5
-273,Evin Liang,Lexington Alpha,2024,33,18.89,44.5
-120,Jacob Xu,Lexington Alpha,2024,33,18.89,44.5
-425,Andrew Tu,Connecticut Cyborgs,2024,33,18.89,44.5
-96,Qiao Zhang,Individuals 6,2024,33,18.89,44.5
-329,Jiaxuan Gong,Motown All-Stars,2024,33,18.89,44.5
-121,Srinivas Arun,Colorado Mathletes,2024,33,18.89,44.5
-117,Advaith Avadhanam,Individuals 7,2024,33,18.89,44.5
-19,Vihaan Gupta,Random Math Team Green,2024,33,18.89,44.5
-426,Emily Ma,Ontario Math Circles,2024,33,18.89,44.5
-205,Mingyue Yang,Washington Gold 1,2024,33,18.89,44.5
-427,William Gvozdjak,Washington Gold 1,2024,33,18.89,44.5
-106,Yunlang Zheng,Beijing Loong,2024,33,18.89,44.5
-32,Benjamin Jiang,Florida Beaches,2024,33,18.89,44.5
-122,David Jiahui Zhang,AlphaStar Academy AIR,2024,33,18.89,44.5
-112,Jonathan He,No Coast Best Coast,2024,33,18.89,44.5
-98,Elliott Liu,San Diego A1,2024,33,18.89,44.5
-428,Evan Luo,San Diego A2,2024,33,18.89,44.5
-166,Roger Fan,nnGu Rearranged,2024,33,18.89,44.5
-429,Evan Ashoori,Redone,2024,33,18.89,44.5
-405,Rishi Rajesh,Cougars B,2024,33,18.89,44.5
-430,Henrick Rabinovitz,Mass ARML Stars,2024,33,18.89,44.5
-95,Razzi H. Masroor,Individuals 4,2024,33,18.89,44.5
+student_id,student_name,team,team_id,year,rank,score,mcp_rank
+118,Linus Tang,AlphaStar Academy AIR,1,2024,1,28.54,1
+421,Yifan Kang,Phillips Academy 1778,2,2024,2,27.31,2.5
+109,Ziyi Yang,Beijing Loong,3,2024,2,27.31,2.5
+102,Andrew Li,Tin Man,4,2024,4,25.33,4
+147,Zachary Jacob Perry,Lexington Alpha,5,2024,5,25.17,12.5
+1,Alexander Wang,Lehigh Valley Fire,6,2024,5,25.17,12.5
+97,Eric Wang,Phillips Academy 1778,2,2024,5,25.17,12.5
+113,Feodor Yevtushenko,Individuals 7,7,2024,5,25.17,12.5
+107,Annabel Ge,Washington Gold 1,8,2024,5,25.17,12.5
+638,Owen J Zhang,Washington Gold 1,8,2024,5,25.17,12.5
+114,Vesselin Nikolaev Markovich,MG VARNA A,9,2024,5,25.17,12.5
+53,Xiaohan Zhang,Beijing Loong,3,2024,5,25.17,12.5
+80,Lerchen Zhong,Texas Momentum A,10,2024,5,25.17,12.5
+90,Rohan Das,AlphaStar Academy AIR,1,2024,5,25.17,12.5
+422,Ryan Bai,San Diego A1,11,2024,5,25.17,12.5
+28,Rohan Nayak Mallick,San Diego A2,12,2024,5,25.17,12.5
+92,Marvin Mao,Bergen County Academies Team 1,13,2024,5,25.17,12.5
+201,Zani Xu,Thomas Jefferson High School for Science and Technology A,14,2024,5,25.17,12.5
+105,Myungbeen Choi,Cougars B,15,2024,5,25.17,12.5
+21,David Fox,AlphaStar Academy EARTH,16,2024,5,25.17,12.5
+55,Zongshu Wu,Beijing Loong,3,2024,21,22.96,21
+111,ERIC MINGHAO LIU,Mathsyyds,17,2024,22,22.12,22
+423,Elena Baskakova,Newton South Sines,18,2024,23,22.07,23
+89,Jordan Lefkowitz,Connecticut Cyborgs,19,2024,24,21.01,24
+308,Muztaba Syed,Lexington Alpha,5,2024,25,20.95,26.5
+73,Andrew Carratu,Exeter Red,20,2024,25,20.95,26.5
+125,Pavan Jayaraman,WWP A,21,2024,25,20.95,26.5
+126,Weian Xie,Hotchkiss Indigo,22,2024,25,20.95,26.5
+81,Angela Liu,AlphaStar Academy AIR,1,2024,29,20.82,30
+110,Wilbert Chu,No Coast Best Coast,23,2024,29,20.82,30
+362,Rithik Gumpu,WWP A,21,2024,29,20.82,30
+252,Arnav Iyengar,BBMC-Math Delta,24,2024,32,19.89,32
+23,Jeffrey Yin,BBMC-Math Delta,24,2024,33,18.89,44.5
+424,Derek Zhao,Lexington Alpha,5,2024,33,18.89,44.5
+273,Evin Liang,Lexington Alpha,5,2024,33,18.89,44.5
+120,Jacob Xu,Lexington Alpha,5,2024,33,18.89,44.5
+425,Andrew Tu,Connecticut Cyborgs,19,2024,33,18.89,44.5
+96,Qiao Zhang,Individuals 6,25,2024,33,18.89,44.5
+329,Jiaxuan Gong,Motown All-Stars,26,2024,33,18.89,44.5
+121,Srinivas Arun,Colorado Mathletes,27,2024,33,18.89,44.5
+117,Advaith Avadhanam,Individuals 7,7,2024,33,18.89,44.5
+19,Vihaan Gupta,Random Math Team Green,28,2024,33,18.89,44.5
+426,Emily Ma,Ontario Math Circles,29,2024,33,18.89,44.5
+205,Mingyue Yang,Washington Gold 1,8,2024,33,18.89,44.5
+427,William Gvozdjak,Washington Gold 1,8,2024,33,18.89,44.5
+106,Yunlang Zheng,Beijing Loong,3,2024,33,18.89,44.5
+32,Benjamin Jiang,Florida Beaches,30,2024,33,18.89,44.5
+122,David Jiahui Zhang,AlphaStar Academy AIR,1,2024,33,18.89,44.5
+112,Jonathan He,No Coast Best Coast,23,2024,33,18.89,44.5
+98,Elliott Liu,San Diego A1,11,2024,33,18.89,44.5
+428,Evan Luo,San Diego A2,12,2024,33,18.89,44.5
+166,Roger Fan,nnGu Rearranged,31,2024,33,18.89,44.5
+429,Evan Ashoori,Redone,32,2024,33,18.89,44.5
+405,Rishi Rajesh,Cougars B,15,2024,33,18.89,44.5
+430,Henrick Rabinovitz,Mass ARML Stars,33,2024,33,18.89,44.5
+95,Razzi H. Masroor,Individuals 4,34,2024,33,18.89,44.5

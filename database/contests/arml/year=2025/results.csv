@@ -1,65 +1,65 @@
-student_id,student_name,rank,site,team,prize,mcp_rank
-57,Christopher Qiu,1,P,Central Jersey A1,"$1,500",1
-14,Nathan Liu,2,I,Texas A1,"$1,250",2
-38,Andy Lu,3,N,SFBA/NorCal A1,"$1,250",3
-99,Rohan Bodke,4,N,SFBA/NorCal A1,"$1,000",4
-16,James Stewart,5,I,Texas A2,"$1,000",5
-1272,Angelica Feng,6,P,WWP^2,"$1,000",6
-206,Eric Xie,7,P,Montgomery B1,$750,7
-48,Varun Gadi,8,W,Georgia A1,$750,8
-1273,Kevin Hu,9,I,Texas A3,$750,9
-345,Soham Dam,10,P,Western PA A1,$750,10
-328,Aryan Agrawal,11,N,Washington A1,$500,11
-850,Eric Huang,12,S,Massachusetts B1,$500,12
-387,Royce Yao,13,N,Wild Wild West B1,$500,13
-41,Eddy Zhang,14,P,Lehigh Valley A1,$500,14
-1042,Michael Sun,15,P,Ontario Math Circles A1,$500,15
-1050,Jonathan Yu,16,N,Southern California B1,$500,16
-990,Leo Wu,17,P,Ontario Math Circles A1,$500,17
-56,Channing Yang,18,I,Texas A1,$500,18
-132,Jason Mao,19,P,Lehigh Valley A1,$500,19
-402,Chris Bao,20 (tie),N,Northern Nevada Math Club B1,$500,20.5
-82,Edward Li,20 (tie),I,Iowa,$500,20.5
-364,Ekam Kaur,22,I,Texas A2,,22
-4,Liam Reddy,23,N,Utah B1,,23
-666,Shruti Arun,24,N,Colorado B1,,24
-854,Benjamin Lu,25,P,Lehigh Valley A2,,25
-3,Oron Wang,26,S,PEA Lions A1,,26
-1275,Rohith Thomas,27,N,Colorado B1,,27
-204,Alexander Svoronos,28,S,Connecticut A1,,28
-248,Shaheem Samsudeen,29,I,Texas A3,,29
-8,Vincent Wang,30,I,Texas A1,,30
-289,Kyle Wu,31,P,NYC A1,,31
-1276,Tiger Li,32,P,Ontario Math Circles A1,,32
-58,Hannah Fox,33,N,SFBA/NorCal A1,,33
-1012,Michael Chang,34,I,Texas A2,,34
-10,Ruilin Wang,35,P,TJHSST A1,,35
-1,Alexander Wang,36,P,Lehigh Valley A1,,36
-1277,Jeff Zhou,37,I,Minnesota B1,,37
-213,Darren Han,38,I,Texas A1,,38
-86,Vikram Sarkar,39,S,Connecticut A1,,39
-1017,Bach Kieu,40,I,Indiana B1,,40
-466,Allan Yuan,41,W,Alabama B1,,41
-1278,Kaylyn Zhang,42,P,Ontario Math Circles A1,,42
-1006,David Wang,43,P,Montgomery B1,,43
-1279,Jack Whitney-Epstein,44,S,Connecticut A1,,44
-13,Michael Zhao,45,I,Texas A1,,45
-22,Ian Rui,46,N,Washington A1,,46
-42,Benjamin Song,47,P,Upstate New York B1,,47
-895,Perry Dai,48,P,Ontario Math Circles A1,,48
-27,Benny Wang,49,S,PEA Lions A1,,49
-76,Kiran Reddy,50,N,Utah B1,,50
-17,Dylan Wang,51,N,SFBA/NorCal A2,,51
-1281,Rick Zhou,52,N,Washington A2,,52
-31,Lewis Lau,53,P,Montgomery B1,,53
-818,Jonathan Wu,54,N,Utah B1,,54
-1283,Zenghan (Yoll) Feng,55,S,Phillips Academy Andover,,55
-1284,Jonathan Zhou,56,S,Connecticut A2,,56
-226,George Paret,57,W,Frazer A2,,57
-1014,Lanie Deng,58,I,Missouri B1,,58
-1285,Raine Ma,59,S,Connecticut A1,,59
-1286,Aarav Mann,60,N,SFBA/NorCal A5,,60
-899,Eden He,61,P,Lehigh Valley A2,,61
-1287,Prince Zhang,62,P,Ontario Math Circles A2,,62
-1288,Eric Jia,63,P,Ontario Math Circles A1,,63
-363,Michael Luo,64,I,Minnesota B1,,64
+student_id,student_name,rank,site,team,team_id,prize,mcp_rank
+57,Christopher Qiu,1,P,Central Jersey A1,1,"$1,500",1
+14,Nathan Liu,2,I,Texas A1,2,"$1,250",2
+38,Andy Lu,3,N,SFBA/NorCal A1,3,"$1,250",3
+99,Rohan Bodke,4,N,SFBA/NorCal A1,3,"$1,000",4
+16,James Stewart,5,I,Texas A2,4,"$1,000",5
+1272,Angelica Feng,6,P,WWP^2,5,"$1,000",6
+206,Eric Xie,7,P,Montgomery B1,6,$750,7
+48,Varun Gadi,8,W,Georgia A1,7,$750,8
+1273,Kevin Hu,9,I,Texas A3,8,$750,9
+345,Soham Dam,10,P,Western PA A1,9,$750,10
+328,Aryan Agrawal,11,N,Washington A1,10,$500,11
+850,Eric Huang,12,S,Massachusetts B1,11,$500,12
+387,Royce Yao,13,N,Wild Wild West B1,12,$500,13
+41,Eddy Zhang,14,P,Lehigh Valley A1,13,$500,14
+1042,Michael Sun,15,P,Ontario Math Circles A1,14,$500,15
+1050,Jonathan Yu,16,N,Southern California B1,15,$500,16
+990,Leo Wu,17,P,Ontario Math Circles A1,14,$500,17
+56,Channing Yang,18,I,Texas A1,2,$500,18
+132,Jason Mao,19,P,Lehigh Valley A1,13,$500,19
+402,Chris Bao,20 (tie),N,Northern Nevada Math Club B1,16,$500,20.5
+82,Edward Li,20 (tie),I,Iowa,17,$500,20.5
+364,Ekam Kaur,22,I,Texas A2,4,,22
+4,Liam Reddy,23,N,Utah B1,18,,23
+666,Shruti Arun,24,N,Colorado B1,19,,24
+854,Benjamin Lu,25,P,Lehigh Valley A2,20,,25
+3,Oron Wang,26,S,PEA Lions A1,21,,26
+1275,Rohith Thomas,27,N,Colorado B1,19,,27
+204,Alexander Svoronos,28,S,Connecticut A1,22,,28
+248,Shaheem Samsudeen,29,I,Texas A3,8,,29
+8,Vincent Wang,30,I,Texas A1,2,,30
+289,Kyle Wu,31,P,NYC A1,23,,31
+1276,Tiger Li,32,P,Ontario Math Circles A1,14,,32
+58,Hannah Fox,33,N,SFBA/NorCal A1,3,,33
+1012,Michael Chang,34,I,Texas A2,4,,34
+10,Ruilin Wang,35,P,TJHSST A1,24,,35
+1,Alexander Wang,36,P,Lehigh Valley A1,13,,36
+1277,Jeff Zhou,37,I,Minnesota B1,25,,37
+213,Darren Han,38,I,Texas A1,2,,38
+86,Vikram Sarkar,39,S,Connecticut A1,22,,39
+1017,Bach Kieu,40,I,Indiana B1,26,,40
+466,Allan Yuan,41,W,Alabama B1,27,,41
+1278,Kaylyn Zhang,42,P,Ontario Math Circles A1,14,,42
+1006,David Wang,43,P,Montgomery B1,6,,43
+1279,Jack Whitney-Epstein,44,S,Connecticut A1,22,,44
+13,Michael Zhao,45,I,Texas A1,2,,45
+22,Ian Rui,46,N,Washington A1,10,,46
+42,Benjamin Song,47,P,Upstate New York B1,28,,47
+895,Perry Dai,48,P,Ontario Math Circles A1,14,,48
+27,Benny Wang,49,S,PEA Lions A1,21,,49
+76,Kiran Reddy,50,N,Utah B1,18,,50
+17,Dylan Wang,51,N,SFBA/NorCal A2,29,,51
+1281,Rick Zhou,52,N,Washington A2,30,,52
+31,Lewis Lau,53,P,Montgomery B1,6,,53
+818,Jonathan Wu,54,N,Utah B1,18,,54
+1283,Zenghan (Yoll) Feng,55,S,Phillips Academy Andover,31,,55
+1284,Jonathan Zhou,56,S,Connecticut A2,32,,56
+226,George Paret,57,W,Frazer A2,33,,57
+1014,Lanie Deng,58,I,Missouri B1,34,,58
+1285,Raine Ma,59,S,Connecticut A1,22,,59
+1286,Aarav Mann,60,N,SFBA/NorCal A5,35,,60
+899,Eden He,61,P,Lehigh Valley A2,20,,61
+1287,Prince Zhang,62,P,Ontario Math Circles A2,36,,62
+1288,Eric Jia,63,P,Ontario Math Circles A1,14,,63
+363,Michael Luo,64,I,Minnesota B1,25,,64
