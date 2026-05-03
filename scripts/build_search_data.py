@@ -69,17 +69,24 @@ K_STEEPNESS = 3
 # N = total participants; min_pts = 10 for open, higher for selective.
 # Each slug maps to { year: (N, min_pts) }; use "default" for years not explicitly listed.
 # Subject tests inherit from parent (e.g. hmmt-feb-algebra-number-theory -> hmmt-feb).
+# BMT: N from published HM+ lists (rows in results.csv / 0.5). Slug "bmt" = General exam CSV only;
+# bmt-* = subject exams. Subject slugs without a year entry fall back to competition-level "bmt".
 # See docs/articles/mcp.md for source.
 MCP_V2_PARAMS = {
     "hmmt-feb": {"default": (800, 100)},
     "hmmt-nov": {"default": (720, 10)},
     "pumac": {"default": (180, 10)},
     "pumac-b": {"default": (180, 10)},
-    "bmt": {"default": (630, 10), 2025: (630, 10), 2023:(270, 10)},
+    # General: database/contests/bmt/year=*/results.csv (subject column General); default = latest year General N
+    "bmt": {"default": (500, 10), 2023: (260, 10), 2024: (384, 10), 2025: (610, 10)},
+    "bmt-algebra": {2023: (344, 10), 2024: (598, 10), 2025: (650, 10)},
+    "bmt-calculus": {2023: (80, 10), 2024: (210, 10), 2025: (224, 10)},
+    "bmt-discrete": {2023: (192, 10), 2024: (332, 10), 2025: (316, 10)},
+    "bmt-geometry": {2023: (230, 10), 2024: (362, 10), 2025: (350, 10)},
     "arml": {"default": (1600, 10)},
     "amo": {"default": (280, 200)},
     "jmo": {"default": (220, 200)},
-    "cmimc": {"default": (200, 10)},
+    "cmimc": {"default": (500, 10)},
     "bamo-12": {"default": (240, 10)},
     "bamo-8": {"default": (420, 10)},
     "mathcounts-national-rank": {"default": (224, 100)},  # N=224; unranked roster uses mcp_rank (55+N)/2
@@ -87,8 +94,9 @@ MCP_V2_PARAMS = {
     "mpfg-olympiad": {"default": (75, 100)},
     "mmaths": {"default": (750, 10)},
     "dmm": {"default": (270, 10)},
-    "cmm": {"default": (60, 10)},
-    "brumo-a": {"default": (300, 10)},
+    "cmm": {"default": (400, 10)},
+    # BrUMO A: CSV is top 10% only (ranks 1–10 + DHM Top 10%); N ≈ row_count × 10
+    "brumo-a": {"default": (240, 10), 2025: (230, 10), 2026: (240, 10)},
     "jhmt": {"default": (150, 10)},
 }
 
@@ -120,7 +128,12 @@ def get_mcp_v2_params(slug: str, year: str) -> tuple[int | None, int | None]:
     if isinstance(params, dict):
         if y is not None and y in params:
             return params[y]
-        return params.get("default", (None, None))
+        if "default" in params:
+            return params["default"]
+        # BMT subject exam: no N for this year — use competition-level bmt
+        if base_slug in BMT_CONTESTS and base_slug != "bmt":
+            return get_mcp_v2_params("bmt", year)
+        return (None, None)
     return (None, None)
 
 
