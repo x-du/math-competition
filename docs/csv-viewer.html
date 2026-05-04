@@ -189,6 +189,12 @@
         return div.innerHTML;
       }
 
+      /** Strip BOM / trim / compare — hide internal IDs from the table (still in raw CSV). */
+      function isInternalCsvColumn(fieldName) {
+        var n = (fieldName || "").replace(/^\ufeff/, "").trim().toLowerCase();
+        return n === "student_id" || n === "team_id";
+      }
+
       function isNumericVal(val) {
         if (val == null || String(val).trim() === "") return true;
         return /^\d+(\.\d+)?$/.test(String(val).trim());
@@ -299,9 +305,7 @@
               showError("Empty or invalid CSV.", rawUrl);
               return;
             }
-            fields = fields.filter(function (f) {
-              return f !== "student_id" && f !== "team_id";
-            });
+            fields = fields.filter(function (f) { return !isInternalCsvColumn(f); });
             renderTable(data, fields);
           })
           .catch(function (err) {

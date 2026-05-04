@@ -5015,6 +5015,12 @@
   var RAW_BASE = "https://raw.githubusercontent.com/x-du/math-competition/";
   var CSV_VIEWER_BASE = "csv-viewer.html";
 
+  /** Hide registry / roster IDs from CSV popover table (still in raw GitHub CSV). */
+  function isInternalCsvColumn(fieldName) {
+    var n = (fieldName || "").replace(/^\ufeff/, "").trim().toLowerCase();
+    return n === "student_id" || n === "team_id";
+  }
+
   function showCsvPopover(contest, year) {
     var csvPopover = document.getElementById("csv-popover");
     var csvTitle = document.getElementById("csv-popover-title");
@@ -5064,8 +5070,10 @@
           return;
         }
         var csvData = result.data || [];
-        var fields = (result.meta.fields || []).filter(function (f) { return f !== "student_id"; });
-        if (!fields.length && csvData.length) fields = Object.keys(csvData[0]).filter(function (f) { return f !== "student_id"; });
+        var fields = (result.meta.fields || []).filter(function (f) { return !isInternalCsvColumn(f); });
+        if (!fields.length && csvData.length) {
+          fields = Object.keys(csvData[0]).filter(function (f) { return !isInternalCsvColumn(f); });
+        }
         if (!csvData.length && !fields.length) {
           csvError.textContent = "Empty or invalid CSV.";
           csvError.hidden = false;
