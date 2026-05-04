@@ -2724,7 +2724,8 @@
   function renderContestInfo(slug, contestsMap) {
     var map = contestsMap || {};
     var baseSlug = baseContestSlug(slug);
-    var c = map[baseSlug] || map[slug];
+    /** Prefer the exact slug so subject rounds keep titles like "HMMT February — Algebra & Number Theory". */
+    var c = map[slug] || map[baseSlug];
     if (!c) return "";
     var parts = ["<div class=\"contest-info\">"];
     parts.push("<h3 class=\"contest-info-title\">" + escapeHtml(c.contest_name || baseSlug) + "</h3>");
@@ -5224,7 +5225,7 @@
     var baseSlug = baseContestSlug(contestSlug);
     var yearStr = String(year || "").trim();
     var want = (teamName || "").trim();
-    var contestInfo = (data.contests || {})[baseSlug] || (data.contests || {})[contestSlug] || {};
+    var contestInfo = (data.contests || {})[contestSlug] || (data.contests || {})[baseSlug] || {};
     var contestLabel = contestInfo.contest_name || baseSlug;
     titleEl.innerHTML =
       "<span class=\"team-roster-popover-line team-roster-popover-topline\">" +
