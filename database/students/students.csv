@@ -6006,7 +6006,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6119,Joonseok Lee,,,male,
 6120,Johann Qiu,,,male,
 6121,Yakup Pala,California,,male,
-6122,William Tao,California,,male,
+6122,William Tao,California,,male,8
 6123,Paixiao Seeluangsawat,California,,male,
 6124,Isha Marthi,,,female,
 6125,Leia Kao,,,female,
@@ -6182,7 +6182,6 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6295,Dhruv Bansal,Arizona,,male,8
 6296,Alexander Gu,Arizona,,male,8
 6297,Ethan Shell,Arizona,,male,8
-6298,William Tao,California,,male,8
 6299,Max Wang,California,,male,8
 6300,Elise Donaldson,Colorado,,female,7
 6301,Krish Goyal,Colorado,,male,8
