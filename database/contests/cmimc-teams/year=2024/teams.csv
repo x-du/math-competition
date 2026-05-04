@@ -1,10 +1,16 @@
-team_id,team_name,student_ids,state
-3,Florida Alligators,115,Florida
-6,Math School I,65,
-7,McLean HS A,23,Virginia
-8,Motown All-Stars (Mallstars),59,Michigan
-9,Pirates C,125,
-12,Texas Alpha,229,Texas
-13,blobheart = red panda,12,
-14,eeee,89,
-15,red panda = blobheart,123|132,
+team_id,team,student_ids,state
+1,Athemath Blobs,216,North Carolina
+2,blobheart = red panda,12|25,
+3,DMV Among Us Sigma,46,Texas
+4,eeee,86|89,Connecticut
+5,Florida Alligators,115|281,Florida
+6,Florida Beaches,40,Florida
+7,Lexington Delta,324,Massachusetts
+8,Math School I,65,Massachusetts
+9,McLean HS A,23,Virginia
+10,Motown All-Stars (Mallstars),59,Michigan
+11,Pirates C,125,New Jersey
+12,Poolesville Alpha,172,Maryland
+13,PRISMS Falcons,85|61|326|877,
+14,red panda = blobheart,34|123|132|398,
+15,Texas Alpha,229,Texas

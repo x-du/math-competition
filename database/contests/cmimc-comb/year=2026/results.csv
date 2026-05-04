@@ -1,52 +1,52 @@
 student_id,student_name,team,team_id,year,rank,score,mcp_rank
-10,Ruilin Wang,The Jigglypuff Invaded,1,2026,1,47.77,1
-8,Vincent Wang,Texas Ampere,2,2026,2,40.77,2
-21,David Fox,AlphaStar AIR,3,2026,3,38.08,3
-1481,Bohan Wang,PRISMS Falcons,4,2026,4,34.43,4
-29,Patrick Du,The Jolly Brouhaha,5,2026,5,32.17,5
-2154,Evan Goldman,aelfric_eden1434,6,2026,6,31.09,6.5
-262,Aryan Raj,the lone sigmas,7,2026,6,31.09,6.5
-34,Jiahe Liu,xor,8,2026,8,30.55,8.5
-229,Alexander Sun,Texas Ampere,2,2026,8,30.55,8.5
-31,Lewis Lau,MoCoSwaggaSquad,9,2026,10,25.18,10
-86,Vikram Sarkar,the lone sigmas,7,2026,Honorable Mention,,31
-2168,Atiksh Akunuri,aelfric_eden1434,6,2026,Honorable Mention,,31
-6271,Sejun Park,Phillips Academy A,10,2026,Honorable Mention,,31
-222,Yunbo Li,Potomac1,11,2026,Honorable Mention,,31
-6279,Leon Wu,PHS Blueberry,12,2026,Honorable Mention,,31
-43,Christopher Peng,Washington Gold,13,2026,Honorable Mention,,31
-69,Connor Leong,AlphaStar AIR,3,2026,Honorable Mention,,31
-313,Andrew Feng,PATiger2022,14,2026,Honorable Mention,,31
-23,Jeffrey Yin,Fairfax A,15,2026,Honorable Mention,,31
-254,Tarun Rapaka,Texas Ampere,2,2026,Honorable Mention,,31
-223,Edwin Zhao,Lexington Beta,16,2026,Honorable Mention,,31
-6280,Hans Zhong-Hong Chen,AlphaStar FIRE,17,2026,Honorable Mention,,31
-387,Royce Yao,xor,8,2026,Honorable Mention,,31
-266,Ethan Imanuel,the lone sigmas,7,2026,Honorable Mention,,31
-41,Eddy Zhang,addicts,18,2026,Honorable Mention,,31
-248,Shaheem Samsudeen,Texas Curie,19,2026,Honorable Mention,,31
-6270,Ming-Yi Tang,Phillips Academy A,10,2026,Honorable Mention,,31
-1795,Alex Tsagaan,AlphaStar FIRE,17,2026,Honorable Mention,,31
-38,Andy Lu,Random Math Team Blue,20,2026,Honorable Mention,,31
-768,Eric Chen,Texas Euler,21,2026,Honorable Mention,,31
-311,Tony Zhang,The Jigglypuff Invaded,1,2026,Honorable Mention,,31
-221,Anderson Hao,The Jolly Brouhaha,5,2026,Honorable Mention,,31
-1466,Jack Li,MathChicago,22,2026,Honorable Mention,,31
-77,Shunyao Yan,The Jolly Brouhaha,5,2026,Honorable Mention,,31
-320,Jeremy Yang,Maryland United,23,2026,Honorable Mention,,31
-323,Isaac Chan-Osborn,Texas Bernoulli,24,2026,Honorable Mention,,31
-4099,Vihaan Byahatti,Random Math Team Blue,20,2026,Honorable Mention,,31
-211,Chenghao Hu,Random Math Team Blue,20,2026,Honorable Mention,,31
-1555,Quang (Benny) Le,Georgia Mathletes,25,2026,Honorable Mention,,31
-216,Lingfei Tang,xor,8,2026,Honorable Mention,,31
-3056,Taison Scofield,Minnesota Gophers,26,2026,Honorable Mention,,31
-220,Luca Pieleanu,the lone sigmas,7,2026,Honorable Mention,,31
-849,Aiden Wei,Georgia Mathletes,25,2026,Honorable Mention,,31
+10,Ruilin Wang,The Jigglypuff Invaded,38,2026,1,47.77,1
+8,Vincent Wang,Texas Ampere,33,2026,2,40.77,2
+21,David Fox,AlphaStar AIR,4,2026,3,38.08,3
+1481,Bohan Wang,PRISMS Falcons,26,2026,4,34.43,4
+29,Patrick Du,The Jolly Brouhaha,39,2026,5,32.17,5
+2154,Evan Goldman,aelfric_eden1434,3,2026,6,31.09,6.5
+262,Aryan Raj,the lone sigmas,40,2026,6,31.09,6.5
+34,Jiahe Liu,xor,43,2026,8,30.55,8.5
+229,Alexander Sun,Texas Ampere,33,2026,8,30.55,8.5
+31,Lewis Lau,MoCoSwaggaSquad,19,2026,10,25.18,10
+86,Vikram Sarkar,the lone sigmas,40,2026,Honorable Mention,,31
+2168,Atiksh Akunuri,aelfric_eden1434,3,2026,Honorable Mention,,31
+6271,Sejun Park,Phillips Academy A,22,2026,Honorable Mention,,31
+222,Yunbo Li,Potomac1,25,2026,Honorable Mention,,31
+6279,Leon Wu,PHS Blueberry,24,2026,Honorable Mention,,31
+43,Christopher Peng,Washington Gold,42,2026,Honorable Mention,,31
+69,Connor Leong,AlphaStar AIR,4,2026,Honorable Mention,,31
+313,Andrew Feng,PATiger2022,21,2026,Honorable Mention,,31
+23,Jeffrey Yin,Fairfax A,8,2026,Honorable Mention,,31
+254,Tarun Rapaka,Texas Ampere,33,2026,Honorable Mention,,31
+223,Edwin Zhao,Lexington Beta,13,2026,Honorable Mention,,31
+6280,Hans Zhong-Hong Chen,AlphaStar FIRE,5,2026,Honorable Mention,,31
+387,Royce Yao,xor,43,2026,Honorable Mention,,31
+266,Ethan Imanuel,the lone sigmas,40,2026,Honorable Mention,,31
+41,Eddy Zhang,addicts,2,2026,Honorable Mention,,31
+248,Shaheem Samsudeen,Texas Curie,35,2026,Honorable Mention,,31
+6270,Ming-Yi Tang,Phillips Academy A,22,2026,Honorable Mention,,31
+1795,Alex Tsagaan,AlphaStar FIRE,5,2026,Honorable Mention,,31
+38,Andy Lu,Random Math Team Blue,28,2026,Honorable Mention,,31
+6812,Eric Chen,Texas Euler,36,2026,Honorable Mention,,31
+311,Tony Zhang,The Jigglypuff Invaded,38,2026,Honorable Mention,,31
+221,Anderson Hao,The Jolly Brouhaha,39,2026,Honorable Mention,,31
+1466,Jack Li,MathChicago,17,2026,Honorable Mention,,31
+77,Shunyao Yan,The Jolly Brouhaha,39,2026,Honorable Mention,,31
+320,Jeremy Yang,Maryland United,16,2026,Honorable Mention,,31
+323,Isaac Chan-Osborn,Texas Bernoulli,34,2026,Honorable Mention,,31
+4099,Vihaan Byahatti,Random Math Team Blue,28,2026,Honorable Mention,,31
+211,Chenghao Hu,Random Math Team Blue,28,2026,Honorable Mention,,31
+1555,Quang (Benny) Le,Georgia Mathletes,11,2026,Honorable Mention,,31
+216,Lingfei Tang,xor,43,2026,Honorable Mention,,31
+3056,Taison Scofield,Minnesota Gophers,18,2026,Honorable Mention,,31
+220,Luca Pieleanu,the lone sigmas,40,2026,Honorable Mention,,31
+849,Aiden Wei,Georgia Mathletes,11,2026,Honorable Mention,,31
 1544,Alexander Yu,RAINBOW UNICORNS,27,2026,Honorable Mention,,31
-274,Kai Lum,Random Math Team Blue,20,2026,Honorable Mention,,31
-5639,Evan Li,Georgia Mathletes,25,2026,Honorable Mention,,31
-20,Ashvin Sinha,Florida Alligators,28,2026,Honorable Mention,,31
-1015,Jincheng Feng,MoCoSwaggaSquad,9,2026,Honorable Mention,,31
-1471,Jason Yang,Lexington Beta,16,2026,Honorable Mention,,31
-809,Advait Joshi,addicts,18,2026,Honorable Mention,,31
-225,Ari Wachtel,Bergen 2,29,2026,Honorable Mention,,31
+274,Kai Lum,Random Math Team Blue,28,2026,Honorable Mention,,31
+5639,Evan Li,Georgia Mathletes,11,2026,Honorable Mention,,31
+20,Ashvin Sinha,Florida Alligators,9,2026,Honorable Mention,,31
+1015,Jincheng Feng,MoCoSwaggaSquad,19,2026,Honorable Mention,,31
+1471,Jason Yang,Lexington Beta,13,2026,Honorable Mention,,31
+809,Advait Joshi,addicts,2,2026,Honorable Mention,,31
+225,Ari Wachtel,Bergen 2,6,2026,Honorable Mention,,31

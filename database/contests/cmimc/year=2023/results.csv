@@ -1,11 +1,11 @@
-student_id,student_name,year,rank,total_score,mcp_rank
-881,Yichen Cedric Xiao,2023,1,126.87,1
-140,Isabella Zhu,2023,2,126.56,2
-123,Vivian Loh,2023,3,116.06,3
-92,Marvin Mao,2023,4,114.96,4
-159,Karthik Vedula,2023,5,113.91,5
-400,Kelin Zhu,2023,6,107.51,6
-89,Jordan Lefkowitz,2023,7,106.2,7
-148,Alan Vladimiroff,2023,8,106,8
-164,Steve Zhang,2023,9,100.98,9
-136,Jeffrey Chen,2023,10,99.85,10
+student_id,student_name,team,team_id,year,rank,total_score,mcp_rank
+881,Yichen Cedric Xiao,PRISMS Falcons,10,2023,1,126.87,1
+140,Isabella Zhu,The Jigglypuff Attacked,12,2023,2,126.56,2
+123,Vivian Loh,six-o-mode,11,2023,3,116.06,3
+92,Marvin Mao,BCA1,2,2023,4,114.96,4
+159,Karthik Vedula,Florida Alligators,3,2023,5,113.91,5
+400,Kelin Zhu,six-o-mode,11,2023,6,107.51,6
+89,Jordan Lefkowitz,xor,13,2023,7,106.2,7
+148,Alan Vladimiroff,The Jigglypuff Attacked,12,2023,8,106,8
+164,Steve Zhang,Gunn N95,4,2023,9,100.98,9
+136,Jeffrey Chen,six-o-mode,11,2023,10,99.85,10

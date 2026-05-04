@@ -1,27 +1,53 @@
-team_id,team_name,student_ids,state
-1,Lehigh Valley Fire,1|57,New Jersey
-2,Essential Academy1,52|54,Korea
-3,QingLong,53|55|61,China
-4,San Diego A1,2,California
-5,Texas Momentum A,46|56|67|80,Texas
-6,Thomas Jefferson High School for Science and Technology A,10|29|70|77|87,Virginia
-7,AlphaStar Academy AIR,9|21|25|58|81,California
-8,Motown All-Stars,47|59,Michigan
-9,BaiHu,60,China
-10,PEA Chestnuts,27|62|73,New Hampshire
-11,Random Math Team Blue,38|83,California
-12,Florida Alligators,20|32|45|72,Florida
-13,Utah Arches,4|76,Utah
-14,ORIGINAL,64,
-15,Lexington Alpha,35|65,Massachusetts
-16,Ohio ARML A,34,Ohio
-17,Southern California Areteem,68,California
-18,AlphaStar Academy FIRE,69,California
-19,MN gold,71,
-20,Think Team A,74,California
-21,St. Mark's School of Texas Team M,14|79,Texas
-22,nGnu Unscrambled,78,California
-23,Washington Gold 1,7|638,Washington
-24,IowaCity,82,Iowa
-25,PRISMS Falcons,85,New Jersey
-26,Connecticut Cyborgs,86,Connecticut
+team_id,team,student_ids,state
+1,121WA,22|348,Washington
+2,AlphaStar Academy AIR,9|21|25|58|81|90|331,California
+3,AlphaStar Academy FIRE,69|357|358,California
+4,Athemath Owls,328,Washington
+5,BaiHu,60|339,China
+6,BBMC-Math Delta,262,Virginia
+7,Cardigans,31,Maryland
+8,Connecticut Cyborgs,86,Connecticut
+9,dinglebinglers,12|343,North Carolina
+10,Essential Academy1,52|54,Korea
+11,Florida Alligators,20|32|40|45|72|299,Florida
+12,Florida Beaches,244,Florida
+13,Harker Omega,19|327,California
+14,Harker Sigma,332,California
+15,Individuals 1,334,New Jersey
+16,IowaCity,82,Iowa
+17,Lehigh Valley Fire,1|57|132|344,New Jersey
+18,Lexington Alpha,35|50|65|324,Massachusetts
+19,Lexington Beta,308,Massachusetts
+20,Mass ARML Stars,272,Massachusetts
+21,MN gold,71|352|363,Minnesota
+22,Motown All-Stars,47|59|329,Michigan
+23,nGnu Unscrambled,78|884,California
+24,Nittany Lions,345,Pennsylvania
+25,No Coast Best Coast,342,New York
+26,Ohio ARML A,34|362,Ohio
+27,Ontario Math Circles,335|360,"Ontario, Canada"
+28,ORIGINAL,64|355|356,New Jersey
+29,PATiger2022,340,Pennsylvania
+30,PEA Chestnuts,27|62|73|353,New Hampshire
+31,Pentagon Hexagon Oregon B,359,Oregon
+32,Phillips Academy 1778,97,Massachusetts
+33,Pi Pioneer Group 001,351,
+34,PRISMS Falcons,85|326,New Jersey
+35,QingLong,53|55|61|349,China
+36,Random Math Team Blue,38|83|211|365,California
+37,San Diego A1,2|28|361|366,California
+38,San Diego A2,338,California
+39,Southern California Areteem,68|330,California
+40,Spirit of Math School Team A,346,
+41,St. Mark's School of Texas Team M,14|79,Texas
+42,StoneCity 01,336,
+43,Texas Momentum A,46|56|67|80,Texas
+44,Texas Momentum B,364,Texas
+45,Think Team A,74|341,California
+46,Thomas Jefferson High School for Science and Technology A,10|29|70|77|87|279,Virginia
+47,Tin Man,307,New York
+48,Upstate New York Math Team,317|337,New York
+49,Utah Arches,4|76,Utah
+50,Washington Gold 1,7|205|303|325|638,Washington
+51,WWP A,354,New Jersey
+52,XuanWu,333,China

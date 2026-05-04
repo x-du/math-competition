@@ -1,51 +1,51 @@
 student_id,student_name,team,team_id,year,rank,score,mcp_rank
-7,Benjamin Fu,Washington Gold 1,1,2026,1,43.37,1
-2,Bryan Sicheng Guo,San Diego A1,2,2026,2,42.31,2
-1,Alexander Wang,LV Fire,3,2026,3,39.16,3
+7,Benjamin Fu,Washington Gold 1,47,2026,1,43.37,1
+2,Bryan Sicheng Guo,San Diego A1,38,2026,2,42.31,2
+1,Alexander Wang,LV Fire,22,2026,3,39.16,3
 9,Jonathan Du,AlphaStar Academy AIR,4,2026,4,39.08,4
-13,Michael Zhao,All Aces Dream,5,2026,5,32.74,5
-14,Nathan Liu,St. Mark's School of Texas Team M,6,2026,6,30.59,10
-3,Oron Wang,PEA Chestnuts,7,2026,6,30.59,10
-263,Jonathan Liu,Lexington Alpha,8,2026,6,30.59,10
-310,David Kim,Lexington Beta,9,2026,6,30.59,10
-244,Jacob Ronan Khohayting,Florida Alligators,10,2026,6,30.59,10
-17,Dylan Wang,AlphaStar Academy FIRE,11,2026,6,30.59,10
-374,Rui Gu,XuanWu,12,2026,6,30.59,10
-245,Corwin Eisenbeiss,Mad Hatter,13,2026,6,30.59,10
-6,Jefferson Tiger Zhou,MN gold,14,2026,6,30.59,10
-375,Kaden Chen,Mass ARML Moons,15,2026,15,28.38,15
-217,Sophia Jin,Mad Hatter,13,2026,16,27.32,16
-343,Jason Lee,dinglebinglers,16,2026,17,26.43,18
-46,Ray Zhao,All Aces Dream,5,2026,17,26.43,18
-376,LIU Andy Houjie,QingLong,17,2026,17,26.43,18
-24,Ruien Chen,Washington Gold 1,1,2026,20,26.37,20
-377,Xiaoran Han,San Diego A1,2,2026,21,26.31,21.5
-378,Daniel Jin,White Rabbit,18,2026,21,26.31,21.5
-27,Bolei Wang,PEA Chestnuts,7,2026,23,25.24,25.5
-35,William Hua,Lexington Alpha,8,2026,23,25.24,25.5
-226,George Paret,Florida Alligators,10,2026,23,25.24,25.5
-10,Ruilin Wang,Thomas Jefferson High School for Science and Technology A,19,2026,23,25.24,25.5
-379,Zhenghua Xie,San Diego A2,20,2026,23,25.24,25.5
-380,Chang Lu,XuanWu,12,2026,23,25.24,25.5
-38,Andy Lu,Random Math Team Blue,21,2026,29,24.17,39
-8,Vincent Wang,All Aces Dream,5,2026,29,24.17,39
-4,Liam Reddy,Utah Arches,22,2026,29,24.17,39
-262,Aryan Raj,Connecticut Cyborgs,23,2026,29,24.17,39
-314,Neil Peter,LV Fire,3,2026,29,24.17,39
-381,Albert Lu,PEA Chestnuts,7,2026,29,24.17,39
-242,Adam Ge,Lexington Alpha,8,2026,29,24.17,39
-50,Yunzhe Bai,Lexington Alpha,8,2026,29,24.17,39
-325,Amy Cui,Washington Gold 1,1,2026,29,24.17,39
-43,Christopher Peng,Washington Gold 1,1,2026,29,24.17,39
-382,Jack Wang,Washington Gold 2,24,2026,29,24.17,39
-22,Ian Rui,Washington Gold 2,24,2026,29,24.17,39
-383,Laura Wang,121WA,25,2026,29,24.17,39
-229,Alexander Sun,Texas Momentum A,26,2026,29,24.17,39
-16,James Stewart,Texas Momentum B,27,2026,29,24.17,39
-19,Vihaan Gupta,Harker Omega,28,2026,29,24.17,39
-28,Rohan Nayak Mallick,San Diego A1,2,2026,29,24.17,39
-384,Perry Zhuo-Yan Dai,Leading Aces Academy 1,29,2026,29,24.17,39
-3661,Ryan Li,Leading Aces Academy 1,29,2026,29,24.17,39
+13,Michael Zhao,All Aces Dream,3,2026,5,32.74,5
+14,Nathan Liu,St. Mark's School of Texas Team M,40,2026,6,30.59,10
+3,Oron Wang,PEA Chestnuts,34,2026,6,30.59,10
+263,Jonathan Liu,Lexington Alpha,20,2026,6,30.59,10
+310,David Kim,Lexington Beta,21,2026,6,30.59,10
+244,Jacob Ronan Khohayting,Florida Alligators,14,2026,6,30.59,10
+17,Dylan Wang,AlphaStar Academy FIRE,5,2026,6,30.59,10
+374,Rui Gu,XuanWu,51,2026,6,30.59,10
+245,Corwin Eisenbeiss,Mad Hatter,24,2026,6,30.59,10
+6,Jefferson Tiger Zhou,MN gold,28,2026,6,30.59,10
+375,Kaden Chen,Mass ARML Moons,26,2026,15,28.38,15
+217,Sophia Jin,Mad Hatter,24,2026,16,27.32,16
+343,Jason Lee,dinglebinglers,13,2026,17,26.43,18
+46,Ray Zhao,All Aces Dream,3,2026,17,26.43,18
+376,LIU Andy Houjie,QingLong,36,2026,17,26.43,18
+24,Ruien Chen,Washington Gold 1,47,2026,20,26.37,20
+377,Xiaoran Han,San Diego A1,38,2026,21,26.31,21.5
+378,Daniel Jin,White Rabbit,50,2026,21,26.31,21.5
+27,Bolei Wang,PEA Chestnuts,34,2026,23,25.24,25.5
+35,William Hua,Lexington Alpha,20,2026,23,25.24,25.5
+226,George Paret,Florida Alligators,14,2026,23,25.24,25.5
+10,Ruilin Wang,Thomas Jefferson High School for Science and Technology A,44,2026,23,25.24,25.5
+379,Zhenghua Xie,San Diego A2,39,2026,23,25.24,25.5
+380,Chang Lu,XuanWu,51,2026,23,25.24,25.5
+38,Andy Lu,Random Math Team Blue,37,2026,29,24.17,39
+8,Vincent Wang,All Aces Dream,3,2026,29,24.17,39
+4,Liam Reddy,Utah Arches,46,2026,29,24.17,39
+262,Aryan Raj,Connecticut Cyborgs,11,2026,29,24.17,39
+314,Neil Peter,LV Fire,22,2026,29,24.17,39
+381,Albert Lu,PEA Chestnuts,34,2026,29,24.17,39
+242,Adam Ge,Lexington Alpha,20,2026,29,24.17,39
+50,Yunzhe Bai,Lexington Alpha,20,2026,29,24.17,39
+325,Amy Cui,Washington Gold 1,47,2026,29,24.17,39
+43,Christopher Peng,Washington Gold 1,47,2026,29,24.17,39
+382,Jack Wang,Washington Gold 2,48,2026,29,24.17,39
+22,Ian Rui,Washington Gold 2,48,2026,29,24.17,39
+383,Laura Wang,121WA,2,2026,29,24.17,39
+229,Alexander Sun,Texas Momentum A,41,2026,29,24.17,39
+16,James Stewart,Texas Momentum B,42,2026,29,24.17,39
+19,Vihaan Gupta,Harker Omega,16,2026,29,24.17,39
+28,Rohan Nayak Mallick,San Diego A1,38,2026,29,24.17,39
+384,Perry Zhuo-Yan Dai,Leading Aces Academy 1,19,2026,29,24.17,39
+3661,Ryan Li,Leading Aces Academy 1,19,2026,29,24.17,39
 12,Alan Cheng,NC School of Science & Math - Team alpha,30,2026,29,24.17,39
-30,Eric Dai,Individuals 1,31,2026,29,24.17,39
-42,Benjamin Song,Upstate New York Math Team,32,2026,50,23.03,50
+30,Eric Dai,Individuals 1,17,2026,29,24.17,39
+42,Benjamin Song,Upstate New York Math Team,45,2026,50,23.03,50

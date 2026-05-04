@@ -1,11 +1,11 @@
 student_id,student_name,team,team_id,year,rank,score,mcp_rank
-89,Jordan Lefkowitz,eeee,1,2024,1,35.82,1
-34,Jiahe Liu,red panda = blobheart,2,2024,2,30.43,2
-59,Henry Jiang,Motown All-Stars (Mallstars),3,2024,3,30.39,3
-123,Vivian Loh,red panda = blobheart,2,2024,4,29.24,5
-23,Jeffrey Yin,McLean HS A,4,2024,4,29.24,5
-86,Vikram Sarkar,eeee,1,2024,4,29.24,5
-46,Ray Zhao,DMV Among Us Sigma,5,2024,7,27.17,8.5
-324,Benjamin Yin,Lexington Delta,6,2024,7,27.17,8.5
-281,Andrew Xing,Florida Alligators,7,2024,7,27.17,8.5
-172,Sumedh Vangara,Poolesville Alpha,8,2024,7,27.17,8.5
+89,Jordan Lefkowitz,eeee,4,2024,1,35.82,1
+34,Jiahe Liu,red panda = blobheart,14,2024,2,30.43,2
+59,Henry Jiang,Motown All-Stars (Mallstars),10,2024,3,30.39,3
+123,Vivian Loh,red panda = blobheart,14,2024,4,29.24,5
+23,Jeffrey Yin,McLean HS A,9,2024,4,29.24,5
+86,Vikram Sarkar,eeee,4,2024,4,29.24,5
+46,Ray Zhao,DMV Among Us Sigma,3,2024,7,27.17,8.5
+324,Benjamin Yin,Lexington Delta,7,2024,7,27.17,8.5
+281,Andrew Xing,Florida Alligators,5,2024,7,27.17,8.5
+172,Sumedh Vangara,Poolesville Alpha,12,2024,7,27.17,8.5

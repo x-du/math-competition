@@ -1,19 +1,22 @@
-team_id,team_name,student_ids,state
-1,Texas Momentum A,173,Texas
-2,Cowconuts,181|1179,California
-3,Random Math,117|169,California
-4,Math Advance Team C,2512,
-5,iodgvypribdt,1154,California
-6,MA Boys,1166,Florida
-7,Glenbrook North,2513,Illinois
-8,Bulgaria 1,2514,Bulgaria
-9,Chair,172,Maryland
-10,Tin Man,175,New York
+team_id,team,student_ids,state
+1,Bulgaria 1,2514,Bulgaria
+2,Chair,172,Maryland
+3,Cowconuts,181|880|1179,
+4,Florida Alligators,36|159,
+5,Glenbrook North,2513,Illinois
+6,iodgvypribdt,1154,California
+7,Lexington Alpha,144,Massachusetts
+8,MA Boys,1166,Florida
+9,Math Advance Team A,300,New Jersey
+10,Math Advance Team C,2512,
 11,MN Gold,2515,Minnesota
-12,PRISMS Falcons,1105,New Jersey
-13,Random Math - Team B,1985,Arizona
-14,ur mom,466,Alabama
-15,Motown All-Stars,95|2516,Michigan
-16,Math Advance Team A,300,New Jersey
-17,Florida Alligators,159,Florida
-18,Saratoga 1,436,California
+12,Motown All-Stars,95|119|2516,Michigan
+13,PRISMS Falcons,1105,New Jersey
+14,PRISMS Young Falcons,2517,New Jersey
+15,Random Math,117|169|454,California
+16,Random Math - Team B,1985,Arizona
+17,Saratoga 1,436,California
+18,Texas Momentum A,173,Texas
+19,Tin Man,175,New York
+20,Tour Epines 1,155,California
+21,ur mom,466,Alabama

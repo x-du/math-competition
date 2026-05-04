@@ -1,57 +1,57 @@
 student_id,student_name,team,team_id,year,rank,score,mcp_rank
-20,Ashvin Sinha,Florida Alligators,1,2026,1,39.16,1
-21,David Fox,AlphaStar Academy AIR,2,2026,2,34.88,2
+20,Ashvin Sinha,Florida Alligators,14,2026,1,39.16,1
+21,David Fox,AlphaStar Academy AIR,4,2026,2,34.88,2
 8,Vincent Wang,All Aces Dream,3,2026,3,34.73,3
-18,Bowen Deng,QingLong,4,2026,4,33.81,4
-37,Grant Blitz,PEA Chestnuts,5,2026,5,33.67,5.5
-12,Alan Cheng,NC School of Science & Math - Team alpha,6,2026,5,33.67,5.5
-1,Alexander Wang,LV Fire,7,2026,7,32.74,8.5
-10,Ruilin Wang,Thomas Jefferson High School for Science and Technology A,8,2026,7,32.74,8.5
-385,Ali Zaman,AlphaStar Academy AIR,2,2026,7,32.74,8.5
-225,Ari Wachtel,Bergen County Academies Team 1,9,2026,7,32.74,8.5
-23,Jeffrey Yin,Bonnie Branch Math Circle Delta,10,2026,11,31.59,14
-3,Oron Wang,PEA Chestnuts,5,2026,11,31.59,14
-11,Dou Lai,No Coast Best Coast,11,2026,11,31.59,14
-22,Ian Rui,Washington Gold 2,12,2026,11,31.59,14
-25,Rohan Garg,AlphaStar Academy AIR,2,2026,11,31.59,14
-28,Rohan Nayak Mallick,San Diego A1,13,2026,11,31.59,14
-5,Tianyi Li,Leading Aces Academy 1,14,2026,11,31.59,14
-4,Liam Reddy,Utah Arches,15,2026,18,28.52,18.5
-289,Kyle Wu,Mad Hatter,16,2026,18,28.52,18.5
-34,Jiahe Liu,Ohio ARML B,17,2026,20,28.46,20
-7,Benjamin Fu,Washington Gold 1,18,2026,21,28.32,21
-15,Jiayu Ellie Su,Phillips Academy 1778,19,2026,22,27.49,22
-45,Aaryan Vaishya,Florida Alligators,1,2026,23,27.39,24
-386,Stephen Cui,West Best,20,2026,23,27.39,24
-387,Royce Yao,Desert Storm 2025,21,2026,23,27.39,24
-388,Aaron Smith,LV Ice,22,2026,26,27.37,27
-49,Amogh Akella,Texas Momentum A,23,2026,26,27.37,27
-2,Bryan Sicheng Guo,San Diego A1,13,2026,26,27.37,27
-31,Lewis Lau,Cardigans,24,2026,29,27.31,29.5
-50,Yunzhe Bai,Lexington Alpha,25,2026,29,27.31,29.5
-389,Keshav Karumbunathan,Oregon HMMT A,26,2026,31,26.24,31
-390,ZHANGJINKAI,QingLong,4,2026,32,25.42,32
-373,Patrick Sun,121WA,27,2026,33,25.28,33
-391,Watson Houck,dinglebinglers,28,2026,34,25.17,45
-318,David Yu,Maryland United,29,2026,34,25.17,45
-392,Justin Guo,Kentucky Math Circle,30,2026,34,25.17,45
-14,Nathan Liu,St. Mark's School of Texas Team M,31,2026,34,25.17,45
+18,Bowen Deng,QingLong,36,2026,4,33.81,4
+37,Grant Blitz,PEA Chestnuts,34,2026,5,33.67,5.5
+12,Alan Cheng,NC School of Science & Math - Team alpha,30,2026,5,33.67,5.5
+1,Alexander Wang,LV Fire,22,2026,7,32.74,8.5
+10,Ruilin Wang,Thomas Jefferson High School for Science and Technology A,44,2026,7,32.74,8.5
+385,Ali Zaman,AlphaStar Academy AIR,4,2026,7,32.74,8.5
+225,Ari Wachtel,Bergen County Academies Team 1,8,2026,7,32.74,8.5
+23,Jeffrey Yin,Bonnie Branch Math Circle Delta,9,2026,11,31.59,14
+3,Oron Wang,PEA Chestnuts,34,2026,11,31.59,14
+11,Dou Lai,No Coast Best Coast,31,2026,11,31.59,14
+22,Ian Rui,Washington Gold 2,48,2026,11,31.59,14
+25,Rohan Garg,AlphaStar Academy AIR,4,2026,11,31.59,14
+28,Rohan Nayak Mallick,San Diego A1,38,2026,11,31.59,14
+5,Tianyi Li,Leading Aces Academy 1,19,2026,11,31.59,14
+4,Liam Reddy,Utah Arches,46,2026,18,28.52,18.5
+289,Kyle Wu,Mad Hatter,24,2026,18,28.52,18.5
+34,Jiahe Liu,Ohio ARML B,32,2026,20,28.46,20
+7,Benjamin Fu,Washington Gold 1,47,2026,21,28.32,21
+15,Jiayu Ellie Su,Phillips Academy 1778,35,2026,22,27.49,22
+45,Aaryan Vaishya,Florida Alligators,14,2026,23,27.39,24
+386,Stephen Cui,West Best,49,2026,23,27.39,24
+387,Royce Yao,Desert Storm 2025,12,2026,23,27.39,24
+388,Aaron Smith,LV Ice,23,2026,26,27.37,27
+49,Amogh Akella,Texas Momentum A,41,2026,26,27.37,27
+2,Bryan Sicheng Guo,San Diego A1,38,2026,26,27.37,27
+31,Lewis Lau,Cardigans,10,2026,29,27.31,29.5
+50,Yunzhe Bai,Lexington Alpha,20,2026,29,27.31,29.5
+389,Keshav Karumbunathan,Oregon HMMT A,33,2026,31,26.24,31
+390,ZHANGJINKAI,QingLong,36,2026,32,25.42,32
+373,Patrick Sun,121WA,2,2026,33,25.28,33
+391,Watson Houck,dinglebinglers,13,2026,34,25.17,45
+318,David Yu,Maryland United,25,2026,34,25.17,45
+392,Justin Guo,Kentucky Math Circle,18,2026,34,25.17,45
+14,Nathan Liu,St. Mark's School of Texas Team M,40,2026,34,25.17,45
 13,Michael Zhao,All Aces Dream,3,2026,34,25.17,45
-393,Adam Henry Smith,LV Ice,22,2026,34,25.17,45
-48,Varun Gadi,Georgia Mathletes A,32,2026,34,25.17,45
-29,Patrick Du,Thomas Jefferson High School for Science and Technology A,8,2026,34,25.17,45
-77,Shunyao Yan,Thomas Jefferson High School for Science and Technology A,8,2026,34,25.17,45
-284,Alexander Liu,Thomas Jefferson High School for Science and Technology A,8,2026,34,25.17,45
-43,Christopher Peng,Washington Gold 1,18,2026,34,25.17,45
-394,Alexander Yang,121WA,27,2026,34,25.17,45
-16,James Stewart,Texas Momentum B,33,2026,34,25.17,45
-19,Vihaan Gupta,Harker Omega,34,2026,34,25.17,45
-323,Isaac Chan-Osborn,MathChicago,35,2026,34,25.17,45
-395,Boyou Huang,MathChicago,35,2026,34,25.17,45
-9,Jonathan Du,AlphaStar Academy AIR,2,2026,34,25.17,45
-3661,Ryan Li,Leading Aces Academy 1,14,2026,34,25.17,45
-359,Kai Leon Yamashita,Oregon HMMT A,26,2026,34,25.17,45
-246,Vincent Pirozzo,Motown All-Stars-A,36,2026,34,25.17,45
-352,Eric Ding,MN gold,37,2026,34,25.17,45
-6,Jefferson Tiger Zhou,MN gold,37,2026,34,25.17,45
-396,Elena Ahn Beckman,Areteem Institute,38,2026,34,25.17,45
+393,Adam Henry Smith,LV Ice,23,2026,34,25.17,45
+48,Varun Gadi,Georgia Mathletes A,15,2026,34,25.17,45
+29,Patrick Du,Thomas Jefferson High School for Science and Technology A,44,2026,34,25.17,45
+77,Shunyao Yan,Thomas Jefferson High School for Science and Technology A,44,2026,34,25.17,45
+284,Alexander Liu,Thomas Jefferson High School for Science and Technology A,44,2026,34,25.17,45
+43,Christopher Peng,Washington Gold 1,47,2026,34,25.17,45
+394,Alexander Yang,121WA,2,2026,34,25.17,45
+16,James Stewart,Texas Momentum B,42,2026,34,25.17,45
+19,Vihaan Gupta,Harker Omega,16,2026,34,25.17,45
+323,Isaac Chan-Osborn,MathChicago,27,2026,34,25.17,45
+395,Boyou Huang,MathChicago,27,2026,34,25.17,45
+9,Jonathan Du,AlphaStar Academy AIR,4,2026,34,25.17,45
+3661,Ryan Li,Leading Aces Academy 1,19,2026,34,25.17,45
+359,Kai Leon Yamashita,Oregon HMMT A,33,2026,34,25.17,45
+246,Vincent Pirozzo,Motown All-Stars-A,29,2026,34,25.17,45
+352,Eric Ding,MN gold,28,2026,34,25.17,45
+6,Jefferson Tiger Zhou,MN gold,28,2026,34,25.17,45
+396,Elena Ahn Beckman,Areteem Institute,6,2026,34,25.17,45

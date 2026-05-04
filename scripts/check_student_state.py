@@ -8,7 +8,7 @@ or **`bmt-teams`** rows whose **`school`** is **`Think Academy Online`**):
 
   1. On the same team, two or more students with non-empty states have
      different states (exceptions: Connecticut + New York; Connecticut + New Jersey;
-     Maryland + Virginia; Arizona + California; California + Nevada;
+     Maryland + Virginia + District of Columbia; Arizona + California; California + Nevada;
      New Jersey + Pennsylvania + New York together;
      any roster that includes **`State Department`** (mixable with other states); or **`teams.csv` team `state`
      is **`China`** allowing mixed member geography). If **`teams.csv`
@@ -50,7 +50,7 @@ STUDENTS_CSV = DATABASE / "students" / "students.csv"
 COMPATIBLE_STATE_GROUPS: tuple[frozenset[str], ...] = (
     frozenset({"Connecticut", "New York"}),
     frozenset({"Connecticut", "New Jersey"}),
-    frozenset({"Maryland", "Virginia"}),
+    frozenset({"Maryland", "Virginia", "District of Columbia"}),
     frozenset({"Arizona", "California"}),
     frozenset({"California", "Nevada"}),
     frozenset({"New Jersey", "Pennsylvania", "New York"}),
@@ -122,9 +122,9 @@ def iter_teams_roots() -> list[Path]:
     return roots
 
 
-def load_student_states() -> dict[str, str]:
-    """student_id str -> state str (may be empty)."""
-    out: dict[str, str] = {}
+def load_student_records() -> dict[str, tuple[str, str]]:
+    """student_id -> (state, student_name). Both strings may be empty."""
+    out: dict[str, tuple[str, str]] = {}
     if not STUDENTS_CSV.is_file():
         return out
     with open(STUDENTS_CSV, newline="", encoding="utf-8") as f:
@@ -132,8 +132,18 @@ def load_student_states() -> dict[str, str]:
             sid = str(row.get("student_id") or "").strip()
             if not sid:
                 continue
-            out[sid] = (row.get("state") or "").strip()
+            st = (row.get("state") or "").strip()
+            name = (row.get("student_name") or "").strip()
+            out[sid] = (st, name)
     return out
+
+
+def lookup_student(records: dict[str, tuple[str, str]], sid: str) -> tuple[str, str]:
+    """Returns (state, display_name) for roster lines."""
+    if sid not in records:
+        return "", "(not in students.csv)"
+    st, nm = records[sid]
+    return st, (nm if nm else "(no name)")
 
 
 def iter_team_rows(teams_csv: Path):
@@ -147,10 +157,36 @@ def sid_sort_key(sid: str) -> tuple[int, int | str]:
     return (1, sid)
 
 
+def _format_student_lines(per_student: list[tuple[str, str, str]]) -> list[str]:
+    lines: list[str] = []
+    for sid, st, display_name in sorted(per_student, key=lambda t: sid_sort_key(t[0])):
+        lines.append(f"    {sid}: {display_name} - {st or '(empty)'}")
+    return lines
+
+
+def format_warning_block(
+    prefix: str,
+    team_id: str,
+    summary: str,
+    *,
+    meta_lines: list[str] | None = None,
+    per_student: list[tuple[str, str, str]] | None = None,
+) -> str:
+    """Multi-line warning for stderr: blank line separator, location line, summary, optional meta, student list."""
+    out: list[str] = ["", f"WARNING [{prefix}] team_id={team_id}", summary]
+    if meta_lines:
+        for m in meta_lines:
+            out.append(f"  {m}")
+    if per_student:
+        out.append("  Students:")
+        out.extend(_format_student_lines(per_student))
+    return "\n".join(out)
+
+
 def check_year(
     teams_root_name: str,
     teams_csv: Path,
-    student_state: dict[str, str],
+    student_records: dict[str, tuple[str, str]],
 ) -> list[str]:
     warnings: list[str] = []
     prefix = f"{teams_root_name}/{teams_csv.parent.name}"
@@ -166,7 +202,7 @@ def check_year(
         if not sids:
             continue
 
-        team_name = (row.get("team_name") or "").strip()
+        team_name = (row.get("team_name") or row.get("team") or "").strip()
         if (
             is_individuals_team(team_name)
             or skip_state_checks_for_team_name(team_name)
@@ -174,20 +210,17 @@ def check_year(
         ):
             continue
 
-        per_student: list[tuple[str, str]] = []
+        per_student: list[tuple[str, str, str]] = []
         for sid in sids:
-            st = student_state.get(sid, "")
-            per_student.append((sid, st))
+            st, display_name = lookup_student(student_records, sid)
+            per_student.append((sid, st, display_name))
 
-        non_empty = {st for _, st in per_student if st}
-        empty_sids = [sid for sid, st in per_student if not st]
-        detail = ", ".join(
-            f"{sid}={st or '(empty)'}" for sid, st in sorted(per_student, key=lambda t: sid_sort_key(t[0]))
-        )
+        non_empty = {st for _, st, _ in per_student if st}
+        empty_sids = [sid for sid, st, _ in per_student if not st]
 
         # Roster: 2+ distinct member states. If team row has a state, allow unknown member
         # states to skip this; if team row has no state, still warn (conflict is visible).
-        # Skip when all states fall in an allowed group (CT/NY, CT/NJ, MD/VA, NJ/PA/NY),
+        # Skip when all states fall in an allowed group (CT/NY, CT/NJ, MD/VA/DC, NJ/PA/NY),
         # roster includes State Department (mixable with other states),
         # or team row is China (mixed provinces / registrants OK).
         multi_bad = (
@@ -198,9 +231,15 @@ def check_year(
             and team_state != STATE_DEPARTMENT
         )
         if multi_bad:
-            ts = f" teams.csv state={team_state!r}" if team_state else ""
+            meta = [f"teams.csv state: {team_state!r}" if team_state else "teams.csv state: (empty)"]
             warnings.append(
-                f"WARNING [{prefix} team_id={team_id}]: roster members have different states:{ts} {detail}"
+                format_warning_block(
+                    prefix,
+                    team_id,
+                    "Roster members have different states.",
+                    meta_lines=meta,
+                    per_student=per_student,
+                )
             )
 
         if not team_state:
@@ -208,7 +247,13 @@ def check_year(
 
         if len(non_empty) == 0:
             warnings.append(
-                f"WARNING [{prefix} team_id={team_id}]: teams.csv state={team_state!r} but no student has state in students.csv: {detail}"
+                format_warning_block(
+                    prefix,
+                    team_id,
+                    "teams.csv lists a state, but no student on this team has a state in students.csv.",
+                    meta_lines=[f"teams.csv state: {team_state!r}"],
+                    per_student=per_student,
+                )
             )
             continue
 
@@ -216,13 +261,26 @@ def check_year(
             roster_state = next(iter(non_empty))
             if not team_row_compatible_with_roster_state(team_state, roster_state):
                 warnings.append(
-                    f"WARNING [{prefix} team_id={team_id}]: teams.csv state={team_state!r} "
-                    f"but student state is {roster_state!r}: {detail}"
+                    format_warning_block(
+                        prefix,
+                        team_id,
+                        f"teams.csv state {team_state!r} does not match roster state {roster_state!r}.",
+                        meta_lines=None,
+                        per_student=per_student,
+                    )
                 )
             elif empty_sids:
                 warnings.append(
-                    f"WARNING [{prefix} team_id={team_id}]: teams.csv state={team_state!r} matches roster, "
-                    f"but some students lack state in students.csv ({','.join(empty_sids)}): {detail}"
+                    format_warning_block(
+                        prefix,
+                        team_id,
+                        "teams.csv state matches the only known roster state, but some students still lack state in students.csv.",
+                        meta_lines=[
+                            f"teams.csv / roster state: {team_state!r}",
+                            f"student_id with no state: {', '.join(empty_sids)}",
+                        ],
+                        per_student=per_student,
+                    )
                 )
 
     return warnings
@@ -230,7 +288,7 @@ def check_year(
 
 def collect_warnings(
     teams_root: Path,
-    student_state: dict[str, str],
+    student_records: dict[str, tuple[str, str]],
     years_filter: frozenset[str] | None,
 ) -> list[str]:
     all_w: list[str] = []
@@ -243,7 +301,7 @@ def collect_warnings(
         teams_csv = year_dir / "teams.csv"
         if not teams_csv.is_file():
             continue
-        all_w.extend(check_year(teams_root.name, teams_csv, student_state))
+        all_w.extend(check_year(teams_root.name, teams_csv, student_records))
     return all_w
 
 
@@ -295,13 +353,13 @@ def main() -> int:
             print(f"ERROR: no *-teams directories under {CONTESTS_DIR}", file=sys.stderr)
             return 2
 
-    student_state = load_student_states()
-    if not student_state and STUDENTS_CSV.is_file():
+    student_records = load_student_records()
+    if not student_records and STUDENTS_CSV.is_file():
         print(f"WARNING: no rows loaded from {STUDENTS_CSV}", file=sys.stderr)
 
     all_warnings: list[str] = []
     for tr in roots:
-        all_warnings.extend(collect_warnings(tr, student_state, years_filter))
+        all_warnings.extend(collect_warnings(tr, student_records, years_filter))
 
     year_suffix = (
         f" [only year={','.join(sorted(years_filter))}]" if years_filter else ""
@@ -318,8 +376,9 @@ def main() -> int:
             )
         return 0
 
-    for line in all_warnings:
-        print(line, file=sys.stderr)
+    for block in all_warnings:
+        print(block, file=sys.stderr)
+    print("", file=sys.stderr)
     print(f"Total warnings: {len(all_warnings)}", file=sys.stderr)
     return 1
 

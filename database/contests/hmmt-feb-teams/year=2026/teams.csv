@@ -1,32 +1,52 @@
-team_id,team_name,student_ids,state
-1,LV Fire,1|41,New Jersey
-2,San Diego A1,2|28,California
-3,PEA Chestnuts,3|27|37,New Hampshire
-4,Utah Arches,4,Utah
-5,Leading Aces Academy 1,5|3661,Massachusetts
-6,MN gold,6,Minnesota
-7,Washington Gold 1,7|24|43,Washington
-8,All Aces Dream,8|13|46,Texas
-9,AlphaStar Academy AIR,9|21|25,California
-10,Thomas Jefferson High School for Science and Technology A,10|29,Virginia
-11,No Coast Best Coast,11,Illinois
-12,NC School of Science & Math - Team alpha,12,North Carolina
-13,St. Mark's School of Texas Team M,14,Texas
-14,Phillips Academy 1778,15|36,Massachusetts
-15,Texas Momentum B,16,Texas
-16,AlphaStar Academy FIRE,17,California
-17,QingLong,18,China
-18,Harker Omega,19,California
-19,Florida Alligators,20|32|40|45,Florida
-20,Washington Gold 2,22,Washington
-21,Bonnie Branch Math Circle Delta,23,Maryland
-22,Individuals 1,30,
-23,Cardigans,31,Maryland
-24,Texas Momentum A,33|44|49,Texas
-25,Ohio ARML B,34,Ohio
-26,Lexington Alpha,35|50,Massachusetts
-27,Random Math Team Blue,38,California
-28,121NH,39,New Hampshire
-29,Upstate New York Math Team,42,New York
-30,Motown All-Stars-A,47,Michigan
-31,Georgia Mathletes A,48,Georgia
+team_id,team,student_ids,state
+1,121NH,39,New Hampshire
+2,121WA,373|383|394,Washington
+3,All Aces Dream,8|13|46,Texas
+4,AlphaStar Academy AIR,9|21|25|69|385,California
+5,AlphaStar Academy FIRE,17,California
+6,Areteem Institute,396,California
+7,Austin Math Team A,369,Texas
+8,Bergen County Academies Team 1,225,New Jersey
+9,Bonnie Branch Math Circle Delta,23|252,Maryland
+10,Cardigans,31,Maryland
+11,Connecticut Cyborgs,204|262,Connecticut
+12,Desert Storm 2025,387,Arizona
+13,dinglebinglers,343|391,North Carolina
+14,Florida Alligators,20|32|40|45|226|244,Florida
+15,Georgia Mathletes A,48|371,Georgia
+16,Harker Omega,19|238,California
+17,Individuals 1,30,New Jersey
+18,Kentucky Math Circle,392,Tennessee
+19,Leading Aces Academy 1,5|384|3661,Massachusetts
+20,Lexington Alpha,35|50|242|263,Massachusetts
+21,Lexington Beta,310,Massachusetts
+22,LV Fire,1|41|314,New Jersey
+23,LV Ice,388|393,New Jersey
+24,Mad Hatter,217|245|289|293,New York
+25,Maryland United,318,Maryland
+26,Mass ARML Moons,375,Massachusetts
+27,MathChicago,323|395,Illinois
+28,MN gold,6|352,Minnesota
+29,Motown All-Stars-A,47|246,Michigan
+30,NC School of Science & Math - Team alpha,12,North Carolina
+31,No Coast Best Coast,11|370,Illinois
+32,Ohio ARML B,34|236,Ohio
+33,Oregon HMMT A,359|389,Oregon
+34,PEA Chestnuts,3|27|37|62|381,New Hampshire
+35,Phillips Academy 1778,15|36,Massachusetts
+36,QingLong,18|376|390,China
+37,Random Math Team Blue,38,California
+38,San Diego A1,2|28|366|377,California
+39,San Diego A2,368|379,California
+40,St. Mark's School of Texas Team M,14,Texas
+41,Texas Momentum A,33|44|49|229,Texas
+42,Texas Momentum B,16|367,Texas
+43,Think Math A,372,California
+44,Thomas Jefferson High School for Science and Technology A,10|29|77|284,Virginia
+45,Upstate New York Math Team,42,New York
+46,Utah Arches,4,Utah
+47,Washington Gold 1,7|24|43|325,Washington
+48,Washington Gold 2,22|382,Washington
+49,West Best,386,Washington
+50,White Rabbit,378,New York
+51,XuanWu,374|380,China

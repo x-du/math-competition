@@ -1,11 +1,11 @@
-student_id,student_name,year,team_name,team_id,rank,total_score,mcp_rank
-173,Luke Robitaille,2022,Texas Momentum A,1,1,67,1
-1105,Yichen Xiao,2022,PRISMS Falcons,2,2,62.53,2
-36,Jialai She,2022,Florida Alligators,3,3,53.87,3.5
-2514,Jasen Penchev,2022,Bulgaria 1,4,3,53.87,3.5
-2516,Shreyas Shrivastava,2022,Motown All-Stars,5,5,53,5
-2515,Linden Lee,2022,MN Gold,6,6,48.2,6
-169,Nilay Mishra,2022,Random Math,7,7,47.14,8
-181,Raymond Feng,2022,Cowconuts,8,7,47.14,8
-175,Rishabh Das,2022,Tin Man,9,7,47.14,8
-144,Huaye Lin,2022,Lexington Alpha,10,10,46.69,10
+student_id,student_name,team,team_id,year,rank,total_score,mcp_rank
+173,Luke Robitaille,Texas Momentum A,18,2022,1,67,1
+1105,Yichen Xiao,PRISMS Falcons,13,2022,2,62.53,2
+36,Jialai She,Florida Alligators,4,2022,3,53.87,3.5
+2514,Jasen Penchev,Bulgaria 1,1,2022,3,53.87,3.5
+2516,Shreyas Shrivastava,Motown All-Stars,12,2022,5,53,5
+2515,Linden Lee,MN Gold,11,2022,6,48.2,6
+169,Nilay Mishra,Random Math,15,2022,7,47.14,8
+181,Raymond Feng,Cowconuts,3,2022,7,47.14,8
+175,Rishabh Das,Tin Man,19,2022,7,47.14,8
+144,Huaye Lin,Lexington Alpha,7,2022,10,46.69,10

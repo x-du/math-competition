@@ -21,7 +21,7 @@ student_id,team_name,team_id,student_name,year,division,rank,score,p1,p2,p3,p4,p
 2186,Sierra Canyon School,19,Thomas McCurley,2022,B,20,4.564,1,0,0,0,0,1,0,0,21.5
 2317,Just Woo It,12,Alice Xie,2022,B,20,4.564,1,0,0,0,0,1,0,0,21.5
 445,MHSProfessionalJobbers,14,Jeffrey Xu,2022,B,20,4.564,1,0,0,0,0,1,0,0,21.5
-554,Big L Club,27,Ryan Wu,2022,B,20,4.564,1,0,0,0,1,0,0,0,21.5
+3048,Big L Club,27,Ryan Wu,2022,B,20,4.564,1,0,0,0,1,0,0,0,21.5
 1685,Individuals Team 152,8,James Lian,2022,B,24,3.419,1,0,1,0,0,0,0,0,26
 2335,CRLS Omega,3,Hugh Koschwanez,2022,B,24,3.419,1,0,1,0,0,0,0,0,26
 2258,CRH Math Team,2,Andy Chin,2022,B,24,3.419,1,0,1,0,0,0,0,0,26
@@ -31,7 +31,7 @@ student_id,team_name,team_id,student_name,year,division,rank,score,p1,p2,p3,p4,p
 949,CRH Math Team,2,Peyton Li,2022,B,29,3.143,1,1,0,0,0,0,0,0,34.5
 2285,Hotchkiss Blue,7,Jeffrey Lin,2022,B,29,3.143,1,1,0,0,0,0,0,0,34.5
 2328,Edison Academy Magnet School,5,Vedant Badoni,2022,B,29,3.143,1,1,0,0,0,0,0,0,34.5
-2329,Warriors,22,Austin Lin,2022,B,29,3.143,1,1,0,0,0,0,0,0,34.5
+7028,Warriors,22,Austin Lin,2022,B,29,3.143,1,1,0,0,0,0,0,0,34.5
 2171,MHSProfessionalJobbers,14,Minhe Liu,2022,B,29,3.143,1,1,0,0,0,0,0,0,34.5
 1623,Pingry Team A,17,Albert Wu,2022,B,29,3.143,1,1,0,0,0,0,0,0,34.5
 1686,Pingry Team A,17,Leo Xu,2022,B,29,3.143,1,1,0,0,0,0,0,0,34.5

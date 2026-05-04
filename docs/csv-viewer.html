@@ -299,7 +299,9 @@
               showError("Empty or invalid CSV.", rawUrl);
               return;
             }
-            fields = fields.filter(function (f) { return f !== "student_id"; });
+            fields = fields.filter(function (f) {
+              return f !== "student_id" && f !== "team_id";
+            });
             renderTable(data, fields);
           })
           .catch(function (err) {

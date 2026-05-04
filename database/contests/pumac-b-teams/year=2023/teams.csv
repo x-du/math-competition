@@ -5,7 +5,7 @@ team_id,team_name,student_ids,state
 7,GVHS Math Club,2246|2268|2297,Pennsylvania
 8,Hotchkiss,1069|1652|2228|2248|2285,Connecticut
 9,Individuals Team 162,2206|2262|2287,New Jersey
-10,Jericho Mathletes,738|906|1464|2222|2239|2267,New York
+10,Jericho Mathletes,738|7027|1464|2222|2239|2267,New York
 11,Knights B,362|1081|2263|2264|2277,New Jersey
 12,MHSProfessionalJobbers,1038|2237|2289,
 13,Millburn Mathematical Madpeople,2175|2201|2207|2273|2283|2296,New Jersey
@@ -21,5 +21,5 @@ team_id,team_name,student_ids,state
 26,CCC,1078|1558|1567|2261,New York
 27,Ridge Mu Alpha Theta,2008|2259|2295,
 28,Charter,493|2266|2278,
-29,Pingry White Team,2227,
-30,Tenafly High School,2293,
+29,Pingry White Team,2227,New Jersey
+30,Tenafly High School,2293,New Jersey

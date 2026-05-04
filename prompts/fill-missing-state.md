@@ -1,6 +1,6 @@
 # Fill missing state for students in students.csv
 
-**Goal:** Find the state for every student in `database/students/students.csv` who has a blank or missing `state` field. Update only those rows with a state value you can **derive from existing records**, using **student_id** as the key. Do not guess based on student name.
+**Goal:** Find the state for every student in `database/students/students.csv` who has a blank or missing `state` field. Update only those rows with a state value you can **derive from existing records**, using **student_id** as the key. Do not guess based on student name. Then, where contest `teams.csv` rows lack `state`, fill team state **only when every student on that team has the same non-empty state** in `students.csv` (see section 4).
 
 **Rule:** Always use **student_id** to find a student’s records. Do not match or infer state from name alone; same names in different states are different students.
 
@@ -67,8 +67,19 @@ Match only by **student_id**; do not use name alone to assign state.
 
 ---
 
+## 4. Fill missing state in `teams.csv`
+
+Contest team files live under `database/contests/<contest>-teams/year=<year>/teams.csv` and include columns such as `team_id`, `team_name`, `student_ids` (pipe-separated `student_id` values), and `state`.
+
+- For any team row where `state` is empty or missing, **after** `students.csv` has been updated for those students: split `student_ids` on `|`, look up each `student_id` in `database/students/students.csv`, and read the `state` field.
+- **If every student on the team has the same non-empty `state`**, set the team’s `state` to that value.
+- If any student on the team has a blank `state`, or the students’ states **do not all match**, leave the team’s `state` blank (do not pick a majority or a single member’s state when others differ).
+
+---
+
 ## Summary
 
 1. List students in `students.csv` with empty `state`.
 2. For each, use **student_id** only to look up state in: (1) mathcounts-national, mathcounts-national-rank, AMO, and JMO (use state from those CSVs when present), (2) Math Kangaroo: run `scripts/fill_state_from_mk_national_csv.py` (local mk-national CSVs) or `scripts/fill_state_from_math_kangaroo.py` (fetches PDFs), (3) other contest CSVs—use explicit **state** column when present; when only **school name** is present and non-empty, use an **LLM to search** for the state by school name and assign only when the result is clear, (4) team name only when non-empty and it clearly indicates state.
 3. Update `state` in `students.csv` manually (or via LLM-assisted edits) only when you have a clear, student_id-based source. Never guess based on student name alone.
+4. For `teams.csv` files under `database/contests/*-teams/`, fill missing team `state` when **all** students listed in `student_ids` share the **same** non-empty `state` in `students.csv`; otherwise leave team `state` blank.

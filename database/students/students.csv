@@ -335,7 +335,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 363,Michael Luo,Minnesota,,male,11
 364,Ekam Kaur,Texas,,female,12
 365,Harish Loghashankar,California,,male,11
-366,Ethan Kun Song,Connecticut,,male,
+366,Ethan Kun Song,California,,male,
 367,Aryan Shome,Texas,,male,9
 368,Sepehr Salehi Golsefidy,California,,male,
 369,Mark Tokarev,Texas,,male,
@@ -359,7 +359,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 387,Royce Yao,Arizona,,male,12
 388,Aaron Smith,New Jersey,,male,
 389,Keshav Karumbunathan,Oregon,,male,10
-390,ZHANGJINKAI,New Jersey,,male,
+390,ZHANGJINKAI,China,,male,
 391,Watson Houck,South Carolina,,male,
 392,Justin Guo,Tennessee,,male,11
 393,Adam Henry Smith,New Jersey,,male,
@@ -396,7 +396,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 424,Derek Zhao,Massachusetts,,male,
 425,Andrew Tu,Connecticut,,male,14
 426,Emily Ma,"Ontario, Canada",,female,14
-427,William Gvozdjak,Connecticut,,male,
+427,William Gvozdjak,,,male,
 428,Evan Luo,California,,male,
 429,Evan Ashoori,Massachusetts,,male,12
 430,Henrick Rabinovitz,Massachusetts,,male,
@@ -411,7 +411,6 @@ student_id,student_name,state,alias,gender,grade_in_2026
 440,Joseph Sukmin Chun,Korea,,male,
 441,David Wei,Virginia,,male,14
 442,Paul Gutkovich,New York,,male,
-443,Aman Jain,New Jersey,,male,
 444,Michelle Liang,California,,female,14
 445,Jeffrey Xu,Massachusetts,,male,10
 446,Eddie Qiao,California,,male,
@@ -1431,7 +1430,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1500,Kevin Yang,Minnesota,,male,
 1501,Justin Zhang,New Jersey,,male,
 1502,Isabella Quan,Texas,,female,
-1503,Maxwell Zen,California,,male,
+1503,Maxwell Zen,,,male,
 1504,Jason Jiang,Nebraska,,male,14
 1505,Utkarsh Goyal,Virginia,,male,15
 1506,Nathan Cho,Maryland,,male,15
@@ -1913,7 +1912,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 2005,Jonathan Nixon,District of Columbia,,male,15
 2006,Matthew Weitzner,District of Columbia,,male,13
 2007,Sherlock Grigsby II,District of Columbia,,male,13
-2008,Wesley Chen,Florida,,male,15
+2008,Wesley Chen,,,male,15
 2009,Ethan Gao,Georgia,,male,15
 2010,Richard Yu,Georgia,,male,15
 2011,Andy Zhang,Georgia,,male,15
@@ -2191,7 +2190,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 2288,Shin Masada,California,,male,
 2289,Yiming Huang,,,male,
 2290,Brooks Wang,,,male,
-2291,Timothy Wu,Washington,,male,
+2291,Timothy Wu,New Jersey,,male,
 2292,Fnu Prince,New Jersey,,male,
 2293,Alon Danai,New Jersey,,male,
 2294,Alan Zhong,New Jersey,,male,
@@ -4540,7 +4539,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 4650,Anton Zarkhin,California,,male,
 4651,Arya Khajuria,California,,male,
 4652,Asher Tworetzky,California,,male,
-4653,Austin Lin,Ohio,,female,
+4653,Austin Lin,Ohio,,,
 4654,Emily Tan,Georgia,,male,
 4655,Ethan Han,Washington,,male,
 4656,Gavin Klintworth,Illinois,,male,
@@ -6873,7 +6872,12 @@ student_id,student_name,state,alias,gender,grade_in_2026
 7020,Terry Huang,,,male,
 7021,Michael Li,,,male,
 7022,Benjamin Liu,,,male,
-7023,Felix Liu,,,male,
+7023,Felix Liu,New Jersey,,male,
 7024,Eric Zou,New York,,male,
 7025,Emma Li,,,female,
 7026,Ethan Li,Oklahoma,,male,13
+7027,Ryan Wang,New York,,male,
+7028,Austin Lin,,,,
+7029,Alexander Liu,Massachusetts,,male,
+7030,Timothy Wu,Washington,,male,
+7031,Ben Li,Massachusetts,,male,

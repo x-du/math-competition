@@ -11,8 +11,9 @@
 ## 1. Check if the table already has a team column
 
 - Read the results file at `database/contests/<contest_folder>/year=<year>/results.csv`.
-- If it already has a `team` or `team_name` column, **skip** this prompt.
-- If it does **not** have a team column, proceed.
+- If it already has a **`team`** column, **skip** adding one (you may still need to sync **`team_id`** with section 4 if results were updated).
+- If it has only legacy **`team_name`**, rename that column to **`team`** and continue; use **`team`** everywhere, not `team_name`.
+- If it has **no** team column, proceed with §2–§4.
 
 ---
 
@@ -29,39 +30,50 @@
 
 ## 3. Add the team column to the results table
 
-- Add a new column `team` (or `team_name`) to the results CSV.
-- **Column order:** Place `team` **immediately after** `student_name` (before `year`, `rank`, scores, and any other columns).
+- Add a new column **`team`** to the results CSV (use **`team`**, not `team_name`).
+- After `team`, include **`team_id`** when rosters are tracked in `teams.csv` (see section 4). **Column order:** `student_id`, `student_name`, `team`, `team_id`, then `year`, `rank`, scores, etc.
 - Fill each row with the team name extracted from the source data for that student.
-- Preserve all existing columns and data; only insert the new column in that position and its values.
+- Preserve all existing columns and data; only insert the new column(s) in that order and their values.
 
 **Example:** For `database/contests/hmmt-feb/year=2026/results.csv`:
 
-| student_id | student_name      | team          | year | rank | total_score | ... |
-|------------|-------------------|---------------|------|------|-------------|-----|
-| 1          | Alexander Wang    | LV Fire       | 2026 | 1    | 112.14      | ... |
-| 2          | Bryan Sicheng Guo | San Diego A1  | 2026 | 2    | 109.92      | ... |
+| student_id | student_name      | team          | team_id | year | rank | total_score | ... |
+|------------|-------------------|---------------|---------|------|------|-------------|-----|
+| 1          | Alexander Wang    | LV Fire       | 7       | 2026 | 1    | 112.14      | ... |
+| 2          | Bryan Sicheng Guo | San Diego A1  | 12      | 2026 | 2    | 109.92      | ... |
 
 ---
 
 ## 4. Create or update teams.csv
 
-- Path: `database/contests/<contest_folder>-teams/year=<year>/teams.csv`
-  - Example: `database/contests/hmmt-feb-teams/year=2026/teams.csv`
-- Schema: `team_id`, `team_name`, `student_ids`, `state`
+- **One `teams.csv` per competition bundle per year** — at the **composite** `-teams` path for that event, **not** under subject-only folders.
+- **Do not** create `database/contests/<subject>-teams/…` for subject rounds (e.g. no `cmimc-algebra-teams`, no `hmmt-feb-algebra-number-theory-teams`). Subject directories hold **`results.csv` only**; rosters live in the shared teams file below.
+
+**Where to write `teams.csv`**
+
+| If you are editing results under … | Create/update `teams.csv` at … |
+|-----------------------------------|--------------------------------|
+| `cmimc-algebra`, `cmimc-geometry`, `cmimc-comb`, or `cmimc` | `database/contests/cmimc-teams/year=<year>/teams.csv` |
+| `hmmt-feb-algebra-number-theory`, `hmmt-feb-geometry`, `hmmt-feb-combo`, or `hmmt-feb` | `database/contests/hmmt-feb-teams/year=<year>/teams.csv` |
+| Any other single-folder contest `<slug>` | `database/contests/<slug>-teams/year=<year>/teams.csv` |
+
+- Merge team names and student lists across **all** rounds for that event/year that share the same team labels so **`team_id` is consistent** in every subject and overall `results.csv`.
+
+**Schema:** `team_id`, `team`, `student_ids`, `state`
 
 ### 4.1 team_id
 
-- Integer identifier unique within this contest/year.
-- If `teams.csv` already exists, reuse existing `team_id` for matching `team_name`; otherwise assign the next available integer (1, 2, 3, …).
+- Integer identifier unique within this contest/year (within that composite `teams.csv`).
+- If `teams.csv` already exists, reuse existing `team_id` for matching **`team`** strings; otherwise assign the next available integer (1, 2, 3, …).
 
-### 4.2 team_name
+### 4.2 team
 
 - The team name as it appears in the source data (e.g. `LV Fire`, `San Diego A1`, `PEA Chestnuts`).
 
 ### 4.3 student_ids
 
-- Pipe-separated list of `student_id` values for all students on that team in this contest/year.
-- Use the `student_id` from the corresponding `results.csv` for each student in that team.
+- Pipe-separated list of `student_id` values for all students on that team for this contest/year, across **all** relevant result files (overall + subject rounds) for that event.
+- Use the `student_id` from the corresponding `results.csv` rows for each student on that team.
 
 ### 4.4 state
 
@@ -92,6 +104,6 @@
 
 1. Check if `results.csv` has a `team` column; if yes, stop.
 2. Parse source data for `Student Name (Team Name)` and match to existing results rows.
-3. Add `team` to `results.csv` **right after** `student_name`, with the extracted team name per student.
-4. Create/update `database/contests/<contest>-teams/year=<year>/teams.csv` with columns: `team_id`, `team_name`, `student_ids`, `state`.
-5. Rebuild search data.
+3. Add **`team`** (and **`team_id`** when using rosters) to `results.csv` immediately after `student_name`, consistent with the composite `teams.csv` for that event/year.
+4. Create/update **only** the composite teams path — e.g. `cmimc-teams` or `hmmt-feb-teams`, **never** a subject-level folder like `cmimc-algebra-teams`. Columns: `team_id`, `team`, `student_ids`, `state`.
+5. Rebuild search data (`python scripts/build_search_data.py`).

@@ -1,51 +1,51 @@
 student_id,student_name,team,team_id,year,rank,score,mcp_rank
-173,Luke Robitaille,Texas Momentum A,1,2022,1,53.81,1
-174,Dylan Yu,Texas Momentum A,1,2022,2,43.08,2
-135,Eric Shen,AlphaStar Academy AIR,2,2022,3,29.31,3.5
-159,Karthik Vedula,Florida Alligators,3,2022,3,29.31,3.5
-180,Andrew Gu,Orange County Math Circle BrawlphaStars,4,2022,5,28.24,5
-57,Christopher Qiu,Lehigh Valley Fire,5,2022,6,27.17,9
-59,Henry Jiang,Motown All Stars,6,2022,6,27.17,9
-149,Suyash Pandit,Pentagon Hexagon Oregon A,7,2022,6,27.17,9
-155,Derek Liu,San Diego A1,8,2022,6,27.17,9
-151,Aaron Guo,Texas Momentum A,1,2022,6,27.17,9
-140,Isabella Zhu,TJ-A,9,2022,6,27.17,9
-178,Andrew Lee,Western Mass ARML Stars,10,2022,6,27.17,9
-184,Kevin Zhao,Lexington Alpha,11,2022,13,25.21,13
-187,Kenneth Ang Chen,MN All-State Math Team 1 - Gold,12,2022,14,24.08,14
-1138,Lucas Tang,Washington Gold 1,13,2022,15,23.01,16
-456,Joseph Othman,Tin Man,14,2022,15,23.01,16
-198,Eddie Wei,EddieSolo,15,2022,15,23.01,16
-132,Jason Mao,Lehigh Valley Fire,5,2022,18,21.95,23
-1457,Ben Li,NC School of Science & Math - Team alpha,16,2022,18,21.95,23
-81,Angela Liu,AlphaStar Academy FIRE,17,2022,18,21.95,23
-98,Elliott Liu,San Diego A1,8,2022,18,21.95,23
-116,Justin Zhang,San Diego A2,18,2022,18,21.95,23
-1513,Xuezhi Wang,OS Betelgeuse,19,2022,18,21.95,23
-93,Jessica Wan,Florida Alligators,3,2022,18,21.95,23
-145,Alex Li,Florida Alligators,3,2022,18,21.95,23
-115,Aaron Hu,Florida Alligators,3,2022,18,21.95,23
-154,Boris Tsvetanov Gachevski,Burgas A,20,2022,18,21.95,23
-1373,Saanvi Thummalapally,Individuals 3,21,2022,18,21.95,23
-1,Alexander Wang,Lehigh Valley Ice,22,2022,29,21.89,30
-183,Johan Ko,AlphaStar Academy AIR,2,2022,29,21.89,30
-197,Karthik Seetharaman,Western Mass ARML Stars,10,2022,29,21.89,30
-139,Skyler Le,Lehigh Valley Fire,5,2022,32,20.82,37.5
-1293,Olivia Xu,Harker Omega,23,2022,32,20.82,37.5
-95,Razzi H. Masroor,Motown All Stars,6,2022,32,20.82,37.5
-1162,Justin Lee,Spice,24,2022,32,20.82,37.5
-122,David Jiahui Zhang,AlphaStar Academy FIRE,17,2022,32,20.82,37.5
-1514,Jerry Liang,Tin Man,14,2022,32,20.82,37.5
-123,Vivian Loh,EddieSolo,15,2022,32,20.82,37.5
-1515,Nicholas Song,San Diego A1,8,2022,32,20.82,37.5
-1516,Justin Li,San Diego A2,18,2022,32,20.82,37.5
-202,Akash Madiraju,Pleasanton A,25,2022,32,20.82,37.5
-191,Rowechen Zhong,Texas Momentum A,1,2022,32,20.82,37.5
-110,Wilbert Chu,No Coast Best Coast,26,2022,32,20.82,37.5
-1517,Chengcheng Qian,Populus-3,27,2022,44,19.93,44.5
-2076,Bryan Zhang,Scarecrow,28,2022,44,19.93,44.5
-1165,Adam Tang,BISV Bobcats A,29,2022,46,17.79,47.5
-1497,Brandon Lou,Tin Man,14,2022,46,17.79,47.5
-1518,Matthew Ji Chen,MN All-State Math Team 1 - Gold,12,2022,46,17.79,47.5
-434,Sargam Mondal,Raritan Valley Math Team - Euler,30,2022,46,17.79,47.5
-1187,Daeho Lee,San Diego A2,18,2022,50,17.73,50
+173,Luke Robitaille,Texas Momentum A,39,2022,1,53.81,1
+174,Dylan Yu,Texas Momentum A,39,2022,2,43.08,2
+135,Eric Shen,AlphaStar Academy AIR,1,2022,3,29.31,3.5
+159,Karthik Vedula,Florida Alligators,9,2022,3,29.31,3.5
+180,Andrew Gu,Orange County Math Circle BrawlphaStars,27,2022,5,28.24,5
+57,Christopher Qiu,Lehigh Valley Fire,14,2022,6,27.17,9
+59,Henry Jiang,Motown All Stars,21,2022,6,27.17,9
+149,Suyash Pandit,Pentagon Hexagon Oregon A,29,2022,6,27.17,9
+155,Derek Liu,San Diego A1,35,2022,6,27.17,9
+151,Aaron Guo,Texas Momentum A,39,2022,6,27.17,9
+140,Isabella Zhu,TJ-A,41,2022,6,27.17,9
+178,Andrew Lee,Western Mass ARML Stars,47,2022,6,27.17,9
+184,Kevin Zhao,Lexington Alpha,16,2022,13,25.21,13
+187,Kenneth Ang Chen,MN All-State Math Team 1 - Gold,19,2022,14,24.08,14
+1138,Lucas Tang,Washington Gold 1,44,2022,15,23.01,16
+456,Joseph Othman,Tin Man,40,2022,15,23.01,16
+198,Eddie Wei,EddieSolo,8,2022,15,23.01,16
+132,Jason Mao,Lehigh Valley Fire,14,2022,18,21.95,23
+1457,Ben Li,NC School of Science & Math - Team alpha,22,2022,18,21.95,23
+81,Angela Liu,AlphaStar Academy FIRE,3,2022,18,21.95,23
+98,Elliott Liu,San Diego A1,35,2022,18,21.95,23
+116,Justin Zhang,San Diego A2,36,2022,18,21.95,23
+1513,Xuezhi Wang,OS Betelgeuse,28,2022,18,21.95,23
+93,Jessica Wan,Florida Alligators,9,2022,18,21.95,23
+145,Alex Li,Florida Alligators,9,2022,18,21.95,23
+115,Aaron Hu,Florida Alligators,9,2022,18,21.95,23
+154,Boris Tsvetanov Gachevski,Burgas A,6,2022,18,21.95,23
+1373,Saanvi Thummalapally,Individuals 3,12,2022,18,21.95,23
+1,Alexander Wang,Lehigh Valley Ice,15,2022,29,21.89,30
+183,Johan Ko,AlphaStar Academy AIR,1,2022,29,21.89,30
+197,Karthik Seetharaman,Western Mass ARML Stars,47,2022,29,21.89,30
+139,Skyler Le,Lehigh Valley Fire,14,2022,32,20.82,37.5
+1293,Olivia Xu,Harker Omega,11,2022,32,20.82,37.5
+95,Razzi H. Masroor,Motown All Stars,21,2022,32,20.82,37.5
+1162,Justin Lee,Spice,38,2022,32,20.82,37.5
+122,David Jiahui Zhang,AlphaStar Academy FIRE,3,2022,32,20.82,37.5
+1514,Jerry Liang,Tin Man,40,2022,32,20.82,37.5
+123,Vivian Loh,EddieSolo,8,2022,32,20.82,37.5
+1515,Nicholas Song,San Diego A1,35,2022,32,20.82,37.5
+1516,Justin Li,San Diego A2,36,2022,32,20.82,37.5
+202,Akash Madiraju,Pleasanton A,31,2022,32,20.82,37.5
+191,Rowechen Zhong,Texas Momentum A,39,2022,32,20.82,37.5
+110,Wilbert Chu,No Coast Best Coast,24,2022,32,20.82,37.5
+1517,Chengcheng Qian,Populus-3,32,2022,44,19.93,44.5
+2076,Bryan Zhang,Scarecrow,37,2022,44,19.93,44.5
+1165,Adam Tang,BISV Bobcats A,5,2022,46,17.79,47.5
+1497,Brandon Lou,Tin Man,40,2022,46,17.79,47.5
+1518,Matthew Ji Chen,MN All-State Math Team 1 - Gold,19,2022,46,17.79,47.5
+434,Sargam Mondal,Raritan Valley Math Team - Euler,34,2022,46,17.79,47.5
+1187,Daeho Lee,San Diego A2,36,2022,50,17.73,50

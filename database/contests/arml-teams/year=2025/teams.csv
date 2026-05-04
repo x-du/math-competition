@@ -1,37 +1,37 @@
 team_id,team_name,student_ids,state
-1,Central Jersey A1,57,
-2,Texas A1,8|13|14|56|213,
-3,SFBA/NorCal A1,38|58|99,
-4,Texas A2,16|364|1012,
-5,WWP^2,1272,
-6,Montgomery B1,31|206|1006,
-7,Georgia A1,48,
-8,Texas A3,248|1273,
-9,Western PA A1,345,
-10,Washington A1,22|328,
-11,Massachusetts B1,850,
-12,Wild Wild West B1,387,
+1,Central Jersey A1,57,New Jersey
+2,Texas A1,8|13|14|56|213,Texas
+3,SFBA/NorCal A1,38|58|99,California
+4,Texas A2,16|364|1012,Texas
+5,WWP^2,1272,New Jersey
+6,Montgomery B1,31|206|1006,Maryland
+7,Georgia A1,48,Georgia
+8,Texas A3,248|1273,Texas
+9,Western PA A1,345,Pennsylvania
+10,Washington A1,22|328,Washington
+11,Massachusetts B1,850,Massachusetts
+12,Wild Wild West B1,387,Arizona
 13,Lehigh Valley A1,1|41|132,
-14,Ontario Math Circles A1,895|990|1042|1276|1278|1288,
-15,Southern California B1,1050,
-16,Northern Nevada Math Club B1,402,
-17,Iowa,82,
-18,Utah B1,4|76|818,
-19,Colorado B1,666|1275,
-20,Lehigh Valley A2,854|899,
-21,PEA Lions A1,3|27,
-22,Connecticut A1,86|204|1279|1285,
-23,NYC A1,289,
-24,TJHSST A1,10,
-25,Minnesota B1,363|1277,
-26,Indiana B1,1017,
-27,Alabama B1,466,
-28,Upstate New York B1,42,
-29,SFBA/NorCal A2,17,
-30,Washington A2,1281,
-31,Phillips Academy Andover,1283,
-32,Connecticut A2,1284,
-33,Frazer A2,226,
-34,Missouri B1,1014,
-35,SFBA/NorCal A5,1286,
-36,Ontario Math Circles A2,1287,
+14,Ontario Math Circles A1,895|990|1042|1276|1278|1288,"Ontario, Canada"
+15,Southern California B1,1050,Nevada
+16,Northern Nevada Math Club B1,402,Nevada
+17,Iowa,82,Iowa
+18,Utah B1,4|76|818,Utah
+19,Colorado B1,666|1275,Colorado
+20,Lehigh Valley A2,854|899,Pennsylvania
+21,PEA Lions A1,3|27,New Hampshire
+22,Connecticut A1,86|204|1279|1285,Connecticut
+23,NYC A1,289,New York
+24,TJHSST A1,10,Virginia
+25,Minnesota B1,363|1277,Minnesota
+26,Indiana B1,1017,Illinois
+27,Alabama B1,466,Alabama
+28,Upstate New York B1,42,New York
+29,SFBA/NorCal A2,17,California
+30,Washington A2,1281,Washington
+31,Phillips Academy Andover,1283,Massachusetts
+32,Connecticut A2,1284,Connecticut
+33,Frazer A2,226,Florida
+34,Missouri B1,1014,Missouri
+35,SFBA/NorCal A5,1286,California
+36,Ontario Math Circles A2,1287,"Ontario, Canada"
