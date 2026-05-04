@@ -448,7 +448,8 @@ def main() -> None:
                 "year": year,
                 "contest_slug": slug,
             }
-            skip_keys = {"student_id", "student_id ", "student_name", "state"}
+            # team_id: internal roster key only; not shown on the website (see also csv-viewer.html)
+            skip_keys = {"student_id", "student_id ", "student_name", "state", "team_id"}
             # Don't expose city/school for MathCounts National (still in roster CSVs)
             if slug == MATHCOUNTS_SLUG:
                 skip_keys = skip_keys | {"city", "school"}

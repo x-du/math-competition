@@ -262,7 +262,7 @@ def sync_generic_contest(contest: str, year: str) -> str | None:
             teams_fieldnames = list(tr.fieldnames or [])
             for row in tr:
                 tid = (row.get("team_id") or "").strip()
-                tn = normalize_team_label(row.get("team_name") or "")
+                tn = normalize_team_label(row.get("team_name") or row.get("team") or "")
                 if tid:
                     id_to_row[tid] = {k: (row.get(k) or "") for k in (teams_fieldnames or [])}
                 if tid and tn:
@@ -347,11 +347,13 @@ def sync_generic_contest(contest: str, year: str) -> str | None:
 
     if teams_fieldnames:
         out_fields = list(teams_fieldnames)
-        for col in ("team_id", "team_name", "student_ids"):
+        if "team_name" in out_fields:
+            out_fields[out_fields.index("team_name")] = "team"
+        for col in ("team_id", "team", "student_ids"):
             if col not in out_fields:
                 out_fields.append(col)
     else:
-        out_fields = ["team_id", "team_name", "student_ids", "state"]
+        out_fields = ["team_id", "team", "student_ids", "state"]
 
     team_rows_out: list[dict[str, str]] = []
     for tid in sorted(roster.keys(), key=_sort_tid_key):
@@ -360,7 +362,8 @@ def sync_generic_contest(contest: str, year: str) -> str | None:
         base = {k: "" for k in out_fields}
         base.update(id_to_row.get(tid, {}))
         base["team_id"] = tid
-        base["team_name"] = display or base.get("team_name", "")
+        base["team"] = display or base.get("team") or base.get("team_name", "")
+        base.pop("team_name", None)
         base["student_ids"] = "|".join(str(s) for s in sorted(roster[tid]))
         for k in out_fields:
             if k not in base:
