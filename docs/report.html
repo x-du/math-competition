@@ -104,6 +104,16 @@
           <label for="reported-contest" class="form-label">Contest <span class="required">*</span></label>
           <input type="text" id="reported-contest" name="contest" class="form-input" required placeholder="e.g. AMC 10, MATHCOUNTS State, HMMT Feb 2025">
         </div>
+        <div class="form-field form-field--checkbox">
+          <label class="form-checkbox-label">
+            <input type="checkbox" id="report-account-split" name="accountSplit" value="1">
+            <span>Report concerns account splitting (multiple accounts, shared access, etc.)</span>
+          </label>
+        </div>
+        <div id="account-split-details-field" class="form-field" hidden>
+          <label for="account-split-details" class="form-label">Account split details <span class="required">*</span></label>
+          <textarea id="account-split-details" name="accountSplitDetails" class="form-textarea" rows="4" placeholder="Tell us which records don't belong to this account."></textarea>
+        </div>
         <div class="form-field">
           <label for="reported-description" class="form-label">Description <span class="required">*</span></label>
           <textarea id="reported-description" name="description" class="form-textarea" rows="4" required placeholder="Describe the concern and share a link to any evidence (e.g. screenshots, documents) uploaded to Google Drive, Dropbox, or other cloud storage."></textarea>

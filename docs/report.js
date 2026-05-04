@@ -6,6 +6,22 @@ const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzvj1tVhYBlV2yc
 const form = document.getElementById('report-form');
 const submitBtn = document.getElementById('report-submit');
 const statusEl = document.getElementById('report-status');
+const accountSplitCheckbox = document.getElementById('report-account-split');
+const accountSplitDetailsField = document.getElementById('account-split-details-field');
+const accountSplitDetailsInput = document.getElementById('account-split-details');
+
+function syncAccountSplitUI() {
+  const on = accountSplitCheckbox.checked;
+  accountSplitDetailsField.hidden = !on;
+  if (on) {
+    accountSplitDetailsInput.setAttribute('required', '');
+  } else {
+    accountSplitDetailsInput.removeAttribute('required');
+    accountSplitDetailsInput.value = '';
+  }
+}
+
+accountSplitCheckbox.addEventListener('change', syncAccountSplitUI);
 
 // ── Fetch client IP for logging ───────────────────────────────────
 async function getClientIP() {
@@ -24,15 +40,27 @@ form.addEventListener('submit', async (e) => {
 
   if (document.getElementById('website').value) return;
 
+  const accountSplit = accountSplitCheckbox.checked;
+  const accountSplitDetails = accountSplit
+    ? accountSplitDetailsInput.value.trim()
+    : '';
+
   const data = {
     name: document.getElementById('reported-name').value.trim(),
     state: document.getElementById('reported-state').value,
     contest: document.getElementById('reported-contest').value.trim(),
     description: document.getElementById('reported-description').value.trim(),
+    accountSplit,
+    accountSplitDetails,
   };
 
   if (!data.name || !data.state || !data.contest || !data.description) {
     showStatus('Please fill in the required fields.', 'error');
+    return;
+  }
+
+  if (data.accountSplit && !data.accountSplitDetails) {
+    showStatus("Tell us which records don't belong to this account.", 'error');
     return;
   }
 
@@ -53,6 +81,7 @@ form.addEventListener('submit', async (e) => {
     } else {
       showStatus('Report submitted. Thank you.', 'success');
       form.reset();
+      syncAccountSplitUI();
     }
   } catch (err) {
     showStatus('Failed to submit. Please try again later.', 'error');

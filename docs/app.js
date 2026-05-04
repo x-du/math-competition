@@ -61,6 +61,7 @@
   var STUDENT_RECORD_REPORT_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzzI2_Wxp5S4iF87bzWfX-vw-ClBKva_M33GG-JV7PGKxE287tPnfBK41M5_0WI9nlLeQ/exec";
   var STUDENT_RECORD_REPORT_TYPES = {
     account_merge: "Account Merge",
+    account_split: "Account Split",
     state_label: "Update State",
     grade_label: "Update Grade"
   };
@@ -1374,6 +1375,15 @@
         "</div>"
       );
     }
+    if (issueType === "account_split") {
+      return (
+        "<div class=\"student-report-modal-field\">" +
+          "<label for=\"sr-account-split-details\">Account split details</label>" +
+          "<textarea id=\"sr-account-split-details\" class=\"student-report-modal-textarea\" rows=\"4\" autocomplete=\"off\" placeholder=\"Tell us which records don\u2019t belong to this account.\"></textarea>" +
+        "</div>" +
+        "<p class=\"student-report-modal-hint\">Include contest names, years, or links to evidence if helpful.</p>"
+      );
+    }
     if (issueType === "state_label") {
       return (
         "<div class=\"student-report-modal-field\">" +
@@ -1434,6 +1444,13 @@
       if (minp) {
         setTimeout(function () {
           minp.focus();
+        }, 0);
+      }
+    } else if (issueType === "account_split") {
+      var splitTa = document.getElementById("sr-account-split-details");
+      if (splitTa) {
+        setTimeout(function () {
+          splitTa.focus();
         }, 0);
       }
     } else if (issueType === "grade_label") {
@@ -1500,6 +1517,15 @@
         return null;
       }
       return { issue_type: issueType, issue_label: issueLabel, user_value: v };
+    }
+    if (issueType === "account_split") {
+      var splitTa = document.getElementById("sr-account-split-details");
+      var sv = splitTa ? String(splitTa.value).trim() : "";
+      if (!sv) {
+        setStudentReportModalError("Tell us which records don\u2019t belong to this account.");
+        return null;
+      }
+      return { issue_type: issueType, issue_label: issueLabel, user_value: sv };
     }
     if (issueType === "state_label") {
       var sel = document.getElementById("sr-select-state");
@@ -2821,6 +2847,7 @@
         "<div class=\"student-record-report-menu\" hidden>" +
           "<p class=\"student-record-report-title\">Report student record error</p>" +
           "<button type=\"button\" class=\"student-record-report-option\" data-issue-type=\"account_merge\">Account Merge</button>" +
+          "<button type=\"button\" class=\"student-record-report-option\" data-issue-type=\"account_split\">Account Split</button>" +
           "<button type=\"button\" class=\"student-record-report-option\" data-issue-type=\"state_label\">Update State</button>" +
           "<button type=\"button\" class=\"student-record-report-option\" data-issue-type=\"grade_label\">Update Grade</button>" +
         "</div>" +

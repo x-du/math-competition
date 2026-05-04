@@ -1719,7 +1719,8 @@ body.contest-filter-popover-open {
 }
 
 .student-report-modal-input,
-.student-report-modal-select {
+.student-report-modal-select,
+.student-report-modal-textarea {
   width: 100%;
   font: inherit;
   padding: 0.45rem 0.5rem;
@@ -1728,6 +1729,12 @@ body.contest-filter-popover-open {
   background: var(--bg);
   color: var(--text);
   box-sizing: border-box;
+}
+
+.student-report-modal-textarea {
+  resize: vertical;
+  min-height: 5rem;
+  line-height: 1.4;
 }
 
 .student-report-modal-select {
@@ -2562,6 +2569,29 @@ body.contest-filter-popover-open {
 .form-textarea {
   resize: vertical;
   min-height: 5rem;
+}
+
+.form-field--checkbox {
+  gap: 0;
+}
+
+.form-checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text);
+  cursor: pointer;
+  line-height: 1.4;
+}
+
+.form-checkbox-label input[type="checkbox"] {
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--accent);
 }
 
 .report-submit-btn {
