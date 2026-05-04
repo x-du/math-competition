@@ -28,7 +28,6 @@ def main():
             continue
 
         count = len(mc_records)
-        grades = [r.get("grade") for r in mc_records if r.get("grade") is not None]
         # Treat missing grade as a distinct "value" for uniqueness
         grades_with_missing = [r.get("grade", "__MISSING__") for r in mc_records]
         unique_grades = len(set(grades_with_missing)) == len(grades_with_missing)

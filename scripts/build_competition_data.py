@@ -9,7 +9,6 @@ Optimizations: no scores (id/name only), shared names lookup, US state abbreviat
 """
 import csv
 import json
-from datetime import datetime
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent

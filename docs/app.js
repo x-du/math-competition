@@ -2,6 +2,8 @@
   "use strict";
 
   var data = { students: [], contests: {} };
+  /** From teams.json: base_contest_slug -> year -> team_name -> [student_id, ...]. */
+  var teamsRosterData = {};
   /** USPS code -> full name; from data.json. Student `state` and record `state` store short codes for US. */
   var usStateLookup = {};
   /** Latest competition season year per contest_slug (global), for MCP decay — see build_search_data.get_time_weight. */
@@ -419,6 +421,15 @@
       var url = new URL(window.location.href);
       url.searchParams.set("student_id", String(studentId));
       window.history.replaceState({}, "", url.toString());
+    } catch (e) { /* ignore */ }
+  }
+
+  /** Pushes `?student_id=` so the browser Back button returns to the previous history entry. */
+  function pushStudentIdInUrl(studentId) {
+    try {
+      var url = new URL(window.location.href);
+      url.searchParams.set("student_id", String(studentId));
+      window.history.pushState({}, "", url.toString());
     } catch (e) { /* ignore */ }
   }
 
@@ -2648,6 +2659,22 @@
     return arr;
   }
 
+  /**
+   * Parent contest slug for subject divisions: `{slug}-teams` folders and student-card headings.
+   * e.g. hmmt-feb-algebra-number-theory -> hmmt-feb; bmt-geometry -> bmt.
+   */
+  function baseContestSlug(slug) {
+    if (!slug) return "";
+    if (slug.indexOf("hmmt-feb-") === 0) return "hmmt-feb";
+    if (slug.indexOf("hmmt-nov-") === 0) return "hmmt-nov";
+    if (slug.indexOf("pumac-a-") === 0) return "pumac-a";
+    if (slug.indexOf("pumac-b-") === 0) return "pumac-b";
+    if (slug.indexOf("bmt-") === 0) return "bmt";
+    if (slug.indexOf("cmimc-") === 0) return "cmimc";
+    if (slug === "mpfg-olympiad") return "mpfg";
+    return slug;
+  }
+
   function compareContestSlugs(a, b) {
     var orderMap = data && data.contest_order_map ? data.contest_order_map : null;
     if (orderMap) {
@@ -2674,16 +2701,33 @@
       var val = record[key] != null ? record[key] : "";
       if (key === "state") val = expandUsStateAbbrev(val);
       var cellClass = key === "rank" ? "num rank-" + (val === "1" || val === 1 ? "1" : (val === "2" || val === 2 || val === "3" || val === 3 ? "2" : "")) : "num";
-      cells.push("<td class=\"" + cellClass + "\" data-col=\"" + escapeHtml(key) + "\">", escapeHtml(String(val)), "</td>");
+      if ((key === "team" || key === "team_name") && slug && yr && val != null && String(val).trim() !== "") {
+        var tn = String(val).trim();
+        var cellInner =
+          "<button type=\"button\" class=\"team-roster-trigger\" data-contest-slug=\"" +
+          escapeHtml(slug) +
+          "\" data-year=\"" +
+          escapeHtml(String(yr)) +
+          "\" data-team-name=\"" +
+          escapeHtml(tn) +
+          "\">" +
+          escapeHtml(tn) +
+          "</button>";
+        cells.push("<td class=\"" + cellClass + "\" data-col=\"" + escapeHtml(key) + "\">", cellInner, "</td>");
+      } else {
+        cells.push("<td class=\"" + cellClass + "\" data-col=\"" + escapeHtml(key) + "\">", escapeHtml(String(val)), "</td>");
+      }
     }
     return "<tr>" + cells.join("") + "</tr>";
   }
 
   function renderContestInfo(slug, contestsMap) {
-    var c = (contestsMap || {})[slug];
+    var map = contestsMap || {};
+    var baseSlug = baseContestSlug(slug);
+    var c = map[baseSlug] || map[slug];
     if (!c) return "";
     var parts = ["<div class=\"contest-info\">"];
-    parts.push("<h3 class=\"contest-info-title\">" + escapeHtml(c.contest_name || slug) + "</h3>");
+    parts.push("<h3 class=\"contest-info-title\">" + escapeHtml(c.contest_name || baseSlug) + "</h3>");
     if (c.description) {
       parts.push("<p class=\"contest-info-description\">" + escapeHtml(c.description) + "</p>");
     }
@@ -3406,7 +3450,8 @@
   }
 
   var searchRafId = null;
-  function runSearch() {
+  function runSearch(options) {
+    options = options || {};
     saveFilters();
     var query = (searchEl && searchEl.value) ? searchEl.value.trim() : "";
     var urlStudentId = getStudentIdFromUrl();
@@ -3453,6 +3498,11 @@
             emptyEl.hidden = false;
             emptyEl.innerHTML = "<p>This student does not match your Girls / Grade / State filters. Use <strong>Back to search</strong>, then adjust filters or turn off <strong>Apply filters to search</strong>.</p>";
             syncSearchApplyFiltersToggleVisibility();
+            if (options.scrollStudentCardToTop) {
+              requestAnimationFrame(function () {
+                window.scrollTo(0, 0);
+              });
+            }
             return;
           }
         }
@@ -3467,6 +3517,11 @@
           emptyEl.innerHTML = "<p class=\"empty-state\">No records for this student.</p>";
         }
         syncSearchApplyFiltersToggleVisibility();
+        if (options.scrollStudentCardToTop) {
+          requestAnimationFrame(function () {
+            window.scrollTo(0, 0);
+          });
+        }
         return;
       }
       clearStudentIdFromUrl();
@@ -4723,11 +4778,18 @@
       fetch(base + "/promotions.json").then(function (res) {
         if (!res.ok) return [];
         return res.json();
-      }).catch(function () { return []; })
+      }).catch(function () { return []; }),
+      fetch(base + "/teams.json").then(function (res) {
+        if (!res.ok) return {};
+        return res.json();
+      }).catch(function () { return {}; })
     ]).then(function (arr) {
       var json = arr[0];
       var branchCfg = arr[1];
       var promotionsCfg = arr[2];
+      var teamsJson = arr[3];
+      teamsRosterData =
+        teamsJson && typeof teamsJson === "object" && !Array.isArray(teamsJson) ? teamsJson : {};
       if (Array.isArray(promotionsCfg)) featurePromotions = promotionsCfg;
       else if (promotionsCfg && Array.isArray(promotionsCfg.promotions)) featurePromotions = promotionsCfg.promotions;
       else featurePromotions = [];
@@ -4812,8 +4874,11 @@
         bindMcpTimelinePopover();
         bindMcpPctPopover();
         bindCsvPopover();
+        bindTeamRosterPopover();
         bindStudentReportModal();
-        runSearch();
+        runSearch({
+          scrollStudentCardToTop: getStudentIdFromUrl() != null
+        });
       });
     }).catch(function (err) {
       setLoading(false);
@@ -4847,6 +4912,25 @@
   window.addEventListener("popstate", function () {
     runSearch();
   });
+
+  document.addEventListener(
+    "click",
+    function (event) {
+      var a = event.target && event.target.closest ? event.target.closest("a.team-roster-member-link") : null;
+      if (!a) return;
+      if (event.button !== 0) return;
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      var sid = a.getAttribute("data-student-id");
+      if (sid == null || sid === "") return;
+      event.preventDefault();
+      var trp = document.getElementById("team-roster-popover");
+      if (trp) trp.hidden = true;
+      pushStudentIdInUrl(sid);
+      runSearch({ scrollStudentCardToTop: true });
+      if (searchEl) searchEl.blur();
+    },
+    true
+  );
 
   if (girlsOnlyEl) {
     girlsOnlyEl.addEventListener("change", function () {
@@ -5049,6 +5133,8 @@
     csvTableWrap.hidden = true;
     csvOpenTab.hidden = true;
     csvPopover.hidden = false;
+    var teamRosterEl = document.getElementById("team-roster-popover");
+    if (teamRosterEl) teamRosterEl.hidden = true;
 
     var branch = (data.branch && data.branch !== "main") ? data.branch : "main";
     var rawUrl = RAW_BASE + encodeURIComponent(branch) + "/database/contests/" + encodeURIComponent(contest) + "/year%3D" + encodeURIComponent(year) + "/" + encodeURIComponent(file);
@@ -5122,6 +5208,98 @@
       });
   }
 
+  /** Look up member IDs in teams.json (from build_search_data.py); resolve names from data.students. */
+  function showTeamRosterPopover(contestSlug, year, teamName) {
+    var pop = document.getElementById("team-roster-popover");
+    var titleEl = document.getElementById("team-roster-popover-title");
+    var loadingEl = document.getElementById("team-roster-popover-loading");
+    var errEl = document.getElementById("team-roster-popover-error");
+    var listEl = document.getElementById("team-roster-popover-list");
+    var listWrap = document.getElementById("team-roster-popover-list-wrap");
+    if (!pop || !titleEl || !loadingEl || !errEl || !listEl || !listWrap) return;
+
+    var csvPop = document.getElementById("csv-popover");
+    if (csvPop) csvPop.hidden = true;
+
+    var baseSlug = baseContestSlug(contestSlug);
+    var yearStr = String(year || "").trim();
+    var want = (teamName || "").trim();
+    var contestInfo = (data.contests || {})[baseSlug] || (data.contests || {})[contestSlug] || {};
+    var contestLabel = contestInfo.contest_name || baseSlug;
+    titleEl.innerHTML =
+      "<span class=\"team-roster-popover-line team-roster-popover-topline\">" +
+      "<span class=\"team-roster-popover-contest\">" +
+      escapeHtml(contestLabel) +
+      "</span>" +
+      "<span class=\"team-roster-popover-year\"> · " +
+      escapeHtml(yearStr) +
+      "</span>" +
+      "</span>" +
+      "<span class=\"team-roster-popover-line team-roster-popover-team\">" +
+      escapeHtml(want) +
+      "</span>";
+    loadingEl.hidden = true;
+    errEl.hidden = true;
+    errEl.textContent = "";
+    listWrap.hidden = true;
+    listEl.innerHTML = "";
+    pop.hidden = false;
+
+    trackGaEvent("team_roster_open", {
+      contest_slug: contestSlug || "",
+      year: yearStr
+    });
+
+    var bySlug = teamsRosterData[baseSlug];
+    var byYear = bySlug ? bySlug[yearStr] : null;
+    var idList = null;
+    if (byYear && want) {
+      idList = byYear[want];
+      if (!idList || !idList.length) {
+        var wl = want.toLowerCase();
+        for (var k in byYear) {
+          if (Object.prototype.hasOwnProperty.call(byYear, k) && k && String(k).toLowerCase() === wl) {
+            idList = byYear[k];
+            break;
+          }
+        }
+      }
+    }
+
+    if (!idList || !idList.length) {
+      errEl.textContent =
+        "Team roster not found. Run scripts/build_search_data.py to generate teams.json, then deploy it with the site.";
+      errEl.hidden = false;
+      return;
+    }
+
+    var itemHtml = [];
+    for (var i = 0; i < idList.length; i++) {
+      var idStr = String(idList[i]);
+      var st = findStudentById(idStr);
+      var display = st && st.name ? st.name : "Student #" + idStr;
+      var linkHref = "";
+      try {
+        var u = new URL(window.location.href);
+        u.searchParams.set("student_id", idStr);
+        linkHref = u.pathname + u.search + u.hash;
+      } catch (e2) {
+        linkHref = "?student_id=" + encodeURIComponent(idStr);
+      }
+      itemHtml.push(
+        "<li class=\"team-roster-member-item\"><a class=\"team-roster-member-link\" href=\"" +
+          escapeHtml(linkHref) +
+          "\" data-student-id=\"" +
+          escapeHtml(idStr) +
+          "\">" +
+          escapeHtml(display) +
+          "</a></li>"
+      );
+    }
+    listEl.innerHTML = itemHtml.join("");
+    listWrap.hidden = false;
+  }
+
   function handleResultsClick(event) {
     var target = event.target;
     var reportTriggerBtn = target && target.closest ? target.closest(".student-record-report-trigger") : null;
@@ -5140,6 +5318,16 @@
       closeStudentReportMenu();
       if (!issueType || !cardForReport) return;
       openStudentReportModal(issueType, cardForReport, reportOptionBtn);
+      return;
+    }
+    var teamRosterBtn = target && target.closest ? target.closest(".team-roster-trigger") : null;
+    if (teamRosterBtn) {
+      event.preventDefault();
+      event.stopPropagation();
+      var tContest = teamRosterBtn.getAttribute("data-contest-slug");
+      var tYear = teamRosterBtn.getAttribute("data-year");
+      var tName = teamRosterBtn.getAttribute("data-team-name");
+      if (tContest && tYear && tName) showTeamRosterPopover(tContest, tYear, tName);
       return;
     }
     var yearLink = target && target.closest ? target.closest(".csv-row-year-link") : null;
@@ -5285,6 +5473,16 @@
     var popover = document.getElementById("csv-popover");
     var closeBtn = popover && popover.querySelector(".csv-popover-close");
     var backdrop = popover && popover.querySelector(".csv-popover-backdrop");
+    if (!popover) return;
+    function close() { popover.hidden = true; }
+    if (closeBtn) closeBtn.addEventListener("click", close);
+    if (backdrop) backdrop.addEventListener("click", close);
+  }
+
+  function bindTeamRosterPopover() {
+    var popover = document.getElementById("team-roster-popover");
+    var closeBtn = popover && popover.querySelector(".team-roster-popover-close");
+    var backdrop = popover && popover.querySelector(".team-roster-popover-backdrop");
     if (!popover) return;
     function close() { popover.hidden = true; }
     if (closeBtn) closeBtn.addEventListener("click", close);

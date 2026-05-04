@@ -2,7 +2,7 @@
 """
 Build a single JSON file from database CSVs for the student search frontend.
 Run from repo root: python scripts/build_search_data.py
-Output: docs/data.json
+Output: docs/data.json, docs/teams.json (team name → student_ids[] per contest/year for roster popover)
 """
 import csv
 import json
@@ -16,6 +16,7 @@ STUDENTS_CSV = DATABASE / "students" / "students.csv"
 CONTESTS_DIR = DATABASE / "contests"
 CONTESTS_CSV = CONTESTS_DIR / "contests.csv"
 OUTPUT_JSON = REPO_ROOT / "docs" / "data.json"
+OUTPUT_TEAMS_JSON = REPO_ROOT / "docs" / "teams.json"
 
 CONTESTS_SKIP_FOR_SEARCH = {
     "mathcounts-national",  # Roster CSVs only; listed in contest popover, not in student search
@@ -389,6 +390,63 @@ def merge_mathcounts_national_competitors_into_rank(
                 }
 
 
+def build_teams_index() -> dict[str, dict[str, dict[str, list[int]]]]:
+    """
+    Index database/contests/*-teams/year=*/teams.csv for the website team roster popover.
+    Shape: { base_contest_slug: { year: { team_display_name: [student_id, ...] } } }.
+    Team label matches UI: `team` column, else `team_name`, same as the frontend.
+    """
+    out: dict[str, dict[str, dict[str, list[int]]]] = {}
+    for teams_path in sorted(CONTESTS_DIR.glob("*-teams/year=*/teams.csv")):
+        try:
+            rel = teams_path.relative_to(CONTESTS_DIR)
+        except ValueError:
+            continue
+        parts = rel.parts
+        if len(parts) != 3:
+            continue
+        folder = parts[0]
+        if not folder.endswith("-teams"):
+            continue
+        base_slug = folder[: -len("-teams")]
+        year_part = parts[1]
+        if not year_part.startswith("year="):
+            continue
+        year = year_part.split("=", 1)[1]
+
+        with open(teams_path, newline="", encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                label = ((row.get("team") or "").strip() or (row.get("team_name") or "").strip())
+                raw = (row.get("student_ids") or "").strip()
+                if not label or not raw:
+                    continue
+                ids: list[int] = []
+                for part in raw.split("|"):
+                    p = part.strip()
+                    if not p:
+                        continue
+                    try:
+                        ids.append(int(p))
+                    except ValueError:
+                        pass
+                if not ids:
+                    continue
+                if base_slug not in out:
+                    out[base_slug] = {}
+                if year not in out[base_slug]:
+                    out[base_slug][year] = {}
+                if label in out[base_slug][year]:
+                    seen = set(out[base_slug][year][label])
+                    for i in ids:
+                        if i not in seen:
+                            out[base_slug][year][label].append(i)
+                            seen.add(i)
+                else:
+                    out[base_slug][year][label] = ids
+    return out
+
+
 def main() -> None:
     students = load_students()
     contests, contest_order = load_contests()
@@ -456,12 +514,6 @@ def main() -> None:
             # Don't expose school from AMO/JMO results on the website (still in .csv)
             if slug in ("amo", "jmo"):
                 skip_keys = skip_keys | {"school"}
-            # Don't expose team from ARML/MMATHS results on the website (still in .csv)
-            if slug in ("arml", "mmaths"):
-                skip_keys = skip_keys | {"team"}
-            # Don't expose team_name from DMM results on the website (still in .csv)
-            if slug == "dmm":
-                skip_keys = skip_keys | {"team_name"}
             for k, v in row.items():
                 if k is None:
                     continue
@@ -775,6 +827,12 @@ def main() -> None:
         )
 
     print(f"Wrote {len(result_students)} students with records to {OUTPUT_JSON}")
+
+    teams_index = build_teams_index()
+    OUTPUT_TEAMS_JSON.parent.mkdir(parents=True, exist_ok=True)
+    with open(OUTPUT_TEAMS_JSON, "w", encoding="utf-8") as f:
+        json.dump(teams_index, f, ensure_ascii=False, separators=(",", ":"))
+    print(f"Wrote team rosters to {OUTPUT_TEAMS_JSON}")
 
     # Build competition_data.json for crank.html
     try:

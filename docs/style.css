@@ -1097,15 +1097,97 @@ body.contest-filter-popover-open {
   text-decoration: underline;
 }
 
-.csv-row-year-link {
+.csv-row-year-link,
+.team-roster-member-link {
   color: var(--accent);
   text-decoration: none;
   cursor: pointer;
 }
 
-.csv-row-year-link:hover {
+.csv-row-year-link:hover,
+.team-roster-member-link:hover {
   color: var(--accent-hover);
   text-decoration: underline;
+}
+
+#team-roster-popover[hidden] {
+  display: none !important;
+  pointer-events: none !important;
+}
+
+.team-roster-popover-title {
+  margin: 0 2rem 0.75rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.team-roster-popover-title .team-roster-popover-line {
+  display: block;
+  line-height: 1.35;
+}
+
+.team-roster-popover-title .team-roster-popover-topline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.team-roster-popover-title .team-roster-popover-contest {
+  font-weight: 600;
+}
+
+.team-roster-popover-title .team-roster-popover-year {
+  font-size: 0.95em;
+  font-weight: 500;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.team-roster-popover-title .team-roster-popover-team {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.team-roster-trigger {
+  font: inherit;
+  color: var(--accent);
+  text-decoration: none;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-align: inherit;
+  max-width: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.team-roster-trigger:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+.team-roster-list-wrap {
+  flex: 1;
+  min-height: 0;
+  max-height: 70vh;
+  overflow: auto;
+  margin-top: 0.25rem;
+}
+
+.team-roster-member-list {
+  margin: 0;
+  padding-left: 1.25rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.team-roster-member-item {
+  margin: 0.2rem 0;
 }
 
 /* Main */
