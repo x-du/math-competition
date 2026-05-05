@@ -1,32 +1,32 @@
-student_id,student_name,year,division,rank,score,p1,p2,p3,p4,p5,p6,p7,p8,mcp_rank
-47,Shaohuan Zhang,2025,A,1,13.708,1,0,1,1,1,1,0,0,1
-213,Darren Han,2025,A,2,13.262,1,1,1,0,1,1,0,0,2
-210,Eric Zhu,2025,A,3,11.405,1,1,1,1,1,0,0,0,4
-205,Mingyue Yang,2025,A,3,11.405,1,1,1,1,1,0,0,0,4
-3,Oron Wang,2025,A,3,11.405,1,1,1,1,1,0,0,0,4
-225,Ari Wachtel,2025,A,6,11.193,1,0,0,0,0,1,0,1,6
-215,Michael Chen,2025,A,7,9.296,1,0,0,0,1,1,0,0,7
-41,Eddy Zhang,2025,A,8,9.187,1,0,1,1,1,0,0,0,8.5
-34,Jiahe Liu,2025,A,8,9.187,1,0,1,1,1,0,0,0,8.5
-228,Hamza Khan,2025,A,10,8.571,0,0,0,0,1,0,1,0,10
-261,Dalbert Wu,2025,A,11,8.271,1,1,1,1,0,0,0,0,12.5
-262,Aryan Raj,2025,A,11,8.271,1,1,1,1,0,0,0,0,12.5
-77,Shunyao Yan,2025,A,11,8.271,1,1,1,1,0,0,0,0,12.5
-45,Aaryan Vaishya,2025,A,11,8.271,1,1,1,1,0,0,0,0,12.5
-263,Jonathan Liu,2025,A,15,7.100,0,1,1,0,1,0,0,0,15
-264,Chloe Weng,2025,A,16,6.673,1,0,0,0,0,0,0,1,16
-265,James Wu,2025,A,17,6.630,0,1,1,1,0,0,0,0,17.5
-323,Isaac Chan-Osborn,2025,A,17,6.630,0,1,1,1,0,0,0,0,17.5
-266,Ethan Imanuel,2025,A,19,6.523,1,0,1,0,1,0,0,0,21.5
-8,Vincent Wang,2025,A,19,6.523,1,0,1,0,1,0,0,0,21.5
-267,Anshul Mantri,2025,A,19,6.523,1,1,0,1,0,0,0,0,21.5
-216,Lingfei Tang,2025,A,19,6.523,1,1,0,1,0,0,0,0,21.5
-257,Daniel Ge,2025,A,19,6.523,1,0,1,0,1,0,0,0,21.5
-218,William Qian,2025,A,19,6.523,1,1,0,1,0,0,0,0,21.5
-33,Roger Zhen,2025,A,25,6.268,0,0,1,0,0,1,0,0,25
-12,Alan Cheng,2025,A,26,6.053,1,0,1,1,0,0,0,0,28.5
-268,Kevin Yang,2025,A,26,6.053,1,0,1,1,0,0,0,0,28.5
-269,Calvin Garces,2025,A,26,6.053,1,0,1,1,0,0,0,0,28.5
-50,Peter Bai,2025,A,26,6.053,1,0,1,1,0,0,0,0,28.5
-270,Raymond Zhu,2025,A,26,6.053,1,0,1,1,0,0,0,0,28.5
-271,Ethan Gu,2025,A,26,6.053,1,0,1,1,0,0,0,0,28.5
+student_id,student_name,team,team_id,year,division,rank,score,p1,p2,p3,p4,p5,p6,p7,p8,mcp_rank
+47,Shaohuan Zhang,Motown-AllStars,12,2025,A,1,13.708,1,0,1,1,1,1,0,0,1
+213,Darren Han,Texas Ramanujan,6,2025,A,2,13.262,1,1,1,0,1,1,0,0,2
+210,Eric Zhu,Individuals Team 187,15,2025,A,3,11.405,1,1,1,1,1,0,0,0,4
+205,Mingyue Yang,Washington Gold,10,2025,A,3,11.405,1,1,1,1,1,0,0,0,4
+3,Oron Wang,Xioo Math 1434-gon,2,2025,A,3,11.405,1,1,1,1,1,0,0,0,4
+225,Ari Wachtel,BCA 1,25,2025,A,6,11.193,1,0,0,0,0,1,0,1,6
+215,Michael Chen,PRISMS Falcons,13,2025,A,7,9.296,1,0,0,0,1,1,0,0,7
+41,Eddy Zhang,Lehigh Valley Fire,3,2025,A,8,9.187,1,0,1,1,1,0,0,0,8.5
+34,Jiahe Liu,Ohio 1,7,2025,A,8,9.187,1,0,1,1,1,0,0,0,8.5
+228,Hamza Khan,Super 88,24,2025,A,10,8.571,0,0,0,0,1,0,1,0,10
+261,Dalbert Wu,AlphaStar AIR,17,2025,A,11,8.271,1,1,1,1,0,0,0,0,12.5
+262,Aryan Raj,Individuals Team 187,15,2025,A,11,8.271,1,1,1,1,0,0,0,0,12.5
+77,Shunyao Yan,TJ A,5,2025,A,11,8.271,1,1,1,1,0,0,0,0,12.5
+45,Aaryan Vaishya,Florida Alligators,9,2025,A,11,8.271,1,1,1,1,0,0,0,0,12.5
+263,Jonathan Liu,Lexington Alpha,14,2025,A,15,7.100,0,1,1,0,1,0,0,0,15
+264,Chloe Weng,Texas Hardy,35,2025,A,16,6.673,1,0,0,0,0,0,0,1,16
+265,James Wu,Lexington Beta,23,2025,A,17,6.630,0,1,1,1,0,0,0,0,17.5
+323,Isaac Chan-Osborn,Ultraviolet Catastrophe,32,2025,A,17,6.630,0,1,1,1,0,0,0,0,17.5
+266,Ethan Imanuel,Lehigh Valley Fire,3,2025,A,19,6.523,1,0,1,0,1,0,0,0,21.5
+8,Vincent Wang,Texas Ramanujan,6,2025,A,19,6.523,1,0,1,0,1,0,0,0,21.5
+267,Anshul Mantri,Oregon Math Circle,36,2025,A,19,6.523,1,1,0,1,0,0,0,0,21.5
+216,Lingfei Tang,Individuals Team 187,15,2025,A,19,6.523,1,1,0,1,0,0,0,0,21.5
+257,Daniel Ge,Washington Gold,10,2025,A,19,6.523,1,0,1,0,1,0,0,0,21.5
+218,William Qian,Central Maryland United,18,2025,A,19,6.523,1,1,0,1,0,0,0,0,21.5
+33,Roger Zhen,Texas Littlewood,31,2025,A,25,6.268,0,0,1,0,0,1,0,0,25
+12,Alan Cheng,NCSSM Alpha,20,2025,A,26,6.053,1,0,1,1,0,0,0,0,28.5
+268,Kevin Yang,Washington Gold,10,2025,A,26,6.053,1,0,1,1,0,0,0,0,28.5
+269,Calvin Garces,Lexington Beta,23,2025,A,26,6.053,1,0,1,1,0,0,0,0,28.5
+50,Peter Bai,Lexington Alpha,14,2025,A,26,6.053,1,0,1,1,0,0,0,0,28.5
+270,Raymond Zhu,Washington Gold,10,2025,A,26,6.053,1,0,1,1,0,0,0,0,28.5
+271,Ethan Gu,All Aces Spade,4,2025,A,26,6.053,1,0,1,1,0,0,0,0,28.5

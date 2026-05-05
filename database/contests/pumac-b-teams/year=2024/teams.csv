@@ -1,6 +1,6 @@
 team_id,team_name,student_ids,state
 1,Sierra Canyon School,96|1962|1963|2186|2244,California
-2,Pingry Blue,407|768|1055|2152|2164|2227,
+2,Pingry Blue,407|1055|2152|2164|2227,
 3,Ward Melville Math Team,582|7024|1521|1539|1617|2233,New York
 4,Theta Math Club,42|596|844|861|1226|1470|2222,
 5,Jericho A,738|2239|2240|2249,New York
@@ -10,7 +10,7 @@ team_id,team_name,student_ids,state
 9,PRISMS Young Falcons,1406|1463|2146|2205|2218|2254,New Jersey
 10,CRH Math Team,949|1475|2488,
 11,Individuals Team 161,30|1078|1558|2165|2209|2251,
-12,Not Great Valley,899|2187|2230|2231|2246,
+12,Not Great Valley,899|2187|2230|2231|2246,Pennsylvania
 13,Individuals Team 162,770|805|1046|2206|2208|2223,
 14,Millburn Mathematical Madpeople,2169|2175|2201|2207|7023|2253,New Jersey
 15,PHS Apricot,7025|754|1084|2216|2242,

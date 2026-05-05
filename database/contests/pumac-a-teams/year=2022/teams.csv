@@ -1,19 +1,26 @@
 team_id,team_name,student_ids,state
-1,TJ A,10|140|201,Virginia
-2,Lehigh Valley Fire,1|57|91|139,New Jersey
-3,PRISMS Falcons,85|881|61,New Jersey
-4,Florida Alligators,115,Florida
-5,Washington Gold,138|638,Washington
-6,BCA 1,92,New Jersey
+1,TJ A,10|140|148|158|201|441|1437,Virginia
+2,Lehigh Valley Fire,1|57|91|132|139|160,New Jersey
+3,PRISMS Falcons,61|85|291|881|1191|1433,New Jersey
+4,Florida Alligators,115|1289|2493,Florida
+5,Washington Gold,138|448|638|1138|1442,Washington
+6,BCA 1,92|1438,New Jersey
 7,No Coast Best Coast,110|170,Illinois
-8,Pirates A,125,New Jersey
-9,Individuals Team 156,89,Connecticut
-10,Individuals Team 157,331,California
-11,Lexington Alpha,35|144|954,Massachusetts
-12,Westchester Area Math Circle,86,Connecticut
-13,Random Math,169,California
-14,Tin Man,442|1428,New York
-15,Phillips Academy,637|878,Massachusetts
-16,Lehigh Valley Ice,300,New Jersey
+8,Pirates A,125|156|1156,New Jersey
+9,Individuals Team 156,89|123|134,Connecticut
+10,Individuals Team 157,331|941,California
+11,Lexington Alpha,35|144|954|1436,Massachusetts
+12,Westchester Area Math Circle,86|425|1445,Connecticut
+13,Random Math,141|169|483|1431|1432,California
+14,Tin Man,410|442|456|1103|1115|1428,New York
+15,Phillips Academy,97|301|421|637|878,Massachusetts
+16,Lehigh Valley Ice,300|1434,New Jersey
 17,Minnesota Gold,1124,Minnesota
-18,Individuals Team 155,434,New Jersey
+18,Individuals Team 155,262|434|965|1444,New Jersey
+19,BBMC-math Delta,23|1223,
+20,Poolesville Team A,1430|1441,
+21,Scarecrow,102|307|411|1435|1439|1443,
+22,Knights Alpha,277|1117,
+23,TX Momentum Circle,285|1610,
+24,Minnesota Maroon,1440,
+25,Montgomery A,31,

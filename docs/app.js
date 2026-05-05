@@ -4,6 +4,8 @@
   var data = { students: [], contests: {} };
   /** From teams.json: base_contest_slug -> year -> team_name -> [student_id, ...]. */
   var teamsRosterData = {};
+  /** From mathcounts_state_rosters.json: year -> state key -> [student_id, ...]. */
+  var mathcountsStateRosterData = {};
   /** USPS code -> full name; from data.json. Student `state` and record `state` store short codes for US. */
   var usStateLookup = {};
   /** Latest competition season year per contest_slug (global), for MCP decay — see build_search_data.get_time_weight. */
@@ -654,6 +656,14 @@
   }
 
   var MATHCOUNTS_MCP_SLUG = "mathcounts-national-rank";
+
+  /** Raw GitHub path + csv-viewer ?contest= for MathCounts when finals CSV is not published yet (roster only). */
+  function mathcountsCsvStorageSlug(contest, year) {
+    if (contest === MATHCOUNTS_MCP_SLUG && String(year) === "2026") {
+      return "mathcounts-national";
+    }
+    return contest;
+  }
 
   /** Mirrors scripts/build_search_data.py get_time_weight(contestYear, slug, referenceYear). */
   function timeDecayWeightForPublishedMcp(contestYear, slug, referenceYear) {
@@ -2698,11 +2708,12 @@
     ];
     for (var i = 0; i < allKeys.length; i++) {
       var key = allKeys[i];
-      var val = record[key] != null ? record[key] : "";
-      if (key === "state") val = expandUsStateAbbrev(val);
+      var rawVal = record[key] != null ? record[key] : "";
+      var val = rawVal;
+      if (key === "state") val = expandUsStateAbbrev(rawVal);
       var cellClass = key === "rank" ? "num rank-" + (val === "1" || val === 1 ? "1" : (val === "2" || val === 2 || val === "3" || val === 3 ? "2" : "")) : "num";
-      if ((key === "team" || key === "team_name") && slug && yr && val != null && String(val).trim() !== "") {
-        var tn = String(val).trim();
+      if ((key === "team" || key === "team_name") && slug && yr && rawVal != null && String(rawVal).trim() !== "") {
+        var tn = String(rawVal).trim();
         var cellInner =
           "<button type=\"button\" class=\"team-roster-trigger\" data-contest-slug=\"" +
           escapeHtml(slug) +
@@ -2714,6 +2725,24 @@
           escapeHtml(tn) +
           "</button>";
         cells.push("<td class=\"" + cellClass + "\" data-col=\"" + escapeHtml(key) + "\">", cellInner, "</td>");
+      } else if (
+        key === "state" &&
+        slug === MATHCOUNTS_MCP_SLUG &&
+        yr &&
+        rawVal != null &&
+        String(rawVal).trim() !== ""
+      ) {
+        var stKey = String(rawVal).trim();
+        var displaySt = String(val).trim();
+        var cellInnerMc =
+          "<button type=\"button\" class=\"mathcounts-state-roster-trigger\" data-year=\"" +
+          escapeHtml(String(yr)) +
+          "\" data-state=\"" +
+          escapeHtml(stKey) +
+          "\">" +
+          escapeHtml(displaySt) +
+          "</button>";
+        cells.push("<td class=\"" + cellClass + "\" data-col=\"" + escapeHtml(key) + "\">", cellInnerMc, "</td>");
       } else {
         cells.push("<td class=\"" + cellClass + "\" data-col=\"" + escapeHtml(key) + "\">", escapeHtml(String(val)), "</td>");
       }
@@ -2941,6 +2970,10 @@
       var filesByYearForSlug = contestYearFiles[slug] || {};
       var yearSet = {};
       for (var y1 in filesByYearForSlug) if (Object.prototype.hasOwnProperty.call(filesByYearForSlug, y1)) yearSet[y1] = true;
+      if (slug === MATHCOUNTS_MCP_SLUG) {
+        var mcNatYears = contestYearFiles["mathcounts-national"] || {};
+        if (Object.prototype.hasOwnProperty.call(mcNatYears, "2026")) yearSet["2026"] = true;
+      }
       var years = [];
       for (var yk in yearSet) if (Object.prototype.hasOwnProperty.call(yearSet, yk)) years.push(yk);
       years.sort(function (a, b) { return b.localeCompare(a, undefined, { numeric: true }); });
@@ -2951,12 +2984,13 @@
       var filesByYear = filesByYearForSlug;
       for (var j = 0; j < years.length; j++) {
         var yr = years[j];
-        var fileEntry = filesByYear[yr] || "results.csv";
+        var storageSlug = mathcountsCsvStorageSlug(slug, yr);
+        var fileEntry = (contestYearFiles[storageSlug] || {})[yr] || "results.csv";
         var filenames = Array.isArray(fileEntry) ? fileEntry : [fileEntry];
         for (var f = 0; f < filenames.length; f++) {
           var filename = filenames[f] || "results.csv";
           var branch = (data.branch && data.branch !== "main") ? data.branch : "";
-          var yearHref = csvViewerBase + "?contest=" + encodeURIComponent(slug) + "&year=" + encodeURIComponent(yr) + "&file=" + encodeURIComponent(filename) + "&name=" + encodeURIComponent(name) + (branch ? "&branch=" + encodeURIComponent(branch) : "");
+          var yearHref = csvViewerBase + "?contest=" + encodeURIComponent(storageSlug) + "&year=" + encodeURIComponent(yr) + "&file=" + encodeURIComponent(filename) + "&name=" + encodeURIComponent(name) + (branch ? "&branch=" + encodeURIComponent(branch) : "");
           var label = filenames.length > 1 ? yr + " (" + filename.replace(/^results_?/, "").replace(/\.csv$/i, "") + ")" : yr;
           yearLinks.push("<a href=\"" + yearHref + "\" class=\"contest-list-year-link\">" + escapeHtml(label) + "</a>");
         }
@@ -4783,14 +4817,21 @@
       fetch(base + "/teams.json").then(function (res) {
         if (!res.ok) return {};
         return res.json();
+      }).catch(function () { return {}; }),
+      fetch(base + "/mathcounts_state_rosters.json").then(function (res) {
+        if (!res.ok) return {};
+        return res.json();
       }).catch(function () { return {}; })
     ]).then(function (arr) {
       var json = arr[0];
       var branchCfg = arr[1];
       var promotionsCfg = arr[2];
       var teamsJson = arr[3];
+      var mcStateJson = arr[4];
       teamsRosterData =
         teamsJson && typeof teamsJson === "object" && !Array.isArray(teamsJson) ? teamsJson : {};
+      mathcountsStateRosterData =
+        mcStateJson && typeof mcStateJson === "object" && !Array.isArray(mcStateJson) ? mcStateJson : {};
       if (Array.isArray(promotionsCfg)) featurePromotions = promotionsCfg;
       else if (promotionsCfg && Array.isArray(promotionsCfg.promotions)) featurePromotions = promotionsCfg.promotions;
       else featurePromotions = [];
@@ -4876,6 +4917,7 @@
         bindMcpPctPopover();
         bindCsvPopover();
         bindTeamRosterPopover();
+        bindMathcountsStateRosterPopover();
         bindStudentReportModal();
         runSearch({
           scrollStudentCardToTop: getStudentIdFromUrl() != null
@@ -4926,6 +4968,8 @@
       event.preventDefault();
       var trp = document.getElementById("team-roster-popover");
       if (trp) trp.hidden = true;
+      var mcsp = document.getElementById("mathcounts-state-popover");
+      if (mcsp) mcsp.hidden = true;
       pushStudentIdInUrl(sid);
       runSearch({ scrollStudentCardToTop: true });
       if (searchEl) searchEl.blur();
@@ -5117,11 +5161,12 @@
     if (!csvPopover || !csvTitle) return;
 
     var contestYearFiles = data.contest_year_files || {};
-    var filesByYear = contestYearFiles[contest] || {};
+    var storageSlug = mathcountsCsvStorageSlug(contest, year);
+    var filesByYear = contestYearFiles[storageSlug] || {};
     var fileEntry = filesByYear[year] || "results.csv";
     var file = Array.isArray(fileEntry) ? (fileEntry[0] || "results.csv") : fileEntry;
 
-    var contestInfo = (data.contests || {})[contest] || {};
+    var contestInfo = (data.contests || {})[storageSlug] || (data.contests || {})[contest] || {};
     var contestName = contestInfo.contest_name || contest;
     trackGaEvent("csv_popover_open", {
       contest_slug: contest || "",
@@ -5136,10 +5181,12 @@
     csvPopover.hidden = false;
     var teamRosterEl = document.getElementById("team-roster-popover");
     if (teamRosterEl) teamRosterEl.hidden = true;
+    var mcStateRosterEl = document.getElementById("mathcounts-state-popover");
+    if (mcStateRosterEl) mcStateRosterEl.hidden = true;
 
     var branch = (data.branch && data.branch !== "main") ? data.branch : "main";
-    var rawUrl = RAW_BASE + encodeURIComponent(branch) + "/database/contests/" + encodeURIComponent(contest) + "/year%3D" + encodeURIComponent(year) + "/" + encodeURIComponent(file);
-    var viewerUrl = CSV_VIEWER_BASE + "?contest=" + encodeURIComponent(contest) + "&year=" + encodeURIComponent(year) + "&file=" + encodeURIComponent(file) + "&name=" + encodeURIComponent(contestName);
+    var rawUrl = RAW_BASE + encodeURIComponent(branch) + "/database/contests/" + encodeURIComponent(storageSlug) + "/year%3D" + encodeURIComponent(year) + "/" + encodeURIComponent(file);
+    var viewerUrl = CSV_VIEWER_BASE + "?contest=" + encodeURIComponent(storageSlug) + "&year=" + encodeURIComponent(year) + "&file=" + encodeURIComponent(file) + "&name=" + encodeURIComponent(contestName);
 
     fetch(rawUrl)
       .then(function (res) {
@@ -5221,6 +5268,8 @@
 
     var csvPop = document.getElementById("csv-popover");
     if (csvPop) csvPop.hidden = true;
+    var mcStatePopClose = document.getElementById("mathcounts-state-popover");
+    if (mcStatePopClose) mcStatePopClose.hidden = true;
 
     var baseSlug = baseContestSlug(contestSlug);
     var yearStr = String(year || "").trim();
@@ -5301,6 +5350,106 @@
     listWrap.hidden = false;
   }
 
+  /** mathcounts_state_rosters.json: national competitors for same state × season year. */
+  function showMathcountsStateRosterPopover(year, stateKey) {
+    var pop = document.getElementById("mathcounts-state-popover");
+    var titleEl = document.getElementById("mathcounts-state-popover-title");
+    var loadingEl = document.getElementById("mathcounts-state-popover-loading");
+    var errEl = document.getElementById("mathcounts-state-popover-error");
+    var listEl = document.getElementById("mathcounts-state-popover-list");
+    var listWrap = document.getElementById("mathcounts-state-popover-list-wrap");
+    if (!pop || !titleEl || !loadingEl || !errEl || !listEl || !listWrap) return;
+
+    var csvPop = document.getElementById("csv-popover");
+    if (csvPop) csvPop.hidden = true;
+    var teamPop = document.getElementById("team-roster-popover");
+    if (teamPop) teamPop.hidden = true;
+
+    var yearStr = String(year || "").trim();
+    var sk = String(stateKey || "").trim();
+    var contestInfo = (data.contests || {})[MATHCOUNTS_MCP_SLUG] || {};
+    var contestLabel = contestInfo.contest_name || "Mathcounts";
+    var stateDisplay = expandUsStateAbbrev(sk);
+    titleEl.innerHTML =
+      "<span class=\"team-roster-popover-line team-roster-popover-topline\">" +
+      "<span class=\"team-roster-popover-contest\">" +
+      escapeHtml(contestLabel) +
+      "</span>" +
+      "<span class=\"team-roster-popover-year\"> · " +
+      escapeHtml(yearStr) +
+      "</span>" +
+      "</span>" +
+      "<span class=\"team-roster-popover-line team-roster-popover-team\">" +
+      escapeHtml(stateDisplay) +
+      "</span>";
+    loadingEl.hidden = true;
+    errEl.hidden = true;
+    errEl.textContent = "";
+    listWrap.hidden = true;
+    listEl.innerHTML = "";
+    pop.hidden = false;
+
+    trackGaEvent("mathcounts_state_roster_open", {
+      year: yearStr,
+      state: sk
+    });
+
+    var byYear = mathcountsStateRosterData[yearStr];
+    var idList = byYear && sk ? byYear[sk] : null;
+    if ((!idList || !idList.length) && byYear && sk) {
+      var slo = sk.toLowerCase();
+      for (var ky in byYear) {
+        if (Object.prototype.hasOwnProperty.call(byYear, ky) && ky && String(ky).toLowerCase() === slo) {
+          idList = byYear[ky];
+          break;
+        }
+      }
+    }
+
+    if (!idList || !idList.length) {
+      errEl.textContent =
+        "State competitor list not found. Run scripts/build_search_data.py and deploy mathcounts_state_rosters.json.";
+      errEl.hidden = false;
+      return;
+    }
+
+    var rows = [];
+    for (var ii = 0; ii < idList.length; ii++) {
+      var idStr0 = String(idList[ii]);
+      var stu = findStudentById(idStr0);
+      var display = stu && stu.name ? stu.name : "Student #" + idStr0;
+      rows.push({ id: idStr0, nm: display });
+    }
+    rows.sort(function (a, b) {
+      return String(a.nm).toLowerCase().localeCompare(String(b.nm).toLowerCase());
+    });
+
+    var itemHtmlMc = [];
+    for (var jj = 0; jj < rows.length; jj++) {
+      var idStrM = rows[jj].id;
+      var displayM = rows[jj].nm;
+      var linkHrefM = "";
+      try {
+        var um = new URL(window.location.href);
+        um.searchParams.set("student_id", idStrM);
+        linkHrefM = um.pathname + um.search + um.hash;
+      } catch (em) {
+        linkHrefM = "?student_id=" + encodeURIComponent(idStrM);
+      }
+      itemHtmlMc.push(
+        "<li class=\"team-roster-member-item\"><a class=\"team-roster-member-link\" href=\"" +
+          escapeHtml(linkHrefM) +
+          "\" data-student-id=\"" +
+          escapeHtml(idStrM) +
+          "\">" +
+          escapeHtml(displayM) +
+          "</a></li>"
+      );
+    }
+    listEl.innerHTML = itemHtmlMc.join("");
+    listWrap.hidden = false;
+  }
+
   function handleResultsClick(event) {
     var target = event.target;
     var reportTriggerBtn = target && target.closest ? target.closest(".student-record-report-trigger") : null;
@@ -5319,6 +5468,15 @@
       closeStudentReportMenu();
       if (!issueType || !cardForReport) return;
       openStudentReportModal(issueType, cardForReport, reportOptionBtn);
+      return;
+    }
+    var mcStateBtn = target && target.closest ? target.closest(".mathcounts-state-roster-trigger") : null;
+    if (mcStateBtn) {
+      event.preventDefault();
+      event.stopPropagation();
+      var mcY = mcStateBtn.getAttribute("data-year");
+      var mcSt = mcStateBtn.getAttribute("data-state");
+      if (mcY && mcSt) showMathcountsStateRosterPopover(mcY, mcSt);
       return;
     }
     var teamRosterBtn = target && target.closest ? target.closest(".team-roster-trigger") : null;
@@ -5488,6 +5646,26 @@
     function close() { popover.hidden = true; }
     if (closeBtn) closeBtn.addEventListener("click", close);
     if (backdrop) backdrop.addEventListener("click", close);
+    var titleEl = popover.querySelector("h2.team-roster-popover-title");
+    if (titleEl) titleEl.addEventListener("click", function (ev) {
+      if (!ev.target.closest(".team-roster-popover-team")) return;
+      close();
+    });
+  }
+
+  function bindMathcountsStateRosterPopover() {
+    var popover = document.getElementById("mathcounts-state-popover");
+    var closeBtn = popover && popover.querySelector(".mathcounts-state-popover-close");
+    var backdrop = popover && popover.querySelector(".mathcounts-state-popover-backdrop");
+    if (!popover) return;
+    function close() { popover.hidden = true; }
+    if (closeBtn) closeBtn.addEventListener("click", close);
+    if (backdrop) backdrop.addEventListener("click", close);
+    var titleEl = popover.querySelector("h2.team-roster-popover-title");
+    if (titleEl) titleEl.addEventListener("click", function (ev) {
+      if (!ev.target.closest(".team-roster-popover-team")) return;
+      close();
+    });
   }
 
   if (awardsRankingListEl) {

@@ -77,6 +77,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="preload" href="data.json" as="fetch" crossorigin>
   <link rel="preload" href="teams.json" as="fetch" crossorigin>
+  <link rel="preload" href="mathcounts_state_rosters.json" as="fetch" crossorigin>
   <style>.awards-ranking-controls{visibility:hidden}</style>
 </head>
 <body>
@@ -562,6 +563,18 @@
         <button type="button" class="csv-popover-close team-roster-popover-close" aria-label="Close">×</button>
       </div>
       <div class="csv-popover-backdrop team-roster-popover-backdrop" aria-hidden="true"></div>
+    </div>
+    <div id="mathcounts-state-popover" class="csv-popover" hidden role="dialog" aria-labelledby="mathcounts-state-popover-title">
+      <div class="csv-popover-inner">
+        <h2 id="mathcounts-state-popover-title" class="csv-popover-title team-roster-popover-title" aria-live="polite"></h2>
+        <div id="mathcounts-state-popover-loading" class="csv-popover-loading">Loading…</div>
+        <div id="mathcounts-state-popover-error" class="csv-popover-error" hidden></div>
+        <div id="mathcounts-state-popover-list-wrap" class="team-roster-list-wrap" hidden>
+          <ul id="mathcounts-state-popover-list" class="team-roster-member-list" aria-label="National competitors from this state"></ul>
+        </div>
+        <button type="button" class="csv-popover-close mathcounts-state-popover-close" aria-label="Close">×</button>
+      </div>
+      <div class="csv-popover-backdrop mathcounts-state-popover-backdrop" aria-hidden="true"></div>
     </div>
     <div id="empty" class="empty-state" hidden>
       <p>No students match your search. Try a different name or partial name.</p>

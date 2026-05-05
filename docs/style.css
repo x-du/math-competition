@@ -1110,7 +1110,8 @@ body.contest-filter-popover-open {
   text-decoration: underline;
 }
 
-#team-roster-popover[hidden] {
+#team-roster-popover[hidden],
+#mathcounts-state-popover[hidden] {
   display: none !important;
   pointer-events: none !important;
 }
@@ -1151,9 +1152,11 @@ body.contest-filter-popover-open {
 .team-roster-popover-title .team-roster-popover-team {
   font-size: 1rem;
   font-weight: 600;
+  cursor: pointer;
 }
 
-.team-roster-trigger {
+.team-roster-trigger,
+.mathcounts-state-roster-trigger {
   font: inherit;
   color: var(--accent);
   text-decoration: none;
@@ -1166,7 +1169,8 @@ body.contest-filter-popover-open {
   -webkit-tap-highlight-color: transparent;
 }
 
-.team-roster-trigger:hover {
+.team-roster-trigger:hover,
+.mathcounts-state-roster-trigger:hover {
   color: var(--accent-hover);
   text-decoration: underline;
 }

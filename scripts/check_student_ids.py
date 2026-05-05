@@ -12,8 +12,10 @@ database/contests:
    `bmt/.../year=<y>/results.csv` (all five divisions) are unioned; for **pumac-b**,
    composite `pumac-b` plus **pumac-b-algebra**, **pumac-b-combinator**,
    **pumac-b-geometry**, and **pumac-b-number-theory** are unioned (subject-only
-   competitors are not listed on division-wide `pumac-b/results.csv`); for
-   **cmimc**, **cmimc-algebra**, **cmimc-geometry**, and **cmimc-comb** are
+   competitors are not listed on division-wide `pumac-b/results.csv`); for **pumac-a**
+   the same union applies with **pumac-a-algebra**, **pumac-a-combinator**,
+   **pumac-a-geometry**, and **pumac-a-number-theory**; for **cmimc**,
+   **cmimc-algebra**, **cmimc-geometry**, and **cmimc-comb** are
    unioned with overall **cmimc** (subject-only competitors may be absent from
    `cmimc/results.csv`); for **hmmt-feb**, **hmmt-feb-algebra-number-theory**,
    **hmmt-feb-geometry**, and **hmmt-feb-combo** are unioned with overall
@@ -44,6 +46,14 @@ PUMAC_B_DIVISIONS = (
     "pumac-b-combinator",
     "pumac-b-geometry",
     "pumac-b-number-theory",
+)
+
+PUMAC_A_DIVISIONS = (
+    "pumac-a",
+    "pumac-a-algebra",
+    "pumac-a-combinator",
+    "pumac-a-geometry",
+    "pumac-a-number-theory",
 )
 
 CMIMC_DIVISIONS = (
@@ -135,6 +145,8 @@ def results_student_ids_for_contest_year(contest_slug: str, year: str) -> Tuple[
         paths = [CONTESTS_DIR / d / f"year={year}" / "results.csv" for d in BMT_DIVISIONS]
     elif contest_slug == "pumac-b":
         paths = [CONTESTS_DIR / d / f"year={year}" / "results.csv" for d in PUMAC_B_DIVISIONS]
+    elif contest_slug == "pumac-a":
+        paths = [CONTESTS_DIR / d / f"year={year}" / "results.csv" for d in PUMAC_A_DIVISIONS]
     elif contest_slug == "cmimc":
         paths = [CONTESTS_DIR / d / f"year={year}" / "results.csv" for d in CMIMC_DIVISIONS]
     elif contest_slug == "hmmt-feb":

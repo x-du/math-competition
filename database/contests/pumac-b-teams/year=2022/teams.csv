@@ -7,8 +7,8 @@ team_id,team_name,student_ids,state
 9,Individuals Team 153,1419|2310|2321,
 11,Jericho High School A,738|979|2222|2239|2267|2316|2337,New York
 12,Just Woo It,2299|2303|2305|2308|2317,
-14,MHSProfessionalJobbers,127|445|1176|2171|2307,New Jersey
-15,Millburn Mathematical Madpeople,3|2253|2283|2326|2338,New Jersey
+14,MHSProfessionalJobbers,127|7032|1176|2171|2307,New Jersey
+15,Millburn Mathematical Madpeople,3|2253|2283|2326|2338,
 16,PRISMS Young Falcons,2205|2300|2319,New Jersey
 17,Pingry Team A,407|1623|1686|2227|2257|2315|2324,New Jersey
 19,Sierra Canyon School,96|1940|2186|2191|2265|2288|2313|2314,California
@@ -18,6 +18,6 @@ team_id,team_name,student_ids,state
 24,Knights Beta,2263|2309|2485|2492,New York
 25,Team :blobcosy:,2302|2311|2327,
 26,Garnet Valley Math Team,1712|2246|2312|2330,Pennsylvania
-27,Big L Club,3048|1355|2075|2234|2291|2322|2727,
+27,Big L Club,3408|1355|2075|2234|2291|2322|2727,
 28,Ridge Mu Alpha Theta,101|2008,
 29,CSW A,2304|2332,

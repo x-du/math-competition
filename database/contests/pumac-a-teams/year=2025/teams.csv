@@ -1,26 +1,37 @@
 team_id,team_name,student_ids,state
-1,Utah Arches,4,Utah
-2,Xioo Math 1434-gon,3|206,
-3,Lehigh Valley Fire,1|41|214,New Jersey
-4,All Aces Spade,13,Texas
-5,TJ A,10|221,Virginia
-6,Texas Ramanujan,14|44|213,Texas
-7,Ohio 1,34,Ohio
+1,Utah Arches,4|232|250,Utah
+2,Xioo Math 1434-gon,3|206|231|252,
+3,Lehigh Valley Fire,1|41|214|233|266,New Jersey
+4,All Aces Spade,13|271,Texas
+5,TJ A,10|29|77|221|235,Virginia
+6,Texas Ramanujan,8|14|44|213|229|254,Texas
+7,Ohio 1,34|236,Ohio
 8,Westchester Area Math Circle,204,Connecticut
-9,Florida Alligators,20|40|226,Florida
-10,Washington Gold,7|43|205,Washington
+9,Florida Alligators,20|40|45|226|244|251,Florida
+10,Washington Gold,7|24|43|205|257|268|270,Washington
 11,Flip-flops Math,207,Washington
-12,Motown-AllStars,47,Michigan
+12,Motown-AllStars,47|246,Michigan
 13,PRISMS Falcons,209|215,New Jersey
-14,Lexington Alpha,35|65,Massachusetts
-15,Individuals Team 187,210|216,North Carolina
-16,Random Math Team,38|211,California
-17,AlphaStar AIR,17|21|25,California
+14,Lexington Alpha,35|50|65|242|263,Massachusetts
+15,Individuals Team 187,86|210|216|262,North Carolina
+16,Random Math Team,38|211|247,California
+17,AlphaStar AIR,17|21|25|238|261,California
 18,Central Maryland United,212|218,Maryland
-19,Mad Hatter,217,New York
-20,NCSSM Alpha,219,North Carolina
+19,Mad Hatter,217|245|256,New York
+20,NCSSM Alpha,12|219,North Carolina
 21,Mass ARML Stars,220,Massachusetts
 22,MoCoSwaggaSquad,222,Maryland
-23,Lexington Beta,223|227,Massachusetts
-24,Super 88,224|228,
+23,Lexington Beta,223|227|249|265|269,Massachusetts
+24,Super 88,224|228|237|255,
 25,BCA 1,225,New Jersey
+26,Phillips Andover 1778,36,
+27,Mock Turtle,234,
+28,Lehigh Valley Ice,239,
+29,White Rabbit,241,
+30,Pirates A,243|259,
+31,Texas Littlewood,33|248|253,
+32,Ultraviolet Catastrophe,323,
+33,Upstate New York Math Team,42,
+34,Individuals Team 188,72|258,
+35,Texas Hardy,264,
+36,Oregon Math Circle,267,

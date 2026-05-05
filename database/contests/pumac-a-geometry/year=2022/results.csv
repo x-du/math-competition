@@ -1,31 +1,31 @@
-student_id,student_name,year,division,rank,score,p1,p2,p3,p4,p5,p6,p7,p8,mcp_rank
-140,Isabella Zhu,2022,A,1,16.158,1,0,1,1,1,1,1,0,1
-1124,Matthew Chen,2022,A,2,13.208,1,1,0,1,1,1,0,0,2
-115,Aaron Hu,2022,A,3,12.872,0,1,1,1,1,0,1,0,3
-35,William Hua,2022,A,4,10.893,0,1,1,0,1,1,0,0,4
-138,Alex Zhao,2022,A,5,10.866,0,1,0,1,1,0,1,0,5
-170,Krishna Pothapragada,2022,A,6,9.929,0,1,1,0,0,0,0,1,6
-89,Jordan Lefkowitz,2022,A,7,9.101,1,1,1,0,1,0,0,0,7
-85,Sophia Zhang,2022,A,8,8.843,1,1,1,1,0,0,0,0,8
-300,Isaac Chen,2022,A,9,8.376,1,0,0,0,1,1,0,0,9
-637,Angeline Zhao,2022,A,10,8.319,1,1,0,0,0,1,0,0,10
-123,Vivian Loh,2022,A,11,8.04,1,0,0,0,1,0,1,0,11
-277,Aprameya Tripathy,2022,A,12,7.472,1,0,1,0,0,0,1,0,12
-1432,Nikhil Mathihalli,2022,A,13,6.895,0,0,1,1,1,0,0,0,13
-169,Nilay Mishra,2022,A,14,6.838,0,1,1,1,0,0,0,0,14
-1138,Lucas Tang,2022,A,15,6.585,1,0,1,0,1,0,0,0,15
-1103,John Gupta-She,2022,A,16,6.527,1,1,1,0,0,0,0,0,16
-1156,Locke Cai,2022,A,17,6.327,1,0,1,1,0,0,0,0,18
-448,Raina Wu,2022,A,17,6.327,1,0,1,1,0,0,0,0,18
-1437,Nikhil Pesaladinne,2022,A,17,6.327,1,0,1,1,0,0,0,0,18
-134,Maximus Lu,2022,A,20,5.466,0,0,1,0,0,0,1,0,20
-1433,Sicheng Kevin Zhou,2022,A,21,5.09,0,1,0,0,1,0,0,0,21.5
-965,Hongyi Huang,2022,A,21,5.09,0,1,0,0,1,0,0,0,21.5
-441,David Wei,2022,A,23,4.889,0,0,0,1,1,0,0,0,23.5
-1438,Nikhil Mudumbi,2022,A,23,4.889,0,0,0,1,1,0,0,0,23.5
-285,Leo Yu,2022,A,25,4.832,0,1,0,1,0,0,0,0,25
-307,Steven Lou,2022,A,26,4.579,1,0,0,0,1,0,0,0,26
-411,Daniel Potievsky,2022,A,27,4.522,0,1,1,0,0,0,0,0,28.5
-1439,Jack Fang,2022,A,27,4.522,0,1,1,0,0,0,0,0,28.5
-410,Jaemin Kim,2022,A,27,4.522,0,1,1,0,0,0,0,0,28.5
-425,Andrew Tu,2022,A,27,4.522,0,1,1,0,0,0,0,0,28.5
+student_id,student_name,team,team_id,year,division,rank,score,p1,p2,p3,p4,p5,p6,p7,p8,mcp_rank
+140,Isabella Zhu,TJ A,1,2022,A,1,16.158,1,0,1,1,1,1,1,0,1
+1124,Matthew Chen,Minnesota Gold,17,2022,A,2,13.208,1,1,0,1,1,1,0,0,2
+115,Aaron Hu,Florida Alligators,4,2022,A,3,12.872,0,1,1,1,1,0,1,0,3
+35,William Hua,Lexington Alpha,11,2022,A,4,10.893,0,1,1,0,1,1,0,0,4
+138,Alex Zhao,Washington Gold,5,2022,A,5,10.866,0,1,0,1,1,0,1,0,5
+170,Krishna Pothapragada,No Coast Best Coast,7,2022,A,6,9.929,0,1,1,0,0,0,0,1,6
+89,Jordan Lefkowitz,Individuals Team 156,9,2022,A,7,9.101,1,1,1,0,1,0,0,0,7
+85,Sophia Zhang,PRISMS Falcons,3,2022,A,8,8.843,1,1,1,1,0,0,0,0,8
+300,Isaac Chen,Lehigh Valley Ice,16,2022,A,9,8.376,1,0,0,0,1,1,0,0,9
+637,Angeline Zhao,Phillips Academy,15,2022,A,10,8.319,1,1,0,0,0,1,0,0,10
+123,Vivian Loh,Individuals Team 156,9,2022,A,11,8.04,1,0,0,0,1,0,1,0,11
+277,Aprameya Tripathy,Knights Alpha,22,2022,A,12,7.472,1,0,1,0,0,0,1,0,12
+1432,Nikhil Mathihalli,Random Math,13,2022,A,13,6.895,0,0,1,1,1,0,0,0,13
+169,Nilay Mishra,Random Math,13,2022,A,14,6.838,0,1,1,1,0,0,0,0,14
+1138,Lucas Tang,Washington Gold,5,2022,A,15,6.585,1,0,1,0,1,0,0,0,15
+1103,John Gupta-She,Tin Man,14,2022,A,16,6.527,1,1,1,0,0,0,0,0,16
+1156,Locke Cai,Pirates A,8,2022,A,17,6.327,1,0,1,1,0,0,0,0,18
+448,Raina Wu,Washington Gold,5,2022,A,17,6.327,1,0,1,1,0,0,0,0,18
+1437,Nikhil Pesaladinne,TJ A,1,2022,A,17,6.327,1,0,1,1,0,0,0,0,18
+134,Maximus Lu,Individuals Team 156,9,2022,A,20,5.466,0,0,1,0,0,0,1,0,20
+1433,Sicheng Kevin Zhou,PRISMS Falcons,3,2022,A,21,5.09,0,1,0,0,1,0,0,0,21.5
+965,Hongyi Huang,Individuals Team 155,18,2022,A,21,5.09,0,1,0,0,1,0,0,0,21.5
+441,David Wei,TJ A,1,2022,A,23,4.889,0,0,0,1,1,0,0,0,23.5
+1438,Nikhil Mudumbi,BCA 1,6,2022,A,23,4.889,0,0,0,1,1,0,0,0,23.5
+285,Leo Yu,TX Momentum Circle,23,2022,A,25,4.832,0,1,0,1,0,0,0,0,25
+307,Steven Lou,Scarecrow,21,2022,A,26,4.579,1,0,0,0,1,0,0,0,26
+411,Daniel Potievsky,Scarecrow,21,2022,A,27,4.522,0,1,1,0,0,0,0,0,28.5
+1439,Jack Fang,Scarecrow,21,2022,A,27,4.522,0,1,1,0,0,0,0,0,28.5
+410,Jaemin Kim,Tin Man,14,2022,A,27,4.522,0,1,1,0,0,0,0,0,28.5
+425,Andrew Tu,Westchester Area Math Circle,12,2022,A,27,4.522,0,1,1,0,0,0,0,0,28.5

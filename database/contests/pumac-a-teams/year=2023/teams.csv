@@ -1,22 +1,32 @@
 team_id,team_name,student_ids,state
-1,Lehigh Valley Fire,1|91|103|300|434|930,New Jersey
-2,TJ A,10|201|441,Virginia
-3,BCA 1,92,New Jersey
-4,Texas Ramanujan,56|1225,Texas
-5,Florida Alligators,115|281,Florida
-6,PEA Red Lion,3|27,New Hampshire
-7,CT Cyborgs,86|89,Connecticut
+1,Lehigh Valley Fire,1|91|103|132|300|434|930,New Jersey
+2,TJ A,10|201|282|306|441|1422,Virginia
+3,BCA 1,92|1060|1421,New Jersey
+4,Texas Ramanujan,46|56|1225|1335,Texas
+5,Florida Alligators,115|281|286|2493,Florida
+6,PEA Red Lion,3|27|37,New Hampshire
+7,CT Cyborgs,86|89|262,
 8,Knights A,277,New Jersey
-9,MoCoSwaggaSquad,400|1417,Maryland
+9,MoCoSwaggaSquad,218|400|1006|1417,Maryland
 10,Athemath Owls,123,Pennsylvania
-11,GWe UAre Not NAffiliated,164|166,California
-12,Tin Man,102,New York
-13,404 Error,34,Ohio
-14,Lexington Alpha,242|1234,Massachusetts
-15,PRISMS Falcons,61|1531,New Jersey
-16,Florida Beaches,40,Florida
-17,Phillips Academy,301|421,Massachusetts
-18,Individuals Team 161,974,New Hampshire
-19,Lexington Beta,1203,Massachusetts
-20,TJ B,1229,Virginia
-21,BBMC-math Delta,278,Maryland
+11,GWe UAre Not NAffiliated,164|166|622,California
+12,Tin Man,102|410|411|412|457|3318,New York
+13,404 Error,29|34|311,
+14,Lexington Alpha,120|242|424|1234,Massachusetts
+15,PRISMS Falcons,61|85|877|1424|1427|1531,New Jersey
+16,Florida Beaches,40|1426,Florida
+17,Phillips Academy,97|301|421|879,Massachusetts
+18,Individuals Team 161,974|1237|1419,New Hampshire
+19,Lexington Beta,227|1203|1418,Massachusetts
+20,TJ B,1229|1408|1420,Virginia
+21,BBMC-math Delta,23|278|925,Maryland
+22,Individuals Team 160,387|967,
+23,Texas Hardy,14|44|49,
+24,Scarecrow,289|298,
+25,Central Maryland United,212,
+26,Lion,217|921,
+27,Pirates A,125|259,
+28,Yu's Alligator,127,
+29,Lehigh Valley Ice,1336,
+30,Pirates B,243,
+31,Poolesville Math Team A,172|1425,

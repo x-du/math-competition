@@ -1,31 +1,31 @@
-student_id,student_name,year,division,rank,score,p1,p2,p3,p4,p5,p6,p7,p8,mcp_rank
-92,Marvin Mao,2023,A,1,10.883,1,1,1,1,1,0,0,0,2
-3,Oron Wang,2023,A,1,10.883,1,1,1,1,1,0,0,0,2
-281,Andrew Xing,2023,A,1,10.883,1,1,1,1,1,0,0,0,2
-34,Jiahe Liu,2023,A,4,9.115,1,1,0,1,1,0,0,0,4
-103,Allen Wang,2023,A,5,8.581,0,1,1,1,1,0,0,0,5
-201,Zani Xu,2023,A,6,7.694,1,1,1,0,1,0,0,0,8.5
-1234,Andrew Zhao,2023,A,6,7.694,1,1,1,0,1,0,0,0,8.5
-301,Harry Kim,2023,A,6,7.694,1,1,1,0,1,0,0,0,8.5
-1229,Vishal Nandakumar,2023,A,6,7.694,1,1,1,0,1,0,0,0,8.5
-166,Roger Fan,2023,A,6,7.694,1,1,1,0,1,0,0,0,8.5
-164,Steve Zhang,2023,A,6,7.694,1,1,1,0,1,0,0,0,8.5
-457,Ashley Zhu,2023,A,12,7.097,0,0,1,1,1,0,0,0,12
-46,Raymond Zhao,2023,A,13,6.976,1,1,0,1,0,0,0,0,13
-102,Andrew Li,2023,A,14,6.813,0,1,0,1,1,0,0,0,14.5
-97,Eric Wang,2023,A,14,6.813,0,1,0,1,1,0,0,0,14.5
-1424,Xuancheng Benjamin Li,2023,A,16,6.442,0,1,1,1,0,0,0,0,16.5
-123,Vivian Loh,2023,A,16,6.442,0,1,1,1,0,0,0,0,16.5
-91,Andrew Lin,2023,A,18,6.209,1,0,1,0,1,0,0,0,18
-14,Nathan Liu,2023,A,19,5.926,1,1,0,0,1,0,0,0,21.5
-49,Amogh Akella,2023,A,19,5.926,1,1,0,0,1,0,0,0,21.5
-1225,Alexander Jun,2023,A,19,5.926,1,1,0,0,1,0,0,0,21.5
-1335,Katherine Liu,2023,A,19,5.926,1,1,0,0,1,0,0,0,21.5
-400,Kelin Zhu,2023,A,19,5.926,1,1,0,0,1,0,0,0,21.5
-259,Maitian Sha,2023,A,19,5.926,1,1,0,0,1,0,0,0,21.5
-921,Alicia Li,2023,A,25,5.554,1,1,1,0,0,0,0,0,27.5
-172,Sumedh Vangara,2023,A,25,5.554,1,1,1,0,0,0,0,0,27.5
-1425,David Ruan,2023,A,25,5.554,1,1,1,0,0,0,0,0,27.5
-1426,Aaron Xiong,2023,A,25,5.554,1,1,1,0,0,0,0,0,27.5
-1427,Yeyin Eva Zhu,2023,A,25,5.554,1,1,1,0,0,0,0,0,27.5
-23,Jeffrey Yin,2023,A,25,5.554,1,1,1,0,0,0,0,0,27.5
+student_id,student_name,team,team_id,year,division,rank,score,p1,p2,p3,p4,p5,p6,p7,p8,mcp_rank
+92,Marvin Mao,BCA 1,3,2023,A,1,10.883,1,1,1,1,1,0,0,0,2
+3,Oron Wang,PEA Red Lion,6,2023,A,1,10.883,1,1,1,1,1,0,0,0,2
+281,Andrew Xing,Florida Alligators,5,2023,A,1,10.883,1,1,1,1,1,0,0,0,2
+34,Jiahe Liu,404 Error,13,2023,A,4,9.115,1,1,0,1,1,0,0,0,4
+103,Allen Wang,Lehigh Valley Fire,1,2023,A,5,8.581,0,1,1,1,1,0,0,0,5
+201,Zani Xu,TJ A,2,2023,A,6,7.694,1,1,1,0,1,0,0,0,8.5
+1234,Andrew Zhao,Lexington Alpha,14,2023,A,6,7.694,1,1,1,0,1,0,0,0,8.5
+301,Harry Kim,Phillips Academy,17,2023,A,6,7.694,1,1,1,0,1,0,0,0,8.5
+1229,Vishal Nandakumar,TJ B,20,2023,A,6,7.694,1,1,1,0,1,0,0,0,8.5
+166,Roger Fan,GWe UAre Not NAffiliated,11,2023,A,6,7.694,1,1,1,0,1,0,0,0,8.5
+164,Steve Zhang,GWe UAre Not NAffiliated,11,2023,A,6,7.694,1,1,1,0,1,0,0,0,8.5
+457,Ashley Zhu,Tin Man,12,2023,A,12,7.097,0,0,1,1,1,0,0,0,12
+46,Raymond Zhao,Texas Ramanujan,4,2023,A,13,6.976,1,1,0,1,0,0,0,0,13
+102,Andrew Li,Tin Man,12,2023,A,14,6.813,0,1,0,1,1,0,0,0,14.5
+97,Eric Wang,Phillips Academy,17,2023,A,14,6.813,0,1,0,1,1,0,0,0,14.5
+1424,Xuancheng Benjamin Li,PRISMS Falcons,15,2023,A,16,6.442,0,1,1,1,0,0,0,0,16.5
+123,Vivian Loh,Athemath Owls,10,2023,A,16,6.442,0,1,1,1,0,0,0,0,16.5
+91,Andrew Lin,Lehigh Valley Fire,1,2023,A,18,6.209,1,0,1,0,1,0,0,0,18
+14,Nathan Liu,Texas Hardy,23,2023,A,19,5.926,1,1,0,0,1,0,0,0,21.5
+49,Amogh Akella,Texas Hardy,23,2023,A,19,5.926,1,1,0,0,1,0,0,0,21.5
+1225,Alexander Jun,Texas Ramanujan,4,2023,A,19,5.926,1,1,0,0,1,0,0,0,21.5
+1335,Katherine Liu,Texas Ramanujan,4,2023,A,19,5.926,1,1,0,0,1,0,0,0,21.5
+400,Kelin Zhu,MoCoSwaggaSquad,9,2023,A,19,5.926,1,1,0,0,1,0,0,0,21.5
+259,Maitian Sha,Pirates A,27,2023,A,19,5.926,1,1,0,0,1,0,0,0,21.5
+921,Alicia Li,Lion,26,2023,A,25,5.554,1,1,1,0,0,0,0,0,27.5
+172,Sumedh Vangara,Poolesville Math Team A,31,2023,A,25,5.554,1,1,1,0,0,0,0,0,27.5
+1425,David Ruan,Poolesville Math Team A,31,2023,A,25,5.554,1,1,1,0,0,0,0,0,27.5
+1426,Aaron Xiong,Florida Beaches,16,2023,A,25,5.554,1,1,1,0,0,0,0,0,27.5
+1427,Yeyin Eva Zhu,PRISMS Falcons,15,2023,A,25,5.554,1,1,1,0,0,0,0,0,27.5
+23,Jeffrey Yin,BBMC-math Delta,21,2023,A,25,5.554,1,1,1,0,0,0,0,0,27.5

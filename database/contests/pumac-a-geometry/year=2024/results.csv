@@ -1,43 +1,43 @@
-student_id,student_name,year,division,rank,score,p1,p2,p3,p4,p5,p6,p7,p8,mcp_rank
-132,Jason Mao,2024,A,1,14.182,1,1,0,1,1,1,0,1,1
-276,Thomas Amdur,2024,A,2,10.650,1,1,1,0,1,0,1,0,2
-278,Albert Cao,2024,A,3,9.567,1,1,1,1,1,1,0,0,12
-281,Andrew Xing,2024,A,3,9.567,1,1,1,1,1,1,0,0,12
-244,Jacob Khohayting,2024,A,3,9.567,1,1,1,1,1,1,0,0,12
-221,Anderson Hao,2024,A,3,9.567,1,1,1,1,1,1,0,0,12
-263,Jonathan Liu,2024,A,3,9.567,1,1,1,1,1,1,0,0,12
-279,Sophia Hou,2024,A,3,9.567,1,1,1,1,1,1,0,0,12
-35,William Hua,2024,A,3,9.567,1,1,1,1,1,1,0,0,12
-242,Adam Ge,2024,A,3,9.567,1,1,1,1,1,1,0,0,12
-283,Junjie Wen,2024,A,3,9.567,1,1,1,1,1,1,0,0,12
-73,Andrew Carratu,2024,A,3,9.567,1,1,1,1,1,1,0,0,12
-85,Sophia Zhang,2024,A,3,9.567,1,1,1,1,1,1,0,0,12
-3,Oron Wang,2024,A,3,9.567,1,1,1,1,1,1,0,0,12
-34,Jiahe Liu,2024,A,3,9.567,1,1,1,1,1,1,0,0,12
-12,Alan Cheng,2024,A,3,9.567,1,1,1,1,1,1,0,0,12
-272,Karn Chutinan,2024,A,3,9.567,1,1,1,1,1,1,0,0,12
-254,Tarun Rapaka,2024,A,3,9.567,1,1,1,1,1,1,0,0,12
-277,Aprameya Tripathy,2024,A,3,9.567,1,1,1,1,1,1,0,0,12
-24,Ryan Chen,2024,A,3,9.567,1,1,1,1,1,1,0,0,12
-65,Selena Ge,2024,A,3,9.567,1,1,1,1,1,1,0,0,12
-285,Leo Yu,2024,A,22,7.976,1,1,1,0,1,1,0,0,22.5
-46,Raymond Zhao,2024,A,22,7.976,1,1,1,0,1,1,0,0,22.5
-296,Hansen Shieh,2024,A,24,7.591,1,1,1,1,0,1,0,0,25
-57,Christopher Qiu,2024,A,24,7.591,1,1,1,1,0,1,0,0,25
-7,Benjamin Fu,2024,A,24,7.591,1,1,1,1,0,1,0,0,25
-297,Christopher Lu,2024,A,27,7.067,1,1,1,1,1,0,0,0,34.5
-217,Sophia Jin,2024,A,27,7.067,1,1,1,1,1,0,0,0,34.5
-298,Ian Buchanan,2024,A,27,7.067,1,1,1,1,1,0,0,0,34.5
-299,Xuzhou Ren,2024,A,27,7.067,1,1,1,1,1,0,0,0,34.5
-44,Krithik Manoharan,2024,A,27,7.067,1,1,1,1,1,0,0,0,34.5
-300,Isaac Chen,2024,A,27,7.067,1,1,1,1,1,0,0,0,34.5
-301,Harry Kim,2024,A,27,7.067,1,1,1,1,1,0,0,0,34.5
-214,Eric Guo,2024,A,27,7.067,1,1,1,1,1,0,0,0,34.5
-120,Jacob Xu,2024,A,27,7.067,1,1,1,1,1,0,0,0,34.5
-291,Yuji Peter Wang,2024,A,27,7.067,1,1,1,1,1,0,0,0,34.5
-302,Kenneth Ren,2024,A,27,7.067,1,1,1,1,1,0,0,0,34.5
-67,Andrew Shen,2024,A,27,7.067,1,1,1,1,1,0,0,0,34.5
-212,Nathan Lu,2024,A,27,7.067,1,1,1,1,1,0,0,0,34.5
-303,Alansha Jiang,2024,A,27,7.067,1,1,1,1,1,0,0,0,34.5
-274,Kai Lum,2024,A,27,7.067,1,1,1,1,1,0,0,0,34.5
-304,Jerry Xu,2024,A,27,7.067,1,1,1,1,1,0,0,0,34.5
+student_id,student_name,team,team_id,year,division,rank,score,p1,p2,p3,p4,p5,p6,p7,p8,mcp_rank
+132,Jason Mao,Lehigh Valley Fire,1,2024,A,1,14.182,1,1,0,1,1,1,0,1,1
+276,Thomas Amdur,Lehigh Valley Ice,15,2024,A,2,10.650,1,1,1,0,1,0,1,0,2
+278,Albert Cao,Poolesville Team A,11,2024,A,3,9.567,1,1,1,1,1,1,0,0,12
+281,Andrew Xing,Florida Alligators,12,2024,A,3,9.567,1,1,1,1,1,1,0,0,12
+244,Jacob Khohayting,Florida Beaches,23,2024,A,3,9.567,1,1,1,1,1,1,0,0,12
+221,Anderson Hao,TJ B,22,2024,A,3,9.567,1,1,1,1,1,1,0,0,12
+263,Jonathan Liu,Lexington Beta,24,2024,A,3,9.567,1,1,1,1,1,1,0,0,12
+279,Sophia Hou,TJ A,3,2024,A,3,9.567,1,1,1,1,1,1,0,0,12
+35,William Hua,Lexington Alpha,9,2024,A,3,9.567,1,1,1,1,1,1,0,0,12
+242,Adam Ge,Lexington Alpha,9,2024,A,3,9.567,1,1,1,1,1,1,0,0,12
+283,Junjie Wen,Individuals Team 165,6,2024,A,3,9.567,1,1,1,1,1,1,0,0,12
+73,Andrew Carratu,Individuals Team 165,6,2024,A,3,9.567,1,1,1,1,1,1,0,0,12
+85,Sophia Zhang,PRISMS Falcons,19,2024,A,3,9.567,1,1,1,1,1,1,0,0,12
+3,Oron Wang,Individuals Team 163,5,2024,A,3,9.567,1,1,1,1,1,1,0,0,12
+34,Jiahe Liu,Poolesville Team A,11,2024,A,3,9.567,1,1,1,1,1,1,0,0,12
+12,Alan Cheng,NCSSM Alpha,10,2024,A,3,9.567,1,1,1,1,1,1,0,0,12
+272,Karn Chutinan,The Eight,8,2024,A,3,9.567,1,1,1,1,1,1,0,0,12
+254,Tarun Rapaka,Texas Ramanujan,4,2024,A,3,9.567,1,1,1,1,1,1,0,0,12
+277,Aprameya Tripathy,Knights A,17,2024,A,3,9.567,1,1,1,1,1,1,0,0,12
+24,Ryan Chen,Washington Gold,7,2024,A,3,9.567,1,1,1,1,1,1,0,0,12
+65,Selena Ge,Lexington Alpha,9,2024,A,3,9.567,1,1,1,1,1,1,0,0,12
+285,Leo Yu,Texas Ramanujan,4,2024,A,22,7.976,1,1,1,0,1,1,0,0,22.5
+46,Raymond Zhao,Texas Ramanujan,4,2024,A,22,7.976,1,1,1,0,1,1,0,0,22.5
+296,Hansen Shieh,Individuals Team 163,5,2024,A,24,7.591,1,1,1,1,0,1,0,0,25
+57,Christopher Qiu,Lehigh Valley Fire,1,2024,A,24,7.591,1,1,1,1,0,1,0,0,25
+7,Benjamin Fu,Washington Gold,7,2024,A,24,7.591,1,1,1,1,0,1,0,0,25
+297,Christopher Lu,Scarecrow,27,2024,A,27,7.067,1,1,1,1,1,0,0,0,34.5
+217,Sophia Jin,Tin Man,25,2024,A,27,7.067,1,1,1,1,1,0,0,0,34.5
+298,Ian Buchanan,Tin Man,25,2024,A,27,7.067,1,1,1,1,1,0,0,0,34.5
+299,Xuzhou Ren,Florida Alligators,12,2024,A,27,7.067,1,1,1,1,1,0,0,0,34.5
+44,Krithik Manoharan,Texas Hardy,13,2024,A,27,7.067,1,1,1,1,1,0,0,0,34.5
+300,Isaac Chen,Lehigh Valley Fire,1,2024,A,27,7.067,1,1,1,1,1,0,0,0,34.5
+301,Harry Kim,Andover Lightning,18,2024,A,27,7.067,1,1,1,1,1,0,0,0,34.5
+214,Eric Guo,Lehigh Valley Ice,15,2024,A,27,7.067,1,1,1,1,1,0,0,0,34.5
+120,Jacob Xu,Lexington Alpha,9,2024,A,27,7.067,1,1,1,1,1,0,0,0,34.5
+291,Yuji Peter Wang,PRISMS Falcons,19,2024,A,27,7.067,1,1,1,1,1,0,0,0,34.5
+302,Kenneth Ren,Westchester Area Math Circle,20,2024,A,27,7.067,1,1,1,1,1,0,0,0,34.5
+67,Andrew Shen,Texas Ramanujan,4,2024,A,27,7.067,1,1,1,1,1,0,0,0,34.5
+212,Nathan Lu,Central Maryland United,29,2024,A,27,7.067,1,1,1,1,1,0,0,0,34.5
+303,Alansha Jiang,Washington Gold,7,2024,A,27,7.067,1,1,1,1,1,0,0,0,34.5
+274,Kai Lum,Random Math,2,2024,A,27,7.067,1,1,1,1,1,0,0,0,34.5
+304,Jerry Xu,Lexington Alpha,9,2024,A,27,7.067,1,1,1,1,1,0,0,0,34.5

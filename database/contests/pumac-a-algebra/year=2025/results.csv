@@ -1,31 +1,31 @@
-student_id,student_name,year,division,rank,score,p1,p2,p3,p4,p5,p6,p7,p8,mcp_rank
-4,Liam Reddy,2025,A,1,18.403,1,1,1,1,0,1,0,1,1
-207,Annie Huaiyu Wang,2025,A,2,15.198,1,0,1,1,1,0,0,1,2
-10,Calvin Wang,2025,A,3,13.280,1,1,0,0,0,1,0,1,3
-40,Darsh Patel,2025,A,4,11.237,1,1,0,1,1,0,0,0,4
-219,Grisham Paimagam,2025,A,5,11.135,0,1,1,1,1,0,0,0,5
-206,Eric Xie,2025,A,6,11.099,1,1,1,0,0,1,0,0,6
-211,Chenghao Hu,2025,A,7,10.871,1,0,1,1,1,0,0,0,7
-44,Krithik Manoharan,2025,A,8,10.406,1,1,1,0,1,0,0,0,9
-1,Alexander Wang,2025,A,8,10.406,1,1,1,0,1,0,0,0,9
-7,Benjamin Fu,2025,A,8,10.406,1,1,1,0,1,0,0,0,9
-86,Vikram Sarkar,2025,A,11,9.882,1,1,1,1,0,0,0,0,12
-229,Alexander Sun,2025,A,11,9.882,1,1,1,1,0,0,0,0,12
-50,Peter Bai,2025,A,11,9.882,1,1,1,1,0,0,0,0,12
-36,Jialai She,2025,A,14,9.840,0,0,1,0,1,1,0,0,14
-231,Ryan Karim,2025,A,15,8.985,0,1,1,0,0,0,1,0,15
-232,Aashita Mandiwal,2025,A,16,8.953,1,1,0,0,0,1,0,0,16
-233,Adam Smith,2025,A,17,7.894,1,0,1,0,1,0,0,0,17
-217,Sophia Jin,2025,A,18,7.635,0,1,1,1,0,0,0,0,18
-234,Nolan McDermott,2025,A,19,7.371,1,0,1,1,0,0,0,0,20
-235,Paul Yoo,2025,A,19,7.371,1,0,1,1,0,0,0,0,20
-236,Jennifer Zhou,2025,A,19,7.371,1,0,1,1,0,0,0,0,20
-224,Zhemao Jiang,2025,A,22,7.304,0,0,0,1,0,0,0,1,23
-237,Steven Chan,2025,A,22,7.304,0,0,0,1,0,0,0,1,23
-238,Shamik Khowala,2025,A,22,7.304,0,0,0,1,0,0,1,0,23
-239,Satvik Sharma,2025,A,25,6.905,1,1,1,0,0,0,0,0,27.5
-24,Ryan Chen,2025,A,25,6.905,1,1,1,0,0,0,0,0,27.5
-241,Eliot Flowers,2025,A,25,6.905,1,1,1,0,0,0,0,0,27.5
-35,William Hua,2025,A,25,6.905,1,1,1,0,0,0,0,0,27.5
-242,Adam Ge,2025,A,25,6.905,1,1,1,0,0,0,0,0,27.5
-243,Aarush Prasad,2025,A,25,6.905,1,1,1,0,0,0,0,0,27.5
+student_id,student_name,team,team_id,year,division,rank,score,p1,p2,p3,p4,p5,p6,p7,p8,mcp_rank
+4,Liam Reddy,Utah Arches,1,2025,A,1,18.403,1,1,1,1,0,1,0,1,1
+207,Annie Huaiyu Wang,Flip-flops Math,11,2025,A,2,15.198,1,0,1,1,1,0,0,1,2
+10,Calvin Wang,TJ A,5,2025,A,3,13.280,1,1,0,0,0,1,0,1,3
+40,Darsh Patel,Florida Alligators,9,2025,A,4,11.237,1,1,0,1,1,0,0,0,4
+219,Grisham Paimagam,NCSSM Alpha,20,2025,A,5,11.135,0,1,1,1,1,0,0,0,5
+206,Eric Xie,Xioo Math 1434-gon,2,2025,A,6,11.099,1,1,1,0,0,1,0,0,6
+211,Chenghao Hu,Random Math Team,16,2025,A,7,10.871,1,0,1,1,1,0,0,0,7
+44,Krithik Manoharan,Texas Ramanujan,6,2025,A,8,10.406,1,1,1,0,1,0,0,0,9
+1,Alexander Wang,Lehigh Valley Fire,3,2025,A,8,10.406,1,1,1,0,1,0,0,0,9
+7,Benjamin Fu,Washington Gold,10,2025,A,8,10.406,1,1,1,0,1,0,0,0,9
+86,Vikram Sarkar,Individuals Team 187,15,2025,A,11,9.882,1,1,1,1,0,0,0,0,12
+229,Alexander Sun,Texas Ramanujan,6,2025,A,11,9.882,1,1,1,1,0,0,0,0,12
+50,Peter Bai,Lexington Alpha,14,2025,A,11,9.882,1,1,1,1,0,0,0,0,12
+36,Jialai She,Phillips Andover 1778,26,2025,A,14,9.840,0,0,1,0,1,1,0,0,14
+231,Ryan Karim,Xioo Math 1434-gon,2,2025,A,15,8.985,0,1,1,0,0,0,1,0,15
+232,Aashita Mandiwal,Utah Arches,1,2025,A,16,8.953,1,1,0,0,0,1,0,0,16
+233,Adam Smith,Lehigh Valley Fire,3,2025,A,17,7.894,1,0,1,0,1,0,0,0,17
+217,Sophia Jin,Mad Hatter,19,2025,A,18,7.635,0,1,1,1,0,0,0,0,18
+234,Nolan McDermott,Mock Turtle,27,2025,A,19,7.371,1,0,1,1,0,0,0,0,20
+235,Paul Yoo,TJ A,5,2025,A,19,7.371,1,0,1,1,0,0,0,0,20
+236,Jennifer Zhou,Ohio 1,7,2025,A,19,7.371,1,0,1,1,0,0,0,0,20
+224,Zhemao Jiang,Super 88,24,2025,A,22,7.304,0,0,0,1,0,0,0,1,23
+237,Steven Chan,Super 88,24,2025,A,22,7.304,0,0,0,1,0,0,0,1,23
+238,Shamik Khowala,AlphaStar AIR,17,2025,A,22,7.304,0,0,0,1,0,0,1,0,23
+239,Satvik Sharma,Lehigh Valley Ice,28,2025,A,25,6.905,1,1,1,0,0,0,0,0,27.5
+24,Ryan Chen,Washington Gold,10,2025,A,25,6.905,1,1,1,0,0,0,0,0,27.5
+241,Eliot Flowers,White Rabbit,29,2025,A,25,6.905,1,1,1,0,0,0,0,0,27.5
+35,William Hua,Lexington Alpha,14,2025,A,25,6.905,1,1,1,0,0,0,0,0,27.5
+242,Adam Ge,Lexington Alpha,14,2025,A,25,6.905,1,1,1,0,0,0,0,0,27.5
+243,Aarush Prasad,Pirates A,30,2025,A,25,6.905,1,1,1,0,0,0,0,0,27.5

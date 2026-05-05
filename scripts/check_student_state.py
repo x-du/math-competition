@@ -29,6 +29,7 @@ Run from repo root:
     python scripts/check_student_state.py                      # all *-teams, all years
     python scripts/check_student_state.py --year 2024          # all *-teams, only year=2024
     python scripts/check_student_state.py bmt --year 2025      # only bmt-teams/year=2025
+    python scripts/check_student_state.py -i   # skip rows with empty teams.csv state (-i / --ignore-teams-without-state)
 """
 
 from __future__ import annotations
@@ -187,6 +188,8 @@ def check_year(
     teams_root_name: str,
     teams_csv: Path,
     student_records: dict[str, tuple[str, str]],
+    *,
+    ignore_teams_without_state: bool = False,
 ) -> list[str]:
     warnings: list[str] = []
     prefix = f"{teams_root_name}/{teams_csv.parent.name}"
@@ -208,6 +211,9 @@ def check_year(
             or skip_state_checks_for_team_name(team_name)
             or skip_state_checks_for_bmt_row(teams_root_name, row)
         ):
+            continue
+
+        if ignore_teams_without_state and not team_state:
             continue
 
         per_student: list[tuple[str, str, str]] = []
@@ -290,6 +296,8 @@ def collect_warnings(
     teams_root: Path,
     student_records: dict[str, tuple[str, str]],
     years_filter: frozenset[str] | None,
+    *,
+    ignore_teams_without_state: bool = False,
 ) -> list[str]:
     all_w: list[str] = []
     for year_dir in sorted(teams_root.iterdir()):
@@ -301,7 +309,14 @@ def collect_warnings(
         teams_csv = year_dir / "teams.csv"
         if not teams_csv.is_file():
             continue
-        all_w.extend(check_year(teams_root.name, teams_csv, student_records))
+        all_w.extend(
+            check_year(
+                teams_root.name,
+                teams_csv,
+                student_records,
+                ignore_teams_without_state=ignore_teams_without_state,
+            )
+        )
     return all_w
 
 
@@ -329,6 +344,15 @@ def main() -> int:
         help=(
             "Only check folders named year=YEAR (repeat for multiple years). "
             "Default: every year=* under each teams tree."
+        ),
+    )
+    parser.add_argument(
+        "-i",
+        "--ignore-teams-without-state",
+        action="store_true",
+        help=(
+            "Skip every team row whose teams.csv `state` column is empty "
+            "(no roster disagreement or student-vs-team warnings for that row)."
         ),
     )
     args = parser.parse_args()
@@ -359,7 +383,14 @@ def main() -> int:
 
     all_warnings: list[str] = []
     for tr in roots:
-        all_warnings.extend(collect_warnings(tr, student_records, years_filter))
+        all_warnings.extend(
+            collect_warnings(
+                tr,
+                student_records,
+                years_filter,
+                ignore_teams_without_state=args.ignore_teams_without_state,
+            )
+        )
 
     year_suffix = (
         f" [only year={','.join(sorted(years_filter))}]" if years_filter else ""

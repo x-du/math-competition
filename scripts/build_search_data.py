@@ -2,7 +2,7 @@
 """
 Build a single JSON file from database CSVs for the student search frontend.
 Run from repo root: python scripts/build_search_data.py
-Output: docs/data.json, docs/teams.json (team name → student_ids[] per contest/year for roster popover)
+Output: docs/data.json, docs/teams.json (team rosters), docs/mathcounts_state_rosters.json (MC nationals by state)
 """
 import csv
 import json
@@ -17,6 +17,7 @@ CONTESTS_DIR = DATABASE / "contests"
 CONTESTS_CSV = CONTESTS_DIR / "contests.csv"
 OUTPUT_JSON = REPO_ROOT / "docs" / "data.json"
 OUTPUT_TEAMS_JSON = REPO_ROOT / "docs" / "teams.json"
+OUTPUT_MC_STATE_ROSTERS_JSON = REPO_ROOT / "docs" / "mathcounts_state_rosters.json"
 
 CONTESTS_SKIP_FOR_SEARCH = {
     "mathcounts-national",  # Roster CSVs only; listed in contest popover, not in student search
@@ -447,6 +448,62 @@ def build_teams_index() -> dict[str, dict[str, dict[str, list[int]]]]:
     return out
 
 
+def build_mathcounts_state_rosters_index(records_by_id: dict[int, list[dict]]) -> dict[str, dict[str, list[int]]]:
+    """year -> state key (USPS or non-US string) -> sorted student_ids for MathCounts national rank."""
+    buckets: dict[str, dict[str, set[int]]] = {}
+    for sid, recs in records_by_id.items():
+        for r in recs:
+            if (r.get("contest_slug") or "") != MATHCOUNTS_SLUG:
+                continue
+            st = (r.get("state") or "").strip()
+            if not st:
+                continue
+            y = str(r.get("year") or "").strip()
+            if not y:
+                continue
+            if y not in buckets:
+                buckets[y] = {}
+            if st not in buckets[y]:
+                buckets[y][st] = set()
+            buckets[y][st].add(sid)
+    return {y: {s: sorted(ids) for s, ids in by.items()} for y, by in buckets.items()}
+
+
+def enrich_pumac_subject_teams_from_parent(records_by_id: dict[int, list[dict]]) -> None:
+    """Subject-round PUMaC CSVs often omit team; copy from division-wide pumac-a / pumac-b rows."""
+    parents = frozenset({"pumac-a", "pumac-b"})
+
+    for recs in records_by_id.values():
+        lookup: dict[tuple[str, str, str], str] = {}
+        for r in recs:
+            slug = (r.get("contest_slug") or "").strip()
+            if slug not in parents:
+                continue
+            year = str(r.get("year") or "").strip()
+            div = str(r.get("division") or "").strip()
+            team = (r.get("team") or r.get("team_name") or "").strip()
+            if year and div and team:
+                lookup[(slug, year, div)] = team
+
+        for r in recs:
+            slug = (r.get("contest_slug") or "").strip()
+            if slug in parents:
+                continue
+            if slug.startswith("pumac-a-"):
+                par = "pumac-a"
+            elif slug.startswith("pumac-b-"):
+                par = "pumac-b"
+            else:
+                continue
+            if (r.get("team") or r.get("team_name") or "").strip():
+                continue
+            year = str(r.get("year") or "").strip()
+            div = str(r.get("division") or "").strip()
+            team = lookup.get((par, year, div))
+            if team:
+                r["team"] = team
+
+
 def main() -> None:
     students = load_students()
     contests, contest_order = load_contests()
@@ -590,6 +647,7 @@ def main() -> None:
                 students[sid] = {"name": name or f"Student {sid}", "aliases": [], "state": state, "gender": "male", "grade_in_2026": None}
 
     dedupe_arml_mcp_per_season(records_by_id)
+    enrich_pumac_subject_teams_from_parent(records_by_id)
 
     # MATHCOUNTS National Rank: include everyone on the national competitors roster for that year
     # (rank "Competitor"; no MCP rank/points). Years with national roster results.csv but no national-rank results.csv get entries here.
@@ -639,6 +697,8 @@ def main() -> None:
         for r in recs:
             if r.get("state"):
                 r["state"] = compress_record_state(r["state"])
+
+    mc_state_rosters_index = build_mathcounts_state_rosters_index(records_by_id)
 
     def infer_state_from_records(records: list[dict]) -> str:
         """Best-effort fallback: first non-empty state on a record (already USPS abbr for US)."""
@@ -833,6 +893,10 @@ def main() -> None:
     with open(OUTPUT_TEAMS_JSON, "w", encoding="utf-8") as f:
         json.dump(teams_index, f, ensure_ascii=False, separators=(",", ":"))
     print(f"Wrote team rosters to {OUTPUT_TEAMS_JSON}")
+
+    with open(OUTPUT_MC_STATE_ROSTERS_JSON, "w", encoding="utf-8") as f:
+        json.dump(mc_state_rosters_index, f, ensure_ascii=False, separators=(",", ":"))
+    print(f"Wrote MathCounts state rosters to {OUTPUT_MC_STATE_ROSTERS_JSON}")
 
     # Build competition_data.json for crank.html
     try:

@@ -9,9 +9,9 @@ team_id,team,student_ids,state
 8,Bergen County Academies Team 1,225,New Jersey
 9,Bonnie Branch Math Circle Delta,23|252,Maryland
 10,Cardigans,31,Maryland
-11,Connecticut Cyborgs,204|262,Connecticut
+11,Connecticut Cyborgs,204|262,
 12,Desert Storm 2025,387,Arizona
-13,dinglebinglers,343|391,North Carolina
+13,dinglebinglers,343|391,
 14,Florida Alligators,20|32|40|45|226|244,Florida
 15,Georgia Mathletes A,48|371,Georgia
 16,Harker Omega,19|238,California
@@ -46,7 +46,7 @@ team_id,team,student_ids,state
 45,Upstate New York Math Team,42,New York
 46,Utah Arches,4,Utah
 47,Washington Gold 1,7|24|43|325,Washington
-48,Washington Gold 2,22|382,Washington
+48,Washington Gold 2,22|382,
 49,West Best,386,Washington
 50,White Rabbit,378,New York
 51,XuanWu,374|380,China
