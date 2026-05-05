@@ -3519,7 +3519,6 @@
           lastTrackedStudentCardViewId = urlStudentId;
         }
         searchValueBeforeStudentCard = (searchEl && searchEl.value) ? searchEl.value.trim() : "";
-        if (searchEl) searchEl.value = (student.name || "").trim();
         if (searchClearEl) searchClearEl.hidden = true;
         if (topStudentsSectionEl) topStudentsSectionEl.hidden = true;
         if (awardsRankingFiltersEl) {
