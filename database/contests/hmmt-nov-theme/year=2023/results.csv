@@ -1,56 +1,56 @@
-student_id,student_name,year,rank,score,mcp_rank
-8,Vincent Wang,2023,1,39.08,1
-1632,Eric Zang,2023,2,32.73,2
-12,Alan Cheng,2023,3,31.59,5
-326,Sicheng Zhou,2023,3,31.59,5
-948,Hanqin Gu,2023,3,31.59,5
-949,Peyton Li,2023,3,31.59,5
-780,Susie Lu,2023,3,31.59,5
-320,Jeremy Yang,2023,8,28.56,8
-989,Richard Wang,2023,9,28.5,9
-2960,Evan Zhang,2023,10,27.43,10
-584,Raymond Ge,2023,11,26.32,13
-1670,Sophie Yinuo Zheng,2023,11,26.32,13
-356,LU CHANG,2023,11,26.32,13
-249,Sam Tsui,2023,11,26.32,13
-1671,Eric Zhang,2023,11,26.32,13
-210,Eric P Zhu,2023,16,25.24,19
-1662,Isaac Jo,2023,16,25.24,19
-1660,Troy Yang,2023,16,25.24,19
-67,Andrew Shen,2023,16,25.24,19
-1658,Jeffery Zhang,2023,16,25.24,19
-1647,Andrew Ma,2023,16,25.24,19
-876,Aiden Dai,2023,16,25.24,19
-318,David Yu,2023,23,25.17,30
-1603,Xingguo Ding,2023,23,25.17,30
-61,Kailin Yang,2023,23,25.17,30
-1654,David Taehee Lee,2023,23,25.17,30
-1078,Jason Lian,2023,23,25.17,30
-965,Hongyi Huang,2023,23,25.17,30
-1218,Yingshan Xiao,2023,23,25.17,30
-582,Shirley Xiong,2023,23,25.17,30
-548,Michael Lu,2023,23,25.17,30
-1672,Shraaptesh Lokanda,2023,23,25.17,30
-1673,Ian Wang,2023,23,25.17,30
-1657,Le Yi Tan,2023,23,25.17,30
-304,Jerry Xu,2023,23,25.17,30
-1661,Hwiseo,2023,23,25.17,30
-1674,Sohji Matsuda,2023,23,25.17,30
-1675,Mingxuan Zhang,2023,38,23.26,38
-1471,Jason Yang,2023,39,22.21,39
-1664,Jiya Neelesh Deo Dani,2023,40,22.19,40
-1394,Emily Zhang,2023,41,22.15,41
-1612,Daniel Yu,2023,42,21.14,44.5
-216,Lingfei Sophia Tang,2023,42,21.14,44.5
-1567,Samuel Lin,2023,42,21.14,44.5
-1676,Joshua Kou,2023,42,21.14,44.5
-1677,Ryan Chase Casey,2023,42,21.14,44.5
-1393,Charlotte Younger,2023,42,21.14,44.5
-212,Nathan Lu,2023,48,21.08,48
-2727,Kevin Zhang,2023,49,21.07,52
-1092,Kyle Yang,2023,49,21.07,52
-1629,Jagan Mranal,2023,49,21.07,52
-1678,Heyang Ni,2023,49,21.07,52
-1679,Huiran Zheng,2023,49,21.07,52
-923,James Qiu,2023,49,21.07,52
-1531,Yutong Zhao,2023,49,21.07,52
+student_id,student_name,team,team_id,year,rank,score,mcp_rank
+8,Vincent Wang,All Aces Spade,3,2023,1,39.08,1
+1632,Eric Zang,Texas Typhoon,8,2023,2,32.73,2
+12,Alan Cheng,Math 4 Fun,7,2023,3,31.59,5
+326,Sicheng Zhou,PRISMS Falcons,1,2023,3,31.59,5
+948,Hanqin Gu,fun math,5,2023,3,31.59,5
+949,Peyton Li,Choate Math Team,30,2023,3,31.59,5
+780,Susie Lu,Individuals 2,10,2023,3,31.59,5
+320,Jeremy Yang,Maryland United,9,2023,8,28.56,8
+989,Richard Wang,Texas Thunder,4,2023,9,28.5,9
+2960,Evan Zhang,Lion Valley Alpha,6,2023,10,27.43,10
+584,Raymond Ge,Math 4 Fun,7,2023,11,26.32,13
+1670,Sophie Yinuo Zheng,Traditional Salad,19,2023,11,26.32,13
+356,LU CHANG,MathTeam007,11,2023,11,26.32,13
+249,Sam Tsui,Lexington Armadillo,14,2023,11,26.32,13
+1671,Eric Zhang,Lexington Banana,23,2023,11,26.32,13
+210,Eric P Zhu,Math 4 Fun,7,2023,16,25.24,19
+1662,Isaac Jo,LS Math Team B,18,2023,16,25.24,19
+1660,Troy Yang,BISV Bobcats A,20,2023,16,25.24,19
+67,Andrew Shen,Texas Tornado,15,2023,16,25.24,19
+1658,Jeffery Zhang,University of Toronto Schools A,13,2023,16,25.24,19
+1647,Andrew Ma,University of Toronto Schools A,13,2023,16,25.24,19
+876,Aiden Dai,Glenbrook North Gold,44,2023,16,25.24,19
+318,David Yu,Maryland United,9,2023,23,25.17,30
+1603,Xingguo Ding,St. Paul's School,16,2023,23,25.17,30
+61,Kailin Yang,PRISMS Falcons,1,2023,23,25.17,30
+1654,David Taehee Lee,PRISMS Falcons,1,2023,23,25.17,30
+1078,Jason Lian,Albany Area Math Circle Cardinals,45,2023,23,25.17,30
+965,Hongyi Huang,UCC Math Society Team C,46,2023,23,25.17,30
+1218,Yingshan Xiao,Maple,17,2023,23,25.17,30
+582,Shirley Xiong,Ward Melville Math Team D,2,2023,23,25.17,30
+548,Michael Lu,Ward Melville Math Team D,2,2023,23,25.17,30
+1672,Shraaptesh Lokanda,East Brunswick Math Circle Renegade Raiders,47,2023,23,25.17,30
+1673,Ian Wang,BASIS M&P,48,2023,23,25.17,30
+1657,Le Yi Tan,Texas Typhoon,8,2023,23,25.17,30
+304,Jerry Xu,Lexington Armadillo,14,2023,23,25.17,30
+1661,Hwiseo,Lexington Armadillo,14,2023,23,25.17,30
+1674,Sohji Matsuda,Individuals 5,49,2023,23,25.17,30
+1675,Mingxuan Zhang,Beijing Forbidden City,50,2023,38,23.26,38
+1471,Jason Yang,Lexington Armadillo,14,2023,39,22.21,39
+1664,Jiya Neelesh Deo Dani,Texas Tornado,15,2023,40,22.19,40
+1394,Emily Zhang,WSHS Team 2,51,2023,41,22.15,41
+1612,Daniel Yu,Maryland United,9,2023,42,21.14,44.5
+216,Lingfei Sophia Tang,Math 4 Fun,7,2023,42,21.14,44.5
+1567,Samuel Lin,Albany Area Math Circle Cardinals,45,2023,42,21.14,44.5
+1676,Joshua Kou,Texas Tornado,15,2023,42,21.14,44.5
+1677,Ryan Chase Casey,The NH Celestials 2,24,2023,42,21.14,44.5
+1393,Charlotte Younger,CRLS Team One,41,2023,42,21.14,44.5
+212,Nathan Lu,Maryland United,9,2023,48,21.08,48
+2727,Kevin Zhang,Fat L Club,53,2023,49,21.07,52
+1092,Kyle Yang,DA Math Team,54,2023,49,21.07,52
+1629,Jagan Mranal,LS Math Team B,18,2023,49,21.07,52
+1132,Heyang Ni,PRISMS Falcons,1,2023,49,21.07,52
+1679,Huiran Zheng,MathTeam007,11,2023,49,21.07,52
+923,James Qiu,University of Toronto Schools B,55,2023,49,21.07,52
+1531,Yutong Zhao,PRISMS Young Falcons,26,2023,49,21.07,52

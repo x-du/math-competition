@@ -1,39 +1,60 @@
-team_id,team_name,student_ids,state
-1,Shanghai High School Stallions,1598|1604|1606,China
-2,Bayview Team A1,1519,California
+team_id,team,student_ids,state
+1,Shanghai High School Stallions,1598|1604|1606|1638|1644,China
+2,Bayview Team A1,1519|1640,California
 3,Individuals 5,1599,
-4,University of Toronto Schools A,895|1278,"Ontario, Canada"
-5,Beijing Forbidden City,18,China
-6,PRISMS Young Falcons,291,New Jersey
+4,University of Toronto Schools A,895|923|1278|1647,"Ontario, Canada"
+5,Beijing Forbidden City,18|1622,China
+6,PRISMS Young Falcons,291|1634,New Jersey
 7,The NH Celestials 2,575,New Hampshire
-8,Gunn Black,1601,California
-9,Math 4 Fun,210|584|216,North Carolina
-10,Maple,1005|1042,"Ontario, Canada"
+8,Gunn Black,1510|1601,California
+9,Math 4 Fun,210|216|584|1312,North Carolina
+10,Maple,933|1005|1042,"Ontario, Canada"
 11,St. Paul's School,1603,New Hampshire
 12,Big L Club,809,New Jersey
 13,Phillips Academy A1,287|1354,Massachusetts
 14,Individuals 2,1605,
-15,Sugar Club,1607|1611|1615,
-16,The Pingry School,407,New Jersey
-17,SH Team 001,5|1608,
-18,All Aces Spade,901,Texas
+15,Sugar Club,1607|1611|1615|1631,
+16,The Pingry School,407|1623,New Jersey
+17,SH Team 001,5|1608|1621,
+18,All Aces Spade,8|901|1643,Texas
 19,CCHS A Team,545,Massachusetts
 20,Bellaire A,1610,Texas
-21,Lexington Gamma,249|263,Massachusetts
-22,Westchester Area Math Circle,1332,New York
-23,Maryland United,1612,Maryland
-24,Doozy Math Team B,1351,Georgia
-25,Paly Trolls,1011,California
-26,Aftermath,670,Connecticut
-27,Lexington Delta,1575,Massachusetts
-28,Math School A,851|1452,Massachusetts
+21,Lexington Gamma,249|263|265|810|905,Massachusetts
+22,Westchester Area Math Circle,1332|1642,New York
+23,Maryland United,212|1612,Maryland
+24,Doozy Math Team B,794|1351,Georgia
+25,Paly Trolls,929|1011|1648,California
+26,Aftermath,204|670,Connecticut
+27,Lexington Delta,1575|6267,Massachusetts
+28,Math School A,851|1452|1635,Massachusetts
 29,CA Chameleons,1614,Thailand
 30,Tennessee Math Coalition Blue,392,Tennessee
 31,Collegiate School,297,New York
 32,Albany Area Math Circle Cardinals,1078,New York
-33,Ward Melville Math Team E,1617,New York
+33,Ward Melville Math Team E,1521|1539|1617,New York
 34,OSS Mu Alpha Theta,1618,Washington
 35,The Real Prizes Were The Friends We Made Along The Way,850,Massachusetts
 36,AlphaStar Academy THUNDER,17,California
-37,Individuals 4,780,Washington
-38,Texas Thunder,1044,Texas
+37,Individuals 4,780|1624,Washington
+38,Texas Thunder,264|1044|1628,Texas
+47,Maryland hmmt interest,1625,
+48,Texas Tornado,44|1632|1646,
+49,Westborough High School stRangers,1626,
+50,Bouncing Seals,1627,
+51,LS Math Team,1629,
+52,Géomètres du nord | Club Math Cégep de Sherbrooke,1630,
+53,Scarsdale C,302|1595,
+54,Clarke A,811,
+55,All Aces Heart,1633,
+56,Swiszczypylki,1636|1641,
+57,Davidson A,1637,
+58,Wayland High,1639,
+59,fun math,770,
+60,CRLS,1393,
+61,4 Factorials,393|671,
+63,OC Math Team 1,1645,
+64,AB Math League,516,
+66,R4E-1,1561,
+67,TAS Math Circle,1649,
+68,The Limit Does Not Exist,1651,
+69,Hotchkiss Blue,1652,

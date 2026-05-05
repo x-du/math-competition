@@ -1,32 +1,49 @@
-team_id,team_name,student_ids,state
-1,PRISMS Falcons,326|1654|85,New Jersey
-2,Ward Melville Math Team D,548,New York
+team_id,team,student_ids,state
+1,PRISMS Falcons,61|85|326|1654|1132,New Jersey
+2,Ward Melville Math Team D,548|582,New York
 3,All Aces Spade,8,Texas
 4,Texas Thunder,49|989|1077,Texas
 5,fun math,948,Ohio
 6,Lion Valley Alpha,280|603|754|1202|2960,Pennsylvania
-7,Math 4 Fun,12|216,North Carolina
-8,Texas Typhoon,1632|1657,Texas
-9,Maryland United,212|218|318|320,Maryland
+7,Math 4 Fun,12|210|216|584,North Carolina
+8,Texas Typhoon,44|1632|1657,Texas
+9,Maryland United,212|218|318|320|1006|1612,Maryland
 10,Individuals 2,780,Washington
-11,MathTeam007,356,
+11,MathTeam007,356|1679,
 12,Russian School of Mathematics Team A,220,Massachusetts
-13,University of Toronto Schools A,1658,Canada
+13,University of Toronto Schools A,1360|1647|1658,Canada
 14,Lexington Armadillo,249|304|811|1471|1661,Massachusetts
-15,Texas Tornado,67|1664,Texas
+15,Texas Tornado,67|1664|1676,Texas
 16,St. Paul's School,1603,New Hampshire
-17,Maple,1218,"Ontario, Canada"
-18,LS Math Team B,279|1662,
-19,Traditional Salad,482,California
+17,Maple,1042|1218,"Ontario, Canada"
+18,LS Math Team B,279|1629|1662,
+19,Traditional Salad,1524|1670,
 20,BISV Bobcats A,1660,California
-21,MN gold,1220,Minnesota
+21,MN gold,71|550|1220,Minnesota
 22,Texas Academy of Math and Science A,1663,Texas
-23,Lexington Banana,263,Massachusetts
-24,The NH Celestials 2,577,New Hampshire
+23,Lexington Banana,263|1671,Massachusetts
+24,The NH Celestials 2,575|577|1677,New Hampshire
 25,Bayview Team A1,1519,California
-26,PRISMS Young Falcons,1634,California
+26,PRISMS Young Falcons,1531|1634,New Jersey
 27,Benet Academy,1665,Illinois
 28,Westchester Area Math Circle,862,Connecticut
 29,Syo Math A,1666,Texas
 30,Choate Math Team,949,Connecticut
 31,CCHS Math,545,Massachusetts
+38,Clarke Middle School Math Team,65|310,
+39,Yu's Alligator,30,
+40,Montgomery County Team 1 November,31,
+41,CRLS Team One,1134|1393,
+42,Individuals 4,1668,
+43,Individuals 6,1669,
+44,Glenbrook North Gold,876,
+45,Albany Area Math Circle Cardinals,1078|1567,
+46,UCC Math Society Team C,965,
+47,East Brunswick Math Circle Renegade Raiders,1672,
+48,BASIS M&P,1673,
+49,Individuals 5,1674,
+50,Beijing Forbidden City,1675,
+51,WSHS Team 2,1394,
+53,Fat L Club,2727,
+54,DA Math Team,1092,
+55,University of Toronto Schools B,923,

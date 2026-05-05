@@ -11,7 +11,8 @@ or **`bmt-teams`** rows whose **`school`** is **`Think Academy Online`**):
      Maryland + Virginia + District of Columbia; Arizona + California; California + Nevada;
      New Jersey + Pennsylvania + New York together;
      any roster that includes **`State Department`** (mixable with other states); or **`teams.csv` team `state`
-     is **`China`** allowing mixed member geography). If **`teams.csv`
+     is **`China`** allowing mixed member geography; or every member state is Canadian (**`Canada`**
+     or **`Province, Canada`**) so national vs provincial labels may mix). If **`teams.csv`
      has no team `state`**, this warning is shown whenever members disagree,
      **even if** some members lack state. If **`teams.csv` lists a team `state`**,
      that warning is suppressed when some members lack state (partly-unknown roster).
@@ -60,6 +61,29 @@ COMPATIBLE_STATE_GROUPS: tuple[frozenset[str], ...] = (
 STATE_DEPARTMENT = "State Department"
 
 
+def is_canadian_geography_label(state: str) -> bool:
+    """True for Canada nationally or a province/territory written as `..., Canada`."""
+    s = (state or "").strip()
+    return s == "Canada" or s.endswith(", Canada")
+
+
+def canada_team_vs_student_compatible(team_state: str, roster_state: str) -> bool:
+    """teams.csv may say a province while a student row says only `Canada`, or vice versa."""
+    ts = (team_state or "").strip()
+    rs = (roster_state or "").strip()
+    if not (is_canadian_geography_label(ts) and is_canadian_geography_label(rs)):
+        return False
+    if ts == rs:
+        return True
+    pair = {ts, rs}
+    return "Canada" in pair and any(x.endswith(", Canada") for x in pair)
+
+
+def roster_all_canadian_geography(non_empty: set[str]) -> bool:
+    """Roster mixes national vs provincial Canada labels only (valid international team)."""
+    return bool(non_empty) and all(is_canadian_geography_label(s) for s in non_empty)
+
+
 def roster_includes_state_department(non_empty: set[str]) -> bool:
     """Diplomatic / overseas schooling; roster may mix with any US state."""
     return STATE_DEPARTMENT in non_empty
@@ -71,6 +95,8 @@ def roster_states_within_exception(non_empty: set[str]) -> bool:
         return True
     if roster_includes_state_department(non_empty):
         return True
+    if roster_all_canadian_geography(non_empty):
+        return True
     return any(non_empty <= grp for grp in COMPATIBLE_STATE_GROUPS)
 
 
@@ -81,6 +107,8 @@ def team_row_compatible_with_roster_state(team_state: str, roster_state: str) ->
     if team_state == STATE_DEPARTMENT or roster_state == STATE_DEPARTMENT:
         return True
     if team_state == roster_state:
+        return True
+    if canada_team_vs_student_compatible(team_state, roster_state):
         return True
     pair = frozenset({team_state, roster_state})
     return any(pair <= grp for grp in COMPATIBLE_STATE_GROUPS)

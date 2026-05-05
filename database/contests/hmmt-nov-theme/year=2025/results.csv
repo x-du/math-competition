@@ -1,51 +1,51 @@
-student_id,student_name,year,rank,score,mcp_rank
-1528,Huanqi Zhang,2025,1,33.8,1
-1521,Harry Haiwen Gao,2025,2,31.73,2.5
-86,Vikram Sarkar,2025,2,31.73,2.5
-1279,Jack Whitney-Epstein,2025,4,31.67,4.5
-849,Aiden Yudong Wei,2025,4,31.67,4.5
-1520,Xuanyi Zhang,2025,6,30.59,6.5
-1460,Woojin Seong,2025,6,30.59,6.5
-1525,Aaron Xie,2025,8,27.54,8.5
-209,Hongming Allan Zhao,2025,8,27.54,8.5
-1582,Ray Huang Cui,2025,10,26.39,10.5
-516,Bryan Li,2025,10,26.39,10.5
-1519,Leo Wu,2025,12,26.31,12.5
-1583,Aaron Wu,2025,12,26.31,12.5
-1531,Yutong Zhao,2025,14,25.32,16
-844,Ryan Zhang,2025,14,25.32,16
-738,Liran Zhou,2025,14,25.32,16
-1538,Yizhang Guo,2025,14,25.32,16
-1541,Tane Park,2025,14,25.32,16
-1353,Kristin Zhang,2025,19,24.24,21
-1584,Larry Lee,2025,19,24.24,21
-862,Ethan Shi,2025,19,24.24,21
-1332,Yunong Wu,2025,19,24.24,21
-1334,Sophie Zhang,2025,19,24.24,21
-850,Eric Huang,2025,24,24.17,30
-64,Michael Pok Hon Chen,2025,24,24.17,30
-280,Aaron Le,2025,24,24.17,30
-1523,JUNNING SHAO,2025,24,24.17,30
-1586,David Yoongeun Oh,2025,24,24.17,30
-1587,Alex Ren,2025,24,24.17,30
-1588,Emmett Chen,2025,24,24.17,30
-1055,Madeline Zhu,2025,24,24.17,30
-1589,Benjamin Taycher,2025,24,24.17,30
-1526,Patrick Liang,2025,24,24.17,30
-1590,Adrian Fong,2025,24,24.17,30
-1591,Max Lin,2025,24,24.17,30
-1592,Chaojie Lin,2025,24,24.17,30
-851,Soham Samanta,2025,37,22.26,37
-1481,Bohan Wang,2025,38,22.15,38.5
-1534,Girish Prasad,2025,38,22.15,38.5
-1593,Aaron Xu,2025,40,21.12,40
-1532,Sirui Wu,2025,41,21.03,41
-1537,Benjamin Li,2025,42,21.02,42
-1594,Eric Shi Chen,2025,43,20.08,44
-1545,Arda Eroz,2025,43,20.08,44
-1595,Yutong Wang,2025,43,20.08,44
-1529,Daniel Gong Li,2025,46,20.01,48
-1540,David Luo,2025,46,20.01,48
-1596,Alvin Fang,2025,46,20.01,48
-1547,Justin Lee,2025,46,20.01,48
-1548,Benjamin Huang,2025,46,20.01,48
+student_id,student_name,team,team_id,year,rank,score,mcp_rank
+1528,Huanqi Zhang,Phillips Academy A1,19,2025,1,33.8,1
+1521,Harry Haiwen Gao,Ward Melville Math Team D,4,2025,2,31.73,2.5
+86,Vikram Sarkar,Brunswick School A,2,2025,2,31.73,2.5
+1279,Jack Whitney-Epstein,Brunswick School A,2,2025,4,31.67,4.5
+849,Aiden Yudong Wei,Mustangs,17,2025,4,31.67,4.5
+1520,Xuanyi Zhang,Leading Aces Academy 1,3,2025,6,30.59,6.5
+1460,Woojin Seong,Individuals 1,14,2025,6,30.59,6.5
+1525,Aaron Xie,Yu's Alligator,12,2025,8,27.54,8.5
+209,Hongming Allan Zhao,PRISMS Falcons,10,2025,8,27.54,8.5
+1582,Ray Huang Cui,Lexington Gamma,50,2025,10,26.39,10.5
+516,Bryan Li,AB Math League,18,2025,10,26.39,10.5
+1519,Leo Wu,Bayview Team A1,1,2025,12,26.31,12.5
+1583,Aaron Wu,Texas Thunder,70,2025,12,26.31,12.5
+1531,Yutong Zhao,PRISMS Falcons,10,2025,14,25.32,16
+844,Ryan Zhang,Jericho A,5,2025,14,25.32,16
+738,Liran Zhou,Jericho A,5,2025,14,25.32,16
+1538,Yizhang Guo,Beijing Mingcheng Academy Red Panda,9,2025,14,25.32,16
+1541,Tane Park,Montgomery County Team 1 November,7,2025,14,25.32,16
+1353,Kristin Zhang,Raritan Valley Math Team - Newton,11,2025,19,24.24,21
+1584,Larry Lee,Texas Academy of Math and Science A,71,2025,19,24.24,21
+862,Ethan Shi,Westchester Area Math Circle A,13,2025,19,24.24,21
+1332,Yunong Wu,Westchester Area Math Circle A,13,2025,19,24.24,21
+1334,Sophie Zhang,Leading Aces Academy 1,3,2025,19,24.24,21
+850,Eric Huang,Fish,22,2025,24,24.17,30
+64,Michael Pok Hon Chen,PRISMS Falcons,10,2025,24,24.17,30
+280,Aaron Le,Nittany Lions,26,2025,24,24.17,30
+1523,JUNNING SHAO,Beijing Mingcheng Academy Red Panda,9,2025,24,24.17,30
+1586,David Yoongeun Oh,Seoul Foreign School,72,2025,24,24.17,30
+1587,Alex Ren,PEA Chestnuts,63,2025,24,24.17,30
+1588,Emmett Chen,Nobles Math Club,74,2025,24,24.17,30
+1055,Madeline Zhu,Pingry Bears,15,2025,24,24.17,30
+1589,Benjamin Taycher,BUA Terriers,75,2025,24,24.17,30
+1526,Patrick Liang,Areteem Institute,16,2025,24,24.17,30
+1590,Adrian Fong,Areteem Institute,16,2025,24,24.17,30
+1591,Max Lin,Georgia Mathletes Team 2,76,2025,24,24.17,30
+1592,Chaojie Lin,Beaver B,77,2025,24,24.17,30
+851,Soham Samanta,Fish,22,2025,37,22.26,37
+1481,Bohan Wang,PRISMS Falcons,10,2025,38,22.15,38.5
+1534,Girish Prasad,Westchester Area Math Circle A,13,2025,38,22.15,38.5
+1593,Aaron Xu,Great Neck North,62,2025,40,21.12,40
+1532,Sirui Wu,Beijing Mingcheng Academy Red Panda,9,2025,41,21.03,41
+1537,Benjamin Li,Fish,22,2025,42,21.02,42
+1594,Eric Shi Chen,Fish,22,2025,43,20.08,44
+1545,Arda Eroz,Montgomery County Team 1 November,7,2025,43,20.08,44
+1595,Yutong Wang,Scarsdale A,79,2025,43,20.08,44
+1529,Daniel Gong Li,Rockville Friends,20,2025,46,20.01,48
+1540,David Luo,pauvres de saint félicien,24,2025,46,20.01,48
+1596,Alvin Fang,Glenbrook North Green,80,2025,46,20.01,48
+1547,Justin Lee,BronxHMMT,27,2025,46,20.01,48
+1548,Benjamin Huang,BronxHMMT,27,2025,46,20.01,48

@@ -17,9 +17,13 @@ database/contests:
    **pumac-a-geometry**, and **pumac-a-number-theory**; for **cmimc**,
    **cmimc-algebra**, **cmimc-geometry**, and **cmimc-comb** are
    unioned with overall **cmimc** (subject-only competitors may be absent from
-   `cmimc/results.csv`); for **hmmt-feb**, **hmmt-feb-algebra-number-theory**,
+   `cmimc/results.csv`); for    **hmmt-feb**, **hmmt-feb-algebra-number-theory**,
    **hmmt-feb-geometry**, and **hmmt-feb-combo** are unioned with overall
-   **hmmt-feb**.
+   **hmmt-feb**; for **hmmt-nov**, **hmmt-nov-general** and **hmmt-nov-theme**
+   are unioned with overall **hmmt-nov** (students may appear only on a subject
+   leaderboard, not the combined individual table); for **arml**, **`results.csv`**
+   (when present) and every **`results_*.csv`** under **`arml/year=<y>/`** are
+   unioned (e.g. onsite vs offsite splits).
 
 Run from the repo root:
 
@@ -68,6 +72,12 @@ HMMT_FEB_DIVISIONS = (
     "hmmt-feb-algebra-number-theory",
     "hmmt-feb-geometry",
     "hmmt-feb-combo",
+)
+
+HMMT_NOV_DIVISIONS = (
+    "hmmt-nov",
+    "hmmt-nov-general",
+    "hmmt-nov-theme",
 )
 
 
@@ -137,6 +147,19 @@ def parse_results_student_ids(results_csv: Path) -> Set[str]:
     return out
 
 
+def arml_results_paths_for_year(year: str) -> list[Path]:
+    """`results.csv` plus every `results_*.csv` in ``arml/year=<year>/``."""
+    year_dir = CONTESTS_DIR / "arml" / f"year={year}"
+    if not year_dir.is_dir():
+        return []
+    paths: list[Path] = []
+    main_csv = year_dir / "results.csv"
+    if main_csv.is_file():
+        paths.append(main_csv)
+    paths.extend(sorted(year_dir.glob("results_*.csv")))
+    return paths
+
+
 def results_student_ids_for_contest_year(contest_slug: str, year: str) -> Tuple[Set[str], bool]:
     """Union of student_id from results.csv; bool is True if at least one results file existed."""
     ids: Set[str] = set()
@@ -151,6 +174,10 @@ def results_student_ids_for_contest_year(contest_slug: str, year: str) -> Tuple[
         paths = [CONTESTS_DIR / d / f"year={year}" / "results.csv" for d in CMIMC_DIVISIONS]
     elif contest_slug == "hmmt-feb":
         paths = [CONTESTS_DIR / d / f"year={year}" / "results.csv" for d in HMMT_FEB_DIVISIONS]
+    elif contest_slug == "hmmt-nov":
+        paths = [CONTESTS_DIR / d / f"year={year}" / "results.csv" for d in HMMT_NOV_DIVISIONS]
+    elif contest_slug == "arml":
+        paths = arml_results_paths_for_year(year)
     else:
         paths = [CONTESTS_DIR / contest_slug / f"year={year}" / "results.csv"]
     for p in paths:
