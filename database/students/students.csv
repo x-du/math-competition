@@ -306,7 +306,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 332,Huaiyu Chen,California,,male,
 333,Chuang Yuan,China,,male,
 334,Haochen Sun,New Jersey,,male,
-335,Yuxin Fu,"Ontario, Canada",,male,
+335,Yuxin Fu,"Ontario, Canada",,male,12
 336,Lianshun Yang,,,male,
 337,Emily Yu,New York,,female,13
 338,Katrina Liu,California,,female,11
@@ -384,7 +384,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 412,Aditya Pahuja,New York,,male,
 413,Jacopo Rizzo,California,,male,
 414,Changxiu Ji,,,male,
-415,Christopher Li,"Ontario, Canada",,male,
+415,Christopher Li,"Ontario, Canada",,male,12
 416,Onkit Samanta,Washington,,male,
 417,Sarunyu Thongjarast,Thailand,,male,
 418,Emily Liu,California,,female,13
@@ -853,7 +853,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 892,Edward Cha,Massachusetts,,male,
 893,Hugh Cheng,California,,male,13
 894,Kailua Cheng,California,,female,12
-895,Perry Dai,"Ontario, Canada",,male,
+895,Perry Dai,"Ontario, Canada",,male,11
 896,Aron Fekete,New Hampshire,,male,13
 897,Dylan Frake,California,,male,13
 898,Hao-Yu Gan,New York,,male,
@@ -1210,7 +1210,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1272,Angelica Feng,New Jersey,,female,9
 1273,Kevin Hu,Texas,,male,
 1275,Rohith Thomas,Colorado,,male,
-1276,Tiger Li,"Ontario, Canada",,male,
+1276,Tiger Li,"Ontario, Canada",,male,10
 1277,Jeff Zhou,Minnesota,,male,
 1278,Kaylyn Zhang,"Ontario, Canada",Kaylyn Jinglin Zhang,female,10
 1279,Jack Whitney-Epstein,Connecticut,Jack Whitney,male,12
@@ -1478,7 +1478,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1556,Max Liang,New Jersey,,male,7
 1557,Sidarth Singh,,,male,
 1558,Brian Sun,New Jersey,,male,
-1559,Jeremy Zhang,California,,male,
+1559,Jeremy Zhang,"Ontario Canada",,male,
 1560,Luke Song An,Pennsylvania,,male,
 1561,Raymond Wang,New Jersey,,male,
 1562,Ryan Zhu,New Jersey,,male,
