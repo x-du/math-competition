@@ -6176,7 +6176,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6293,Evan Ning,Arkansas,,male,8
 6294,Charles Yao,Arkansas,,male,8
 6295,Dhruv Bansal,Arizona,,male,8
-6296,Alexander Gu,Arizona,,male,8
+6296,Alexander Gu,Arizona,Alex Gu,male,8
 6297,Ethan Shell,Arizona,,male,8
 6299,Max Wang,California,,male,8
 6300,Elise Donaldson,Colorado,,female,7
@@ -6198,7 +6198,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6316,Sophia Xu,Delaware,,female,8
 6317,Lilliana Xu,Delaware,,female,8
 6318,Alex Yao,Delaware,,male,7
-6319,Arcel Garcia,Florida,,male,8
+6319,Arcel Garcia,Florida,Arcel Ieuan Garcia,male,8
 6320,Ian Lam,Florida,,male,7
 6321,Hardit Tayal,Florida,,male,7
 6322,Jason Zhang,Florida,,male,8
@@ -6261,7 +6261,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6379,Sawyer Schneider,Montana,,male,8
 6380,Cheyenne Wang,Montana,,female,8
 6381,Andrew Chen,North Carolina,,male,7
-6382,John Chen,North Carolina,,male,8
+6382,John Chen,North Carolina,Jack Chen,male,8
 6383,Olivia Huang,North Carolina,,female,8
 6384,Zixuan Wang,North Carolina,,,8
 6385,Henry Chu,North Dakota,,male,8
