@@ -659,9 +659,6 @@
 
   /** Raw GitHub path + csv-viewer ?contest= for MathCounts when finals CSV is not published yet (roster only). */
   function mathcountsCsvStorageSlug(contest, year) {
-    if (contest === MATHCOUNTS_MCP_SLUG && String(year) === "2026") {
-      return "mathcounts-national";
-    }
     return contest;
   }
 
