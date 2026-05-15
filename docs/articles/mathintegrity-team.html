@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem("theme") === "light") {
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Leadership and team roles for MathIntegrity (mathintegrity.org).">
+  <title>MathIntegrity Team — Math Competition</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E%F0%9F%8F%86%3C/text%3E%3C/svg%3E" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .team-page {
+      max-width: 36rem;
+      margin: 0 auto;
+      padding: 0 1rem 3rem;
+    }
+    .team-page .back-link {
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .team-page .back-link:hover {
+      text-decoration: underline;
+    }
+    .team-page h1 {
+      margin: 0 0 0.75rem;
+      font-size: 1.75rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+    .team-page .team-intro {
+      margin: 0 0 2rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.55;
+    }
+    /* Executive Directors: prominent, centered block above the lead roster */
+    .team-executives {
+      text-align: center;
+      margin: 0 0 2.25rem;
+      padding: 1.5rem 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+    .team-executives-title {
+      margin: 0 0 1rem;
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 500;
+      letter-spacing: normal;
+      line-height: inherit;
+      color: var(--text-muted);
+    }
+    .team-executives-names {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    @media (min-width: 480px) {
+      .team-executives-names {
+        flex-direction: row;
+        justify-content: center;
+        gap: 2rem;
+      }
+    }
+    .team-roster-wrap {
+      margin-top: 0;
+    }
+    .team-roster {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      overflow: hidden;
+    }
+    .team-roster li {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      padding: 0.85rem 1.15rem;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.95rem;
+    }
+    .team-roster li:last-child {
+      border-bottom: none;
+    }
+    .team-roster .team-role {
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .team-roster .team-name {
+      color: var(--text);
+      font-weight: 600;
+      text-align: right;
+    }
+    @media (max-width: 480px) {
+      .team-roster li {
+        grid-template-columns: 1fr;
+        gap: 0.2rem;
+      }
+      .team-roster .team-name {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>MathIntegrity Team</h1>
+    <p class="tagline">Leads behind mathintegrity.org</p>
+  </header>
+
+  <main class="main team-page">
+    <a href="../index.html" class="back-link">&larr; Back to student records</a>
+
+    <p class="team-intro">
+      MathIntegrity is maintained by us who compile public competition results, and we work to promote integrity in math competitions!
+    </p>
+
+    <section class="team-executives" aria-labelledby="team-executives-heading">
+      <h2 id="team-executives-heading" class="team-executives-title">Executive Director</h2>
+      <ul class="team-executives-names">
+        <li>Shunyao Yan</li>
+        <li>Patrick Du</li>
+      </ul>
+    </section>
+
+    <div class="team-roster-wrap">
+      <ul class="team-roster" aria-label="MathIntegrity leads">
+        <li>
+          <span class="team-role">Communications Lead</span>
+          <span class="team-name">Yeeyung Li</span>
+        </li>
+        <li>
+          <span class="team-role">Operations Lead</span>
+          <span class="team-name">Jeffery Du</span>
+        </li>
+        <li>
+          <span class="team-role">Events Lead</span>
+          <span class="team-name">Shawn Bi</span>
+        </li>
+        <li>
+          <span class="team-role">Funding Lead</span>
+          <span class="team-name">Emily Qiu</span>
+        </li>
+      </ul>
+    </div>
+  </main>
+</body>
+</html>
