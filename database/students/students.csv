@@ -6185,7 +6185,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6306,Eric Ren,Connecticut,,male,8
 6307,James Huang,District of Columbia,,male,8
 6308,Catherine Lieven,District of Columbia,,female,8
-6309,Brooklin Ma,District of Columbia,,female,8
+6309,Brooklin Ma,District of Columbia,,male,8
 6310,Yonatan Morse-Achtenberg,District of Columbia,,male,7
 6311,Yaojun Chua,Department of Defense,,male,7
 6312,Christopher Dewey,Department of Defense,,male,6
@@ -6878,3 +6878,5 @@ student_id,student_name,state,alias,gender,grade_in_2026
 7032,Jeffrey Xu,New Jersey,,male,
 7033,Eric Xie,,,male,
 7034,Andrew Li,Texas,,male,
+7035,Vi Nguyen,Mississippi,,female,8
+7036,Raymond Sang,Mississippi,,,8
