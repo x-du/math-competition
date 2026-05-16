@@ -3,7 +3,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 2,Bryan Sicheng Guo,California,Bryan Guo,male,12
 3,Oron Wang,New Hampshire,,male,11
 4,Liam Reddy,Utah,,male,11
-5,Tianyi Li,"Ontario, Canada",Li Tianyi,male,10
+5,Tianyi Li,"Ontario, Canada",Li Tianyi|Tiger Li,male,10
 6,Jefferson Tiger Zhou,Minnesota,Jefferson Zhou,male,10
 7,Benjamin Fu,Washington,,male,12
 8,Vincent Wang,Texas,,male,10
@@ -60,7 +60,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 60,Haotian Zhou,China,,male,
 61,Kailin Yang,New Jersey,Kailin Kevin Yang|Kevin Yang,male,
 62,Evan Fan,New Hampshire,,male,12
-64,Michael Pok Hon Chen,New Jersey,Michael Chen,male,
+64,Michael Pok Hon Chen,New Jersey,Michael Chen,male,11
 65,Selena Ge,Massachusetts,,female,10
 67,Andrew Shen,Texas,,male,11
 68,Xilong Lin,California,,male,
@@ -186,7 +186,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 205,Mingyue Yang,Washington,,male,12
 206,Eric Xie,Maryland,,male,9
 207,Annie Huaiyu Wang,Washington,,female,
-209,Hongming Allan Zhao,New Jersey,Allan Zhao,male,
+209,Hongming Allan Zhao,New Jersey,Allan Zhao,male,10
 210,Eric Zhu,North Carolina,Eric P Zhu,male,11
 211,Chenghao Hu,California,,male,11
 212,Nathan Lu,Maryland,,male,11
@@ -960,7 +960,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1012,Michael Chang,Texas,,male,11
 1013,Shihan Cheng,Illinois,,male,
 1014,Lanie Deng,Missouri,,female,10
-1015,Jincheng Feng,Maryland,,male,10
+1015,Jincheng Feng,Maryland,Kevin Feng,male,10
 1016,Neel Jindal,California,,male,
 1017,Bach Kieu,Illinois,,male,11
 1018,Nolan Lin,California,,male,
@@ -1210,7 +1210,6 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1272,Angelica Feng,New Jersey,,female,9
 1273,Kevin Hu,Texas,,male,
 1275,Rohith Thomas,Colorado,,male,
-1276,Tiger Li,"Ontario, Canada",,male,10
 1277,Jeff Zhou,Minnesota,,male,
 1278,Kaylyn Zhang,"Ontario, Canada",Kaylyn Jinglin Zhang,female,10
 1279,Jack Whitney-Epstein,Connecticut,Jack Whitney,male,12
@@ -1375,7 +1374,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1445,Derek Xu,New York,,male,
 1446,Edward Li,Washington,,male,11
 1447,William Wu,Illinois,,male,8
-1448,Youran Charlie Gu,New Jersey,Charlie Gu,male,
+1448,Youran Charlie Gu,New Jersey,Charlie Gu|Youran Gu,male,10
 1449,Max Salvestrini,New York,,male,
 1451,Mihir Kumar,New York,,male,
 1452,Anand Swaroop,Massachusetts,,male,11
@@ -1452,7 +1451,6 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1526,Patrick Liang,California,,male,
 1528,Huanqi Zhang,Massachusetts,,male,10
 1529,Daniel Gong Li,Maryland,,male,11
-1530,Youran Gu,New Jersey,,male,10
 1531,Yutong Zhao,New Jersey,Mark Yutong Zhao|Yutong Mark Zhao,male,
 1532,Sirui Wu,China,"WU, SIRUI",male,
 1534,Girish Prasad,New York,,male,10
@@ -2050,7 +2048,6 @@ student_id,student_name,state,alias,gender,grade_in_2026
 2147,Arjun Pandey,New Jersey,,male,
 2148,Gabriele Herr,New Jersey,,male,
 2149,Monish Saravana Kumar,,,male,
-2150,Kevin Feng,Maryland,,male,
 2151,Ryan Gong,,,male,
 2152,Suvid Bordia,New Jersey,,male,
 2153,Zili Chang,New Jersey,,male,
