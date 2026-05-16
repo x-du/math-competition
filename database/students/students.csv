@@ -6218,7 +6218,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6339,Chris Li,Idaho,,male,8
 6340,Derek Pan,Idaho,,male,6
 6341,Jacob Chua,Illinois,,male,8
-6342,Zimo Liu,Illinois,,male,8
+6342,Zimo Liu,Illinois,,female,8
 6343,Viyan Singh,Illinois,,male,7
 6344,Elias Qiu,Indiana,,male,7
 6345,Roger Zhou,Indiana,,male,6
@@ -6271,7 +6271,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6392,Kaushal Srirangam,Nebraska,,female,8
 6393,Agastya Chakrabarti,New Hampshire,,male,8
 6394,Edward Elmore,New Hampshire,,male,6
-6395,Harvey Vale Dwyer,New Hampshire,,male,8
+6395,Harvey Vale Dwyer,New Hampshire,,female,8
 6396,Rhys Yap,New Hampshire,,male,8
 6397,Rohan Shah,New Jersey,,male,6
 6398,Iris Huang,New Mexico,,female,8
@@ -6320,7 +6320,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6442,Timothy Qin,State Department,,male,
 6443,Jaren Feng,Tennessee,,male,8
 6444,Andy Gu,Tennessee,,male,8
-6445,Haejoo Han,Tennessee,,,8
+6445,Haejoo Han,Tennessee,,female,8
 6446,Andrew Mao,Tennessee,,male,7
 6447,Ethan Santos,Texas,,male,8
 6448,Audrey Wu,Texas,,female,7
