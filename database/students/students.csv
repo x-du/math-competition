@@ -6260,7 +6260,6 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6381,Andrew Chen,North Carolina,,male,7
 6382,John Chen,North Carolina,Jack Chen,male,8
 6383,Olivia Huang,North Carolina,,female,8
-6384,Zixuan Wang,North Carolina,,,8
 6385,Henry Chu,North Dakota,,male,8
 6386,Xavier Lippay,North Dakota,,male,8
 6387,Tara Prawira,North Dakota,,female,8
@@ -6411,7 +6410,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6533,Kaleb Houtz,Montana,,male,9
 6534,Evan Newcomer,Montana,,male,9
 6535,Shivank Chintalpati,North Carolina,,male,9
-6536,Steven Wang,North Carolina,,male,8
+6536,Steven Wang,North Carolina,Zixuan Wang,male,8
 6537,August Chang,North Dakota,,male,9
 6538,Evan Oelschlager,North Dakota,,male,9
 6539,Dex Long,Nebraska,,male,7
