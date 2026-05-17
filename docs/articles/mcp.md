@@ -207,7 +207,7 @@ The algorithm requires the **total competition size (N)** and **min_pts** for ea
 | **CMM** | 250 | ~60 | ~10 | Open | 10 |
 | **BrUMO Division A** | 250 | ~300 | ~22–24 | Open | 10 |
 | **JHMT** | 250 | ~150 | ~30–40 (published) | Open | 10 |
-| **EMCC** | 250 | ~300 | 10–20 (published) | Open | 10 |
+| **EMCC** | 250 | ~150 | 10–20 (published) | Open | 10 |
 
 *Note: Open = min_pts 10; Selective = min_pts 100 or 200. See `MCP_V2_PARAMS` in [`scripts/build_search_data.py`](https://github.com/x-du/math-competition/blob/main/scripts/build_search_data.py) for the authoritative N and min_pts per contest and year.*
 

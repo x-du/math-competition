@@ -100,7 +100,7 @@ MCP_V2_PARAMS = {
     # BrUMO A: CSV is top 10% only (ranks 1–10 + DHM Top 10%); N ≈ row_count × 10
     "brumo-a": {"default": (240, 10), 2025: (230, 10), 2026: (240, 10)},
     "jhmt": {"default": (150, 10)},
-    "emcc": {"default": (300, 10)},
+    "emcc": {"default": (150, 10)},
 }
 
 
