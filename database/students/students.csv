@@ -2076,7 +2076,6 @@ student_id,student_name,state,alias,gender,grade_in_2026
 2176,Alexander Buteau,Connecticut,,male,
 2177,Oscar Huang,New Jersey,,male,
 2178,Iris Gao,,,female,
-2179,Eric Yuan,New Jersey,,male,
 2180,Chris Ping Liu,Connecticut,,male,
 2181,Dhagesh Desai,New Jersey,,male,
 2182,Angelina Gao,New Jersey,,female,
@@ -6125,7 +6124,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6245,Srivibhav Mandapaka,California,,male,
 6246,Hanson Jiang,California,,male,
 6247,Akhil Vuyyuru,Nevada,,male,8
-6248,Ethan Sun,California,,male,
+6248,Ethan Sun,California,,male,8
 6249,Roger Huynh,California,,male,
 6250,Alvin Zhu,Nevada,,male,8
 6251,Pavel Pomozov,California,,male,
