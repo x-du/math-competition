@@ -198,6 +198,20 @@
   }
 
   var ALL_LEAF_KEYS = allLeafKeysList();
+  var SAVED_ALL_MIGRATION_OPTIONAL_KEYS = { emcc: true };
+
+  function savedSelectionWasPreviousAll(out) {
+    if (!out || !out.length) return false;
+    var selected = {};
+    for (var i = 0; i < out.length; i++) selected[out[i]] = true;
+    for (var j = 0; j < ALL_LEAF_KEYS.length; j++) {
+      var key = ALL_LEAF_KEYS[j];
+      if (!selected[key] && !SAVED_ALL_MIGRATION_OPTIONAL_KEYS[key]) {
+        return false;
+      }
+    }
+    return true;
+  }
 
   /**
    * Map filter leaf key -> contests.csv folder_name (slug) for contest_name lookup.
@@ -284,6 +298,7 @@
       }
     }
     if (!out.length) return { mode: "all" };
+    if (savedSelectionWasPreviousAll(out)) return { mode: "all" };
     return { mode: "leaves", leaves: out };
   }
 
