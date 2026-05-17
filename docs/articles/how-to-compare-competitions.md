@@ -13,7 +13,7 @@ When evaluating math competitions—for coaching decisions, admissions context, 
 
 Not all competitions are equally trustworthy. Cheating—leaked exams, weak proctoring, long testing windows—has affected some contests more than others. A strong result at a low-integrity contest tells you less than the same result at a high-integrity one.
 
-**[Integrity in US Math Competitions](IntegrityInMathContest.md)** rates major contests on a 1–10 scale (1 = rampant cheating, 10 = very clean), based on community discussions (AoPS, Reddit), documented incidents, and structural analysis. Key takeaways:
+**[Integrity in US Math Competitions](IntegrityInMathContest.html)** rates major contests on a 1–10 scale (1 = rampant cheating, 10 = very clean), based on community discussions (AoPS, Reddit), documented incidents, and structural analysis. Key takeaways:
 
 | Integrity Level | Examples |
 |---|---|
@@ -23,13 +23,13 @@ Not all competitions are equally trustworthy. Cheating—leaked exams, weak proc
 | **4** | AIME — repeated leaks, school-proctored |
 | **3** | AMC 10/12 — massive documented leaks |
 
-**When comparing competitions, start with integrity.** A contest with a low rating may have inflated or unreliable results. For high-stakes decisions, prioritize consistency across multiple high-integrity contests. See [Using data to identify integrity issues](using-data-to-identify-integrity-issues.md) for how to use this database to spot red flags.
+**When comparing competitions, start with integrity.** A contest with a low rating may have inflated or unreliable results. For high-stakes decisions, prioritize consistency across multiple high-integrity contests. See [Using data to identify integrity issues](using-data-to-identify-integrity-issues.html) for how to use this database to spot red flags.
 
 ---
 
 ## 2. Competition Impact Index
 
-**Definition:** The **Competition Impact Index** is the percentage of a competition’s top 100 ranked students who are in the overall top 100. The metric is MCP-weighted: it measures the share of overall elite MCP captured (higher-ranked students contribute more). See [MCP](mcp.md).
+**Definition:** The **Competition Impact Index** is the percentage of a competition’s top 100 ranked students who are in the overall top 100. The metric is MCP-weighted: it measures the share of overall elite MCP captured (higher-ranked students contribute more). See [MCP](mcp.html).
 
 $$\text{Impact Index} = \frac{\sum \text{MCP of contest's top 100 who are in overall top 100}}{\sum \text{MCP of overall top 100}} \times 100\%$$
 
@@ -46,7 +46,7 @@ The impact index is computed from the current database for all competitions. **S
 
 - **Recruitment and selection:** Competitions with high impact indices are strong signals of elite ability.
 - **Calibration:** A student who ranks top 10 at HMMT February (high impact) has demonstrated ability against a field that heavily overlaps with the national elite. A top 10 at a lower-impact contest may still be impressive but reflects a different competitive context.
-- **Pipeline analysis:** MathCounts National’s 44% overlap shows that many top middle schoolers go on to rank in the overall top 100 in high school.
+- **Pipeline analysis:** Middle school competitions such as MathCounts National, BAMO-8, and EMCC can show how early results connect to later high school performance in the overall MCP rankings.
 
 ---
 
@@ -74,7 +74,7 @@ Community discussions on AoPS and Reddit often note that East Coast competitions
 
 When comparing two competitions, consider:
 
-1. **Integrity** — Is the contest high-integrity (8–9)? See [Integrity in US Math Competitions](IntegrityInMathContest.md).
+1. **Integrity** — Is the contest high-integrity (8–9)? See [Integrity in US Math Competitions](IntegrityInMathContest.html).
 2. **Impact Index** — What share of its top performers are in the overall top 100? Higher = stronger signal of elite standing.
 3. **Geographic reach** — Is it national or regional? National draws make top results more comparable across regions.
 
@@ -88,12 +88,12 @@ When comparing two competitions, consider:
 
 ## Data Sources and Limitations
 
-- **Integrity ratings:** LLM-generated from community discussions (AoPS, Reddit) and documented incidents. See disclaimer in [Integrity in US Math Competitions](IntegrityInMathContest.md).
+- **Integrity ratings:** LLM-generated from community discussions (AoPS, Reddit) and documented incidents. See disclaimer in [Integrity in US Math Competitions](IntegrityInMathContest.html).
 - **Impact index:** Computed from this database’s MCP rankings. Only includes students with official recognition; contests that publish fewer results may have noisier indices.
 - **Geographic data:** State comes from `students.csv` or contest-specific results (e.g., AMO, JMO, MathCounts). Some students have missing or inferred state.
 - **Excluded from impact rankings:** IMO, EGMO, and RMM are international olympiads and are excluded from the Competition Ranking impact index. The US sends only 4–6 students to each per year, so the field is tiny and the impact index would be misleading. This framework compares *US* contests: the impact index measures overlap with the US top 100 by MCP, and geographic reach is about US state distribution. International olympiads draw from many countries and don't fit the same comparison—their prestige is well understood without needing a US-centric index.
 
-For methodology details on MCP and rankings, see [MCP — Math Competition Points](mcp.md).
+For methodology details on MCP and rankings, see [MCP — Math Competition Points](mcp.html).
 
 **Live rankings:** See the [Competition Ranking](../crank.html) page for impact index and geographic data computed from the current database.
 

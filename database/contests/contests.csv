@@ -44,3 +44,4 @@ bamo-12,BAMO-12,"Bay Area Mathematical Olympiad, high school division","Bay Area
 mk-national,Math Kangaroo National,"Math Kangaroo USA national-level winners by grade (record only; not shown on website, no MCP)","Math Kangaroo USA national-level winners by grade (record only; not shown on website, no MCP).",https://mathkangaroo.org/mks/,,,rank,rank
 brumo-a,BrUMO Division A,Brown University Math Olympiad Division A,Brown University Math Olympiad Division A. Individual rankings from the annual competition at Brown University.,https://www.brumo.org/,250,1.0,rank_mixed,rank
 jhmt,JHMT,Johns Hopkins Math Tournament,Johns Hopkins Math Tournament. Annual student-run contest for middle and high school students.,https://www.johnshopkinsmathtournament.com/,250,1.0,rank,rank
+emcc,EMCC,Exeter Math Club Competition,Exeter Math Club Competition. Annual middle school competition run by Exeter Math Club.,https://exetermathclub.com/,250,1.0,rank,rank

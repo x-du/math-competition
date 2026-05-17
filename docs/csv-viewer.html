@@ -200,6 +200,88 @@
         return /^\d+(\.\d+)?$/.test(String(val).trim());
       }
 
+      function isLocalhostHost() {
+        var host = String(window.location.hostname || "").toLowerCase();
+        return host === "localhost" || host === "127.0.0.1" || host === "::1";
+      }
+
+      function expandedStudentRecords(student) {
+        var records = student.rec || student.records || [];
+        return records;
+      }
+
+      function expandedStudentName(student) {
+        return student.nm || student.name || ("Student #" + student.id);
+      }
+
+      function expandRecord(record, slugIndex, keyMap) {
+        var out = {};
+        for (var k in record) {
+          if (!Object.prototype.hasOwnProperty.call(record, k)) continue;
+          if (k === "c") {
+            out.contest_slug = slugIndex[record[k]] || "";
+            continue;
+          }
+          var longKey = keyMap[k] || k;
+          out[longKey] = record[k];
+        }
+        return out;
+      }
+
+      /** Build a display table from local data.json when local CSVs are not on GitHub yet. */
+      function localContestRows(params) {
+        if (params.file && params.file !== "results.csv") return Promise.resolve([]);
+        return fetch(new URL("data.json", window.location.href).href)
+          .then(function (res) {
+            if (!res.ok) return [];
+            return res.json();
+          })
+          .then(function (json) {
+            var rows = [];
+            var slugIndex = json.slug_index || [];
+            var keyMap = json.key_map || {};
+            var students = json.students || [];
+            var yearStr = String(params.year || "").trim();
+            for (var si = 0; si < students.length; si++) {
+              var student = students[si];
+              var recs = expandedStudentRecords(student);
+              for (var ri = 0; ri < recs.length; ri++) {
+                var rec = expandRecord(recs[ri], slugIndex, keyMap);
+                if ((rec.contest_slug || rec.contest || "") !== params.contest) continue;
+                if (String(rec.year || "").trim() !== yearStr) continue;
+                var row = { student_name: expandedStudentName(student), year: yearStr };
+                var keys = Object.keys(rec).sort();
+                for (var ki = 0; ki < keys.length; ki++) {
+                  var key = keys[ki];
+                  if (key === "contest_slug" || key === "contest" || key === "year") continue;
+                  if (key === "mcp_points" || key === "mcp_rank" || key === "mcp_contrib") continue;
+                  row[key] = rec[key];
+                }
+                rows.push(row);
+              }
+            }
+            rows.sort(function (a, b) {
+              var ar = parseFloat(a.rank || "999999");
+              var br = parseFloat(b.rank || "999999");
+              if (isNaN(ar)) ar = 999999;
+              if (isNaN(br)) br = 999999;
+              return ar - br;
+            });
+            return rows;
+          })
+          .catch(function () { return []; });
+      }
+
+      function renderLocalRowsIfPresent(params) {
+        return localContestRows(params).then(function (rows) {
+          if (!rows.length) return false;
+          document.getElementById("csv-loading").hidden = true;
+          var fields = Object.keys(rows[0]).filter(function (f) { return !isInternalCsvColumn(f); });
+          renderTable(rows, fields);
+          return true;
+        });
+      }
+
       function renderTable(data, fields) {
         var wrap = document.getElementById("csv-table-wrap");
         var table = document.getElementById("csv-table");
@@ -273,6 +355,15 @@
           })
           .catch(function () { return { branch: "main" }; })
           .then(function (cfg) {
+            if (isLocalhostHost()) {
+              return renderLocalRowsIfPresent(p).then(function (rendered) {
+                return rendered ? { localRendered: true } : cfg;
+              });
+            }
+            return cfg;
+          })
+          .then(function (cfg) {
+            if (cfg && cfg.localRendered) return cfg;
             var branch = getBranch(cfg);
             var rawUrl = buildRawUrl(branch, p.contest, p.year, p.file);
             return fetch(rawUrl).then(function (res) {
@@ -280,6 +371,7 @@
             });
           })
           .then(function (_a) {
+            if (_a && _a.localRendered) return _a;
             var res = _a.res;
             var rawUrl = _a.rawUrl;
             if (!res.ok) throw new Error("Failed to load: " + res.status);
@@ -288,6 +380,7 @@
             });
           })
           .then(function (_a) {
+            if (_a && _a.localRendered) return;
             var text = _a.text;
             var rawUrl = _a.rawUrl;
             document.getElementById("csv-loading").hidden = true;
@@ -310,7 +403,9 @@
           })
           .catch(function (err) {
             var rawUrl = buildRawUrl("main", p.contest, p.year, p.file);
-            showError("Could not load CSV: " + (err.message || err), rawUrl);
+            renderLocalRowsIfPresent(p).then(function (rendered) {
+              if (!rendered) showError("Could not load CSV: " + (err.message || err), rawUrl);
+            });
           });
       }
 

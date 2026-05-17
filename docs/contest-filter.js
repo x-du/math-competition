@@ -95,6 +95,7 @@
     add("bamo-8", function (s) { return s.indexOf("bamo-8") !== -1; });
     add("bamo-12", function (s) { return s.indexOf("bamo-12") !== -1; });
     add("brumo-a", function (s) { return s.indexOf("brumo-a") === 0; });
+    add("emcc", function (s) { return s === "emcc"; });
 
     return m;
   }
@@ -144,7 +145,8 @@
     "mpfg-olympiad": "MPFG Olympiad",
     "bamo-8": "BAMO-8",
     "bamo-12": "BAMO-12",
-    "brumo-a": "BrUMO Div A"
+    "brumo-a": "BrUMO Div A",
+    emcc: "EMCC"
   };
 
   /** Same broad order as the original flat checkbox list: olympiads, then HMMT / PUMaC, then the rest. */
@@ -170,6 +172,7 @@
     { multi: false, keys: ["bamo-8"] },
     { multi: false, keys: ["bamo-12"] },
     { multi: false, keys: ["brumo-a"] },
+    { multi: false, keys: ["emcc"] },
     { multi: true, title: "BMT", keys: LEGACY_EXPAND.bmt }
   ];
 
@@ -237,6 +240,7 @@
     "bamo-8": "bamo-8",
     "bamo-12": "bamo-12",
     "brumo-a": "brumo-a",
+    emcc: "emcc",
     "bmt__general": "bmt",
     "bmt__algebra": "bmt-algebra",
     "bmt__calculus": "bmt-calculus",

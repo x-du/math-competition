@@ -17,7 +17,7 @@ Not all math competitions are created equal. Some contests have suffered from re
 
 When evaluating students for admissions, team selection, or awards, **look for the consistent track record across high-integrity competitions, not a one-off result from a contest with known cheating problems.**
 
-For a breakdown of integrity ratings across major US math competitions, see [Integrity in US Math Competitions](IntegrityInMathContest.md).
+For a breakdown of integrity ratings across major US math competitions, see [Integrity in US Math Competitions](IntegrityInMathContest.html).
 
 ## Contests in This Database
 
@@ -50,7 +50,7 @@ Look for students who show up **repeatedly** across **multiple high-integrity co
 When making decisions about admissions offers, team selection, or scholarship awards:
 
 - **Do** look for consistent performance across multiple high-integrity competitions over several years.
-- **Don't** rely solely on results from competitions with known integrity issues (see the [integrity ratings](IntegrityInMathContest.md)).
+- **Don't** rely solely on results from competitions with known integrity issues (see the [integrity ratings](IntegrityInMathContest.html)).
 - **Do** cross-reference a student's claimed achievements against this database.
 - **Do** weight in-person, proof-based contests (USAMO/USJMO, IMO) most heavily — these are the hardest to cheat on.
 

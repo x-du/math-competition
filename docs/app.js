@@ -4797,7 +4797,8 @@
       el.style.visibility = "visible";
     });
     setLoading(true);
-    var base = document.querySelector("script[src$='app.js']").src.replace(/\/[^/]*$/, "");
+    var appScript = document.currentScript || document.querySelector("script[src*='app.js']");
+    var base = appScript ? appScript.src.replace(/\/[^/]*$/, "") : ".";
     Promise.all([
       fetch(base + "/data.json").then(function (res) {
         if (!res.ok) throw new Error("Failed to load data: " + res.status);
@@ -5146,6 +5147,70 @@
     return n === "student_id" || n === "team_id";
   }
 
+  /** Build a CSV-like table from loaded data.json records for local, unpushed contest files. */
+  function localContestRows(contest, year) {
+    var rows = [];
+    var yearStr = String(year || "").trim();
+    var students = data.students || [];
+    for (var si = 0; si < students.length; si++) {
+      var st = students[si];
+      var recs = st.records || [];
+      for (var ri = 0; ri < recs.length; ri++) {
+        var rec = recs[ri];
+        var slug = rec.contest_slug || rec.contest || "";
+        if (slug !== contest || String(rec.year || "").trim() !== yearStr) continue;
+        var row = { student_name: st.name || ("Student #" + st.id), year: yearStr };
+        var keys = recordToDisplayKeys(rec);
+        for (var ki = 0; ki < keys.length; ki++) {
+          var key = keys[ki];
+          if (MCP_COLUMNS[key]) continue;
+          row[key] = rec[key];
+        }
+        rows.push(row);
+      }
+    }
+    rows.sort(function (a, b) {
+      var ar = parseFloat(a.mcp_rank || a.rank || "999999");
+      var br = parseFloat(b.mcp_rank || b.rank || "999999");
+      if (isNaN(ar)) ar = 999999;
+      if (isNaN(br)) br = 999999;
+      return ar - br;
+    });
+    return rows;
+  }
+
+  function renderCsvPopoverTable(csvData, fields, csvTable, csvTableWrap) {
+    var colAlign = [];
+    for (var i = 0; i < fields.length; i++) {
+      var allNum = true;
+      for (var r = 0; r < csvData.length; r++) {
+        var v = csvData[r][fields[i]];
+        if (v != null && String(v).trim() !== "" && !/^\d+(\.\d+)?$/.test(String(v).trim())) {
+          allNum = false;
+          break;
+        }
+      }
+      colAlign[i] = allNum ? "num" : "";
+    }
+    var thead = "<thead><tr>";
+    for (var hi = 0; hi < fields.length; hi++) {
+      thead += "<th scope=\"col\"" + (colAlign[hi] ? " class=\"" + colAlign[hi] + "\"" : "") + ">" + escapeHtml(fields[hi]) + "</th>";
+    }
+    thead += "</tr></thead>";
+    var tbody = "<tbody>";
+    for (var ri = 0; ri < csvData.length; ri++) {
+      tbody += "<tr>";
+      for (var fi = 0; fi < fields.length; fi++) {
+        var val = csvData[ri][fields[fi]] != null ? String(csvData[ri][fields[fi]]) : "";
+        tbody += "<td" + (colAlign[fi] ? " class=\"" + colAlign[fi] + "\"" : "") + ">" + escapeHtml(val) + "</td>";
+      }
+      tbody += "</tr>";
+    }
+    tbody += "</tbody>";
+    csvTable.innerHTML = thead + tbody;
+    csvTableWrap.hidden = false;
+  }
+
   function showCsvPopover(contest, year) {
     var csvPopover = document.getElementById("csv-popover");
     var csvTitle = document.getElementById("csv-popover-title");
@@ -5184,6 +5249,19 @@
     var rawUrl = RAW_BASE + encodeURIComponent(branch) + "/database/contests/" + encodeURIComponent(storageSlug) + "/year%3D" + encodeURIComponent(year) + "/" + encodeURIComponent(file);
     var viewerUrl = CSV_VIEWER_BASE + "?contest=" + encodeURIComponent(storageSlug) + "&year=" + encodeURIComponent(year) + "&file=" + encodeURIComponent(file) + "&name=" + encodeURIComponent(contestName);
 
+    if (isLocalhostHost()) {
+      var localRowsFirst = localContestRows(contest, year);
+      if (localRowsFirst.length) {
+        var localFieldsFirst = Object.keys(localRowsFirst[0]).filter(function (f) { return !isInternalCsvColumn(f); });
+        csvLoading.hidden = true;
+        csvError.hidden = true;
+        renderCsvPopoverTable(localRowsFirst, localFieldsFirst, csvTable, csvTableWrap);
+        csvOpenTab.href = viewerUrl;
+        csvOpenTab.hidden = false;
+        return;
+      }
+    }
+
     fetch(rawUrl)
       .then(function (res) {
         if (!res.ok) throw new Error("Failed to load: " + res.status);
@@ -5211,39 +5289,21 @@
           csvOpenTab.hidden = false;
           return;
         }
-        var colAlign = [];
-        for (var i = 0; i < fields.length; i++) {
-          var allNum = true;
-          for (var r = 0; r < csvData.length; r++) {
-            var v = csvData[r][fields[i]];
-            if (v != null && String(v).trim() !== "" && !/^\d+(\.\d+)?$/.test(String(v).trim())) {
-              allNum = false;
-              break;
-            }
-          }
-          colAlign[i] = allNum ? "num" : "";
-        }
-        var thead = "<thead><tr>";
-        for (var i = 0; i < fields.length; i++) {
-          thead += "<th scope=\"col\"" + (colAlign[i] ? " class=\"" + colAlign[i] + "\"" : "") + ">" + escapeHtml(fields[i]) + "</th>";
-        }
-        thead += "</tr></thead>";
-        var tbody = "<tbody>";
-        for (var r = 0; r < csvData.length; r++) {
-          tbody += "<tr>";
-          for (var i = 0; i < fields.length; i++) {
-            var val = csvData[r][fields[i]] != null ? String(csvData[r][fields[i]]) : "";
-            tbody += "<td" + (colAlign[i] ? " class=\"" + colAlign[i] + "\"" : "") + ">" + escapeHtml(val) + "</td>";
-          }
-          tbody += "</tr>";
-        }
-        tbody += "</tbody>";
-        csvTable.innerHTML = thead + tbody;
-        csvTableWrap.hidden = false;
+        renderCsvPopoverTable(csvData, fields, csvTable, csvTableWrap);
         csvOpenTab.href = viewerUrl;
         csvOpenTab.hidden = false;
       })
       .catch(function (err) {
+        var localRows = localContestRows(contest, year);
+        if (localRows.length) {
+          var localFields = Object.keys(localRows[0]).filter(function (f) { return !isInternalCsvColumn(f); });
+          csvLoading.hidden = true;
+          csvError.hidden = true;
+          renderCsvPopoverTable(localRows, localFields, csvTable, csvTableWrap);
+          csvOpenTab.href = viewerUrl;
+          csvOpenTab.hidden = false;
+          return;
+        }
         csvLoading.hidden = true;
         csvError.textContent = "Could not load CSV: " + (err.message || err);
         csvError.hidden = false;
