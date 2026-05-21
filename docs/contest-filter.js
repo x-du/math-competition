@@ -135,7 +135,7 @@
     imo: "IMO",
     rmm: "RMM",
     egmo: "EGMO",
-    mathcounts: "Mathcounts",
+    mathcounts: "MathCounts National Ranking",
     arml: "ARML",
     dmm: "DMM",
     cmm: "CMM",

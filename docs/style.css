@@ -668,19 +668,23 @@ body.contest-filter-popover-open {
   background: var(--surface-elevated, var(--surface));
 }
 
-/* Bold short name (contest_name) + long title from description */
+/* Bold short name (contest_name) + long title on second line (matches multi-group cards) */
 .contest-filter-first-level--single .contest-filter-option--single {
   font-size: 0.8rem;
   font-weight: 400;
   color: var(--text-muted);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
   max-width: 100%;
+  align-items: flex-start;
 }
 
 .contest-filter-first-level-label {
   min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
 }
 
 .contest-filter-short-name {
@@ -689,7 +693,9 @@ body.contest-filter-popover-open {
 }
 
 .contest-filter-long-name {
+  font-size: 0.75rem;
   font-weight: 400;
+  line-height: 1.4;
   color: var(--text-muted);
   opacity: 0.92;
 }
@@ -831,6 +837,10 @@ body.contest-filter-popover-open {
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
   cursor: default;
+}
+
+#contest-filter-popover .contest-filter-first-level--single .contest-filter-option--single {
+  align-items: flex-start;
 }
 
 #contest-filter-popover .contest-filter-option input[type="checkbox"],

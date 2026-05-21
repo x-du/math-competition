@@ -5147,36 +5147,95 @@
     return n === "student_id" || n === "team_id";
   }
 
-  /** Build a CSV-like table from loaded data.json records for local, unpushed contest files. */
-  function localContestRows(contest, year) {
-    var rows = [];
-    var yearStr = String(year || "").trim();
-    var students = data.students || [];
-    for (var si = 0; si < students.length; si++) {
-      var st = students[si];
-      var recs = st.records || [];
-      for (var ri = 0; ri < recs.length; ri++) {
-        var rec = recs[ri];
-        var slug = rec.contest_slug || rec.contest || "";
-        if (slug !== contest || String(rec.year || "").trim() !== yearStr) continue;
-        var row = { student_name: st.name || ("Student #" + st.id), year: yearStr };
-        var keys = recordToDisplayKeys(rec);
-        for (var ki = 0; ki < keys.length; ki++) {
-          var key = keys[ki];
-          if (MCP_COLUMNS[key]) continue;
-          row[key] = rec[key];
-        }
-        rows.push(row);
-      }
+  /** Parse CSV rows in file line order (no sorting). */
+  function parseCsvPreserveOrder(text) {
+    if (typeof Papa === "undefined" || !Papa.parse) {
+      return { data: [], fields: [], error: "CSV parser unavailable" };
     }
-    rows.sort(function (a, b) {
-      var ar = parseFloat(a.mcp_rank || a.rank || "999999");
-      var br = parseFloat(b.mcp_rank || b.rank || "999999");
-      if (isNaN(ar)) ar = 999999;
-      if (isNaN(br)) br = 999999;
-      return ar - br;
-    });
-    return rows;
+    var parsed = Papa.parse(text, { header: false, skipEmptyLines: true });
+    if (parsed.errors && parsed.errors.length) {
+      return { data: [], fields: [], error: parsed.errors[0].message || "Unknown" };
+    }
+    if (!parsed.data || !parsed.data.length) {
+      return { data: [], fields: [] };
+    }
+    var headerRow = parsed.data[0];
+    var allFields = [];
+    for (var h = 0; h < headerRow.length; h++) {
+      var fieldName = String(headerRow[h] || "").replace(/^\ufeff/, "").trim();
+      if (fieldName) allFields.push(fieldName);
+    }
+    var fields = allFields.filter(function (f) { return !isInternalCsvColumn(f); });
+    var rows = [];
+    for (var r = 1; r < parsed.data.length; r++) {
+      var line = parsed.data[r];
+      if (!line || !line.length) continue;
+      var row = {};
+      var hasValue = false;
+      for (var c = 0; c < allFields.length; c++) {
+        var cell = line[c] != null ? String(line[c]) : "";
+        if (cell.trim()) hasValue = true;
+        row[allFields[c]] = cell;
+      }
+      if (hasValue) rows.push(row);
+    }
+    return { data: rows, fields: fields };
+  }
+
+  function getContestCsvLoadUrls(storageSlug, year, file, branch) {
+    var rel = "database/contests/" + storageSlug + "/year=" + year + "/" + file;
+    var seen = {};
+    var urls = [];
+    function add(href) {
+      if (!href || seen[href]) return;
+      seen[href] = true;
+      urls.push(href);
+    }
+    add(new URL("/" + rel, window.location.origin).href);
+    add(new URL("../" + rel, window.location.href).href);
+    if (branch) {
+      add(
+        RAW_BASE +
+          encodeURIComponent(branch) +
+          "/database/contests/" +
+          encodeURIComponent(storageSlug) +
+          "/year%3D" +
+          encodeURIComponent(year) +
+          "/" +
+          encodeURIComponent(file)
+      );
+    }
+    if (branch !== "main") {
+      add(
+        RAW_BASE +
+          "main/database/contests/" +
+          encodeURIComponent(storageSlug) +
+          "/year%3D" +
+          encodeURIComponent(year) +
+          "/" +
+          encodeURIComponent(file)
+      );
+    }
+    return urls;
+  }
+
+  function tryLoadContestCsvText(urls) {
+    var index = 0;
+    function tryNext() {
+      if (index >= urls.length) {
+        return Promise.reject(new Error("CSV not found"));
+      }
+      var url = urls[index++];
+      return fetch(url, { cache: "no-store" })
+        .then(function (res) {
+          if (!res.ok) return tryNext();
+          return res.text().then(function (text) {
+            return { text: text, rawUrl: url };
+          });
+        })
+        .catch(function () { return tryNext(); });
+    }
+    return tryNext();
   }
 
   function renderCsvPopoverTable(csvData, fields, csvTable, csvTableWrap) {
@@ -5246,64 +5305,33 @@
     if (mcStateRosterEl) mcStateRosterEl.hidden = true;
 
     var branch = (data.branch && data.branch !== "main") ? data.branch : "main";
-    var rawUrl = RAW_BASE + encodeURIComponent(branch) + "/database/contests/" + encodeURIComponent(storageSlug) + "/year%3D" + encodeURIComponent(year) + "/" + encodeURIComponent(file);
     var viewerUrl = CSV_VIEWER_BASE + "?contest=" + encodeURIComponent(storageSlug) + "&year=" + encodeURIComponent(year) + "&file=" + encodeURIComponent(file) + "&name=" + encodeURIComponent(contestName);
+    var loadUrls = getContestCsvLoadUrls(storageSlug, year, file, branch);
 
-    if (isLocalhostHost()) {
-      var localRowsFirst = localContestRows(contest, year);
-      if (localRowsFirst.length) {
-        var localFieldsFirst = Object.keys(localRowsFirst[0]).filter(function (f) { return !isInternalCsvColumn(f); });
+    tryLoadContestCsvText(loadUrls)
+      .then(function (loaded) {
         csvLoading.hidden = true;
-        csvError.hidden = true;
-        renderCsvPopoverTable(localRowsFirst, localFieldsFirst, csvTable, csvTableWrap);
-        csvOpenTab.href = viewerUrl;
-        csvOpenTab.hidden = false;
-        return;
-      }
-    }
-
-    fetch(rawUrl)
-      .then(function (res) {
-        if (!res.ok) throw new Error("Failed to load: " + res.status);
-        return res.text();
-      })
-      .then(function (text) {
-        csvLoading.hidden = true;
-        var result = (typeof Papa !== "undefined" && Papa.parse) ? Papa.parse(text, { header: true, skipEmptyLines: true }) : { data: [], meta: { fields: [] }, errors: [] };
-        if (result.errors && result.errors.length) {
-          csvError.textContent = "Parse error: " + (result.errors[0].message || "Unknown");
+        var parsed = parseCsvPreserveOrder(loaded.text);
+        if (parsed.error) {
+          csvError.textContent = "Parse error: " + parsed.error;
           csvError.hidden = false;
           csvOpenTab.href = viewerUrl;
           csvOpenTab.hidden = false;
           return;
         }
-        var csvData = result.data || [];
-        var fields = (result.meta.fields || []).filter(function (f) { return !isInternalCsvColumn(f); });
-        if (!fields.length && csvData.length) {
-          fields = Object.keys(csvData[0]).filter(function (f) { return !isInternalCsvColumn(f); });
-        }
-        if (!csvData.length && !fields.length) {
+        if (!parsed.data.length && !parsed.fields.length) {
           csvError.textContent = "Empty or invalid CSV.";
           csvError.hidden = false;
           csvOpenTab.href = viewerUrl;
           csvOpenTab.hidden = false;
           return;
         }
-        renderCsvPopoverTable(csvData, fields, csvTable, csvTableWrap);
+        csvError.hidden = true;
+        renderCsvPopoverTable(parsed.data, parsed.fields, csvTable, csvTableWrap);
         csvOpenTab.href = viewerUrl;
         csvOpenTab.hidden = false;
       })
       .catch(function (err) {
-        var localRows = localContestRows(contest, year);
-        if (localRows.length) {
-          var localFields = Object.keys(localRows[0]).filter(function (f) { return !isInternalCsvColumn(f); });
-          csvLoading.hidden = true;
-          csvError.hidden = true;
-          renderCsvPopoverTable(localRows, localFields, csvTable, csvTableWrap);
-          csvOpenTab.href = viewerUrl;
-          csvOpenTab.hidden = false;
-          return;
-        }
         csvLoading.hidden = true;
         csvError.textContent = "Could not load CSV: " + (err.message || err);
         csvError.hidden = false;
@@ -5424,7 +5452,7 @@
     var yearStr = String(year || "").trim();
     var sk = String(stateKey || "").trim();
     var contestInfo = (data.contests || {})[MATHCOUNTS_MCP_SLUG] || {};
-    var contestLabel = contestInfo.contest_name || "Mathcounts";
+    var contestLabel = contestInfo.contest_name || "MathCounts National Ranking";
     var stateDisplay = expandUsStateAbbrev(sk);
     titleEl.innerHTML =
       "<span class=\"team-roster-popover-line team-roster-popover-topline\">" +
