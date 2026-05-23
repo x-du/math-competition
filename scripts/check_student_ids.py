@@ -43,6 +43,7 @@ STUDENTS_CSV = REPO_ROOT / "database" / "students" / "students.csv"
 CONTESTS_DIR = REPO_ROOT / "database" / "contests"
 
 BMT_DIVISIONS = ("bmt", "bmt-algebra", "bmt-calculus", "bmt-discrete", "bmt-geometry")
+SMT_DIVISIONS = ("smt-general", "smt-algebra", "smt-calculus", "smt-discrete", "smt-geometry")
 
 PUMAC_B_DIVISIONS = (
     "pumac-b",
@@ -166,6 +167,8 @@ def results_student_ids_for_contest_year(contest_slug: str, year: str) -> Tuple[
     found_file = False
     if contest_slug == "bmt":
         paths = [CONTESTS_DIR / d / f"year={year}" / "results.csv" for d in BMT_DIVISIONS]
+    elif contest_slug == "smt-general":
+        paths = [CONTESTS_DIR / d / f"year={year}" / "results.csv" for d in SMT_DIVISIONS]
     elif contest_slug == "pumac-b":
         paths = [CONTESTS_DIR / d / f"year={year}" / "results.csv" for d in PUMAC_B_DIVISIONS]
     elif contest_slug == "pumac-a":
@@ -199,8 +202,16 @@ def iter_teams_csv_paths():
                 yield tc
 
 
+# Teams folder stem -> contest slug used for results lookup. Defaults to the stem itself.
+# `smt-teams` serves the SMT group whose parent contest slug is `smt-general`.
+TEAMS_FOLDER_ALIAS = {
+    "smt": "smt-general",
+}
+
+
 def contest_slug_from_teams_root(teams_root_name: str) -> str:
-    return teams_root_name.removesuffix("-teams")
+    stem = teams_root_name.removesuffix("-teams")
+    return TEAMS_FOLDER_ALIAS.get(stem, stem)
 
 
 def collect_teams_results_mismatches() -> List[str]:

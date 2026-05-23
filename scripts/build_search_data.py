@@ -25,6 +25,7 @@ CONTESTS_SKIP_FOR_SEARCH = {
 }
 
 BMT_CONTESTS = {"bmt", "bmt-algebra", "bmt-calculus", "bmt-discrete", "bmt-geometry"}
+SMT_CONTESTS = {"smt-general", "smt-algebra", "smt-calculus", "smt-discrete", "smt-geometry"}
 MPFG_SLUGS = {"mpfg", "mpfg-olympiad", "egmo"}  # Gender-restricted: count toward MCP-W only
 MATHCOUNTS_SLUG = "mathcounts-national-rank"
 # Contests where state comes from results.csv (not students.csv): the state the student
@@ -85,6 +86,13 @@ MCP_V2_PARAMS = {
     "bmt-calculus": {2023: (80, 10), 2024: (210, 10), 2025: (224, 10)},
     "bmt-discrete": {2023: (192, 10), 2024: (332, 10), 2025: (316, 10)},
     "bmt-geometry": {2023: (230, 10), 2024: (362, 10), 2025: (350, 10)},
+    # SMT subjects: N ≈ 4 × published HM+ rows (HM = top 25%). General (smt-general) has no MCP tier.
+    # "smt-general" default is N fallback for subject slugs only (not used for General MCP).
+    "smt-general": {"default": (400, 10)},
+    "smt-algebra": {2026: (388, 10)},
+    "smt-calculus": {2026: (160, 10)},
+    "smt-discrete": {2026: (308, 10)},
+    "smt-geometry": {2026: (264, 10)},
     "arml": {"default": (1600, 10)},
     "amo": {"default": (280, 200)},
     "jmo": {"default": (220, 200)},
@@ -118,6 +126,8 @@ def get_mcp_v2_params(slug: str, year: str) -> tuple[int | None, int | None]:
             base_slug = "pumac-a"
         elif slug.startswith("bmt-"):
             base_slug = "bmt"
+        elif slug == "smt-general" or slug.startswith("smt-"):
+            base_slug = "smt-general"
         elif slug.startswith("cmimc-"):
             base_slug = "cmimc"
         else:
@@ -133,9 +143,11 @@ def get_mcp_v2_params(slug: str, year: str) -> tuple[int | None, int | None]:
             return params[y]
         if "default" in params:
             return params["default"]
-        # BMT subject exam: no N for this year — use competition-level bmt
+        # BMT / SMT subject exam: no N for this year — use competition-level parent slug
         if base_slug in BMT_CONTESTS and base_slug != "bmt":
             return get_mcp_v2_params("bmt", year)
+        if base_slug in SMT_CONTESTS and base_slug != "smt-general":
+            return get_mcp_v2_params("smt-general", year)
         return (None, None)
     return (None, None)
 
@@ -392,6 +404,15 @@ def merge_mathcounts_national_competitors_into_rank(
                 }
 
 
+# Some teams folders are shared across a parent + subject group whose parent slug differs
+# from the folder stem. The frontend looks up by parent slug (see baseContestSlug in app.js),
+# so alias the folder stem to the parent slug here.
+# Example: folder `smt-teams` (stem `smt`) serves the parent slug `smt-general`.
+TEAMS_FOLDER_TO_PARENT_SLUG = {
+    "smt": "smt-general",
+}
+
+
 def build_teams_index() -> dict[str, dict[str, dict[str, list[int]]]]:
     """
     Index database/contests/*-teams/year=*/teams.csv for the website team roster popover.
@@ -410,7 +431,8 @@ def build_teams_index() -> dict[str, dict[str, dict[str, list[int]]]]:
         folder = parts[0]
         if not folder.endswith("-teams"):
             continue
-        base_slug = folder[: -len("-teams")]
+        folder_stem = folder[: -len("-teams")]
+        base_slug = TEAMS_FOLDER_TO_PARENT_SLUG.get(folder_stem, folder_stem)
         year_part = parts[1]
         if not year_part.startswith("year="):
             continue
@@ -598,22 +620,20 @@ def main() -> None:
             # Compute mcp_points from mcp_rank if MCP-eligible
             mcp_rank_str = (row.get("mcp_rank") or "").strip()
             award_raw = (row.get("award") or "").strip()
-            # BMT only: broad award tiers (Distinguished HM / Honorable Mention) are visible in
-            # search results but do not earn MCP points.
+            # BMT: Top Scores only earn MCP; DHM and HM are visible but scoreless.
+            # SMT subjects: all three tiers (Top Scores, Distinguished HM, Honorable Mention) earn MCP.
+            # SMT General has no MCP tier in contests.csv.
             award_text = award_raw.casefold()
-            bmt_no_mcp = (
-                slug in BMT_CONTESTS
-                and (
-                    "distinguished hm" in award_text
-                    or "honorable mention" in award_text
-                )
+            bmt_no_mcp = slug in BMT_CONTESTS and (
+                "distinguished hm" in award_text or "honorable mention" in award_text
             )
+            tiered_no_mcp = bmt_no_mcp
             if mcp_tier and mcp_weight:
                 pts = None
                 if slug in GRAND_SLAM_SLUGS:
                     award = award_raw
                     pts = compute_grand_slam_mcp_points(award, mcp_tier, mcp_weight)
-                if pts is None and mcp_rank_str and N > 0 and not bmt_no_mcp:
+                if pts is None and mcp_rank_str and N > 0 and not tiered_no_mcp:
                     mcp_rank = float(mcp_rank_str)
                     pts = compute_mcp_points(
                         mcp_rank, N, mcp_tier, mcp_weight, min_pts=min_pts_for_mcp
@@ -835,6 +855,7 @@ def main() -> None:
         "fs": "finals_score", "as": "algebra_score", "gs": "geometry_score",
         "cs": "combinatorics_score", "ge": "general_score", "th": "theme_score",
         "ir": "international_rank", "ur": "us_rank", "bi": "bmt_student_id",
+        "sti": "smt_student_id",
         "cn": "club_name", "t1": "test1", "t2": "test2", "tt": "total",
         "qa": "q10", "st": "state",
         "nm": "name", "gd": "gender", "g26": "grade_in_2026",

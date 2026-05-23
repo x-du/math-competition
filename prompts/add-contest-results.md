@@ -29,26 +29,27 @@ Use the schema that best fits the competition and is consistent with similar con
 ## 2. Look up and assign `student_id`
 
 - **Student registry:** `database/students/students.csv`  
-Columns: `student_id`, `student_name`, `state`, `team_ids`, `alias`, `gender`, `grade_in_2026`
+Columns (6, in this exact order): `student_id`, `student_name`, `state`, `alias`, `gender`, `grade_in_2026`
 - **Lookup rule:** Identify a student by **both** `student_name` and `state`.  
   **Students with the same name but different states are different students** — do not treat them as the same person. If state is missing in the source data, use whatever state/region information is available (e.g. from team or site); if none, leave state blank but still treat (name, state) as the matching key.
 - Match **case-insensitively** for names if needed, but preserve the canonical `student_name` from `students.csv` in the results.
 - Check the `alias` column: values are pipe-separated (`|`); if the source name matches an alias, use that row’s `student_id` and `student_name`.
-- You **do not** need to edit `database/students/teams.csv` when adding contest results; team compositions are tracked per contest/year (see below).
+- There is no `database/students/teams.csv`; team compositions are tracked per contest/year (see below).
 
 ## 3. Add new students when not found
 
 - If no row in `students.csv` matches the (name, state) pair (or name when state is blank):
   - Assign the next available `student_id` (max existing `student_id` + 1).
-  - **Append** a new row to `database/students/students.csv` with all 7 columns:
+  - **Append** a new row to `database/students/students.csv` with **exactly 6 fields** (5 commas, no trailing comma):
     - `student_id` (new id)
     - `student_name` (as in the contest source)
     - `state` (from contest data if available, otherwise blank)
-    - `team_ids` (blank unless known)
     - `alias` (blank unless known)
     - `gender` (blank unless known)
     - `grade_in_2026` (blank unless known)
+  - Example of a row with only `student_id`, `student_name`, and `state` known: `7080,Ashita Thakkar,California,,,`
 - Then use this new `student_id` and `student_name` in the contest `results.csv`.
+- After appending, verify with `python scripts/check_csv_integrity.py` (or `python scripts/check_all.py`) that no row has the wrong number of fields.
 
 ## 4. Write the contest results
 
@@ -67,7 +68,7 @@ Columns: `student_id`, `student_name`, `state`, `team_ids`, `alias`, `gender`, `
 - **`team_id`**: an integer identifier unique within this contest/year. If a `teams.csv` already exists for this contest/year, reuse the existing `team_id` for any matching `team_name`; otherwise assign the next available integer.
 - **`team_name`**: the team or organization name as it appears in the contest results (e.g. `Sierra Canyon School`, `Jericho Mathletes`, `Individuals Team 162`).
 - **`student_ids`**: a pipe-separated list of the `student_id` values of students on that team for this contest/year (e.g. `1078|918|2208`). Use the `student_id`s from the corresponding `results.csv`, and include students from all relevant divisions/rounds of this contest/year that share that team.
-- You **still do not** need to add or update rows in `database/students/teams.csv`; keep team information localized in the contest-specific `teams.csv` files.
+- Keep team information localized in the contest-specific `teams.csv` files; there is no global `database/students/teams.csv`.
 
 ## 6. After updating the database
 
@@ -77,4 +78,4 @@ Columns: `student_id`, `student_name`, `state`, `team_ids`, `alias`, `gender`, `
 
 ---
 
-**Summary:** You will receive the contest results as text. Add results for **{competition}** **{year}** under `database/contests/` using that text; resolve `student_id` from `database/students/students.csv` by **(name, state)** (same name + different state ⇒ different students); add any new students to `students.csv`; if the contest has teams, create or update `database/contests/<contest_folder>-teams/year=<year>/teams.csv` with `team_id`, `team_name`, `student_ids`; you do **not** need to edit `database/students/teams.csv`; then rebuild search data.
+**Summary:** You will receive the contest results as text. Add results for **{competition}** **{year}** under `database/contests/` using that text; resolve `student_id` from `database/students/students.csv` by **(name, state)** (same name + different state ⇒ different students); add any new students to `students.csv` as **6-field** rows (`student_id, student_name, state, alias, gender, grade_in_2026`); if the contest has teams, create or update `database/contests/<contest_folder>-teams/year=<year>/teams.csv` with `team_id`, `team_name`, `student_ids`; then rebuild search data and run `python scripts/check_all.py`.

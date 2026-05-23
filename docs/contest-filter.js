@@ -29,7 +29,8 @@
       "pumac-b__number-theory"
     ],
     cmimc: ["cmimc__individual", "cmimc__algebra", "cmimc__comb", "cmimc__geometry"],
-    bmt: ["bmt__general", "bmt__algebra", "bmt__calculus", "bmt__discrete", "bmt__geometry"]
+    bmt: ["bmt__general", "bmt__algebra", "bmt__calculus", "bmt__discrete", "bmt__geometry"],
+    smt: ["smt__general", "smt__algebra", "smt__calculus", "smt__discrete", "smt__geometry"]
   };
 
   function slugOf(record) {
@@ -89,6 +90,12 @@
     add("bmt__discrete", function (s) { return s === "bmt-discrete"; });
     add("bmt__geometry", function (s) { return s === "bmt-geometry"; });
 
+    add("smt__general", function (s) { return s === "smt-general"; });
+    add("smt__algebra", function (s) { return s === "smt-algebra"; });
+    add("smt__calculus", function (s) { return s === "smt-calculus"; });
+    add("smt__discrete", function (s) { return s === "smt-discrete"; });
+    add("smt__geometry", function (s) { return s === "smt-geometry"; });
+
     add("mmaths", function (s) { return s === "mmaths"; });
     add("mpfg", function (s) { return s === "mpfg"; });
     add("mpfg-olympiad", function (s) { return s.indexOf("mpfg-olympiad") !== -1; });
@@ -130,6 +137,11 @@
     "bmt__calculus": "BMT — Calculus",
     "bmt__discrete": "BMT — Discrete",
     "bmt__geometry": "BMT — Geometry",
+    "smt__general": "SMT - General",
+    "smt__algebra": "SMT — Algebra",
+    "smt__calculus": "SMT — Calculus",
+    "smt__discrete": "SMT — Discrete",
+    "smt__geometry": "SMT — Geometry",
     usamo: "USAMO",
     usajmo: "USAJMO",
     imo: "IMO",
@@ -173,7 +185,8 @@
     { multi: false, keys: ["bamo-12"] },
     { multi: false, keys: ["brumo-a"] },
     { multi: false, keys: ["emcc"] },
-    { multi: true, title: "BMT", keys: LEGACY_EXPAND.bmt }
+    { multi: true, title: "BMT", keys: LEGACY_EXPAND.bmt },
+    { multi: true, title: "SMT", keys: LEGACY_EXPAND.smt }
   ];
 
   function selectionMatchesGroupKeys(checkedArr, groupKeys) {
@@ -259,7 +272,12 @@
     "bmt__algebra": "bmt-algebra",
     "bmt__calculus": "bmt-calculus",
     "bmt__discrete": "bmt-discrete",
-    "bmt__geometry": "bmt-geometry"
+    "bmt__geometry": "bmt-geometry",
+    "smt__general": "smt-general",
+    "smt__algebra": "smt-algebra",
+    "smt__calculus": "smt-calculus",
+    "smt__discrete": "smt-discrete",
+    "smt__geometry": "smt-geometry"
   };
 
   /** Multi-group card title -> primary slug for contest_name (contests.csv). */
@@ -269,7 +287,8 @@
     "PUMaC Division A": "pumac-a",
     "PUMaC Division B": "pumac-b",
     CMIMC: "cmimc",
-    BMT: "bmt"
+    BMT: "bmt",
+    SMT: "smt-general"
   };
 
   function migrateSavedArray(saved) {
@@ -374,6 +393,7 @@
 
     function contestNameForLeafKey(key) {
       if (key === "bmt__general") return "BMT - General";
+      if (key === "smt__general") return "SMT - General";
       var slug = LEAF_KEY_TO_SLUG[key];
       var m = metaForSlug(slug);
       if (m && m.contest_name) return m.contest_name;
@@ -381,7 +401,7 @@
     }
 
     function nestedCheckboxLabelForLeafKey(key) {
-      if (key === "bmt__general") return "General";
+      if (key === "bmt__general" || key === "smt__general") return "General";
       var full = contestNameForLeafKey(key);
       if (full.indexOf(" — ") !== -1) return full.split(" — ").pop().trim();
       if (full.indexOf(" - ") !== -1) return full.split(" - ").pop().trim();
@@ -395,6 +415,7 @@
     /** Short label for toolbar summary (contest_name only, not contest_name_long). */
     function summaryShortLabelForGroup(grp) {
       if (grp.title === "BMT") return "BMT";
+      if (grp.title === "SMT") return "SMT";
       var slug = multiGroupPrimarySlug(grp.title);
       var m = metaForSlug(slug);
       if (m && m.contest_name) return String(m.contest_name).trim();
@@ -464,6 +485,8 @@
           var headerMeta = gMeta;
           if (grp.title === "BMT") {
             headerMeta = { contest_name: "BMT" };
+          } else if (grp.title === "SMT") {
+            headerMeta = { contest_name: "SMT" };
           }
           appendGroupHeadingShortName(titleSpan, headerMeta, grp.title);
           toggle.appendChild(chev);

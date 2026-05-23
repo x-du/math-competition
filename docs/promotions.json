@@ -2,17 +2,16 @@
   {
     "id": "amm-2026",
     "enabled": true,
-    "startDate": "2026-04-20",
-    "endDate": "2026-05-10",
+    "startDate": "2026-05-22",
+    "endDate": "2026-05-25",
     "showOnLocalhost": true,
-    "label": "Featured competition",
-    "title": "American Masters of Mathematics",
-    "description": "Designed by IMO coaches and medalists for students who enjoy hard math problems.",
-    "dateText": "May 22-25, 2026",
-    "deadlineText": "Application deadline: May 3rd!",
+    "label": "Happening now",
+    "title": "American Masters of Mathematics — live in Denver",
+    "description": "While you're reading this, somewhere in Denver a kid is staring at an integral that just stared back. AMM is in session right now — IMO coaches and medalists wrote the problems, and the country's strongest grade 10–12 students are currently regretting all life decisions that led them here. Pray for them. Or, you know, root for them.",
+    "dateText": "May 22-25, 2026 (it's happening AS WE SPEAK)",
     "locationText": "Denver, CO",
     "audienceText": "Grades 10-12",
-    "ctaText": "Learn more on OMEGA",
+    "ctaText": "Peek at OMEGA",
     "href": "https://www.omegausa.org/"
   },
   {
@@ -26,5 +25,29 @@
     "description": "Berkeley Math Tournament 2024 and Johns Hopkins Math Tournament 2025 and 2026 results are now available on mathintegrity.org. MathIntegrity has reached the milestone of more than 10,000 competition records.",
     "ctaText": "Visit mathintegrity.org",
     "href": ""
-  }  
+  },
+  {
+    "id": "smt-results-2026",
+    "enabled": true,
+    "startDate": "2026-05-22",
+    "endDate": "2026-06-22",
+    "showOnLocalhost": true,
+    "label": "New results",
+    "title": "SMT 2026",
+    "description": "Stanford Math Tournament 2026 in-person results are now available on mathintegrity.org — General round plus Algebra, Calculus, Discrete, and Geometry subject rounds.",
+    "ctaText": "Visit mathintegrity.org",
+    "href": ""
+  },
+  {
+    "id": "emcc-results-2026",
+    "enabled": true,
+    "startDate": "2026-05-22",
+    "endDate": "2026-06-22",
+    "showOnLocalhost": true,
+    "label": "New results",
+    "title": "EMCC 2026",
+    "description": "Exeter Math Club Competition 2026 results are now available on mathintegrity.org.",
+    "ctaText": "Visit mathintegrity.org",
+    "href": ""
+  }
 ]

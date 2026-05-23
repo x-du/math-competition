@@ -2677,6 +2677,7 @@
     if (slug.indexOf("pumac-a-") === 0) return "pumac-a";
     if (slug.indexOf("pumac-b-") === 0) return "pumac-b";
     if (slug.indexOf("bmt-") === 0) return "bmt";
+    if (slug === "smt-general" || slug.indexOf("smt-") === 0) return "smt-general";
     if (slug.indexOf("cmimc-") === 0) return "cmimc";
     if (slug === "mpfg-olympiad") return "mpfg";
     return slug;

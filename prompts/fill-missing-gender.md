@@ -8,7 +8,7 @@
 
 ## 1. Identify students with missing gender
 
-- Read `database/students/students.csv` (columns include: `student_id`, `student_name`, `state`, `team_ids`, `alias`, `gender`, `grade_in_2026`).
+- Read `database/students/students.csv` (columns: `student_id`, `student_name`, `state`, `alias`, `gender`, `grade_in_2026`).
 - List all rows where `gender` is empty, blank, or missing. These are the only rows you may update or report.
 
 ---

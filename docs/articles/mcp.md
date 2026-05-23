@@ -75,7 +75,7 @@ Competitions are classified into four tiers — **2000**, **1000**, **500**, and
 | **PUMaC Division B** | ~36 | Overall individual and subject (Algebra, Combinatorics, Geometry, Number Theory) rankings. |
 | **USAJMO** | ~150 | USA Junior Mathematical Olympiad. Awards only (no individual ranks). |
 | **BMT** | ~10 | Berkeley Math Tournament — overall individual and subject (Algebra, Calculus, Discrete, Geometry) rankings. |
-| **SMT** | ~10 | Stanford Math Tournament — General plus subject rounds (Algebra, Calculus, Discrete, Geometry). **General does not earn MCP.** Subject rounds earn MCP for **Top Scores** and **Distinguished HM (Top 10%)** only; Honorable Mention (Top 25%) is recorded but not scored. |
+| **SMT** | ~10 | Stanford Math Tournament — General plus subject rounds (Algebra, Calculus, Discrete, Geometry). **General does not earn MCP.** Subject rounds earn MCP for all three award tiers: **Top Scores**, **Distinguished HM (Top 10%)**, and **Honorable Mention (Top 25%)**. |
 | **CMIMC** | ~10 | Carnegie Mellon competition — overall individual and subject (Algebra & NT, Combinatorics & CS, Geometry) rankings. |
 | **BAMO-12** | ~25 | Bay Area Mathematical Olympiad, high school division. |
 | **MathCounts National** | ~56 | National ranking. **Special rules apply** (see Section 5). |
@@ -239,7 +239,7 @@ The `mcp_rank` column is pre-computed and stored in each subject test CSV, just 
 | PUMaC Division A | `pumac-a` ~44 (100%) | `pumac-a-algebra` ~30, `pumac-a-combinator` ~31, `pumac-a-geometry` ~32, `pumac-a-number-theory` ~32 (50% each) |
 | PUMaC Division B | `pumac-b` ~36 (100%) | Algebra ~34, Combinatorics ~31, Geometry ~51, Number Theory ~30 (50% each) |
 | BMT | `bmt` ~10 (100%) | Algebra ~11, Calculus ~12, Discrete ~10, Geometry ~12 (50% each) |
-| SMT | General (no MCP) | Algebra, Calculus, Discrete, Geometry (50% each; Top + DHM only) |
+| SMT | General (no MCP) | Algebra, Calculus, Discrete, Geometry (50% each; Top + DHM + HM all earn MCP) |
 | CMIMC | `cmimc` ~10 (100%) | Algebra & NT ~10, Combinatorics & CS ~10, Geometry ~10 (50% each) |
 
 
