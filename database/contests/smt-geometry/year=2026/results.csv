@@ -1,0 +1,67 @@
+student_id,student_name,year,subject,smt_student_id,team_id,team_name,school,award,rank,score,mcp_rank
+383,Laura Wang,2026,Geometry,133D,133,WAMO A,,Top Scores,1,,1
+19,Vihaan Gupta,2026,Geometry,053F,053,Harker Omega,,Top Scores,2,,2
+341,Alex Zhan,2026,Geometry,021A,021,BISV Bobcats A,,Top Scores,3,,3
+1973,Yuan Xing,2026,Geometry,074F,074,Monta Vista Team A,,Top Scores,4,,4
+1064,Garrett Cai,2026,Geometry,055C,055,Homestead Mustangs,,Top Scores,5,,5
+1798,Abhigyan Singh,2026,Geometry,066A,066,Lynbrook Watergirl,,Top Scores,6,,6
+1046,Terence Wu,2026,Geometry,136E,136,We Lost the Game,,Top Scores,7,,7
+43,Christopher Peng,2026,Geometry,135A,135,Washington Gold,,Top Scores,8,,8
+6197,Peilin Lan,2026,Geometry,074D,074,Monta Vista Team A,,Top Scores,9,,9
+372,Eric Shu,2026,Geometry,031C,031,Cupertino Black,,Top Scores,10,,10
+1809,Eli Ying,2026,Geometry,003B,003,AHS Water Bears,,Distinguished HM (Top 10%),,,17.5
+7077,Charlie Chen,2026,Geometry,004B,004,All Aces Spade,,Distinguished HM (Top 10%),,,17.5
+7065,Justin Liu,2026,Geometry,004E,004,All Aces Spade,,Distinguished HM (Top 10%),,,17.5
+28,Rohan Nayak Mallick,2026,Geometry,027D,027,CCA Conspiracy,,Distinguished HM (Top 10%),,,17.5
+1286,Aarav Mann,2026,Geometry,053A,053,Harker Omega,,Distinguished HM (Top 10%),,,17.5
+991,Haofang Zhu,2026,Geometry,053C,053,Harker Omega,,Distinguished HM (Top 10%),,,17.5
+1968,Yujun Lee,2026,Geometry,055F,055,Homestead Mustangs,,Distinguished HM (Top 10%),,,17.5
+1019,Ishaan Mittal,2026,Geometry,065B,065,Lynbrook Fireboy,,Distinguished HM (Top 10%),,,17.5
+1734,Sohum Uttamchandani,2026,Geometry,066F,066,Lynbrook Watergirl,,Distinguished HM (Top 10%),,,17.5
+2409,Oscar Varodayan,2026,Geometry,092C,092,Paly Trolls A,,Distinguished HM (Top 10%),,,17.5
+38,Andy Lu,2026,Geometry,105A,105,Saratoga 1,,Distinguished HM (Top 10%),,,17.5
+7062,Yuenching Shao,2026,Geometry,105F,105,Saratoga 1,,Distinguished HM (Top 10%),,,17.5
+2186,Thomas McCurley,2026,Geometry,109F,109,Sierra Canyon School,,Distinguished HM (Top 10%),,,17.5
+1446,Edward Li,2026,Geometry,135B,135,Washington Gold,,Distinguished HM (Top 10%),,,17.5
+2908,Eric Min,2026,Geometry,004C,004,All Aces Spade,,Honorable Mention (Top 25%),,,45.5
+2444,Kevin Lu,2026,Geometry,010E,010,Aragon Math 1,,Honorable Mention (Top 25%),,,45.5
+74,Zeyi Zou,2026,Geometry,013F,013,Areteem Blue,,Honorable Mention (Top 25%),,,45.5
+7078,Claire Li,2026,Geometry,019B,019,Bishop's Cucumbers,,Honorable Mention (Top 25%),,,45.5
+992,Aidan Bai,2026,Geometry,027A,027,CCA Conspiracy,,Honorable Mention (Top 25%),,,45.5
+7073,Andrew Jahng,2026,Geometry,027B,027,CCA Conspiracy,,Honorable Mention (Top 25%),,,45.5
+338,Katrina Liu,2026,Geometry,027C,027,CCA Conspiracy,,Honorable Mention (Top 25%),,,45.5
+377,Xiaoran Han,2026,Geometry,027E,027,CCA Conspiracy,,Honorable Mention (Top 25%),,,45.5
+365,Harish Loghashankar,2026,Geometry,031D,031,Cupertino Black,,Honorable Mention (Top 25%),,,45.5
+6025,Iurii Kirpichev,2026,Geometry,031E,031,Cupertino Black,,Honorable Mention (Top 25%),,,45.5
+1471,Jason Yang,2026,Geometry,032D,032,Cupertino Red,,Honorable Mention (Top 25%),,,45.5
+4625,Ashwin Shekhar,2026,Geometry,041B,041,DVHS Wildkitties 1,,Honorable Mention (Top 25%),,,45.5
+1002,Alexander Ruan,2026,Geometry,047B,047,Folsom High,,Honorable Mention (Top 25%),,,45.5
+327,Hengrui Liang,2026,Geometry,053D,053,Harker Omega,,Honorable Mention (Top 25%),,,45.5
+1825,Jeffery Wang,2026,Geometry,054C,054,Harker Zeta,,Honorable Mention (Top 25%),,,45.5
+1938,Lucas Yuan,2026,Geometry,054F,054,Harker Zeta,,Honorable Mention (Top 25%),,,45.5
+5886,Raghav Joshi,2026,Geometry,056D,056,Icy Fire,,Honorable Mention (Top 25%),,,45.5
+2969,Lucas Cai,2026,Geometry,057C,057,Infinitely Dimensional,,Honorable Mention (Top 25%),,,45.5
+2418,Alice Wang,2026,Geometry,058B,058,Instant Noodles,,Honorable Mention (Top 25%),,,45.5
+1342,Tianlin Jessica Liu,2026,Geometry,065E,065,Lynbrook Fireboy,,Honorable Mention (Top 25%),,,45.5
+6053,Yunfei Xia,2026,Geometry,065F,065,Lynbrook Fireboy,,Honorable Mention (Top 25%),,,45.5
+7079,Larry Zhao,2026,Geometry,069E,069,Menlo Math Blue,,Honorable Mention (Top 25%),,,45.5
+2717,Katherine Li,2026,Geometry,074C,074,Monta Vista Team A,,Honorable Mention (Top 25%),,,45.5
+1359,Alena Kutsuk,2026,Geometry,078A,078,Mountain View Spartans,,Honorable Mention (Top 25%),,,45.5
+385,Ali Zaman,2026,Geometry,081A,081,MSJ Samurai,,Honorable Mention (Top 25%),,,45.5
+2510,Rutvik Arora,2026,Geometry,082F,082,MSJ Spartans,,Honorable Mention (Top 25%),,,45.5
+3170,Steven Shu,2026,Geometry,089D,089,OHS -- Stanford Math CIrcle team,,Honorable Mention (Top 25%),,,45.5
+4178,Sayan Singh,2026,Geometry,092E,092,Paly Trolls A,,Honorable Mention (Top 25%),,,45.5
+6150,Fan Jin,2026,Geometry,093E,093,Paly Trolls B,,Honorable Mention (Top 25%),,,45.5
+6017,Alexander Kong,2026,Geometry,103A,103,Sage Hill Lightning,,Honorable Mention (Top 25%),,,45.5
+1740,Fiona Liu,2026,Geometry,105C,105,Saratoga 1,,Honorable Mention (Top 25%),,,45.5
+319,Seabert Mao,2026,Geometry,105E,105,Saratoga 1,,Honorable Mention (Top 25%),,,45.5
+4189,Hao Ding,2026,Geometry,106C,106,Saratoga 2,,Honorable Mention (Top 25%),,,45.5
+69,Connor Leong,2026,Geometry,115B,115,SMT Individuals Opal,,Honorable Mention (Top 25%),,,45.5
+914,Bryan Fu,2026,Geometry,117A,117,SMT Individuals Ruby,,Honorable Mention (Top 25%),,,45.5
+1281,Rick Zhou,2026,Geometry,122E,122,Sticks and Bricks,,Honorable Mention (Top 25%),,,45.5
+1018,Nolan Lin,2026,Geometry,123F,123,Team A,,Honorable Mention (Top 25%),,,45.5
+2644,Janie Zheng,2026,Geometry,128D,128,The Irrationals,,Honorable Mention (Top 25%),,,45.5
+7018,Terry Huang,2026,Geometry,131E,131,University High School ALPHA,,Honorable Mention (Top 25%),,,45.5
+4169,Kaiyuan Mao,2026,Geometry,133C,133,WAMO A,,Honorable Mention (Top 25%),,,45.5
+824,Wesley Wu,2026,Geometry,133F,133,WAMO A,,Honorable Mention (Top 25%),,,45.5
+863,William Xin,2026,Geometry,134F,134,WAMO B,,Honorable Mention (Top 25%),,,45.5

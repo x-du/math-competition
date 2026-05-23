@@ -65,7 +65,7 @@ Competitions are classified into four tiers — **2000**, **1000**, **500**, and
 | **ARML Individual** | ~64 | Individual round ranking at the American Regions Math League. |
 | **USAMO** | ~150 | USA Mathematical Olympiad. The pinnacle national olympiad. Awards only (no individual ranks). |
 
-**Why these are Tier 1000:** These represent the most difficult and prestigious open competitions available to US high school students. HMMT February and PUMaC Division A draw the strongest fields in the country. USAMO is the national olympiad. ARML's individual round, while part of a team-oriented event, ranks students individually against the entire national field. We would like to include SMT (Stanford Math Tournament) in this tier, but SMT does not publish results. (SMT, talk to us 🙂)
+**Why these are Tier 1000:** These represent the most difficult and prestigious open competitions available to US high school students. HMMT February and PUMaC Division A draw the strongest fields in the country. USAMO is the national olympiad. ARML's individual round, while part of a team-oriented event, ranks students individually against the entire national field.
 
 ### Tier 500 — Major Competitions
 
@@ -75,6 +75,7 @@ Competitions are classified into four tiers — **2000**, **1000**, **500**, and
 | **PUMaC Division B** | ~36 | Overall individual and subject (Algebra, Combinatorics, Geometry, Number Theory) rankings. |
 | **USAJMO** | ~150 | USA Junior Mathematical Olympiad. Awards only (no individual ranks). |
 | **BMT** | ~10 | Berkeley Math Tournament — overall individual and subject (Algebra, Calculus, Discrete, Geometry) rankings. |
+| **SMT** | ~10 | Stanford Math Tournament — General plus subject rounds (Algebra, Calculus, Discrete, Geometry). **General does not earn MCP.** Subject rounds earn MCP for **Top Scores** and **Distinguished HM (Top 10%)** only; Honorable Mention (Top 25%) is recorded but not scored. |
 | **CMIMC** | ~10 | Carnegie Mellon competition — overall individual and subject (Algebra & NT, Combinatorics & CS, Geometry) rankings. |
 | **BAMO-12** | ~25 | Bay Area Mathematical Olympiad, high school division. |
 | **MathCounts National** | ~56 | National ranking. **Special rules apply** (see Section 5). |
@@ -238,6 +239,7 @@ The `mcp_rank` column is pre-computed and stored in each subject test CSV, just 
 | PUMaC Division A | `pumac-a` ~44 (100%) | `pumac-a-algebra` ~30, `pumac-a-combinator` ~31, `pumac-a-geometry` ~32, `pumac-a-number-theory` ~32 (50% each) |
 | PUMaC Division B | `pumac-b` ~36 (100%) | Algebra ~34, Combinatorics ~31, Geometry ~51, Number Theory ~30 (50% each) |
 | BMT | `bmt` ~10 (100%) | Algebra ~11, Calculus ~12, Discrete ~10, Geometry ~12 (50% each) |
+| SMT | General (no MCP) | Algebra, Calculus, Discrete, Geometry (50% each; Top + DHM only) |
 | CMIMC | `cmimc` ~10 (100%) | Algebra & NT ~10, Combinatorics & CS ~10, Geometry ~10 (50% each) |
 
 
@@ -385,6 +387,10 @@ Result files are discovered dynamically — all result CSVs within each competit
 | BMT — Calculus | 500 | 50% | bmt |
 | BMT — Discrete | 500 | 50% | bmt |
 | BMT — Geometry | 500 | 50% | bmt |
+| SMT — Algebra | 500 | 50% | smt |
+| SMT — Calculus | 500 | 50% | smt |
+| SMT — Discrete | 500 | 50% | smt |
+| SMT — Geometry | 500 | 50% | smt |
 | ARML Individual | 1000 | 100% | rank |
 | USAMO | 1000 | 100% | award |
 | HMMT November (overall) | 500 | 100% | rank |

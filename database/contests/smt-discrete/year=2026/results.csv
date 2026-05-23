@@ -1,0 +1,78 @@
+student_id,student_name,year,subject,smt_student_id,team_id,team_name,school,award,rank,score,mcp_rank
+1359,Alena Kutsuk,2026,Discrete,078A,078,Mountain View Spartans,,Top Scores,1,,1
+211,Chenghao Hu,2026,Discrete,074B,074,Monta Vista Team A,,Top Scores,2,,2
+7077,Charlie Chen,2026,Discrete,004B,004,All Aces Spade,,Top Scores,3,,3
+6041,Tarun Gandhi,2026,Discrete,074E,074,Monta Vista Team A,,Top Scores,4,,4
+2143,Max Li,2026,Discrete,084D,084,Ngnu Ammunition,,Top Scores,5,,5
+2787,Aniket Mangalampalli,2026,Discrete,081C,081,MSJ Samurai,,Top Scores,6,,6
+852,Vivaan Mukherjee,2026,Discrete,122F,122,Sticks and Bricks,,Top Scores,7,,7
+1396,Camea Caprita,2026,Discrete,063D,063,Los Altos Eagles,,Top Scores,8,,8
+5623,Zhengyin Zhu,2026,Discrete,075F,075,Monta Vista Team B,,Top Scores,9,,9
+1973,Yuan Xing,2026,Discrete,074F,074,Monta Vista Team A,,Top Scores,10,,10
+1029,Atticus Stewart,2026,Discrete,001A,001,10 Penguins,,Distinguished HM (Top 10%),,,22.5
+7075,Eason Ji,2026,Discrete,001C,001,10 Penguins,,Distinguished HM (Top 10%),,,22.5
+13,Michael Zhao,2026,Discrete,001F,001,10 Penguins,,Distinguished HM (Top 10%),,,22.5
+396,Elena Ahn Beckman,2026,Discrete,013B,013,Areteem Blue,,Distinguished HM (Top 10%),,,22.5
+74,Zeyi Zou,2026,Discrete,013F,013,Areteem Blue,,Distinguished HM (Top 10%),,,22.5
+377,Xiaoran Han,2026,Discrete,027E,027,CCA Conspiracy,,Distinguished HM (Top 10%),,,22.5
+6042,Nandan Surabhi,2026,Discrete,038B,038,DF Dragon,,Distinguished HM (Top 10%),,,22.5
+19,Vihaan Gupta,2026,Discrete,053F,053,Harker Omega,,Distinguished HM (Top 10%),,,22.5
+665,Sohil Rathi,2026,Discrete,065D,065,Lynbrook Fireboy,,Distinguished HM (Top 10%),,,22.5
+1051,Benjamin Zhang,2026,Discrete,066C,066,Lynbrook Watergirl,,Distinguished HM (Top 10%),,,22.5
+6038,Calvin Strohmann,2026,Discrete,074A,074,Monta Vista Team A,,Distinguished HM (Top 10%),,,22.5
+4099,Vihaan Byahatti,2026,Discrete,078F,078,Mountain View Spartans,,Distinguished HM (Top 10%),,,22.5
+853,Andy Liu,2026,Discrete,081B,081,MSJ Samurai,,Distinguished HM (Top 10%),,,22.5
+1916,Nicholas Weng,2026,Discrete,084E,084,Ngnu Ammunition,,Distinguished HM (Top 10%),,,22.5
+2358,Cris Chai,2026,Discrete,099B,099,Proof Hedgehogs,,Distinguished HM (Top 10%),,,22.5
+483,Lawson Wang,2026,Discrete,105D,105,Saratoga 1,,Distinguished HM (Top 10%),,,22.5
+319,Seabert Mao,2026,Discrete,105E,105,Saratoga 1,,Distinguished HM (Top 10%),,,22.5
+210,Eric Zhu,2026,Discrete,117B,117,SMT Individuals Ruby,,Distinguished HM (Top 10%),,,22.5
+4192,Wenhai Rong,2026,Discrete,126E,126,Team Hatsune Miku: Carlmont Stage!,,Distinguished HM (Top 10%),,,22.5
+6899,Charlie Huang,2026,Discrete,130A,130,Tuzzlers,,Distinguished HM (Top 10%),,,22.5
+7076,Ben Tao,2026,Discrete,131A,131,University High School ALPHA,,Distinguished HM (Top 10%),,,22.5
+7018,Terry Huang,2026,Discrete,131E,131,University High School ALPHA,,Distinguished HM (Top 10%),,,22.5
+1010,Erin Bian,2026,Discrete,135C,135,Washington Gold,,Distinguished HM (Top 10%),,,22.5
+24,Ruien Chen,2026,Discrete,135F,135,Washington Gold,,Distinguished HM (Top 10%),,,22.5
+5703,Ryan Lu,2026,Discrete,003F,003,AHS Water Bears,,Honorable Mention (Top 25%),,,56
+2908,Eric Min,2026,Discrete,004C,004,All Aces Spade,,Honorable Mention (Top 25%),,,56
+1224,Ethan Han,2026,Discrete,012C,012,Arcadia High School,,Honorable Mention (Top 25%),,,56
+7072,Kiran She,2026,Discrete,020D,020,Bishop's Kumquats,,Honorable Mention (Top 25%),,,56
+2433,Nathan Chen,2026,Discrete,021E,021,BISV Bobcats A,,Honorable Mention (Top 25%),,,56
+1058,Aiden Jeong,2026,Discrete,023B,023,Bruin Olympians,,Honorable Mention (Top 25%),,,56
+992,Aidan Bai,2026,Discrete,027A,027,CCA Conspiracy,,Honorable Mention (Top 25%),,,56
+7073,Andrew Jahng,2026,Discrete,027B,027,CCA Conspiracy,,Honorable Mention (Top 25%),,,56
+28,Rohan Nayak Mallick,2026,Discrete,027D,027,CCA Conspiracy,,Honorable Mention (Top 25%),,,56
+6548,Aaron Lei,2026,Discrete,033A,033,Davidson Academy,,Honorable Mention (Top 25%),,,56
+1637,Casey Fong,2026,Discrete,033C,033,Davidson Academy,,Honorable Mention (Top 25%),,,56
+729,Julian Kuang,2026,Discrete,033D,033,Davidson Academy,,Honorable Mention (Top 25%),,,56
+2472,Kaison Fong,2026,Discrete,033E,033,Davidson Academy,,Honorable Mention (Top 25%),,,56
+3591,Nathaniel Lee,2026,Discrete,034D,034,Davis Senior High School Mu Alpha Theta,,Honorable Mention (Top 25%),,,56
+1866,Jonathan Li,2026,Discrete,054D,054,Harker Zeta,,Honorable Mention (Top 25%),,,56
+3674,William Sun,2026,Discrete,058F,058,Instant Noodles,,Honorable Mention (Top 25%),,,56
+7074,Haoran Cai,2026,Discrete,059D,059,Leigh Longhorns,,Honorable Mention (Top 25%),,,56
+931,Matthew Yuan,2026,Discrete,065C,065,Lynbrook Fireboy,,Honorable Mention (Top 25%),,,56
+2717,Katherine Li,2026,Discrete,074C,074,Monta Vista Team A,,Honorable Mention (Top 25%),,,56
+6106,Guhan Bhagatram,2026,Discrete,080C,080,MSJ Gladiators,,Honorable Mention (Top 25%),,,56
+995,Preston Hu,2026,Discrete,081F,081,MSJ Samurai,,Honorable Mention (Top 25%),,,56
+2198,Aarush Rachakonda,2026,Discrete,084A,084,Ngnu Ammunition,,Honorable Mention (Top 25%),,,56
+1795,Alex Tsagaan,2026,Discrete,084B,084,Ngnu Ammunition,,Honorable Mention (Top 25%),,,56
+1858,Haridas Chowdhury,2026,Discrete,084C,084,Ngnu Ammunition,,Honorable Mention (Top 25%),,,56
+1011,Krittika Chandra,2026,Discrete,092B,092,Paly Trolls A,,Honorable Mention (Top 25%),,,56
+1763,Elizabeth Ying,2026,Discrete,099C,099,Proof Hedgehogs,,Honorable Mention (Top 25%),,,56
+3061,Jasper Leung,2026,Discrete,108B,108,SFHS Dreamers,,Honorable Mention (Top 25%),,,56
+2666,Alan Lin,2026,Discrete,110A,110,Six Lions,,Honorable Mention (Top 25%),,,56
+69,Connor Leong,2026,Discrete,115B,115,SMT Individuals Opal,,Honorable Mention (Top 25%),,,56
+1113,Ethan Lee,2026,Discrete,122B,122,Sticks and Bricks,,Honorable Mention (Top 25%),,,56
+1340,Jai Mukherjee,2026,Discrete,122C,122,Sticks and Bricks,,Honorable Mention (Top 25%),,,56
+1281,Rick Zhou,2026,Discrete,122E,122,Sticks and Bricks,,Honorable Mention (Top 25%),,,56
+358,Franklin Zhou,2026,Discrete,123B,123,Team A,,Honorable Mention (Top 25%),,,56
+2988,Aarav Ashwani,2026,Discrete,125A,125,Team Eratosthenes,,Honorable Mention (Top 25%),,,56
+1854,Arthur Li,2026,Discrete,126A,126,Team Hatsune Miku: Carlmont Stage!,,Honorable Mention (Top 25%),,,56
+1474,Benjamin Tang,2026,Discrete,128A,128,The Irrationals,,Honorable Mention (Top 25%),,,56
+2633,Dev Batra,2026,Discrete,131B,131,University High School ALPHA,,Honorable Mention (Top 25%),,,56
+4169,Kaiyuan Mao,2026,Discrete,133C,133,WAMO A,,Honorable Mention (Top 25%),,,56
+383,Laura Wang,2026,Discrete,133D,133,WAMO A,,Honorable Mention (Top 25%),,,56
+905,Ryan Tang,2026,Discrete,134D,134,WAMO B,,Honorable Mention (Top 25%),,,56
+863,William Xin,2026,Discrete,134F,134,WAMO B,,Honorable Mention (Top 25%),,,56
+1046,Terence Wu,2026,Discrete,136E,136,We Lost the Game,,Honorable Mention (Top 25%),,,56
+4250,Varen Sarda,2026,Discrete,141E,141,Yellow Curry and Rice,,Honorable Mention (Top 25%),,,56
