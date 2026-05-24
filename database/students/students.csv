@@ -22,7 +22,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 21,David Fox,California,,male,10
 22,Ian Rui,Washington,,male,11
 23,Jeffrey Yin,Virginia,,male,12
-24,Ruien Chen,Washington,Ryan Chen,male,10
+24,Ryan Chen,Washington,Ruien Chen,male,10
 25,Rohan Garg,California,,male,12
 26,Ryan Li,Ohio,,male,16
 27,Bolei Wang,New Hampshire,Benny Wang,male,12
@@ -69,7 +69,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 71,Samuel J. Kretzschmar,Minnesota,,male,
 72,Kevin Liu,Florida,,male,12
 73,Andrew Carratu,New Hampshire,,male,13
-74,Zeyi Zou,California,,male,
+911,Zeyi Zou,California,,male,
 76,Kiran Reddy,Utah,,male,13
 77,Shunyao Yan,Virginia,,male,10
 78,William Zhao,California,,male,
@@ -185,7 +185,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 204,Alexander Svoronos,Connecticut,,male,8
 205,Mingyue Yang,Washington,,male,12
 206,Eric Xie,Maryland,,male,9
-207,Annie Huaiyu Wang,Washington,,female,
+207,Annie Huaiyu Wang,,,female,
 209,Hongming Allan Zhao,New Jersey,Allan Zhao,male,10
 210,Eric Zhu,North Carolina,Eric P Zhu,male,11
 211,Chenghao Hu,California,,male,11
@@ -342,7 +342,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 370,Victor Chen,Illinois,,male,12
 371,Akshaj Arora,Georgia,,male,10
 372,Eric Shu,California,,male,9
-373,Patrick Sun,Washington,,male,
+373,Patrick Sun,Washington,,male,10
 374,Rui Gu,China,,male,
 375,Kaden Chen,Massachusetts,,male,
 376,LIU Andy Houjie,New Jersey,,male,
@@ -869,7 +869,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 908,Vincent Yu,Indiana,,male,
 909,Joey Zheng,Arizona,,male,9
 910,Ryan Zhu,"British Columbia, Canada",,male,
-911,Eric Zou,California,,male,9
+911,Eric Zou,California,Zeyi Zou,male,9
 912,Brett Chang,California,,male,10
 913,Samarth Das,Texas,,male,12
 914,Bryan Fu,Texas,,male,
@@ -969,7 +969,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1021,Ryan Peng,New York,,male,
 1022,Eric Shao,Washington,,male,10
 1023,Kris Sheng,New Jersey,,male,
-1024,Natalie Song,California,,female,
+1024,Natalie Song,California,,female,11
 1025,Melvin Xu,Georgia,,male,
 1026,Fiona Yan,"Ontario, Canada",,female,
 1027,Kevin Xiao,Delaware,,male,
@@ -1213,7 +1213,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1277,Jeff Zhou,Minnesota,,male,
 1278,Kaylyn Zhang,"Ontario, Canada",Kaylyn Jinglin Zhang,female,10
 1279,Jack Whitney-Epstein,Connecticut,Jack Whitney,male,12
-1281,Rick Zhou,Washington,,male,
+1281,Rick Zhou,Washington,,male,11
 1283,Zenghan (Yoll) Feng,Massachusetts,,male,
 1284,Jonathan Zhou,Connecticut,,male,10
 1285,Raine Ma,Connecticut,,male,11
@@ -1391,7 +1391,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1463,Kaya Yang,New Jersey,Ziyi Kaya Yang,female,
 1464,Kevin Yu,New York,,male,11
 1465,Henry Xue,New York,,male,11
-1466,Jack Li,Illinois,,male,
+1466,Jack Li,Illinois,,male,10
 1467,Lucas Wang,California,,male,
 1468,Zenghan Feng,Maine,,male,
 1469,Michael Wu,Michigan,,male,
@@ -1710,7 +1710,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1806,Ivan Liu,,,male,
 1807,Brandon Nam,California,,male,
 1808,Jason Yuan,California,,male,
-1809,Eli Ying,California,,male,
+1809,Eli Ying,California,,male,10
 1810,Edward Zeng,California,,male,
 1811,Alex Ruan,,,male,
 1812,Keith Li,California,,male,
@@ -2521,7 +2521,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 2634,Josh Tsimberg,Texas,,male,
 2635,Levi Gould,Minnesota,,male,
 2636,SaiPranav Chamarthy,California,,male,
-2637,Sophia Zhu,Washington,,female,
+2637,Sophia Zhu,Washington,,female,11
 2638,Vikram Goudar,Virginia,,male,
 2639,Arnav Prabhudesai,Massachusetts,,male,
 2640,Nickita Korbut,Florida,,female,
@@ -4049,7 +4049,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 4166,Ian Kweon,California,,male,
 4167,Jeffrey Silverman,California,,male,
 4168,Justin Zhang,Texas,,male,
-4169,Kaiyuan Mao,Washington,,male,
+4169,Kaiyuan Mao,Washington,,male,9
 4170,Kevin Tan,California,,male,
 4171,Keya Patel,California,,female,
 4172,Landon Yin,Virginia,,male,
@@ -6143,7 +6143,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6264,Eddie Wei,California,,male,
 6265,Kevin Chen,Texas,,male,11
 6266,Henry Wang,North Carolina,,male,9
-6267,Isabella Li,Massachusetts,,female,
+6267,Isabella Li,Massachusetts,,female,11
 6268,Benjamin Xiao,California,,male,
 6269,Jaehyuk Lee,Korea,,male,
 6270,Ming-Yi Tang,Massachusetts,,male,
@@ -6662,7 +6662,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6798,Karl Patel,Illinois,,male,
 6801,Patrek Ragnarsson,Illinois,,male,
 6803,Jay Yi,Texas,,male,
-6805,Eason Deng,Washington,,male,
+6805,Eason Deng,Washington,,male,9
 6807,Daniel Sun,California,,male,
 6808,Yicheng Wang,California,,male,
 6809,Ethan Wu,California,,male,8
