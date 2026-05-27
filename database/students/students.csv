@@ -2278,7 +2278,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 2388,Nikhil Reddy,,,male,
 2389,Zhifei Liu,New Jersey,,male,
 2390,Eli Gold,New York,,male,
-2391,Amy Ma,New Jersey,,female,
+2391,Amy Ma,New York,,female,12
 2392,Adithya Prabha,Virginia,,male,
 2393,Alexander Amrhein,,,male,
 2394,Gary Shen,Massachusetts,,male,
@@ -6673,7 +6673,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6816,Yi Huang,New York,,male,
 6817,Hayden Huang,Texas,,male,
 6818,Sky Jacobson,Missouri,,male,
-6821,Audrey Ma,New York,,female,
+6821,Audrey Ma,New York,,female,10
 6822,Max Sachelarie-Sandhu,California,,male,
 6825,Gabe Wang,California,,male,
 6827,Steven Xia,California,,male,10
