@@ -67,7 +67,8 @@
     account_merge: "Account Merge",
     account_split: "Account Split",
     state_label: "Update State",
-    grade_label: "Update Grade"
+    grade_label: "Update Grade",
+    other: "Other"
   };
   var studentReportMenuOpenEl = null;
   var studentReportMenuOpenCardEl = null;
@@ -1425,6 +1426,15 @@
         "<p class=\"student-report-modal-hint\">Enter school grade as a number (for example, 10 or 11).</p>"
       );
     }
+    if (issueType === "other") {
+      return (
+        "<div class=\"student-report-modal-field\">" +
+          "<label for=\"sr-other-details\">Describe the issue</label>" +
+          "<textarea id=\"sr-other-details\" class=\"student-report-modal-textarea\" rows=\"4\" autocomplete=\"off\" placeholder=\"What should we fix on this student record?\"></textarea>" +
+        "</div>" +
+        "<p class=\"student-report-modal-hint\">Include contest names, years, or links to evidence if helpful.</p>"
+      );
+    }
     return "<p>Unknown report type.</p>";
   }
 
@@ -1476,6 +1486,13 @@
       if (gcur) {
         setTimeout(function () {
           gcur.focus();
+        }, 0);
+      }
+    } else if (issueType === "other") {
+      var otherTa = document.getElementById("sr-other-details");
+      if (otherTa) {
+        setTimeout(function () {
+          otherTa.focus();
         }, 0);
       }
     }
@@ -1577,6 +1594,15 @@
         return null;
       }
       return { issue_type: issueType, issue_label: issueLabel, user_value: v };
+    }
+    if (issueType === "other") {
+      var otherTa = document.getElementById("sr-other-details");
+      var ov = otherTa ? String(otherTa.value).trim() : "";
+      if (!ov) {
+        setStudentReportModalError("Describe what should be fixed on this record.");
+        return null;
+      }
+      return { issue_type: issueType, issue_label: issueLabel, user_value: ov };
     }
     return null;
   }
@@ -2922,6 +2948,7 @@
           "<button type=\"button\" class=\"student-record-report-option\" data-issue-type=\"account_split\">Account Split</button>" +
           "<button type=\"button\" class=\"student-record-report-option\" data-issue-type=\"state_label\">Update State</button>" +
           "<button type=\"button\" class=\"student-record-report-option\" data-issue-type=\"grade_label\">Update Grade</button>" +
+          "<button type=\"button\" class=\"student-record-report-option\" data-issue-type=\"other\">Other</button>" +
         "</div>" +
       "</span>";
     var headerActionsHtml =
