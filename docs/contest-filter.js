@@ -60,6 +60,8 @@
     add("hmmt-nov__general", function (s) { return s === "hmmt-nov-general"; });
     add("hmmt-nov__theme", function (s) { return s === "hmmt-nov-theme"; });
 
+    add("hmic", function (s) { return s === "hmic"; });
+
     add("pumac-a__individual", function (s) { return s === "pumac-a"; });
     add("pumac-a__algebra", function (s) { return s === "pumac-a-algebra"; });
     add("pumac-a__combinator", function (s) { return s === "pumac-a-combinator"; });
@@ -118,6 +120,7 @@
     "hmmt-nov__individual": "HMMT Nov — Individual",
     "hmmt-nov__general": "HMMT Nov — General",
     "hmmt-nov__theme": "HMMT Nov — Theme",
+    hmic: "HMIC",
     "pumac-a__individual": "PUMaC Div A — Individual",
     "pumac-a__algebra": "PUMaC Div A — Algebra",
     "pumac-a__combinator": "PUMaC Div A — Combinatorics",
@@ -170,6 +173,7 @@
     { multi: false, keys: ["egmo"] },
     { multi: true, title: "HMMT February", keys: LEGACY_EXPAND["hmmt-feb"] },
     { multi: true, title: "HMMT November", keys: LEGACY_EXPAND["hmmt-nov"] },
+    { multi: false, keys: ["hmic"] },
     { multi: true, title: "PUMaC Division A", keys: LEGACY_EXPAND["pumac-a"] },
     { multi: true, title: "PUMaC Division B", keys: LEGACY_EXPAND["pumac-b"] },
     { multi: false, keys: ["mathcounts"] },
@@ -211,7 +215,7 @@
   }
 
   var ALL_LEAF_KEYS = allLeafKeysList();
-  var SAVED_ALL_MIGRATION_OPTIONAL_KEYS = { emcc: true };
+  var SAVED_ALL_MIGRATION_OPTIONAL_KEYS = { emcc: true, hmic: true };
 
   function savedSelectionWasPreviousAll(out) {
     if (!out || !out.length) return false;
@@ -242,6 +246,7 @@
     "hmmt-nov__individual": "hmmt-nov",
     "hmmt-nov__general": "hmmt-nov-general",
     "hmmt-nov__theme": "hmmt-nov-theme",
+    hmic: "hmic",
     "pumac-a__individual": "pumac-a",
     "pumac-a__algebra": "pumac-a-algebra",
     "pumac-a__combinator": "pumac-a-combinator",
