@@ -6239,7 +6239,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6363,Zachary Farlow-Pour,Maine,,male,8
 6364,Alexander Hachem,Maine,,male,7
 6365,Ana Kanitkar,Maine,,female,8
-6366,Jun Kim,Michigan,,,8
+6366,Jun Kim,Michigan,,male,8
 6367,Vihaan Kumaravel,Michigan,,male,8
 6368,Derek Liu,Michigan,,male,6
 6369,Arnav Hiremath,Minnesota,,male,8
@@ -6276,7 +6276,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6401,Alexander Peng,New Mexico,,male,8
 6402,Ethan Chang,Nevada,,male,6
 6403,Jimmy Fan,Nevada,,male,7
-6404,Maha'era Neil Aggarwal,Nevada,,,7
+6404,Maha'era Neil Aggarwal,Nevada,,female,7
 6406,Alan Ji,New York,,male,8
 6407,Zale Zhang,New York,,,8
 6408,Nicole Bao,Ohio,,female,8
@@ -6436,7 +6436,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6563,Yukai Hu,South Carolina,,male,9
 6564,Robert Shim,South Carolina,,male,8
 6565,Seth Chaplin,South Dakota,,male,9
-6566,Laukia Gundewar,South Dakota,,,9
+6566,Laukia Gundewar,South Dakota,,female,9
 6567,Cohwen Heimann,South Dakota,,,9
 6568,Maxwell Wang,South Dakota,,male,9
 6569,Andrew Jin,State Department,,male,
@@ -6717,7 +6717,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6871,Jacob Bae,,,male,
 6872,Alina Zhu,,,female,
 6873,Vidyuth Naveenkumar,,,male,
-6874,Subat Begzad,,,,
+6874,Subat Begzad,,,male,
 6875,Anusha Kapoor,,,female,
 6876,Katherine Ying,,,female,
 6877,Ashley Cheng,,,female,
@@ -6880,7 +6880,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 7039,Om Kabra,,,male,
 7040,Derek Jiang,,,male,
 7041,Vince Srirattana,,,male,
-7042,Houwen Wei,,,,
+7042,Houwen Wei,,,male,
 7043,Alan Ding,,,male,
 7044,Tommy Li,,,male,
 7045,Michael Cao,,,male,
@@ -6890,7 +6890,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 7049,Amy Nguyen,,,female,
 7051,Harshal Seth,,,male,
 7052,Noah Park,,,male,
-7053,Hrid Mallik,,,,
+7053,Hrid Mallik,,,male,
 7054,Yichen Sun,,,,
 7055,Rudy Zhang,,,male,
 7056,William Kim,,,male,
@@ -6901,7 +6901,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 7061,Aniruddh Venkatesh,,,male,
 7062,Yuenching Shao,California,,,
 7063,Brian Liu,,,male,
-7064,Jinrui Fang,,,,
+7064,Jinrui Fang,,,male,
 7065,Justin Liu,,,male,
 7066,Nitin Vaka,California,,male,
 7067,Ayden Lee,,,male,
@@ -6911,10 +6911,10 @@ student_id,student_name,state,alias,gender,grade_in_2026
 7071,Reed Truong,California,,male,
 7072,Kiran She,,,,
 7073,Andrew Jahng,,,male,
-7074,Haoran Cai,,,,
+7074,Haoran Cai,,,male,
 7075,Eason Ji,,,male,
 7076,Ben Tao,,,male,
-7077,Charlie Chen,,,,
+7077,Charlie Chen,,,male,
 7078,Claire Li,,,female,
 7079,Larry Zhao,,,male,
 7080,Ashita Thakkar,California,,female,
