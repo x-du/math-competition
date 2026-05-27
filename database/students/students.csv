@@ -932,7 +932,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 979,Haocheng Zhang,New York,,male,
 981,Raymon Zhang,Washington,,male,11
 982,Brian Zhou,California,,male,
-984,Yoll Feng,Massachusetts,,male,
+984,Yoll Feng,Massachusetts,Zenghan Feng|Zenghan (Yoll) Feng,male,
 986,Kyle Lin,Texas,,male,
 988,Kevin Long,New Jersey,,male,
 989,Richard Wang,Texas,,male,11
@@ -1214,7 +1214,6 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1278,Kaylyn Zhang,"Ontario, Canada",Kaylyn Jinglin Zhang,female,10
 1279,Jack Whitney-Epstein,Connecticut,Jack Whitney,male,12
 1281,Rick Zhou,Washington,,male,11
-1283,Zenghan (Yoll) Feng,Massachusetts,,male,
 1284,Jonathan Zhou,Connecticut,,male,10
 1285,Raine Ma,Connecticut,,male,11
 1286,Aarav Mann,California,,male,10
@@ -1240,7 +1239,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1306,Brandon Jia,North Carolina,,male,
 1307,Jason Sliwowski,North Carolina,,male,
 1308,Roman  Mecholsky,Maryland,,male,
-1309,Jahl Miraji-Khot,South Carolina,,male,
+1309,Jahl Miraji-Khot,Delaware,,male,10
 1310,Dylan Zhang,North Carolina,,male,
 1311,Sarah Li,Virginia,,female,11
 1312,Aaron Zhu,North Carolina,,male,
@@ -1393,7 +1392,6 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1465,Henry Xue,New York,,male,11
 1466,Jack Li,Illinois,,male,10
 1467,Lucas Wang,California,,male,
-1468,Zenghan Feng,Maine,,male,
 1469,Michael Wu,Michigan,,male,
 1470,Tianze Qiu,New York,,male,10
 1471,Jason Yang,Massachusetts,,male,
@@ -5755,7 +5753,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 5876,Kinshuk Pandey,,,male,
 5877,Samanvay Srivatsa,,,male,
 5878,Reyansh Sadhu,,,male,
-5879,Lucas Kim,,,female,
+5879,Lucas Kim,,,male,
 5880,Siddharth Suresh,,,male,
 5881,Vedant Srivastava,,,male,
 5882,Ishaan Chaubal,,,male,
@@ -6479,7 +6477,6 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6604,Gavin Wang,District of Columbia,,male,10
 6605,Cooper McCann,Department of Defense,,male,10
 6606,Ada McCaskey,Department of Defense,,female,10
-6608,Jahl Miraji-Khot,Delaware,,,10
 6609,Daniel Li,Florida,,male,10
 6610,Martin Ho,Georgia,,male,10
 6611,Nathan Ye,Georgia,,male,10
