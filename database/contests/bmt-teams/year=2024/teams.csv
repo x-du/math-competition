@@ -96,7 +96,7 @@ team_id,team_name,student_ids,bmt_student_ids,school,state
 111,,1968|2355|6872|6904,111D|111C|111A|111F,,
 112,AlphaStar Fibonacci,1716|1719|2143|2357|2503|2717,112A|112E|112D|112B|112C|112F,AlphaStar Academy,California
 113,,358|385|1359|1361|1770|1795,113B|113E|113C|113F|113D|113A,,California
-114,AlphaStar Pascal,372|842|1725|1794|4625|6899,114B|114C|114D|114E|114F|114A,AlphaStar Academy,California
+114,AlphaStar Pascal,372|842|1725|1794|4625|2507,114B|114C|114D|114E|114F|114A,AlphaStar Academy,California
 115,AlphaStar Newton,9|25|58|90|99|331,115E|115C|115D|115B|115A|115F,AlphaStar Academy,California
 116,Alpha Star Riemann,1342|1718|3082|5645,116A|116E|116B|116D,Alpha Star Academy,California
 117,AlphaStar Pythagoras,21|69|906|972|1397|1801,117B|117E|117C|117D|117A|117F,AlphaStar Academy,California
