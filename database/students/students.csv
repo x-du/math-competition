@@ -218,7 +218,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 239,Satvik Sharma,Pennsylvania,,male,
 241,Eliot Flowers,,,male,
 242,Adam Ge,Massachusetts,,male,11
-243,Aarush Prasad,New Jersey,,male,
+243,Aarush Prasad,New Jersey,,male,11
 244,Jacob Ronan Khohayting,Florida,Jacob Khohayting,male,11
 245,Corwin Eisenbeiss,New York,,male,11
 246,Vincent Pirozzo,Michigan,,male,10
@@ -934,7 +934,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 982,Brian Zhou,California,,male,
 984,Yoll Feng,Massachusetts,Zenghan Feng|Zenghan (Yoll) Feng,male,
 986,Kyle Lin,Texas,,male,
-988,Kevin Long,New Jersey,,male,
+988,Kevin Long,New Jersey,,male,9
 989,Richard Wang,Texas,,male,11
 990,Leo Wu,"Ontario, Canada",,male,11
 991,Haofang Zhu,California,,male,11
@@ -1029,6 +1029,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1086,Greta Qu,"Ontario, Canada",,female,11
 1087,Justin Seo,Michigan,,male,12
 1088,Kallie Wang,California,,female,12
+1089,Jason Liu,New Jersey,,male,
 1090,Immanuel Whang,Washington,,male,12
 1092,Kyle Yang,Massachusetts,,male,
 1093,Michael Yang,Washington,,male,14
@@ -1534,7 +1535,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1625,Clark Hu,Maryland,,male,12
 1626,Mia Zhao,Massachusetts,,female,
 1627,Siyuan Du,,,male,
-1628,Andrew Lau,Texas,,male,
+1628,Andrew Lau,Texas,,male,8
 1629,Jagan Mranal,Massachusetts,,male,
 1630,Maxime Demers,,,male,
 1631,Kaiqi Xu,,,male,
@@ -2038,7 +2039,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 2140,Jack Weiss,Wyoming,,male,14
 2141,Grace Yang,Indiana,,female,15
 2143,Max Li,California,,male,9
-2144,Alexander Sheng,New Jersey,,male,
+2144,Alexander Sheng,New Jersey,,male,10
 2145,Yeojun Jung,,,male,
 2146,Xinqi Jessie Wang,New Jersey,,female,
 2147,Arjun Pandey,New Jersey,,male,
@@ -2070,7 +2071,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 2174,Srinivasa Polisetty,New York,,male,
 2175,Alethea Liu,New Jersey,,female,
 2176,Alexander Buteau,Connecticut,,male,
-2177,Oscar Huang,New Jersey,,male,
+2177,Oscar Huang,New Jersey,,male,11
 2178,Iris Gao,,,female,
 2180,Chris Ping Liu,Connecticut,,male,
 2181,Dhagesh Desai,New Jersey,,male,
@@ -2157,7 +2158,6 @@ student_id,student_name,state,alias,gender,grade_in_2026
 2266,Luca Huang,,,male,
 2267,Vishrut Goyal,New York,,male,
 2268,Srilekha Mamidala,Pennsylvania,,female,
-2269,Eric Cheng,New Jersey,,male,
 2270,Michael Pylypovych,New Jersey,,male,
 2271,Srijith Chinthalapudi,New Jersey,,male,
 2272,Danny Paik,New Jersey,,male,
@@ -6361,7 +6361,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6489,Taeyul Kim,Department of Defense,,male,9
 6490,Lucas Sze,Department of Defense,,male,9
 6491,Edward Chen,Delaware,Eddie Chen,male,9
-6492,Eric Chen,Delaware,,male,9
+6492,Eric Chen,New Jersey,,male,9
 6493,Joseph Zhang,Delaware,,male,9
 6494,Gnaneswar Peddesugari,Florida,,male,9
 6495,Prayag Kalaria,Georgia,,male,8
@@ -6676,7 +6676,6 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6830,Alice Yin,Massachusetts,,female,
 6832,Rick Zeng,New York,,male,
 6833,Jaden Zhu,New York,,male,
-6834,Minguen Duan,Connecticut,,male,
 6836,Kevin Lu,Texas,,male,
 6837,Edward Li,Maine,,male,
 6838,Vibhu Konduru,,,male,
