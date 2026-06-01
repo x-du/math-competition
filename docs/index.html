@@ -199,7 +199,10 @@
           hidden
         >×</button>
       </div>
-      <span id="search-hint" class="search-hint" aria-live="polite"></span>
+      <div class="search-hint-row">
+        <span id="search-hint" class="search-hint" aria-live="polite"></span>
+        <button type="button" id="clear-all-filters" class="clear-all-filters-btn">Clear filters</button>
+      </div>
       <div id="search-apply-filters-wrap" class="search-apply-filters-wrap" hidden>
         <label class="search-apply-filters-label" title="When on, search matches and the leaderboard respect the filters above. A student detail view still lists every competition row for that student.">
           <input type="checkbox" id="search-apply-leaderboard-filters" checked />

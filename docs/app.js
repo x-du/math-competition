@@ -17,10 +17,12 @@
   var emptyEl = document.getElementById("empty");
   var loadingEl = document.getElementById("loading");
   var hintEl = document.getElementById("search-hint");
+  var searchHintRowEl = document.querySelector(".search-hint-row");
   var contestListEl = document.getElementById("contest-list");
   var awardsRankingListEl = document.getElementById("awards-ranking-list");
   var topStudentsSectionEl = document.getElementById("top-students-section");
   var awardsRankingFiltersEl = document.getElementById("awards-ranking-filters");
+  var clearAllFiltersEl = document.getElementById("clear-all-filters");
   var searchClearEl = document.getElementById("search-clear");
   var girlsOnlyEl = document.getElementById("girls-only");
   var gradeFilterEl = document.getElementById("grade-filter");
@@ -3526,6 +3528,7 @@
     var inStudentCardView = !!urlStudentId;
     if (searchInputWrapEl) searchInputWrapEl.hidden = inStudentCardView;
     if (hintEl) hintEl.hidden = inStudentCardView;
+    if (searchHintRowEl) searchHintRowEl.hidden = inStudentCardView;
     if (studentCardBackEl) studentCardBackEl.hidden = !inStudentCardView;
 
     if (urlStudentId != null) {
@@ -3590,6 +3593,7 @@
       }
       if (searchInputWrapEl) searchInputWrapEl.hidden = false;
       if (hintEl) hintEl.hidden = false;
+      if (searchHintRowEl) searchHintRowEl.hidden = false;
       if (studentCardBackEl) studentCardBackEl.hidden = true;
       syncSearchPerformanceButtonVisibility();
       syncSearchApplyFiltersToggleVisibility();
@@ -4967,6 +4971,27 @@
       clearStudentIdFromUrl();
       runSearch();
       searchEl.focus();
+    });
+  }
+
+  if (clearAllFiltersEl) {
+    clearAllFiltersEl.addEventListener("click", function () {
+      if (girlsOnlyEl) girlsOnlyEl.checked = false;
+      if (gradeFilterEl) gradeFilterEl.value = "";
+      if (stateFilterEl) stateFilterEl.value = "";
+      if (competitionYearFilterEl) competitionYearFilterEl.value = "";
+      if (searchApplyLeaderboardFiltersEl) searchApplyLeaderboardFiltersEl.checked = true;
+      if (searchEl) searchEl.value = "";
+      clearStudentIdFromUrl();
+      contestFilter.restoreFromSavedArray(["all"]);
+      contestFilter.updateSummary();
+      contestFilterHasPendingApply = false;
+      mcpPctStatsCache.key = null;
+      populateCompetitionYearFilterOptions();
+      saveFilters();
+      renderTopStudentsByRecords();
+      runSearch();
+      refreshMcpTimelineIfOpen();
     });
   }
 
