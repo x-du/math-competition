@@ -29,7 +29,7 @@ student_id,student_name,state,school,award,mcp_rank
 7,Benjamin Fu,Washington,Bellevue High School,Silver,36.5
 257,Daniel Ge,Washington,Newport High School,Silver,36.5
 127,David Ji,New Jersey,Yu's Elite Education,Silver,36.5
-389,Keshav Karumbunathan,Oregon,,Silver,36.5
+389,Keshav Karumbunathan,Oregon,Jesuit High School - Portland,Silver,36.5
 364,Ekam Kaur,Texas,UT Dallas,Silver,36.5
 887,Neil Krishnan,California,Harker Upper School,Silver,36.5
 888,Jian Kweon,California,Evergreen Valley High School,Silver,36.5
@@ -54,8 +54,8 @@ student_id,student_name,state,school,award,mcp_rank
 328,Aryan Agrawal,Washington,Interlake High School,Bronze,80
 49,Amogh Akella,Texas,University of Texas at Austin,Bronze,80
 666,Shruti Arun,Colorado,Cherry Creek High School,Bronze,80
-890,Hanson Bai,California,Monta Vista High School New Jersey Enrichment,Bronze,80
-891,Andrew Brahms,New Jersey,,Bronze,80
+890,Hanson Bai,California,Monta Vista High School,Bronze,80
+891,Andrew Brahms,New Jersey,New Jersey Enrichment Academy,Bronze,80
 892,Edward Cha,Massachusetts,Phillips Academy,Bronze,80
 12,Alan Cheng,North Carolina,North Carolina School of Science and Mathematics,Bronze,80
 893,Hugh Cheng,California,Harvard-Westlake School - Studio City,Bronze,80
@@ -111,10 +111,10 @@ student_id,student_name,state,school,award,mcp_rank
 912,Brett Chang,California,South Pasadena,Honorable Mention,131.5
 913,Samarth Das,Texas,Russian School of Mathematics - Plano,Honorable Mention,131.5
 29,Patrick Du,Virginia,Thomas Jefferson High School for Science and Technology,Honorable Mention,131.5
-914,Bryan Fu,Texas,,Honorable Mention,131.5
-915,Michael Han,Massachusetts,Frisco/Plano Lexington High School MMC&M (Many Math,Honorable Mention,131.5
-916,Lucas Hinds,Tennessee,,Honorable Mention,131.5
-35,William Hua,Massachusetts,Circles and More) Lexington High School,Honorable Mention,131.5
+914,Bryan Fu,Texas,AoPS Academy Frisco/Plano,Honorable Mention,131.5
+915,Michael Han,Massachusetts,Lexington High School,Honorable Mention,131.5
+916,Lucas Hinds,Tennessee,MMC&M (Many Math Circles and More),Honorable Mention,131.5
+35,William Hua,Massachusetts,Lexington High School,Honorable Mention,131.5
 917,Bennett Huang,Virginia,Langley High School,Honorable Mention,131.5
 918,Jiawen Huang,California,Arcadia High School - Arcadia,Honorable Mention,131.5
 919,Seojoon Kang,New York,Saint Mary's High School,Honorable Mention,131.5
@@ -125,32 +125,32 @@ student_id,student_name,state,school,award,mcp_rank
 922,Rex Li,"Ontario, Canada",Carleton Univ of Math. & Statistics,Honorable Mention,131.5
 558,Aaron Lin,Missouri,Ladue Horton Watkins High School,Honorable Mention,131.5
 72,Kevin Liu,Florida,Florida Atlantic University,Honorable Mention,131.5
-14,Nathan Liu,Texas,St. Marks School of Texas Thomas Jefferson High,Honorable Mention,131.5
-282,Arjun Pagidi,Virginia,School for Science and Technology,Honorable Mention,131.5
+14,Nathan Liu,Texas,St. Marks School of Texas,Honorable Mention,131.5
+282,Arjun Pagidi,Virginia,Thomas Jefferson High School for Science and Technology,Honorable Mention,131.5
 923,James Qiu,"Ontario, Canada",TT Math School,Honorable Mention,131.5
-924,Victor Sarca,"Ontario, Canada",William Lyon Mackenzie CI West Windsor Plainsboro,Honorable Mention,131.5
-259,Maitian Sha,New Jersey,,Honorable Mention,131.5
-286,Yusuf Sheikh,Florida,High School South American Heritage School - Plantation,Honorable Mention,131.5
+924,Victor Sarca,"Ontario, Canada",William Lyon Mackenzie CI,Honorable Mention,131.5
+259,Maitian Sha,New Jersey,West Windsor Plainsboro High School South,Honorable Mention,131.5
+286,Yusuf Sheikh,Florida,American Heritage School - Plantation,Honorable Mention,131.5
 6785,Eric Wang,New Hampshire,Nashua High School South,Honorable Mention,131.5
 483,Lawson Wang,California,Saratoga High School,Honorable Mention,131.5
 925,Kalan Warusa,Virginia,Mc Lean High School,Honorable Mention,131.5
-926,Asher Wu,Washington,Pullman High School Naperville Central High,Honorable Mention,131.5
-927,Arthur Xu,Illinois,,Honorable Mention,131.5
-928,Kellen Xue,California,School Arcadia High School,Honorable Mention,131.5
+926,Asher Wu,Washington,Pullman High School,Honorable Mention,131.5
+927,Arthur Xu,Illinois,Naperville Central High School,Honorable Mention,131.5
+928,Kellen Xue,California,Arcadia High School,Honorable Mention,131.5
 77,Shunyao Yan,Virginia,Thomas Jefferson High School for Science and Technology,Honorable Mention,131.5
 929,Nathan Ye,California,Henry Gunn High,Honorable Mention,131.5
 361,Kai Yi,California,San Diego Math Circle,Honorable Mention,131.5
 23,Jeffrey Yin,Virginia,Mc Lean High School,Honorable Mention,131.5
-930,Bole Ying,Pennsylvania,Lower Merion High School SpringLight Education,Honorable Mention,131.5
-931,Matthew Yuan,California,,Honorable Mention,131.5
-932,Leo Zeng,California,Institute BASIS Independent Silicon Valley,Honorable Mention,131.5
+930,Bole Ying,Pennsylvania,Lower Merion High School,Honorable Mention,131.5
+931,Matthew Yuan,California,SpringLight Education Institute,Honorable Mention,131.5
+932,Leo Zeng,California,BASIS Independent Silicon Valley,Honorable Mention,131.5
 667,Alex Zhang,"Ontario, Canada",Linked Key,Honorable Mention,131.5
 933,Alexander Zhang,"Ontario, Canada",TT Math School,Honorable Mention,131.5
 934,Charles Zhang,California,Great Oak High School,Honorable Mention,131.5
 935,Eric Zhang,Illinois,Adlai E. Stevenson High School,Honorable Mention,131.5
 487,Kyle Zhang,Connecticut,Hopkins School,Honorable Mention,131.5
-747,Devin Zhao,Ohio,Granville Schools Thomas Jefferson High,Honorable Mention,131.5
-87,Max Zhao,Virginia,School for Science and Technology,Honorable Mention,131.5
+747,Devin Zhao,Ohio,Granville Schools,Honorable Mention,131.5
+87,Max Zhao,Virginia,Thomas Jefferson High School for Science and Technology,Honorable Mention,131.5
 33,Roger Zhen,Texas,Clear Lake High School,Honorable Mention,131.5
 475,Owen Zhou,Arizona,BASIS Scottsdale,Honorable Mention,131.5
 614,Anthony Zou,South Carolina,River Bluff High School,Honorable Mention,131.5

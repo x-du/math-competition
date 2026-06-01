@@ -591,9 +591,6 @@ def main() -> None:
             # Don't expose city/school for MathCounts National (still in roster CSVs)
             if slug == MATHCOUNTS_SLUG:
                 skip_keys = skip_keys | {"city", "school"}
-            # Don't expose school from AMO/JMO results on the website (still in .csv)
-            if slug in ("amo", "jmo"):
-                skip_keys = skip_keys | {"school"}
             for k, v in row.items():
                 if k is None:
                     continue
