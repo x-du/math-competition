@@ -2,7 +2,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1,Alexander Wang,New Jersey,Alex Wang,male,12
 2,Bryan Sicheng Guo,California,Bryan Guo,male,12
 3,Oron Wang,New Hampshire,,male,11
-4,Liam Reddy,Utah,,male,11
+4,Liam Reddy,Utah,,male,12
 5,Tianyi Li,"Ontario, Canada",Li Tianyi|Tiger Li,male,10
 6,Jefferson Tiger Zhou,Minnesota,Jefferson Zhou,male,10
 7,Benjamin Fu,Washington,,male,12
@@ -1453,7 +1453,6 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1532,Sirui Wu,China,"WU, SIRUI",male,
 1534,Girish Prasad,New York,,male,10
 1535,Aashritha Kolli,New Jersey,,female,
-1536,Jay Wang,California,,male,8
 1537,Benjamin Li,Massachusetts,,male,
 1538,Yizhang Guo,China,,male,
 1539,Eric Zhong,New York,,male,12
