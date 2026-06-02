@@ -353,7 +353,6 @@ student_id,student_name,state,alias,gender,grade_in_2026
 381,Albert Lu,New Hampshire,,male,12
 382,Jack Wang,"British Columbia, Canada",,male,10
 383,Laura Wang,Washington,,female,10
-384,Perry Zhuo-Yan Dai,New Jersey,,male,
 385,Ali Zaman,California,,male,10
 386,Stephen Cui,Washington,,male,8
 387,Royce Yao,Arizona,,male,12
@@ -853,7 +852,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 892,Edward Cha,Massachusetts,,male,
 893,Hugh Cheng,California,,male,13
 894,Kailua Cheng,California,,female,12
-895,Perry Dai,"Ontario, Canada",,male,11
+895,Perry Dai,"Ontario, Canada",Perry Zhuo-Yan Dai,male,11
 896,Aron Fekete,New Hampshire,,male,13
 897,Dylan Frake,California,,male,13
 898,Hao-Yu Gan,New York,,male,
