@@ -1,11 +1,10 @@
 team_id,team,student_ids,state
-1,Texas A1,56,Texas
 2,Lehigh Valley Fire A1,1|214|388|899,Pennsylvania
-3,Ontario Math Circle A1,26|895|990|1647|335,"Ontario, Canada"
+3,Ontario Math Circle A1,26|895|990,"Ontario, Canada"
 4,Utah B1,4|818,Utah
 5,Ohio A1,34,Ohio
 6,Washington A4,22|24|328|394|824,Washington
-7,Texas A1 Gold,8|13|14|16|33|229,Texas
+7,Texas A1 Gold,8|13|14|16|33|56|229,Texas
 8,Northern Nevada Math Club B3,1050,Nevada
 9,TJHSST A,29,Virginia
 10,Massachusetts A,811|850,Massachusetts

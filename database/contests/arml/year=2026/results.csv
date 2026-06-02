@@ -1,5 +1,5 @@
 student_id,student_name,rank,site,team,team_id,score,tb_corr,tb_time,prize,mcp_rank
-56,Channing Yang,1,I,Texas A1,1,10,1,107,"$1,500",1
+56,Channing Yang,1,I,Texas A1 Gold,7,10,1,107,"$1,500",1
 1,Alexander Wang,2,P,Lehigh Valley Fire A1,2,9,1,198,"$1,250",2
 990,Leo Wu,3,P,Ontario Math Circle A1,3,9,1,222,"$1,250",3
 818,Jonathan Wu,4,N,Utah B1,4,9,1,396,"$1,000",4
@@ -69,5 +69,3 @@ student_id,student_name,rank,site,team,team_id,score,tb_corr,tb_time,prize,mcp_r
 2375,Simon Yang,68,N,SFBA/NorCal A6,36,8,4,,,68
 2359,Vihaan Dev,69,N,Washington A1,37,8,4,,,69
 359,Kai Leon Yamashita,70,N,Oregon A1,17,8,4,,,70
-335,Yuxin Fu,71,P,Ontario Math Circle A1,3,7,1,248,,71
-1647,Andrew Ma,72,P,Ontario Math Circle A1,3,7,2,210,,72
