@@ -61,11 +61,11 @@ student_id,student_name,rank,site,team,team_id,score,tb_corr,tb_time,prize,mcp_r
 249,Sam Tsui,60,S,Lexington A1,19,8,3,248,,60
 899,Eden He,61,P,Lehigh Valley Fire A1,2,8,3,250,,61
 738,Liran Zhou,62,P,Nassau B1,32,8,3,337,,62
-12,Alan Cheng,63,W,North Carolina  A1,33,8,4,,,63
-7086,Andrew Mau,64,W,Tennessee B1,34,8,4,,,64
-395,Boyou Huang,65,I,Chicago A1,35,8,4,,,65
-229,Alexander Sun,66,I,Texas A1 Gold,7,8,4,,,66
-7087,Eham Keur,67,I,Texas A2 Silver,25,8,4,,,67
-2375,Simon Yang,68,N,SFBA/NorCal A6,36,8,4,,,68
-2359,Vihaan Dev,69,N,Washington A1,37,8,4,,,69
-359,Kai Leon Yamashita,70,N,Oregon A1,17,8,4,,,70
+12,Alan Cheng,63,W,North Carolina  A1,33,8,4,,,66.5
+7086,Andrew Mau,63,W,Tennessee B1,34,8,4,,,66.5
+395,Boyou Huang,63,I,Chicago A1,35,8,4,,,66.5
+229,Alexander Sun,63,I,Texas A1 Gold,7,8,4,,,66.5
+7087,Eham Keur,63,I,Texas A2 Silver,25,8,4,,,66.5
+2375,Simon Yang,63,N,SFBA/NorCal A6,36,8,4,,,66.5
+2359,Vihaan Dev,63,N,Washington A1,37,8,4,,,66.5
+359,Kai Leon Yamashita,63,N,Oregon A1,17,8,4,,,66.5
