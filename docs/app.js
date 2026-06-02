@@ -4987,8 +4987,8 @@
       contestFilter.updateSummary();
       contestFilterHasPendingApply = false;
       mcpPctStatsCache.key = null;
-      populateCompetitionYearFilterOptions();
       saveFilters();
+      populateCompetitionYearFilterOptions();
       renderTopStudentsByRecords();
       runSearch();
       refreshMcpTimelineIfOpen();
