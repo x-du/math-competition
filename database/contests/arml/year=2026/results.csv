@@ -1,0 +1,73 @@
+student_id,student_name,rank,site,team,team_id,score,tb_corr,tb_time,prize,mcp_rank
+56,Channing Yang,1,I,Texas A1,1,10,1,107,"$1,500",1
+1,Alexander Wang,2,P,Lehigh Valley Fire A1,2,9,1,198,"$1,250",2
+990,Leo Wu,3,P,Ontario Math Circle A1,3,9,1,222,"$1,250",3
+818,Jonathan Wu,4,N,Utah B1,4,9,1,396,"$1,000",4
+34,Jiahe Liu,5,P,Ohio A1,5,9,1,442,"$1,000",5
+22,Ian Rui,6,N,Washington A4,6,9,1,463,"$1,000",6
+14,Nathan Liu,7,I,Texas A1 Gold,7,9,2,53,$750,7
+1050,Jonathan Yu,8,N,Northern Nevada Math Club B3,8,9,2,157,$750,8
+29,Patrick Du,9,P,TJHSST A,9,9,2,212,$750,9
+895,Perry Dai,10,P,Ontario Math Circle A1,3,9,2,263,$750,10
+811,Brandon Ni,11,S,Massachusetts A,10,9,2,276,$500,11
+394,Alexander Yang,12,N,Washington A4,6,9,3,94,$500,12
+33,Roger Zhen,13,I,Texas A1 Gold,7,9,3,110,$500,13
+850,Eric Huang,14,S,Massachusetts A,10,9,3,187,$500,14
+8,Vincent Wang,15,I,Texas A1 Gold,7,9,3,298,$500,15
+1060,Michael Middlezong,16,S,Bergen County,11,9,3,610,$500,16
+845,Edwin Gao,17,W,Frazer A1,12,9,4,,$500,17
+4,Liam Reddy,18,N,Utah B1,4,8,1,127,$500,18
+372,Eric Shu,19,N,SFBA/NorCal A1,13,8,1,307,$500,19
+13,Michael Zhao,20,I,Texas A1 Gold,7,8,1,308,$500,20
+262,Aryan Raj,21,P,Fairfax A1,14,8,1,353,,21
+1526,Patrick Liang,22,N,Southern California B1,15,8,1,360,,22
+4317,Daniel Li,23,N,SFBA/NorCal A2,16,8,1,371,,23
+824,Wesley Wu,24,N,Washington A4,6,8,1,441,,24
+388,Aaron Smith,25,P,Lehigh Valley Fire A1,2,8,1,454,,25
+396,Elena Ahn Beckman,26,N,Southern California B1,15,8,1,457,,26
+6272,Garud Shah,27,N,Oregon A1,17,8,1,577,,27
+210,Eric Zhu,28,W,North Carolina A1,18,8,1,581,,28
+35,William Hua,29,S,Lexington A1,19,8,2,90,,29
+214,Eric Guo,30,P,Lehigh Valley Fire A1,2,8,2,94,,30
+328,Aryan Agrawal,31,N,Washington A4,6,8,2,151,,31
+206,Eric Xie,32,P,Montgomery A1,20,8,2,152,,32
+16,James Stewart,33,I,Texas A1 Gold,7,8,2,193,,33
+7082,Chaewong Kyong,34,P,Montgomery A1,20,8,2,211,,34
+445,Jeffrey Xu,35,I,Indiana B1,21,8,2,213,,35
+1312,Aaron Zhu,36,W,North Carolina A1,18,8,2,219,,36
+352,Eric Ding,37,I,Minnesota A1,22,8,2,230,,37
+795,Eric Gao,38,W,Frazer A1,12,8,2,258,,38
+1034,Lei He,39,P,Ontario Math Circle A2,23,8,2,262,,39
+258,Miles Petik,40,I,Michigan All Stars B1,24,8,2,300,,40
+31,Lewis Lau,41,P,Montgomery A1,20,8,2,310,,41
+367,Aryan Shome,42,I,Texas A2 Silver,25,8,2,312,,42
+522,Edward Chen,43,I,Indiana B1,21,8,2,316,,43
+343,Jason Lee,44,W,North Carolina A1,18,8,2,350,,44
+24,Ryan Chen,45,N,Washington A4,6,8,3,88,,45
+799,Kesav Kalanidhi,46,W,North Carolina A2,26,8,3,96,,46
+4099,Vihaan Byahatti,47,N,SFBA/NorCal A1,13,8,3,112,,47
+1054,Jayden Zheng,48,I,Texas A2 Silver,25,8,3,116,,48
+993,Andrew Chai,49,P,NJ Reaching for Excellence B1,27,8,3,117,,49
+3103,Alexander Gao,50,I,Indiana B1,21,8,3,133,,50
+1460,Woojin Seong,51,I,Michigan All Stars A1,28,8,3,135,,51
+26,Ryan Li,52,P,Ontario Math Circle A1,3,8,3,161,,52
+914,Bryan Fu,53,I,Texas A2 Silver,25,8,3,166,,53
+1525,Aaron Xie,54,P,NJ Reaching for Excellence B1,27,8,3,176,,54
+6122,William Tao,55,N,SFBA/NorCal A2,16,8,3,184,,55
+223,Edwin Zhao,56,S,Lexington A1,19,8,3,186,,56
+7084,Ayaan Kang,57,N,Washington A2,29,8,3,223,,57
+36,Jialai She,58,S,Phillips Academy A1,30,8,3,228,,58
+6358,Max Wang,59,S,Massachusetts A1,31,8,3,229,,59
+249,Sam Tsui,60,S,Lexington A1,19,8,3,248,,60
+899,Eden He,61,P,Lehigh Valley Fire A1,2,8,3,250,,61
+738,Liran Zhou,62,P,Nassau B1,32,8,3,337,,62
+12,Alan Cheng,63,W,North Carolina  A1,33,8,4,,,63
+7086,Andrew Mau,64,W,Tennessee B1,34,8,4,,,64
+395,Boyou Huang,65,I,Chicago A1,35,8,4,,,65
+229,Alexander Sun,66,I,Texas A1 Gold,7,8,4,,,66
+7087,Eham Keur,67,I,Texas A2 Silver,25,8,4,,,67
+2375,Simon Yang,68,N,SFBA/NorCal A6,36,8,4,,,68
+2359,Vihaan Dev,69,N,Washington A1,37,8,4,,,69
+359,Kai Leon Yamashita,70,N,Oregon A1,17,8,4,,,70
+335,Yuxin Fu,71,P,Ontario Math Circle A1,3,7,1,248,,71
+1647,Andrew Ma,72,P,Ontario Math Circle A1,3,7,2,210,,72

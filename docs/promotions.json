@@ -1,5 +1,17 @@
 [
   {
+    "id": "arml-results-2026",
+    "enabled": true,
+    "startDate": "2026-06-02",
+    "endDate": "2026-07-02",
+    "showOnLocalhost": true,
+    "label": "New results",
+    "title": "ARML 2026",
+    "description": "American Regions Mathematics League 2026 individual results are now available on mathintegrity.org — top 72 finishers with scores and tiebreak data.",
+    "ctaText": "Visit mathintegrity.org",
+    "href": ""
+  },
+  {
     "id": "amm-2026",
     "enabled": true,
     "startDate": "2026-05-22",
