@@ -4192,7 +4192,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 4314,Avik Patel,Connecticut,,male,
 4315,Brandon Chiu,California,,male,
 4316,Connor Chung,Washington,,male,
-4317,Daniel Li,California,,male,9
+4317,Daniel Li,California,,male,8
 4318,David Roytman-Kidron,New York,,male,
 4319,Derek Hu,California,,male,
 4320,Ekaterina Grebennikova,Washington,,female,
@@ -6917,3 +6917,4 @@ student_id,student_name,state,alias,gender,grade_in_2026
 7084,Ayaan Kang,Washington,,male,
 7086,Andrew Mau,Tennessee,,male,
 7087,Eham Keur,Texas,,male,
+7088,Ethan Huang,California,,male,
