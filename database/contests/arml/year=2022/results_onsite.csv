@@ -1,32 +1,32 @@
-student_id,student_name,site,team,team_id,rank,score,prize,mcp_rank
-173,Luke Robitaille,onsite,Texas A1,23,1,10,"$1,500",1
-434,Sargam Mondal,onsite,Central Jersey B1,2,2,10,"$1,250",2
-180,Andrew Gu,onsite,Orange County A1,18,3,9,"$1,000",3
-482,David Zhang,onsite,SFBA/NorCal A1,21,4,9,$750,4
-191,Rowechen Zhong,onsite,Texas A1,23,5,9,$500,5
-4,Liam Reddy,onsite,Utah B1,26,6,9,$500,6
-1165,Adam Tang,onsite,SFBA/NorCal A1,21,7,9,$500,7
-144,Jeff Lin,onsite,Lexington A1,10,8,9,$500,8
-402,Christopher Bao,onsite,Las Vegas Math Circle B1,7,9,9,$500,9
-125,Pavan Jayaraman,onsite,WWP^2 A1,27,10,8,$500,10
-56,Channing Yang,onsite,Texas A1,23,11,8,,11
-1411,Jake Frazer,onsite,Buchholz A1,1,12,8,,12
-135,Eric Shen,onsite,SFBA/NorCal A1,21,13,8,,13
-162,Alan Lee,onsite,SFBA/NorCal A1,21,14,8,,14
-878,Andrew Wen,onsite,Phillips Academy B1,19,15,8,,15
-156,Edward Xiong,onsite,WWP^2 A1,27,16,8,,16
-184,Kevin Zhao,onsite,Lexington A1,10,17,8,,17
-1108,William Dai,onsite,Texas A2,24,18,8,,18
-192,Jack Albright,onsite,SFBA/NorCal A1,21,19,8,,19
-99,Rohan Bodke,onsite,SFBA/NorCal A1,21,20,8,,20
-1180,Arnav Goel,onsite,Chicago A1,3,21,8,,21
-450,Minseok Eli Park,onsite,NC A1,13,22,8,,22
-1412,Isaac Zhu,onsite,NC A2,14,23,8,,23
-1127,Michelle Kang,onsite,Thomas Jefferson A1,25,24,8,,24
-1130,Catherine Li,onsite,SFBA/NorCal A1,21,25,8,,25
-1413,Samuel Goodman,onsite,Las Vegas Math Circle B1,7,26,8,,26
-140,Isabella Zhu,onsite,Thomas Jefferson A1,25,27,8,,27
-452,Espen Slettnes,onsite,SFBA/NorCal A1,21,28,8,,28
-81,Angela Liu,onsite,SFBA/NorCal A1,21,29,8,,29
-474,Benjamin Jeter,onsite,Wild Wild West B1,29,30,8,,30
-90,Rohan Das,onsite,SFBA/NorCal A1,21,31,8,,31
+student_id,student_name,site,team,team_id,rank,score,tb_corr,tb_time,prize,mcp_rank
+173,Luke Robitaille,onsite,Texas A1,23,1,10,2,147,"$1,500",1
+434,Sargam Mondal,onsite,Central Jersey B1,2,2,10,2,327,"$1,250",2
+180,Andrew Gu,onsite,Orange County A1,18,3,9,2,222,"$1,000",3
+482,David Zhang,onsite,SFBA/NorCal A1,21,4,9,2,301,$750,4
+191,Rowechen Zhong,onsite,Texas A1,23,5,9,3,62,$500,5
+4,Liam Reddy,onsite,Utah B1,26,6,9,3,67,$500,6
+1165,Adam Tang,onsite,SFBA/NorCal A1,21,7,9,3,88,$500,7
+144,Jeff Lin,onsite,Lexington A1,10,8,9,3,97,$500,8
+402,Christopher Bao,onsite,Las Vegas Math Circle B1,7,9,9,3,120,$500,9
+125,Pavan Jayaraman,onsite,WWP^2 A1,27,10,8,2,105,$500,10
+56,Channing Yang,onsite,Texas A1,23,11,8,2,133,,11
+1411,Jake Frazer,onsite,Buchholz A1,1,12,8,2,182,,12
+135,Eric Shen,onsite,SFBA/NorCal A1,21,13,8,2,223,,13
+162,Alan Lee,onsite,SFBA/NorCal A1,21,14,8,2,245,,14
+878,Andrew Wen,onsite,Phillips Academy B1,19,15,8,2,308,,15
+156,Edward Xiong,onsite,WWP^2 A1,27,16,8,2,314,,16
+184,Kevin Zhao,onsite,Lexington A1,10,17,8,2,327,,17
+1108,William Dai,onsite,Texas A2,24,18,8,2,333,,18
+192,Jack Albright,onsite,SFBA/NorCal A1,21,19,8,3,66,,19
+99,Rohan Bodke,onsite,SFBA/NorCal A1,21,20,8,3,66,,20
+1180,Arnav Goel,onsite,Chicago A1,3,21,8,3,69,,21
+450,Minseok Eli Park,onsite,NC A1,13,22,8,3,73,,22
+1412,Isaac Zhu,onsite,NC A2,14,23,8,3,74,,23
+1127,Michelle Kang,onsite,Thomas Jefferson A1,25,24,8,3,78,,24
+1130,Catherine Li,onsite,SFBA/NorCal A1,21,25,8,3,108,,25
+1413,Samuel Goodman,onsite,Las Vegas Math Circle B1,7,26,8,3,112,,26
+140,Isabella Zhu,onsite,Thomas Jefferson A1,25,27,8,3,112,,27
+452,Espen Slettnes,onsite,SFBA/NorCal A1,21,28,8,3,138,,28
+81,Angela Liu,onsite,SFBA/NorCal A1,21,29,8,0,0,,29
+474,Benjamin Jeter,onsite,Wild Wild West B1,29,30,8,0,0,,30
+90,Rohan Das,onsite,SFBA/NorCal A1,21,31,8,0,0,,31

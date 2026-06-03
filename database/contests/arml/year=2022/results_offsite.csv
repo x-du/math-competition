@@ -1,22 +1,22 @@
-student_id,student_name,site,team,team_id,rank,score,prize,mcp_rank
-57,Christopher Qiu,offsite,Lehigh Valley A1,8,1,10,"$1,500",1
-96,Qiao Zhang,offsite,SoCal ARML A1,22,2,9,"$1,250",2
-72,Kevin Liu,offsite,Florida A1,6,3,9,"$1,000",3
-1,Alexander Wang,offsite,Lehigh Valley A1,8,4,8,$750,4
-91,Andrew Lin,offsite,Lehigh Valley A1,8,5,8,$500,5
-1173,Daniel Yuan,offsite,Montgomery A1,12,6,8,$500,6
-175,Rishabh Das,offsite,NYC Math Team - Tin Man A1,15,7,8,$500,7
-1166,Albert Wang,offsite,Florida A1,6,8,8,$500,8
-462,Jackson Dryg,offsite,Colorado A1,4,9,8,$500,9
-89,Jordan Lefkowitz,offsite,Connecticut B1,5,10,8,$500,10
-2489,Darren Jia,offsite,Lehigh Valley A2,9,11,8,,11
-132,Jason Mao,offsite,Lehigh Valley A1,8,12,8,,12
-171,Evan Chang,offsite,Lehigh Valley A2,9,13,8,,13
-2490,Krish Mody,offsite,Oklahoma All-Stars B1,17,14,8,,14
-119,Jason Zhang,offsite,Michigan All Stars A1,11,15,8,,15
-150,Kevin Wu,offsite,Montgomery A1,12,16,8,,16
-1185,Tristan Kay,offsite,Washington A1,28,17,8,,17
-2491,Jackson Gong,offsite,Michigan All Stars A1,11,18,8,,18
-953,Tanishq Pauskar,offsite,Ohio B1,16,19,8,,19
-32,Benjamin Jiang,offsite,Pine Views B1,20,20,8,,20
-456,Joseph Othman,offsite,NYC Math Team - Tin Man A1,15,21,8,,21
+student_id,student_name,site,team,team_id,rank,score,tb_corr,tb_time,prize,mcp_rank
+57,Christopher Qiu,offsite,Lehigh Valley A1,8,1,10,3,98,"$1,500",1
+96,Qiao Zhang,offsite,SoCal ARML A1,22,2,9,1,210,"$1,250",2
+72,Kevin Liu,offsite,Florida A1,6,3,9,1,460,"$1,000",3
+1,Alexander Wang,offsite,Lehigh Valley A1,8,4,8,1,118,$750,4
+91,Andrew Lin,offsite,Lehigh Valley A1,8,5,8,1,232,$500,5
+1173,Daniel Yuan,offsite,Montgomery A1,12,6,8,1,256,$500,6
+175,Rishabh Das,offsite,NYC Math Team - Tin Man A1,15,7,8,1,284,$500,7
+1166,Albert Wang,offsite,Florida A1,6,8,8,1,350,$500,8
+462,Jackson Dryg,offsite,Colorado A1,4,9,8,1,362,$500,9
+89,Jordan Lefkowitz,offsite,Connecticut B1,5,10,8,1,381,$500,10
+2489,Darren Jia,offsite,Lehigh Valley A2,9,11,8,1,405,,11
+132,Jason Mao,offsite,Lehigh Valley A1,8,12,8,1,522,,12
+171,Evan Chang,offsite,Lehigh Valley A2,9,13,8,1,567,,13
+2490,Krish Mody,offsite,Oklahoma All-Stars B1,17,14,8,2,62,,14
+119,Jason Zhang,offsite,Michigan All Stars A1,11,15,8,3,143,,15
+150,Kevin Wu,offsite,Montgomery A1,12,16,8,3,194,,16
+1185,Tristan Kay,offsite,Washington A1,28,17,8,0,0,,17
+2491,Jackson Gong,offsite,Michigan All Stars A1,11,18,8,0,0,,18
+953,Tanishq Pauskar,offsite,Ohio B1,16,19,8,0,0,,19
+32,Benjamin Jiang,offsite,Pine Views B1,20,20,8,0,0,,20
+456,Joseph Othman,offsite,NYC Math Team - Tin Man A1,15,21,8,0,0,,21
