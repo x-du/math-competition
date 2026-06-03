@@ -1,14 +1,14 @@
 team_id,team,student_ids,state
 2,Lehigh Valley Fire A1,1|214|388|899,Pennsylvania
-3,Ontario Math Circle A1,26|895|990,"Ontario, Canada"
+3,Ontario Math Circles A1,5|26|895|990|1005,"Ontario, Canada"
 4,Utah B1,4|818,Utah
 5,Ohio A1,34,Ohio
 6,Washington A4,22|24|328|394|824,Washington
-7,Texas A1 Gold,8|13|14|16|33|56|229,Texas
+7,Texas Gold A1,8|13|14|16|33|56|229,Texas
 8,Northern Nevada Math Club B3,1050,Nevada
-9,TJHSST A,29,Virginia
-10,Massachusetts A,811|850,Massachusetts
-11,Bergen County,1060,New Jersey
+9,TJHSST A1,29,Virginia
+10,Massachusetts A1,811|850,Massachusetts
+11,Bergen County A1,1060,New Jersey
 12,Frazer A1,795|845,Florida
 13,SFBA/NorCal A1,372|4099,California
 14,Fairfax A1,262,Virginia
@@ -16,13 +16,13 @@ team_id,team,student_ids,state
 16,SFBA/NorCal A2,4317|6122,California
 17,Oregon A1,359|6272,Oregon
 18,North Carolina A1,210|343|1312,North Carolina
-19,Lexington A1,35|223|249,Massachusetts
+19,Lexington A1,35|223|242|249,Massachusetts
 20,Montgomery A1,31|206|7082,Maryland
 21,Indiana B1,445|522|3103,Illinois
 22,Minnesota A1,352,Minnesota
-23,Ontario Math Circle A2,1034,"Ontario, Canada"
+23,Ontario Math Circles A2,1034,"Ontario, Canada"
 24,Michigan All Stars B1,258,Michigan
-25,Texas A2 Silver,367|914|1054|7087,Texas
+25,Texas Silver A2,367|914|1054|7087,Texas
 26,North Carolina A2,799,North Carolina
 27,NJ Reaching for Excellence B1,993|1525,New Jersey
 28,Michigan All Stars A1,1460,Michigan
@@ -30,8 +30,9 @@ team_id,team,student_ids,state
 30,Phillips Academy A1,36,Massachusetts
 31,Massachusetts A1,6358,Massachusetts
 32,Nassau B1,738,New York
-33,North Carolina  A1,12,North Carolina
-34,Tennessee B1,7086,Tennessee
+33,North Carolina A1,12,North Carolina
+34,Tennessee B1,6446,Tennessee
 35,Chicago A1,395,Illinois
 36,SFBA/NorCal A6,2375,California
 37,Washington A1,2359,Washington
+38,New Hampshire B1,39,New Hampshire
