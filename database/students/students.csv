@@ -1440,7 +1440,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1516,Justin Li,California,,male,
 1517,Chengcheng Qian,,,male,
 1518,Matthew Ji Chen,Minnesota,,male,
-1520,Xuanyi Zhang,California,,male,
+1520,Xuanyi Zhang,"Ontario, Canada",,male,
 1521,Harry Haiwen Gao,New York,Harry Gao,male,11
 1523,JUNNING SHAO,China,,male,
 1524,David Zhang,New Jersey,,male,
@@ -3536,7 +3536,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 3658,Mikaela Tereshkov,Florida,,female,
 3659,Oleksandr Voloshyn,California,,male,
 3660,Oskar Tomala,Massachusetts,,male,
-3661,Ryan Li,Massachusetts,,male,10
+3661,Ryan Li,"Ontario, Canada",,male,10
 3662,Shiraz Naser,New Jersey,,male,
 3663,Siddarth Sankar,Pennsylvania,,male,
 3664,Sohum Vajaria,California,,male,
@@ -6131,7 +6131,6 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6257,David Dong,North Carolina,,male,
 6258,Bryan Li,California,,male,
 6259,Alex Chen,Missouri,,male,15
-6260,Ryan Li,Canada,,male,
 6261,Daniel Zhao,,,male,
 6262,Yanming Huang,China,,male,
 6263,Daniel Wang,Texas,,male,
