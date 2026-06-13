@@ -58,7 +58,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 58,Hannah Fox,California,,female,13
 59,Henry Jiang,Michigan,,male,13
 60,Haotian Zhou,China,,male,
-61,Kailin Yang,New Jersey,Kailin Kevin Yang|Kevin Yang,male,
+61,Kailin Yang,New Jersey,Kailin Kevin Yang|Kevin Yang,male,12
 62,Evan Fan,New Hampshire,,male,12
 64,Michael Pok Hon Chen,New Jersey,Michael Chen,male,11
 65,Selena Ge,Massachusetts,,female,10
@@ -280,7 +280,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 304,Jerry Xu,Massachusetts,,male,
 306,Abhi Palikala,Virginia,,male,13
 307,Steven Lou,New York,,male,13
-308,Muztaba Syed,Massachusetts,,male,
+308,Muztaba Syed,Massachusetts,,male,13
 309,Aaron Wang,North Carolina,,male,12
 310,David Kim,Massachusetts,,male,
 311,Tony Zhang,Virginia,,male,12
@@ -1448,7 +1448,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1526,Patrick Liang,California,,male,
 1528,Huanqi Zhang,Massachusetts,,male,10
 1529,Daniel Gong Li,Maryland,,male,11
-1531,Yutong Zhao,New Jersey,Mark Yutong Zhao|Yutong Mark Zhao,male,
+1531,Yutong Zhao,New Jersey,Mark Yutong Zhao|Yutong Mark Zhao,male,11
 1532,Sirui Wu,China,"WU, SIRUI",male,
 1534,Girish Prasad,New York,,male,10
 1535,Aashritha Kolli,New Jersey,,female,
@@ -6916,3 +6916,4 @@ student_id,student_name,state,alias,gender,grade_in_2026
 7087,Eham Keur,Texas,,male,
 7088,Ethan Huang,California,,male,
 7089,Ryan Tang,Washington,,male,
+7090,Ryan Wang,California,,male,
