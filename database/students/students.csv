@@ -1222,7 +1222,6 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1289,Rui Jiang,Florida,,male,
 1290,Madhav Krishnaswamy,Virginia,,male,14
 1291,Alex Jun,Texas,,male,
-1292,Tanishq Paushkar,Ohio,,male,
 1293,Olivia Xu,California,,female,14
 1294,Mikayla Lin,New York,,female,14
 1295,Jeffrey Chen,"British Columbia, Canada",,male,15
@@ -1580,7 +1579,6 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1676,Joshua Kou,Texas,,male,
 1677,Ryan Chase Casey,New Hampshire,,male,
 1679,Huiran Zheng,,,female,
-1681,Tanishq Pauskar,Pennsylvania,,male,14
 1683,Alexander Yunjae Jun,Texas,,male,
 1684,Boyan,Massachusetts,,male,
 1685,James Lian,New York,,male,
@@ -1709,7 +1707,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1809,Eli Ying,California,,male,10
 1810,Edward Zeng,California,,male,
 1811,Alex Ruan,,,male,
-1812,Keith Li,California,,male,
+1812,Keith Li,California,,male,9
 1813,Ronald Wang,California,,male,
 1814,Angela Zhang,,,female,
 1815,Cindy Zhao,,,female,
