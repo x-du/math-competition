@@ -191,7 +191,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 211,Chenghao Hu,California,,male,11
 212,Nathan Lu,Maryland,,male,11
 213,Darren Han,Texas,,male,11
-214,Eric Guo,New Jersey,,male,
+214,Eric Guo,New Jersey,,male,10
 215,Michael Chen,New Jersey,,male,11
 216,Lingfei Tang,North Carolina,Lingfei Sophia Tang,female,11
 217,Sophia Jin,New York,,female,12
@@ -207,7 +207,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 227,Sylvia Lee,Massachusetts,,female,11
 228,Hamza Khan,,,male,
 229,Alexander Sun,Texas,Alex Sun,male,11
-231,Ryan Karim,West Virginia,,male,11
+231,Ryan Karim,Virginia,,male,11
 232,Aashita Mandiwal,Utah,,female,9
 233,Adam Smith,Pennsylvania,,male,
 234,Nolan McDermott,,,male,
@@ -2103,7 +2103,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 2212,Andrew Zhou,New Jersey,,male,
 2213,Alexander Mitev,California,,male,
 2215,Felix Liu,California,,male,
-2216,Amy Lin,New Jersey,,female,
+2216,Amy Lin,New Jersey,,female,13
 2217,Joel Pulikkan,,,male,
 2218,Hanyu Ivey Wang,New Jersey,,female,
 2219,Bowen Li,New York,,male,
@@ -5921,7 +5921,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6049,Raymond Zhou,,,male,
 6050,Leonardo Nguyen,,,male,
 6051,Pratham Prasanna,,,male,
-6052,Akshatha Arunkumar,California,,female,
+6052,Akshatha Arunkumar,California,,female,9
 6053,Yunfei Xia,California,,male,
 6054,Karthik Pasupuleti,,,male,
 6055,Prerana Manekar,,,female,
