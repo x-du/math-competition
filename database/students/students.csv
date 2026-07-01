@@ -209,7 +209,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 229,Alexander Sun,Texas,Alex Sun,male,11
 231,Ryan Karim,Virginia,,male,11
 232,Aashita Mandiwal,Utah,,female,9
-233,Adam Smith,Pennsylvania,,male,
+233,Adam Smith,Pennsylvania,Adam Henry Smith,male,
 234,Nolan McDermott,,,male,
 235,Paul Yoo,Virginia,,male,11
 236,Jennifer Zhou,Ohio,,female,
@@ -361,7 +361,6 @@ student_id,student_name,state,alias,gender,grade_in_2026
 390,ZHANGJINKAI,China,,male,
 391,Watson Houck,South Carolina,,male,
 392,Justin Guo,Tennessee,,male,11
-393,Adam Henry Smith,New Jersey,,male,
 394,Alexander Yang,Washington,Alex Yang,male,9
 395,Boyou Huang,Illinois,,male,9
 396,Elena Ahn Beckman,California,Elena Beckman,female,10
