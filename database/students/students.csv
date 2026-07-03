@@ -1443,7 +1443,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1523,JUNNING SHAO,China,,male,
 1524,David Zhang,New Jersey,,male,
 1525,Aaron Xie,New Jersey,,male,
-1526,Patrick Liang,California,,male,
+1526,Patrick Liang,California,,male,9
 1528,Huanqi Zhang,Massachusetts,,male,10
 1529,Daniel Gong Li,Maryland,,male,11
 1531,Yutong Zhao,New Jersey,Mark Yutong Zhao|Yutong Mark Zhao,male,11
@@ -2238,7 +2238,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 2354,Brenon Wang,Washington,,male,
 2355,Sunay Miduthuri,California,,male,
 2356,Guiqing Zhang,California,,female,
-2357,Alexander Braun,California,,male,
+2357,Alexander Braun,California,,male,8
 2358,Cris Chai,California,,male,
 2359,Vihaan Dev,Washington,,male,
 2360,Joey Guo,California,,male,
