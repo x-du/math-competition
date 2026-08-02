@@ -47,6 +47,7 @@
 
     add("usamo", function (s) { return s === "amo"; });
     add("usajmo", function (s) { return s === "jmo"; });
+    add("amm", function (s) { return s === "amm"; });
     add("imo", function (s) { return s.indexOf("imo") !== -1; });
     add("rmm", function (s) { return s.indexOf("rmm") !== -1; });
     add("egmo", function (s) { return s.indexOf("egmo") !== -1; });
@@ -147,6 +148,7 @@
     "smt__geometry": "SMT — Geometry",
     usamo: "USAMO",
     usajmo: "USAJMO",
+    amm: "AMM",
     imo: "IMO",
     rmm: "RMM",
     egmo: "EGMO",
@@ -168,6 +170,7 @@
   var GROUP_ORDER = [
     { multi: false, keys: ["usamo"] },
     { multi: false, keys: ["usajmo"] },
+    { multi: false, keys: ["amm"] },
     { multi: false, keys: ["imo"] },
     { multi: false, keys: ["rmm"] },
     { multi: false, keys: ["egmo"] },
@@ -215,7 +218,7 @@
   }
 
   var ALL_LEAF_KEYS = allLeafKeysList();
-  var SAVED_ALL_MIGRATION_OPTIONAL_KEYS = { emcc: true, hmic: true };
+  var SAVED_ALL_MIGRATION_OPTIONAL_KEYS = { emcc: true, hmic: true, amm: true };
 
   function savedSelectionWasPreviousAll(out) {
     if (!out || !out.length) return false;
@@ -236,6 +239,7 @@
   var LEAF_KEY_TO_SLUG = {
     usamo: "amo",
     usajmo: "jmo",
+    amm: "amm",
     imo: "imo",
     rmm: "rmm",
     egmo: "egmo",
