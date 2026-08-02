@@ -64,8 +64,9 @@ Competitions are classified into four tiers — **2000**, **1000**, **500**, and
 | **PUMaC Division A** | 30~45 | Overall individual and subject (Algebra, Combinatorics, Geometry, Number Theory) rankings. Elite division of Princeton's competition. |
 | **ARML Individual** | ~64 | Individual round ranking at the American Regions Math League. |
 | **USAMO** | ~150 | USA Mathematical Olympiad. The pinnacle national olympiad. Awards only (no individual ranks). |
+| **AMM** | ~127 | American Masters of Mathematics. Invitational proof competition (OMEGA); awards only (Gold / Silver / Bronze / Honorable Mention). |
 
-**Why these are Tier 1000:** These represent the most difficult and prestigious open competitions available to US high school students. HMMT February and PUMaC Division A draw the strongest fields in the country. USAMO is the national olympiad. ARML's individual round, while part of a team-oriented event, ranks students individually against the entire national field.
+**Why these are Tier 1000:** These represent the most difficult and prestigious open competitions available to US high school students. HMMT February and PUMaC Division A draw the strongest fields in the country. USAMO is the national olympiad. ARML's individual round, while part of a team-oriented event, ranks students individually against the entire national field. AMM is an invitation-selective proof contest designed by IMO coaches and medalists, with a field comparable to other premier US invitationals.
 
 ### Tier 500 — Major Competitions
 
@@ -145,7 +146,7 @@ $$\text{mcp}\_\text{points}(r) = \text{min}\_\text{pts} + (\text{max}\_\text{pts
 - `max_pts` = `Tier × weight` (1000 for Tier 1000 overall, 500 for Tier 1000 subject tests at 50%)
 - `min_pts` is decided by whether the competition has a selection process:
   - **No selection process** (open competition): `min_pts` = **10**. Examples: ARML, BAMO, DMM, CMIMC, MMATHS, CMM, BMT, BrUMO, JHMT.
-  - **Selection process** (selective competition): `min_pts` = **100** or **200**. Examples: HMMT February, MPFG, MPFG-Olympiad, MathCounts National use 100; USAMO, USAJMO use 200. See [`scripts/build_search_data.py`](https://github.com/x-du/math-competition/blob/main/scripts/build_search_data.py) `MCP_V2_PARAMS` for the authoritative values per contest.
+  - **Selection process** (selective competition): `min_pts` = **100** or **200**. Examples: HMMT February, AMM, MPFG, MPFG-Olympiad, MathCounts National use 100; USAMO, USAJMO use 200. See [`scripts/build_search_data.py`](https://github.com/x-du/math-competition/blob/main/scripts/build_search_data.py) `MCP_V2_PARAMS` for the authoritative values per contest.
 
 **Awardees only receive points.** Since we only know the awardees, we only calculate and assign points for the awardees. Students whose ranks are unknown (e.g., ranks 51–2000 when only top 50 are recognized) receive **0 points**.
 
@@ -196,6 +197,7 @@ The algorithm requires the **total competition size (N)** and **min_pts** for ea
 | **BMT Individual** | 500 | ~630 | ~135–315 | Open | 10 |
 | **ARML Individual** | 1000 | ~1,600 | ~45–65 | Open | 10 |
 | **USAMO** | 1000 | ~280 | ~135–155 | Selective (AMC/AIME qualifiers) | 200 |
+| **AMM** | 1000 | ~500 | ~127 | Selective (application/invitation) | 100 |
 | **USAJMO** | 500 | ~220 | ~143–166 | Selective (AMC/AIME qualifiers) | 200 |
 | **CMIMC** | 500 | ~200 | ~10 | Open | 10 |
 | **BAMO-12** | 500 | ~240 | ~25–36 | Open | 10 |
@@ -393,6 +395,7 @@ Result files are discovered dynamically — all result CSVs within each competit
 | SMT — Geometry | 500 | 50% | smt |
 | ARML Individual | 1000 | 100% | rank |
 | USAMO | 1000 | 100% | award |
+| AMM | 1000 | 100% | award |
 | HMMT November (overall) | 500 | 100% | rank |
 | HMMT Nov — General | 500 | 50% | rank |
 | HMMT Nov — Theme | 500 | 50% | rank |
@@ -515,6 +518,7 @@ MCP adapts the ATP/WTA tennis ranking model to competitive mathematics: competit
 | v1 | Initial | Original MCP specification: tier-based points, power-law curve, N = number of awardees, min_pts = 50% of max_pts |
 | v2 | 3/14/2026 | Point distribution upgrade: N = competition size (total participants); dynamic min_pts (10 for open, higher for selective); awardees only receive points |
 | v2.1 | 5/2026 | Documented **JHMT** (Tier 250); noted HMIC / MK / MC roster entries without MCP |
+| v2.2 | 8/2026 | Documented **AMM** (Tier 1000; award mode; N≈500, min_pts=100) |
 
 ---
 

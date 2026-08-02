@@ -3,6 +3,7 @@ imo,IMO,International Mathematical Olympiad,International Mathematical Olympiad.
 rmm,RMM,Romanian Master of Mathematics,Romanian Master of Mathematics. Elite international olympiad held each February in Bucharest.,https://rmms.lbi.ro/,2000,1.0,rank,us_rank
 egmo,EGMO,European Girls Mathematical Olympiad,European Girls' Mathematical Olympiad. International proof olympiad for female pre-college students.,https://www.egmo.org/,2000,1.0,rank,us_rank
 amo,USAMO,USA Mathematical Olympiad,USA Mathematical Olympiad. Top-tier national proof olympiad; qualification via the AMC and AIME.,https://maa.org/,1000,1.0,award,award
+amm,AMM,American Masters of Mathematics,American Masters of Mathematics. Invitational proof competition and festival organized by OMEGA; 4.5-hour exam with five proof problems.,https://www.omegausa.org/,1000,1.0,award,award
 jmo,USAJMO,USA Junior Mathematical Olympiad,USA Junior Mathematical Olympiad. National proof olympiad for students in grade 10 and below.,https://maa.org/,500,1.0,award,award
 hmmt-feb,HMMT February,Harvard-MIT Mathematics Tournament February,"Harvard-MIT Mathematics Tournament (February), the harder edition. Individual scores from Algebra, Geometry, and Combinatorics rounds; mid-AIME to olympiad.",https://www.hmmt.org/,1000,1.0,rank,rank
 hmmt-nov,HMMT November,Harvard-MIT Mathematics Tournament November,Harvard-MIT Mathematics Tournament (November). Individual scores from General and Theme rounds; mid-AMC to upper-AIME difficulty.,https://www.hmmt.org/,500,1.0,rank,rank
