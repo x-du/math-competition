@@ -95,6 +95,8 @@ MCP_V2_PARAMS = {
     "smt-geometry": {2026: (264, 10)},
     "arml": {"default": (1600, 10)},
     "amo": {"default": (280, 200)},
+    # AMM: application-selective; awards to over half of field
+    "amm": {"default": (500, 100)},
     "jmo": {"default": (220, 200)},
     "cmimc": {"default": (500, 10)},
     "bamo-12": {"default": (240, 10)},
