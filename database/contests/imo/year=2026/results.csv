@@ -1,0 +1,16 @@
+student_id,student_name,country,award,rank,us_rank,P1,P2,P3,P4,P5,P6,total,mcp_rank
+4,Liam Reddy,United States of America,Gold medal,1,1,7,7,7,7,7,7,42,1
+1,Alexander Wang,United States of America,Gold medal,1,2,7,7,7,7,7,7,42,2
+10,Ruilin Wang,United States of America,Gold medal,9,3,7,7,4,7,7,7,39,3
+387,Royce Yao,United States of America,Gold medal,13,4,7,7,4,7,5,7,37,4
+895,Perry Dai,Canada,Gold medal,34,,7,7,1,7,7,1,30,
+6179,Aarav Gupta,India,Gold medal,34,,7,7,0,7,7,2,30,
+415,Christopher Li,Canada,Silver medal,56,,7,7,0,7,7,0,28,
+1636,Tymon Sidor,Poland,Silver medal,76,,7,0,4,6,7,3,27,
+113,Feodor Yevtushenko,United States of America,Silver medal,90,5,7,0,4,7,7,1,26,5
+990,Leo Wu,Canada,Silver medal,117,,7,2,1,7,7,0,24,
+335,Yuxin Fu,Canada,Bronze medal,161,,7,1,1,7,5,1,22,
+621,Sebastian Chase,Hong Kong,Bronze medal,161,,7,1,0,7,7,0,22,
+5,Tianyi Li,Canada,Bronze medal,205,,7,0,0,7,7,0,21,
+3,Oron Wang,United States of America,Bronze medal,205,6,7,0,1,7,5,1,21,6
+6801,Patrek Ragnarsson,Iceland,Bronze medal,227,,7,0,1,7,5,0,20,
