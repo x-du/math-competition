@@ -1303,20 +1303,7 @@
     if (!s) return false;
     if (girlsEl && girlsEl.checked && (s.gender || "").toLowerCase() !== "female") return false;
     if (gradeEl && gradeWrap && !gradeWrap.hidden && gradeEl.value && gradeEl.value !== "") {
-      var wantLabel = gradeEl.value;
-      var lab = getGradeLabel(s.grade_in_2026);
-      var key = gradeLabelSortKey(lab);
-      if (wantLabel === "__none__") {
-        if (lab !== "") return false;
-      } else if (wantLabel === "__hs__") {
-        if (!((key >= 9 && key <= 12) || lab === "")) return false;
-      } else if (wantLabel === "__prehs__") {
-        if (!(key > 0 && key < 9)) return false;
-      } else if (wantLabel === "__hof__") {
-        if (!(key > 12)) return false;
-      } else if (lab !== wantLabel) {
-        return false;
-      }
+      if (!studentMatchesGradeWant(s, gradeEl.value)) return false;
     }
     if (stateEl && stateEl.value && stateEl.value !== "") {
       var wantState = stateEl.value;
@@ -2635,6 +2622,22 @@
     return "U" + (2026 + 16 - g);
   }
 
+  /**
+   * Grade-filter match. High School / Pre High School / Hall of Fame use current
+   * grade (school year rolls Sept 1), not label sort keys — after the rollover,
+   * U2030 (just-graduated seniors) has the same sort key as H2026.
+   * High School includes missing grades, but not middle school or college.
+   */
+  function studentMatchesGradeWant(s, wantLabel) {
+    var lab = getGradeLabel(s && s.grade_in_2026);
+    var current = getCurrentGrade(s && s.grade_in_2026);
+    if (wantLabel === "__none__") return lab === "";
+    if (wantLabel === "__hs__") return lab === "" || (current != null && current >= 9 && current <= 12);
+    if (wantLabel === "__prehs__") return current != null && current >= 1 && current <= 8;
+    if (wantLabel === "__hof__") return current != null && current > 12;
+    return lab === wantLabel;
+  }
+
   /** Sort key for grade labels: M2026..M2033 (1-8), H2026..H2029 (9-12), U2026.. (13+). */
   function gradeLabelSortKey(label) {
     if (!label || label === "") return -1;
@@ -3045,7 +3048,7 @@
     }
     var gradeLabels = [];
     for (var k in gradeLabelSet) {
-      if (Object.prototype.hasOwnProperty.call(gradeLabelSet, k) && gradeLabelSortKey(k) <= 12) {
+      if (Object.prototype.hasOwnProperty.call(gradeLabelSet, k) && (k.charAt(0) === "H" || k.charAt(0) === "M")) {
         gradeLabels.push(k);
       }
     }
@@ -3116,13 +3119,7 @@
     if (gradeFilterEl && gradeFilterWrapEl && !gradeFilterWrapEl.hidden && gradeFilterEl.value && gradeFilterEl.value !== "") {
       var wantLabel = gradeFilterEl.value;
       students = students.filter(function (s) {
-        var lab = getGradeLabel(s.grade_in_2026);
-        var key = gradeLabelSortKey(lab);
-        if (wantLabel === "__none__") return lab === "";
-        if (wantLabel === "__hs__") return (key >= 9 && key <= 12) || lab === "";
-        if (wantLabel === "__prehs__") return key > 0 && key < 9;
-        if (wantLabel === "__hof__") return key > 12;
-        return lab === wantLabel;
+        return studentMatchesGradeWant(s, wantLabel);
       });
     }
     if (stateFilterEl && stateFilterEl.value && stateFilterEl.value !== "") {
