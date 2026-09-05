@@ -6264,7 +6264,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6403,Jimmy Fan,Nevada,,male,7
 6404,Maha'era Neil Aggarwal,Nevada,,female,7
 6406,Alan Ji,New York,,male,8
-6407,Zale Zhang,New York,,,8
+6407,Zale Zhang,New York,,male,8
 6408,Nicole Bao,Ohio,,female,8
 6409,Julian Hsiao,Ohio,,male,6
 6410,Aarush Sahoo,Ohio,,male,8
@@ -6770,7 +6770,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6942,Ayan Khasgiwala,,,male,
 6943,Ernie Fu,,,male,
 6944,Shaanvi Mishra,,,female,
-6945,Khunhoon Lee,,,,
+6945,Khunhoon Lee,,,male,
 6946,Srikar Papineni,,,male,
 6947,Ziqi (Lisa) Zheng,,,female,
 6948,Brendan Gho,,,male,
