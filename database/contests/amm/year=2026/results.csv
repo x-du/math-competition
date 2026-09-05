@@ -13,7 +13,7 @@ student_id,student_name,state,award,mcp_rank
 884,Shihan Kanungo,California,Gold,15
 69,Connor Leong,California,Gold,15
 34,Jiahe Liu,Ohio,Gold,15
-6857,Aaron Luo,,Gold,15
+6857,Aaron Luo,California,Gold,15
 363,Michael Luo,Minnesota,Gold,15
 40,Darsh Patel,Florida,Gold,15
 43,Christopher Peng,Washington,Gold,15
@@ -30,8 +30,9 @@ student_id,student_name,state,award,mcp_rank
 13,Michael Zhao,Texas,Gold,15
 396,Elena Beckman,California,Silver,48
 37,Grant Blitz,New Hampshire,Silver,48
-7070,Noah Butler,,Silver,48
+7070,Noah Butler,California,Silver,48
 24,Ryan Chen,Washington,Silver,48
+352,Eric Ding,Minnesota,Silver,48
 245,Corwin Eisenbeiss,New York,Silver,48
 914,Bryan Fu,Texas,Silver,48
 25,Rohan Garg,California,Silver,48
@@ -42,7 +43,6 @@ student_id,student_name,state,award,mcp_rank
 1566,Arjun Leih,Connecticut,Silver,48
 921,Alicia Li,New York,Silver,48
 82,Edward Li,Iowa,Silver,48
-7092,Emma Li,,Silver,48
 1466,Jack Li,Illinois,Silver,48
 381,Albert Lu,New Hampshire,Silver,48
 6821,Audrey Ma,New York,Silver,48
@@ -65,64 +65,66 @@ student_id,student_name,state,award,mcp_rank
 6,Jefferson Tiger Zhou,Minnesota,Silver,48
 210,Eric Zhu,North Carolina,Silver,48
 270,Raymond Zhu,Washington,Silver,48
-1009,Zachary Berchenko,Minnesota,Bronze,88
-800,Nikhil Byrapuram,Massachusetts,Bronze,88
-1243,Brandon Chan,Michigan,Bronze,88
-912,Brett Chang,California,Bronze,88
-1012,Michael Chang,Texas,Bronze,88
-7095,Chris Chen,,Bronze,88
-700,Eddison Chen,Kansas,Bronze,88
-7096,Elisa Chen,,Bronze,88
-1014,Lanie Deng,Missouri,Bronze,88
-3103,Alexander Gao,Indiana,Bronze,88
-377,Xiaoran Han,California,Bronze,88
-899,Eden He,Pennsylvania,Bronze,88
-256,Kylan Huang,New York,Bronze,88
-7018,Terry Huang,New Jersey,Bronze,88
-1348,Haruka Kimura,Connecticut,Bronze,88
-729,Julian Kuang,Nevada,Bronze,88
-485,Joshua Liu,Colorado,Bronze,88
-1342,Tianlin Jessica Liu,California,Bronze,88
-1082,Hannah Ma,Washington,Bronze,88
-5789,Benjamin Muchnik,,Bronze,88
-1470,Tianze Qiu,New York,Bronze,88
-262,Aryan Raj,Virginia,Bronze,88
-254,Tarun Rapaka,Texas,Bronze,88
-1304,Ethan Shan,Virginia,Bronze,88
-239,Satvik Sharma,Pennsylvania,Bronze,88
-7097,Collin Sun,,Bronze,88
-27,Bolei Wang,New Hampshire,Bronze,88
-822,Charlie Wang,Alaska,Bronze,88
-906,Ryan Wang,California,Bronze,88
-824,Wesley Wu,Washington,Bronze,88
-1332,Yunong Wu,New York,Bronze,88
-6268,Benjamin Xiao,California,Bronze,88
-275,Catherine Xu,Iowa,Bronze,88
-23,Jeffrey Yin,Virginia,Bronze,88
-1809,Eli Ying,California,Bronze,88
-318,David Yu,Maryland,Bronze,88
-1938,Lucas Yuan,California,Bronze,88
-932,Leo Zeng,California,Bronze,88
-6882,Allison Zhang,Minnesota,Bronze,88
-311,Tony Zhang,Virginia,Bronze,88
-209,Hongming Allan Zhao,New Jersey,Bronze,88
-358,Franklin Zhou,California,Bronze,88
-614,Anthony Zou,South Carolina,Bronze,88
-1031,William Chen,Texas,Honorable Mention,118.5
-7098,Kaio Deeter,,Honorable Mention,118.5
-821,Taiwen Feng,Michigan,Honorable Mention,118.5
-7099,Marty He,,Honorable Mention,118.5
-3642,Ethan Jiao,Illinois,Honorable Mention,118.5
-378,Daniel Jin,New York,Honorable Mention,118.5
-217,Sophia Jin,New York,Honorable Mention,118.5
-310,David Kim,Massachusetts,Honorable Mention,118.5
-986,Kyle Lin,Texas,Honorable Mention,118.5
-7100,Frank Ouyang,,Honorable Mention,118.5
-1460,Woojin Seong,Michigan,Honorable Mention,118.5
-1022,Eric Shao,Washington,Honorable Mention,118.5
-67,Andrew Shen,Texas,Honorable Mention,118.5
-7101,Dylan Sohn,,Honorable Mention,118.5
-1024,Natalie Song,California,Honorable Mention,118.5
-905,Ryan Tang,Massachusetts,Honorable Mention,118.5
-6810,Brad Yen,California,Honorable Mention,118.5
-1531,Yutong Zhao,New Jersey,Honorable Mention,118.5
+1009,Zachary Berchenko,Minnesota,Bronze,89
+800,Nikhil Byrapuram,Massachusetts,Bronze,89
+1243,Brandon Chan,Michigan,Bronze,89
+912,Brett Chang,California,Bronze,89
+1012,Michael Chang,Texas,Bronze,89
+7095,Chris Chen,,Bronze,89
+700,Eddison Chen,Kansas,Bronze,89
+1014,Lanie Deng,Missouri,Bronze,89
+3103,Alexander Gao,Indiana,Bronze,89
+377,Xiaoran Han,California,Bronze,89
+899,Eden He,Pennsylvania,Bronze,89
+256,Kylan Huang,New York,Bronze,89
+7018,Terry Huang,New Jersey,Bronze,89
+7102,Karsten Huber,,Bronze,89
+1348,Haruka Kimura,Connecticut,Bronze,89
+729,Julian Kuang,Nevada,Bronze,89
+7092,Emma Li,,Bronze,89
+485,Joshua Liu,Colorado,Bronze,89
+1342,Tianlin Jessica Liu,California,Bronze,89
+1082,Hannah Ma,Washington,Bronze,89
+5789,Benjamin Muchnik,,Bronze,89
+1470,Tianze Qiu,New York,Bronze,89
+262,Aryan Raj,Virginia,Bronze,89
+254,Tarun Rapaka,Texas,Bronze,89
+1304,Ethan Shan,Virginia,Bronze,89
+239,Satvik Sharma,Pennsylvania,Bronze,89
+7097,Collin Sun,,Bronze,89
+27,Bolei Wang,New Hampshire,Bronze,89
+822,Charlie Wang,Alaska,Bronze,89
+906,Ryan Wang,California,Bronze,89
+1090,Immanuel Whang,Washington,Bronze,89
+824,Wesley Wu,Washington,Bronze,89
+1332,Yunong Wu,New York,Bronze,89
+6268,Benjamin Xiao,California,Bronze,89
+275,Catherine Xu,Iowa,Bronze,89
+23,Jeffrey Yin,Virginia,Bronze,89
+1809,Eli Ying,California,Bronze,89
+318,David Yu,Maryland,Bronze,89
+1938,Lucas Yuan,California,Bronze,89
+932,Leo Zeng,California,Bronze,89
+6882,Allison Zhang,Minnesota,Bronze,89
+311,Tony Zhang,Virginia,Bronze,89
+209,Hongming Allan Zhao,New Jersey,Bronze,89
+358,Franklin Zhou,California,Bronze,89
+614,Anthony Zou,South Carolina,Bronze,89
+1031,William Chen,Texas,Honorable Mention,120.5
+7098,Kaio Deeter,,Honorable Mention,120.5
+821,Taiwen Feng,Michigan,Honorable Mention,120.5
+833,Marty Ho,Georgia,Honorable Mention,120.5
+3642,Ethan Jiao,Illinois,Honorable Mention,120.5
+378,Daniel Jin,New York,Honorable Mention,120.5
+217,Sophia Jin,New York,Honorable Mention,120.5
+310,David Kim,Massachusetts,Honorable Mention,120.5
+986,Kyle Lin,Texas,Honorable Mention,120.5
+7100,Frank Ouyang,,Honorable Mention,120.5
+1460,Woojin Seong,Michigan,Honorable Mention,120.5
+1022,Eric Shao,Washington,Honorable Mention,120.5
+67,Andrew Shen,Texas,Honorable Mention,120.5
+7101,Dylan Sohn,,Honorable Mention,120.5
+1024,Natalie Song,California,Honorable Mention,120.5
+905,Ryan Tang,Massachusetts,Honorable Mention,120.5
+6810,Brad Yen,California,Honorable Mention,120.5
+1531,Yutong Zhao,New Jersey,Honorable Mention,120.5

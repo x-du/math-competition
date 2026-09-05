@@ -64,7 +64,7 @@ Competitions are classified into four tiers — **2000**, **1000**, **500**, and
 | **PUMaC Division A** | 30~45 | Overall individual and subject (Algebra, Combinatorics, Geometry, Number Theory) rankings. Elite division of Princeton's competition. |
 | **ARML Individual** | ~64 | Individual round ranking at the American Regions Math League. |
 | **USAMO** | ~150 | USA Mathematical Olympiad. The pinnacle national olympiad. Awards only (no individual ranks). |
-| **AMM** | ~127 | American Masters of Mathematics. Invitational proof competition (OMEGA); awards only (Gold / Silver / Bronze / Honorable Mention). |
+| **AMM** | 129 | American Masters of Mathematics. Invitational proof competition (OMEGA); awards only (Gold / Silver / Bronze / Honorable Mention). |
 
 **Why these are Tier 1000:** These represent the most difficult and prestigious open competitions available to US high school students. HMMT February and PUMaC Division A draw the strongest fields in the country. USAMO is the national olympiad. ARML's individual round, while part of a team-oriented event, ranks students individually against the entire national field. AMM is an invitation-selective proof contest designed by IMO coaches and medalists, with a field comparable to other premier US invitationals.
 
@@ -197,7 +197,7 @@ The algorithm requires the **total competition size (N)** and **min_pts** for ea
 | **BMT Individual** | 500 | ~630 | ~135–315 | Open | 10 |
 | **ARML Individual** | 1000 | ~1,600 | ~45–65 | Open | 10 |
 | **USAMO** | 1000 | ~280 | ~135–155 | Selective (AMC/AIME qualifiers) | 200 |
-| **AMM** | 1000 | ~500 | ~127 | Selective (application/invitation) | 100 |
+| **AMM** | 1000 | ~500 | 129 | Selective (application/invitation) | 100 |
 | **USAJMO** | 500 | ~220 | ~143–166 | Selective (AMC/AIME qualifiers) | 200 |
 | **CMIMC** | 500 | ~200 | ~10 | Open | 10 |
 | **BAMO-12** | 500 | ~240 | ~25–36 | Open | 10 |

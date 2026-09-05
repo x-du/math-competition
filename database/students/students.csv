@@ -1369,7 +1369,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1445,Derek Xu,New York,,male,
 1446,Edward Li,Washington,,male,11
 1447,William Wu,Illinois,,male,8
-1448,Youran Charlie Gu,New Jersey,Charlie Gu|Youran Gu,male,10
+1448,Youran Charlie Gu,New Jersey,Charlie Gu|Youran Gu|Charlie (Youran) Gu,male,10
 1449,Max Salvestrini,New York,,male,
 1451,Mihir Kumar,New York,,male,
 1452,Anand Swaroop,Massachusetts,,male,11
@@ -5654,7 +5654,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 5786,Anna Vasylenko,New York,,female,
 5787,Daniel Obreja,Washington,,male,
 5788,Jinghang Chen,Washington,,male,
-5789,Benjamin Muchnik,,,male,
+5789,Benjamin Muchnik,New York,,male,10
 5790,David Gu,,,male,
 5791,Andrew Slattery,,,male,
 5792,Haani Khurshid,,,male,
@@ -5917,7 +5917,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6050,Leonardo Nguyen,,,male,
 6051,Pratham Prasanna,,,male,
 6052,Akshatha Arunkumar,California,,female,9
-6053,Yunfei Xia,California,,male,
+6053,Yunfei Xia,California,Yunfei (Steven) Xia,male,
 6054,Karthik Pasupuleti,,,male,
 6055,Prerana Manekar,,,female,
 6056,Brian Qin,,,male,
@@ -6687,7 +6687,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6854,Daniel Hwang,,,male,
 6855,Joshua Wu,California,,male,
 6856,Everett Keninger,,,male,
-6857,Aaron Luo,,,male,
+6857,Aaron Luo,California,,male,
 6858,Aanya Singh,,,female,
 6859,Rohan Goyal,,,male,
 6860,Tanvi Dhoot,,,female,
@@ -6877,7 +6877,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 7051,Harshal Seth,,,male,
 7052,Noah Park,,,male,
 7053,Hrid Mallik,,,male,
-7054,Yichen Sun,,,,
+7054,Yichen Sun,,,male,
 7055,Rudy Zhang,,,male,
 7056,William Kim,,,male,
 7057,Howard Zhang,,,male,
@@ -6893,7 +6893,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 7067,Ayden Lee,,,male,
 7068,James Yang,California,,male,
 7069,Raja Gorrepati,,,male,
-7070,Noah Butler,,,male,
+7070,Noah Butler,California,,male,11
 7071,Reed Truong,California,,male,
 7072,Kiran She,,,,
 7073,Andrew Jahng,,,male,
@@ -6909,14 +6909,13 @@ student_id,student_name,state,alias,gender,grade_in_2026
 7088,Ethan Huang,California,,male,
 7089,Ryan Tang,Washington,,male,
 7090,Ryan Wang,California,,male,
-7091,Yixuan Gou,,,,
-7092,Emma Li,,,female,
-7093,Lixing Shen,,,male,
-7094,Franklyn Xue,,,male,
-7095,Chris Chen,,,male,
-7096,Elisa Chen,,,female,
-7097,Collin Sun,,,male,
-7098,Kaio Deeter,,,male,
-7099,Marty He,,,male,
-7100,Frank Ouyang,,,male,
-7101,Dylan Sohn,,,male,
+7091,Yixuan Gou,,Yixuan (Steven) Gou|Steven Gou,male,
+7092,Emma Li,Washington,,female,11
+7093,Lixing Shen,Washington,,male,10
+7094,Franklyn Xue,Washington,,male,12
+7095,Chris Chen,,,male,10
+7097,Collin Sun,Texas,,male,11
+7098,Kaio Deeter,California,,male,11
+7100,Frank Ouyang,Washington,,male,11
+7101,Dylan Sohn,New York,,male,11
+7102,Karsten Huber,Colorado,,male,12
