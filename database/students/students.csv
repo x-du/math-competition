@@ -1008,7 +1008,6 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1066,Hayden Chen,California,,male,
 1068,Rachel Chen,California,,female,
 1069,Sophie Chen,Connecticut,,female,11
-1070,Jiya Dani,Texas,,male,
 1071,Aiden Gao,California,,male,
 1072,Marvin Gao,Florida,,male,
 1073,Angie Huang,Minnesota,,female,12
@@ -1462,7 +1461,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1548,Benjamin Huang,New York,,male,
 1550,Johnson Jiang,California,,male,
 1551,Adam Oliver Yanco,Massachusetts,,male,
-1552,Daniel Tian Wu,Massachusetts,,male,
+1552,Daniel Tian Wu,Massachusetts,Daniel Wu,male,
 1554,YI SUIHAN,China,,male,
 1555,Quang (Benny) Le,Georgia,,male,
 1556,Max Liang,New Jersey,,male,7
@@ -1562,7 +1561,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1661,Hwiseo,Massachusetts,,female,
 1662,Isaac Jo,,,male,
 1663,Victor Lin,Texas,,male,
-1664,Jiya Neelesh Deo Dani,Texas,,female,
+1664,Jiya Neelesh Deo Dani,Texas,Jiya Dani,female,
 1665,William Jimenez,Illinois,,male,
 1666,Michael Ren,Texas,,male,
 1668,Grace Liu,North Carolina,,female,
@@ -2074,7 +2073,6 @@ student_id,student_name,state,alias,gender,grade_in_2026
 2184,Maggie Li,New York,,female,
 2185,Sky Chen,New York,,male,
 2186,Thomas McCurley,California,,male,
-2187,Daniel Wu,Pennsylvania,,male,
 2188,Victor Wang,Pennsylvania,,male,
 2189,Shreyan Dutt,Massachusetts,,male,
 2190,Oma Makhija,New Jersey,,female,
@@ -3530,7 +3528,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 3658,Mikaela Tereshkov,Florida,,female,
 3659,Oleksandr Voloshyn,California,,male,
 3660,Oskar Tomala,Massachusetts,,male,
-3661,Ryan Li,"Ontario, Canada",,male,10
+3661,Ryan Li,"Ontario, Canada",,male,12
 3662,Shiraz Naser,New Jersey,,male,
 3663,Siddarth Sankar,Pennsylvania,,male,
 3664,Sohum Vajaria,California,,male,

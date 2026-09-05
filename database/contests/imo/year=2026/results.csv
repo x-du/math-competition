@@ -1,6 +1,6 @@
 student_id,student_name,country,award,rank,us_rank,P1,P2,P3,P4,P5,P6,total,mcp_rank
 4,Liam Reddy,United States of America,Gold medal,1,1,7,7,7,7,7,7,42,1
-1,Alexander Wang,United States of America,Gold medal,1,2,7,7,7,7,7,7,42,2
+1,Alexander Wang,United States of America,Gold medal,1,1,7,7,7,7,7,7,42,2
 10,Ruilin Wang,United States of America,Gold medal,9,3,7,7,4,7,7,7,39,3
 387,Royce Yao,United States of America,Gold medal,13,4,7,7,4,7,5,7,37,4
 895,Perry Dai,Canada,Gold medal,34,,7,7,1,7,7,1,30,
