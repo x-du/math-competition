@@ -89,6 +89,7 @@
   var featurePromotions = [];
   var activePromotionIndex = 0;
   var promotionPopoverOpen = false;
+  var promotionAutoOpenHandled = false;
   var promotionOutsidePointerHandler = null;
   var lastTrackedStudentCardViewId = null;
   var lastTrackedSearchEventKey = null;
@@ -233,6 +234,19 @@
     return activePromotionIndex;
   }
 
+  function autoOpenPromotionOnFirstVisit(promotion) {
+    if (promotionAutoOpenHandled) return;
+    promotionAutoOpenHandled = true;
+    if (!promotion || !promotion.autoOpenOnVisit) return;
+
+    var storageKey = "mathintegrity_promotion_seen_" + (promotion.id || "first");
+    try {
+      if (window.localStorage.getItem(storageKey)) return;
+      window.localStorage.setItem(storageKey, "1");
+    } catch (e) { /* Continue with an in-memory one-time open if storage is unavailable. */ }
+    promotionPopoverOpen = true;
+  }
+
   function renderPromotionBanner() {
     var bannerEl = document.getElementById("promotion-banner");
     if (!bannerEl) return;
@@ -249,6 +263,7 @@
     }
     var idx = normalizePromotionIndex(activePromotions.length);
     var promotion = activePromotions[idx];
+    autoOpenPromotionOnFirstVisit(promotion);
 
     bannerEl.innerHTML = "";
     var popoverId = "promotion-banner-popover";

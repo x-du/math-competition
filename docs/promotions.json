@@ -1,5 +1,17 @@
 [
   {
+    "id": "mathintegrity-community-survey",
+    "enabled": true,
+    "startDate": "2026-09-05",
+    "showOnLocalhost": true,
+    "autoOpenOnVisit": true,
+    "label": "Help the math community",
+    "title": "Share Competition Integrity Measures",
+    "description": "Please take our one-minute survey for each competition you have attended to improve integrity. Random submissions and the person with the most referrals will receive $50 gift cards!",
+    "ctaText": "Take the survey",
+    "href": "https://forms.gle/ZPJMqy3J7B4vRV3m8"
+  },
+  {
     "id": "amm-results-2026",
     "enabled": true,
     "startDate": "2026-09-05",
