@@ -1315,6 +1315,9 @@ body.contest-filter-popover-open {
 
 .promotion-banner__actions {
   margin-top: 0.65rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .promotion-banner__pager {

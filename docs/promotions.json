@@ -1,5 +1,35 @@
 [
   {
+    "id": "amm-results-2026",
+    "enabled": true,
+    "startDate": "2026-09-05",
+    "endDate": "2026-10-01",
+    "showOnLocalhost": true,
+    "label": "New results",
+    "title": "AMM 2026",
+    "description": "American Masters of Mathematics 2026 results are now available on mathintegrity.org — Gold, Silver, and Bronze awards.",
+    "ctaText": "View AMM 2026 results",
+    "href": "csv-viewer.html?contest=amm&year=2026&file=results.csv&name=AMM",
+    "extraLinks": [
+      {
+        "ctaText": "Official winners PDF",
+        "href": "https://www.omegausa.org/AMM2026/AMM2026-winners.pdf"
+      }
+    ]
+  },
+  {
+    "id": "imo-results-2026",
+    "enabled": true,
+    "startDate": "2026-09-05",
+    "endDate": "2026-10-01",
+    "showOnLocalhost": true,
+    "label": "New results",
+    "title": "IMO 2026",
+    "description": "International Mathematical Olympiad 2026 official scores are now available on mathintegrity.org — medals, problem scores, and ranks.",
+    "ctaText": "View IMO 2026 results",
+    "href": "csv-viewer.html?contest=imo&year=2026&file=official-scores.csv&name=IMO"
+  },
+  {
     "id": "arml-results-2026",
     "enabled": true,
     "startDate": "2026-06-02",
