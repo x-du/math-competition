@@ -113,7 +113,7 @@
     if (!visible.length) list.append(node('p', 'empty', 'No competitions match these filters. Try a longer drive, include local-host events, or reset filters.'));
     const o = options();
     const excluded = state.origin && o.mode === 'drive' ? state.events.filter(e => e.location && !travel(e).reachable).length : 0;
-    $('results-note').textContent = (excluded ? `${excluded} campus events are outside your driving limit or have no verified route. ` : '') + 'Campus pins are approximate; confirm the venue before booking. Local hosts are not distance-filtered.';
+    $('results-note').textContent = (excluded ? `${excluded} campus events are outside your estimated driving limit or have no supported estimate. ` : '') + 'Campus pins are approximate; confirm the venue before booking. Local hosts are not distance-filtered.';
     renderSchedule(); renderMarkers(visible);
   }
   function closePin() {
@@ -170,40 +170,17 @@
     let timer;
     return Promise.race([promise, new Promise((_, reject) => { timer = setTimeout(() => reject(new Error('timeout')), ms); })]).finally(() => clearTimeout(timer));
   }
-  function setBusy(busy) { state.busy = busy; $('find-button').disabled = busy; $('find-button').textContent = busy ? 'Finding your route…' : 'Find competitions ↗'; }
+  function setBusy(busy) { state.busy = busy; $('find-button').disabled = busy; $('find-button').textContent = busy ? 'Finding your location…' : 'Find competitions ↗'; }
   async function chooseOrigin(result, generation) {
     if (generation !== state.generation) return;
     $('location-choices').hidden = true;
     state.origin = result.position; state.routes.clear();
     $('origin').value = result.label;
-    $('travel-status').textContent = 'Starting from ' + result.label + '. Checking driving routes…';
-    render(); fitMap();
-    try {
-      if (!state.mapsReady) {
-        $('travel-status').textContent = 'Starting from ' + result.label + ' (approximate). Google driving estimates are unavailable; choose “Willing to fly” to browse destinations.';
-        return;
-      }
-      const { RouteMatrix } = await timeout(google.maps.importLibrary('routes'));
-      const destinations = [...new Map(state.events.filter(e => e.location).map(e => [C.routeKey(e.location), e.location])).values()];
-      // Stay under the API's destination limits as the catalog grows.
-      for (let offset = 0; offset < destinations.length; offset += 25) {
-        if (generation !== state.generation) return;
-        const batch = destinations.slice(offset, offset + 25);
-        const { matrix } = await timeout(RouteMatrix.computeRouteMatrix({ origins: [state.origin], destinations: batch.map(l => ({ lat: l.lat, lng: l.lng })), travelMode: 'DRIVING', routingPreference: 'TRAFFIC_UNAWARE', fields: ['condition', 'durationMillis', 'distanceMeters'] }));
-        if (generation !== state.generation) return;
-        batch.forEach((destination, i) => {
-          const item = matrix.rows[0]?.items[i];
-          state.routes.set(C.routeKey(destination), item && !item.error && item.condition === 'ROUTE_EXISTS' && Number.isFinite(item.durationMillis) && Number.isFinite(item.distanceMeters) ? { status: 'ok', hours: item.durationMillis / 3600000, miles: item.distanceMeters / 1609.344 } : { status: item?.condition === 'ROUTE_NOT_FOUND' ? 'no-route' : 'error' });
-        });
-      }
-      const errors = [...state.routes.values()].filter(r => r.status === 'error').length;
-      $('travel-status').textContent = `Starting from ${result.label} (approximate). Driving times exclude traffic and stops; some destinations are approximate host areas.` + (errors ? ` ${errors} routes could not be verified.` : '') + ' Flying shows destinations to consider, not available flights.';
-    } catch {
-      if (generation !== state.generation) return;
-      $('travel-status').textContent = 'Your starting point was found, but some driving routes could not be checked. Drive-only results exclude unverified routes. Retry the search, or browse destinations with “Willing to fly”.';
-    } finally {
-      if (generation === state.generation) { setBusy(false); render(); fitMap(); }
+    for (const event of state.events.filter(e => e.location)) {
+      state.routes.set(C.routeKey(event.location), C.estimateRoute(state.origin, event.location));
     }
+    $('travel-status').textContent = 'Starting from ' + result.label + '. Showing rough travel estimates, not verified road routes. Check directions before making plans.';
+    setBusy(false); render(); fitMap();
   }
   $('travel-form').addEventListener('submit', async event => {
     event.preventDefault();
@@ -256,27 +233,6 @@
     const url = URL.createObjectURL(new Blob([C.calendar(events)], { type: 'text/calendar;charset=utf-8' }));
     const a = node('a'); a.href = url; a.download = 'math-competition-schedule.ics'; document.body.append(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(url), 1000);
   });
-  function mapUnavailable(message) {
-    state.mapsReady = false;
-    $('travel-status').textContent = message + ' The US map and schedule remain available.';
-    render();
-  }
-  async function loadMap() {
-    const config = window.COMPETITION_PLANNER_CONFIG || {};
-    if (!config.googleMapsApiKey) {
-      mapUnavailable('Connect Google Maps to enable driving estimates.'); return;
-    }
-    try {
-      await timeout(new Promise((resolve, reject) => {
-        window.initCompetitionMap = resolve;
-        window.gm_authFailure = () => { reject(new Error('auth')); mapUnavailable('Google Maps could not authorize this site. The maintainer should check the API key, billing, and allowed website domains.'); };
-        const script = document.createElement('script');
-        script.src = 'https://maps.googleapis.com/maps/api/js?' + new URLSearchParams({ key: config.googleMapsApiKey, v: 'weekly', loading: 'async', callback: 'initCompetitionMap' });
-        script.async = true; script.onerror = () => reject(new Error('network')); document.head.append(script);
-      }));
-      state.mapsReady = true;
-    } catch { mapUnavailable('Google Maps could not load. Check your connection, or try again later. Competition details and your schedule are still available.'); }
-  }
   try {
     const response = await timeout(fetch('competition_events.json'));
     if (!response.ok) throw new Error('catalog');
@@ -288,7 +244,7 @@
       if (Array.isArray(saved)) state.saved = new Set(saved.filter(id => state.events.some(e => e.id === id)));
     } catch { /* A corrupt or blocked store must not prevent browsing. */ }
     $('catalog-note').textContent = `Catalog updated ${catalog.updatedOn}. Dates link to organizer sources; unannounced editions are not projected from last year. Flight availability, registration, and exact arrival times are not checked.`;
-    render(); await Promise.allSettled([loadCustomMap(), loadMap()]);
+    render(); await loadCustomMap();
   } catch {
     $('competition-list').replaceChildren(node('p', 'empty', 'The competition catalog could not load. Please refresh to try again, or use the original calendar linked below.'));
     $('map-message').querySelector('p').textContent = 'The competition catalog is unavailable. Refresh to try again.';

@@ -11,7 +11,6 @@
   </script>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="planner.css">
-  <script src="planner-config.js" defer></script>
   <script src="planner-core.js" defer></script>
   <script src="vendor/topojson-client.min.js" defer></script>
   <script src="vendor/d3.min.js" defer></script>
@@ -38,13 +37,13 @@
       <form id="travel-form">
         <div class="address-field"><label for="origin">Where are you starting?</label><div class="input-action"><input id="origin" name="origin" placeholder="ZIP code or full address" autocomplete="street-address" maxlength="250" required><button class="primary" id="find-button" type="submit">Find competitions <span aria-hidden="true">↗</span></button></div></div>
         <fieldset><legend>How will you travel?</legend><div class="segmented"><label><input type="radio" name="travel" value="drive" checked><span>Drive only</span></label><label><input type="radio" name="travel" value="fly"><span>Willing to fly</span></label></div></fieldset>
-        <div><label for="drive-limit">One-way driving limit</label><select id="drive-limit"><option value="2">2 hours</option><option value="4" selected>4 hours</option><option value="6">6 hours</option><option value="8">8 hours</option><option value="12">12 hours</option></select></div>
+        <div><label for="drive-limit">Estimated one-way driving limit</label><select id="drive-limit"><option value="2">2 hours</option><option value="4" selected>4 hours</option><option value="6">6 hours</option><option value="8">8 hours</option><option value="12">12 hours</option></select></div>
       </form>
-      <p class="micro" id="travel-explanation">Flying includes farther destinations; it does not check flight availability. Street addresses are sent to the US Census geocoder when you search. ZIP codes are looked up locally. Starting coordinates are sent to Google for driving estimates; your location is not saved.</p>
+      <p class="micro" id="travel-explanation">Free rough estimates: straight-line distance × 1.3, divided by 50 mph, with a 15-minute minimum. This is a planning assumption, not a calculated road route; traffic, terrain, water crossings, and stops can change the trip substantially. Driving estimates cover the contiguous US only. Flying shows farther destinations, not flight availability. ZIP codes are looked up locally; street addresses are sent to the US Census geocoder. Your location is not saved or sent to Google. Verify directions before traveling.</p>
       <p id="travel-status" role="status">Browse all competitions below, or enter a starting point to check driving times.</p>
       <div id="location-choices" aria-label="Choose your starting point" hidden></div>
     </section>
-    <p class="micro google-attribution">Driving estimates by Google Maps. Approximate location data: US Census Bureau and <a href="https://www.geonames.org/" target="_blank" rel="noopener noreferrer">GeoNames</a>.</p>
+    <p class="micro google-attribution">Approximate location data: US Census Bureau and <a href="https://www.geonames.org/" target="_blank" rel="noopener noreferrer">GeoNames</a>.</p>
     <div class="workspace">
       <section class="explore" aria-labelledby="explore-title">
         <div class="section-heading"><h2 id="explore-title">Explore competitions <span id="result-count" class="count"></span></h2><button class="text-button" id="reset-filters">Reset filters</button></div>

@@ -22,14 +22,23 @@
     return 3958.7613 * 2 * Math.atan2(Math.sqrt(Math.min(1, h)), Math.sqrt(Math.max(0, 1 - h)));
   }
   function routeKey(location) { return `${location.lat},${location.lng}`; }
+  // Planning heuristic, not a road route: 30% distance allowance at 50 mph.
+  function estimateRoute(origin, destination) {
+    const lower48 = p => p.lat >= 24 && p.lat <= 50 && p.lng >= -125 && p.lng <= -66;
+    if (!lower48(origin) || !lower48(destination)) return { status: 'unsupported', estimated: true };
+    const miles = milesBetween(origin, destination) * 1.3;
+    return { status: 'ok', estimated: true, miles, hours: Math.max(0.25, miles / 50) };
+  }
   function travelInfo(event, origin, routes, mode, limit) {
     if (!event.location) return { kind: event.mode === 'online' ? 'online' : 'local', label: event.mode === 'online' ? 'Online · no travel' : 'Venue / host to confirm', reachable: true };
     if (!origin) return { kind: 'browse', label: 'Enter your start to check travel', reachable: true };
     const route = routes.get(routeKey(event.location));
-    if (route?.status === 'ok' && route.hours <= limit) return { kind: 'drive', label: `${formatHours(route.hours)} drive · ${Math.round(route.miles).toLocaleString()} mi`, reachable: true };
+    const time = route?.estimated ? formatHours(Math.max(0.25, Math.round(route.hours * 4) / 4)) : route ? formatHours(route.hours) : '';
+    const prefix = route?.estimated ? 'Rough estimate: ' : '';
+    if (route?.status === 'ok' && route.hours <= limit) return { kind: 'drive', label: `${prefix}${time} drive · ${route.estimated ? Math.round(route.miles / 5) * 5 : Math.round(route.miles)} mi`, reachable: true };
     if (mode === 'fly') return { kind: 'fly', label: `Consider flying · ${Math.round(milesBetween(origin, event.location)).toLocaleString()} mi direct`, reachable: true };
-    if (route?.status === 'ok') return { kind: 'far', label: `${formatHours(route.hours)} drive · over your limit`, reachable: false };
-    return { kind: 'unknown', label: route?.status === 'no-route' ? 'No driving route found' : 'Driving route not verified', reachable: false };
+    if (route?.status === 'ok') return { kind: 'far', label: `${prefix}${time} drive · over your limit`, reachable: false };
+    return { kind: 'unknown', label: route?.status === 'unsupported' ? 'Driving estimate unavailable outside the contiguous US' : route?.status === 'no-route' ? 'No driving route found' : 'Driving route not verified', reachable: false };
   }
   function formatHours(hours) {
     const minutes = Math.round(hours * 60);
@@ -77,7 +86,7 @@
     lines.push('END:VCALENDAR');
     return lines.map(foldLine).join('\r\n') + '\r\n';
   }
-  const api = { todayISO, dateLabel, deadlineLabel, compareEvents, milesBetween, routeKey, travelInfo, formatHours, filterEvents, conflicts, calendar };
+  const api = { todayISO, dateLabel, deadlineLabel, compareEvents, milesBetween, estimateRoute, routeKey, travelInfo, formatHours, filterEvents, conflicts, calendar };
   if (typeof module === 'object' && module.exports) module.exports = api;
   else root.PlannerCore = api;
 })(globalThis);

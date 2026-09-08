@@ -95,3 +95,24 @@ test('planner excludes online editions while retaining in-person BMT', () => {
   assert.equal(event('bmt').mode, 'campus');
   for (const id of ['bmt-online', 'purple-comet', 'hmic', 'm3']) assert.equal(event(id), undefined);
 });
+
+test('rough estimates use geographic coordinates and stay finite at the same point', () => {
+  const origin = {lat: 40, lng: -75}, destination = {lat: 41, lng: -75};
+  const route = C.estimateRoute(origin, destination);
+  assert.equal(route.miles, C.milesBetween(origin, destination) * 1.3);
+  assert.equal(route.hours, route.miles / 50);
+  assert.equal(route.estimated, true);
+  assert.equal(C.estimateRoute(origin, origin).hours, 0.25);
+  const e = {...event('bmt'), location: destination};
+  const routes = new Map([[C.routeKey(destination), route]]);
+  assert.match(C.travelInfo(e, origin, routes, 'drive', 4).label, /Rough estimate/);
+  assert.equal(C.travelInfo(e, origin, routes, 'drive', 0.5).reachable, false);
+});
+test('rough driving estimates do not imply road connections to Hawaii or Alaska', () => {
+  const destination = event('bmt').location;
+  for (const origin of [{lat:21.3,lng:-157.8},{lat:61.2,lng:-149.9}]) {
+    const routes = new Map([[C.routeKey(destination), C.estimateRoute(origin, destination)]]);
+    assert.equal(C.travelInfo(event('bmt'), origin, routes, 'drive', 12).reachable, false);
+    assert.equal(C.travelInfo(event('bmt'), origin, routes, 'fly', 12).reachable, true);
+  }
+});

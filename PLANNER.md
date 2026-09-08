@@ -14,46 +14,15 @@ git switch --track origin/feature/competition-planner-review
 python3 -m http.server 8765 --directory docs
 ```
 
-Open `http://localhost:8765/index.html` for the silver map button and small first-visit announcement beside the map button, or `/planner.html` for the map. The announcement appears once per browser storage profile; clearing the `mathintegrity-planner-welcome-v3` localStorage entry shows it again. The committed Google API key is empty. Configure your own restricted browser key locally only if testing driving estimates. PDF export downloads a file directly and includes the watchlist; ICS exports confirmed fixed dates for calendar imports.
+Open `http://localhost:8765/index.html` for the silver map button and small first-visit announcement beside the map button, or `/planner.html` for the map. The announcement appears once per browser storage profile; clearing the `mathintegrity-planner-welcome-v3` localStorage entry shows it again. The committed Google API key is empty. No key is needed for the current rough estimates. PDF export downloads a file directly and includes the watchlist; ICS exports confirmed fixed dates for calendar imports.
 
-## Enable Google Maps
+## Free travel estimates
 
-1. Create or select a Google Cloud project with billing enabled.
-2. Enable **Maps JavaScript API**, **Geocoding API**, and **Routes API** in that project.
-3. Create a browser API key. Restrict it to **Websites (HTTP referrers)**, with the actual deployment domains, for example:
-   - `https://mathintegrity.org/*`
-   - `https://www.mathintegrity.org/*` if used
-   - `https://x-du.github.io/*` if serving on GitHub Pages without the custom domain
-   - `http://localhost:8765/*` and `http://127.0.0.1:8765/*` for local development
-4. Restrict that key to those three APIs. Set appropriate API quotas and billing alerts.
-5. Set `googleMapsApiKey` in `docs/planner-config.js`. This is a **public browser key**, not a secret server key. HTTP referrer and API restrictions are essential; do not use an unrestricted key.
-6. A map ID is no longer needed: the map is now a standalone US-only SVG. The old `googleMapsMapId` configuration field is unused.
+Google Maps JavaScript and Routes API are no longer loaded or called. No API key or paid routing service is needed. ZIP lookup is local; street addresses use the US Census geocoder. Starting locations remain in memory. External directions links only open Google Maps when clicked.
 
-The integration uses the current `RouteMatrix` API, not the legacy Distance Matrix service. Places/autocomplete is not required: an address is geocoded after form submission. Driving durations are traffic-unaware estimates. Flight mode broadens the geographic search and reports straight-line distance; it neither invents flights nor checks airfare or airline schedules.
+Driving estimates use geographic straight-line miles multiplied by 1.3, then divided by 50 mph with a 15-minute minimum. This is an explicit planning assumption, not calibrated road routing. Times display in roughly 15-minute increments. Traffic, road networks, terrain, islands, ferries, and stops are not modeled. Estimates are disabled outside the contiguous-US coordinate bounds; willing-to-fly mode still includes those destinations. Local-host events remain visible for any origin.
 
-Official setup references:
-- [Routes library prerequisites](https://developers.google.com/maps/documentation/javascript/routes/start)
-- [Geocoding prerequisites](https://developers.google.com/maps/documentation/javascript/geocoding)
-- [Browser-key security](https://developers.google.com/maps/api-security-best-practices)
-- [Advanced markers and map IDs](https://developers.google.com/maps/documentation/javascript/advanced-markers/start)
-
-Without a key, the catalog, external Google Maps venue links, saved schedule, overlap warnings, and calendar export still work. The US-only map works without a key. ZIP and address lookup also work without a Google key; only driving estimates require it. A live Google API smoke test is still needed with a configured key; mocked tests do not verify billing, domain restrictions, or real routing responses.
-
-## Run and validate
-
-From the repository root:
-
-```sh
-python3 scripts/build_planner_data.py
-python3 scripts/build_planner_data.py --check
-node --test tests/planner.test.cjs
-node --check docs/planner.js
-python3 -m http.server 8765 --directory docs
-```
-
-Open `http://localhost:8765/planner.html`. Publish using the repository's existing GitHub Pages `/docs` workflow after review and key configuration.
-
-With a real key, verify an exact ZIP and an ambiguous address, the origin marker, a nearby drive-only result, a distant destination in flight mode, and a failed route. Verify that changing the origin during lookup never applies an old response. No automated check contacts paid Google APIs.
+Validate with `node --test tests/*.test.cjs` and `python3 scripts/build_planner_data.py --check`. Serve with `python3 -m http.server 8765 --directory docs` and open `/planner.html`.
 
 ## Maintain the catalog
 
