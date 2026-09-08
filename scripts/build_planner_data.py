@@ -33,6 +33,8 @@ def validate(data):
             deadline = date.fromisoformat(event['registrationDeadline'])
             if event['startDate']:
                 assert deadline <= date.fromisoformat(event['startDate']), label
+        if 'inDatabase' in event:
+            assert isinstance(event['inDatabase'], bool), label
         if 'dateTentative' in event:
             assert isinstance(event['dateTentative'], bool) and event['startDate'], label
         if 'registrationNote' in event:

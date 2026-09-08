@@ -751,15 +751,21 @@
     },
     {
       "id": "amm",
-      "name": "American Masters of Mathematics",
+      "name": "American Masters of Mathematics · AMM 2027",
       "url": "https://www.omegausa.org/",
       "grades": "Invited pre-college students",
-      "mode": "local",
-      "location": null,
-      "startDate": null,
-      "endDate": null,
-      "dateKind": "unannounced",
-      "notes": "Invitational event. Next date and venue unannounced.",
+      "mode": "campus",
+      "location": {
+        "venue": "Denver host venue to be announced",
+        "city": "Denver, CO",
+        "lat": 39.7392,
+        "lng": -104.9903,
+        "precision": "city"
+      },
+      "startDate": "2027-05-28",
+      "endDate": "2027-05-31",
+      "dateKind": "fixed",
+      "notes": "Competition and mathematics festival organized by OMEGA. Applications open in fall; separate from AMM Local.",
       "recordSlugs": [
         "amm"
       ],
@@ -767,7 +773,8 @@
       "sources": [
         "https://www.omegausa.org/"
       ],
-      "checkedOn": null
+      "checkedOn": "2026-09-08",
+      "registrationNote": "Applications open in fall; deadline not announced."
     },
     {
       "id": "mpfg-olympiad",
@@ -919,7 +926,7 @@
       "startDate": "2026-09-19",
       "endDate": "2026-09-19",
       "dateKind": "fixed",
-      "notes": "Team contest for New Mexico middle school students. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer.",
+      "notes": "Team contest for New Mexico middle school students.",
       "recordSlugs": [],
       "registrationDeadline": "2026-09-06",
       "sources": [
@@ -945,7 +952,7 @@
       "startDate": "2026-09-27",
       "endDate": "2026-09-27",
       "dateKind": "fixed",
-      "notes": "In-person edition; teams of up to four. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer.",
+      "notes": "In-person edition; teams of up to four.",
       "recordSlugs": [],
       "registrationDeadline": "2026-09-18",
       "sources": [
@@ -972,7 +979,7 @@
       "startDate": "2026-10-02",
       "endDate": "2026-10-02",
       "dateKind": "fixed",
-      "notes": "Colorado students; out-of-state students must request permission. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer.",
+      "notes": "Colorado students; out-of-state students must request permission.",
       "recordSlugs": [],
       "registrationDeadline": null,
       "sources": [
@@ -998,7 +1005,7 @@
       "startDate": "2026-10-10",
       "endDate": "2026-10-10",
       "dateKind": "fixed",
-      "notes": "In-person division; the organizer also offers a virtual division. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer.",
+      "notes": "In-person division; the organizer also offers a virtual division.",
       "recordSlugs": [],
       "registrationDeadline": null,
       "sources": [
@@ -1025,7 +1032,7 @@
       "startDate": "2026-10-24",
       "endDate": "2026-10-24",
       "dateKind": "fixed",
-      "notes": "High school team competition. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer.",
+      "notes": "High school team competition.",
       "recordSlugs": [],
       "registrationDeadline": "2026-10-14",
       "sources": [
@@ -1052,7 +1059,7 @@
       "startDate": "2026-10-24",
       "endDate": "2026-10-24",
       "dateKind": "fixed",
-      "notes": "School teams and individual participants are welcome. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer.",
+      "notes": "School teams and individual participants are welcome.",
       "recordSlugs": [],
       "registrationDeadline": "2026-10-15",
       "sources": [
@@ -1078,7 +1085,7 @@
       "startDate": "2026-11-04",
       "endDate": "2026-11-04",
       "dateKind": "fixed",
-      "notes": "School teams compete in divisions based on enrollment. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer.",
+      "notes": "School teams compete in divisions based on enrollment.",
       "recordSlugs": [],
       "registrationDeadline": null,
       "sources": [
@@ -1104,7 +1111,7 @@
       "startDate": "2026-11-07",
       "endDate": "2026-11-07",
       "dateKind": "fixed",
-      "notes": "Subject divisions from Algebra I through Calculus. Confirm registration availability with organizer. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer.",
+      "notes": "Subject divisions from Algebra I through Calculus. Confirm registration availability with organizer.",
       "recordSlugs": [],
       "registrationDeadline": "2026-11-07",
       "sources": [
@@ -1130,7 +1137,7 @@
       "startDate": "2026-11-14",
       "endDate": "2026-11-14",
       "dateKind": "fixed",
-      "notes": "Student-run tournament; exact venue is still to be announced. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer.",
+      "notes": "Student-run tournament; exact venue is still to be announced.",
       "recordSlugs": [],
       "registrationDeadline": null,
       "sources": [
@@ -1156,7 +1163,7 @@
       "startDate": null,
       "endDate": null,
       "dateKind": "unannounced",
-      "notes": "Organizer says the event will return in 2027; exact date not announced. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
+      "notes": "Organizer says the event will return in 2027; exact date not announced. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
       "recordSlugs": [],
       "registrationDeadline": null,
       "sources": [
@@ -1182,7 +1189,7 @@
       "startDate": null,
       "endDate": null,
       "dateKind": "unannounced",
-      "notes": "In-person middle school tournament; last published edition was May 9, 2026. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
+      "notes": "In-person middle school tournament; last published edition was May 9, 2026. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
       "recordSlugs": [],
       "registrationDeadline": null,
       "sources": [
@@ -1208,7 +1215,7 @@
       "startDate": null,
       "endDate": null,
       "dateKind": "unannounced",
-      "notes": "In-person division; online participation also exists. Next edition interest list is available. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
+      "notes": "In-person division; online participation also exists. Next edition interest list is available. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
       "recordSlugs": [],
       "registrationDeadline": null,
       "sources": [
@@ -1234,7 +1241,7 @@
       "startDate": null,
       "endDate": null,
       "dateKind": "unannounced",
-      "notes": "In-person tournament; last published edition was April 4, 2026. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
+      "notes": "In-person tournament; last published edition was April 4, 2026. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
       "recordSlugs": [],
       "registrationDeadline": null,
       "sources": [
@@ -1260,7 +1267,7 @@
       "startDate": null,
       "endDate": null,
       "dateKind": "unannounced",
-      "notes": "High school team tournament. Registration for the 2026 edition is closed. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
+      "notes": "High school team tournament. Registration for the 2026 edition is closed. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
       "recordSlugs": [],
       "registrationDeadline": null,
       "sources": [
@@ -1286,7 +1293,7 @@
       "startDate": "2027-03-13",
       "endDate": "2027-03-13",
       "dateKind": "fixed",
-      "notes": "Registration expected to open in December; closing deadline not yet published. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer.",
+      "notes": "Registration expected to open in December; closing deadline not yet published.",
       "recordSlugs": [],
       "registrationDeadline": null,
       "sources": [
@@ -1312,7 +1319,7 @@
       "startDate": null,
       "endDate": null,
       "dateKind": "unannounced",
-      "notes": "In-person division; last in-person event March 11, 2026. The virtual division is not added. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
+      "notes": "In-person division; last in-person event March 11, 2026. The virtual division is not added. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
       "recordSlugs": [],
       "registrationDeadline": null,
       "sources": [
@@ -1338,7 +1345,7 @@
       "startDate": null,
       "endDate": null,
       "dateKind": "unannounced",
-      "notes": "Team tournament for middle school students; last published edition March 8, 2026. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
+      "notes": "Team tournament for middle school students; last published edition March 8, 2026. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
       "recordSlugs": [],
       "registrationDeadline": null,
       "sources": [
@@ -1364,7 +1371,7 @@
       "startDate": null,
       "endDate": null,
       "dateKind": "unannounced",
-      "notes": "Student-run in-person tournament; last published edition December 20, 2025. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
+      "notes": "Student-run in-person tournament; last published edition December 20, 2025. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
       "recordSlugs": [],
       "registrationDeadline": null,
       "sources": [
@@ -1390,7 +1397,7 @@
       "startDate": null,
       "endDate": null,
       "dateKind": "unannounced",
-      "notes": "School teams by grade. Last published edition November 1, 2025; its deadline does not apply to the next edition. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
+      "notes": "School teams by grade. Last published edition November 1, 2025; its deadline does not apply to the next edition. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
       "recordSlugs": [],
       "registrationDeadline": null,
       "sources": [
@@ -1416,7 +1423,7 @@
       "startDate": null,
       "endDate": null,
       "dateKind": "unannounced",
-      "notes": "DC-area school teams; students must be taking Geometry or below. Last published edition October 18, 2025. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
+      "notes": "DC-area school teams; students must be taking Geometry or below. Last published edition October 18, 2025. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
       "recordSlugs": [],
       "registrationDeadline": null,
       "sources": [
@@ -1442,7 +1449,7 @@
       "startDate": null,
       "endDate": null,
       "dateKind": "unannounced",
-      "notes": "Different grades compete on separate days; next edition schedule not announced. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
+      "notes": "Different grades compete on separate days; next edition schedule not announced. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
       "recordSlugs": [],
       "registrationDeadline": null,
       "sources": [
@@ -1468,7 +1475,7 @@
       "startDate": null,
       "endDate": null,
       "dateKind": "unannounced",
-      "notes": "Last edition held April 12, 2026. Older registration information on the site is for reference only. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
+      "notes": "Last edition held April 12, 2026. Older registration information on the site is for reference only. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
       "recordSlugs": [],
       "registrationDeadline": null,
       "sources": [
@@ -1494,7 +1501,7 @@
       "startDate": "2026-11-14",
       "endDate": "2026-11-14",
       "dateKind": "fixed",
-      "notes": "Divisions based on mathematics experience; confirm eligibility and room with organizer. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer.",
+      "notes": "Divisions based on mathematics experience; confirm eligibility and room with organizer.",
       "recordSlugs": [],
       "registrationDeadline": null,
       "sources": [
@@ -1520,7 +1527,7 @@
       "startDate": "2026-11-21",
       "endDate": "2026-11-21",
       "dateKind": "fixed",
-      "notes": "Open to Kentucky, Ohio and Indiana high school students. Organizer labels the date tentative. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer.",
+      "notes": "Open to Kentucky, Ohio and Indiana high school students. Organizer labels the date tentative.",
       "recordSlugs": [],
       "registrationDeadline": null,
       "sources": [
@@ -1548,7 +1555,7 @@
       "startDate": null,
       "endDate": null,
       "dateKind": "unannounced",
-      "notes": "Invitation based on regional results or qualifying AMC scores. Next event expected in 2027; exact date not published. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
+      "notes": "Invitation based on regional results or qualifying AMC scores. Next event expected in 2027; exact date not published. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
       "recordSlugs": [],
       "registrationDeadline": null,
       "sources": [
@@ -1594,7 +1601,7 @@
       "startDate": null,
       "endDate": null,
       "dateKind": "unannounced",
-      "notes": "Last published edition April 18, 2026 had no advance registration; reconfirm for next edition. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
+      "notes": "Last published edition April 18, 2026 had no advance registration; reconfirm for next edition. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
       "recordSlugs": [],
       "registrationDeadline": null,
       "sources": [
@@ -1620,7 +1627,7 @@
       "startDate": null,
       "endDate": null,
       "dateKind": "unannounced",
-      "notes": "In-person division of a hybrid calculus competition; last edition March 27, 2026. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
+      "notes": "In-person division of a hybrid calculus competition; last edition March 27, 2026. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
       "recordSlugs": [],
       "registrationDeadline": null,
       "sources": [
@@ -1646,7 +1653,7 @@
       "startDate": null,
       "endDate": null,
       "dateKind": "unannounced",
-      "notes": "Mississippi high school teams. Last edition February 26, 2026; its January deadline is not reused. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
+      "notes": "Mississippi high school teams. Last edition February 26, 2026; its January deadline is not reused. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
       "recordSlugs": [],
       "registrationDeadline": null,
       "sources": [
@@ -1672,7 +1679,7 @@
       "startDate": "2027-02-13",
       "endDate": "2027-02-13",
       "dateKind": "fixed",
-      "notes": "School teams; registration information expected in December 2026. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer.",
+      "notes": "School teams; registration information expected in December 2026.",
       "recordSlugs": [],
       "registrationDeadline": null,
       "sources": [
@@ -1698,7 +1705,7 @@
       "startDate": null,
       "endDate": null,
       "dateKind": "unannounced",
-      "notes": "Last published edition February 20, 2026. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
+      "notes": "Last published edition February 20, 2026. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
       "recordSlugs": [],
       "registrationDeadline": null,
       "sources": [
@@ -1724,7 +1731,7 @@
       "startDate": null,
       "endDate": null,
       "dateKind": "unannounced",
-      "notes": "School adviser registration; last published edition February 7, 2026. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
+      "notes": "School adviser registration; last published edition February 7, 2026. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
       "recordSlugs": [],
       "registrationDeadline": null,
       "sources": [
@@ -1750,7 +1757,7 @@
       "startDate": null,
       "endDate": null,
       "dateKind": "unannounced",
-      "notes": "Last published edition December 12, 2025. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
+      "notes": "Last published edition December 12, 2025. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
       "recordSlugs": [],
       "registrationDeadline": null,
       "sources": [
@@ -1776,7 +1783,7 @@
       "startDate": null,
       "endDate": null,
       "dateKind": "unannounced",
-      "notes": "In-person school competition. Current organizer page says registration is closed. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
+      "notes": "In-person school competition. Current organizer page says registration is closed. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
       "recordSlugs": [],
       "registrationDeadline": null,
       "sources": [
@@ -1802,7 +1809,7 @@
       "startDate": "2026-11-10",
       "endDate": "2026-11-10",
       "dateKind": "fixed",
-      "notes": "In-person Math Bowl. Nebraska school teams; lower grades require permission. Separate PROBE testing takes place earlier. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer.",
+      "notes": "In-person Math Bowl. Nebraska school teams; lower grades require permission. Separate PROBE testing takes place earlier.",
       "recordSlugs": [],
       "registrationDeadline": null,
       "sources": [
@@ -1828,7 +1835,7 @@
       "startDate": null,
       "endDate": null,
       "dateKind": "unannounced",
-      "notes": "School team competition; last published edition October 25, 2025. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
+      "notes": "School team competition; last published edition October 25, 2025. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
       "recordSlugs": [],
       "registrationDeadline": null,
       "sources": [
@@ -1854,7 +1861,7 @@
       "startDate": "2026-10-24",
       "endDate": "2026-10-24",
       "dateKind": "fixed",
-      "notes": "Annual high school competition. Registration is open; confirm closing date with organizer. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer.",
+      "notes": "Annual high school competition. Registration is open; confirm closing date with organizer.",
       "recordSlugs": [],
       "registrationDeadline": null,
       "sources": [
@@ -1880,7 +1887,7 @@
       "startDate": "2026-10-13",
       "endDate": "2026-10-13",
       "dateKind": "fixed",
-      "notes": "Invitational school-team mathematics meet; confirm eligibility and registration availability. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer.",
+      "notes": "Invitational school-team mathematics meet; confirm eligibility and registration availability.",
       "recordSlugs": [],
       "registrationDeadline": null,
       "sources": [
@@ -1948,7 +1955,7 @@
       "startDate": "2027-05-29",
       "endDate": "2027-05-29",
       "dateKind": "fixed",
-      "notes": "In-person final by invitation. Must first qualify through online Round 1 by March 17, 2027. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer.",
+      "notes": "In-person final by invitation. Must first qualify through online Round 1 by March 17, 2027.",
       "recordSlugs": [],
       "registrationDeadline": "2027-04-16",
       "sources": [
@@ -1995,7 +2002,7 @@
       "startDate": null,
       "endDate": null,
       "dateKind": "unannounced",
-      "notes": "In-person International Summer Tournament / Math Camp. Qualification or application review required; 2026 program has ended. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
+      "notes": "In-person International Summer Tournament / Math Camp. Qualification or application review required; 2026 program has ended. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
       "recordSlugs": [],
       "registrationDeadline": null,
       "sources": [
@@ -2292,7 +2299,7 @@
       "startDate": "2027-02-20",
       "endDate": "2027-02-20",
       "dateKind": "fixed",
-      "notes": "In-person competition for girls and gender minorities; see organizer eligibility rules. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer.",
+      "notes": "In-person competition for girls and gender minorities; see organizer eligibility rules.",
       "recordSlugs": [],
       "registrationDeadline": null,
       "sources": [
@@ -2319,7 +2326,7 @@
       "startDate": null,
       "endDate": null,
       "dateKind": "unannounced",
-      "notes": "In-person team contest. Last published edition October 18, 2025; last year’s deadlines are not reused. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
+      "notes": "In-person team contest. Last published edition October 18, 2025; last year’s deadlines are not reused. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
       "recordSlugs": [],
       "registrationDeadline": null,
       "sources": [
@@ -2345,7 +2352,7 @@
       "startDate": "2026-11-07",
       "endDate": "2026-11-07",
       "dateKind": "fixed",
-      "notes": "High school edition; school teams only. The separate 2026 middle school event was cancelled. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer.",
+      "notes": "High school edition; school teams only. The separate 2026 middle school event was cancelled.",
       "recordSlugs": [],
       "registrationDeadline": null,
       "sources": [
@@ -2356,6 +2363,26 @@
       ],
       "checkedOn": "2026-09-08",
       "candidateNumber": 50
+    },
+    {
+      "id": "amm-local-2027",
+      "name": "AMM Local",
+      "url": "https://www.omegausa.org/",
+      "grades": "Pre-college students; confirm eligibility with organizer",
+      "mode": "local",
+      "location": null,
+      "startDate": "2027-01-17",
+      "endDate": "2027-01-17",
+      "dateKind": "fixed",
+      "notes": "Local/assigned hosts across the US. Organized by OMEGA; separate from the AMM competition and festival in Denver. Confirm your host and registration details with the organizer.",
+      "recordSlugs": [],
+      "inDatabase": true,
+      "registrationDeadline": null,
+      "sources": [
+        "https://www.omegausa.org/"
+      ],
+      "checkedOn": null,
+      "metadataSource": "Date, nationwide local-host format, and database status supplied by MathIntegrity contributor; not yet published on the linked organizer homepage."
     }
   ]
 }

@@ -54,7 +54,7 @@
       for (const event of events.filter(e => e.location)) {
         const girls = /girls|female/i.test(event.name + ' ' + event.grades);
         const campus = `${event.location.lat},${event.location.lng}`;
-        const inDatabase = Boolean(event.recordSlugs?.length);
+        const inDatabase = Boolean(event.inDatabase || event.recordSlugs?.length);
         const key = campus + (girls ? ':girls' : ':open') + (inDatabase ? ':records' : ':new');
         if (!groups.has(key)) groups.set(key, { events: [], girls, campus, inDatabase });
         groups.get(key).events.push(event);

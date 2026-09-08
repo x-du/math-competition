@@ -57,7 +57,7 @@
     const save = button(saved ? '✓' : '+', () => toggle(event), 'save-button'); save.dataset.saveId = event.id; save.setAttribute('aria-pressed', String(saved)); save.setAttribute('aria-label', `${saved ? 'Remove' : 'Add'} ${event.name} ${saved ? 'from' : 'to'} my schedule`);
     top.append(tile, heading, save); card.append(top);
     const badges = node('div', 'badges'); badges.append(node('span', 'badge', event.grades), node('span', 'badge travel', info.label));
-    if (event.recordSlugs.length) { card.classList.add('has-records'); badges.append(node('span', 'badge database-badge', 'Results in database')); }
+    if (event.inDatabase || event.recordSlugs.length) { card.classList.add('has-records'); badges.append(node('span', 'badge database-badge', 'Results in database')); }
     if (!event.startDate) badges.append(node('span', 'badge warning', 'Date unannounced'));
     if (event.dateTentative) badges.append(node('span', 'badge warning', 'Tentative date'));
     if (event.dateKind === 'window') badges.append(node('span', 'badge warning', 'Testing window'));
@@ -73,7 +73,7 @@
     }
     card.append(links);
     const source = node('p', 'source-note', event.checkedOn ? `Source checked ${event.checkedOn}` : 'From the records database · next edition needs verification');
-    if (event.recordSlugs.length) source.append(document.createTextNode(' · Results in database'));
+    if (event.inDatabase || event.recordSlugs.length) source.append(document.createTextNode(' · Results in database'));
     // Date-specific sources (e.g. HMMT deadlines) remain directly reviewable.
     for (const url of event.sources.filter(url => url !== event.url)) source.append(document.createTextNode(' · '), link('Source', url));
     card.append(source); return card;
@@ -134,7 +134,7 @@
       const website = link('Official website ↗', event.url);
       website.addEventListener('click', closePin);
       detail.append(node('h3', '', event.name));
-      if (event.recordSlugs.length) detail.append(node('span', 'badge database-badge', 'Results in database'));
+      if (event.inDatabase || event.recordSlugs.length) detail.append(node('span', 'badge database-badge', 'Results in database'));
       detail.append(node('p', 'pin-date', 'Date: ' + C.dateLabel(event)), node('p', 'pin-deadline', C.deadlineLabel(event) + (event.registrationDeadline && event.registrationDeadline < C.todayISO() ? ' · Passed' : '')), node('p', 'pin-location', event.location.city + (event.location.precision?.startsWith('previous-') ? ' · Previous host' : '')), website);
       content.append(detail);
     }

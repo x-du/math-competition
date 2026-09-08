@@ -76,3 +76,16 @@ test('distance is stable for identical locations and antipodes', () => {
   assert.equal(C.milesBetween({ lat: 40, lng: 0 }, { lat: 40, lng: 0 }), 0);
   assert.ok(Number.isFinite(C.milesBetween({ lat: 0, lng: 0 }, { lat: 0, lng: 180 })));
 });
+
+test('AMM Local remains nationwide and distinct from the Denver AMM festival', () => {
+  const local = event('amm-local-2027'), festival = event('amm');
+  assert.equal(local.startDate, '2027-01-17');
+  assert.equal(local.inDatabase, true);
+  assert.equal(local.location, null);
+  assert.equal(local.mode, 'local');
+  assert.equal(festival.startDate, '2027-05-28');
+  assert.equal(festival.endDate, '2027-05-31');
+  for (const origin of [{lat: 40.71, lng: -74}, {lat: 21.3, lng: -157.8}, {lat: 61.2, lng: -149.9}]) {
+    assert.ok(C.filterEvents(events, {...base(), origin, limit: 0}).includes(local));
+  }
+});
