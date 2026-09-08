@@ -1,5 +1,7 @@
 # Math Competition Calendar
 
+[Explore the interactive competition map and build your schedule](../planner.html).
+
 ---
 
 ## 2026

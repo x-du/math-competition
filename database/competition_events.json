@@ -1,0 +1,2361 @@
+{
+  "schemaVersion": 1,
+  "updatedOn": "2026-09-08",
+  "events": [
+    {
+      "id": "mpfg",
+      "name": "Math Prize for Girls",
+      "url": "https://mathprize.atfoundation.org/",
+      "grades": "Girls in grade 12 and below",
+      "mode": "campus",
+      "location": {
+        "venue": "Massachusetts Institute of Technology",
+        "city": "Cambridge, MA",
+        "lat": 42.3601,
+        "lng": -71.0942,
+        "precision": "campus"
+      },
+      "startDate": "2026-10-11",
+      "endDate": "2026-10-11",
+      "dateKind": "fixed",
+      "notes": "Application and AMC-based selection required; check the organizer’s eligibility rules.",
+      "recordSlugs": [
+        "mpfg"
+      ],
+      "registrationDeadline": null,
+      "sources": [
+        "https://mathprize.atfoundation.org/"
+      ],
+      "checkedOn": "2026-09-08"
+    },
+    {
+      "id": "amc-a",
+      "name": "AMC 10 / 12 · A",
+      "url": "https://maa.org/student-programs/amc/",
+      "grades": "Grades 10 / 12 and below; age limits apply",
+      "mode": "local",
+      "location": null,
+      "startDate": "2026-11-05",
+      "endDate": "2026-11-05",
+      "dateKind": "fixed",
+      "notes": "Register through a participating school or test center. Ask the host about availability and its registration deadline.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://maa.org/student-programs/amc/"
+      ],
+      "checkedOn": "2026-09-08"
+    },
+    {
+      "id": "amc-b",
+      "name": "AMC 10 / 12 · B",
+      "url": "https://maa.org/student-programs/amc/",
+      "grades": "Grades 10 / 12 and below; age limits apply",
+      "mode": "local",
+      "location": null,
+      "startDate": "2026-11-13",
+      "endDate": "2026-11-13",
+      "dateKind": "fixed",
+      "notes": "Register through a participating school or test center. Ask the host about availability and its registration deadline.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://maa.org/student-programs/amc/"
+      ],
+      "checkedOn": "2026-09-08"
+    },
+    {
+      "id": "hmmt-nov",
+      "name": "HMMT November",
+      "url": "https://www.hmmt.org/",
+      "grades": "High school",
+      "mode": "campus",
+      "location": {
+        "venue": "Harvard University",
+        "city": "Cambridge, MA",
+        "lat": 42.3744,
+        "lng": -71.1169,
+        "precision": "campus"
+      },
+      "startDate": "2026-11-07",
+      "endDate": "2026-11-07",
+      "dateKind": "fixed",
+      "notes": "Team application required. A student may attend only one of the November and February tournaments in a season.",
+      "recordSlugs": [
+        "hmmt-nov",
+        "hmmt-nov-general",
+        "hmmt-nov-theme"
+      ],
+      "registrationDeadline": "2026-09-20",
+      "sources": [
+        "https://www.hmmt.org/",
+        "https://www.hmmt.co/rg/deadlines"
+      ],
+      "checkedOn": "2026-09-08"
+    },
+    {
+      "id": "dmm",
+      "name": "Duke Math Meet",
+      "url": "https://dukemathmeet.org/",
+      "grades": "High school",
+      "mode": "campus",
+      "location": {
+        "venue": "Duke University",
+        "city": "Durham, NC",
+        "lat": 36.0014,
+        "lng": -78.9382,
+        "precision": "campus"
+      },
+      "startDate": "2026-11-07",
+      "endDate": "2026-11-07",
+      "dateKind": "fixed",
+      "notes": "Regional team competition; consult the organizer for registration details.",
+      "recordSlugs": [
+        "dmm"
+      ],
+      "registrationDeadline": null,
+      "sources": [
+        "https://dukemathmeet.org/"
+      ],
+      "checkedOn": "2026-09-08"
+    },
+    {
+      "id": "bmt",
+      "name": "Berkeley Math Tournament",
+      "url": "https://berkeley.mt/",
+      "grades": "High school & advanced middle school",
+      "mode": "campus",
+      "location": {
+        "venue": "University of California, Berkeley",
+        "city": "Berkeley, CA",
+        "lat": 37.8719,
+        "lng": -122.2585,
+        "precision": "campus"
+      },
+      "startDate": "2026-11-14",
+      "endDate": "2026-11-14",
+      "dateKind": "fixed",
+      "notes": "Team tournament with individual, power, and guts rounds.",
+      "recordSlugs": [
+        "bmt",
+        "bmt-algebra",
+        "bmt-calculus",
+        "bmt-discrete",
+        "bmt-geometry"
+      ],
+      "registrationDeadline": null,
+      "sources": [
+        "https://berkeley.mt/"
+      ],
+      "checkedOn": "2026-09-08"
+    },
+    {
+      "id": "pumac",
+      "name": "PUMaC",
+      "url": "https://pumac.princeton.edu/",
+      "grades": "High school & advanced younger students",
+      "mode": "campus",
+      "location": {
+        "venue": "Princeton University",
+        "city": "Princeton, NJ",
+        "lat": 40.3431,
+        "lng": -74.6551,
+        "precision": "campus"
+      },
+      "startDate": "2026-11-21",
+      "endDate": "2026-11-21",
+      "dateKind": "fixed",
+      "notes": "Divisions A and B. Apply through a coach; admission and division rules apply.",
+      "recordSlugs": [
+        "pumac-a",
+        "pumac-a-algebra",
+        "pumac-a-combinator",
+        "pumac-a-geometry",
+        "pumac-a-number-theory",
+        "pumac-b",
+        "pumac-b-algebra",
+        "pumac-b-combinator",
+        "pumac-b-geometry",
+        "pumac-b-number-theory"
+      ],
+      "registrationDeadline": null,
+      "sources": [
+        "https://pumac.princeton.edu/"
+      ],
+      "checkedOn": "2026-09-08"
+    },
+    {
+      "id": "bmt-online",
+      "name": "Berkeley Math Tournament · Online",
+      "url": "https://berkeley.mt/",
+      "grades": "High school & advanced middle school",
+      "mode": "online",
+      "location": null,
+      "startDate": "2026-12-05",
+      "endDate": "2026-12-05",
+      "dateKind": "fixed",
+      "notes": "Synchronous online edition. Check official start times and team requirements.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://berkeley.mt/"
+      ],
+      "checkedOn": "2026-09-08"
+    },
+    {
+      "id": "amc8",
+      "name": "AMC 8",
+      "url": "https://maa.org/student-programs/amc/",
+      "grades": "Grade 8 and below; age limit applies",
+      "mode": "local",
+      "location": null,
+      "startDate": "2027-01-21",
+      "endDate": "2027-01-27",
+      "dateKind": "window",
+      "notes": "Testing window: your school or test center chooses the actual test date.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://maa.org/student-programs/amc/"
+      ],
+      "checkedOn": "2026-09-08"
+    },
+    {
+      "id": "aime",
+      "name": "AIME",
+      "url": "https://maa.org/maa-invitational-competitions/",
+      "grades": "Qualifying AMC 10 / 12 students",
+      "mode": "local",
+      "location": null,
+      "startDate": "2027-02-05",
+      "endDate": "2027-02-06",
+      "dateKind": "window",
+      "notes": "Invitation only. Choose one testing day; Pearson testing-center appointment required.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://maa.org/maa-invitational-competitions/"
+      ],
+      "checkedOn": "2026-09-08"
+    },
+    {
+      "id": "hmmt-feb",
+      "name": "HMMT February",
+      "url": "https://www.hmmt.org/",
+      "grades": "High school",
+      "mode": "campus",
+      "location": {
+        "venue": "Massachusetts Institute of Technology",
+        "city": "Cambridge, MA",
+        "lat": 42.3601,
+        "lng": -71.0942,
+        "precision": "campus"
+      },
+      "startDate": "2027-02-13",
+      "endDate": "2027-02-13",
+      "dateKind": "fixed",
+      "notes": "Team application required. A student may attend only one of the November and February tournaments in a season.",
+      "recordSlugs": [
+        "hmmt-feb",
+        "hmmt-feb-algebra-number-theory",
+        "hmmt-feb-combo",
+        "hmmt-feb-geometry"
+      ],
+      "registrationDeadline": "2026-09-20",
+      "sources": [
+        "https://www.hmmt.org/",
+        "https://www.hmmt.co/rg/deadlines"
+      ],
+      "checkedOn": "2026-09-08"
+    },
+    {
+      "id": "mathcounts-chapter",
+      "name": "MATHCOUNTS · Chapter",
+      "url": "https://www.mathcounts.org/programs/critical-dates",
+      "grades": "Grades 6–8",
+      "mode": "local",
+      "location": null,
+      "startDate": "2027-02-01",
+      "endDate": "2027-02-28",
+      "dateKind": "window",
+      "notes": "Your chapter sets the date and venue. Register through a school coach or the non-school competitor program.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://www.mathcounts.org/programs/critical-dates"
+      ],
+      "checkedOn": "2026-09-08"
+    },
+    {
+      "id": "mathcounts-state",
+      "name": "MATHCOUNTS · State",
+      "url": "https://www.mathcounts.org/programs/critical-dates",
+      "grades": "Grades 6–8",
+      "mode": "local",
+      "location": null,
+      "startDate": "2027-03-01",
+      "endDate": "2027-03-31",
+      "dateKind": "window",
+      "notes": "Qualification through your chapter required; your state sets the date and venue.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://www.mathcounts.org/programs/critical-dates"
+      ],
+      "checkedOn": "2026-09-08"
+    },
+    {
+      "id": "kangaroo",
+      "name": "Math Kangaroo USA",
+      "url": "https://mathkangaroo.org/mks/resources/math-kangaroo-posters-and-flyers/",
+      "grades": "Grades K–12",
+      "mode": "local",
+      "location": null,
+      "startDate": "2027-03-18",
+      "endDate": "2027-03-18",
+      "dateKind": "fixed",
+      "notes": "Choose a participating center and verify available seats and testing arrangements.",
+      "recordSlugs": [
+        "mk-national"
+      ],
+      "registrationDeadline": null,
+      "sources": [
+        "https://mathkangaroo.org/mks/resources/math-kangaroo-posters-and-flyers/"
+      ],
+      "checkedOn": "2026-09-08"
+    },
+    {
+      "id": "usamo",
+      "name": "USAMO / USAJMO",
+      "url": "https://maa.org/amcreg/",
+      "grades": "Qualified pre-college students",
+      "mode": "local",
+      "location": null,
+      "startDate": "2027-03-20",
+      "endDate": "2027-03-21",
+      "dateKind": "fixed",
+      "notes": "Invitation only through AMC/AIME qualification. Follow the MAA’s assigned testing arrangements.",
+      "recordSlugs": [
+        "amo",
+        "jmo"
+      ],
+      "registrationDeadline": null,
+      "sources": [
+        "https://maa.org/amcreg/"
+      ],
+      "checkedOn": "2026-09-08"
+    },
+    {
+      "id": "purple-comet",
+      "name": "Purple Comet! Math Meet",
+      "url": "https://purplecomet.org/",
+      "grades": "Middle school & high school",
+      "mode": "online",
+      "location": null,
+      "startDate": "2027-04-06",
+      "endDate": "2027-04-15",
+      "dateKind": "window",
+      "notes": "Online team competition with an adult supervisor. Choose a contest session within the published window.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://purplecomet.org/"
+      ],
+      "checkedOn": "2026-09-08"
+    },
+    {
+      "id": "mathcounts-national",
+      "name": "MATHCOUNTS · National",
+      "url": "https://www.mathcounts.org/programs/critical-dates",
+      "grades": "Grades 6–8",
+      "mode": "local",
+      "location": null,
+      "startDate": "2027-05-09",
+      "endDate": "2027-05-10",
+      "dateKind": "fixed",
+      "notes": "Washington, DC. Top four individuals per state advance. Exact venue is not yet verified, so no map pin is shown.",
+      "recordSlugs": [
+        "mathcounts-national",
+        "mathcounts-national-rank"
+      ],
+      "registrationDeadline": null,
+      "sources": [
+        "https://www.mathcounts.org/programs/critical-dates"
+      ],
+      "checkedOn": "2026-09-08"
+    },
+    {
+      "id": "moems-1",
+      "name": "MOEMS · Round 1",
+      "url": "https://www.moems.org/",
+      "grades": "Division E: grades 4–6 · Division M: grades 6–8",
+      "mode": "local",
+      "location": null,
+      "startDate": "2026-11-09",
+      "endDate": "2026-11-30",
+      "dateKind": "window",
+      "notes": "School or group contest. Your coach selects a session within the administration window; paper and remote formats are offered.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://www.moems.org/"
+      ],
+      "checkedOn": "2026-09-08"
+    },
+    {
+      "id": "moems-2",
+      "name": "MOEMS · Round 2",
+      "url": "https://www.moems.org/",
+      "grades": "Division E: grades 4–6 · Division M: grades 6–8",
+      "mode": "local",
+      "location": null,
+      "startDate": "2026-12-07",
+      "endDate": "2026-12-28",
+      "dateKind": "window",
+      "notes": "School or group contest. Your coach selects a session within the administration window; paper and remote formats are offered.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://www.moems.org/"
+      ],
+      "checkedOn": "2026-09-08"
+    },
+    {
+      "id": "moems-3",
+      "name": "MOEMS · Round 3",
+      "url": "https://www.moems.org/",
+      "grades": "Division E: grades 4–6 · Division M: grades 6–8",
+      "mode": "local",
+      "location": null,
+      "startDate": "2027-01-04",
+      "endDate": "2027-01-25",
+      "dateKind": "window",
+      "notes": "School or group contest. Your coach selects a session within the administration window; paper and remote formats are offered.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://www.moems.org/"
+      ],
+      "checkedOn": "2026-09-08"
+    },
+    {
+      "id": "moems-4",
+      "name": "MOEMS · Round 4",
+      "url": "https://www.moems.org/",
+      "grades": "Division E: grades 4–6 · Division M: grades 6–8",
+      "mode": "local",
+      "location": null,
+      "startDate": "2027-02-01",
+      "endDate": "2027-02-22",
+      "dateKind": "window",
+      "notes": "School or group contest. Your coach selects a session within the administration window; paper and remote formats are offered.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://www.moems.org/"
+      ],
+      "checkedOn": "2026-09-08"
+    },
+    {
+      "id": "moems-5",
+      "name": "MOEMS · Round 5",
+      "url": "https://www.moems.org/",
+      "grades": "Division E: grades 4–6 · Division M: grades 6–8",
+      "mode": "local",
+      "location": null,
+      "startDate": "2027-03-01",
+      "endDate": "2027-03-29",
+      "dateKind": "window",
+      "notes": "School or group contest. Your coach selects a session within the administration window; paper and remote formats are offered.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://www.moems.org/"
+      ],
+      "checkedOn": "2026-09-08"
+    },
+    {
+      "id": "cmimc",
+      "name": "CMIMC",
+      "url": "https://cmimc.math.cmu.edu/math",
+      "grades": "High school & younger students",
+      "mode": "campus",
+      "location": {
+        "venue": "Carnegie Mellon University",
+        "city": "Pittsburgh, PA",
+        "lat": 40.4433,
+        "lng": -79.9436,
+        "precision": "previous-campus"
+      },
+      "startDate": null,
+      "endDate": null,
+      "dateKind": "unannounced",
+      "notes": "The organizer still lists the March 2026 edition. Next date unannounced.",
+      "recordSlugs": [
+        "cmimc",
+        "cmimc-algebra",
+        "cmimc-comb",
+        "cmimc-geometry"
+      ],
+      "registrationDeadline": null,
+      "sources": [
+        "https://cmimc.math.cmu.edu/math"
+      ],
+      "checkedOn": "2026-09-08"
+    },
+    {
+      "id": "cmm",
+      "name": "Caltech Math Meet",
+      "url": "https://www.caltechmathmeet.org/",
+      "grades": "High school",
+      "mode": "campus",
+      "location": {
+        "venue": "California Institute of Technology",
+        "city": "Pasadena, CA",
+        "lat": 34.1377,
+        "lng": -118.1253,
+        "precision": "previous-campus"
+      },
+      "startDate": null,
+      "endDate": null,
+      "dateKind": "unannounced",
+      "notes": "Next date unannounced. Check team registration and eligibility.",
+      "recordSlugs": [
+        "cmm"
+      ],
+      "registrationDeadline": null,
+      "sources": [
+        "https://www.caltechmathmeet.org/"
+      ],
+      "checkedOn": "2026-09-08"
+    },
+    {
+      "id": "smt",
+      "name": "Stanford Math Tournament",
+      "url": "https://www.stanfordmathtournament.org/",
+      "grades": "High school",
+      "mode": "campus",
+      "location": {
+        "venue": "Stanford University",
+        "city": "Stanford, CA",
+        "lat": 37.4275,
+        "lng": -122.1697,
+        "precision": "previous-campus"
+      },
+      "startDate": null,
+      "endDate": null,
+      "dateKind": "unannounced",
+      "notes": "The organizer still lists the April 2026 edition. Next date unannounced.",
+      "recordSlugs": [
+        "smt-algebra",
+        "smt-calculus",
+        "smt-discrete",
+        "smt-general",
+        "smt-geometry"
+      ],
+      "registrationDeadline": null,
+      "sources": [
+        "https://www.stanfordmathtournament.org/"
+      ],
+      "checkedOn": "2026-09-08"
+    },
+    {
+      "id": "brumo",
+      "name": "Brown University Math Olympiad",
+      "url": "https://www.brumo.org/",
+      "grades": "Middle school & high school",
+      "mode": "campus",
+      "location": {
+        "venue": "Brown University",
+        "city": "Providence, RI",
+        "lat": 41.8268,
+        "lng": -71.4025,
+        "precision": "previous-campus"
+      },
+      "startDate": null,
+      "endDate": null,
+      "dateKind": "unannounced",
+      "notes": "Next date unannounced. Check divisions and team requirements.",
+      "recordSlugs": [
+        "brumo-a"
+      ],
+      "registrationDeadline": null,
+      "sources": [
+        "https://www.brumo.org/"
+      ],
+      "checkedOn": "2026-09-08"
+    },
+    {
+      "id": "jhmt",
+      "name": "Johns Hopkins Math Tournament",
+      "url": "https://www.johnshopkinsmathtournament.com/",
+      "grades": "Middle school & high school",
+      "mode": "campus",
+      "location": {
+        "venue": "Johns Hopkins University",
+        "city": "Baltimore, MD",
+        "lat": 39.3299,
+        "lng": -76.6205,
+        "precision": "previous-campus"
+      },
+      "startDate": null,
+      "endDate": null,
+      "dateKind": "unannounced",
+      "notes": "Listed in the records database. Next date and campus arrangements need organizer confirmation.",
+      "recordSlugs": [
+        "jhmt"
+      ],
+      "registrationDeadline": null,
+      "sources": [
+        "https://www.johnshopkinsmathtournament.com/"
+      ],
+      "checkedOn": null
+    },
+    {
+      "id": "emcc",
+      "name": "Exeter Math Club Competition",
+      "url": "https://exetermathclub.com/",
+      "grades": "Middle school",
+      "mode": "campus",
+      "location": {
+        "venue": "Phillips Exeter Academy",
+        "city": "Exeter, NH",
+        "lat": 42.9805,
+        "lng": -70.9513,
+        "precision": "previous-campus"
+      },
+      "startDate": null,
+      "endDate": null,
+      "dateKind": "unannounced",
+      "notes": "Listed in the records database. Next date and campus arrangements need organizer confirmation.",
+      "recordSlugs": [
+        "emcc"
+      ],
+      "registrationDeadline": null,
+      "sources": [
+        "https://exetermathclub.com/"
+      ],
+      "checkedOn": null
+    },
+    {
+      "id": "mmaths",
+      "name": "MMATHS",
+      "url": "https://www.mmaths.org/mmaths",
+      "grades": "High school",
+      "mode": "campus",
+      "location": {
+        "venue": "Yale University",
+        "city": "New Haven, CT",
+        "lat": 41.3163,
+        "lng": -72.9223,
+        "precision": "previous-campus"
+      },
+      "startDate": "2026-11-14",
+      "endDate": "2026-11-14",
+      "dateKind": "fixed",
+      "notes": "Listed in the records database. Yale and partner sites; next date and participating sites need confirmation.",
+      "recordSlugs": [
+        "mmaths"
+      ],
+      "registrationDeadline": null,
+      "sources": [
+        "https://www.mmaths.org/mmaths",
+        "https://www.mmaths.org/"
+      ],
+      "checkedOn": "2026-09-08"
+    },
+    {
+      "id": "bmmt",
+      "name": "Berkeley mini Math Tournament",
+      "url": "https://berkeley.mt/",
+      "grades": "Middle school",
+      "mode": "campus",
+      "location": {
+        "venue": "University of California, Berkeley",
+        "city": "Berkeley, CA",
+        "lat": 37.8719,
+        "lng": -122.2585,
+        "precision": "previous-campus"
+      },
+      "startDate": null,
+      "endDate": null,
+      "dateKind": "unannounced",
+      "notes": "Middle school tournament. Next in-person date unannounced; check the organizer for format and venue.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://berkeley.mt/"
+      ],
+      "checkedOn": "2026-09-08"
+    },
+    {
+      "id": "arml",
+      "name": "American Regions Mathematics League",
+      "url": "https://arml3.com/",
+      "grades": "Pre-college regional teams",
+      "mode": "local",
+      "location": null,
+      "startDate": null,
+      "endDate": null,
+      "dateKind": "unannounced",
+      "notes": "Regional team selection required. Multiple university sites; the next edition’s dates and locations need confirmation.",
+      "recordSlugs": [
+        "arml"
+      ],
+      "registrationDeadline": null,
+      "sources": [
+        "https://arml3.com/"
+      ],
+      "checkedOn": "2026-09-08"
+    },
+    {
+      "id": "bamo",
+      "name": "Bay Area Mathematical Olympiad",
+      "url": "https://www.bamo.org/",
+      "grades": "Middle school & high school",
+      "mode": "local",
+      "location": null,
+      "startDate": null,
+      "endDate": null,
+      "dateKind": "unannounced",
+      "notes": "BAMO-8 and BAMO-12 divisions. Participate through a Bay Area school; next date unannounced.",
+      "recordSlugs": [
+        "bamo-12",
+        "bamo-8"
+      ],
+      "registrationDeadline": null,
+      "sources": [
+        "https://www.bamo.org/"
+      ],
+      "checkedOn": null
+    },
+    {
+      "id": "hmic",
+      "name": "HMMT Invitational Competition",
+      "url": "https://www.hmmt.org/",
+      "grades": "Invited HMMT competitors",
+      "mode": "online",
+      "location": null,
+      "startDate": null,
+      "endDate": null,
+      "dateKind": "unannounced",
+      "notes": "Invitation only. Next date unannounced.",
+      "recordSlugs": [
+        "hmic"
+      ],
+      "registrationDeadline": null,
+      "sources": [
+        "https://www.hmmt.org/"
+      ],
+      "checkedOn": "2026-09-08"
+    },
+    {
+      "id": "amm",
+      "name": "American Masters of Mathematics",
+      "url": "https://www.omegausa.org/",
+      "grades": "Invited pre-college students",
+      "mode": "local",
+      "location": null,
+      "startDate": null,
+      "endDate": null,
+      "dateKind": "unannounced",
+      "notes": "Invitational event. Next date and venue unannounced.",
+      "recordSlugs": [
+        "amm"
+      ],
+      "registrationDeadline": null,
+      "sources": [
+        "https://www.omegausa.org/"
+      ],
+      "checkedOn": null
+    },
+    {
+      "id": "mpfg-olympiad",
+      "name": "Math Prize for Girls Olympiad",
+      "url": "https://mathprize.atfoundation.org/",
+      "grades": "Invited Math Prize for Girls participants",
+      "mode": "local",
+      "location": null,
+      "startDate": null,
+      "endDate": null,
+      "dateKind": "unannounced",
+      "notes": "Proof competition for selected participants. Next date and testing location unannounced.",
+      "recordSlugs": [
+        "mpfg-olympiad"
+      ],
+      "registrationDeadline": null,
+      "sources": [
+        "https://mathprize.atfoundation.org/"
+      ],
+      "checkedOn": "2026-09-08"
+    },
+    {
+      "id": "imo",
+      "name": "International Mathematical Olympiad",
+      "url": "https://www.imo-official.org/",
+      "grades": "Selected national teams",
+      "mode": "local",
+      "location": null,
+      "startDate": null,
+      "endDate": null,
+      "dateKind": "unannounced",
+      "notes": "National-team selection required. Future host venue and date not verified in this catalog.",
+      "recordSlugs": [
+        "imo"
+      ],
+      "registrationDeadline": null,
+      "sources": [
+        "https://www.imo-official.org/"
+      ],
+      "checkedOn": null
+    },
+    {
+      "id": "egmo",
+      "name": "European Girls’ Mathematical Olympiad",
+      "url": "https://www.egmo.org/",
+      "grades": "Selected national teams",
+      "mode": "local",
+      "location": null,
+      "startDate": null,
+      "endDate": null,
+      "dateKind": "unannounced",
+      "notes": "National-team selection required. Future host venue and date not verified in this catalog.",
+      "recordSlugs": [
+        "egmo"
+      ],
+      "registrationDeadline": null,
+      "sources": [
+        "https://www.egmo.org/"
+      ],
+      "checkedOn": null
+    },
+    {
+      "id": "rmm",
+      "name": "Romanian Master of Mathematics",
+      "url": "https://rmms.lbi.ro/",
+      "grades": "Selected national teams",
+      "mode": "local",
+      "location": null,
+      "startDate": null,
+      "endDate": null,
+      "dateKind": "unannounced",
+      "notes": "Invitation through national delegations. Future venue and date not verified in this catalog.",
+      "recordSlugs": [
+        "rmm"
+      ],
+      "registrationDeadline": null,
+      "sources": [
+        "https://rmms.lbi.ro/"
+      ],
+      "checkedOn": null
+    },
+    {
+      "id": "mathleague-ms",
+      "name": "mathleague.org · Middle School",
+      "url": "https://mathleague.org/contestfind.php",
+      "grades": "Middle school",
+      "mode": "local",
+      "location": null,
+      "startDate": null,
+      "endDate": null,
+      "dateKind": "unannounced",
+      "notes": "Choose a local, online, or on-demand qualifier in the official event finder. Dates, residency rules, and venues vary.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://mathleague.org/contestfind.php"
+      ],
+      "checkedOn": "2026-09-08"
+    },
+    {
+      "id": "mathleague-hs",
+      "name": "mathleague.org · High School",
+      "url": "https://mathleague.org/contestfind.php",
+      "grades": "High school",
+      "mode": "local",
+      "location": null,
+      "startDate": null,
+      "endDate": null,
+      "dateKind": "unannounced",
+      "notes": "Choose a qualifying contest in the official event finder. Dates, participation rules, and venues vary.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://mathleague.org/contestfind.php"
+      ],
+      "checkedOn": "2026-09-08"
+    },
+    {
+      "id": "m3",
+      "name": "MathWorks Math Modeling Challenge",
+      "url": "https://m3challenge.siam.org/",
+      "grades": "High school; regional eligibility applies",
+      "mode": "online",
+      "location": null,
+      "startDate": null,
+      "endDate": null,
+      "dateKind": "unannounced",
+      "notes": "Team modeling competition. Check the official rules for eligible grades and regions, registration, and the next challenge window.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://m3challenge.siam.org/"
+      ],
+      "checkedOn": "2026-09-08"
+    },
+    {
+      "id": "new-mexico-math-meet",
+      "name": "New Mexico Math Meet",
+      "url": "https://contest.nmmathteam.com/",
+      "grades": "Middle school",
+      "mode": "campus",
+      "location": {
+        "venue": "University of New Mexico",
+        "city": "Albuquerque, NM",
+        "lat": 35.0773,
+        "lng": -106.6448,
+        "precision": "city"
+      },
+      "startDate": "2026-09-19",
+      "endDate": "2026-09-19",
+      "dateKind": "fixed",
+      "notes": "Team contest for New Mexico middle school students. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer.",
+      "recordSlugs": [],
+      "registrationDeadline": "2026-09-06",
+      "sources": [
+        "https://contest.nmmathteam.com/",
+        "https://www.geonames.org/postal-codes/US/united-states.html"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 1
+    },
+    {
+      "id": "cowconuts",
+      "name": "Cowconuts Math Competition",
+      "url": "https://cowconuts.org/2026/08/06/2026-9th-annual-cowconuts-math-competition/",
+      "grades": "Grade 12 and below; separate grade 9-and-below division",
+      "mode": "campus",
+      "location": {
+        "venue": "Amador Valley High School",
+        "city": "Pleasanton, CA",
+        "lat": 37.6765,
+        "lng": -121.8856,
+        "precision": "city"
+      },
+      "startDate": "2026-09-27",
+      "endDate": "2026-09-27",
+      "dateKind": "fixed",
+      "notes": "In-person edition; teams of up to four. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer.",
+      "recordSlugs": [],
+      "registrationDeadline": "2026-09-18",
+      "sources": [
+        "https://cowconuts.org/2026/08/06/2026-9th-annual-cowconuts-math-competition/",
+        "https://www.geonames.org/postal-codes/US/united-states.html"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 2,
+      "registrationNote": "11:59 p.m. Pacific"
+    },
+    {
+      "id": "soifer",
+      "name": "Soifer Mathematical Olympiad",
+      "url": "https://soifermathematicalolympiad.uccs.edu/",
+      "grades": "Grades 5–12",
+      "mode": "campus",
+      "location": {
+        "venue": "University of Colorado Colorado Springs",
+        "city": "Colorado Springs, CO",
+        "lat": 38.8442,
+        "lng": -104.7679,
+        "precision": "city"
+      },
+      "startDate": "2026-10-02",
+      "endDate": "2026-10-02",
+      "dateKind": "fixed",
+      "notes": "Colorado students; out-of-state students must request permission. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://soifermathematicalolympiad.uccs.edu/",
+        "https://www.geonames.org/postal-codes/US/united-states.html"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 3
+    },
+    {
+      "id": "moaa",
+      "name": "Math Open at Andover",
+      "url": "https://andovermathopen.com/contest",
+      "grades": "Grade 8 and below",
+      "mode": "campus",
+      "location": {
+        "venue": "Phillips Academy Andover",
+        "city": "Andover, MA",
+        "lat": 42.6499,
+        "lng": -71.1692,
+        "precision": "city"
+      },
+      "startDate": "2026-10-10",
+      "endDate": "2026-10-10",
+      "dateKind": "fixed",
+      "notes": "In-person division; the organizer also offers a virtual division. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://andovermathopen.com/",
+        "https://andovermathopen.com/contest",
+        "https://www.geonames.org/postal-codes/US/united-states.html"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 4
+    },
+    {
+      "id": "cornell-big-red",
+      "name": "Cornell Big Red Math Competition",
+      "url": "https://www.bigredmathcomp.org/",
+      "grades": "High school",
+      "mode": "campus",
+      "location": {
+        "venue": "Cornell University · Malott Hall",
+        "city": "Ithaca, NY",
+        "lat": 42.4485,
+        "lng": -76.4882,
+        "precision": "city"
+      },
+      "startDate": "2026-10-24",
+      "endDate": "2026-10-24",
+      "dateKind": "fixed",
+      "notes": "High school team competition. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer.",
+      "recordSlugs": [],
+      "registrationDeadline": "2026-10-14",
+      "sources": [
+        "https://www.bigredmathcomp.org/",
+        "https://events.cornell.edu/event/cornell-big-red-math-competition-cubrmc-2026",
+        "https://www.geonames.org/postal-codes/US/united-states.html"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 5
+    },
+    {
+      "id": "uga",
+      "name": "UGA High School Math Tournament",
+      "url": "https://math.uga.edu/uga-high-school-math-tournament",
+      "grades": "High school",
+      "mode": "campus",
+      "location": {
+        "venue": "University of Georgia · Miller Learning Center",
+        "city": "Athens, GA",
+        "lat": 33.9545,
+        "lng": -83.3856,
+        "precision": "city"
+      },
+      "startDate": "2026-10-24",
+      "endDate": "2026-10-24",
+      "dateKind": "fixed",
+      "notes": "School teams and individual participants are welcome. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer.",
+      "recordSlugs": [],
+      "registrationDeadline": "2026-10-15",
+      "sources": [
+        "https://math.uga.edu/uga-high-school-math-tournament",
+        "https://www.geonames.org/postal-codes/US/united-states.html"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 6
+    },
+    {
+      "id": "uw-platteville",
+      "name": "UW–Platteville High School Mathematics Contest",
+      "url": "https://www.uwplatt.edu/department/mathematics/high-school-mathematics-contest",
+      "grades": "High school",
+      "mode": "campus",
+      "location": {
+        "venue": "University of Wisconsin–Platteville",
+        "city": "Platteville, WI",
+        "lat": 42.7393,
+        "lng": -90.4854,
+        "precision": "city"
+      },
+      "startDate": "2026-11-04",
+      "endDate": "2026-11-04",
+      "dateKind": "fixed",
+      "notes": "School teams compete in divisions based on enrollment. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://www.uwplatt.edu/department/mathematics/high-school-mathematics-contest",
+        "https://www.geonames.org/postal-codes/US/united-states.html"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 7
+    },
+    {
+      "id": "fgcu",
+      "name": "FGCU Invitational Mathematics Competition",
+      "url": "https://www.fgcu.edu/cas/departments/math/mathcompetition/",
+      "grades": "Middle and high school",
+      "mode": "campus",
+      "location": {
+        "venue": "Florida Gulf Coast University",
+        "city": "Fort Myers, FL",
+        "lat": 26.5619,
+        "lng": -81.8527,
+        "precision": "city"
+      },
+      "startDate": "2026-11-07",
+      "endDate": "2026-11-07",
+      "dateKind": "fixed",
+      "notes": "Subject divisions from Algebra I through Calculus. Confirm registration availability with organizer. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer.",
+      "recordSlugs": [],
+      "registrationDeadline": "2026-11-07",
+      "sources": [
+        "https://www.fgcu.edu/cas/departments/math/mathcompetition/",
+        "https://www.geonames.org/postal-codes/US/united-states.html"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 8
+    },
+    {
+      "id": "illini",
+      "name": "Illini Math Tournament",
+      "url": "https://www.illinimt.org/",
+      "grades": "Middle and high school",
+      "mode": "campus",
+      "location": {
+        "venue": "University of Illinois Urbana-Champaign · room TBA",
+        "city": "Urbana, IL",
+        "lat": 40.0967,
+        "lng": -88.1991,
+        "precision": "city"
+      },
+      "startDate": "2026-11-14",
+      "endDate": "2026-11-14",
+      "dateKind": "fixed",
+      "notes": "Student-run tournament; exact venue is still to be announced. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://www.illinimt.org/",
+        "https://www.geonames.org/postal-codes/US/united-states.html"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 9
+    },
+    {
+      "id": "stevens",
+      "name": "Stevens Mathematical Olympiad",
+      "url": "https://www.stevens.edu/stevens-mathematical-olympiad",
+      "grades": "Grades 3–12",
+      "mode": "campus",
+      "location": {
+        "venue": "Stevens Institute of Technology",
+        "city": "Hoboken, NJ",
+        "lat": 40.7445,
+        "lng": -74.0329,
+        "precision": "previous-city"
+      },
+      "startDate": null,
+      "endDate": null,
+      "dateKind": "unannounced",
+      "notes": "Organizer says the event will return in 2027; exact date not announced. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://www.stevens.edu/stevens-mathematical-olympiad",
+        "https://www.geonames.org/postal-codes/US/united-states.html"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 10
+    },
+    {
+      "id": "lexington",
+      "name": "Lexington Math Tournament",
+      "url": "https://www.lhsmath.org/LMT/Home",
+      "grades": "Middle school",
+      "mode": "campus",
+      "location": {
+        "venue": "Lexington High School",
+        "city": "Lexington, MA",
+        "lat": 42.4494,
+        "lng": -71.2216,
+        "precision": "previous-city"
+      },
+      "startDate": null,
+      "endDate": null,
+      "dateKind": "unannounced",
+      "notes": "In-person middle school tournament; last published edition was May 9, 2026. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://www.lhsmath.org/LMT/Home",
+        "https://www.geonames.org/postal-codes/US/united-states.html"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 11
+    },
+    {
+      "id": "penn",
+      "name": "Penn Math Contest",
+      "url": "https://www.pennmathcontest.com/",
+      "grades": "High school",
+      "mode": "campus",
+      "location": {
+        "venue": "University of Pennsylvania",
+        "city": "Philadelphia, PA",
+        "lat": 39.9908,
+        "lng": -75.1426,
+        "precision": "previous-city"
+      },
+      "startDate": null,
+      "endDate": null,
+      "dateKind": "unannounced",
+      "notes": "In-person division; online participation also exists. Next edition interest list is available. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://www.pennmathcontest.com/",
+        "https://www.geonames.org/postal-codes/US/united-states.html"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 12
+    },
+    {
+      "id": "winchester",
+      "name": "Winchester Math Competition",
+      "url": "https://winmac.org/information/",
+      "grades": "Grades 4–8",
+      "mode": "campus",
+      "location": {
+        "venue": "Winchester High School",
+        "city": "Winchester, MA",
+        "lat": 42.453,
+        "lng": -71.1441,
+        "precision": "previous-city"
+      },
+      "startDate": null,
+      "endDate": null,
+      "dateKind": "unannounced",
+      "notes": "In-person tournament; last published edition was April 4, 2026. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://winmac.org/information/",
+        "https://www.geonames.org/postal-codes/US/united-states.html"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 13
+    },
+    {
+      "id": "uva",
+      "name": "UVA Math Tournament",
+      "url": "https://www.uvamt.org/",
+      "grades": "High school",
+      "mode": "campus",
+      "location": {
+        "venue": "University of Virginia",
+        "city": "Charlottesville, VA",
+        "lat": 38.0472,
+        "lng": -78.4819,
+        "precision": "previous-city"
+      },
+      "startDate": null,
+      "endDate": null,
+      "dateKind": "unannounced",
+      "notes": "High school team tournament. Registration for the 2026 edition is closed. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://www.uvamt.org/",
+        "https://www.geonames.org/postal-codes/US/united-states.html"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 14
+    },
+    {
+      "id": "harker",
+      "name": "Harker Math Invitational",
+      "url": "https://www.harkermathinvitational.org/",
+      "grades": "Middle school",
+      "mode": "campus",
+      "location": {
+        "venue": "The Harker School · Upper School",
+        "city": "San Jose, CA",
+        "lat": 37.3205,
+        "lng": -121.8794,
+        "precision": "city"
+      },
+      "startDate": "2027-03-13",
+      "endDate": "2027-03-13",
+      "dateKind": "fixed",
+      "notes": "Registration expected to open in December; closing deadline not yet published. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://www.harkermathinvitational.org/",
+        "https://www.geonames.org/postal-codes/US/united-states.html"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 15
+    },
+    {
+      "id": "imsa-jhmc",
+      "name": "IMSA Junior High Mathematics Contest",
+      "url": "https://imsajhmc.com/",
+      "grades": "Middle school",
+      "mode": "campus",
+      "location": {
+        "venue": "Illinois Mathematics and Science Academy",
+        "city": "Aurora, IL",
+        "lat": 41.7715,
+        "lng": -88.267,
+        "precision": "previous-city"
+      },
+      "startDate": null,
+      "endDate": null,
+      "dateKind": "unannounced",
+      "notes": "In-person division; last in-person event March 11, 2026. The virtual division is not added. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://imsajhmc.com/",
+        "https://www.geonames.org/postal-codes/US/united-states.html"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 16
+    },
+    {
+      "id": "blair",
+      "name": "Montgomery Blair Math Tournament",
+      "url": "https://mbmt.mbhs.edu/",
+      "grades": "Middle school",
+      "mode": "campus",
+      "location": {
+        "venue": "Montgomery Blair High School",
+        "city": "Silver Spring, MD",
+        "lat": 39.0182,
+        "lng": -77.0206,
+        "precision": "previous-city"
+      },
+      "startDate": null,
+      "endDate": null,
+      "dateKind": "unannounced",
+      "notes": "Team tournament for middle school students; last published edition March 8, 2026. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://mbmt.mbhs.edu/",
+        "https://www.geonames.org/postal-codes/US/united-states.html"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 17
+    },
+    {
+      "id": "downtown",
+      "name": "Downtown Mathematics Invitational",
+      "url": "https://dmi.stuy.edu/",
+      "grades": "High school",
+      "mode": "campus",
+      "location": {
+        "venue": "Stuyvesant High School",
+        "city": "New York, NY",
+        "lat": 40.7592,
+        "lng": -73.9817,
+        "precision": "previous-city"
+      },
+      "startDate": null,
+      "endDate": null,
+      "dateKind": "unannounced",
+      "notes": "Student-run in-person tournament; last published edition December 20, 2025. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://dmi.stuy.edu/",
+        "https://www.geonames.org/postal-codes/US/united-states.html"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 18
+    },
+    {
+      "id": "rose-hulman",
+      "name": "Rose-Hulman High School Mathematics Competition",
+      "url": "https://www.rose-hulman.edu/class/ma/web/HSMC/",
+      "grades": "High school",
+      "mode": "campus",
+      "location": {
+        "venue": "Rose-Hulman Institute of Technology · SRC",
+        "city": "Terre Haute, IN",
+        "lat": 39.4677,
+        "lng": -87.389,
+        "precision": "previous-city"
+      },
+      "startDate": null,
+      "endDate": null,
+      "dateKind": "unannounced",
+      "notes": "School teams by grade. Last published edition November 1, 2025; its deadline does not apply to the next edition. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://www.rose-hulman.edu/class/ma/web/HSMC/",
+        "https://www.geonames.org/postal-codes/US/united-states.html"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 19
+    },
+    {
+      "id": "tjimo",
+      "name": "Thomas Jefferson Intermediate Math Open",
+      "url": "https://tjvmt.com/tjimo",
+      "grades": "Grades 6–8; math-course restrictions apply",
+      "mode": "campus",
+      "location": {
+        "venue": "Thomas Jefferson High School for Science and Technology",
+        "city": "Alexandria, VA",
+        "lat": 38.7966,
+        "lng": -77.0874,
+        "precision": "previous-city"
+      },
+      "startDate": null,
+      "endDate": null,
+      "dateKind": "unannounced",
+      "notes": "DC-area school teams; students must be taking Geometry or below. Last published edition October 18, 2025. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://tjvmt.com/tjimo",
+        "https://www.geonames.org/postal-codes/US/united-states.html"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 20
+    },
+    {
+      "id": "holbrook",
+      "name": "Joe Holbrook Memorial Math Competition",
+      "url": "https://holbrook.bcamathteam.org/",
+      "grades": "Grades 4–8",
+      "mode": "campus",
+      "location": {
+        "venue": "Bergen County Academies",
+        "city": "Hackensack, NJ",
+        "lat": 40.8871,
+        "lng": -74.0469,
+        "precision": "previous-city"
+      },
+      "startDate": null,
+      "endDate": null,
+      "dateKind": "unannounced",
+      "notes": "Different grades compete on separate days; next edition schedule not announced. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://holbrook.bcamathteam.org/",
+        "https://www.geonames.org/postal-codes/US/united-states.html"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 21
+    },
+    {
+      "id": "michigan",
+      "name": "Michigan Math Meet",
+      "url": "https://michiganmathmeet.org/registration.html",
+      "grades": "High school",
+      "mode": "campus",
+      "location": {
+        "venue": "University of Michigan",
+        "city": "Ann Arbor, MI",
+        "lat": 42.2655,
+        "lng": -83.7714,
+        "precision": "previous-city"
+      },
+      "startDate": null,
+      "endDate": null,
+      "dateKind": "unannounced",
+      "notes": "Last edition held April 12, 2026. Older registration information on the site is for reference only. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://michiganmathmeet.org/registration.html",
+        "https://www.geonames.org/postal-codes/US/united-states.html"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 22
+    },
+    {
+      "id": "boise",
+      "name": "Boise State Math Invitational",
+      "url": "https://www.boisestate.edu/math/outreach/invitational/",
+      "grades": "High school",
+      "mode": "campus",
+      "location": {
+        "venue": "Boise State University",
+        "city": "Boise, ID",
+        "lat": 43.5393,
+        "lng": -116.2282,
+        "precision": "city"
+      },
+      "startDate": "2026-11-14",
+      "endDate": "2026-11-14",
+      "dateKind": "fixed",
+      "notes": "Divisions based on mathematics experience; confirm eligibility and room with organizer. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://www.boisestate.edu/math/outreach/invitational/",
+        "https://www.geonames.org/postal-codes/US/united-states.html"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 23
+    },
+    {
+      "id": "obryan",
+      "name": "John O’Bryan Mathematics Competition",
+      "url": "https://www.nku.edu/artsci/departments/math/news-events/obryan/index.html",
+      "grades": "High school",
+      "mode": "campus",
+      "location": {
+        "venue": "Northern Kentucky University · MEP",
+        "city": "Highland Heights, KY",
+        "lat": 38.9638,
+        "lng": -84.3689,
+        "precision": "city"
+      },
+      "startDate": "2026-11-21",
+      "endDate": "2026-11-21",
+      "dateKind": "fixed",
+      "notes": "Open to Kentucky, Ohio and Indiana high school students. Organizer labels the date tentative. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://www.nku.edu/artsci/departments/math/news-events/obryan/index.html",
+        "https://www.geonames.org/postal-codes/US/united-states.html"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 24,
+      "registrationNote": "Submit at least two weeks ahead; later entries at organizer discretion",
+      "dateTentative": true
+    },
+    {
+      "id": "oregon-invitational",
+      "name": "Oregon Invitational Math Tournament",
+      "url": "https://math.oregonstate.edu/our-department/outreach/oregon-invitational-math-tournament",
+      "grades": "High school",
+      "mode": "campus",
+      "location": {
+        "venue": "Oregon State University",
+        "city": "Corvallis, OR",
+        "lat": 44.5645,
+        "lng": -123.273,
+        "precision": "previous-city"
+      },
+      "startDate": null,
+      "endDate": null,
+      "dateKind": "unannounced",
+      "notes": "Invitation based on regional results or qualifying AMC scores. Next event expected in 2027; exact date not published. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://math.oregonstate.edu/our-department/outreach/oregon-invitational-math-tournament",
+        "https://www.geonames.org/postal-codes/US/united-states.html"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 25
+    },
+    {
+      "id": "hawaii-math-bowl",
+      "name": "State of Hawaii Math Bowl",
+      "url": "https://mc.byuh.edu/math/upcoming-math-bowl-info",
+      "grades": "High school",
+      "mode": "local",
+      "location": null,
+      "startDate": null,
+      "endDate": null,
+      "dateKind": "unannounced",
+      "notes": "In-person Hawaii school-team competition. Host island and exact venue vary; no map pin until the next host is confirmed. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://mc.byuh.edu/math/upcoming-math-bowl-info"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 26,
+      "registrationNote": "Organizer states first Wednesday in April; confirm edition and year"
+    },
+    {
+      "id": "manhattan-olympiad",
+      "name": "Manhattan Mathematical Olympiad",
+      "url": "https://www.math.ksu.edu/outreach/olympiad/",
+      "grades": "Grades 5–12",
+      "mode": "campus",
+      "location": {
+        "venue": "Kansas State University · Cardwell Hall",
+        "city": "Manhattan, KS",
+        "lat": 39.2351,
+        "lng": -96.6197,
+        "precision": "previous-city"
+      },
+      "startDate": null,
+      "endDate": null,
+      "dateKind": "unannounced",
+      "notes": "Last published edition April 18, 2026 had no advance registration; reconfirm for next edition. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://www.math.ksu.edu/outreach/olympiad/",
+        "https://www.geonames.org/postal-codes/US/united-states.html"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 27
+    },
+    {
+      "id": "clemson-calculus",
+      "name": "Clemson Calculus Challenge",
+      "url": "https://mthsc.clemson.edu/ccc/past-challenges/2026.php",
+      "grades": "High school",
+      "mode": "campus",
+      "location": {
+        "venue": "Clemson University",
+        "city": "Clemson, SC",
+        "lat": 34.6833,
+        "lng": -82.8343,
+        "precision": "previous-city"
+      },
+      "startDate": null,
+      "endDate": null,
+      "dateKind": "unannounced",
+      "notes": "In-person division of a hybrid calculus competition; last edition March 27, 2026. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://mthsc.clemson.edu/ccc/past-challenges/2026.php",
+        "https://www.geonames.org/postal-codes/US/united-states.html"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 28
+    },
+    {
+      "id": "msms",
+      "name": "MSMS Math Tournament",
+      "url": "https://themsms.org/camp/msms-math-tournament/",
+      "grades": "High school",
+      "mode": "campus",
+      "location": {
+        "venue": "Trotter Convention Center",
+        "city": "Columbus, MS",
+        "lat": 33.4986,
+        "lng": -88.4117,
+        "precision": "previous-city"
+      },
+      "startDate": null,
+      "endDate": null,
+      "dateKind": "unannounced",
+      "notes": "Mississippi high school teams. Last edition February 26, 2026; its January deadline is not reused. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://themsms.org/camp/msms-math-tournament/",
+        "https://www.geonames.org/postal-codes/US/united-states.html"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 29
+    },
+    {
+      "id": "uw-eau-claire",
+      "name": "UW–Eau Claire Math Meet",
+      "url": "https://www.uwec.edu/mathematics-department/math-meet",
+      "grades": "High school",
+      "mode": "campus",
+      "location": {
+        "venue": "University of Wisconsin–Eau Claire",
+        "city": "Eau Claire, WI",
+        "lat": 44.81,
+        "lng": -91.5007,
+        "precision": "city"
+      },
+      "startDate": "2027-02-13",
+      "endDate": "2027-02-13",
+      "dateKind": "fixed",
+      "notes": "School teams; registration information expected in December 2026. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://www.uwec.edu/mathematics-department/math-meet",
+        "https://www.geonames.org/postal-codes/US/united-states.html"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 30
+    },
+    {
+      "id": "svsu",
+      "name": "Saginaw Valley State Math Olympics",
+      "url": "https://www.svsu.edu/matholympics/",
+      "grades": "Middle and high school",
+      "mode": "campus",
+      "location": {
+        "venue": "Saginaw Valley State University",
+        "city": "University Center, MI",
+        "lat": 43.5566,
+        "lng": -83.9943,
+        "precision": "previous-city"
+      },
+      "startDate": null,
+      "endDate": null,
+      "dateKind": "unannounced",
+      "notes": "Last published edition February 20, 2026. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://www.svsu.edu/matholympics/",
+        "https://www.geonames.org/postal-codes/US/united-states.html"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 31
+    },
+    {
+      "id": "south-carolina",
+      "name": "University of South Carolina High School Math Contest",
+      "url": "https://sc.edu/study/colleges_schools/artsandsciences/mathematics/beyond_classroom/for_the_community/hsmc/index.php",
+      "grades": "High school",
+      "mode": "campus",
+      "location": {
+        "venue": "University of South Carolina",
+        "city": "Columbia, SC",
+        "lat": 34.0161,
+        "lng": -81.0077,
+        "precision": "previous-city"
+      },
+      "startDate": null,
+      "endDate": null,
+      "dateKind": "unannounced",
+      "notes": "School adviser registration; last published edition February 7, 2026. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://sc.edu/study/colleges_schools/artsandsciences/mathematics/beyond_classroom/for_the_community/hsmc/index.php",
+        "https://www.geonames.org/postal-codes/US/united-states.html"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 32
+    },
+    {
+      "id": "marion",
+      "name": "Marion Mathematics Challenge",
+      "url": "https://osumarion.osu.edu/event/2025/12/math-challenge",
+      "grades": "High school",
+      "mode": "campus",
+      "location": {
+        "venue": "The Ohio State University at Marion",
+        "city": "Marion, OH",
+        "lat": 40.6021,
+        "lng": -83.0982,
+        "precision": "previous-city"
+      },
+      "startDate": null,
+      "endDate": null,
+      "dateKind": "unannounced",
+      "notes": "Last published edition December 12, 2025. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://osumarion.osu.edu/event/2025/12/math-challenge",
+        "https://www.geonames.org/postal-codes/US/united-states.html"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 33
+    },
+    {
+      "id": "mcgrath",
+      "name": "LSMSA McGrath Math Competition",
+      "url": "https://www.lsmsa.edu/news--events/math-competition",
+      "grades": "Grades 6–9",
+      "mode": "campus",
+      "location": {
+        "venue": "Louisiana School for Math, Science, and the Arts",
+        "city": "Natchitoches, LA",
+        "lat": 31.7523,
+        "lng": -93.0833,
+        "precision": "previous-city"
+      },
+      "startDate": null,
+      "endDate": null,
+      "dateKind": "unannounced",
+      "notes": "In-person school competition. Current organizer page says registration is closed. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://www.lsmsa.edu/news--events/math-competition",
+        "https://www.geonames.org/postal-codes/US/united-states.html"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 34
+    },
+    {
+      "id": "nebraska-math-day",
+      "name": "University of Nebraska–Lincoln Math Day",
+      "url": "https://math.unl.edu/math-day/",
+      "grades": "High school",
+      "mode": "campus",
+      "location": {
+        "venue": "University of Nebraska–Lincoln",
+        "city": "Lincoln, NE",
+        "lat": 40.8176,
+        "lng": -96.6889,
+        "precision": "city"
+      },
+      "startDate": "2026-11-10",
+      "endDate": "2026-11-10",
+      "dateKind": "fixed",
+      "notes": "In-person Math Bowl. Nebraska school teams; lower grades require permission. Separate PROBE testing takes place earlier. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://math.unl.edu/math-day/",
+        "https://www.geonames.org/postal-codes/US/united-states.html"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 35
+    },
+    {
+      "id": "alabama",
+      "name": "University of Alabama High School Math Tournament",
+      "url": "https://math.ua.edu/about/high-school-math-tournament/",
+      "grades": "High school",
+      "mode": "campus",
+      "location": {
+        "venue": "University of Alabama",
+        "city": "Tuscaloosa, AL",
+        "lat": 33.2387,
+        "lng": -87.5205,
+        "precision": "previous-city"
+      },
+      "startDate": null,
+      "endDate": null,
+      "dateKind": "unannounced",
+      "notes": "School team competition; last published edition October 25, 2025. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://math.ua.edu/about/high-school-math-tournament/",
+        "https://www.geonames.org/postal-codes/US/united-states.html"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 36
+    },
+    {
+      "id": "texas-am",
+      "name": "Texas A&M High School Mathematics Contest",
+      "url": "https://artsci.tamu.edu/mathematics/outreach/programs/high-school-contest/index.html",
+      "grades": "High school",
+      "mode": "campus",
+      "location": {
+        "venue": "Texas A&M University",
+        "city": "College Station, TX",
+        "lat": 30.6075,
+        "lng": -96.3299,
+        "precision": "city"
+      },
+      "startDate": "2026-10-24",
+      "endDate": "2026-10-24",
+      "dateKind": "fixed",
+      "notes": "Annual high school competition. Registration is open; confirm closing date with organizer. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://artsci.tamu.edu/mathematics/outreach/programs/high-school-contest/index.html",
+        "https://www.geonames.org/postal-codes/US/united-states.html"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 37
+    },
+    {
+      "id": "wpi",
+      "name": "WPI Invitational Mathematics Meet",
+      "url": "https://www.wpi.edu/academics/departments/mathematical-sciences/k-12-programs/invitational-mathematics-meet",
+      "grades": "High school",
+      "mode": "campus",
+      "location": {
+        "venue": "Worcester Polytechnic Institute",
+        "city": "Worcester, MA",
+        "lat": 42.2803,
+        "lng": -71.8183,
+        "precision": "city"
+      },
+      "startDate": "2026-10-13",
+      "endDate": "2026-10-13",
+      "dateKind": "fixed",
+      "notes": "Invitational school-team mathematics meet; confirm eligibility and registration availability. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://www.wpi.edu/academics/departments/mathematical-sciences/k-12-programs/invitational-mathematics-meet",
+        "https://www.geonames.org/postal-codes/US/united-states.html"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 38
+    },
+    {
+      "id": "noetic-fall",
+      "name": "Noetic Learning Math Contest · Fall",
+      "url": "https://www.noetic-learning.com/mathcontest/details.jsp",
+      "grades": "Grades 2–8",
+      "mode": "local",
+      "location": null,
+      "startDate": "2026-11-12",
+      "endDate": "2026-11-25",
+      "dateKind": "window",
+      "notes": "School-administered paper contest; ask the school for its exact date. At-home online edition is not added.",
+      "recordSlugs": [],
+      "registrationDeadline": "2026-10-22",
+      "sources": [
+        "https://www.noetic-learning.com/mathcontest/index.jsp",
+        "https://www.noetic-learning.com/mathcontest/details.jsp"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 40,
+      "registrationNote": "School-team regular deadline; late registration until Nov 5, 2026"
+    },
+    {
+      "id": "noetic-spring",
+      "name": "Noetic Learning Math Contest · Spring",
+      "url": "https://www.noetic-learning.com/mathcontest/details.jsp",
+      "grades": "Grades 2–8",
+      "mode": "local",
+      "location": null,
+      "startDate": "2027-04-01",
+      "endDate": "2027-04-15",
+      "dateKind": "window",
+      "notes": "School-administered paper contest; ask the school for its exact date.",
+      "recordSlugs": [],
+      "registrationDeadline": "2027-03-11",
+      "sources": [
+        "https://www.noetic-learning.com/mathcontest/index.jsp",
+        "https://www.noetic-learning.com/mathcontest/details.jsp"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 40,
+      "registrationNote": "School-team regular deadline; late registration until Mar 25, 2027"
+    },
+    {
+      "id": "mathcon-finals",
+      "name": "MathCON Finals",
+      "url": "https://www.mathcon.org/apps/pages/FAQ",
+      "grades": "Grades 4–12",
+      "mode": "campus",
+      "location": {
+        "venue": "McCormick Place Convention Center",
+        "city": "Chicago, IL",
+        "lat": 41.8542,
+        "lng": -87.6761,
+        "precision": "city"
+      },
+      "startDate": "2027-05-29",
+      "endDate": "2027-05-29",
+      "dateKind": "fixed",
+      "notes": "In-person final by invitation. Must first qualify through online Round 1 by March 17, 2027. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer.",
+      "recordSlugs": [],
+      "registrationDeadline": "2027-04-16",
+      "sources": [
+        "https://www.mathcon.org/",
+        "https://www.mathcon.org/apps/pages/FAQ",
+        "https://www.geonames.org/postal-codes/US/united-states.html"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 41,
+      "registrationNote": "Invited finalists only"
+    },
+    {
+      "id": "math-league-school",
+      "name": "Math League",
+      "url": "https://www.mathleague.com/",
+      "grades": "Grades 6–12 and Algebra I",
+      "mode": "local",
+      "location": null,
+      "startDate": null,
+      "endDate": null,
+      "dateKind": "unannounced",
+      "notes": "School-administered contests from mathleague.com; contact a participating school for dates and registration. Separate from mathleague.org. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://www.mathleague.com/"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 42
+    },
+    {
+      "id": "math-league-summer",
+      "name": "Math League International Summer Tournament",
+      "url": "https://www.mathleague.com/",
+      "grades": "Grades 6–10",
+      "mode": "campus",
+      "location": {
+        "venue": "The College of New Jersey",
+        "city": "Ewing, NJ",
+        "lat": 40.2655,
+        "lng": -74.8168,
+        "precision": "previous-city"
+      },
+      "startDate": null,
+      "endDate": null,
+      "dateKind": "unannounced",
+      "notes": "In-person International Summer Tournament / Math Camp. Qualification or application review required; 2026 program has ended. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://www.mathleague.com/",
+        "https://www.geonames.org/postal-codes/US/united-states.html"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 42
+    },
+    {
+      "id": "tmsca-ms",
+      "name": "TMSCA · Middle School Meets",
+      "url": "https://www.tmsca.org/index.php?Itemid=829&id=569&option=com_content&view=article",
+      "grades": "Middle School",
+      "mode": "local",
+      "location": null,
+      "startDate": null,
+      "endDate": null,
+      "dateKind": "unannounced",
+      "notes": "Texas in-person school meets and state championship. See organizer calendar for individual meets; state dates are pending UTSA approval. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://www.tmsca.org/",
+        "https://www.tmsca.org/index.php?Itemid=829&id=569&option=com_content&view=article"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 44
+    },
+    {
+      "id": "tmsca-hs",
+      "name": "TMSCA · High School Meets",
+      "url": "https://www.tmsca.org/index.php?Itemid=829&id=569&option=com_content&view=article",
+      "grades": "High School",
+      "mode": "local",
+      "location": null,
+      "startDate": null,
+      "endDate": null,
+      "dateKind": "unannounced",
+      "notes": "Texas in-person school meets and state championship. See organizer calendar for individual meets; state dates are pending UTSA approval. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://www.tmsca.org/",
+        "https://www.tmsca.org/index.php?Itemid=829&id=569&option=com_content&view=article"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 44
+    },
+    {
+      "id": "cemc-gauss",
+      "name": "Gauss · CEMC",
+      "url": "https://cemc.uwaterloo.ca/contests/gauss",
+      "grades": "Grades 7–8",
+      "mode": "local",
+      "location": null,
+      "startDate": "2027-05-10",
+      "endDate": "2027-05-21",
+      "dateKind": "window",
+      "notes": "Paper contest administered at participating schools. Dates shown are for the Americas; contact a US host school to enter.",
+      "recordSlugs": [],
+      "registrationDeadline": "2027-04-22",
+      "sources": [
+        "https://cemc.uwaterloo.ca/",
+        "https://cemc.uwaterloo.ca/contests/gauss"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 47,
+      "registrationNote": "School ordering deadline for US hosts; student deadlines may be earlier"
+    },
+    {
+      "id": "cemc-pascal",
+      "name": "Pascal · CEMC",
+      "url": "https://cemc.uwaterloo.ca/contests/pcf",
+      "grades": "Grade 9 and below",
+      "mode": "local",
+      "location": null,
+      "startDate": "2027-02-23",
+      "endDate": "2027-02-24",
+      "dateKind": "window",
+      "notes": "Paper contest administered at participating schools. Dates shown are for the Americas; contact a US host school to enter.",
+      "recordSlugs": [],
+      "registrationDeadline": "2027-02-02",
+      "sources": [
+        "https://cemc.uwaterloo.ca/",
+        "https://cemc.uwaterloo.ca/contests/pcf"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 47,
+      "registrationNote": "School ordering deadline for US hosts; student deadlines may be earlier"
+    },
+    {
+      "id": "cemc-cayley",
+      "name": "Cayley · CEMC",
+      "url": "https://cemc.uwaterloo.ca/contests/pcf",
+      "grades": "Grade 10 and below",
+      "mode": "local",
+      "location": null,
+      "startDate": "2027-02-23",
+      "endDate": "2027-02-24",
+      "dateKind": "window",
+      "notes": "Paper contest administered at participating schools. Dates shown are for the Americas; contact a US host school to enter.",
+      "recordSlugs": [],
+      "registrationDeadline": "2027-02-02",
+      "sources": [
+        "https://cemc.uwaterloo.ca/",
+        "https://cemc.uwaterloo.ca/contests/pcf"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 47,
+      "registrationNote": "School ordering deadline for US hosts; student deadlines may be earlier"
+    },
+    {
+      "id": "cemc-fermat",
+      "name": "Fermat · CEMC",
+      "url": "https://cemc.uwaterloo.ca/contests/pcf",
+      "grades": "Grade 11 and below",
+      "mode": "local",
+      "location": null,
+      "startDate": "2027-02-23",
+      "endDate": "2027-02-24",
+      "dateKind": "window",
+      "notes": "Paper contest administered at participating schools. Dates shown are for the Americas; contact a US host school to enter.",
+      "recordSlugs": [],
+      "registrationDeadline": "2027-02-02",
+      "sources": [
+        "https://cemc.uwaterloo.ca/",
+        "https://cemc.uwaterloo.ca/contests/pcf"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 47,
+      "registrationNote": "School ordering deadline for US hosts; student deadlines may be earlier"
+    },
+    {
+      "id": "cemc-fryer",
+      "name": "Fryer · CEMC",
+      "url": "https://cemc.uwaterloo.ca/contests/fgh",
+      "grades": "Grade 9 and below",
+      "mode": "local",
+      "location": null,
+      "startDate": "2027-04-07",
+      "endDate": "2027-04-07",
+      "dateKind": "fixed",
+      "notes": "Paper contest administered at participating schools. Dates shown are for the Americas; contact a US host school to enter.",
+      "recordSlugs": [],
+      "registrationDeadline": "2027-03-11",
+      "sources": [
+        "https://cemc.uwaterloo.ca/",
+        "https://cemc.uwaterloo.ca/contests/fgh"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 47,
+      "registrationNote": "School ordering deadline for US hosts; student deadlines may be earlier"
+    },
+    {
+      "id": "cemc-galois",
+      "name": "Galois · CEMC",
+      "url": "https://cemc.uwaterloo.ca/contests/fgh",
+      "grades": "Grade 10 and below",
+      "mode": "local",
+      "location": null,
+      "startDate": "2027-04-07",
+      "endDate": "2027-04-07",
+      "dateKind": "fixed",
+      "notes": "Paper contest administered at participating schools. Dates shown are for the Americas; contact a US host school to enter.",
+      "recordSlugs": [],
+      "registrationDeadline": "2027-03-11",
+      "sources": [
+        "https://cemc.uwaterloo.ca/",
+        "https://cemc.uwaterloo.ca/contests/fgh"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 47,
+      "registrationNote": "School ordering deadline for US hosts; student deadlines may be earlier"
+    },
+    {
+      "id": "cemc-hypatia",
+      "name": "Hypatia · CEMC",
+      "url": "https://cemc.uwaterloo.ca/contests/fgh",
+      "grades": "Grade 11 and below",
+      "mode": "local",
+      "location": null,
+      "startDate": "2027-04-07",
+      "endDate": "2027-04-07",
+      "dateKind": "fixed",
+      "notes": "Paper contest administered at participating schools. Dates shown are for the Americas; contact a US host school to enter.",
+      "recordSlugs": [],
+      "registrationDeadline": "2027-03-11",
+      "sources": [
+        "https://cemc.uwaterloo.ca/",
+        "https://cemc.uwaterloo.ca/contests/fgh"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 47,
+      "registrationNote": "School ordering deadline for US hosts; student deadlines may be earlier"
+    },
+    {
+      "id": "cemc-euclid",
+      "name": "Euclid · CEMC",
+      "url": "https://cemc.uwaterloo.ca/contests/euclid",
+      "grades": "Senior high school; younger students welcome",
+      "mode": "local",
+      "location": null,
+      "startDate": "2027-04-06",
+      "endDate": "2027-04-06",
+      "dateKind": "fixed",
+      "notes": "Paper contest administered at participating schools. Dates shown are for the Americas; contact a US host school to enter.",
+      "recordSlugs": [],
+      "registrationDeadline": "2027-03-11",
+      "sources": [
+        "https://cemc.uwaterloo.ca/",
+        "https://cemc.uwaterloo.ca/contests/euclid"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 47,
+      "registrationNote": "School ordering deadline for US hosts; student deadlines may be earlier"
+    },
+    {
+      "id": "cemc-canadian-intermediate-mathematics-contest",
+      "name": "Canadian Intermediate Mathematics Contest · CEMC",
+      "url": "https://cemc.uwaterloo.ca/contests/csimc",
+      "grades": "Grades 9–10",
+      "mode": "local",
+      "location": null,
+      "startDate": "2026-11-18",
+      "endDate": "2026-11-18",
+      "dateKind": "fixed",
+      "notes": "Paper contest administered at participating schools. Dates shown are for the Americas; contact a US host school to enter.",
+      "recordSlugs": [],
+      "registrationDeadline": "2026-10-22",
+      "sources": [
+        "https://cemc.uwaterloo.ca/",
+        "https://cemc.uwaterloo.ca/contests/csimc"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 47,
+      "registrationNote": "School ordering deadline for US hosts; student deadlines may be earlier"
+    },
+    {
+      "id": "cemc-canadian-senior-mathematics-contest",
+      "name": "Canadian Senior Mathematics Contest · CEMC",
+      "url": "https://cemc.uwaterloo.ca/contests/csimc",
+      "grades": "Grades 11–12",
+      "mode": "local",
+      "location": null,
+      "startDate": "2026-11-18",
+      "endDate": "2026-11-18",
+      "dateKind": "fixed",
+      "notes": "Paper contest administered at participating schools. Dates shown are for the Americas; contact a US host school to enter.",
+      "recordSlugs": [],
+      "registrationDeadline": "2026-10-22",
+      "sources": [
+        "https://cemc.uwaterloo.ca/",
+        "https://cemc.uwaterloo.ca/contests/csimc"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 47,
+      "registrationNote": "School ordering deadline for US hosts; student deadlines may be earlier"
+    },
+    {
+      "id": "cemc-team",
+      "name": "Canadian Team Mathematics Contest · In-school",
+      "url": "https://cemc.uwaterloo.ca/contests/ctmc",
+      "grades": "High school",
+      "mode": "local",
+      "location": null,
+      "startDate": null,
+      "endDate": null,
+      "dateKind": "unannounced",
+      "notes": "In-person team contest at participating schools, April 14, 2027 or later. School chooses the date, so no fixed calendar date is assigned. Waterloo campus event is outside the US.",
+      "recordSlugs": [],
+      "registrationDeadline": "2027-04-12",
+      "sources": [
+        "https://cemc.uwaterloo.ca/",
+        "https://cemc.uwaterloo.ca/contests/ctmc"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 47,
+      "registrationNote": "In-school event ordering deadline; confirm student deadline with host"
+    },
+    {
+      "id": "girls-in-math",
+      "name": "Girls in Math at Yale",
+      "url": "https://www.mmaths.org/",
+      "grades": "High school girls and nonbinary students",
+      "mode": "campus",
+      "location": {
+        "venue": "Yale University",
+        "city": "New Haven, CT",
+        "lat": 41.3147,
+        "lng": -72.9273,
+        "precision": "city"
+      },
+      "startDate": "2027-02-20",
+      "endDate": "2027-02-20",
+      "dateKind": "fixed",
+      "notes": "In-person competition for girls and gender minorities; see organizer eligibility rules. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://www.mmaths.org/girls-in-math",
+        "https://www.mmaths.org/",
+        "https://www.geonames.org/postal-codes/US/united-states.html"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 48
+    },
+    {
+      "id": "interlake",
+      "name": "Interlake Invitational Math Contest",
+      "url": "https://i2mc.org/",
+      "grades": "Grades 6–8; elementary students may enter",
+      "mode": "campus",
+      "location": {
+        "venue": "Interlake High School",
+        "city": "Bellevue, WA",
+        "lat": 47.6059,
+        "lng": -122.1698,
+        "precision": "previous-city"
+      },
+      "startDate": null,
+      "endDate": null,
+      "dateKind": "unannounced",
+      "notes": "In-person team contest. Last published edition October 18, 2025; last year’s deadlines are not reused. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer. Next edition date and registration deadline have not been verified; previous dates are not rolled forward.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://i2mc.org/",
+        "https://www.geonames.org/postal-codes/US/united-states.html"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 49
+    },
+    {
+      "id": "rockdale",
+      "name": "Rockdale Mathematics Competition",
+      "url": "https://rockdalemathcompetition.webmate.me/",
+      "grades": "High school",
+      "mode": "campus",
+      "location": {
+        "venue": "Rockdale Magnet School for Science and Technology",
+        "city": "Conyers, GA",
+        "lat": 33.658,
+        "lng": -84.0129,
+        "precision": "city"
+      },
+      "startDate": "2026-11-07",
+      "endDate": "2026-11-07",
+      "dateKind": "fixed",
+      "notes": "High school edition; school teams only. The separate 2026 middle school event was cancelled. Map and travel estimates use the approximate host area; confirm the exact venue with the organizer.",
+      "recordSlugs": [],
+      "registrationDeadline": null,
+      "sources": [
+        "https://www.rockdalemathcompetition.com/",
+        "https://rockdalemathcompetition.webmate.me/",
+        "https://www.geonames.org/postal-codes/US/united-states.html",
+        "https://www.gctm.org/competitions"
+      ],
+      "checkedOn": "2026-09-08",
+      "candidateNumber": 50
+    }
+  ]
+}

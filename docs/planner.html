@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Find middle and high school math competitions, explore venues on a US map, and build a schedule around your travel plans.">
+  <title>Competition Planner · Math Competition Records</title>
+  <link rel="canonical" href="https://mathintegrity.org/planner.html">
+  <script>
+    try { if (localStorage.getItem('theme') === 'light') document.documentElement.dataset.theme = 'light'; } catch (_) {}
+  </script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="planner.css">
+  <script src="planner-config.js" defer></script>
+  <script src="planner-core.js" defer></script>
+  <script src="vendor/topojson-client.min.js" defer></script>
+  <script src="vendor/d3.min.js" defer></script>
+  <script src="planner-map.js" defer></script>
+  <script src="planner-geocoder.js" defer></script>
+  <script src="vendor/jspdf.umd.min.js" defer></script>
+  <script src="planner-pdf.js" defer></script>
+  <script src="planner.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#planner">Skip to planner</a>
+  <header class="header planner-header">
+    <a class="planner-back" href="index.html">← Student records</a>
+    <div class="header-brand"><h1>Math Competition Records</h1><p class="tagline">Competition map</p></div>
+    <button id="planner-theme-toggle" class="theme-toggle" type="button" aria-label="Switch to light mode" title="Switch theme">☼</button>
+  </header>
+  <main id="planner">
+    <h1 class="print-only">MathIntegrity · Competition schedule</h1>
+    <div class="directory-disclaimer"><p><strong>Our goal is to help middle and high school students across the US discover math competitions and resources.</strong> Listings and database results do not mean MathIntegrity endorses a competition or verifies its integrity. Organizers are responsible for their competitions and websites; please confirm details directly with them before registering or traveling.</p></div>
+        <section class="map-panel" aria-labelledby="map-title"><div class="section-heading"><h2 id="map-title">Competition map</h2><div class="map-controls"><button id="zoom-in" class="text-button" aria-label="Zoom in" disabled>+</button><button id="zoom-out" class="text-button" aria-label="Zoom out" disabled>−</button><button id="us-view" class="text-button" disabled>US overview</button><button id="fit-map" class="text-button" disabled>Show all pins</button></div></div><div id="map" aria-label="US-only competition map" hidden></div><div id="map-message" role="status"><span class="map-symbol" aria-hidden="true">⌖</span><h3>Competition map</h3><p>The US map is loading. You can browse competitions and build a schedule below.</p></div><p class="map-legend"><span class="dot home"></span> Your start (approx.) <span class="dot in-database"></span> Results in database <span class="dot"></span> Competition <span class="dot girls"></span> Girls / gender eligibility <span class="dot girls in-database"></span> Both <span class="dot saved"></span> My schedule (gold)</p></section>
+    <p class="map-help">Scroll or pinch to zoom; drag to move. Use + / − for zoom or US overview to reset. Click a circle for its name, date, registration deadline, city, and website. Some pins mark approximate or previous host areas; confirm the venue before travel. Click it again to close. Purple circles mark competitions; larger blue circles indicate results in our database. Pink circles mark girls / gender eligibility, with a blue ring when results are in our database. Saved competitions turn gold and appear above other dots.</p>
+    <p class="micro" id="boundary-note">US state boundaries: US Census Bureau via us-atlas. Alaska and Hawaii are shown as insets; their placement and scale are adjusted.</p>
+    <section class="search-panel" aria-label="Travel preferences">
+      <form id="travel-form">
+        <div class="address-field"><label for="origin">Where are you starting?</label><div class="input-action"><input id="origin" name="origin" placeholder="ZIP code or full address" autocomplete="street-address" maxlength="250" required><button class="primary" id="find-button" type="submit">Find competitions <span aria-hidden="true">↗</span></button></div></div>
+        <fieldset><legend>How will you travel?</legend><div class="segmented"><label><input type="radio" name="travel" value="drive" checked><span>Drive only</span></label><label><input type="radio" name="travel" value="fly"><span>Willing to fly</span></label></div></fieldset>
+        <div><label for="drive-limit">One-way driving limit</label><select id="drive-limit"><option value="2">2 hours</option><option value="4" selected>4 hours</option><option value="6">6 hours</option><option value="8">8 hours</option><option value="12">12 hours</option></select></div>
+      </form>
+      <p class="micro" id="travel-explanation">Flying includes farther destinations; it does not check flight availability. Street addresses are sent to the US Census geocoder when you search. ZIP codes are looked up locally. Starting coordinates are sent to Google for driving estimates; your location is not saved.</p>
+      <p id="travel-status" role="status">Browse all competitions below, or enter a starting point to check driving times.</p>
+      <div id="location-choices" aria-label="Choose your starting point" hidden></div>
+    </section>
+    <p class="micro google-attribution">Driving estimates by Google Maps. Approximate location data: US Census Bureau and <a href="https://www.geonames.org/" target="_blank" rel="noopener noreferrer">GeoNames</a>.</p>
+    <div class="workspace">
+      <section class="explore" aria-labelledby="explore-title">
+        <div class="section-heading"><h2 id="explore-title">Explore competitions <span id="result-count" class="count"></span></h2><button class="text-button" id="reset-filters">Reset filters</button></div>
+        <div class="filters"><label class="search-filter"><span class="sr-only">Search competitions</span><input id="search" type="search" placeholder="Search name, city, or school…"></label><label><span class="sr-only">Date range</span><select id="date-filter"><option value="upcoming">Upcoming + dates to come</option><option value="confirmed">Upcoming confirmed dates</option><option value="all">All dates</option></select></label></div>
+        <div class="filter-chips"><label><input id="include-local" type="checkbox" checked> Local testing & online</label><label><input id="saved-only" type="checkbox"> My schedule only</label></div>
+        <p class="micro" id="results-note">Campus pins are approximate. Confirm the room and arrival instructions with the organizer.</p>
+        <div id="competition-list" aria-live="polite"><p class="empty">Loading competition catalog…</p></div>
+      </section>
+      <aside class="schedule-column">
+        <section class="schedule-panel" aria-labelledby="schedule-title"><div class="section-heading"><div><h2 id="schedule-title">My schedule <span id="saved-count" class="count">0</span></h2></div><div class="schedule-exports"><button id="export-pdf" class="text-button" aria-describedby="pdf-help" disabled>Export PDF ↓</button><button id="export-calendar" class="text-button" aria-describedby="ics-help" disabled>Export .ics ↓</button></div></div><p class="micro">Saved on this device. Adding an event does not register you.</p><div id="schedule-list"><p class="empty">Add competitions to see your season take shape.</p></div><p class="micro export-help" id="pdf-help">PDF downloads your full schedule, including dates, registration deadlines, website links, and your watchlist.</p><p class="micro export-help" id="ics-help">ICS (.ics) is a calendar file you can import into Google Calendar, Apple Calendar, or Outlook.</p><p class="micro export-help" id="calendar-note">ICS includes confirmed, fixed dates only. Testing windows, tentative dates, and unannounced dates stay on your watchlist.</p></section>
+      </aside>
+    </div>
+    <footer><p>Middle school and high school competitions, together. Eligibility and registration are set by each organizer.</p><p id="catalog-note"></p><a href="articles/calendar.html">Original competition calendar ↗</a></footer>
+  </main>
+  <noscript><p>This planner requires JavaScript. <a href="articles/calendar.html">Read the competition calendar instead.</a></p></noscript>
+</body>
+</html>

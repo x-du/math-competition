@@ -1,0 +1,185 @@
+/* Planner-specific layout; all colors and typography come from the main site. */
+.planner-header { position: relative; padding: 2rem 12rem; border-bottom: 1px solid var(--border); }
+.planner-back { position: absolute; left: 1.5rem; top: 2rem; font-size: 0.9rem; color: var(--accent); }
+.planner-header .theme-toggle { position: absolute; right: 1rem; top: 1.25rem; font-size: 1.5rem; }
+#planner { max-width: 1600px; margin: auto; padding: 1.5rem; }
+#planner h2 { margin: 0; font-size: 1.2rem; font-weight: 600; letter-spacing: -0.02em; }
+#planner h3 { margin: 0; font-size: 1rem; font-weight: 600; }
+#planner a { color: var(--accent); }
+#planner button, #planner input, #planner select { font: inherit; }
+#planner button { cursor: pointer; }
+#planner button:disabled { opacity: 0.5; cursor: default; }
+#planner :is(button,input,select,a):focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+#planner [hidden] { display: none !important; }
+.section-heading { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.text-button { border: 0; background: transparent; color: var(--accent); padding: 0.3rem 0; font-size: 0.85rem !important; }
+.text-button:hover { text-decoration: underline; }
+.map-panel { border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); overflow: hidden; }
+.map-panel > .section-heading { padding: 1rem 1.25rem; }
+#map, #map-message { width: 100%; height: 68vh; min-height: 430px; max-height: 760px; }
+#map-message { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 2rem; background: var(--bg); }
+#map-message p { max-width: 460px; color: var(--text-muted); font-size: 0.95rem; line-height: 1.65; }
+.map-symbol { font-size: 3rem; color: var(--accent); margin-bottom: 1rem; }
+.map-legend { display: flex; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin: 0; padding: 0.8rem 1.25rem; color: var(--text-muted); font-size: 0.8rem; }
+.dot { width: 10px; height: 10px; border-radius: 50%; background: #9860db; flex-shrink: 0; margin-left: 0.6rem; }
+.dot:first-child { margin-left: 0; }
+.dot.home { background: #56c5e8; }
+
+.map-help { font-size: 0.85rem; color: var(--text-muted); margin: 0.75rem 0 1.25rem; }
+.search-panel { border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); padding: 1.5rem; margin-bottom: 2rem; }
+#travel-form { display: grid; grid-template-columns: minmax(260px,1fr) auto 170px; align-items: end; gap: 1.5rem; }
+#planner label, #planner legend { font-size: 0.875rem; font-weight: 600; }
+#planner label { display: block; }
+#planner fieldset { padding: 0; margin: 0; border: 0; min-width: 0; }
+#planner legend { margin-bottom: 0.5rem; padding: 0; }
+#planner input:not([type=radio]):not([type=checkbox]), #planner select { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; color: var(--text); padding: 0.75rem; height: 47px; min-width: 0; }
+#planner input::placeholder { color: var(--text-muted); }
+#planner select { width: 100%; }
+#travel-form > div > select { margin-top: 0.5rem; }
+.input-action { display: flex; gap: 0.5rem; margin-top: 0.5rem; }
+.input-action input { width: 100%; }
+.primary { color: var(--on-accent); background: var(--accent); border: 1px solid var(--accent); border-radius: 8px; padding: 0.65rem 1rem; white-space: nowrap; font-weight: 600 !important; font-size: 0.875rem !important; }
+.primary:hover { background: var(--accent-hover); }
+.segmented { display: flex; gap: 3px; padding: 4px; border: 1px solid var(--border); background: var(--bg); border-radius: 8px; height: 47px; }
+.segmented label { position: relative; cursor: pointer; white-space: nowrap; }
+.segmented input { position: absolute; opacity: 0; }
+.segmented span { display: block; padding: 8px 12px; border-radius: 5px; color: var(--text-muted); font-weight: 500; }
+.segmented input:checked + span { background: var(--surface); color: var(--accent); }
+.segmented input:focus-visible + span { outline: 2px solid var(--accent); }
+.micro { font-size: 0.8rem; color: var(--text-muted); line-height: 1.65; }
+#travel-explanation { margin: 1rem 0 0; }
+#travel-status { margin: 0.5rem 0 0; color: var(--accent); font-size: 0.875rem; }
+#location-choices { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem; }
+#location-choices button { text-align: left; }
+.workspace { display: grid; grid-template-columns: minmax(0,1.5fr) minmax(0,1fr); gap: 2rem; align-items: start; }
+.filters { display: flex; gap: 0.75rem; margin: 1rem 0; }
+.search-filter { flex: 1; min-width: 0; }
+.search-filter input { width: 100%; }
+.filters select { font-size: 0.875rem !important; }
+.filter-chips { display: flex; flex-wrap: wrap; gap: 1.25rem; }
+.filter-chips label { display: flex !important; align-items: center; gap: 0.4rem; font-weight: 400 !important; }
+#planner input[type=checkbox] { accent-color: var(--accent); }
+.count { display: inline-block; min-width: 25px; text-align: center; border: 1px solid var(--border); border-radius: 15px; padding: 2px 6px; color: var(--accent); font-size: 0.8rem; margin-left: 0.25rem; }
+.group-heading { margin: 1.5rem 0 0.75rem !important; color: var(--text-muted); font-size: 0.8rem !important; }
+.contest { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; margin-bottom: 0.75rem; scroll-margin-top: 1rem; }
+.contest.is-saved { border-color: var(--accent); }
+.contest-top { display: flex; gap: 1rem; align-items: flex-start; }
+.date-tile { flex-shrink: 0; width: 45px; padding-right: 12px; border-right: 1px solid var(--border); text-align: center; }
+.date-tile span { color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase; }
+.date-tile strong { display: block; font-weight: 500; font-size: 1.6rem; }
+.contest-heading { flex: 1; min-width: 0; }
+.place { color: var(--text-muted); font-size: 0.875rem; line-height: 1.5; margin: 0.4rem 0 0; }
+.save-button { width: 34px; height: 34px; flex-shrink: 0; border: 1px solid var(--border); border-radius: 8px; color: var(--accent); background: var(--bg); font-size: 1.2rem !important; }
+.save-button[aria-pressed=true] { color: var(--on-accent); background: var(--accent); }
+.badges { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.9rem 0 0.6rem; }
+.badge { display: inline-block; border: 1px solid var(--border); border-radius: 5px; padding: 3px 7px; color: var(--text-muted); font-size: 0.75rem; }
+.badge.travel { color: var(--accent); background: var(--filter-band-competition); }
+.badge.warning { color: var(--rank-mid); }
+.contest-notes { font-size: 0.875rem; line-height: 1.6; color: var(--text-muted); margin: 0.65rem 0; }
+.contest-links { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; font-size: 0.875rem; }
+.source-note { font-size: 0.75rem; color: var(--text-muted); margin: 0.9rem 0 0; }
+.schedule-panel { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; }
+.empty { padding: 1.5rem 0.75rem; color: var(--text-muted); text-align: center; font-size: 0.875rem; line-height: 1.7; border: 1px dashed var(--border); border-radius: 8px; }
+.schedule-item { position: relative; border-left: 2px solid var(--border); padding: 1rem 0 1rem 1.25rem; margin-left: 4px; }
+.schedule-item::before { content: ''; width: 8px; height: 8px; background: var(--accent); border-radius: 50%; position: absolute; left: -5px; top: 22px; }
+.schedule-item .schedule-date { color: var(--accent); font-size: 0.75rem; margin: 0 0 0.4rem; }
+.schedule-item p { font-size: 0.8rem; color: var(--text-muted); line-height: 1.6; margin: 0.4rem 0; }
+.schedule-item button { float: right; margin-left: 0.5rem; }
+.schedule-item .conflict { color: var(--rank-mid); }
+.map-pin { width: 19px; height: 19px; border-radius: 50%; background: #9860db; border: 2px solid #fff; box-shadow: 0 2px 8px #0006; display: grid; place-items: center; color: #10131b; font: 600 10px system-ui,sans-serif; }
+
+.map-pin.home { background: #56c5e8; }
+.info-window { color: var(--text); max-width: 330px; padding: 0.4rem; font-family: var(--font-sans); }
+.pin-event + .pin-event { border-top: 1px solid var(--border); margin-top: 1rem; padding-top: 1rem; }
+.pin-event h3 { font-size: 1rem; margin: 0 0 0.5rem; }
+.pin-event p { color: var(--text-muted); font-size: 0.875rem; line-height: 1.5; margin: 0.5rem 0; }
+.pin-event .pin-date { color: var(--accent); }
+.pin-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; margin-top: 0.75rem; font-size: 0.875rem; }
+#map .gm-style-iw-c, #map .gm-style-iw-tc::after { background: var(--surface); }
+#map .gm-style-iw-d { overflow: auto !important; }
+:root:not([data-theme=light]) #map .gm-ui-hover-effect > span { filter: invert(1); }
+#planner footer { border-top: 1px solid var(--border); margin-top: 2rem; padding-top: 1rem; font-size: 0.8rem; line-height: 1.65; color: var(--text-muted); }
+.skip-link:not(:focus) { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+@media (max-width: 1050px) {
+  #travel-form { grid-template-columns: 1fr 180px; }
+  .address-field { grid-column: 1 / -1; }
+  .filters { flex-direction: column; }
+}
+@media (max-width: 700px) {
+  .planner-header { padding: 5rem 1rem 1.5rem; }
+  .planner-back { top: 1.75rem; left: 1rem; }
+  #planner { padding: 1rem; }
+  #map, #map-message { height: 60vh; min-height: 330px; }
+  .map-panel > .section-heading { padding: 0.8rem 1rem; }
+  #planner h2 { font-size: 1.1rem; }
+  .search-panel { padding: 1rem; }
+  #travel-form { grid-template-columns: 1fr; gap: 1rem; }
+  .address-field { grid-column: auto; }
+  .input-action { flex-direction: column; }
+  .segmented { width: max-content; }
+  .workspace { grid-template-columns: 1fr; gap: 1rem; }
+  .schedule-column { grid-row: 1; }
+  .contest { padding: 1rem; }
+}
+
+.map-pin.girls, .dot.girls { background: #f28fc1; }
+.map-controls { display: flex; gap: 1rem; }
+/* Standalone US map: no world tiles or oceans. */
+#map { position: relative; background: var(--bg); overflow: hidden; }
+#map > svg { display: block; width: 100%; height: 100%; touch-action: none; }
+.us-state { stroke: var(--bg); stroke-width: 1.2; vector-effect: non-scaling-stroke; fill-opacity: 0.85; }
+.us-state:hover { fill-opacity: 1; }
+.inset-label { fill: var(--text-muted); font: 14px system-ui,sans-serif; text-anchor: middle; pointer-events: none; }
+.us-marker-layer { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.us-marker-layer .map-pin { position: absolute; padding: 0; transform: translate(-50%, -50%); pointer-events: auto; cursor: pointer; }
+.us-marker-layer .map-pin:focus-visible { outline: 3px solid var(--text); outline-offset: 3px; z-index: 2; }
+.us-map-popup { position: absolute; top: 16px; right: 16px; max-height: calc(100% - 32px); overflow: auto; width: min(300px, calc(100% - 32px)); background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow); z-index: 3; }
+.google-attribution { text-align: right; }
+
+.us-marker-layer .map-pin { font-size: 10px !important; }
+
+.state-initials { pointer-events: none; fill: #253345; font: 600 9px system-ui,sans-serif; paint-order: stroke; stroke: #ffffff70; stroke-width: 1.5px; }
+.us-marker-layer .origin-pin { width: 19px; height: 19px; background: #39dfd0; border: 3px solid var(--bg); box-shadow: 0 0 0 2px #39dfd0, 0 2px 8px #0006; z-index: 1; pointer-events: none; }
+.dot.home { background: #39dfd0; }
+
+#map > svg { cursor: grab; }
+#map > svg:active { cursor: grabbing; }
+#map > svg:focus-visible { outline: 2px solid var(--accent); outline-offset: -3px; }
+#zoom-in, #zoom-out { min-width: 42px; min-height: 42px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg); font-size: 1.25rem !important; }
+#zoom-in:hover, #zoom-out:hover { background: var(--btn-ghost-hover); }
+@media(max-width: 700px) { .map-panel > .section-heading { flex-wrap: wrap; } .map-controls { flex-wrap: wrap; align-items: center; gap: 0.65rem; } }
+
+.map-pin.in-database, .dot.in-database { background: #3987ed; color: #fff; }
+.map-pin.girls.in-database, .dot.girls.in-database { background: #f28fc1; color: #10131b; box-shadow: 0 0 0 3px #3987ed, 0 2px 8px #0006; }
+.database-badge { background: #3987ed22; color: var(--text); border: 1px solid #3987ed; font-weight: 600; }
+.contest.has-records { border-left: 4px solid #3987ed; }
+.pin-deadline { font-size: 0.8rem; line-height: 1.5; color: var(--text-muted); }
+
+.map-pin.in-database { width: 28.5px; height: 28.5px; }
+.dot.in-database { width: 15px; height: 15px; }
+.directory-disclaimer { margin: 0 0 1.25rem; padding: 0.9rem 1rem; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); color: var(--text-muted); font-size: 0.8rem; line-height: 1.65; }
+.directory-disclaimer strong { color: var(--text); }
+.schedule-panel > .section-heading { flex-wrap: wrap; }
+.schedule-exports { display: flex; flex-wrap: wrap; gap: 1rem; }
+.schedule-website { overflow-wrap: anywhere; }
+.print-only { display: none; }
+@media print {
+  @page { margin: 18mm; }
+  :root { --bg: #fff; --surface: #fff; --text: #111; --text-muted: #444; --accent: #194f91; --border: #ccc; --rank-mid: #774400; }
+  body { background: #fff !important; color: #111 !important; }
+  .planner-header, .map-panel, .map-help, .search-panel, .explore, #planner footer, .text-button, .skip-link, #boundary-note, .google-attribution, .export-help { display: none !important; }
+  #planner { max-width: none; padding: 0; }
+  .print-only { display: block; font-size: 20pt; margin: 0 0 1rem; }
+  .directory-disclaimer { font-size: 9pt; padding: 0 0 0.75rem; border: 0; border-bottom: 1px solid #ccc; border-radius: 0; }
+  .workspace { display: block; }
+  .schedule-panel { padding: 0; border: 0; background: #fff; }
+  .schedule-item { break-inside: avoid; }
+  .schedule-item button { display: none; }
+  .schedule-website a::after { content: " — " attr(href); }
+}
+
+.directory-disclaimer p { margin: 0 0 0.65rem; }
+.directory-disclaimer p:last-child { margin-bottom: 0; }
+
+.us-marker-layer .map-pin.saved, .dot.saved { background: #f0c261; color: #10131b; box-shadow: 0 2px 8px #0006; }
+.us-marker-layer .map-pin.saved { z-index: 2; }

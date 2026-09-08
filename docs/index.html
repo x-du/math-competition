@@ -83,7 +83,10 @@
 <body>
   <header class="header">
     <div class="header-controls">
-      <section id="promotion-banner" class="promotion-banner" hidden aria-live="polite"></section>
+      <div class="header-controls-left">
+        <section id="promotion-banner" class="promotion-banner" hidden aria-live="polite"></section>
+        <a class="planner-launch-button" href="planner.html">Competition map</a>
+      </div>
       <div class="header-controls-right">
         <button
           type="button"
@@ -154,6 +157,7 @@
           </button>
         </li>
         <li><a href="crank.html" class="site-nav-item">Competition ranking</a></li>
+        <li><a href="planner.html" class="site-nav-item">Competition map &amp; planner</a></li>
       </ul>
       <h3 class="site-nav-subheading" id="site-nav-articles-heading">Articles</h3>
       <ul class="site-nav-list site-nav-list--articles" aria-labelledby="site-nav-articles-heading">
@@ -599,5 +603,11 @@
   <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
   <script src="contest-filter.js?v=amm-filter-1"></script>
   <script src="app.js?v=amm-extra-link"></script>
+  <dialog id="planner-welcome" aria-labelledby="planner-welcome-title" aria-describedby="planner-welcome-description">
+    <h2 id="planner-welcome-title">Discover the competition map</h2>
+    <p id="planner-welcome-description">Find middle and high school math competitions across the US, explore events near you, and build your own schedule.</p>
+    <div class="planner-welcome-actions"><a class="planner-launch-button" href="planner.html" id="planner-welcome-open">Explore the map</a><button type="button" id="planner-welcome-dismiss" autofocus>Maybe later</button></div>
+  </dialog>
+  <script src="planner-welcome.js"></script>
 </body>
 </html>

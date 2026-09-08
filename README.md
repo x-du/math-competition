@@ -40,3 +40,9 @@ Serve the `docs` folder (e.g. `python -m http.server 8000 --directory docs` or a
 4. Save. The site will be at `https://<username>.github.io/math-competition/`.
 
 After updating the database, run `python scripts/build_search_data.py` and commit the updated `docs/data.json` and `docs/competition_data.json`.
+
+
+## Competition map and planner
+
+`docs/planner.html` adds a Google Maps competition finder and personal schedule.
+See [PLANNER.md](PLANNER.md) for API setup, catalog maintenance, and validation.
