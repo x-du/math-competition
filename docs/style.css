@@ -3464,11 +3464,12 @@ body.contest-filter-popover-open {
 .planner-launch-button { height: 2.75rem; background: #cbd0d8; border-color: #9ca3af; color: #252a33; font-weight: 700; box-shadow: var(--shadow); }
 .planner-launch-button:hover { background: #b8bec8; border-color: #858d9b; color: #171c25; }
 .planner-launch-wrap { position: relative; }
-#planner-welcome { position: absolute; left: calc(100% + 0.65rem); top: 0; z-index: 961; width: 245px; padding: 0.85rem 2.6rem 0.85rem 1rem; border: 1px solid #747e8f; border-radius: var(--radius); background: #282d36; color: #edf0f5; box-shadow: var(--shadow); text-align: left; }
-#planner-welcome[hidden] { display: none; }
-#planner-welcome strong { font-size: 0.85rem; }
-#planner-welcome p { margin: 0.35rem 0 0; font-size: 0.8rem; line-height: 1.5; }
-#planner-welcome a { color: #d3def0; }
-:root[data-theme="light"] #planner-welcome { background: #eef0f4; color: #252a33; border-color: #b8bec8; }
-:root[data-theme="light"] #planner-welcome a { color: #334b73; }
-@media (max-width: 480px) { #planner-welcome { left: 0; top: calc(100% + 0.5rem); width: min(245px, calc(100vw - 1.5rem)); } }
+/* Reuse the announcement card's typography, spacing, close control and CTA. */
+#planner-welcome { left: calc(100% + 0.65rem); top: 0; z-index: 961; background: #d3d6dc; color: #252a33; border-color: #959da9; text-align: left; }
+#planner-welcome .promotion-banner__label, #planner-welcome .promotion-banner__description { color: #4b5360; }
+#planner-welcome .promotion-banner__description { line-height: 1.5; }
+#planner-welcome .promotion-banner__cta { color: #303b4f; border-color: #65738a; }
+#planner-welcome .promotion-banner__cta:hover { background: #bac1cc; color: #171c25; }
+#planner-welcome .promotion-banner__close { background: #bbc1ca; color: #303744; border-color: #a0a8b5; }
+#planner-welcome .promotion-banner__close:hover { background: #aab2be; }
+@media (max-width: 639px) { #planner-welcome { left: 0; top: calc(100% + 0.5rem); } }

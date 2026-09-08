@@ -14,7 +14,7 @@ git switch --track origin/feature/competition-planner-review
 python3 -m http.server 8765 --directory docs
 ```
 
-Open `http://localhost:8765/index.html` for the silver map button and small first-visit announcement beside the map button, or `/planner.html` for the map. The announcement appears once per browser storage profile; clearing the `mathintegrity-planner-welcome-v2` localStorage entry shows it again. The committed Google API key is empty. Configure your own restricted browser key locally only if testing driving estimates. PDF export downloads a file directly and includes the watchlist; ICS exports confirmed fixed dates for calendar imports.
+Open `http://localhost:8765/index.html` for the silver map button and small first-visit announcement beside the map button, or `/planner.html` for the map. The announcement appears once per browser storage profile; clearing the `mathintegrity-planner-welcome-v3` localStorage entry shows it again. The committed Google API key is empty. Configure your own restricted browser key locally only if testing driving estimates. PDF export downloads a file directly and includes the watchlist; ICS exports confirmed fixed dates for calendar imports.
 
 ## Enable Google Maps
 

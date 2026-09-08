@@ -1,5 +1,5 @@
 (() => {
-  const key = 'mathintegrity-planner-welcome-v2';
+  const key = 'mathintegrity-planner-welcome-v3';
   const popup = document.getElementById('planner-welcome');
   if (!popup) return;
   try { if (localStorage.getItem(key)) return; } catch { /* Storage is optional. */ }
