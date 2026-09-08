@@ -185,24 +185,6 @@
       "checkedOn": "2026-09-08"
     },
     {
-      "id": "bmt-online",
-      "name": "Berkeley Math Tournament · Online",
-      "url": "https://berkeley.mt/",
-      "grades": "High school & advanced middle school",
-      "mode": "online",
-      "location": null,
-      "startDate": "2026-12-05",
-      "endDate": "2026-12-05",
-      "dateKind": "fixed",
-      "notes": "Synchronous online edition. Check official start times and team requirements.",
-      "recordSlugs": [],
-      "registrationDeadline": null,
-      "sources": [
-        "https://berkeley.mt/"
-      ],
-      "checkedOn": "2026-09-08"
-    },
-    {
       "id": "amc8",
       "name": "AMC 8",
       "url": "https://maa.org/student-programs/amc/",
@@ -342,24 +324,6 @@
       "registrationDeadline": null,
       "sources": [
         "https://maa.org/amcreg/"
-      ],
-      "checkedOn": "2026-09-08"
-    },
-    {
-      "id": "purple-comet",
-      "name": "Purple Comet! Math Meet",
-      "url": "https://purplecomet.org/",
-      "grades": "Middle school & high school",
-      "mode": "online",
-      "location": null,
-      "startDate": "2027-04-06",
-      "endDate": "2027-04-15",
-      "dateKind": "window",
-      "notes": "Online team competition with an adult supervisor. Choose a contest session within the published window.",
-      "recordSlugs": [],
-      "registrationDeadline": null,
-      "sources": [
-        "https://purplecomet.org/"
       ],
       "checkedOn": "2026-09-08"
     },
@@ -730,26 +694,6 @@
       "checkedOn": null
     },
     {
-      "id": "hmic",
-      "name": "HMMT Invitational Competition",
-      "url": "https://www.hmmt.org/",
-      "grades": "Invited HMMT competitors",
-      "mode": "online",
-      "location": null,
-      "startDate": null,
-      "endDate": null,
-      "dateKind": "unannounced",
-      "notes": "Invitation only. Next date unannounced.",
-      "recordSlugs": [
-        "hmic"
-      ],
-      "registrationDeadline": null,
-      "sources": [
-        "https://www.hmmt.org/"
-      ],
-      "checkedOn": "2026-09-08"
-    },
-    {
       "id": "amm",
       "name": "American Masters of Mathematics · AMM 2027",
       "url": "https://www.omegausa.org/",
@@ -889,24 +833,6 @@
       "registrationDeadline": null,
       "sources": [
         "https://mathleague.org/contestfind.php"
-      ],
-      "checkedOn": "2026-09-08"
-    },
-    {
-      "id": "m3",
-      "name": "MathWorks Math Modeling Challenge",
-      "url": "https://m3challenge.siam.org/",
-      "grades": "High school; regional eligibility applies",
-      "mode": "online",
-      "location": null,
-      "startDate": null,
-      "endDate": null,
-      "dateKind": "unannounced",
-      "notes": "Team modeling competition. Check the official rules for eligible grades and regions, registration, and the next challenge window.",
-      "recordSlugs": [],
-      "registrationDeadline": null,
-      "sources": [
-        "https://m3challenge.siam.org/"
       ],
       "checkedOn": "2026-09-08"
     },
@@ -2384,5 +2310,8 @@
       "checkedOn": null,
       "metadataSource": "Date, nationwide local-host format, and database status supplied by MathIntegrity contributor; not yet published on the linked organizer homepage."
     }
+  ],
+  "excludedOnlineRecordSlugs": [
+    "hmic"
   ]
 }

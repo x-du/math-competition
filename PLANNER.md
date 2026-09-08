@@ -105,3 +105,7 @@ The September 8 expansion adds 59 entries from the approved candidate list, incl
 `recordSlugs` links planner programs to the historical results catalog in `database/contests/contests.csv`. Purple map dots, card borders and “Results in database” badges indicate coverage. Adding a planner event alone does not imply results coverage. Pink gender-restricted dots get a purple ring when covered. Saved events use a gold outer ring. Co-located programs with different gender/coverage categories get separate dots.
 
 New host-area locations use GeoNames postal coordinates (`city` or `previous-city` precision); these are approximate, not building entrances. School-administered programs and events with no verified host remain in the list without map pins. Confirm venues before travel; routes to host areas are estimates.
+
+## In-person catalog scope
+
+The planner excludes all online-only editions, including BMT Online, Purple Comet, HMIC, and MathWorks Math Modeling Challenge. In-person editions and local/assigned testing hosts remain. Historical results are unchanged; `excludedOnlineRecordSlugs` records online-only result families intentionally omitted from the planner.

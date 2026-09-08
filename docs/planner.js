@@ -110,7 +110,7 @@
       if (key !== group) { list.append(node('h3', 'group-heading', key)); group = key; }
       list.append(renderCard(event));
     }
-    if (!visible.length) list.append(node('p', 'empty', 'No competitions match these filters. Try a longer drive, include local and online events, or reset filters.'));
+    if (!visible.length) list.append(node('p', 'empty', 'No competitions match these filters. Try a longer drive, include local-host events, or reset filters.'));
     const o = options();
     const excluded = state.origin && o.mode === 'drive' ? state.events.filter(e => e.location && !travel(e).reachable).length : 0;
     $('results-note').textContent = (excluded ? `${excluded} campus events are outside your driving limit or have no verified route. ` : '') + 'Campus pins are approximate; confirm the venue before booking. Local hosts are not distance-filtered.';

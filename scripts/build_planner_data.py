@@ -23,7 +23,7 @@ def validate(data):
         assert label not in ids and all(c in 'abcdefghijklmnopqrstuvwxyz0123456789-' for c in label), f'Invalid/duplicate ID: {label}'
         ids.add(label)
         assert event['name'] and event['grades'] and event['notes'], label
-        assert event['mode'] in ('campus', 'local', 'online'), label
+        assert event['mode'] in ('campus', 'local'), label
         assert event['dateKind'] in ('fixed', 'window', 'unannounced'), label
         assert bool(event['startDate']) == (event['dateKind'] != 'unannounced'), label
         assert bool(event['endDate']) == bool(event['startDate']), label
@@ -53,7 +53,9 @@ def validate(data):
             assert -90 <= location['lat'] <= 90 and -180 <= location['lng'] <= 180, label
             assert location['venue'] and location['city'], label
             assert location['precision'] in ('campus', 'previous-campus', 'city', 'previous-city'), label
-    assert covered == known, f'Result competitions missing from catalog: {known - covered}'
+    excluded = set(data.get('excludedOnlineRecordSlugs', []))
+    assert excluded <= known and not excluded & covered, 'Invalid online-only exclusions'
+    assert covered | excluded == known, f'Result competitions missing from catalog: {known - covered - excluded}'
 
 
 def main():
@@ -67,7 +69,7 @@ def main():
         assert OUTPUT.read_text() == output, 'Run python3 scripts/build_planner_data.py to refresh output'
     else:
         OUTPUT.write_text(output)
-    print(f'Validated {len(data["events"])} planner entries; all result competition slugs covered.')
+    print(f'Validated {len(data["events"])} planner entries; result competitions covered or explicitly excluded as online-only.')
 
 
 if __name__ == '__main__':

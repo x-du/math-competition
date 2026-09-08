@@ -28,16 +28,16 @@ test('willing to fly includes unrouteable destinations without inventing flights
   const info = C.travelInfo(event('bmt'), options.origin, options.routes, 'fly', 4);
   assert.equal(info.kind, 'fly'); assert.match(info.label, /mi direct/);
 });
-test('local and online programs remain visible without fabricated proximity', () => {
+test('local programs remain visible without fabricated proximity', () => {
   const o = { ...base(), origin: { lat: 0, lng: 0 }, includeLocal: true };
   const result = C.filterEvents(events, o);
-  assert.ok(result.includes(event('amc8'))); assert.ok(result.includes(event('purple-comet')));
+  assert.ok(result.includes(event('amc8'))); assert.ok(result.includes(event('amc8')));
   o.includeLocal = false; assert.equal(C.filterEvents(events, o).length, 0);
 });
 test('date filter respects inclusive multi-day end and never rolls last year forward', () => {
-  const e = event('purple-comet');
-  assert.ok(C.filterEvents([e], { ...base(), today: '2027-04-15' }).length);
-  assert.equal(C.filterEvents([e], { ...base(), today: '2027-04-16' }).length, 0);
+  const e = event('amc8');
+  assert.ok(C.filterEvents([e], { ...base(), today: '2027-01-27' }).length);
+  assert.equal(C.filterEvents([e], { ...base(), today: '2027-01-28' }).length, 0);
   assert.equal(C.filterEvents(events, { ...base(), date: 'confirmed' }).some(e => !e.startDate), false);
   assert.ok(C.filterEvents([e], { ...base(), today: '2028-01-01', date: 'all' }).length);
 });
@@ -88,4 +88,10 @@ test('AMM Local remains nationwide and distinct from the Denver AMM festival', (
   for (const origin of [{lat: 40.71, lng: -74}, {lat: 21.3, lng: -157.8}, {lat: 61.2, lng: -149.9}]) {
     assert.ok(C.filterEvents(events, {...base(), origin, limit: 0}).includes(local));
   }
+});
+
+test('planner excludes online editions while retaining in-person BMT', () => {
+  assert.ok(events.every(e => e.mode !== 'online'));
+  assert.equal(event('bmt').mode, 'campus');
+  for (const id of ['bmt-online', 'purple-comet', 'hmic', 'm3']) assert.equal(event(id), undefined);
 });
