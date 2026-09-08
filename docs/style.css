@@ -3460,13 +3460,15 @@ body.contest-filter-popover-open {
   }
 }
 
-/* Silver entry point for the competition planner. */
-.planner-launch-button { background: linear-gradient(145deg, #f1f2f4, #b9bec7); border-color: #a8aeb8; color: #242a34; box-shadow: 0 2px 6px #0002; }
-.planner-launch-button:hover { background: linear-gradient(145deg, #fff, #d1d5dc); border-color: #9199a5; color: #151a23; }
-#planner-welcome { width: min(460px, calc(100% - 2rem)); padding: 1.75rem; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); color: var(--text); box-shadow: 0 16px 60px #0006; }
-#planner-welcome::backdrop { background: #0008; }
-#planner-welcome h2 { margin: 0 0 0.75rem; font-size: 1.4rem; }
-#planner-welcome p { color: var(--text-muted); line-height: 1.65; margin: 0 0 1.5rem; }
-.planner-welcome-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; }
-#planner-welcome-dismiss { background: transparent; border: 0; padding: 0.7rem; color: var(--text-muted); font: inherit; cursor: pointer; }
-#planner-welcome-dismiss:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+/* Match the Announcements button, in silver. */
+.planner-launch-button { height: 2.75rem; background: #cbd0d8; border-color: #9ca3af; color: #252a33; font-weight: 700; box-shadow: var(--shadow); }
+.planner-launch-button:hover { background: #b8bec8; border-color: #858d9b; color: #171c25; }
+.planner-launch-wrap { position: relative; }
+#planner-welcome { position: absolute; left: calc(100% + 0.65rem); top: 0; z-index: 961; width: 245px; padding: 0.85rem 2.6rem 0.85rem 1rem; border: 1px solid #747e8f; border-radius: var(--radius); background: #282d36; color: #edf0f5; box-shadow: var(--shadow); text-align: left; }
+#planner-welcome[hidden] { display: none; }
+#planner-welcome strong { font-size: 0.85rem; }
+#planner-welcome p { margin: 0.35rem 0 0; font-size: 0.8rem; line-height: 1.5; }
+#planner-welcome a { color: #d3def0; }
+:root[data-theme="light"] #planner-welcome { background: #eef0f4; color: #252a33; border-color: #b8bec8; }
+:root[data-theme="light"] #planner-welcome a { color: #334b73; }
+@media (max-width: 480px) { #planner-welcome { left: 0; top: calc(100% + 0.5rem); width: min(245px, calc(100vw - 1.5rem)); } }
