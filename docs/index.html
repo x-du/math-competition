@@ -74,7 +74,7 @@
   </script>
   <title>Math Competition — Student Records</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E%F0%9F%8F%86%3C/text%3E%3C/svg%3E" type="image/svg+xml">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=planner-menu-1">
   <link rel="preload" href="data.json" as="fetch" crossorigin>
   <link rel="preload" href="teams.json" as="fetch" crossorigin>
   <link rel="preload" href="mathcounts_state_rosters.json" as="fetch" crossorigin>
@@ -83,7 +83,9 @@
 <body>
   <header class="header">
     <div class="header-controls">
-      <section id="promotion-banner" class="promotion-banner" hidden aria-live="polite"></section>
+      <div class="header-controls-left">
+        <section id="promotion-banner" class="promotion-banner" hidden aria-live="polite"></section>
+      </div>
       <div class="header-controls-right">
         <button
           type="button"
@@ -154,6 +156,7 @@
           </button>
         </li>
         <li><a href="crank.html" class="site-nav-item">Competition ranking</a></li>
+        <li><a href="planner.html" class="site-nav-item">Competition Planner</a></li>
       </ul>
       <h3 class="site-nav-subheading" id="site-nav-articles-heading">Articles</h3>
       <ul class="site-nav-list site-nav-list--articles" aria-labelledby="site-nav-articles-heading">
