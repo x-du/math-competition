@@ -21,38 +21,47 @@
     const h = Math.sin(rad(b.lat - a.lat) / 2) ** 2 + Math.cos(rad(a.lat)) * Math.cos(rad(b.lat)) * Math.sin(rad(b.lng - a.lng) / 2) ** 2;
     return 3958.7613 * 2 * Math.atan2(Math.sqrt(Math.min(1, h)), Math.sqrt(Math.max(0, 1 - h)));
   }
-  function routeKey(location) { return `${location.lat},${location.lng}`; }
-  // Planning heuristic, not a road route: 30% distance allowance at 50 mph.
-  function estimateRoute(origin, destination) {
-    const lower48 = p => p.lat >= 24 && p.lat <= 50 && p.lng >= -125 && p.lng <= -66;
-    if (!lower48(origin) || !lower48(destination)) return { status: 'unsupported', estimated: true };
-    const miles = milesBetween(origin, destination) * 1.3;
-    return { status: 'ok', estimated: true, miles, hours: Math.max(0.25, miles / 50) };
-  }
-  function travelInfo(event, origin, routes, mode, limit) {
+  function travelInfo(event, origin, limit) {
     if (!event.location) return { kind: event.mode === 'online' ? 'online' : 'local', label: event.mode === 'online' ? 'Online · no travel' : 'Venue / host to confirm', reachable: true };
-    if (!origin) return { kind: 'browse', label: 'Enter your start to check travel', reachable: true };
-    const route = routes.get(routeKey(event.location));
-    const time = route?.estimated ? formatHours(Math.max(0.25, Math.round(route.hours * 4) / 4)) : route ? formatHours(route.hours) : '';
-    const prefix = route?.estimated ? 'Rough estimate: ' : '';
-    if (route?.status === 'ok' && route.hours <= limit) return { kind: 'drive', label: `${prefix}${time} drive · ${route.estimated ? Math.round(route.miles / 5) * 5 : Math.round(route.miles)} mi`, reachable: true };
-    if (mode === 'fly') return { kind: 'fly', label: `Consider flying · ${Math.round(milesBetween(origin, event.location)).toLocaleString()} mi direct`, reachable: true };
-    if (route?.status === 'ok') return { kind: 'far', label: `${prefix}${time} drive · over your limit`, reachable: false };
-    return { kind: 'unknown', label: route?.status === 'unsupported' ? 'Driving estimate unavailable outside the contiguous US' : route?.status === 'no-route' ? 'No driving route found' : 'Driving route not verified', reachable: false };
+    if (!origin) return { kind: 'browse', label: '', reachable: true };
+    const miles = milesBetween(origin, event.location);
+    const reachable = miles <= limit;
+    return { kind: reachable ? 'near' : 'far', label: `${Math.round(miles).toLocaleString()} mi`, reachable };
   }
-  function formatHours(hours) {
-    const minutes = Math.round(hours * 60);
-    return minutes < 60 ? `${minutes} min` : `${Math.floor(minutes / 60)} hr${minutes % 60 ? ' ' + minutes % 60 + ' min' : ''}`;
+  function classifyGrades(grades) {
+    const t = String(grades || '').toLowerCase().replace(/[–—]/g, '-');
+    const values = [];
+    const num = token => token === 'k' ? 0 : Number(token);
+    const take = n => { if (Number.isFinite(n) && n >= 0 && n <= 12) values.push(n); };
+    for (const m of t.matchAll(/\b(k|\d{1,2})\s*-\s*(k|\d{1,2})\b/g)) { take(num(m[1])); take(num(m[2])); }
+    for (const m of t.matchAll(/\b(k|\d{1,2})\s*\/\s*(\d{1,2})\b/g)) { take(num(m[1])); take(num(m[2])); }
+    for (const m of t.matchAll(/\b(?:grade|grades)\s+(k|\d{1,2})\b/g)) take(num(m[1]));
+    const minG = values.length ? Math.min(...values) : null;
+    const maxG = values.length ? Math.max(...values) : null;
+    const below = /\band below\b/.test(t);
+    let middle = /\belementary\b|\bmiddle\b|\bjunior high\b/.test(t);
+    let high = /\bhigh school\b|\bsenior high\b/.test(t);
+    if (minG != null) {
+      if (below || minG <= 8) middle = true;
+      if (maxG >= 9) high = true;
+    }
+    if (!middle && !high) high = true;
+    return { middle, high };
+  }
+  function matchesGradeFilter(grades, filter) {
+    if (!filter || filter === 'all') return true;
+    const bands = classifyGrades(grades);
+    return filter === 'middle' ? bands.middle : filter === 'high' ? bands.high : true;
   }
   function filterEvents(events, options) {
     return events.filter(event => {
       if (options.date !== 'all' && event.endDate && event.endDate < options.today) return false;
-      if (options.date === 'confirmed' && !event.startDate) return false;
       if (!options.includeLocal && !event.location) return false;
       if (options.savedOnly && !options.saved.has(event.id)) return false;
+      if (!matchesGradeFilter(event.grades, options.grade)) return false;
       const text = [event.name, event.grades, event.location?.city, event.location?.venue].join(' ').toLowerCase();
       if (options.query && !text.includes(options.query.trim().toLowerCase())) return false;
-      return travelInfo(event, options.origin, options.routes, options.mode, options.limit).reachable;
+      return travelInfo(event, options.origin, options.limit).reachable;
     }).sort(compareEvents);
   }
   function conflicts(event, selected) {
@@ -86,7 +95,7 @@
     lines.push('END:VCALENDAR');
     return lines.map(foldLine).join('\r\n') + '\r\n';
   }
-  const api = { todayISO, dateLabel, deadlineLabel, compareEvents, milesBetween, estimateRoute, routeKey, travelInfo, formatHours, filterEvents, conflicts, calendar };
+  const api = { todayISO, dateLabel, deadlineLabel, compareEvents, milesBetween, travelInfo, classifyGrades, matchesGradeFilter, filterEvents, conflicts, calendar };
   if (typeof module === 'object' && module.exports) module.exports = api;
   else root.PlannerCore = api;
 })(globalThis);

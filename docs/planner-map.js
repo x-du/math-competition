@@ -2,10 +2,11 @@
 (function () {
   const initials = {1:'AL',2:'AK',4:'AZ',5:'AR',6:'CA',8:'CO',9:'CT',10:'DE',11:'DC',12:'FL',13:'GA',15:'HI',16:'ID',17:'IL',18:'IN',19:'IA',20:'KS',21:'KY',22:'LA',23:'ME',24:'MD',25:'MA',26:'MI',27:'MN',28:'MS',29:'MO',30:'MT',31:'NE',32:'NV',33:'NH',34:'NJ',35:'NM',36:'NY',37:'NC',38:'ND',39:'OH',40:'OK',41:'OR',42:'PA',44:'RI',45:'SC',46:'SD',47:'TN',48:'TX',49:'UT',50:'VT',51:'VA',53:'WA',54:'WV',55:'WI',56:'WY'};
   class CompetitionUSMap {
-    constructor(container, features, onSelect, onClose) {
+    constructor(container, features, onSelect, onClose, onMove) {
       this.container = container;
       this.onSelect = onSelect;
       this.onClose = onClose;
+      this.onMove = onMove;
       this.entries = [];
       this.transform = d3.zoomIdentity;
       this.projection = d3.geoAlbersUsa().fitExtent([[30, 25], [970, 600]], features);
@@ -30,8 +31,11 @@
       this.markerLayer.className = 'us-marker-layer'; container.append(this.markerLayer);
       this.zoom = d3.zoom().scaleExtent([1, 10]).extent([[0, 0], [1000, 640]])
         .translateExtent([[0, 0], [1000, 640]])
-        .filter(event => !event.target.closest?.('button') && (!event.ctrlKey || event.type === 'wheel') && !event.button)
-        .on('zoom', event => { this.transform = event.transform; this.layer.attr('transform', event.transform); this.positionMarkers(); this.onClose(); });
+        .filter(function (event) {
+          if (event.target && this !== event.target && !this.contains(event.target)) return true;
+          return (!event.ctrlKey || event.type === 'wheel') && !event.button;
+        })
+        .on('zoom', event => { this.transform = event.transform; this.layer.attr('transform', event.transform); this.positionMarkers(); this.onMove?.(); });
       this.svg.call(this.zoom).attr('tabindex', 0)
         .attr('aria-label', 'US competition map. Scroll or pinch to zoom, drag to pan. Use plus/minus or arrow keys when focused.')
         .on('keydown.navigation', event => {
@@ -46,7 +50,7 @@
           }
         });
       this.svg.on('click.close', () => this.onClose());
-      this.observer = new ResizeObserver(() => this.positionMarkers()); this.observer.observe(container);
+      this.observer = new ResizeObserver(() => { this.positionMarkers(); this.onMove?.(); }); this.observer.observe(container);
     }
     setEvents(events, saved, origin = null) {
       this.markerLayer.replaceChildren(); this.entries = [];
@@ -97,7 +101,10 @@
         entry.marker.style.top = `${dy + p[1] * scale}px`;
       }
     }
-    reset() { this.svg.call(this.zoom.transform, d3.zoomIdentity); }
+    reset() {
+      const duration = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ? 0 : 180;
+      this.svg.interrupt().transition().duration(duration).call(this.zoom.transform, d3.zoomIdentity);
+    }
     zoomBy(factor) { this.svg.transition().duration(window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ? 0 : 180).call(this.zoom.scaleBy, factor); }
     focus(id) {
       const entry = this.entries.find(e => e.events.some(event => event.id === id));

@@ -1,6 +1,6 @@
-# Competition planner
+# Competition Planner
 
-The planner is a static addition to the existing GitHub Pages site at `docs/planner.html`. The boxed Competition map link sits below Announcements on the home page. The planner uses the shared site theme, opens with a large map and circular campus markers, and places travel settings immediately beneath it. Marker popups show the name, date, registration deadline, city/state, official website, and results-database coverage. Clicking the same marker, the map background, or the website link closes the popup. Schedule controls remain in the list below. No framework, backend, or student-record rebuild is required. The public website has not been deployed by this change.
+The planner is a static page at `docs/planner.html`. Open it from the home page hamburger menu (**Competition Planner**), from articles, or at `/planner.html`. The page uses the shared site theme. Shared filters sit above **Map** and **Calendar** tabs; those filters apply to the map, the month calendar, and the list. Listings are for discovery, not endorsement. No framework, backend, or student-record rebuild is required.
 
 ## Review without deploying
 
@@ -14,21 +14,44 @@ git switch --track origin/feature/competition-planner-review
 python3 -m http.server 8765 --directory docs
 ```
 
-Open `http://localhost:8765/index.html` for the silver map button and small first-visit announcement beside the map button, or `/planner.html` for the map. The announcement appears once per browser storage profile; clearing the `mathintegrity-planner-welcome-v3` localStorage entry shows it again. The committed Google API key is empty. No key is needed for the current rough estimates. PDF export downloads a file directly and includes the watchlist; ICS exports confirmed fixed dates for calendar imports.
+Open `http://localhost:8765/planner.html`, or `index.html` and use the menu link. `#map` and `#calendar` select the tab. PDF export downloads a file directly and includes the watchlist; ICS exports confirmed fixed dates for calendar imports.
 
-## Free travel estimates
+Validate with `node --test tests/*.test.cjs` and `python3 scripts/build_planner_data.py --check`.
 
-Google Maps JavaScript and Routes API are no longer loaded or called. No API key or paid routing service is needed. ZIP lookup is local; street addresses use the US Census geocoder. Starting locations remain in memory. External directions links only open Google Maps when clicked.
+## Filters
 
-Driving estimates use geographic straight-line miles multiplied by 1.3, then divided by 50 mph with a 15-minute minimum. This is an explicit planning assumption, not calibrated road routing. Times display in roughly 15-minute increments. Traffic, road networks, terrain, islands, ferries, and stops are not modeled. Estimates are disabled outside the contiguous-US coordinate bounds; willing-to-fly mode still includes those destinations. Local-host events remain visible for any origin.
+All of these sit above the tabs and apply to every view:
 
-Validate with `node --test tests/*.test.cjs` and `python3 scripts/build_planner_data.py --check`. Serve with `python3 -m http.server 8765 --directory docs` and open `/planner.html`.
+- Starting point (`ZIP`, city + ZIP, or a full street address) and a mile radius (any distance, presets, or custom). Distance uses straight-line miles between the origin and a campus pin. No origin means unfiltered browsing.
+- **Grade:** Middle School and lower, High School, or All.
+- **Dates:** Upcoming (past end dates are hidden; unannounced dates stay) or All dates.
+- **My Calendar** (saved events only) and **Show contests with no map pin** (local/assigned/unverified hosts).
+- **Reset filters** restores the defaults, including Upcoming and All grades.
+
+There is no search box. Calendar does not have a separate location form.
+
+## Map
+
+The Map tab is a US-only SVG map (`planner-map.js`) using locally bundled D3 7.9.0 and topojson-client 3.1.0 to render `docs/us-states.json` (us-atlas 3.0.1). The Albers USA projection shows 50 states plus DC and relocates Alaska and Hawaii into insets; Alaska uses a reduced scale. Library and dataset licenses are in `docs/vendor/`. No Google basemap is created.
+
+Scroll or pinch to zoom, drag to pan, or use + / − and **Reset view**. With the map focused, +/− zoom, arrow keys pan, and Home or 0 reset. Button zoom animates unless reduced motion is enabled. Click a circle for name, date, registration deadline, city, and website; click it again, use close, or press Escape to dismiss. Map tips live in the **i** popover. Purple is a typical competition; blue means results are in this database. Pink is girls-only. A gold ring means the event is on your schedule. Teal is your starting point. Multiple contests at the same coordinates share a marker.
+
+## Calendar and list
+
+The Calendar tab has a month grid (default) and a paginated list (10 events per page, controls above and below). Saved events can be exported as PDF or `.ics`. `.ics` includes only fixed, non-tentative dates as all-day events with an exclusive end date. Testing windows and unknown dates remain on the watchlist. Event times must be obtained from organizers.
+
+## Starting-location lookup
+
+ZIP and ZIP+4 searches use the first five digits against `docs/us-zip-locations.json`, derived from GeoNames' US postal extract (downloaded 2026-09-08; CC BY 4.0; attribution shown in the UI). City + state + ZIP with no street also uses that ZIP table. Full street addresses are submitted to the US Census oneline geocoder using its supported JSONP endpoint, with timeout/error handling. Census positions are approximate interpolations, not guaranteed building entrances. If an address cannot be matched, try its ZIP code.
+
+Google Maps JavaScript and Routes API are not loaded. No API key is needed. External Google Maps search and driving-directions links open only when clicked. Starting coordinates stay in this browser (`localStorage` key `math-competition-planner-v1`, with saved event IDs). They are never sent to this site's server or stored in the URL. Census receives street-address lookups. Geocoder tests use local data and simulated responses; they do not submit personal addresses or contact Google.
 
 ## Maintain the catalog
 
 Edit `database/competition_events.json`, then run `scripts/build_planner_data.py` and commit the generated `docs/competition_events.json`. Do not add empty rankings to the historical student-results database. `recordSlugs` connects event families to the existing results; subject rounds are grouped into a single trip. The validator checks every existing result competition is represented.
 
 Each event has:
+
 - A stable `id` (saved schedules and calendar UIDs depend on it), title, official URL, eligibility summary, and notes.
 - `startDate`/`endDate`: inclusive `YYYY-MM-DD` dates, or both `null`.
 - `dateKind`: `fixed`, `window` (host chooses a session), or `unannounced`.
@@ -39,41 +62,34 @@ Each event has:
 
 Never infer next year's date from last year's calendar. Keep published administration windows as windows, not multi-day attendance commitments. When a new edition is announced, create an edition-specific ID if the old event should remain available in saved schedules.
 
-Initial additions beyond the results catalog include AMC 8, AMC 10/12 A and B, AIME, MATHCOUNTS chapter/state rounds, Purple Comet, the five MOEMS rounds, Berkeley's online and middle-school editions, mathleague.org middle/high school programs, and MathWorks Math Modeling Challenge. This is a curated directory, not an exhaustive feed of every local contest.
+Initial additions beyond the results catalog include AMC 8, AMC 10/12 A and B, AIME, MATHCOUNTS chapter/state rounds, Purple Comet, the five MOEMS rounds, Berkeley's online and middle-school editions, mathleague.org middle/high school programs, and MathWorks Math Modeling Challenge. Online-only editions are excluded from the planner (see below). This is a curated directory, not an exhaustive feed of every local contest.
 
 ## Behavior and limitations
 
-- Drive-only campus results require a successfully computed route within the selected one-way time limit. Failed routes are excluded, never replaced with straight-line driving estimates. No starting point means unfiltered browsing.
-- Local/assigned venues and online events are listed separately in the interface and cannot be distance-filtered until an actual host is known. A national final listing is not a claim that it is held locally.
-- Campus pins are approximate reference points, not room/building check-in locations. Multiple contests at the same coordinates share a marker with a list of events.
+- Campus pins are approximate reference points, not room/building check-in locations. Confirm the exact venue with the organizer.
+- Local/assigned venues and events with no verified host stay in the list without map pins and cannot be distance-filtered until an actual host is known. A national final listing is not a claim that it is held locally.
 - Saved schedules show fixed-date overlaps and the HMMT November/February same-season restriction. They do not guarantee eligibility, admission, available seats, or feasible travel between consecutive events.
-- `.ics` export includes only fixed dates as all-day events with an exclusive end date. Testing windows and unknown dates remain on the watchlist. Event times must be obtained from organizers.
-- Only selected event IDs are kept in browser storage. User-entered locations and route responses remain in memory and are never sent to this site's server or stored in the URL. Google receives lookup/routing requests. No student records are loaded by the planner.
+- Distance labels are straight-line miles. Traffic, road networks, terrain, islands, ferries, and stops are not modeled.
+- No student records are loaded by the planner.
 
-## US-only map display
+## Tests
 
-`planner-map.js` uses locally bundled D3 7.9.0 and topojson-client 3.1.0 to render `docs/us-states.json` (us-atlas 3.0.1). The Albers USA projection shows 50 states plus DC and relocates Alaska and Hawaii into insets; Alaska uses a reduced scale. Library and dataset licenses are in `docs/vendor/`. No Google basemap is created. Test projection coverage with `node --test tests/planner-map.test.cjs`.
+Run all planner tests with `node --test tests/*.test.cjs`:
 
-Scroll or pinch to zoom, drag to pan, or use the larger zoom buttons. With the map focused, +/− zoom, arrow keys pan, and Home or 0 reset. US overview also resets the view. Button zoom animates unless reduced motion is enabled. Competition coordinates come from the curated catalog. Girls-only dots are pink; mixed campuses use adjacent dots. Popups contain name, date, registration deadline, city/state, website, and a results-database badge when applicable and close on repeated clicks, background clicks, or Escape.
+- `tests/planner.test.cjs` — `planner-core.js` filters (dates, miles, grade, saved/local), conflicts, and ICS export.
+- `tests/planner-map.test.cjs` — US projection coverage for states and catalog campuses.
+- `tests/planner-location.test.cjs` — ZIP and Census geocoder behavior with local/simulated responses.
+- `tests/planner-catalog.test.cjs` — in-person catalog coverage and deadline labels.
 
-Google geocoding and route estimates are displayed as attributed text in the travel controls and competition list, not as Google geometry on the custom map. The starting point is obtained independently from US Census address lookup or the local GeoNames ZIP dataset, then plotted as an approximate turquoise marker. It is kept only in memory. Your existing Google key still supports these controls. Map and travel loading fail independently.
+There is no CI job for these tests; run them before merging planner changes.
 
-### Starting-location lookup and state labels
-
-Small postal state abbreviations are drawn on every state. The turquoise origin dot remains visible even when competition filters produce no results, moves correctly during zoom/resize, and clears when the starting address is edited or filters reset.
-
-ZIP and ZIP+4 searches use the first five digits against `docs/us-zip-locations.json`, derived from GeoNames' US postal extract (downloaded 2026-09-08; CC BY 4.0; attribution shown in the UI). These coordinates are approximate ZIP locations. Full street addresses are submitted to the US Census oneline geocoder using its supported JSONP endpoint, with timeout/error handling. Census positions are approximate interpolations, not guaranteed building entrances. If an address cannot be matched, try its ZIP code. Google receives starting coordinates for driving calculations, but is no longer used for geocoding. No additional key is required. Location disclosure and attribution are displayed beside the search form.
-
-Tests: `node --test tests/*.test.cjs`. Geocoder tests use local data and simulated responses; they do not submit personal addresses or contact Google.
-
-
-### Expanded in-person catalog and database coverage
+## Expanded in-person catalog and database coverage
 
 The September 8 expansion adds 59 entries from the approved candidate list, including separate seasonal school contests and the in-person components of hybrid programs. No new online-only programs were imported. `candidateNumber` traces additions to `COMPETITION_CANDIDATES.md`. Dates and deadlines are sourced, never advanced from older editions. `registrationNote` explains school ordering deadlines or qualification requirements. A null deadline renders an explicit “Not announced” message. `dateTentative` dates are labeled and are not exported to calendars.
 
-`recordSlugs` links planner programs to the historical results catalog in `database/contests/contests.csv`. Purple map dots, card borders and “Results in database” badges indicate coverage. Adding a planner event alone does not imply results coverage. Pink gender-restricted dots get a purple ring when covered. Saved events use a gold outer ring. Co-located programs with different gender/coverage categories get separate dots.
+`recordSlugs` links planner programs to the historical results catalog in `database/contests/contests.csv`. Adding a planner event alone does not imply results coverage. Co-located programs with different gender/coverage categories get separate dots.
 
-New host-area locations use GeoNames postal coordinates (`city` or `previous-city` precision); these are approximate, not building entrances. School-administered programs and events with no verified host remain in the list without map pins. Confirm venues before travel; routes to host areas are estimates.
+New host-area locations use GeoNames postal coordinates (`city` or `previous-city` precision); these are approximate, not building entrances. School-administered programs and events with no verified host remain in the list without map pins.
 
 ## In-person catalog scope
 

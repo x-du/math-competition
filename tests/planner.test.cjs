@@ -3,7 +3,7 @@ const assert = require('node:assert/strict');
 const C = require('../docs/planner-core.js');
 const { events } = require('../docs/competition_events.json');
 const event = id => events.find(e => e.id === id);
-const base = () => ({ today: '2026-09-08', query: '', date: 'upcoming', includeLocal: true, savedOnly: false, saved: new Set(), origin: null, routes: new Map(), mode: 'drive', limit: 4 });
+const base = () => ({ today: '2026-09-08', query: '', date: 'upcoming', includeLocal: true, savedOnly: false, saved: new Set(), origin: null, limit: Infinity });
 
 test('browse includes unknown dates, and groups subject rounds into one trip', () => {
   const result = C.filterEvents(events, base());
@@ -12,24 +12,24 @@ test('browse includes unknown dates, and groups subject rounds into one trip', (
   assert.ok(event('pumac').recordSlugs.includes('pumac-b-algebra'));
   assert.equal(result.at(-1).startDate, null);
 });
-test('drive-only excludes distant, failed and missing routes; includes exact threshold', () => {
-  const options = { ...base(), origin: { lat: 42.36, lng: -71.06 } };
+test('distance filter keeps campus events within the mile limit', () => {
+  const origin = { lat: 42.36, lng: -71.06 };
   const near = event('hmmt-nov'), far = event('pumac');
-  options.routes.set(C.routeKey(near.location), { status: 'ok', hours: 4, miles: 170 });
-  options.routes.set(C.routeKey(far.location), { status: 'ok', hours: 4.01, miles: 190 });
-  let result = C.filterEvents(events, options);
-  assert.ok(result.includes(near)); assert.ok(!result.includes(far)); assert.ok(!result.includes(event('dmm')));
-  options.routes.set(C.routeKey(near.location), { status: 'no-route' });
-  assert.ok(!C.filterEvents(events, options).includes(near));
+  const cutoff = (C.milesBetween(origin, near.location) + C.milesBetween(origin, far.location)) / 2;
+  const result = C.filterEvents(events, { ...base(), origin, limit: cutoff });
+  assert.ok(result.includes(near));
+  assert.ok(!result.includes(far));
+  assert.ok(!result.includes(event('dmm')));
 });
-test('willing to fly includes unrouteable destinations without inventing flights', () => {
-  const options = { ...base(), origin: { lat: 21.3, lng: -157.8 }, mode: 'fly' };
+test('any-distance origin still shows far campus events', () => {
+  const options = { ...base(), origin: { lat: 21.3, lng: -157.8 }, limit: Infinity };
   assert.ok(C.filterEvents(events, options).includes(event('bmt')));
-  const info = C.travelInfo(event('bmt'), options.origin, options.routes, 'fly', 4);
-  assert.equal(info.kind, 'fly'); assert.match(info.label, /mi direct/);
+  const info = C.travelInfo(event('bmt'), options.origin, Infinity);
+  assert.equal(info.kind, 'near');
+  assert.match(info.label, /mi/);
 });
 test('local programs remain visible without fabricated proximity', () => {
-  const o = { ...base(), origin: { lat: 0, lng: 0 }, includeLocal: true };
+  const o = { ...base(), origin: { lat: 0, lng: 0 }, includeLocal: true, limit: 1 };
   const result = C.filterEvents(events, o);
   assert.ok(result.includes(event('amc8'))); assert.ok(result.includes(event('amc8')));
   o.includeLocal = false; assert.equal(C.filterEvents(events, o).length, 0);
@@ -38,7 +38,7 @@ test('date filter respects inclusive multi-day end and never rolls last year for
   const e = event('amc8');
   assert.ok(C.filterEvents([e], { ...base(), today: '2027-01-27' }).length);
   assert.equal(C.filterEvents([e], { ...base(), today: '2027-01-28' }).length, 0);
-  assert.equal(C.filterEvents(events, { ...base(), date: 'confirmed' }).some(e => !e.startDate), false);
+  assert.ok(C.filterEvents(events, { ...base(), date: 'upcoming' }).some(e => !e.startDate));
   assert.ok(C.filterEvents([e], { ...base(), today: '2028-01-01', date: 'all' }).length);
 });
 test('search and saved-only filters compose', () => {
@@ -96,23 +96,39 @@ test('planner excludes online editions while retaining in-person BMT', () => {
   for (const id of ['bmt-online', 'purple-comet', 'hmic', 'm3']) assert.equal(event(id), undefined);
 });
 
-test('rough estimates use geographic coordinates and stay finite at the same point', () => {
+test('distance labels use straight-line miles', () => {
   const origin = {lat: 40, lng: -75}, destination = {lat: 41, lng: -75};
-  const route = C.estimateRoute(origin, destination);
-  assert.equal(route.miles, C.milesBetween(origin, destination) * 1.3);
-  assert.equal(route.hours, route.miles / 50);
-  assert.equal(route.estimated, true);
-  assert.equal(C.estimateRoute(origin, origin).hours, 0.25);
   const e = {...event('bmt'), location: destination};
-  const routes = new Map([[C.routeKey(destination), route]]);
-  assert.match(C.travelInfo(e, origin, routes, 'drive', 4).label, /Rough estimate/);
-  assert.equal(C.travelInfo(e, origin, routes, 'drive', 0.5).reachable, false);
+  const miles = Math.round(C.milesBetween(origin, destination));
+  const info = C.travelInfo(e, origin, 500);
+  assert.equal(info.reachable, true);
+  assert.equal(info.label, `${miles} mi`);
+  assert.equal(C.travelInfo(e, origin, miles - 1).reachable, false);
 });
-test('rough driving estimates do not imply road connections to Hawaii or Alaska', () => {
+test('straight-line miles apply to Alaska and Hawaii', () => {
   const destination = event('bmt').location;
   for (const origin of [{lat:21.3,lng:-157.8},{lat:61.2,lng:-149.9}]) {
-    const routes = new Map([[C.routeKey(destination), C.estimateRoute(origin, destination)]]);
-    assert.equal(C.travelInfo(event('bmt'), origin, routes, 'drive', 12).reachable, false);
-    assert.equal(C.travelInfo(event('bmt'), origin, routes, 'fly', 12).reachable, true);
+    assert.equal(C.travelInfo(event('bmt'), origin, 100).reachable, false);
+    assert.equal(C.travelInfo(event('bmt'), origin, Infinity).reachable, true);
+    assert.ok(C.milesBetween(origin, destination) > 100);
   }
+});
+test('grade filter separates middle school, high school, and overlapping contests', () => {
+  assert.equal(C.classifyGrades('Middle school').middle, true);
+  assert.equal(C.classifyGrades('Middle school').high, false);
+  assert.equal(C.classifyGrades('High school').middle, false);
+  assert.equal(C.classifyGrades('High school').high, true);
+  assert.equal(C.classifyGrades('Middle school & high school').middle, true);
+  assert.equal(C.classifyGrades('Middle school & high school').high, true);
+  assert.equal(C.classifyGrades('Grade 8 and below; age limit applies').middle, true);
+  assert.equal(C.classifyGrades('Grade 8 and below; age limit applies').high, false);
+  assert.equal(C.classifyGrades('Grades 10 / 12 and below; age limits apply').middle, true);
+  assert.equal(C.classifyGrades('Grades 10 / 12 and below; age limits apply').high, true);
+  const middle = C.filterEvents(events, { ...base(), date: 'all', grade: 'middle' });
+  const high = C.filterEvents(events, { ...base(), date: 'all', grade: 'high' });
+  assert.ok(middle.includes(event('amc8')));
+  assert.ok(!high.includes(event('amc8')));
+  assert.ok(high.includes(event('hmmt-nov')));
+  assert.ok(!middle.includes(event('hmmt-nov')));
+  assert.ok(middle.length && high.length && middle.length < events.length && high.length < events.length);
 });

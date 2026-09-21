@@ -1,24 +1,33 @@
-/* Independent coordinates for the custom map. Google is used only for routes. */
+/* Independent coordinates for the custom map. Google is used only for directions links. */
 (function () {
   let zipData, sequence = 0;
-  async function lookup(address) {
-    const zip = address.trim().match(/^([0-9]{5})(?:-[0-9]{4})?$/);
-    if (zip) {
-      if (!zipData) zipData = fetch('us-zip-locations.json').then(r => {
+  function lastZip(address) {
+    const matches = address.match(/\b(\d{5})(?:-\d{4})?\b/g);
+    return matches ? matches[matches.length - 1].slice(0, 5) : null;
+  }
+  function looksLikeStreet(address) {
+    return /^\d+\s+\S/.test(address.trim());
+  }
+  async function loadZips() {
+    if (!zipData) {
+      zipData = fetch('us-zip-locations.json').then(r => {
         if (!r.ok) throw new Error('ZIP data unavailable'); return r.json();
       }).catch(error => { zipData = null; throw error; });
-      const entry = (await zipData)[zip[1]];
-      if (!entry) return [];
-      return [{ label: `${entry[0]}, ${entry[1]} ${zip[1]}`, position: { lat: entry[2], lng: entry[3] }, approximate: true }];
     }
-    // Census supports JSONP for static websites without cross-origin fetch access.
+    return zipData;
+  }
+  async function lookupZip(zip) {
+    const entry = (await loadZips())[zip];
+    if (!entry) return [];
+    return [{ label: `${entry[0]}, ${entry[1]} ${zip}`, position: { lat: entry[2], lng: entry[3] }, approximate: true }];
+  }
+  function lookupCensus(address) {
     return new Promise((resolve, reject) => {
       const callback = 'plannerCensus' + (++sequence);
       const script = document.createElement('script');
       let timer;
       const cleanup = () => {
         clearTimeout(timer); script.remove();
-        // A no-op handles a late response that was already in flight at timeout.
         window[callback] = () => {};
         setTimeout(() => { delete window[callback]; }, 60000);
       };
@@ -37,6 +46,18 @@
       });
       document.head.append(script);
     });
+  }
+  async function lookup(address) {
+    const trimmed = address.trim();
+    if (/^\d{5}(?:-\d{4})?$/.test(trimmed)) return lookupZip(trimmed.slice(0, 5));
+    const zip = lastZip(trimmed);
+    // City + state + ZIP has no street; Census oneline usually returns nothing.
+    if (zip && !looksLikeStreet(trimmed)) return lookupZip(zip);
+    try {
+      const matches = await lookupCensus(trimmed);
+      if (matches.length) return matches;
+    } catch (_) { /* Fall back to a ZIP in the query when Census is unavailable. */ }
+    return zip ? lookupZip(zip) : [];
   }
   window.PlannerGeocoder = { lookup };
 })();
