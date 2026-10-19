@@ -950,7 +950,6 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1004,Arjun Suresh,Wisconsin,,male,
 1005,Anji Wang,"Ontario, Canada",,male,
 1006,David Wang,Maryland,,male,11
-1007,Oliver Zhang,Massachusetts,,male,
 1008,Vivian Zhong,California,,female,11
 1009,Zachary Berchenko,Minnesota,Zack Berchenko,male,
 1010,Erin Bian,Washington,,female,10
@@ -1441,7 +1440,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1524,David Zhang,New Jersey,,male,
 1525,Aaron Xie,New Jersey,,male,8
 1526,Patrick Liang,California,,male,9
-1528,Huanqi Zhang,Massachusetts,,male,10
+1528,Huanqi Zhang,Massachusetts,Oliver Zhang,male,10
 1529,Daniel Gong Li,Maryland,,male,11
 1531,Yutong Zhao,New Jersey,Mark Yutong Zhao|Yutong Mark Zhao,male,11
 1532,Sirui Wu,China,"WU, SIRUI",male,
