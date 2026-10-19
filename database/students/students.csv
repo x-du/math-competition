@@ -215,7 +215,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 236,Jennifer Zhou,Ohio,,female,
 237,Steven Chan,,,male,
 238,Shamik Khowala,California,,male,11
-239,Satvik Sharma,Pennsylvania,,male,
+239,Satvik Sharma,Pennsylvania,,male,10
 241,Eliot Flowers,,,male,
 242,Adam Ge,Massachusetts,,male,11
 243,Aarush Prasad,New Jersey,,male,11
@@ -1720,7 +1720,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1827,Pranav Bodapati,California,,male,
 1828,Brianna Zheng,California,,female,
 1829,Joshua Balmin,California,,male,
-1830,Nicholas Wang,Arizona,,male,
+1830,Nicholas Wang,California,,male,
 1831,Alex Backues,California,,male,
 1832,Andrew Tian,California,,male,
 1833,Dylan Kim,California,,male,
@@ -2484,7 +2484,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 2611,Redger Xu,California,,male,
 2612,Allen Li,New York,,male,
 2613,Brian Tay,Virginia,,male,
-2614,Daniel Liu,California,,male,
+2614,Daniel Liu,North Carolina,,male,
 2615,Karthik Prasad,Illinois,,male,
 2616,Nathan Chan,California,,male,
 2617,Prithvi Anickode,Arizona,,male,
@@ -4026,7 +4026,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 4157,Aaron Xie,Georgia,,male,
 4158,Akshara Matthur Shravan,Washington,,male,
 4159,Alice Cheremukhina,Texas,,female,
-4160,Alwin Jing,New York,,male,
+4160,Alwin Jing,New York,,male,9
 4161,Andrew Duan,Massachusetts,,male,
 4162,Arhan Nur Gupta,California,,female,
 4163,Brendon Wang,Washington,,male,
@@ -5687,7 +5687,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 5822,Melissa Zhao,,,female,
 5823,Aaron Guan,California,,male,
 5824,Fred Huang,California,,male,
-5825,Muyi Chen,,,male,
+5825,Muyi Chen,Texas,,male,6
 5826,Chunyue Yi,,,male,
 5827,Anay Mehta,,,male,
 5828,Vyom Aggarwal,,,male,
@@ -6133,7 +6133,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6270,Ming-Yi Tang,Massachusetts,,male,
 6271,Sejun Park,Massachusetts,,male,
 6272,Garud Shah,Oregon,,male,8
-6273,Siddharth Senthil,California,,male,
+6273,Siddharth Senthil,North Carolina,,male,
 6275,Rishabh Rajesh,Massachusetts,,male,
 6276,Jacob Ko,Korea,,male,
 6277,Jonathan Judson,Washington,,male,
