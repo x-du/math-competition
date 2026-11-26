@@ -1372,7 +1372,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1451,Mihir Kumar,New York,,male,
 1452,Anand Swaroop,Massachusetts,,male,11
 1453,Steve Cui,Virginia,,male,7
-1454,Arnav Vunnam,Michigan,,male,7
+1454,Arnav Vunnam,Michigan,Arnav S Vunnam,male,7
 1455,Daniel David,Massachusetts,,male,
 1456,Benjamin Sun,New Jersey,,male,
 1457,Ben Li,North Carolina,,male,
@@ -6162,7 +6162,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6302,Noah Liu,Colorado,,male,7
 6303,Andrew Zhao,Colorado,,male,8
 6304,Jinghan Lu,Connecticut,,male,8
-6305,Catherine Pennington,Connecticut,,female,8
+6305,Catherine Pennington,Connecticut,Catherine X Pennington,female,8
 6306,Eric Ren,Connecticut,,male,8
 6307,James Huang,District of Columbia,,male,8
 6308,Catherine Lieven,District of Columbia,,female,8
@@ -6949,3 +6949,42 @@ student_id,student_name,state,alias,gender,grade_in_2026
 7135,Sophie Hall,North Carolina,,female,
 7136,Vivaan Parikh,North Carolina,,male,
 7137,Zhengxi Liu,Virginia,,,8
+7138,Ethan Mengxuan Zhang,Illinois,,male,
+7139,Keren Long,,,female,
+7140,Sumanyu Nandecha,New York,,male,
+7141,Yuening Chen,New Jersey,,,
+7142,ZHAO ZHIHENG,China,,,
+7143,Derrick Peng,New Jersey,,male,
+7144,LI JIAMING,China,,,
+7145,PANG RUIXIANG,China,,,
+7146,Justin Zhou,,,male,
+7147,Lam To,New Jersey,,,
+7148,Aiden Yang,Texas,,male,
+7149,Nathan Tan,Massachusetts,,male,
+7150,Arjun R. Shah,Texas,,male,
+7151,Jayden Yang,Illinois,,male,
+7152,Louis Qiu,,,male,
+7153,Alexander Meng,Massachusetts,,male,
+7154,Peilin Yang,New Hampshire,,,
+7155,Vibhu Akella,Texas,,male,
+7156,Ray Chakraborty,New Jersey,,male,
+7157,Daniel Yoon,,,male,
+7158,Marguerite Pennington,Connecticut,,female,
+7159,Abhiraj Singh,"Ontario, Canada",,male,
+7160,Arnav Jadia,California,,male,
+7161,Atticus Rando,,,male,
+7162,Jeffrey Zhaozu Wu,Maryland,,male,
+7163,Kelly Liu,Texas,,,
+7164,Bruce Shu,Texas,,male,
+7165,Jate Greene,,,,
+7166,Jun Shan Song,,,,
+7167,Edward Fu,,,male,
+7168,Ethan Pei,,,male,
+7169,ZHONG BINGTONG,China,,,
+7170,Bryan Lu,Massachusetts,,male,
+7171,Anna Sui,,,female,
+7172,ABHIRAM BATCHU,Texas,,male,
+7173,Keaton Yuhan Zhang,Massachusetts,,male,
+7174,Yuhan Che,Illinois,,,
+7175,Jasper Caravan,Massachusetts,,male,
+7176,Ryan Joohan Kim,California,,male,

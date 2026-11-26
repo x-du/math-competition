@@ -42,8 +42,9 @@ Columns, in order: `student_id`, `student_name`, `state`, `alias`, `gender`, `gr
 If no (name, state) match:
 
 1. Assign `student_id` = max existing id + 1.
-2. **Append** a 6-field row (5 commas, no trailing comma). Example: `7080,Ashita Thakkar,California,,,`
-3. Leave `alias`, `gender`, and `grade_in_2026` blank unless known.
+2. **Append** a 6-field row (5 commas, no trailing comma). Example: `7080,Ashita Thakkar,California,,female,`
+3. Leave `alias` and `grade_in_2026` blank unless known.
+4. Set `gender` to `male` or `female` from `student_name` (and `alias`, if any) when confidence is **above 80%**. Follow the fill-missing-gender skill: use the first name and any parenthetical nickname; do not guess unisex names, single initials, or names whose gender is unclear (including most pinyin given names). Leave `gender` blank otherwise, and list every new student left blank. Do this for every new row before rebuilding search data — a blank gender is stored as `male`.
 
 Then use that `student_id` and `student_name` in `results.csv`.
 
