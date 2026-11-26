@@ -1474,7 +1474,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1565,Nanxuan Zhang,,,male,
 1566,Arjun Leih,Connecticut,,male,10
 1567,Samuel Lin,New York,,male,
-1568,Mingdong Ma,New York,,male,
+1568,Mingdong Ma,New York,Mindy Ma,female,
 1569,JiSu Bang,New York,,male,
 1570,张鑫野,China,,male,
 1571,Michael Yang,Massachusetts,,male,
@@ -1519,7 +1519,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 1614,Sirawit Pipittanaban,Thailand,,male,
 1615,Gong Cheng,,,male,
 1617,Michael Retakh,New York,,male,
-1618,Brayden Choi,Washington,,male,
+1618,Brayden Choi,Florida,,male,
 1621,Mengqi Xuan,New Jersey,,female,
 1622,Kaicheng Zhang,China,,male,
 1623,Albert Wu,New Jersey,,male,
@@ -2250,7 +2250,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 2372,Rohan Rajaram,California,,male,9
 2373,Ritisha Srivastava,Washington,,female,
 2374,Aiden Yan,California,,male,
-2375,Simon Yang,California,,male,
+2375,Simon Yang,California,,male,6
 2376,Tiancheng Zheng,California,,male,
 2377,Madelyn Zhu,California,,female,
 2379,Rishi Shah,,,male,
@@ -2368,7 +2368,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 2494,Sophia Fan,California,,female,
 2495,Edward Han,California,,male,
 2496,Angela Chen,California,,female,
-2497,Yuantao Tang,California,,male,
+2497,Yuantao Tang,Pennsylvania,,male,
 2498,Bokai Yan,California,,male,
 2499,Zi-Jie(Thomas) Ni,California,,male,8
 2500,Mehul Biala,California,,male,
@@ -5698,7 +5698,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 5834,Asher Luo,California,,male,
 5835,Rajit Pandey,California,,male,
 5836,Advik Garg,California,,male,
-5837,Rebeca Costin,California,,male,
+5837,Rebeca Costin,California,,female,8
 5838,Alexander Widjaja,California,,male,
 5839,Akshay Thirumalai Vijaysrinivasan,,,male,
 5840,Parnika Gupta,,,female,
@@ -5710,7 +5710,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 5846,Jiayuan Fu,,,male,
 5847,Angie Li,,,female,
 5848,Raymond Li,,,male,
-5849,Isabelle Wang,,,female,
+5849,Isabelle Wang,California,,female,8
 5850,Jacob Liu,,,male,
 5851,Tiffany Han,,,female,
 5852,Sri Shubhaan Vulava,,,male,
@@ -6073,7 +6073,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6210,Caden Claussen,,,male,
 6211,Joshua Koo,,,male,
 6212,Surbhi Sakshi,,,female,
-6213,Chris Chen,,,male,
+6213,Chris Chen,Massachusetts,,male,
 6214,Laura Chen,,,female,
 6215,Jacob Kawako,,,male,
 6216,Ansh Taneja,,,male,
@@ -6856,7 +6856,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 7034,Andrew Li,Texas,,male,
 7035,Vi Nguyen,Mississippi,,female,8
 7036,Raymond Sang,Mississippi,,male,8
-7037,Ella Feng,,,female,
+7037,Ella Feng,California,,female,
 7038,Skanda Mahesh,,,male,
 7039,Om Kabra,,,male,
 7040,Derek Jiang,,,male,
