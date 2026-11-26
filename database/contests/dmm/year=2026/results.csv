@@ -1,0 +1,61 @@
+student_id,student_name,state,rank,team_name,team_id,club_name,score,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10,mcp_rank
+206,Eric Xie,Maryland,1,MoCoSwaggaSquad1,1,MoCoSwaggaSquad,8,1,0,1,1,1,1,1,1,1,0,1
+29,Patrick Du,Virginia,2,TJ A,2,TJ Varsity Math Team,8,1,0,1,1,1,1,1,1,1,0,2
+221,Anderson Hao,Virginia,3,TJ A,2,TJ Varsity Math Team,7,1,1,1,0,1,0,1,1,1,0,3
+7106,Coleman Holtan,,4,Piggy Island,3,Piggy Island,6,1,0,1,1,1,0,1,0,1,0,4
+210,Eric Zhu,North Carolina,5,Cary Academy #1,4,Cary Academy,6,1,1,1,0,1,0,1,0,1,0,5
+7107,Bryan He,North Carolina,6,Team A,5,ECG Math Club,6,1,1,1,0,1,0,0,1,1,0,9
+1310,Dylan Zhang,North Carolina,6,Green Level A,6,Green Level High,6,1,1,1,0,1,0,1,0,1,0,9
+7108,Kishore Nair,North Carolina,6,Panther Creek Team A,7,Panther Creek High School,6,1,1,1,0,1,0,1,0,1,0,9
+1302,Nelson Huang,North Carolina,6,NCSSM Alpha,8,NCSSM Math Team,6,1,0,1,1,1,1,0,0,1,0,9
+1049,Ryan Yin,Virginia,6,TJ A,2,TJ Varsity Math Team,6,1,1,1,0,1,1,0,0,1,0,9
+7109,Shreyas Bhimireddy,North Carolina,6,Marvin Ridge HS Team 2,9,MRHS Mu Alpha Theta,6,1,1,0,0,1,0,1,1,1,0,9
+391,Watson Houck,South Carolina,6,NCSSM Alpha,8,NCSSM Math Team,6,1,0,1,1,1,0,1,0,1,0,9
+7110,Aaron Su,Virginia,13,TJ B,10,TJ Varsity Math Team,5,1,0,1,0,1,0,1,0,1,0,36.5
+1312,Aaron Zhu,North Carolina,13,NCSSM Alpha,8,NCSSM Math Team,5,1,0,1,0,1,0,1,0,1,0,36.5
+849,Aiden Wei,Georgia,13,Fulton Science Academy Team A,11,FSA High School Math Team,5,1,0,1,1,1,0,0,0,1,0,36.5
+7111,Alice Wang,Virginia,13,McLean A,12,McLean Highlander Math League,5,1,0,1,0,1,0,1,0,1,0,36.5
+840,Andrew Du,Virginia,13,TJ B,10,TJ Varsity Math Team,5,1,1,1,0,1,0,0,0,1,0,36.5
+7112,Andrew Yang,North Carolina,13,Cary Academy #1,4,Cary Academy,5,1,0,1,0,1,0,1,0,1,0,36.5
+7113,Andrew Zhao,North Carolina,13,NCSSM Beta,13,NCSSM Math Team,5,1,0,1,0,1,0,1,0,1,0,36.5
+1318,Angelo Chu,Virginia,13,TJ A,2,TJ Varsity Math Team,5,1,0,1,0,1,0,1,0,1,0,36.5
+7114,Ankush Dey,South Carolina,13,CMC - Stephen,14,Charlotte Math Club,5,1,0,1,0,1,0,1,0,1,0,36.5
+1351,Annabel Rong,Georgia,13,Fulton Science Academy Team A,11,FSA High School Math Team,5,1,1,1,0,1,0,0,0,1,0,36.5
+7115,Armaan Agarwal,North Carolina,13,Panther Creek Team B,15,Panther Creek High School,5,1,0,1,0,1,0,0,1,1,0,36.5
+1325,Atharv Mittal,North Carolina,13,Ardrey Kell A Team,16,Ardrey Kell High School,5,1,0,1,0,1,0,1,0,1,0,36.5
+7116,Calvin You,North Carolina,13,Chapel Hill High School A,17,CHHS Math Club,5,1,0,1,0,1,1,0,0,1,0,36.5
+7117,Daniel Li,Maryland,13,MoCoSwaggaSquad2,18,MoCoSwaggaSquad,5,1,1,1,0,1,0,0,0,1,0,36.5
+1006,David Wang,Maryland,13,MoCoSwaggaSquad2,18,MoCoSwaggaSquad,5,1,0,1,1,0,0,1,0,1,0,36.5
+7118,Eden Rivkin,South Carolina,13,CMC - Harold,19,Charlotte Math Club,5,1,0,1,0,0,0,1,1,1,0,36.5
+7119,Eli Segal,North Carolina,13,NCSSM Beta,13,NCSSM Math Team,5,1,0,1,0,1,0,0,0,1,1,36.5
+7120,Frank He,North Carolina,13,Cary Academy #3,20,Cary Academy,5,1,0,1,0,1,0,1,0,1,0,36.5
+7121,Harshan Santhamoorthi,North Carolina,13,Marvin Ridge HS Team 2,9,MRHS Mu Alpha Theta,5,1,0,1,0,0,0,1,1,1,0,36.5
+7122,Ian Rareshide,North Carolina,13,Davie,21,Davie,5,1,1,1,0,1,0,0,0,1,0,36.5
+7123,Isaac Leetyn,Virginia,13,TJ C,22,TJ Varsity Math Team,5,1,0,1,0,1,0,1,0,1,0,36.5
+4375,Ishan Sundaram,North Carolina,13,Team Charlotte Panthers,23,Team Charlotte,5,1,0,1,0,1,0,0,1,1,0,36.5
+6382,John Chen,North Carolina,13,East Chapel Hill HS A,24,East Chapel Hill High school,5,1,0,1,0,1,0,1,0,1,0,36.5
+1309,Jahl Miraji-Khot,Delaware,13,Columbia Dragons,25,Columbia Math Circle,5,1,0,1,0,1,0,1,0,1,0,36.5
+6452,Jason Shi,Virginia,13,Combined 01,26,Da Vinci Math,5,1,1,1,0,1,0,0,0,1,0,36.5
+7124,Jayden Cho,North Carolina,13,Team A,5,ECG Math Club,5,1,0,1,0,1,0,1,0,1,0,36.5
+7125,Jiayu Cao,North Carolina,13,Green Level B,27,Green Level High,5,1,0,1,0,1,0,1,0,1,0,36.5
+4450,Justin Peng,South Carolina,13,Columbia Titans,28,Columbia Math Circle,5,1,0,1,0,1,0,0,1,1,0,36.5
+7126,Kairav Kothiyal,North Carolina,13,Hickory Ridge High School Team 1,29,Hickory Ridge High School,5,1,0,1,0,1,0,1,0,1,0,36.5
+799,Kesav Kalanidhi,North Carolina,13,NCSSM Alpha,8,NCSSM Math Team,5,1,1,1,0,1,0,0,0,1,0,36.5
+7127,Kevin Ji,Maryland,13,MoCoSwaggaSquad1,1,MoCoSwaggaSquad,5,1,0,0,0,1,0,1,1,1,0,36.5
+7128,Krivisha Nuthakki,North Carolina,13,Marvin Ridge HS Team 2,9,MRHS Mu Alpha Theta,5,1,1,0,0,0,0,1,1,1,0,36.5
+216,Lingfei Tang,North Carolina,13,Cary Academy #1,4,Cary Academy,5,1,1,1,0,1,0,0,0,1,0,36.5
+7129,Nicolaus Maloney,Virginia,13,TJ C,22,TJ Varsity Math Team,5,1,1,1,0,1,0,0,0,1,0,36.5
+7130,Om Dessai,North Carolina,13,Chapel Hill High School A,17,CHHS Math Club,5,1,0,1,0,1,0,1,0,1,0,36.5
+7131,Pierre-Robert Ballut,Virginia,13,McLean A,12,McLean Highlander Math League,5,1,1,1,0,1,0,0,0,1,0,36.5
+7132,Ray Zhao,Virginia,13,TJ D,30,TJ Varsity Math Team,5,1,0,1,0,1,0,1,0,1,0,36.5
+6842,Riyan Nayak,Virginia,13,Deep Run Team A,31,Deep Run Math Team,5,1,0,1,0,1,0,1,0,1,0,36.5
+231,Ryan Karim,Virginia,13,Deep Run Team A,31,Deep Run Math Team,5,1,1,1,0,1,0,0,0,1,0,36.5
+7133,Shaurya Bisht,Virginia,13,TJ D,30,TJ Varsity Math Team,5,1,0,1,0,1,0,1,0,1,0,36.5
+7134,Shreyas Varukuti,North Carolina,13,Green Level A,6,Green Level High,5,1,1,1,0,1,0,0,0,1,0,36.5
+7135,Sophie Hall,North Carolina,13,Eagles A,32,Enloe Math Honors Society,5,1,0,1,0,1,0,1,0,1,0,36.5
+1298,Thomas Yao,Maryland,13,MoCoSwaggaSquad2,18,MoCoSwaggaSquad,5,1,0,1,0,1,0,0,1,1,0,36.5
+1477,Tiger Deng,Virginia,13,TJ B,10,TJ Varsity Math Team,5,1,0,1,0,1,0,0,1,1,0,36.5
+1315,Ved Vainateya,North Carolina,13,Cary Academy #1,4,Cary Academy,5,1,1,1,0,1,0,0,0,1,0,36.5
+7136,Vivaan Parikh,North Carolina,13,Panther Creek Team B,15,Panther Creek High School,5,1,0,1,0,1,0,0,1,1,0,36.5
+218,William Qian,Maryland,13,MoCoSwaggaSquad2,18,MoCoSwaggaSquad,5,1,1,1,0,0,0,1,0,1,0,36.5
+7137,Zhengxi Liu,Virginia,13,TJ D,30,TJ Varsity Math Team,5,1,0,1,0,1,0,1,0,1,0,36.5

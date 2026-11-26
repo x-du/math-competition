@@ -6668,7 +6668,7 @@ student_id,student_name,state,alias,gender,grade_in_2026
 6839,Maks G,,,male,
 6840,Abhijay Banerjee,,,male,
 6841,Samuel Zhang,Virginia,,male,10
-6842,Riyan Nayak,,,male,
+6842,Riyan Nayak,Virginia,,male,
 6843,Joe Li,,,male,
 6844,Victor Shi,,,male,
 6845,Daniel Peng,,,male,
@@ -6915,5 +6915,37 @@ student_id,student_name,state,alias,gender,grade_in_2026
 7101,Dylan Sohn,New York,,male,11
 7102,Karsten Huber,Colorado,,male,12
 7103,David Yu,Virginia,,male,10
-7104,Jiayu Liu,New Jersey,Jerry Liu,,12
-7105,Alex Zhao,California,,,
+7104,Jiayu Liu,New Jersey,Jerry Liu,male,12
+7105,Alex Zhao,California,,male,
+7106,Coleman Holtan,,,male,
+7107,Bryan He,North Carolina,,male,
+7108,Kishore Nair,North Carolina,,male,
+7109,Shreyas Bhimireddy,North Carolina,,male,
+7110,Aaron Su,Virginia,,male,10
+7111,Alice Wang,Virginia,,female,
+7112,Andrew Yang,North Carolina,,male,
+7113,Andrew Zhao,North Carolina,,male,
+7114,Ankush Dey,South Carolina,,male,
+7115,Armaan Agarwal,North Carolina,,male,
+7116,Calvin You,North Carolina,,male,
+7117,Daniel Li,Maryland,,male,
+7118,Eden Rivkin,South Carolina,,,
+7119,Eli Segal,North Carolina,,male,
+7120,Frank He,North Carolina,,male,
+7121,Harshan Santhamoorthi,North Carolina,,male,
+7122,Ian Rareshide,North Carolina,,male,
+7123,Isaac Leetyn,Virginia,,male,
+7124,Jayden Cho,North Carolina,,male,
+7125,Jiayu Cao,North Carolina,,,
+7126,Kairav Kothiyal,North Carolina,,male,
+7127,Kevin Ji,Maryland,,male,
+7128,Krivisha Nuthakki,North Carolina,,female,
+7129,Nicolaus Maloney,Virginia,,male,9
+7130,Om Dessai,North Carolina,,male,
+7131,Pierre-Robert Ballut,Virginia,,male,
+7132,Ray Zhao,Virginia,,male,10
+7133,Shaurya Bisht,Virginia,,male,11
+7134,Shreyas Varukuti,North Carolina,,male,
+7135,Sophie Hall,North Carolina,,female,
+7136,Vivaan Parikh,North Carolina,,male,
+7137,Zhengxi Liu,Virginia,,,8
