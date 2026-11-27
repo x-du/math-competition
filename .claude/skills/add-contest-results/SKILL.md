@@ -72,7 +72,7 @@ Do **not** create a new `students.csv` row for every official contestant. Match 
 
 **`us_rank` and `mcp_rank`:** fill only for Country Code `USA`, ranked by total among matched US students (ties: official rank). Leave both blank for everyone else.
 
-- **IMO** results: `student_id`, `student_name`, `country`, `award`, `rank`, `us_rank`, `P1`–`P6`, `total`, `mcp_rank`. Awards like `Gold medal`. Source: `https://www.imo-official.org/year_individual_r.aspx` (western name order). Official CSV includes `Contestant Code`.
+- **IMO** results: `student_id`, `student_name`, `country`, `award`, `rank`, `us_rank`, `q1`–`q6`, `total`, `mcp_rank`. Awards like `Gold medal`. Source: `https://www.imo-official.org/year_individual_r.aspx` (western name order). Official CSV includes `Contestant Code`.
 - **RMM** results: `student_id`, `student_name`, `country`, `year`, `us_rank`, `international_rank`, `total_score`, `award`, `mcp_rank`. Awards in results are `Gold` / `Silver` / `Bronze` (no “medal”). Official names are often family-name-first (`Reddy Liam`); match reversed given/family or aliases. Onsite individual table only — skip online contestants. Source: `https://rmms.lbi.ro/rmm{year}/index.php?id=results_math` (TLS on that host may be expired; still fetch public results).
 - **EGMO** results match the IMO column set. Combine given + family name when matching.
 

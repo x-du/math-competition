@@ -1,4 +1,4 @@
-student_id,student_name,country,award,rank,us_rank,P1,P2,P3,P4,P5,P6,total,mcp_rank
+student_id,student_name,country,award,rank,us_rank,q1,q2,q3,q4,q5,q6,total,mcp_rank
 1641,Magdalena Pudełko,Poland,Gold Medal,3,,7,7,7,7,7,2,37,
 81,Angela Liu,United States of America,Gold Medal,7,1,7,7,6,7,7,0,34,1
 58,Hannah Fox,United States of America,Gold Medal,9,2,7,7,7,5,5,1,32,2
