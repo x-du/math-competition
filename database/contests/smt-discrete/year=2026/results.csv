@@ -1,4 +1,4 @@
-student_id,student_name,year,subject,smt_student_id,team_id,team_name,school,award,rank,score,mcp_rank
+student_id,student_name,year,subject,smt_student_id,team_id,team,school,award,rank,score,mcp_rank
 1359,Alena Kutsuk,2026,Discrete,078A,078,Mountain View Spartans,,Top Scores,1,,1
 211,Chenghao Hu,2026,Discrete,074B,074,Monta Vista Team A,,Top Scores,2,,2
 7077,Charlie Chen,2026,Discrete,004B,004,All Aces Spade,,Top Scores,3,,3

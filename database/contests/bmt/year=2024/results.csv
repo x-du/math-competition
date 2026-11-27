@@ -1,4 +1,4 @@
-student_id,student_name,year,subject,bmt_student_id,team_id,team_name,school,award,rank,score,mcp_rank
+student_id,student_name,year,subject,bmt_student_id,team_id,team,school,award,rank,score,mcp_rank
 1002,Alexander Ruan,2024,General,099B,099,Math Nuts,Folsom HS,Top Scores,1,18,1
 3056,Taison Scofield,2024,General,182A,182,Minnesota Gold,Minnesota All State Math Team,Top Scores,2,18,2
 2717,Katherine Li,2024,General,112F,112,AlphaStar Fibonacci,AlphaStar Academy,Top Scores,3,17,3

@@ -1,4 +1,4 @@
-team_id,team_name,student_ids,smt_student_ids,school,state
+team_id,team,student_ids,smt_student_ids,school,state
 001,10 Penguins,13|1029|7075,001F|001A|001C,,
 003,AHS Water Bears,1809|5703|6164|6206,003B|003F|003C|003E,,
 004,All Aces Spade,2908|6809|7065|7077,004C|004D|004E|004B,,

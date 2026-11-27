@@ -1,4 +1,4 @@
-student_id,student_name,team,team_id,year,division,rank,score,p1,p2,p3,p4,p5,p6,p7,p8,mcp_rank
+student_id,student_name,team,team_id,year,division,rank,score,q1,q2,q3,q4,q5,q6,q7,q8,mcp_rank
 82,Edward Li,Individuals Team 163,5,2024,A,1,17.323,1,1,1,1,1,1,1,1,1
 55,Zongshu Wu,Random Math,2,2024,A,2,14.463,1,1,1,1,1,1,0,1,2
 91,Andrew Lin,Lehigh Valley Fire,1,2024,A,3,14.227,1,1,1,1,1,0,1,1,3

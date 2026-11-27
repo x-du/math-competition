@@ -419,7 +419,7 @@ def build_teams_index() -> dict[str, dict[str, dict[str, list[int]]]]:
     """
     Index database/contests/*-teams/year=*/teams.csv for the website team roster popover.
     Shape: { base_contest_slug: { year: { team_display_name: [student_id, ...] } } }.
-    Team label matches UI: `team` column, else `team_name`, same as the frontend.
+    Team label is the `team` column (`team_name` is accepted if a file still uses it).
     """
     out: dict[str, dict[str, dict[str, list[int]]]] = {}
     for teams_path in sorted(CONTESTS_DIR.glob("*-teams/year=*/teams.csv")):
@@ -597,6 +597,8 @@ def main() -> None:
                 if k is None:
                     continue
                 k = k.strip()
+                if k == "team_name":
+                    k = "team"
                 if k and k not in skip_keys:
                     if v is not None and str(v).strip() != "":
                         record[k] = v.strip() if isinstance(v, str) else v

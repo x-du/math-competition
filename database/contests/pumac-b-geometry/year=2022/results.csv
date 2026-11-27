@@ -1,4 +1,4 @@
-student_id,team_name,team_id,student_name,year,division,rank,score,p1,p2,p3,p4,p5,p6,p7,p8,mcp_rank
+student_id,team,team_id,student_name,year,division,rank,score,q1,q2,q3,q4,q5,q6,q7,q8,mcp_rank
 96,Sierra Canyon School,19,Qiao Zhang,2022,B,1,21.024,1,1,1,1,1,0,1,1,1
 1134,CRLS Omega,3,Sebastian Prasanna,2022,B,2,12.55,1,1,1,0,1,0,1,0,2
 548,Ward Melville Math Team,21,Michael Lu,2022,B,3,11.99,1,1,1,0,1,1,0,0,3

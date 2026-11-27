@@ -1,4 +1,4 @@
-student_id,student_name,team,team_id,year,division,rank,score,p1,p2,p3,p4,p5,p6,p7,p8,mcp_rank
+student_id,student_name,team,team_id,year,division,rank,score,q1,q2,q3,q4,q5,q6,q7,q8,mcp_rank
 10,Ruilin Wang,TJ A,2,2023,A,1,15.192,1,1,1,0,0,1,0,1,2
 434,Sargam Mondal,Lehigh Valley Fire,1,2023,A,1,15.192,1,1,1,0,0,1,0,1,2
 1,Alexander Wang,Lehigh Valley Fire,1,2023,A,1,15.192,1,1,1,0,0,1,0,1,2

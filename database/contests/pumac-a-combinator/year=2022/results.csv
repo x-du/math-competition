@@ -1,4 +1,4 @@
-student_id,student_name,team,team_id,year,division,rank,score,p1,p2,p3,p4,p5,p6,p7,p8,mcp_rank
+student_id,student_name,team,team_id,year,division,rank,score,q1,q2,q3,q4,q5,q6,q7,q8,mcp_rank
 92,Marvin Mao,BCA 1,6,2022,A,1,16.229,1,1,1,1,1,1,1,0,1
 125,Pavan Jayaraman,Pirates A,8,2022,A,2,14.808,0,1,1,1,1,1,1,0,2
 881,Yichen Cedric Xiao,PRISMS Falcons,3,2022,A,3,13.954,1,1,0,1,1,0,0,1,3

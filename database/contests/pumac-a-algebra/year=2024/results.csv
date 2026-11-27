@@ -1,4 +1,4 @@
-student_id,student_name,team,team_id,year,division,rank,score,p1,p2,p3,p4,p5,p6,p7,p8,mcp_rank
+student_id,student_name,team,team_id,year,division,rank,score,q1,q2,q3,q4,q5,q6,q7,q8,mcp_rank
 55,Zongshu Wu,Random Math,2,2024,A,1,15.843,1,0,1,1,1,1,1,0,1
 1,Alexander Wang,Lehigh Valley Fire,1,2024,A,2,13.681,1,0,0,1,1,1,1,0,2
 7,Benjamin Fu,Washington Gold,7,2024,A,3,13.185,1,0,1,1,1,0,0,1,3

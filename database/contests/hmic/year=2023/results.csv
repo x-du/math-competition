@@ -1,4 +1,4 @@
-student_id,student_name,year,rank,score,p1,p2,p3,p4,p5,mcp_rank
+student_id,student_name,year,rank,score,q1,q2,q3,q4,q5,mcp_rank
 1,Alexander Wang,2023,1,31,6,7,9,9,0,1
 159,Karthik Vedula,2023,2,22,6,7,9,0,0,3
 140,Isabella Zhu,2023,2,22,6,7,9,0,0,3

@@ -1,4 +1,4 @@
-student_id,student_name,year,subject,bmt_student_id,team_id,team_name,school,award,rank,score,mcp_rank
+student_id,student_name,year,subject,bmt_student_id,team_id,team,school,award,rank,score,mcp_rank
 96,Qiao Zhang,2024,Geometry,028B,028,Sierra Canyon School,Sierra Canyon School,Top Scores,1,9,1
 6913,Huini Xu,2024,Geometry,012A,012,Math Enthusiast,Math Enthusiast,Top Scores,2,7,2
 911,Eric Zou,2024,Geometry,027B,027,Think Team A,Think Academy,Top Scores,3,7,3

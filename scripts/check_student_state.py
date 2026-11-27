@@ -2,7 +2,7 @@
 """
 Check team rosters against `database/students/students.csv` state field.
 
-Reports WARNING when (skipped entirely when **`team_name`** is **`Individuals`**
+Reports WARNING when (skipped entirely when **`team`** is **`Individuals`**
 or starts with **`Individuals `**, e.g. **`Individuals 1`**, or contains **`Leading Aces Academy`**;
 or **`bmt-teams`** rows whose **`school`** is **`Think Academy Online`**):
 
@@ -126,7 +126,7 @@ def skip_state_checks_for_team_name(team_name: str) -> bool:
 
 
 def skip_state_checks_for_bmt_row(teams_root_name: str, row: dict[str, str]) -> bool:
-    """BMT lists school separately from team_name; online programs may span states."""
+    """BMT lists school separately from team; online programs may span states."""
     if teams_root_name != "bmt-teams":
         return False
     return (row.get("school") or "").strip() == "Think Academy Online"
@@ -233,7 +233,7 @@ def check_year(
         if not sids:
             continue
 
-        team_name = (row.get("team_name") or row.get("team") or "").strip()
+        team_name = (row.get("team") or row.get("team_name") or "").strip()
         if (
             is_individuals_team(team_name)
             or skip_state_checks_for_team_name(team_name)

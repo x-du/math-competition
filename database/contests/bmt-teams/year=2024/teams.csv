@@ -1,4 +1,4 @@
-team_id,team_name,student_ids,bmt_student_ids,school,state
+team_id,team,student_ids,bmt_student_ids,school,state
 001,,876|1665|6976,001E|001B|001A,,
 003,,6909,003A,,
 004,,906|2496|4277|4319|6122,004F|004C|004E|004A|004B,,California

@@ -53,7 +53,7 @@ Then use that `student_id` and `student_name` in `results.csv`.
 If the source includes teams:
 
 - Prefer the **add-team-column-and-teams** skill when `results.csv` has no `team` column yet.
-- Prefer the **sync-contest-teams** skill when `results.csv` already has `team` / `team_name`.
+- Prefer the **sync-contest-teams** skill when `results.csv` already has `team`.
 - Write rosters only at the **composite** path `database/contests/<event>-teams/year=<year>/teams.csv` (e.g. `cmimc-teams`, not `cmimc-algebra-teams`).
 - Schema is usually `team_id`, `team`, `student_ids`, `state`. `student_ids` is pipe-separated.
 

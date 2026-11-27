@@ -1,4 +1,4 @@
-student_id,team_name,team_id,student_name,year,division,rank,score,p1,p2,p3,p4,p5,p6,p7,p8,mcp_rank
+student_id,team,team_id,student_name,year,division,rank,score,q1,q2,q3,q4,q5,q6,q7,q8,mcp_rank
 96,Sierra Canyon School,18,Qiao Zhang,2023,B,1,27.065,0,1,1,1,1,1,1,1,1
 548,Ward Melville Math Team,19,Michael Lu,2023,B,2,16.181,1,0,1,0,1,1,1,0,2
 2272,BCA 2,1,Danny Paik,2023,B,3,9.618,1,1,1,0,0,0,1,0,3

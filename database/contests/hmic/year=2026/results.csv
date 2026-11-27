@@ -1,4 +1,4 @@
-student_id,student_name,year,rank,score,p1,p2,p3,p4,p5,mcp_rank
+student_id,student_name,year,rank,score,q1,q2,q3,q4,q5,mcp_rank
 9,Jonathan Du,2026,1,42,6,7,8,10,11,2
 1,Alexander Wang,2026,1,42,6,7,8,10,11,2
 4,Liam Reddy,2026,1,42,6,7,8,10,11,2

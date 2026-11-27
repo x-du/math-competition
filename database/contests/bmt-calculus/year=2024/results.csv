@@ -1,4 +1,4 @@
-student_id,student_name,year,subject,bmt_student_id,team_id,team_name,school,award,rank,score,mcp_rank
+student_id,student_name,year,subject,bmt_student_id,team_id,team,school,award,rank,score,mcp_rank
 4,Liam Reddy,2024,Calculus,017D,017,Utah Arches,Utah ARML,Top Scores,1,10,1
 99,Rohan Bodke,2024,Calculus,115A,115,AlphaStar Newton,AlphaStar Academy,Top Scores,2,8,2
 83,Skyler Mao,2024,Calculus,128D,128,Saratoga 1,Saratoga HS,Top Scores,3,8,3

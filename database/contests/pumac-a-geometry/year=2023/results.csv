@@ -1,4 +1,4 @@
-student_id,student_name,team,team_id,year,division,rank,score,p1,p2,p3,p4,p5,p6,p7,p8,mcp_rank
+student_id,student_name,team,team_id,year,division,rank,score,q1,q2,q3,q4,q5,q6,q7,q8,mcp_rank
 115,Aaron Hu,Florida Alligators,5,2023,A,1,15.426,1,0,1,1,1,1,1,0,1.5
 56,Channing Yang,Texas Ramanujan,4,2023,A,1,15.426,1,0,1,1,1,1,1,0,1.5
 277,Aprameya Tripathy,Knights A,8,2023,A,3,14.685,1,0,1,1,0,1,0,1,3

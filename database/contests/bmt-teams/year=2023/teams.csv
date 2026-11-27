@@ -1,4 +1,4 @@
-team_id,team_name,student_ids,bmt_student_ids,school,state
+team_id,team,student_ids,bmt_student_ids,school,state
 001,AlphaStar DELTA,322|358|906|1342|1716|5645,001A|001E|001F|001B|001C|001D,AlphaStar Academy,California
 002,,1717|1718|1719|1720|1793|1794,002A|002C|002D|002F|002B|002E,,California
 003,AlphaStar SIGMA,9|25|58|433|1058|1250,003E|003B|003C|003F|003A|003D,AlphaStar Academy,California

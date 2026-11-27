@@ -1,4 +1,4 @@
-team_id,team_name,student_ids,state
+team_id,team,student_ids,state
 1,Lexington Alpha,65|304|242|324,Massachusetts
 2,Lexington Delta,120,Massachusetts
 3,Lexington Beta,265,Massachusetts

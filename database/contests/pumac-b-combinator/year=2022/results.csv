@@ -1,4 +1,4 @@
-student_id,team_name,team_id,student_name,year,division,rank,score,p1,p2,p3,p4,p5,p6,p7,p8,mcp_rank
+student_id,team,team_id,student_name,year,division,rank,score,q1,q2,q3,q4,q5,q6,q7,q8,mcp_rank
 3,Millburn Mathematical Madpeople,15,Oron Wang,2022,B,1,15.943,1,1,1,1,1,1,0,0,1
 126,Hotchkiss Blue,7,Weian Xie,2022,B,2,15.355,1,1,1,1,0,1,0,1,2
 127,MHSProfessionalJobbers,14,David Ji,2022,B,3,14.439,1,1,1,1,1,0,0,1,3

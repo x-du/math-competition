@@ -1,4 +1,4 @@
-student_id,student_name,year,subject,bmt_student_id,team_id,team_name,school,award,rank,score,mcp_rank
+student_id,student_name,year,subject,bmt_student_id,team_id,team,school,award,rank,score,mcp_rank
 28,Rohan Mallick,2025,Geometry,054D,054,CCA Conspiracy,Canyon Crest Academy Math Team,Top Scores,1,8,1
 911,Eric Zou,2025,Geometry,117A,117,Think Overthinker,Think Academy Online,Top Scores,2,8,2
 372,Eric Shu,2025,Geometry,161C,161,AlphaStar Jupiter,AlphaStar Academy,Top Scores,3,8,3

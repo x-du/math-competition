@@ -1,4 +1,4 @@
-student_id,student_name,team,team_id,year,division,rank,score,p1,p2,p3,p4,p5,p6,p7,p8,mcp_rank
+student_id,student_name,team,team_id,year,division,rank,score,q1,q2,q3,q4,q5,q6,q7,q8,mcp_rank
 4,Liam Reddy,Utah Arches,1,2025,A,1,18.403,1,1,1,1,0,1,0,1,1
 207,Annie Huaiyu Wang,Flip-flops Math,11,2025,A,2,15.198,1,0,1,1,1,0,0,1,2
 10,Calvin Wang,TJ A,5,2025,A,3,13.280,1,1,0,0,0,1,0,1,3

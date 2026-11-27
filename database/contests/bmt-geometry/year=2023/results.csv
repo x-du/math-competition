@@ -1,4 +1,4 @@
-student_id,student_name,year,subject,bmt_student_id,team_id,team_name,school,award,rank,score,mcp_rank
+student_id,student_name,year,subject,bmt_student_id,team_id,team,school,award,rank,score,mcp_rank
 117,Advaith Avadhanam,2023,Geometry,043E,043,Saratoga 1,Saratoga HS,Top Scores,1,9,1
 123,Vivian Loh,2023,Geometry,115F,115,YEA Spice,Youth EUCLID Association,Top Scores,2,8,2
 118,Linus Tang,2023,Geometry,007A,007,AlphaStar PI,AlphaStar Academy,Top Scores,3,8,3

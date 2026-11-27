@@ -1,4 +1,4 @@
-student_id,student_name,year,subject,bmt_student_id,team_id,team_name,school,award,rank,score,mcp_rank
+student_id,student_name,year,subject,bmt_student_id,team_id,team,school,award,rank,score,mcp_rank
 1770,Bosman Botha,2025,Algebra,167F,167,AlphaStar Mars,AlphaStar Academy,Top Scores,1,10,1
 341,Alex Zhan,2025,Algebra,199A,199,BISV Team 1,BISV,Top Scores,2,9,2
 1734,Sohum Uttamchandani,2025,Algebra,242C,242,Lynbrook Wasabi,Lynbrook High School,Top Scores,3,9,3

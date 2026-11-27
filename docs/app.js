@@ -2,7 +2,7 @@
   "use strict";
 
   var data = { students: [], contests: {} };
-  /** From teams.json: base_contest_slug -> year -> team_name -> [student_id, ...]. */
+  /** From teams.json: base_contest_slug -> year -> team -> [student_id, ...]. */
   var teamsRosterData = {};
   /** From mathcounts_state_rosters.json: year -> state key -> [student_id, ...]. */
   var mathcountsStateRosterData = {};
@@ -3711,14 +3711,9 @@
     });
   }
 
-  function keysForPdfDisplay(records, slug) {
+  function keysForPdfDisplay(records) {
     var keys = allRecordHeaders(records);
-    var omit = { p1: 1, p2: 1, p3: 1, p4: 1, p5: 1, p6: 1, p7: 1, p8: 1, p9: 1, p10: 1 };
-    if (slug === "dmm") {
-      omit.q1 = 1; omit.q2 = 1; omit.q3 = 1; omit.q4 = 1; omit.q5 = 1;
-      omit.q6 = 1; omit.q7 = 1; omit.q8 = 1; omit.q9 = 1; omit.q10 = 1;
-    }
-    return keys.filter(function (k) { return !omit[k]; });
+    return keys.filter(function (k) { return !/^[pq]\d+$/.test(k); });
   }
 
   var jspdfLoadPromise = null;
@@ -4079,7 +4074,7 @@
             var yB = b.year || "";
             return yA > yB ? -1 : yA < yB ? 1 : 0;
           });
-          var keys = keysForPdfDisplay(contestRecords, slug);
+          var keys = keysForPdfDisplay(contestRecords);
           var contestInfo = contestsMap[slug];
           var contestTitle = (contestInfo && contestInfo.contest_name) ? contestInfo.contest_name : slug.replace(/-/g, " ");
 

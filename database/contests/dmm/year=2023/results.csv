@@ -1,4 +1,4 @@
-student_id,student_name,state,rank,team_name,team_id,club_name,score,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10,mcp_rank
+student_id,student_name,state,rank,team,team_id,club_name,score,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10,mcp_rank
 343,Jason Lee,North Carolina,1,v_n(d),1,,,,,,,,,,,,,1
 10,Calvin Wang,Virginia,2,TJ A,2,TJHSST,,,,,,,,,,,,2
 23,Jeffrey Yin,Virginia,3,McLean A,3,McLean Highlander Math League,,,,,,,,,,,,3

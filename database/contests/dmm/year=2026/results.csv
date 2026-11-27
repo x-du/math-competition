@@ -1,4 +1,4 @@
-student_id,student_name,state,rank,team_name,team_id,club_name,score,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10,mcp_rank
+student_id,student_name,state,rank,team,team_id,club_name,score,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10,mcp_rank
 206,Eric Xie,Maryland,1,MoCoSwaggaSquad1,1,MoCoSwaggaSquad,8,1,0,1,1,1,1,1,1,1,0,1
 29,Patrick Du,Virginia,2,TJ A,2,TJ Varsity Math Team,8,1,0,1,1,1,1,1,1,1,0,2
 221,Anderson Hao,Virginia,3,TJ A,2,TJ Varsity Math Team,7,1,1,1,0,1,0,1,1,1,0,3

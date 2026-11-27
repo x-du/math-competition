@@ -1,4 +1,4 @@
-student_id,team_name,team_id,student_name,year,division,rank,score,p1,p2,p3,p4,p5,p6,p7,p8,mcp_rank
+student_id,team,team_id,student_name,year,division,rank,score,q1,q2,q3,q4,q5,q6,q7,q8,mcp_rank
 548,Ward Melville Math Team,19,Michael Lu,2023,B,1,16.153,1,1,1,1,1,1,0,0,1.5
 1038,MHSProfessionalJobbers,12,Jason Lu,2023,B,1,16.153,1,1,1,1,1,1,0,0,1.5
 407,Pingry Blue,14,Elbert Ho,2023,B,3,12.578,1,1,1,1,1,0,0,0,4

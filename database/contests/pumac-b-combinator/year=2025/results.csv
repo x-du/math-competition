@@ -1,4 +1,4 @@
-student_id,team_name,team_id,student_name,year,division,rank,score,p1,p2,p3,p4,p5,p6,p7,p8,mcp_rank
+student_id,team,team_id,student_name,year,division,rank,score,q1,q2,q3,q4,q5,q6,q7,q8,mcp_rank
 811,Greater Boston,4,Brandon Ni,2025,B,1,19.179,1,1,1,1,0,1,0,1,1
 30,Millburn Mathematical Madpeople,1,Eric Dai,2025,B,2,14.294,1,0,1,1,1,1,0,0,2
 2149,Pirates B,17,Monish Saravana Kumar,2025,B,3,14.260,0,1,1,1,1,1,0,0,3

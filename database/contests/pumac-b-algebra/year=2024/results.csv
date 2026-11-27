@@ -1,4 +1,4 @@
-student_id,team_name,team_id,student_name,year,division,rank,score,p1,p2,p3,p4,p5,p6,p7,p8,mcp_rank
+student_id,team,team_id,student_name,year,division,rank,score,q1,q2,q3,q4,q5,q6,q7,q8,mcp_rank
 96,Sierra Canyon School,1,Qiao Zhang,2024,B,1,20.112,1,1,1,0,1,1,1,1,1
 407,Pingry Blue,2,Elbert Ho,2024,B,2,12.043,1,1,1,0,0,1,0,1,2
 770,Individuals Team 162,13,Kevin Chen,2024,B,3,11.638,1,1,1,0,0,1,1,0,3
