@@ -3753,6 +3753,64 @@
     }).catch(function () { cb(null); });
   }
 
+  /**
+   * Standing by total MCP among US high school students (site High School filter
+   * plus a US state). Same score sort and name tie-break as the MCP leaderboard.
+   */
+  function usHighSchoolMcpStanding(student) {
+    var students = data.students || [];
+    var cohort = [];
+    for (var i = 0; i < students.length; i++) {
+      var s = students[i];
+      if (!s || !studentMatchesGradeWant(s, "__hs__")) continue;
+      var st = expandUsStateAbbrev((s.state || "").trim());
+      if (!st || !US_STATES_SET[st]) continue;
+      var recs = s.records || [];
+      if (!recs.length) continue;
+      cohort.push({
+        id: s.id,
+        name: s.name || "",
+        mcp: computeMcpFromRecords(recs, false)
+      });
+    }
+    cohort.sort(function (a, b) {
+      if (b.mcp !== a.mcp) return b.mcp - a.mcp;
+      var nameCmp = String(a.name).localeCompare(String(b.name));
+      if (nameCmp !== 0) return nameCmp;
+      var idA = Number(a.id);
+      var idB = Number(b.id);
+      if (idA !== idB) return idA - idB;
+      return 0;
+    });
+    var wantId = Number(student && student.id);
+    var rank = null;
+    var totalMcp = computeMcpFromRecords((student && student.records) || [], false);
+    for (var j = 0; j < cohort.length; j++) {
+      if (Number(cohort[j].id) === wantId) {
+        rank = j + 1;
+        totalMcp = cohort[j].mcp;
+        break;
+      }
+    }
+    return {
+      totalMcp: totalMcp,
+      rank: rank,
+      cohortSize: cohort.length,
+      inCohort: rank != null
+    };
+  }
+
+  function formatPdfCreatedAt(date) {
+    var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    var hour = date.getHours();
+    var ampm = hour >= 12 ? "PM" : "AM";
+    var hour12 = hour % 12;
+    if (hour12 === 0) hour12 = 12;
+    var minute = date.getMinutes();
+    var minuteStr = minute < 10 ? "0" + minute : String(minute);
+    return months[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear() + ", " + hour12 + ":" + minuteStr + " " + ampm;
+  }
+
   function exportStudentToPdf(cardEl) {
     if (!cardEl) return;
     var studentId = cardEl.getAttribute("data-student-id");
@@ -3784,96 +3842,375 @@
       }
       try {
         var doc = new JsPDFConstructor({ orientation: "p", unit: "mm", format: "a4" });
-      var margin = 10;
-      var y = margin;
+        var pageW = doc.internal.pageSize.getWidth();
+        var pageH = doc.internal.pageSize.getHeight();
+        var margin = 14;
+        var headerH = 12;
+        var contentTop = headerH + 8;
+        var contentBottom = pageH - 16;
+        var contentW = pageW - margin * 2;
+        var y = contentTop;
+        var navy = [31, 54, 85];
+        var muted = [100, 108, 120];
+        var bodyText = [45, 49, 57];
+        var linkBlue = [31, 85, 155];
+        var createdAt = new Date();
+        var createdLabel = formatPdfCreatedAt(createdAt);
+        var standing = usHighSchoolMcpStanding(student);
+        var profileUrl = "https://mathintegrity.org/?student_id=" + encodeURIComponent(String(student.id));
+        var gradeLabel = getGradeLabel(student.grade_in_2026);
 
-      doc.setFontSize(14);
-      doc.text(studentName + (state ? " (" + state + ")" : ""), margin, y);
-      y += 8;
+        function lineHeightMm(sizePt) {
+          return sizePt * 0.3528 * 1.15;
+        }
 
-      if (student.aliases && student.aliases.length) {
-        doc.setFontSize(9);
-        doc.setTextColor(100, 100, 100);
-        doc.text("Also known as: " + student.aliases.join(", "), margin, y);
-        doc.setTextColor(0, 0, 0);
-        y += 6;
-      }
-
-      var records = student.records || [];
-      var grouped = groupRecordsByContest(records);
-      var slugs = grouped.slugs;
-      var bySlug = grouped.bySlug;
-      var contestsMap = data.contests || {};
-
-      for (var s = 0; s < slugs.length; s++) {
-        var slug = slugs[s];
-        var contestRecords = bySlug[slug].slice();
-        contestRecords.sort(function (a, b) {
-          var yA = a.year || "";
-          var yB = b.year || "";
-          return yA > yB ? -1 : yA < yB ? 1 : 0;
-        });
-        var keys = keysForPdfDisplay(contestRecords, slug);
-        var contestInfo = contestsMap[slug];
-        var contestTitle = (contestInfo && contestInfo.contest_name) ? contestInfo.contest_name : slug.replace(/-/g, " ");
-
-        if (y > 250) {
+        function ensureSpace(needed) {
+          if (y + needed <= contentBottom) return;
           doc.addPage();
-          y = margin;
+          y = contentTop;
         }
-        doc.setFontSize(11);
-        doc.text(contestTitle, margin, y);
+
+        function writeLines(lines, x, sizePt, color) {
+          doc.setFontSize(sizePt);
+          doc.setTextColor(color[0], color[1], color[2]);
+          var lh = lineHeightMm(sizePt);
+          for (var li = 0; li < lines.length; li++) {
+            if (y + lh > contentBottom) {
+              doc.addPage();
+              y = contentTop;
+              doc.setFontSize(sizePt);
+              doc.setTextColor(color[0], color[1], color[2]);
+            }
+            doc.text(lines[li], x, y);
+            y += lh;
+          }
+        }
+
+        var pdfTitle = (studentName || "Student") + " Math Competition Record";
+        doc.setProperties({
+          title: pdfTitle,
+          author: "MathIntegrity",
+          subject: "Student competition record from mathintegrity.org",
+          creator: "mathintegrity.org"
+        });
+
+        doc.setFont("helvetica", "bold");
+        doc.setFontSize(18);
+        doc.setTextColor(navy[0], navy[1], navy[2]);
+        var nameLines = doc.splitTextToSize(pdfTitle, contentW);
+        writeLines(nameLines, margin, 18, navy);
+        y += 1.5;
+
+        var metaBits = [];
+        if (state) metaBits.push(state);
+        if (gradeLabel) metaBits.push(gradeLabel);
+        if (standing.inCohort) metaBits.push("US high school");
+        if (metaBits.length) {
+          doc.setFont("helvetica", "normal");
+          writeLines([metaBits.join("  |  ")], margin, 10, muted);
+          y += 1;
+        }
+
+        if (student.aliases && student.aliases.length) {
+          doc.setFont("helvetica", "italic");
+          var aliasLines = doc.splitTextToSize("Also known as: " + student.aliases.join(", "), contentW);
+          writeLines(aliasLines, margin, 9, muted);
+          y += 1;
+        }
+
+        doc.setFont("helvetica", "normal");
+        ensureSpace(6);
+        doc.setFontSize(9);
+        doc.setTextColor(linkBlue[0], linkBlue[1], linkBlue[2]);
+        doc.text(profileUrl, margin, y);
+        doc.link(margin, y - 3.2, doc.getTextWidth(profileUrl), 4.2, { url: profileUrl });
+        y += 7;
+
+        var boxH = 28;
+        ensureSpace(boxH + 16);
+        doc.setFillColor(244, 247, 251);
+        doc.setDrawColor(214, 222, 232);
+        doc.setLineWidth(0.3);
+        doc.rect(margin, y, contentW, boxH, "FD");
+        var statCols = [
+          { label: "Total MCP", value: formatMcpValue(standing.totalMcp), sub: "Published score" },
+          {
+            label: "US high school rank",
+            value: standing.inCohort ? ("#" + standing.rank.toLocaleString()) : "n/a",
+            sub: standing.inCohort
+              ? ("of " + standing.cohortSize.toLocaleString() + " students")
+              : "Not in this group"
+          },
+          {
+            label: "Records",
+            value: String((student.records || []).length),
+            sub: "In this database"
+          }
+        ];
+        var colW = contentW / 3;
+        for (var c = 0; c < statCols.length; c++) {
+          var cx = margin + c * colW + 4;
+          doc.setFont("helvetica", "normal");
+          doc.setFontSize(7.5);
+          doc.setTextColor(muted[0], muted[1], muted[2]);
+          doc.text(statCols[c].label, cx, y + 7);
+          doc.setFont("helvetica", "bold");
+          doc.setFontSize(14);
+          doc.setTextColor(navy[0], navy[1], navy[2]);
+          doc.text(statCols[c].value, cx, y + 16);
+          doc.setFont("helvetica", "normal");
+          doc.setFontSize(8);
+          doc.setTextColor(muted[0], muted[1], muted[2]);
+          doc.text(statCols[c].sub, cx, y + 22.5);
+        }
+        y += boxH + 5;
+
+        doc.setFont("helvetica", "normal");
+        var rankNote = standing.inCohort
+          ? "Rank is by total MCP among US high school students on mathintegrity.org. That group is grades 9-12, plus students with no grade on file, in a US state. Students with the same score are ordered by name, matching the site leaderboard."
+          : "Total MCP is this student's published score on mathintegrity.org. US high school rank covers grades 9-12, plus students with no grade on file, who are in a US state.";
+        var rankNoteLines = doc.splitTextToSize(rankNote, contentW);
+        writeLines(rankNoteLines, margin, 8, muted);
         y += 6;
 
-        var contestDescription = (contestInfo && contestInfo.description) ? String(contestInfo.description) : "";
-        if (contestDescription) {
-          if (y > 260) {
-            doc.addPage();
-            y = margin;
+        var records = student.records || [];
+        var contestsMap = data.contests || {};
+        var byYear = {};
+        var yearKeys = [];
+        for (var ri = 0; ri < records.length; ri++) {
+          var yearRec = records[ri];
+          var yearKey = yearRec.year != null ? String(yearRec.year).trim() : "";
+          if (!yearKey) continue;
+          if (!byYear[yearKey]) {
+            byYear[yearKey] = { count: 0, names: {}, seen: {} };
+            yearKeys.push(yearKey);
           }
-          doc.setFontSize(9);
-          doc.setTextColor(80, 80, 80);
-          var descLines = doc.splitTextToSize(contestDescription, 190 - margin * 2);
-          doc.text(descLines, margin, y);
-          doc.setTextColor(0, 0, 0);
-          y += (descLines.length * 4.5);
+          var yearSlug = yearRec.contest_slug || yearRec.contest || "";
+          var yearBase = baseContestSlug(yearSlug) || yearSlug || "other";
+          if (byYear[yearKey].seen[yearBase]) continue;
+          byYear[yearKey].seen[yearBase] = true;
+          byYear[yearKey].count += 1;
+          var yearInfo = contestsMap[yearBase] || contestsMap[yearSlug];
+          var yearName = (yearInfo && yearInfo.contest_name) ? yearInfo.contest_name : (yearBase ? yearBase.replace(/-/g, " ") : "Competition");
+          byYear[yearKey].names[yearName] = true;
+        }
+        yearKeys.sort(function (a, b) {
+          return a < b ? -1 : a > b ? 1 : 0;
+        });
+        if (yearKeys.length) {
+          var maxYearCount = 1;
+          for (var yci = 0; yci < yearKeys.length; yci++) {
+            if (byYear[yearKeys[yci]].count > maxYearCount) maxYearCount = byYear[yearKeys[yci]].count;
+          }
+          ensureSpace(18);
+          doc.setFont("helvetica", "bold");
+          doc.setFontSize(12);
+          doc.setTextColor(navy[0], navy[1], navy[2]);
+          doc.text("Competitions by year", margin, y);
+          y += 1.6;
+          doc.setDrawColor(96, 165, 250);
+          doc.setLineWidth(0.7);
+          doc.line(margin, y, margin + 46, y);
+          y += 6;
+
+          var yearLabelW = 14;
+          var barMaxW = 56;
+          var barH = 4.2;
+          for (var yri = 0; yri < yearKeys.length; yri++) {
+            var yearLabel = yearKeys[yri];
+            var yearEntry = byYear[yearLabel];
+            var contestNames = [];
+            for (var contestName in yearEntry.names) {
+              if (Object.prototype.hasOwnProperty.call(yearEntry.names, contestName)) contestNames.push(contestName);
+            }
+            contestNames.sort(function (a, b) { return a.localeCompare(b); });
+            doc.setFont("helvetica", "normal");
+            doc.setFontSize(8);
+            var contestNameLines = doc.splitTextToSize(contestNames.join(", "), contentW - yearLabelW);
+            var rowNeed = 7 + contestNameLines.length * lineHeightMm(8) + 2.5;
+            ensureSpace(rowNeed);
+
+            doc.setFont("helvetica", "bold");
+            doc.setFontSize(9);
+            doc.setTextColor(navy[0], navy[1], navy[2]);
+            doc.text(yearLabel, margin, y + 3.4);
+
+            var barW = Math.max(2.5, (yearEntry.count / maxYearCount) * barMaxW);
+            doc.setFillColor(96, 165, 250);
+            doc.rect(margin + yearLabelW, y, barW, barH, "F");
+            doc.setFont("helvetica", "normal");
+            doc.setFontSize(8);
+            doc.setTextColor(bodyText[0], bodyText[1], bodyText[2]);
+            doc.text(String(yearEntry.count), margin + yearLabelW + barW + 1.6, y + 3.4);
+
+            y += 6.4;
+            writeLines(contestNameLines, margin + yearLabelW, 8, muted);
+            y += 2.2;
+          }
+          y += 2;
         }
 
-        var contestWebsite = (contestInfo && contestInfo.website) ? String(contestInfo.website) : "";
-        if (contestWebsite) {
-          if (y > 270) {
-            doc.addPage();
-            y = margin;
+
+        var grouped = groupRecordsByContest(records);
+        var slugs = grouped.slugs;
+        var bySlug = grouped.bySlug;
+
+        ensureSpace(14);
+        doc.setFont("helvetica", "bold");
+        doc.setFontSize(12);
+        doc.setTextColor(navy[0], navy[1], navy[2]);
+        doc.text("Competition results", margin, y);
+        y += 1.6;
+        doc.setDrawColor(96, 165, 250);
+        doc.setLineWidth(0.7);
+        doc.line(margin, y, margin + 42, y);
+        y += 6;
+
+        if (!slugs.length) {
+          doc.setFont("helvetica", "normal");
+          writeLines(["No competition results in this database."], margin, 10, bodyText);
+        }
+
+        for (var s = 0; s < slugs.length; s++) {
+          var slug = slugs[s];
+          var contestRecords = bySlug[slug].slice();
+          contestRecords.sort(function (a, b) {
+            var yA = a.year || "";
+            var yB = b.year || "";
+            return yA > yB ? -1 : yA < yB ? 1 : 0;
+          });
+          var keys = keysForPdfDisplay(contestRecords, slug);
+          var contestInfo = contestsMap[slug];
+          var contestTitle = (contestInfo && contestInfo.contest_name) ? contestInfo.contest_name : slug.replace(/-/g, " ");
+
+          ensureSpace(28);
+          doc.setFillColor(96, 165, 250);
+          doc.rect(margin, y - 3.4, 1.4, 4.6, "F");
+          doc.setFont("helvetica", "bold");
+          doc.setFontSize(11);
+          doc.setTextColor(navy[0], navy[1], navy[2]);
+          var titleLines = doc.splitTextToSize(contestTitle, contentW - 5);
+          writeLines(titleLines, margin + 4, 11, navy);
+          y += 1;
+
+          var contestDescription = (contestInfo && contestInfo.description) ? String(contestInfo.description) : "";
+          if (contestDescription) {
+            doc.setFont("helvetica", "normal");
+            var descLines = doc.splitTextToSize(contestDescription, contentW);
+            writeLines(descLines, margin, 8.5, [80, 86, 96]);
+            y += 0.5;
           }
+
+          var contestWebsite = (contestInfo && contestInfo.website) ? String(contestInfo.website) : "";
+          if (contestWebsite) {
+            ensureSpace(6);
+            doc.setFont("helvetica", "normal");
+            doc.setFontSize(8);
+            doc.setTextColor(linkBlue[0], linkBlue[1], linkBlue[2]);
+            var siteLines = doc.splitTextToSize(contestWebsite, contentW);
+            doc.text(siteLines[0], margin, y);
+            doc.link(margin, y - 3, Math.min(doc.getTextWidth(siteLines[0]), contentW), 4, { url: contestWebsite });
+            y += 5;
+          }
+
+          var headers = ["Year"].concat(keys.map(function (k) { return k.replace(/_/g, " "); }));
+          var body = contestRecords.map(function (r) {
+            var row = [r.year != null ? String(r.year) : ""];
+            for (var k = 0; k < keys.length; k++) {
+              var keyK = keys[k];
+              var val = r[keyK];
+              if (keyK === "state") val = expandUsStateAbbrev(val);
+              row.push(val != null ? String(val) : "");
+            }
+            return row;
+          });
+          doc.autoTable({
+            head: [headers],
+            body: body,
+            startY: y,
+            margin: { left: margin, right: margin, top: contentTop, bottom: 16 },
+            tableWidth: contentW,
+            theme: "grid",
+            styles: {
+              font: "helvetica",
+              fontSize: 7.5,
+              cellPadding: 1.25,
+              textColor: bodyText,
+              lineColor: [226, 232, 240],
+              lineWidth: 0.1,
+              overflow: "linebreak",
+              valign: "middle"
+            },
+            headStyles: {
+              fillColor: navy,
+              textColor: [255, 255, 255],
+              fontStyle: "bold",
+              fontSize: 7,
+              halign: "left"
+            },
+            alternateRowStyles: { fillColor: [248, 250, 252] },
+            showHead: "everyPage"
+          });
+          y = doc.lastAutoTable.finalY + 8;
+        }
+
+        ensureSpace(20);
+        y += 2;
+        doc.setDrawColor(214, 222, 232);
+        doc.setLineWidth(0.3);
+        doc.line(margin, y, margin + contentW, y);
+        y += 6;
+        doc.setFont("helvetica", "bold");
+        doc.setFontSize(9);
+        doc.setTextColor(navy[0], navy[1], navy[2]);
+        doc.text("Disclaimer", margin, y);
+        y += 5;
+        doc.setFont("helvetica", "normal");
+        var disclaimerLines = doc.splitTextToSize(
+          "Competition records are collected from published results on official competition websites.",
+          contentW
+        );
+        writeLines(disclaimerLines, margin, 8.5, muted);
+
+        var totalPages = doc.getNumberOfPages();
+        for (var p = 1; p <= totalPages; p++) {
+          doc.setPage(p);
+          doc.setFillColor(navy[0], navy[1], navy[2]);
+          doc.rect(0, 0, pageW, headerH, "F");
+          doc.setFillColor(96, 165, 250);
+          doc.rect(0, headerH - 1.2, pageW, 1.2, "F");
+
+          doc.setFont("helvetica", "bold");
+          doc.setFontSize(11);
+          doc.setTextColor(255, 255, 255);
+          doc.text("MathIntegrity", margin, 7.6);
+          doc.setFont("helvetica", "normal");
           doc.setFontSize(8);
-          doc.setTextColor(0, 0, 238);
-          doc.text(contestWebsite, margin, y);
-          doc.setTextColor(0, 0, 0);
-          y += 5;
-        }
+          doc.setTextColor(214, 226, 242);
+          var pageLabel = "Page " + p + " of " + totalPages;
+          var pageLabelW = doc.getTextWidth(pageLabel);
+          doc.text(pageLabel, pageW - margin, 7.6, { align: "right" });
+          doc.setFontSize(9);
+          doc.setTextColor(255, 255, 255);
+          var siteLabel = "mathintegrity.org";
+          var siteLabelW = doc.getTextWidth(siteLabel);
+          var siteX = pageW - margin - pageLabelW - 6 - siteLabelW;
+          doc.text(siteLabel, siteX, 7.6);
+          doc.link(siteX, 4.4, siteLabelW, 4.2, { url: "https://mathintegrity.org/" });
 
-        var headers = ["Year"].concat(keys.map(function (k) { return k.replace(/_/g, " "); }));
-        var body = contestRecords.map(function (r) {
-          var row = [r.year != null ? String(r.year) : ""];
-          for (var k = 0; k < keys.length; k++) {
-            var keyK = keys[k];
-            var val = r[keyK];
-            if (keyK === "state") val = expandUsStateAbbrev(val);
-            row.push(val != null ? String(val) : "");
-          }
-          return row;
-        });
-        doc.autoTable({
-          head: [headers],
-          body: body,
-          startY: y,
-          margin: { left: margin },
-          theme: "grid",
-          styles: { fontSize: 8 },
-          headStyles: { fontSize: 8, fillColor: [96, 165, 250], textColor: [255, 255, 255] }
-        });
-        y = doc.lastAutoTable.finalY + 10;
-      }
+          doc.setDrawColor(214, 222, 232);
+          doc.setLineWidth(0.2);
+          doc.line(margin, pageH - 11, pageW - margin, pageH - 11);
+          doc.setFont("helvetica", "normal");
+          doc.setFontSize(8);
+          doc.setTextColor(100, 108, 120);
+          doc.text("Created " + createdLabel, margin, pageH - 6);
+          var footerSite = "mathintegrity.org";
+          var footerSiteW = doc.getTextWidth(footerSite);
+          doc.setTextColor(linkBlue[0], linkBlue[1], linkBlue[2]);
+          doc.text(footerSite, pageW - margin, pageH - 6, { align: "right" });
+          doc.link(pageW - margin - footerSiteW, pageH - 9, footerSiteW, 4, { url: "https://mathintegrity.org/" });
+        }
 
         doc.save(filename);
       } catch (err) {
